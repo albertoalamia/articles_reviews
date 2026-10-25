@@ -16,12 +16,7 @@ list of papers and flagged issues.
 
 Steps only you can do, in order. Everything else is in the repo.
 
-1. **GitHub repository** `albertoalamia/articles_reviews`, public, empty (no README). Remote already set:
-   Then from this folder:
-   ```bash
-   git remote add origin git@github.com:albertoalamia/articles_reviews.git
-   git push -u origin main
-   ```
+1. **GitHub repository** `albertoalamia/articles_reviews` created and `main` pushed (done 2026-10-25).
 2. **GitHub Pages** enabled (Source: GitHub Actions, done 2026-10-25). Site at
    https://albertoalamia.github.io/articles_reviews/ until DNS is set. The stale `CNAME` file in
    `albertoalamia.github.io` (pointing at telepsichiatria.org) was removed the same day.
