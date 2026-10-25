@@ -21,6 +21,8 @@ website:
   site-url: https://reviews.telepsichiatria.org
   repo-url: https://github.com/albertoalamia/articles_reviews
   repo-actions: [issue]
+  # Drafts (draft: true in a review) must produce no output at all until authors have been contacted.
+  draft-mode: gone
   favicon: favicon.svg
   navbar:
     left:

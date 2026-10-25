@@ -39,7 +39,7 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
 ## STATUS
 
 ### 2026-10-25
-- Done: folder scaffolded from template; paper and first-pass critique filed; registry row P001
+- Done: repo pushed to GitHub and site live at albertoalamia.github.io/articles_reviews/ (this review is a blank draft page there); folder scaffolded from template; paper and first-pass critique filed; registry row P001
   created (status `reading`); `notes/03_concerns.md` seeded from the first pass.
 - Decided: first author is Bukhari (Syed is a given name), folder renamed accordingly.
 - Open questions: is the version of record out, with reviewer reports? Can the per-condition

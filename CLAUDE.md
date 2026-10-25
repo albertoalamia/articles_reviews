@@ -87,7 +87,10 @@ questions / next step) and `registry/papers.csv` status.
 - Quarto website, `execute: freeze: auto`. Analyses run locally; `_freeze/` is committed; the
   GitHub Action renders without R or Stan and deploys to GitHub Pages, served at
   reviews.telepsichiatria.org via CNAME. Comments via giscus (GitHub Discussions on this repo).
-- A review is published by setting `draft: false` and pushing to `main`.
+- A review is published by setting `draft: false` and pushing to `main`. While `draft: true`,
+  `draft-mode: gone` keeps it out of listings, search and sitemap; its URL serves a blank page
+  (verified 2026-10-25), so no draft text is ever public.
+- Until the DNS record exists the site is served at https://albertoalamia.github.io/articles_reviews/.
 - Site chrome in English; individual reviews may be in Italian (`lang: it` in front matter).
 
 ## Language and tone of written output

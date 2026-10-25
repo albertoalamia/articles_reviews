@@ -22,9 +22,9 @@ Steps only you can do, in order. Everything else is in the repo.
    git remote add origin git@github.com:albertoalamia/articles_reviews.git
    git push -u origin main
    ```
-2. **Enable GitHub Pages**: repository → Settings → Pages → Source: *GitHub Actions*.
-   The first push to `main` triggers `.github/workflows/publish.yml`. The site appears at
-   `https://albertoalamia.github.io/articles_reviews/` until DNS is set.
+2. **GitHub Pages** enabled (Source: GitHub Actions, done 2026-10-25). Site at
+   https://albertoalamia.github.io/articles_reviews/ until DNS is set. The stale `CNAME` file in
+   `albertoalamia.github.io` (pointing at telepsichiatria.org) was removed the same day.
 3. **Custom domain**: Settings → Pages → Custom domain: `reviews.telepsichiatria.org`, tick
    *Enforce HTTPS* once the certificate is issued (can take up to an hour after DNS resolves).
 4. **DNS (dnsitalia / your provider)**: add a CNAME record
