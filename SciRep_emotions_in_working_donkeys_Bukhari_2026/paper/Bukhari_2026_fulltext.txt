@@ -1,0 +1,1142 @@
+# Full text of Bukhari et al. 2026, Sci Rep, doi 10.1038/s41598-026-62753-3
+# Source: paper/Bukhari_2026_SciRep_s41598-026-62753-3_accepted_manuscript.pdf (accepted manuscript, Article in Press)
+# Extracted 2026-10-25 with: pdftotext -layout (poppler 25.07, nix shell); lines consisting only of 1-3 capital letters
+# (fragments of the diagonal "ACCEPTED MANUSCRIPT IN PRESS" watermark) removed. Page breaks kept as form feeds.
+# Verify any number against the PDF before citing it.
+
+Scientific Reports                                                                                      https://doi.org/10.1038/s41598-026-62753-3
+
+
+Article in Press
+
+Heart rate variability, eye temperature, and
+spontaneous blink rates as measures of emotions
+in working donkeys
+
+Received: 16 December 2025                           Syed S. U. H. Bukhari, Alan G. McElligott, Paulo V. Steagall & Rebecca S. V. Parkes
+Accepted: 14 July 2026
+                                                     We are providing an unedited version of this manuscript to give early access to its
+
+
+                                                     findings. Before final publication, the manuscript will undergo further editing. Please
+Cite this article as: Bukhari S.S.U.H.,
+
+                                                     note there may be errors present which affect the content, and all legal disclaimers
+McElligott A.G., Steagall P.V. et al. Heart
+
+                                                     apply.
+rate variability, eye temperature, and
+spontaneous blink rates as measures
+of emotions in working donkeys. Sci
+Rep (2026). https://doi.org/10.1038/
+                                                       If this paper is publishing under a Transparent Peer Review model then Peer
+
+                                                     Review reports will publish with the final article.
+
+
+
+s41598-026-62753-3
+
+
+
+
+                                                             L E
+                                                 I         C
+                                             R T
+
+
+
+© The Author(s) 2026. Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as long as you give appropriate credit
+to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if you modified the licensed material. You do
+not have permission under this licence to share adapted material derived from this article or parts of it. The images or other third party material in this
+article are included in the article’s Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the
+article’s Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain
+permission directly from the copyright holder. To view a copy of this licence, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+                                    ACCEPTED
+                                      ARTICLEMANUSCRIPT
+                                              IN PRESS
+
+
+
+Heart rate variability, eye temperature, and spontaneous blink rates as measures of emotions in
+working donkeys
+Syed S. U. H. Bukhari 1,2*, Alan G. McElligott 2,3, Paulo V. Steagall 1,2, and Rebecca S. V. Parkes 1,2,4*
+1 Department of Veterinary Clinical Sciences, Jockey Club College of Veterinary Medicine and Life Sciences,
+
+City University of Hong Kong, Hong Kong SAR, China
+2 Centre for Animal Health and Welfare, Jockey Club College of Veterinary Medicine and Life Sciences, City
+
+University of Hong Kong, Hong Kong SAR, China
+3 Department of Infectious Diseases and Public Health, Jockey Club College of Veterinary Medicine and
+
+Life Sciences, City University of Hong Kong, Hong Kong SAR, China
+4 Hong Kong Jockey Club, Hong Kong, China
+
+
+*Corresponding authors: habukhari2-c@my.cityu.edu.hk ; rebecca.sv.parkes@hkjc.org.hk
+Author’s contact email addresses
+SSUHB: habukhari2-c@my.cityu.edu.hk ; AGM: alan.mcelligott@cityu.edu.hk
+
+
+PVS: pmortens@cityu.edu.hk ; RSVP: rebecca.sv.parkes@hkjc.org.hk
+Abstract
+     Quantitative measures of emotion play a crucial role in objectively assessing animal welfare. However,
+there is currently no research available on donkey emotions. Our study investigated spontaneous blink
+
+rate (SBR), eye temperature (ET), and heart rate variability (HRV), quantified as RMSSD (root mean square
+of the successive differences between beat-to-beat intervals), as potential measures of donkey emotions.
+
+                                   L E
+Thirty-four donkeys were exposed to three treatments: positive, negative, and control. The positive and
+
+negative treatments were feeding high-quality lucerne and exposing donkeys to the sound of hair clippers,
+
+
+                              T I
+respectively. The control group was recorded standing in their usual environment, and were not subjected
+to any additional positive or negative stimuli. Data were analyzed using linear models. SBR increased
+
+                           A R
+during positive treatment and decreased with the negative treatment compared to the control. An
+increase in ET was found for both negative and positive treatment compared to the control. We found a
+positive relationship between changes in SBR and HRV (estimated=1.32, t=5.44, p<0.001), whereas
+negative relationships were found between changes in ET and HRV (estimated= -12.76, t= -5.93, p<0.001).
+ET, SBR, and HRV may act as indicators of emotions in donkeys. Additional studies should investigate these
+metrics through a thorough analysis of donkey behavior.
+Keywords: animal sentience, cardiology, physiology, thermography, welfare, working equids
+    1. Introduction
+
+    Animal emotion is a complex response comprising subjective, physiological, neural, and cognitive
+components to a stimulus or event 1,2. Emotions play a crucial role as they facilitate the selection of
+appropriate behavioral responses to external and internal events 3. Emotions have two main dimensions:
+arousal (calm versus excited) and valence (negative or positive) 4,5. The existence and nature of emotions
+in non-human animals are believed to be correlated with those in humans and to have evolved from
+similar mechanisms 6. However, emotions are subjective internal experiences that cannot be easily
+measured 7. Consequently, techniques for understanding and assessing animal emotions, particularly
+positive ones, are limited 3. Currently, the focus lies in inferring emotions by analyzing behavioral,
+                                    ACCEPTED
+                                      ARTICLEMANUSCRIPT
+                                              IN PRESS
+
+
+
+physiological, and neurobiological indicators 7,8. Animal emotions change in response to positive and
+negative stimuli 9,10. Therefore, accurately inferring animal emotional states from behavioral and
+physiological evidence is important for welfare, because emotions reflect how animals experience their
+lives and influence how they respond to environmental challenges and resources 11,12. There has been an
+increasing interest in identifying non-invasive and reliable indicators of both positive and negative
+emotions in animals 9,10,13.
+     Globally, there are around 50.5 million donkeys (Equus asinus) 14, and they support approximately 600
+million people, especially in low and middle-income countries (LMICs) where they are relied upon for
+agriculture, construction, and transportation of goods 15,16. Despite their importance, relatively little
+research has been conducted to assess and improve the welfare of working donkeys in LMICs 17. This has
+led to their neglect in government-level animal welfare regulations 18, although working equids were
+recently included in the World Organization for Animal Health’s (WOAH) Terrestrial Animal Welfare Code
+19. Welfare challenges for working donkeys in LMICs are multifactorial, driven by interacting
+
+socioeconomic and structural factors (poverty, limited access to education and veterinary care, reliance
+on donkeys for livelihoods, and inadequate legal or welfare protections). Together, these factors can lead
+to harsh working conditions and harm donkey health and welfare 12. This is particularly evident in donkeys
+used for carrying heavy loads when owners may overlook their emotions and pain 20.
+
+
+     Spontaneous blink rate (SBR) has been utilized to measure stress responses in humans 21 and offers a
+
+non-invasive method for assessing stress in animals 13,22,23. Blinks serve multiple functions, including
+
+
+                                                                  R E
+corneal lubrication and the resetting of eye movements during fixation error correction 24. The association
+between SBR and stress appears to be influenced by dopaminergic activity. In monkeys, SBR increased
+
+following subcutaneous administration of dopamine agonists and was reduced with dopamine
+
+
+antagonists 25. Humans demonstrate a decrease in SBR during periods of focused attention and cognitive
+effort 21. SBR is a reliable measure of stress in humans and animals 10,13,21. The use of SBR to assess stress
+
+
+                                   L E
+or negative emotional state is promising, as it is a non-invasive and inexpensive measure of stress 10. Once
+investigated and standardized under donkey working conditions, it could help donkey handlers, owners,
+
+and veterinarians to make better decisions for their care and ultimately improve the welfare of animals.
+
+
+     Eye temperature (ET) measurement effectively evaluates animal stress across a range of species 26–29.
+This method involves using infrared thermography to assess the temperature of the eye, usually at the
+medial canthus, which can reflect the physiological and emotional state of horses (Equus caballus) 30, goats
+(Capra hircus) 31, sheep (Ovis aries) 32, cats (Felis catus) 33, dogs (Canis familiaris) 34, and cattle (Bos taurus)
+35. Changes in eye temperature can be influenced by the proximity of the orbit to the brain and changes
+
+in blood flow caused by vascular activity, which are commonly affected by stress 36. A positive relationship
+between eye temperature (ET) and salivary cortisol levels has been reported 29. Moreover, a negative
+relationship between ET and heart rate variability (HRV) was observed in response to stress 26. The use of
+ET as a non-invasive measure of stress has great potential for practical application. However, there is
+currently no research available on how the ET of donkeys varies during positive and negative emotional
+states.
+
+     HRV is the physiological phenomenon of variations in the time interval between heartbeats 3,26 and
+can be measured as root mean square of the successive differences of the beat-to-beat interval, recorded
+in milliseconds (RMSSD) 10. It represents the ability of the heart to respond to a variety of physiological
+and environmental stimuli 37. RMSSD is a valuable tool for assessing animal stress and positive emotional
+states 3,10. The interplay between the sympathetic and parasympathetic branches of the nervous system
+influences the HRV 38,39 and controls the physiological responses of animals to positive and negative stimuli
+                                  ACCEPTED
+                                    ARTICLEMANUSCRIPT
+                                            IN PRESS
+
+
+
+40–43. Animals in a relaxed and comfortable state exhibit increased RMSSD 40,44, whereas those experiencing
+
+stressful situations exhibit decreased HRV 26,45,46. This decrease in RMSSD indicates an increase in
+sympathetic activity and a decrease in parasympathetic influence, reflecting a state of heightened stress
+10,26,45,46. Moreover, it is reported that animals engaging in positive interactions exhibit increased RMSSD
+40,44. This suggests a higher parasympathetic influence and a state of relaxation and contentment 40.
+
+However, RMSSD should be interpreted cautiously because it is influenced by the specific metric used,
+heart rate, respiration, physical activity, and the level of physiological arousal. While RMSSD is a promising
+measure of stress and positive emotions in animals (e.g., goats 3,38, horses 10,47), donkeys have not yet
+been investigated in this regard.
+
+    Donkeys are known for their stoic behavior 48,49 and typically exhibit a reduced flight response and
+tend to show freeze behaviors more often than flight behaviors when compared to horses 48,49. Many
+people believe that donkeys feel less pain and stress because they hide signs of pain, making it difficult to
+assess their welfare 50. However, this perception is due to a lack of understanding of donkeys and their
+emotional states, which can greatly affect their welfare. Recent research has shown that recognizing
+donkey emotions and feelings of pain (i.e., recognizing that donkeys are sentient) is associated with
+improved management practices 20. Therefore, it is necessary to investigate the indicators of positive and
+negative emotions in donkeys to understand and protect their welfare.
+
+
+
+                                                                 S S
+    Our research investigated how SBR, ET, and HRV change in response to positive and negative
+treatment exposure in donkeys. We hypothesized that positive treatment would lead to a greater change
+
+
+                                                              R E
+in SBR than negative treatment. In contrast, negative treatment would result in a greater change in ET
+
+than positive treatment, and the change in HRV would be greater during positive treatment than during
+negative treatment.
+    2   Results
+                                  L E
+2.1 Level of agreement and bias of the spontaneous blink rate between coders
+
+        The agreement for SBR between two coders was high, with a mean bias of − 0.09 to − 0.17 and
+
+narrow limits of agreement. Bias during control, positive, and negative treatment was -0.09, -0.15, and -
+
+0.17, respectively. The limits of agreement were narrow (less than the SBR standard deviations) in all
+situations, Figure 1.
+                                ACCEPTED
+                                  ARTICLEMANUSCRIPT
+                                          IN PRESS
+
+
+
+
+                                                             S S
+                                                          R E
+                                L E
+Figure 1: Bland and Altman plots showing the agreement and bias of the spontaneous blink rate (blinks
+
+per min) of donkeys between coders (C1 and C2) during the (A) control (B) positive, and (C) negative
+
+treatment. The bias (green continuous line) and limits of agreement (orange dotted lines) are indicated
+
+on each plot.
+2.2 Donkey body condition score, ambient temperature, humidity, and wind speed
+   The mean ambient temperature was 25.65°C, and the mean humidity was 34.64%. The mean wind
+speed (ms-1) on the working days was 0.21, Table 1.
+Table 1: Donkey body condition score, ambient temperature, humidity, and wind speed are presented
+as mean and standard deviation (mean ± SD).
+       Variables                                                     Mean ± SD
+       Ambient temperature (°C)                                     25.65 ± 4.55
+       Humidity (%)                                                 34.64 ± 5.79
+       Wind speed (km/h)                                             0.78± 0.31
+
+
+2.3 Change in spontaneous blink rate, eye temperature, and heart rate variability during the positive
+and negative treatments
+                                 ACCEPTED
+                                   ARTICLEMANUSCRIPT
+                                           IN PRESS
+
+
+
+    Descriptive changes in SBR, ET, and HRV (RMSSD) during positive and negative treatments are
+presented in Table 2. The mean change in SBR was 19.0 ± 6.62 blinks per min during the positive treatment
+and 6.79 ± 3.17 blinks per min during the negative treatment. The mean change in ET was 0.81 ± 0.56 °C
+during the positive treatment and 1.22 ± 0.57 °C during the negative treatment. The mean change in HRV
+(RMSSD) was 37.73 ± 15.95 ms during the positive treatment and 10.73 ± 7.04 ms during the negative
+treatment.
+Table 2: Spontaneous blink rate, eye temperature, and heart rate variability (RMSSD) during control,
+positive, and negative treatment of donkeys. Table 2 shows the mean and standard deviation (mean ±
+SD) of the absolute values and changes (control minus positive and control minus negative treatment)
+in each variable during positive and negative treatment. Heart rate variability was quantified using the
+root mean square of the successive differences between beat-to-beat intervals (RMSSD), a time-domain
+HRV metric reported in milliseconds.
+       Variables                     Control         Positive treatment     Negative treatment
+       Spontaneous blink rate      18.94 ± 5.83         37.94 ± 8.37           12.20 ± 5.89
+       (blinks per min)
+       Change in spontaneous             -               19.0±6.62               6.79±3.17
+       blink rate (blinks per
+
+       min)
+       Eye temperature (°C)
+       Change in eye
+                                   34.55 ± 0.93
+                                        -                      S
+                                                        35.33 ± 1.02
+
+                                                         0.81±0.56
+                                                                                35.75 ± 0.99
+                                                                                 1.22±0.57
+       temperature (°C)
+       RMSSD (ms)                 47.26 ± 17.52
+                                                       80.23 ± 27.23           57.35 ± 20.30
+
+       Change in RMSSD (ms)              -             37.73±15.95              10.73±7.04
+
+
+
+                                 L E
+2.4 Comparison of spontaneous blink rate, eye temperature, and heart rate variability between
+
+control conditions and positive and negative treatments
+
+
+                         A R
+         Compared to control, the spontaneous blink rate increased significantly with the positive
+treatment (from 18.94±5.83 to 37.94±8.37 blinks per min, p=0.002), and decreased significantly with the
+negative treatment (from 18.94±5.83 to 12.20±5.89 blinks per min, p<0.001). Eye temperature
+significantly increased during both negative treatment (34.55±0.93 to 35.75±0.99°C, p<0.001) and positive
+treatment (34.55±0.93 to 35.33±1.02°C, p<0.001) compared to the control. Heart rate variability (RMSSD)
+was significantly higher with the positive treatment compared to the control (47.26±17.52 to 80.23±27.23
+ms, p=0.005), Figure 2.
+                                 ACCEPTED
+                                   ARTICLEMANUSCRIPT
+                                           IN PRESS
+
+
+
+
+                                                               S S
+                                                            R E
+                                 L E
+Figure 2: (A) Spontaneous blink rates (blinks per minute), (B) eye temperatures (°C), and (C) heart rate
+variability (RMSSD) of donkeys during control, positive, and negative treatment are shown as box plots.
+Heart rate variability (HRV) was quantified using the root mean square of the successive differences
+between beat-to-beat intervals (RMSSD), a time-domain HRV metric reported in milliseconds. P-values
+were generated using linear mixed models.
+2.5 Repeated-measure linear regression models
+2.5.1 Relationship between change in spontaneous blink rate and heart rate variability (RMSSD)
+    A positive association was found between change in SBR and RMSSD (estimates = 1.32, t = 5.44, p <
+0.001). Additionally, the positive treatment predicted a higher change in RMSSD (estimates = 10.82, t =
+2.82, p = 0.006) relative to negative treatment (Table 3). A greater change in SBR and positive treatment
+was associated with a higher RMSSD level, Figure 3.
+Table 3: Change in heart rate variability (ΔRMSSD) and spontaneous blink rate during positive and
+negative treatment. A table 3 displaying a repeated-measure linear regression model is presented.
+Negative treatment was used as the reference category for the treatment variable. Heart rate variability
+                                 ACCEPTED
+                                   ARTICLEMANUSCRIPT
+                                           IN PRESS
+
+
+
+(HRV) was quantified using the root mean square of the successive differences between beat-to-beat
+intervals (RMSSD), a time-domain HRV metric reported in milliseconds.
+ Variables           Estimates    95%             Standard    t value    F        p value
+                                  Confidence      error                  value
+                                  Interval
+ Intercept           1.72         -2.97 – 6.43    2.42        0.71       -        0.47
+ Change in           1.32         0.85 – 1.79     0.24        5.44       29.60    <0.001
+ spontaneous
+ blink rate
+ Treatment           10.82        3.32 – 18.28    3.83        2.82       7.95     0.006
+ (Positive)
+
+
+
+
+                                                               S S
+                                                            R E
+                                 L E
+
+    Figure 3: Change in heart rate variability (ΔRMSSD) and spontaneous blink rate (ΔSBR) during
+    positive and negative treatments. Heart rate variability (HRV) was quantified using the root mean
+    square of the successive differences between beat-to-beat intervals (RMSSD), a time-domain HRV
+    metric reported in milliseconds. The figure is generated using the repeated-measure linear
+    regression model.
+2.5.2 Relationship between change in eye temperature and heart rate variability (RMSSD)
+    A negative association was found between changes in ET and RMSSD (estimates = -12.76, t = -5.93, p
+< 0.001). Additionally, the positive treatment predicted a higher change in RMSSD (estimates = 21.66, t =
+                                 ACCEPTED
+                                   ARTICLEMANUSCRIPT
+                                           IN PRESS
+
+
+
+9.11, p < 0.001) relative to negative treatment (Table 4). A lower change in ET and positive treatment were
+associated with higher RMSSD level, Figure 4.
+Table 4: Change in heart rate variability (ΔRMSSD) and eye temperature during positive and negative
+treatment. A table displaying a repeated-measure linear regression model is presented. Negative
+treatment was used as the reference category for the treatment variable. Heart rate variability (HRV)
+was quantified using the root mean square of the successive differences between beat-to-beat intervals
+(RMSSD), a time-domain HRV metric reported in milliseconds.
+ Variables          Estimates     95%               Standard       t value   F       p value
+                                  Confidence        error                    value
+                                  Interval
+ Intercept          26.43         20.24 – 32.62     3.16           8.34      -       <0.001
+ Change in eye      -12.76        -16.97 – - 8.54   2.15           -5.93     35.18 <0.001
+ temperature
+ Treatment          21.66         17.02 – 26.37     2.37           9.11      82.99 <0.001
+ (Positive)
+
+
+
+
+                                                                S S
+                                                             R E
+                                 L E
+
+
+
+
+    Figure 4: Change in heart rate variability (ΔRMSSD) and eye temperature (ΔET) during positive and
+    negative treatment. Heart rate variability (HRV) was quantified using the root mean square of the
+    successive differences between beat-to-beat intervals (RMSSD), a time-domain HRV metric
+    reported in milliseconds. The figure is generated using the repeated-measure linear regression
+    model.
+                                  ACCEPTED
+                                    ARTICLEMANUSCRIPT
+                                            IN PRESS
+
+
+
+    3   Discussion
+
+           Quantitative measures of emotion are essential for evaluating animal emotions and welfare.
+However, there is still a very long way to go to make accurate inferences about physiology and
+emotional state in animals 51. In our study, we used SBR, ET, and HRV to measure donkeys’ physiological
+responses to positive and negative stimuli. We tested donkeys with positive and negative treatments and
+measured their response in terms of SBR, ET, and HRV. Our results showed an increase in ET and a
+decrease in SBR in response to a negative treatment (clipper sounds), which is similar to previous studies
+in horses 10,13,40,41. However, both ET and SBR increased in response to the positive treatment (provision
+of high-quality lucerne). When we calculated the change in each parameter (control minus positive and
+control minus negative treatment), the direction of change in each variable became more obvious. In
+response to positive treatment, the change in HRV and SBR was higher, but the change in ET was lower,
+while during negative treatment, the change in HRV and SBR was lower, and the change in ET was higher.
+This suggests that these measures capture different aspects of the emotional response. HRV and SBR are
+likely more related to autonomic regulation, attention, and emotional valence, whereas ET mainly reflects
+arousal or sympathetic activation. Thus, ET may rise during both positive and negative high-arousal events,
+with larger increases in negative or threatening situations. These findings suggest that SBR, ET, and HRV
+are promising measures of stress and positive emotions in donkeys, similar to humans 21, horses 10,26, dogs
+9,34,45, goats 31,44, and cattle 35. We propose that instead of considering absolute values for ET, SBR, and
+
+
+
+
+                                                                  S S
+HRV, we should assess donkey emotions using the change in ET, SBR, and HRV.
+
+
+
+                                                               R E
+         Although donkeys may appear behaviorally stoic and show limited outward signs of their
+emotional state, this does not indicate reduced emotional or physiological sensitivity. Our findings show
+that donkeys exhibited measurable physiological responses to both positive and negative treatments in
+
+
+terms of SBR, ET, and HRV, which are similar to those of horses 10,13,28, dogs 9,34,45, humans 21, goats 31,44,
+sheep 32, cats 33, and cattle 35,46. Donkeys are known for their stoicism and display a reduced flight response
+
+
+                                  L E
+and increased freeze behaviors compared to horses 48,49. It is often believed that donkeys are stoic and
+
+feel less pain or stress than horses. This perception is supported by their tendency to hide signs of pain,
+
+
+                             T I
+making it difficult to assess their well-being 50. However, this is due to a lack of understanding of donkeys
+and their emotional states. Our study suggests that donkeys are not less sensitive than other animals,
+
+
+                          A R
+although they may show less overt behavioral change 52. Moreover, we know that owner recognition of
+donkey emotions and feelings of pain benefits their welfare via improved management practices 20.
+Furthermore, as donkeys may show few outward signs of stress, owners should not assume a quiet donkey
+is unaffected. Instead, they should consider whether factors such as loud noises, unfamiliar equipment,
+rough handling, isolation, or abrupt routine changes could be stressful even without obvious behavioral
+responses. Awareness of these subtle physiological changes can help owners detect stress sooner and
+adjust handling or management to improve welfare. Therefore, a better understanding of physiological
+indicators of donkey emotions and subsequent improved education of donkey owners may help improve
+their welfare in a challenging working environment.
+         We found decreased SBR in response to negative treatment (a stressful situation). This is similar
+to previous studies in horses 10,13,53 and humans 21. A possible explanation for the increase in SBR during
+the positive treatment is that SBR is influenced by dopaminergic activity 54. In monkeys (Macaca
+fascicularis), dopamine agonists increased SBR, whereas dopamine antagonists reduced SBR 25. However,
+the present study did not measure dopamine, so this mechanism should be interpreted cautiously. Horses
+appear to respond in a similar way. Crib-biting is a common stereotypy in horses and is associated with
+stress, and crib-biting horses demonstrated lower SBR (15 to 11 blinks per min) than control animals.
+Additionally, a decrease in SBR was observed in horses during the initial one-minute treatment (clipping)
+compared to baseline (11 to 6 blinks per minute) 10. This suggests that the reduced SBR may be the
+                                  ACCEPTED
+                                    ARTICLEMANUSCRIPT
+                                            IN PRESS
+
+
+
+characteristic of a fight or flight response and increased sympathetic nervous system activity, allowing
+horses to visually fixate on the stimulus before responding accordingly 10. In this study with horses 10, after
+an initial decrease in SBR in response to the negative stimulus, SBR started increasing. This was not
+observed in our study with donkeys. This may be because the horse researchers recorded SBR for an
+extended period of time (10 minutes), allowing the horses to become habituated to clipper sounds.
+Alternatively, there may be a difference between horses and donkeys in this regard. In comparison, during
+a startle test with horses involving tossing a ball, SBR decreased (26 to 13 blinks) compared to the control
+13. Our study demonstrates that SBR decreases in response to a stressful or startling situation.
+
+Furthermore, human research has shown a reduction in SBR during periods of attention and cognitive
+efforts 21. Potentially threatening stimuli may require cognitive effort to verify them as a threat, thus
+reducing SBR. However, further investigation of changes in SBR over varying time spans is needed to
+identify patterns in response to stressful or startling stimuli in donkeys.
+         We found increased ET in response to negative treatments (a stress situation) similar to previous
+studies in horses 26–29. Change in ET during positive experiences has yet to be investigated in horses,
+although it has been assessed in other species. Goats' eye temperature increased from 36.8 to 37.9 °C
+during a 1-minute stress situation caused by a person making noise and waving their arms in the animal
+pen. However, dogs showed an increase in ET (36.7 to 37.3 °C) during feeding (a high arousal, positive
+event) as compared to the control 9. We know that high arousal situations, irrespective of whether they
+
+
+                                                                  S S
+are positive or negative, can result in increased ocular vasodilation, leading to higher ET 9,30,55.
+Interestingly, the change in ET during the negative treatment (1.22±0.57°C) was greater than positive
+
+
+                                                               R E
+treatment (0.81±0.56°C) in our study. Therefore, we propose that absolute ET is a measure of arousal,
+
+whereas change in ET is the measure of positive and negative emotions in donkeys. Since negative
+emotions are implicated in ‘fight-or-flight’ responses to threatening stimuli, we might expect quicker
+
+mobilization of the physiological responses underlying temperature changes to negative versus positive
+contexts 56. Ultimately, the magnitude and time course of emotionally induced changes in ET may offer a
+
+                                  L E
+means to examine emotional responses in relation to arousal and valence. Moreover, in agreement with
+
+our study, ET was higher (35.9 to 36.8 °C) after the novel object test (fear test) compared to basal ET in
+
+                             T I
+horses 28. An increase in ET was also seen in response to a number of stressful conditions, for example,
+
+clipping (an increase of 3.5°C) 55, and with an over-tightened noseband (an increase of between 0.44 and
+
+1.8 °C) in horses 26,57. It is suggested that an increase in ET was caused by increased blood flow to the eyes
+as a sympathetic nervous system response 36. Furthermore, an increase in ET was also positively correlated
+to salivary cortisol in response to stress in horses 29. Therefore, ET should be interpreted as an indicator
+of physiological arousal or autonomic activation. In potentially negative contexts, changes in ET may help
+assess stress-system activation when interpreted alongside other physiological and behavioral measures.
+         We found an increase in RMSSD in response to positive treatment and a reduction in HRV in
+response to negative treatment (stressful situation), which is consistent with previous studies in horses
+40–43. HRV is a sensitive measure of both physical and emotional stress in horses 58, and it is a commonly
+
+used autonomic nervous system (ANS) correlate, estimating the sympathovagal balance as a
+psychophysiological marker of emotion regulation across species. It is a sensitive measure of both physical
+and emotional stress in horses 58, and it is a commonly used autonomic nervous system (ANS) correlate,
+estimating the sympathovagal balance as a psychophysiological marker of emotion regulation across
+species 40. RMSSD was higher in response to positive calls (65ms) compared to negative ones (45ms) in
+goats 44. Similarly, RMSSD can also vary seasonally as Przewalski’s horses (Equus ferus przewalskii)
+exhibited low RMSSD (70 ms) during winter, when resources are limited, indicating decreased metabolic
+rates coupled with stress, compared with summer (RMSSD = 250 ms) 41. Furthermore, horses showed a
+decrease in RMSSD (46.3 to 15.8ms) during novel object and handling tests 42, indicating a shift of the
+autonomic balance towards a sympathetic dominance. The RMSSD decreased (76 to 46 ms) in response
+                                  ACCEPTED
+                                    ARTICLEMANUSCRIPT
+                                            IN PRESS
+
+
+
+to training of young sport horses, and the lowest values were reached during mounting of a rider (23 ms)
+43. The most pronounced stress reaction occurred in response to the horses being mounted by a rider, a
+
+situation resembling an imminent threat under natural conditions. Furthermore, in horses, RMSSD
+remains high in interaction with familiar handlers as compared to unfamiliar handlers 40, similar to the
+change in RMSSD, which was high in donkeys when lucerne was provided for eating. Therefore, RMSSD is
+a valuable measure to quantify sympathovagal balance, which allows a more precise assessment of stress
+and positive emotions 40.
+       To our knowledge, this is the first report examining how SBR, ET, and HRV vary in donkeys exposed
+to stimuli intended to induce positive and negative emotional states. SBR is a relatively easy measure to
+examine, although the observer must be fairly close to the animal in question 10,13. Monitoring changes in
+SBR can alert the observer to changes in the donkey’s emotional state. A decrease in SBR may indicate a
+stressful situation for the donkey. This is particularly significant in low-resource settings where access to
+advanced technology may be limited. ET and HRV are important measures of the emotional state of a
+donkey, but they need very sophisticated and expensive equipment for monitoring. Moreover, ET should
+be interpreted carefully as it increases in both positive and negative treatment 9,55. It is important to note
+that ET, SBR, and RMSSD may serve as measures of donkey emotions, but require context. SBR may be
+relevant to affective processes; its interpretation across positive, negative, and neutral contexts remains
+complex and requires further investigation. RMSSD was the only HRV metric analyzed in this study. Future
+
+
+                                                                 S S
+studies should include a broader HR/HRV analysis, including heart rate, additional time-domain measures,
+frequency-domain indices, and non-linear measures, while carefully accounting for artefacts, respiratory
+
+
+                                                              R E
+influences, and ectopic beats. It would also be helpful if further research could include longer observations
+
+of donkeys during positive and negative treatment and after removal of the treatment, as the interplay
+between SBR, ET, and HRV in this period may reveal more about the importance of these measures for
+
+the assessment of stress and positive affective state. Future research should include longer observation
+periods during both positive and negative treatments, along with a washout period. Examining the
+
+                                  L E
+interplay between SBR, ET, and RMSSD in this phase may clarify how useful these measures are for
+
+assessing stress and positive affective state. In relation to this, future studies should examine donkey
+
+                             T I
+behaviors, such as reluctance to move forward, ear position, and muzzle and nasal tension, as this study
+
+only included one behavior (SBR) and lacked a comprehensive behavioral investigation during treatments.
+
+As interest grows, it is important to develop a detailed understanding of their potential and limitations.
+        4 Conclusion
+       Our study showed that ET, SBR, and RMSSD varied in working donkeys exposed to positive and
+negative treatment. The positive treatment was associated with numerically greater changes in RMSSD
+and SBR, and a smaller change in ET. In contrast, the negative treatment was associated with numerically
+smaller changes in RMSSD and SBR, and a larger change in ET. Importantly, SBR may provide a simple and
+practical behavioral indicator of donkey responses to positive and negative treatment, without the
+requirement for sophisticated equipment. This is particularly significant in low-resource settings where
+access to advanced technology may be limited. Furthermore, our study challenges the notion that
+donkeys are stoic and experience less pain or stress than horses. We found that donkeys respond to
+positive and negative treatments in a similar way to other species such as horses, goats, dogs, and cattle.
+    5    Methods
+
+5.1 Ethical Approval
+        This research project was approved by the Animal Research Ethics Sub-Committee of City
+University of Hong Kong (No. P9610463).
+                                 ACCEPTED
+                                   ARTICLEMANUSCRIPT
+                                           IN PRESS
+
+
+
+5.2 Sample size estimation
+         The sample size was estimated using G*Power 3.1 software 59. Previous research reported that
+SBR decreases significantly (11.1 to 6.2 blinks per minute) under minor stress (negative) situations in
+horses 10. Conversely, ET increases significantly (32.3 to 35.9 °C) under acute stress (negative) situations
+as compared to control situations in horses 29. These studies were used to support the biological
+plausibility of detecting treatment-related changes in donkeys, but not to derive the effect size for the
+power analysis. We hypothesized that changes to the SBR, ET, and HRV of donkeys exposed to positive
+and negative stimuli would be comparable to previous horse studies 10,29. Therefore, the input parameters
+set for G*Power were alpha (α = 0.05), power (0.95), and effect size (ρ = 0.5), leading to a sample size
+estimation of 34 donkeys for the current research.
+5.3 Animals
+        Thirty-four Pakistani working donkeys (age 6.05±0.31 years; Jennies 20, Jacks 14) were used for
+the study. All the donkeys were working animals and were therefore accustomed to human presence.
+They all remained in their home stable during the experiment and were housed individually. Donkeys
+were physically fit with a good body condition score (2.88±0.40 out of 5) according to The Donkey
+Sanctuary guidelines 60. Donkeys were assessed by an equine veterinary surgeon at rest for overall health
+status based on The Brooke's SEBWAT welfare assessment tool 15. Healthy donkeys were recruited based
+
+
+                                                                S S
+on guidelines recommended from previous research 15. Verbal consent was obtained from the donkey
+
+owners prior to the commencement of data collection. Owners reported that none of the donkeys were
+
+given any medication during the testing period or for one month before data collection.
+5.4 Study design and data collection
+         A randomized crossover trial was used to assess physiological responses to three treatments, with
+
+a one-hour washout period. Prior to undertaking the experiments, the researcher (SSUHB) habituated
+
+
+                               C L
+each donkey to his presence. This was achieved by spending two hours daily with the donkeys for one and
+
+a half months to minimize any effect of an unfamiliar person on the animals’ physiological responses. The
+
+
+researcher also visited the donkeys with the relevant research equipment to habituate them to both the
+equipment and the researcher. We chose the SBR as the habituation criterion. When we noticed that the
+
+blink rate (blinks per min) stayed constant in the presence and absence of the experimenter and research
+equipment, we concluded that habituation had been achieved. Following habituation, donkeys were
+subject to three treatments: positive, negative, and control. The positive treatment was the provision of
+high-quality green lucerne (food, 8-liter bucket). Donkeys in this area like fresh lucerne, but they usually
+don’t have access to it because it’s expensive. The negative treatment was the sound of hair clippers held
+close to the donkey’s right ear. Positive and negative treatments were chosen based on previous research
+in dogs 9 and horses 10. Donkeys standing calmly in their usual living environment without positive or
+negative treatment and any other interaction were used as the control. On data collection day, donkeys
+were not working to prevent confounding effects from working conditions. Each donkey was used as its
+own control to evaluate the relationship between variables within each treatment period. Data on SBR,
+ET, and HRV were collected for each donkey during each treatment. The treatment sequence was
+randomly assigned by generating random numbers between one to three using Microsoft Excel. Number
+one was designated as the control treatment, number two as the positive treatment, and number three
+as the negative treatment. As the trials followed a randomized crossover design, each donkey received
+the treatments (control, positive, and negative) in a random order on the same day (single session). All
+measurements were taken between 10:00 and 14:00 each day to avoid any confounding effects of diurnal
+variation in physiological recordings. Data were collected during each treatment for three minutes 13. This
+                                 ACCEPTED
+                                   ARTICLEMANUSCRIPT
+                                           IN PRESS
+
+
+
+resulted in nine minutes of SBR, ET, and HRV data for post-hoc analysis. Figure 5 shows the experimental
+setup.
+
+
+
+
+                                                                S S
+                                                             R E
+Figure 5: Thirty-four donkeys were assessed for physiological responses to control, positive, and
+
+negative treatments. Donkeys were filmed with a FLIR thermographic camera (FLIR T530, Teledyne FLIR
+
+
+Systems Inc., Wilsonville, USA) to assess eye temperature, a GoPro camera to record spontaneous blink
+rate, and wore a Polar heart rate monitor to measure heart rate variability (RMSSD - root mean square
+
+
+                                 L E
+of the successive differences between beat-to-beat intervals).
+5.5 Spontaneous blink rate
+        The donkey's SBR was recorded by filming its eyes using a GoPro HERO Black camera at 30 frames
+per second. The videos were transferred to a laptop and analyzed for SBR, similar to a previous research
+10. Measurements of SBR were made using coding of the offline videos by two coders (coder-1 and coder-
+
+2). Each coder counted the number of blinks per minute. SBR was reported as blinks per minute for each
+donkey under each test condition.
+5.6 Eye temperature
+        A standardized infrared thermography protocol for ET (°C) was used 61. Each donkey was filmed
+under the shade using a thermographic camera (FLIR T530, Teledyne FLIR Systems Inc., Wilsonville, USA),
+placed at 90° to the sagittal plane of the eye and at a distance of one meter 61. The left eye was selected
+following the experimental protocol adopted for horses 10. The maximum temperature at the medial
+canthus of the eye was recorded using FLIR Tools+ software, as it gives the most reliable temperature
+measurement 32. The camera's distance from the donkey was measured using laser technology fitted
+within the FLIR T530 camera. Thermographic videos were transferred to a laptop via SD cards. The data
+were extracted from videos using FLIR-Tools+ software. The maximum temperature at the medial canthus
+of the eye was recorded as it gives the most reliable temperature measurement 32. The ambient
+temperature and humidity were measured using a portable weather station (LondiSun LS-204), and wind
+speed was measured using a Kestrel-1000 digital anemometer, as they may affect thermography in field
+conditions.
+                                  ACCEPTED
+                                    ARTICLEMANUSCRIPT
+                                            IN PRESS
+
+
+
+5.7 Heart rate variability
+         Each donkey was fitted with a heart rate monitor (Polar Equine V800) to record beat-to-beat
+interval (R-R interval). HRV describes the variation in the time intervals between successive heartbeats. In
+this study, HRV was quantified using the root mean square of the successive differences between beat-
+to-beat intervals (RMSSD), a time-domain HRV metric reported in milliseconds 10. The data collected from
+the Polar Equine V800 were exported to the laptop using the Polar FlowSync software. The data were
+analyzed using Kubios software (Kubios HRV Standard version 3.5.0, Kubios Oy, Kuopio, Finland), with a
+low threshold (0.35 s) for artifact correction according to previous research 10,23.
+5.8 Statistical analysis
+         All the variables are presented as mean and standard deviation (mean ± SD). The Shapiro-Wilk
+test was used to test the normality of the data. SBR data extracted by coder-1 were used for the main
+statistical analysis because coder-1 was the primary trained observer who coded all videos. Coder-2
+independently coded the videos to assess inter-observer agreement. The use of coder-1 data was
+considered appropriate because Bland–Altman analysis showed high agreement between coders, with
+minimal bias and narrow limits of agreement across the control, positive, and negative treatments. For
+SBR, Band-Altman plots were used to determine the level of agreement between coders (C1 and C2) and
+bias. Data were normally distributed according to the Shapiro–Wilk test (p > 0.05); therefore, raw,
+
+
+                                                                S S
+untransformed data were used for all analyses. Linear mixed-effects models (with an individual donkey as
+
+a random effect) were fitted to individually compare SBR, ET, and HRV (quantified as RMSSD) under the
+
+positive or negative treatment with the control. The order of the treatment application was included in
+
+the model as a fixed effect to account for the randomized crossover nature of the study. The change in
+each parameter (SBR, ET, and HRV) was calculated (control minus positive and control minus negative
+
+treatment). The changes in SBR and ET were compared with an established physiological indicator of
+
+autonomic nervous system activity associated with stress and emotional arousal (change in HRV 10) in
+
+
+                                   C L
+animals using two repeated-measure linear regression models. An individual donkey was included as a
+random effect. In the first model, change in HRV, quantified as RMSSD, was the outcome variable, with
+
+                                T I
+change in SBR and treatment included as fixed effects. In the second model, change in RMSSD was the
+
+outcome variable, with change in ET and treatment included as fixed effects. All statistical analyses were
+
+
+References:
+conducted using R packages tidyverse, lme4, lmerTest, and RStudio with R version 4.2.3 62.
+
+
+1. Paul, E. S. & Mendl, M. T. Animal emotion: Descriptive and prescriptive definitions and their
+        implications for a comparative perspective. Appl. Anim. Behav. Sci. 205, 202–209 (2018).
+2. Carranza-Pinedo, V., Krohs, U. & Richter, S. H. Towards a scientific definition of animal emotions:
+       Integrating innate, appraisal, and network mechanisms. Neurosci. Biobehav. Rev. 172, 106127
+       (2025).
+3. Briefer, E. F., Tettamanti, F. & McElligott, A. G. Emotions in goats: Mapping physiological, behavioural
+        and vocal profiles. Anim. Behav. 99, 131–143 (2015).
+4. Boissy, A. et al. Assessment of positive emotions in animals to improve their welfare. Physiol. Behav.
+        92, 375–397 (2007).
+5. Lansade, L. et al. Facial expression and oxytocin as possible markers of positive emotions in horses.
+       Sci. Rep. 8, 1–11 (2018).
+6. Cabanac, M. What is emotion? Behav. Processes 60, 69–83 (2002).
+                                  ACCEPTED
+                                    ARTICLEMANUSCRIPT
+                                            IN PRESS
+
+
+
+7. Beausoleil, N. J., Stratton, R. B., Guesgen, M. J., Sutherland, M. A. & Johnson, C. B. Scientific evaluation
+       of animal emotions: Brief history and recent New Zealand contributions. J. New Zeal. Stud. 22,
+       63–71 (2016).
+8. Bukhari, S. S. U. H., Li, C. M., Kenéz, Á., Steagall, P. V & Mcelligott, A. G. Donkey hair cortisol
+       concentrations are associated with carrying heavy load and being beaten at work. BMC Vet. Res.
+       21, (2025).
+9. Travain, T. et al. How good is this food? A study on dogs’ emotional responses to a potentially
+       pleasant event using infrared thermography. Physiol. Behav. 159, 80–87 (2016).
+10. Mott, R. O., Hawthorne, S. J. & McBride, S. D. Blink rate as a measure of stress and attention in the
+      domestic horse (Equus caballus). Sci. Rep. 10, 1–8 (2020).
+11. Bukhari, S. S. U. H. & Parkes, R. S. V. Assessing the impact of draught load pulling on welfare in
+       equids. Front. Vet. Sci. 10, 1214015 (2023).
+12. Bukhari, S. S. U. H., McElligott, A. G. & Parkes, R. S. V. Quantifying the Impact of Mounted Load
+       Carrying on Equids: A Review. Animals 11, 1333 (2021).
+13. Merkies, K., Ready, C., Farkas, L. & Hodder, A. Eye blink rates and eyelid twitches as a non-invasive
+
+
+                                                                  S S
+      measure of stress in the domestic horse. Animals 9, 1–10 (2019).
+
+
+       trends. PLoS One 16, 1–12 (2021).
+                                                               R E
+14. Norris, S. L., Little, H. A., Ryding, J. & Raw, Z. Global donkey and mule populations: Figures and
+
+
+15. Sommerville, R., Brown, A. F. & Upjohn, M. A standardised equine-based welfare assessment tool
+
+       used for six years in low and middle income countries. PLoS One 13, 1–21 (2018).
+
+
+                                  L E
+16. Bukhari, S. S. U. H., Rosanowski, S. M., McElligott, A. G. & Parkes, R. S. Welfare concerns for mounted
+
+       load carrying by working donkeys in Pakistan. Front. Vet. Sci. 9, 886020 (2022).
+
+
+                             T I
+17. Bukhari, S. S. U. H., Parkes, R. S. V, Sneddon, L. U. & Mcelligott, A. G. The behavior and welfare of
+
+
+                          A R
+       neglected species : some examples from fish and mammals. PeerJ 12, 1–31 (2024).
+18. Haddy, E., Rodrigues, J. B., Raw, Z., Burden, F. & Proops, L. Documenting the Welfare and Role of
+       Working Equids in Rural Communities of Portugal and Spain. Animals 10, 1–13 (2020).
+19. World Organization for Animal Health. The welfare of working equids in Mexico. https://rr-
+      europe.woah.org/en/Projects/animal-welfare-platform-europe/activities-of-the-platform/the-
+      welfare-of-working-equids/ doi:10.1016/S0168-1591(98)00117-8.
+20. Bukhari, S. S. U. H., McElligott, A. G., Rosanowski, S. M. & Parkes, R. S. Recognition of emotion and
+       pain by owners benefits the welfare of donkeys in a challenging working environment. PeerJ 11,
+       e15747 (2023).
+21. Berguer, R., Smith, W. D. & Chung, Y. H. Performing laparoscopic surgery is significantly more
+       stressful for the surgeon than open surgery. Surg. Endosc. 15, 1204–1207 (2001).
+22. Roberts, K., Hemmings, A. J., Moore-Colyer, M., Parker, M. O. & McBride, S. D. Neural modulators of
+       temperament: A multivariate approach to personality trait identification in the horse. Physiol.
+       Behav. 167, 125–131 (2016).
+23. Mott, R., Dowell, F. & Evans, N. Use of the Polar V800 and Actiheart 5 heart rate monitors for the
+                                   ACCEPTED
+                                     ARTICLEMANUSCRIPT
+                                             IN PRESS
+
+
+
+       assessment of heart rate variability (HRV) in horses. Appl. Anim. Behav. Sci. 241, 105401 (2021).
+24. Khazali, M. F., Pomper, J. K. & Thier, P. Blink associated resetting eye movements (BARMs) are
+       functionally complementary to microsaccades in correcting for fixation errors. Sci. Rep. 7, 1–8
+       (2017).
+25. Karson, C. N. Spontaneous eye-blink rates and dopaminergic systems. Brain 106, 643–653 (1983).
+26. Fenner, K., Yoon, S., White, P., Starling, M. & McGreevy, P. The effect of noseband tightening on
+       horses’ behavior, eye temperature, and cardiac responses. PLoS One 11, 1–20 (2016).
+27. Bartolomé, E. et al. Using eye temperature and heart rate for stress assessment in young horses
+       competing in jumping competitions and its possible influence on sport performance. Animal 7,
+       2044–2053 (2013).
+28. Dai, F. et al. Validation of a fear test in sport horses using infrared thermography. J. Vet. Behav. 10,
+       128–136 (2015).
+29. Valera, M. et al. Changes in Eye Temperature and Stress Assessment in Horses During Show Jumping
+       Competitions. J. Equine Vet. Sci. 32, 827–830 (2012).
+
+
+30. Kim, S. M. & Cho, G. J. Validation of eye temperature assessed using infrared thermography as an
+
+       indicator of welfare in horses. Appl. Sci. 11, (2021).
+
+
+                                                                R E
+31. Bartolome, E. et al. Testing eye temperature assessed with infrared thermography to evaluate stress
+
+       in meat goats raised in a semi-intensive farming system: A pilot study. Arch. Anim. Breed. 62,
+       199–204 (2019).
+
+32. Arfuso, F. et al. Eye surface infrared thermography usefulness as a noninvasive method of measuring
+
+
+                                   L E
+       stress response in sheep during shearing: Correlations with serum cortisol and rectal
+
+       temperature values. Physiol. Behav. 250, 113781 (2022).
+
+
+                              T I
+33. Foster, S. & Ijichi, C. The association between infrared thermal imagery of core eye temperature,
+
+
+                           A R
+       personality, age and housing in cats. Appl. Anim. Behav. Sci. 189, 79–84 (2017).
+34. Travain, T. et al. Hot dogs: Thermography in the assessment of stress in dogs (Canis familiaris)-A pilot
+       study. J. Vet. Behav. Clin. Appl. Res. 10, 17–23 (2015).
+35. Shu, H. et al. Evaluation of the Best Region for Measuring Eye Temperature in Dairy Cows Exposed to
+       Heat Stress. Front. Vet. Sci. 9, 1–7 (2022).
+36. Jansson, A., Lindgren, G., Velie, B. D. & Solé, M. An investigation into factors influencing basal eye
+       temperature in the domestic horse (Equus caballus) when measured using infrared
+       thermography in field conditions. Physiol. Behav. 228, (2021).
+37. Kim, H. G., Cheon, E. J., Bai, D. S., Lee, Y. H. & Koo, B. H. Stress and heart rate variability: A meta-
+       analysis and review of the literature. Psychiatry Investig. 15, 235–245 (2018).
+38. Briefer, E. F., Oxley, J. A. & McElligott, A. G. Autonomic nervous system reactivity in a free-ranging
+        mammal: Effects of dominance rank and personality. Anim. Behav. 110, 121–132 (2015).
+39. Gygax, L., Reefmann, N., Wolf, M. & Langbein, J. Prefrontal cortex activity, sympatho-vagal reaction
+       and behaviour distinguish between situations of feed reward and frustration in dwarf goats.
+       Behav. Brain Res. 239, 104–114 (2013).
+                                   ACCEPTED
+                                     ARTICLEMANUSCRIPT
+                                             IN PRESS
+
+
+
+40. Scopa, C. et al. Inside the Interaction: Contact With Familiar Humans Modulates Heart Rate
+       Variability in Horses. Front. Vet. Sci. 7, 1–11 (2020).
+41. Pohlin, F. et al. Seasonal variations in heart rate variability as an indicator of stress in free-ranging
+       pregnant Przewalski’s horses (E. ferus przewalskii) within the Hortobágy National Park in
+       Hungary. Front. Physiol. 8, 1–11 (2017).
+42. Visser, E. K. et al. Heart rate and heart rate variability during a novel object test and a handling test
+        in young horses. Physiol. Behav. 76, 289–296 (2002).
+43. Schmidt, A., Aurich, J., Möstl, E., Müller, J. & Aurich, C. Changes in cortisol release and heart rate and
+       heart rate variability during the initial training of 3-year-old sport horses. Horm. Behav. 58, 628–
+       636 (2010).
+44. Baciadonna, L., Briefer, E. F., Favaro, L. & McElligott, A. G. Goats distinguish between positive and
+       negative emotion-linked vocalisations. Front. Zool. 16, 1–11 (2019).
+45. Gácsi, M., Maros, K., Sernkvist, S., Faragó, T. & Miklósi, Á. Human Analogue Safe Haven Effect of the
+       Owner: Behavioural and Heart Rate Response to Stressful Social Stimuli in Dogs. PLoS One 8,
+       (2013).
+
+
+       cows. PLoS One 10, 1–13 (2015).
+                                                                   S S
+46. Kovács, L. et al. Heart rate variability as an indicator of chronic stress caused by lameness in dairy
+
+
+
+                                                                R E
+47. Ijichi, C., Griffin, K., Squibb, K. & Favier, R. Stranger danger? An investigation into the influence of
+
+         human-horse bond on stress and behaviour. Appl. Anim. Behav. Sci. 206, 59–63 (2018).
+
+
+48. Prescott, K., McCafferty, C. & Hart, B. Donkey behaviour--an overview of defensive aggression during
+
+       handling. Anim. Behav. Welf. Cases abwcases--2022 (2022) doi:10.1079/abwcases.2022.0003.
+
+
+                                C L
+49. Regan, F. H., Hockenhull, J., Pritchard, J. C., Waterman-Pearson, A. E. & Whay, H. R. Behavioural
+
+
+                             T I
+       repertoire of working donkeys and consistency of behaviour over time, as a preliminary step
+       towards identifying pain-related behaviours. PLoS One 9, 1–7 (2014).
+
+                          A R
+50. van Dierendonck, M. C., van Loon, J. P. A. M., Burden, F. A. & Rickards, K. Monitoring acute pain in
+       donkeys with the equine utrecht university scale for donkeys composite pain assessment (Equus-
+       donkey-compass) and the equine utrecht university scale for donkey facial assessment of pain
+       (equus-donkey-fap). Animals 10, (2020).
+51. Mendl, M., Neville, V. & Paul, E. S. Bridging the Gap : Human Emotions and Animal Emotions. Affect.
+      Sci. 3, 703–712 (2022).
+52. Orth, E. K. et al. Development of a donkey grimace scale to recognize pain in donkeys (Equus asinus)
+       post castration. Animals 10, 1–22 (2020).
+53. Kirsty, R., Andrew, H., Meriel, M. C. & Catherine, H. Cognitive differences in horses performing
+        locomotor versus oral stereotypic behaviour. Appl. Anim. Behav. Sci. 168, 37–44 (2015).
+54. Sescousse, G. et al. Spontaneous eye blink rate and dopamine synthesis capacity: preliminary
+       evidence for an absence of positive correlation. Eur. J. Neurosci. 47, 1081–1086 (2018).
+55. Yarnell, K., Hall, C. & Billett, E. An assessment of the aversive nature of an animal management
+       procedure (clipping) using behavioral and physiological measures. Physiol. Behav. 118, 32–39
+       (2013).
+                                  ACCEPTED
+                                    ARTICLEMANUSCRIPT
+                                            IN PRESS
+
+
+
+56. Chotard, H., Ioannou, S. & Davila-Ross, M. Infrared thermal imaging: Positive and negative emotions
+       modify the skin temperatures of monkey and ape faces. Am. J. Primatol. 80, 1–11 (2018).
+57. McGreevy, P., Warren-Smith, A. & Guisard, Y. The effect of double bridles and jaw-clamping crank
+      nosebands on temperature of eyes and facial skin of horses. J. Vet. Behav. Clin. Appl. Res. 7, 142–
+      148 (2012).
+58. von Borell, E. et al. Heart rate variability as a measure of autonomic regulation of cardiac activity for
+       assessing stress and welfare in farm animals - A review. Physiol. Behav. 92, 293–316 (2007).
+59. Faul, F., Edgar, E., Lang, A. & Buchner, A. G*Power 3: A flexible statistical power analysis program for
+       the social, behavioral, and biomedical sciences. Behav. Res. Methods 39, 175–191 (2007).
+60. The Donkey Santuary: Donkey Body Condition Score Chart.
+       https://www.thedonkeysanctuary.org.uk/sites/default/files/2018-10/body-scoring-chart.pdf
+       (2018).
+61. Ijichi, C., Evans, L., Woods, H. & Yarnell, K. The right angle: Validating a standardised protocol for the
+         use of infra-red thermography of eye temperature as a welfare indicator. Anim. Welf. 29, 123–
+         131 (2020).
+
+
+
+                                                                  S S
+62. The R Project for Statistical Computing. https://www.r-project.org/.
+Declarations
+
+                                                               R E
+Ethical Approval
+
+
+This research project was approved by the Animal Research Ethics Sub-Committee of City University of
+Hong Kong (No. P9610463). All experimental procedures involving animals were carried out in accordance
+
+
+                                  L E
+with relevant institutional and national guidelines and regulations for the care and use of animals. This
+
+study is reported in accordance with the ARRIVE guidelines (https://arriveguidelines.org).
+Data availability statement
+                             T I
+reasonable request.       A R
+The datasets used and/or analyzed during the current study available from the corresponding author on
+
+
+Author contributions statement
+SSUHB: Conceptualization, Investigation, Methodology, Data curation, Formal data analysis, Writing–
+original draft, Writing – review & editing. AGM: Supervision, Conceptualization, Investigation,
+Methodology, Writing – review & editing. PVS: Supervision, Writing – review & editing. RSVP: Supervision,
+Conceptualization, Investigation, Methodology, Writing – review & editing. All authors were involved in
+the research, contributed to the preparation, and approved the final manuscript.
+Competing interests
+The authors declare no competing interests.
+Funding
+This project was funded by the City University of Hong Kong. The funders had no role in study design, data
+collection and analysis, decision to publish, or preparation of the manuscript.
+Acknowledgement
+                                 ACCEPTED
+                                   ARTICLEMANUSCRIPT
+                                           IN PRESS
+
+
+
+The authors would like to express gratitude to the donkey owners, local veterinarians, brick kiln owners,
+Syed Hamza BUKHARI, Syed Ijaz BUKHARI, Umar Mehmood RANDHAWA, Chiragh Hussain SHAH, and the
+Department of Veterinary Clinical Science at the Jockey Club College of Veterinary Medicine and Life
+Sciences, City University of Hong Kong.
+Figure legends
+Figure 1: Bland and Altman plots showing the agreement and bias of the spontaneous blink rate (blinks
+per min) of donkeys between coders (C1 and C2) during the (A) control (B) positive, and (C) negative
+treatment. The bias (green continuous line) and limits of agreement (orange dotted lines) are indicated
+on each plot.
+Figure 2: (A) Spontaneous blink rates (blinks per minute), (B) eye temperatures (°C), and (C) heart rate
+variability (RMSSD) of donkeys during control, positive, and negative treatment are shown as box plots.
+Heart rate variability (HRV) was quantified using the root mean square of the successive differences
+between beat-to-beat intervals (RMSSD), a time-domain HRV metric reported in milliseconds. P-values
+were generated using linear mixed models.
+Figure 3: Change in heart rate variability (ΔRMSSD) and spontaneous blink rate (ΔSBR) during positive
+and negative treatments. Heart rate variability (HRV) was quantified using the root mean square of the
+
+successive differences between beat-to-beat intervals (RMSSD), a time-domain HRV metric reported in
+
+
+milliseconds. The figure is generated using the repeated-measure linear regression model.
+
+
+Figure 4: Change in heart rate variability (ΔRMSSD) and eye temperature (ΔET) during positive and
+
+negative treatment. Heart rate variability (HRV) was quantified using the root mean square of the
+
+
+successive differences between beat-to-beat intervals (RMSSD), a time-domain HRV metric reported in
+milliseconds. The figure is generated using the repeated-measure linear regression model.
+
+
+                                 L E
+Figure 5: Thirty-four donkeys were assessed for physiological responses to control, positive, and
+
+negative treatments. Donkeys were filmed with a FLIR thermographic camera (FLIR T530, Teledyne FLIR
+
+
+                            T I
+Systems Inc., Wilsonville, USA) to assess eye temperature, a GoPro camera to record spontaneous blink
+
+rate, and wore a Polar heart rate monitor to measure heart rate variability (RMSSD - root mean square
+
+of the successive differences between beat-to-beat intervals).
+   ACCEPTED
+     ARTICLEMANUSCRIPT
+             IN PRESS
+
+
+
+
+                        S S
+        L E
+   ACCEPTED
+     ARTICLEMANUSCRIPT
+             IN PRESS
+
+
+
+
+                        S S
+        L E
+   ACCEPTED
+     ARTICLEMANUSCRIPT
+             IN PRESS
+
+
+
+
+                        S S
+        L E
+   ACCEPTED
+     ARTICLEMANUSCRIPT
+             IN PRESS
+
+
+
+
+                        S S
+        L E
+   ACCEPTED
+     ARTICLEMANUSCRIPT
+             IN PRESS
+
+
+
+
+                        S S
+        L E
+
