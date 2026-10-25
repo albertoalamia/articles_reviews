@@ -1,0 +1,38 @@
+---
+title: "About"
+comments: false
+---
+
+I am Alberto Alamia, a psychiatrist and biostatistician ([telepsichiatria.org](https://telepsichiatria.org)).
+This site collects methodological reviews of published research in two fields I work in:
+psychiatry and animal behaviour. They share the same weak spots, small samples, latent
+constructs measured through proxies, mis-specified models, and conclusions that outrun the data.
+
+## Two tracks
+
+**Systematic.** Papers chosen by a stated sampling rule, without prior suspicion, to estimate
+how common serious methodological problems are. The rule is in the
+[protocol](protocol.qmd#selection).
+
+**Selected.** Papers chosen for their interest, or suggested by colleagues. Same protocol,
+different purpose: to comment, not to count.
+
+Well-analysed papers are reviewed too, and said to be so.
+
+## How to read a review
+
+Each concern carries an evidence tag. *Confirmed* means it follows from the paper's own
+numbers. *Inferred* means it depends on a reasonable assumption about what was done. *Needs
+data* means only the raw data or code can settle it. Re-analyses, when possible, are Bayesian,
+written in Stan, with models and data in the repository.
+
+## Right of reply
+
+Authors receive the review before it is posted and their response is published alongside it.
+Corrections to my own errors are made in place and logged.
+
+## Contact and suggestions
+
+Suggest a paper or point out an error by opening an
+[issue](https://github.com/albertoalamia/articles_reviews/issues) or by email through
+telepsichiatria.org.

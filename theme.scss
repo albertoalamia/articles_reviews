@@ -1,0 +1,18 @@
+/*-- scss:defaults --*/
+$font-size-root: 17px;
+$body-color: #222;
+$link-color: #1b5e8a;
+$code-block-bg: #f7f7f7;
+
+/*-- scss:rules --*/
+.verdict { border-left: 4px solid #1b5e8a; padding: .6rem 1rem; background: #f3f7fa; margin: 1rem 0; }
+.evidence-confirmed::before { content: "confirmed"; }
+.evidence-inferred::before { content: "inferred"; }
+.evidence-needs-data::before { content: "needs data"; }
+.evidence-confirmed::before, .evidence-inferred::before, .evidence-needs-data::before {
+  display: inline-block; font-size: .7rem; text-transform: uppercase; letter-spacing: .05em;
+  padding: .05rem .4rem; border-radius: .2rem; margin-right: .4rem; color: #fff;
+}
+.evidence-confirmed::before { background: #2e7d32; }
+.evidence-inferred::before { background: #ef8f00; }
+.evidence-needs-data::before { background: #757575; }

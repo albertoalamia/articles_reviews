@@ -1,0 +1,36 @@
+code,domain,label,description
+DES-UNIT,design,Unit of analysis mismatch,Observations treated as independent when they are nested (pseudoreplication; repeated measures without random effects)
+DES-CONF,design,Confounded manipulation,The exposure or stimulus co-varies with another cause of the outcome
+DES-CARRY,design,Unmodelled order or carryover,Crossover or repeated design without carryover or washout assessment
+DES-CTRL,design,Inadequate control condition,Control does not isolate the factor of interest
+DES-POWER,design,Power analysis mismatch,Sample size justification does not correspond to the primary contrast or uses unjustified inputs
+DES-BLIND,design,Blinding absent or unreported,Raters or extractors not blinded where feasible
+DES-MANIP,design,No manipulation check,No evidence that the intended state or exposure occurred
+DES-PREREG,design,No pre-registration,Primary hypothesis and analysis not registered; hypothesis possibly post hoc
+MEA-CONSTR,measurement,Construct validity gap,The measured proxy does not support the construct claimed
+MEA-RELIAB,measurement,Reliability not established,No or inadequate reliability evidence for the instrument in this setting
+MEA-SCALE,measurement,Scale type violated,Ordinal treated as interval or counts treated as continuous without justification
+MEA-DERIVED,measurement,Derived score defect,Change scores or composites ill-defined; sign lost; shared-baseline artefact
+MEA-MISSING,measurement,Missing data mishandled,Amount or mechanism of missingness not reported or handled inappropriately
+MEA-COVAR,measurement,Measured covariates ignored,Relevant measured covariates not used in the analysis
+MOD-FAMILY,model,Wrong distributional family,Likelihood does not match the outcome type
+MOD-STRUCT,model,Model structure mismatch,Model omits structure the design requires (random effects clustering order)
+MOD-ASSUMP,model,Assumption check on wrong object,Normality or other checks on raw data rather than residuals or predictive checks
+MOD-INTER,model,Untested interaction,Parallel slopes or homogeneous effects assumed without test
+MOD-MULT,model,Multiplicity unaddressed,Many tests or outcomes with no adjustment or framing
+MOD-SELECT,model,Selective model reporting,Only the favourable model or specification is reported
+MOD-PRIOR,model,Bayesian specification gap,Priors convergence or sensitivity not reported
+CON-STAT,consistency,Statistic inconsistent with descriptives,Reported test statistic or p-value cannot be reproduced from reported summaries
+CON-GRIM,consistency,Impossible mean or SD,Reported mean or SD arithmetically impossible for n and scale (GRIM/GRIMMER)
+CON-SIGN,consistency,Sign or direction inconsistency,Reported differences or deltas disagree in sign or magnitude with reported means
+CON-XREF,consistency,Text figure table disagreement,Numbers or significance markers differ across sections
+CON-DUP,consistency,Duplicated or contradictory text,Repeated or mutually contradictory passages
+REP-GUIDE,reporting,Reporting guideline not met,Claimed guideline items missing
+REP-EFFECT,reporting,No effect size with uncertainty,Results reported as p-values without estimates and intervals
+REP-CODE,reporting,Code or data not available,Data on request only; no code
+INF-FOLLOW,inference,Conclusion not supported by results,Main conclusion does not follow from the reported data
+INF-CONTRA,inference,Discussion contradicts results,Discussion states the opposite of a reported result
+INF-GENER,inference,Overgeneralisation,Claims beyond the sample population species or setting
+INF-CAUSAL,inference,Causal language in non-causal design,Causal claims from observational or confounded data
+INF-MECH,inference,Unsupported mechanism,Mechanistic explanation presented without evidence or labelled inconsistently
+INF-COMPAR,inference,Comparison without comparator,Claims relative to other groups or species not present in the data

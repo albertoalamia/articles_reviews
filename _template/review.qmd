@@ -1,0 +1,74 @@
+---
+title: "<Short title of the review>"
+description: "<One sentence: what the paper claims and what the review finds.>"
+date: YYYY-MM-DD
+author: Alberto Alamia
+categories: [ethology | psychiatry, <design type>, <main issue>]
+draft: true
+params:
+  protocol_version: "0.1"
+  track: "selected"
+---
+
+::: {.callout-note appearance="simple"}
+**Paper reviewed.** Author A, Author B, ... (Year). *Title*. Journal. DOI.
+Version: accepted manuscript / version of record. Protocol version `{r} params$protocol_version`,
+track `{r} params$track`. Authors contacted on YYYY-MM-DD; reply: pending / received
+(see the end of this page).
+:::
+
+## Summary
+
+::: {.verdict}
+**Verdict:** sound | minor concerns | major concerns | conclusions not supported.
+Two or three sentences on why.
+:::
+
+## What the paper does
+
+Design, sample, outcomes, primary analysis, in the authors' own terms.
+
+## Design
+
+## Measurement
+
+## Model adequacy
+
+## Internal consistency
+
+```{r}
+#| label: setup
+#| message: false
+source(here::here("lib/consistency.R"))
+```
+
+Recomputations from the reported numbers go here, each with a short interpretation and an
+evidence tag, e.g.
+
+::: {.evidence-confirmed}
+The reported mean change does not equal the difference of the condition means.
+:::
+
+## Reporting
+
+## Do the conclusions follow?
+
+## Re-analysis
+
+(If performed.) Model, priors, data source, diagnostics, what changes and what does not.
+Stan code and data in the repository.
+
+## What would settle the open points
+
+## Minor
+
+## Right of reply
+
+Sent to the corresponding author on YYYY-MM-DD. Reply received on YYYY-MM-DD and reproduced
+here with permission / summarised. Changes made to the review in response: ...
+
+## Reproducibility
+
+All numbers above are produced by the code in
+`<this folder>/` of the [repository](https://github.com/albertoalamia/articles_reviews).
+Environment pinned in `shell.nix`.

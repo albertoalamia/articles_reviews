@@ -1,0 +1,27 @@
+---
+title: "Reviews"
+subtitle: "Methodological reviews of published research in psychiatry and ethology"
+listing:
+  id: reviews
+  contents:
+    - "*/review.qmd"
+  sort: "date desc"
+  type: default
+  fields: [date, title, description, categories, reading-time]
+  categories: true
+  feed: true
+page-layout: full
+title-block-banner: false
+comments: false
+---
+
+Each review applies the same [protocol](protocol.qmd) to one published paper: design,
+measurement, model adequacy, internal consistency of the reported numbers, reporting-guideline
+compliance, and whether the conclusions follow. Every numerical check is reproducible from the
+code in the [repository](https://github.com/albertoalamia/articles_reviews). Authors are
+contacted before a review is posted and their replies are added.
+
+Methods and numbers are criticised, never people.
+
+::: {#reviews}
+:::

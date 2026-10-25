@@ -1,0 +1,67 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "*/review.qmd"
+    - "!_template/"
+  resources:
+    - CNAME
+  preview:
+    port: 4321
+
+execute:
+  # Analyses run locally inside the nix shell; results are frozen and committed.
+  # CI only renders from _freeze/, so it needs neither R nor CmdStan.
+  freeze: auto
+
+website:
+  title: "Reviews"
+  description: "Methodological reviews of published research in psychiatry and ethology, with reproducible checks."
+  site-url: https://reviews.telepsichiatria.org
+  repo-url: https://github.com/albertoalamia/articles_reviews
+  repo-actions: [issue]
+  favicon: favicon.svg
+  navbar:
+    left:
+      - href: index.qmd
+        text: Reviews
+      - href: protocol.qmd
+        text: Protocol
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/albertoalamia/articles_reviews
+      - text: telepsichiatria.org
+        href: https://telepsichiatria.org
+  page-footer:
+    left: "Alberto Alamia · Methods and numbers are criticised, never people."
+    right: "Built with Quarto · Code and data in the repository."
+  comments:
+    giscus:
+      repo: albertoalamia/articles_reviews
+      category: Reviews
+      mapping: pathname
+      reactions-enabled: true
+      loading: lazy
+      input-position: top
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+    toc: true
+    toc-depth: 3
+    number-sections: false
+    code-fold: true
+    code-tools: true
+    code-link: false
+    fig-width: 7
+    fig-height: 4.5
+    df-print: kable
+    link-external-newwindow: true
+
+lang: en
+bibliography: references.bib
+csl: apa.csl

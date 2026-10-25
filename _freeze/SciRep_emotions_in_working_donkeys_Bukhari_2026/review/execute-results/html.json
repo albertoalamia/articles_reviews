@@ -1,0 +1,15 @@
+{
+  "hash": "e7eb7f18d0f9a213d857c8f32fa10787",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Three physiological measures of emotion in working donkeys: what the reported numbers do and do not support\"\ndescription: \"Bukhari et al. (Sci Rep 2026) propose blink rate, eye temperature and HRV as markers of valence in donkeys; the change scores, p-values and discussion are internally inconsistent.\"\ndate: 2026-10-25\nauthor: Alberto Alamia\ncategories: [ethology, crossover, internal consistency]\ndraft: true\nparams:\n  protocol_version: \"0.1\"\n  track: \"selected\"\n---\n\n::: {.callout-note appearance=\"simple\"}\n**Paper reviewed.** Bukhari S.S.U.H., McElligott A.G., Steagall P.V., Parkes R.S.V. (2026). *Heart rate variability, eye temperature, and spontaneous blink rates as measures of emotions in working donkeys*. Scientific Reports. [10.1038/s41598-026-62753-3](https://doi.org/10.1038/s41598-026-62753-3).\nVersion: accepted manuscript / version of record. Protocol version 0\\.1,\ntrack selected. Authors contacted on YYYY-MM-DD; reply: pending / received\n(see the end of this page).\n:::\n\n## Summary\n\n::: {.verdict}\n**Verdict:** sound | minor concerns | major concerns | conclusions not supported.\nTwo or three sentences on why.\n:::\n\n## What the paper does\n\nDesign, sample, outcomes, primary analysis, in the authors' own terms.\n\n## Design\n\n## Measurement\n\n## Model adequacy\n\n## Internal consistency\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsource(here::here(\"lib/consistency.R\"))\n```\n:::\n\n\nRecomputations from the reported numbers go here, each with a short interpretation and an\nevidence tag, e.g.\n\n::: {.evidence-confirmed}\nThe reported mean change does not equal the difference of the condition means.\n:::\n\n## Reporting\n\n## Do the conclusions follow?\n\n## Re-analysis\n\n(If performed.) Model, priors, data source, diagnostics, what changes and what does not.\nStan code and data in the repository.\n\n## What would settle the open points\n\n## Minor\n\n## Right of reply\n\nSent to the corresponding author on YYYY-MM-DD. Reply received on YYYY-MM-DD and reproduced\nhere with permission / summarised. Changes made to the review in response: ...\n\n## Reproducibility\n\nAll numbers above are produced by the code in\n`SciRep_emotions_in_working_donkeys_Bukhari_2026/` of the [repository](https://github.com/albertoalamia/articles_reviews).\nEnvironment pinned in `shell.nix`.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

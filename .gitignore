@@ -1,0 +1,31 @@
+# Quarto build output
+/_site/
+/.quarto/
+*_files/
+*.html
+!index.html
+# Quarto freeze is COMMITTED (CI renders from it without R). Do not ignore _freeze/.
+
+# Bayesian fits: draws live in $FITS_DIR on the archive disk, never here
+**/output/fits/
+*.csv.gz
+**/stan/*
+!**/stan/*.stan
+!**/stan/.gitkeep
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.rds
+!**/output/tables/*.rds
+
+# nix / direnv
+.direnv/
+result
+
+# OS / editors
+.DS_Store
+*.swp
+
+**/*.quarto_ipynb
