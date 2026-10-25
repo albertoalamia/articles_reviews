@@ -59,6 +59,7 @@ questions / next step) and `registry/papers.csv` status.
 
 ## Rules
 
+- **Instructions first.** Explain what to do and let Alberto do it; execute only when he explicitly asks.
 - **Protocol is fixed per review.** Use `protocol/checklist.md` as is; record its version. Propose
   changes to the protocol separately, never mid-review.
 - **Evidence tags on every concern:** `confirmed` (from the paper's own numbers), `inferred`
