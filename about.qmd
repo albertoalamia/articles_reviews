@@ -34,5 +34,5 @@ Corrections to my own errors are made in place and logged.
 ## Contact and suggestions
 
 Suggest a paper or point out an error by opening an
-[issue](https://github.com/albertoalamia/articles_reviews/issues) or by email through
+[issue](https://github.com/albertoalamia/article_reviews/issues) or by email through
 telepsichiatria.org.

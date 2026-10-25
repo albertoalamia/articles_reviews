@@ -70,5 +70,5 @@ here with permission / summarised. Changes made to the review in response: ...
 ## Reproducibility
 
 All numbers above are produced by the code in
-`<this folder>/` of the [repository](https://github.com/albertoalamia/articles_reviews).
+`<this folder>/` of the [repository](https://github.com/albertoalamia/article_reviews).
 Environment pinned in `shell.nix`.
