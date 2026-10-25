@@ -6,7 +6,7 @@ toc: true
 
 The checklist below is applied to every paper. It is versioned; each review states the version
 it used. The current text is maintained in the repository at `protocol/checklist.md`, together
-with the [issue taxonomy](https://github.com/albertoalamia/article_reviews/blob/main/protocol/taxonomy.csv)
+with the [issue taxonomy](https://github.com/albertoalamia/articles_reviews/blob/main/protocol/taxonomy.csv)
 used to count recurring problems across papers.
 
 {{< include protocol/checklist.md >}}

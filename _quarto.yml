@@ -19,7 +19,7 @@ website:
   title: "Reviews"
   description: "Methodological reviews of published research in psychiatry and ethology, with reproducible checks."
   site-url: https://reviews.telepsichiatria.org
-  repo-url: https://github.com/albertoalamia/article_reviews
+  repo-url: https://github.com/albertoalamia/articles_reviews
   repo-actions: [issue]
   favicon: favicon.svg
   navbar:
@@ -32,7 +32,7 @@ website:
         text: About
     right:
       - icon: github
-        href: https://github.com/albertoalamia/article_reviews
+        href: https://github.com/albertoalamia/articles_reviews
       - text: telepsichiatria.org
         href: https://telepsichiatria.org
   page-footer:
@@ -40,7 +40,7 @@ website:
     right: "Built with Quarto · Code and data in the repository."
   comments:
     giscus:
-      repo: albertoalamia/article_reviews
+      repo: albertoalamia/articles_reviews
       category: Reviews
       mapping: pathname
       reactions-enabled: true

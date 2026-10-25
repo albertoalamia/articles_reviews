@@ -70,5 +70,5 @@ here with permission / summarised. Changes made to the review in response: ...
 ## Reproducibility
 
 All numbers above are produced by the code in
-`SciRep_emotions_in_working_donkeys_Bukhari_2026/` of the [repository](https://github.com/albertoalamia/article_reviews).
+`SciRep_emotions_in_working_donkeys_Bukhari_2026/` of the [repository](https://github.com/albertoalamia/articles_reviews).
 Environment pinned in `shell.nix`.

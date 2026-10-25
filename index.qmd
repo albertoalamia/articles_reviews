@@ -18,7 +18,7 @@ comments: false
 Each review applies the same [protocol](protocol.qmd) to one published paper: design,
 measurement, model adequacy, internal consistency of the reported numbers, reporting-guideline
 compliance, and whether the conclusions follow. Every numerical check is reproducible from the
-code in the [repository](https://github.com/albertoalamia/article_reviews). Authors are
+code in the [repository](https://github.com/albertoalamia/articles_reviews). Authors are
 contacted before a review is posted and their replies are added.
 
 Methods and numbers are criticised, never people.

@@ -16,10 +16,10 @@ list of papers and flagged issues.
 
 Steps only you can do, in order. Everything else is in the repo.
 
-1. **GitHub repository** `albertoalamia/article_reviews` (created 2026-10-25). Remote already set:
+1. **GitHub repository** `albertoalamia/articles_reviews`, public, empty (no README). Remote already set:
    Then from this folder:
    ```bash
-   git remote add origin git@github.com:albertoalamia/article_reviews.git
+   git remote add origin git@github.com:albertoalamia/articles_reviews.git
    git push -u origin main
    ```
 2. **Enable GitHub Pages**: repository → Settings → Pages → Source: *GitHub Actions*.
