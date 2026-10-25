@@ -29,3 +29,7 @@ result
 *.swp
 
 **/*.quarto_ipynb
+
+# Gmail OAuth credentials must never enter the repo (public). Keep them in ~/.config/gmail_sender/.
+client_secret*.json
+token.json

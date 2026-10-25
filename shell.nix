@@ -45,6 +45,9 @@ let
     languageserver
   ];
 
+  # Python only for tools/send_email.py (Gmail API). Credentials live outside the repo.
+  myPython = pkgs.python3.withPackages (p: [ p.google-api-python-client p.google-auth-oauthlib p.google-auth-httplib2 ]);
+
   myR = pkgs.rWrapper.override { packages = rlibs; };
   myQuarto = pkgs.quarto.override { extraRPackages = rlibs; };
 in
@@ -54,6 +57,7 @@ pkgs.mkShell {
   packages = [
     myR
     myQuarto
+    myPython
     pkgs.cmdstan          # 2.36.0: stanc, makefiles, prebuilt libs; sets $CMDSTAN
     pkgs.texliveMedium
     pkgs.poppler-utils    # pdftotext for extracting tables from papers
