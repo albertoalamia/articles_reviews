@@ -1,0 +1,10 @@
+outcome,unit,condition,mean,sd,n_stated
+SBR,blinks/min,control,18.94,5.83,NA
+SBR,blinks/min,positive,37.94,8.37,NA
+SBR,blinks/min,negative,12.20,5.89,NA
+ET,degC,control,34.55,0.93,NA
+ET,degC,positive,35.33,1.02,NA
+ET,degC,negative,35.75,0.99,NA
+RMSSD,ms,control,47.26,17.52,NA
+RMSSD,ms,positive,80.23,27.23,NA
+RMSSD,ms,negative,57.35,20.30,NA

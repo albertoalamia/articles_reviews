@@ -1,0 +1,5 @@
+variable,unit,mean,sd,source
+ambient_temperature,degC,25.65,4.55,Table 1
+humidity,percent,34.64,5.79,Table 1
+wind_speed,km/h,0.78,0.31,Table 1
+wind_speed_text,m/s,0.21,NA,Results 2.2 text (l. 253-254)

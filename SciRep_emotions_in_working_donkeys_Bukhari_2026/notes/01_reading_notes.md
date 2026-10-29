@@ -191,10 +191,15 @@ the raw data.
 - Bland–Altman, coder 1 vs coder 2, one plot per condition. Bias −0.09 (control), −0.15 (positive),
   −0.17 (negative) blinks/min. "The limits of agreement were narrow (less than the SBR standard
   deviations) in all situations".
-- ⚑ Limits of agreement are not given numerically, only as "less than the SD"; no ICC or
-  coder-reliability coefficient; unclear whether agreement is on the per-minute counts or on the
-  per-condition mean [MEA-RELIAB, confirmed as incompletely reported]. Values could be read off Fig. 1
-  if needed.
+- ⚑ Limits of agreement are not in the text, only as labels on Fig. 1 (viewed 2026-10-29, p. 5):
+  control bias −0.09, LoA −1.85/1.67; positive −0.15, −2.51/2.22; negative −0.17, −1.94/1.59
+  (blinks/min). No ICC [MEA-RELIAB, confirmed as incompletely reported].
+- Fig. 1 also shows that every coder difference lies on an integer (−2 … 2) and every mean
+  (C1+C2)/2 on a half-integer grid → SBR per donkey per condition is an **integer count**. This makes
+  GRIM applicable to the SBR means: 18.94, 37.94, 19.0, 6.79 are attainable with n = 34; **12.20 is
+  not** (414/34 = 12.18, 415/34 = 12.21), nor is the Fig. 1C bias −0.17 (−5/34 = −0.15, −6/34 = −0.18)
+  [CON-GRIM, inferred — assumes n = 34 for that cell]. Ranges of the x-axes: control ≈ 9–33,
+  positive ≈ 22–65, negative ≈ 3–30 blinks/min, matching Fig. 2A whiskers.
 
 ### 2.2 Environment, Table 1 (ll. 252–261)
 - Table 1: ambient temperature 25.65 ± 4.55 °C, humidity 34.64 ± 5.79 %, wind speed 0.78 ± 0.31 km/h.

@@ -1,0 +1,4 @@
+condition,bias,loa_low,loa_high,source
+control,-0.09,-1.85,1.67,Fig 1A labels; bias also in text l. 231
+positive,-0.15,-2.51,2.22,Fig 1B labels; bias also in text l. 231
+negative,-0.17,-1.94,1.59,Fig 1C labels; bias also in text l. 232

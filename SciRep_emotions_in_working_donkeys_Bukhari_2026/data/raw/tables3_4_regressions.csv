@@ -1,0 +1,7 @@
+table,model,term,estimate,ci_low,ci_high,se,t,F,p_reported
+3,dRMSSD ~ dSBR + treatment + (1|donkey),Intercept,1.72,-2.97,6.43,2.42,0.71,NA,0.47
+3,dRMSSD ~ dSBR + treatment + (1|donkey),dSBR,1.32,0.85,1.79,0.24,5.44,29.60,<0.001
+3,dRMSSD ~ dSBR + treatment + (1|donkey),treatment_positive,10.82,3.32,18.28,3.83,2.82,7.95,0.006
+4,dRMSSD ~ dET + treatment + (1|donkey),Intercept,26.43,20.24,32.62,3.16,8.34,NA,<0.001
+4,dRMSSD ~ dET + treatment + (1|donkey),dET,-12.76,-16.97,-8.54,2.15,-5.93,35.18,<0.001
+4,dRMSSD ~ dET + treatment + (1|donkey),treatment_positive,21.66,17.02,26.37,2.37,9.11,82.99,<0.001

@@ -1,0 +1,7 @@
+outcome,unit,treatment,delta_mean,delta_sd,definition_as_printed
+SBR,blinks/min,positive,19.0,6.62,control minus positive
+SBR,blinks/min,negative,6.79,3.17,control minus negative
+ET,degC,positive,0.81,0.56,control minus positive
+ET,degC,negative,1.22,0.57,control minus negative
+RMSSD,ms,positive,37.73,15.95,control minus positive
+RMSSD,ms,negative,10.73,7.04,control minus negative
