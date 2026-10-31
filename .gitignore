@@ -33,3 +33,7 @@ result
 # Gmail OAuth credentials must never enter the repo (public). Keep them in ~/.config/gmail_sender/.
 client_secret*.json
 token.json
+
+# Raw .eml copies of received mail (optional, tools/fetch_email.py --save-eml): headers and addresses stay local
+**/correspondence/eml/
+__pycache__/
