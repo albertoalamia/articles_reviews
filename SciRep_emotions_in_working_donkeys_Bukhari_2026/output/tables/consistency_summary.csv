@@ -1,0 +1,61 @@
+block,check,value,verdict
+A contrasts,p reported vs Δ row: SBR positive,"t = 16.7, p_paired = 1.1e-17, reported = 0.002",inconsistent
+A contrasts,p reported vs Δ row: SBR negative,"t = 12.5, p_paired = 4.7e-14, reported < 0.001",consistent
+A contrasts,p reported vs Δ row: ET positive,"t = 8.4, p_paired = 9.6e-10, reported < 0.001",consistent
+A contrasts,p reported vs Δ row: ET negative,"t = 12.5, p_paired = 4.8e-14, reported < 0.001",consistent
+A contrasts,p reported vs Δ row: RMSSD positive,"t = 13.8, p_paired = 3.0e-15, reported = 0.005",inconsistent
+A contrasts,p reported vs Δ row: RMSSD negative,"t = 8.9, p_paired = 2.8e-10, reported < 0.001",consistent
+A contrasts,p ordering: ET,larger t (negative) p 0.001 vs smaller t (positive) p 0.001,consistent
+A contrasts,p ordering: RMSSD,larger t (positive) p 0.005 vs smaller t (negative) p 0.001,inconsistent
+A contrasts,p ordering: SBR,larger t (positive) p 0.002 vs smaller t (negative) p 0.001,inconsistent
+B deltas,Δ sign: SBR positive,"defined -19.00, printed +19.00",inconsistent
+B deltas,Δ sign: SBR negative,"defined +6.74, printed +6.79",consistent
+B deltas,Δ sign: ET positive,"defined -0.78, printed +0.81",inconsistent
+B deltas,Δ sign: ET negative,"defined -1.20, printed +1.22",inconsistent
+B deltas,Δ sign: RMSSD positive,"defined -32.97, printed +37.73",inconsistent
+B deltas,Δ sign: RMSSD negative,"defined -10.09, printed +10.73",inconsistent
+B deltas,Δ magnitude: SBR positive,"|diff of means| 19.00 (range 18.99–19.01), printed 19.00",consistent
+B deltas,Δ magnitude: SBR negative,"|diff of means| 6.74 (range 6.73–6.75), printed 6.79",inconsistent
+B deltas,Δ magnitude: ET positive,"|diff of means| 0.78 (range 0.77–0.79), printed 0.81",inconsistent
+B deltas,Δ magnitude: ET negative,"|diff of means| 1.20 (range 1.19–1.21), printed 1.22",inconsistent
+B deltas,Δ magnitude: RMSSD positive,"|diff of means| 32.97 (range 32.96–32.98), printed 37.73",inconsistent
+B deltas,Δ magnitude: RMSSD negative,"|diff of means| 10.09 (range 10.08–10.10), printed 10.73",inconsistent
+C GRIM,"SBR mean, control",18.94 with n = 34 (nearest attainable 18.912 / 18.941),attainable
+C GRIM,"SBR mean, positive",37.94 with n = 34 (nearest attainable 37.912 / 37.941),attainable
+C GRIM,"SBR mean, negative",12.20 with n = 34 (nearest attainable 12.176 / 12.206),not attainable
+C GRIM,"Δ SBR mean, positive",19.00 with n = 34 (nearest attainable 19.000 / 19.000),attainable
+C GRIM,"Δ SBR mean, negative",6.79 with n = 34 (nearest attainable 6.765 / 6.794),attainable
+C GRIM,"Fig. 1 bias (C1−C2), control",-0.09 with n = 34 (nearest attainable -0.118 / -0.088),attainable
+C GRIM,"Fig. 1 bias (C1−C2), positive",-0.15 with n = 34 (nearest attainable -0.176 / -0.147),attainable
+C GRIM,"Fig. 1 bias (C1−C2), negative",-0.17 with n = 34 (nearest attainable -0.176 / -0.147),not attainable
+C GRIM,age (whole years),6.05 with n = 34 (nearest attainable 6.029 / 6.059),not attainable
+C GRIM,age (half years),6.05 with n = 34 (nearest attainable 6.044 / 6.059),not attainable
+C GRIM,BCS (half points),2.88 with n = 34 (nearest attainable 2.868 / 2.882),attainable
+D regressions,"Table 3 Intercept: est/SE vs t, t² vs F",est/SE = 0.71 (t 0.71); t² = 0.50 (F    NA); CI/SE = 1.94 → df ≈ >1000,consistent
+D regressions,"Table 3 dSBR: est/SE vs t, t² vs F",est/SE = 5.50 (t 5.44); t² = 29.59 (F 29.60); CI/SE = 1.96 → df ≈ >1000,inconsistent
+D regressions,"Table 3 treatment_positive: est/SE vs t, t² vs F",est/SE = 2.83 (t 2.82); t² = 7.95 (F  7.95); CI/SE = 1.95 → df ≈ >1000,consistent
+D regressions,"Table 4 Intercept: est/SE vs t, t² vs F",est/SE = 8.36 (t 8.34); t² = 69.56 (F    NA); CI/SE = 1.96 → df ≈ >1000,consistent
+D regressions,"Table 4 dET: est/SE vs t, t² vs F",est/SE = -5.93 (t -5.93); t² = 35.16 (F 35.18); CI/SE = 1.96 → df ≈ 4735,consistent
+D regressions,"Table 4 treatment_positive: est/SE vs t, t² vs F",est/SE = 9.14 (t 9.11); t² = 82.99 (F 82.99); CI/SE = 1.97 → df ≈ 189,consistent
+D regressions,Table 3 Intercept vs Table 2 Δ means,"reported 1.72, implied 1.77",consistent (regressions ran on the printed Δ)
+D regressions,Table 3 treatment_positive vs Table 2 Δ means,"reported 10.82, implied 10.88",consistent (regressions ran on the printed Δ)
+D regressions,Table 4 Intercept vs Table 2 Δ means,"reported 26.43, implied 26.30",consistent (regressions ran on the printed Δ)
+D regressions,Table 4 treatment_positive vs Table 2 Δ means,"reported 21.66, implied 21.77",consistent (regressions ran on the printed Δ)
+E implied r,within-donkey r: SBR positive,0.62,feasible
+E implied r,within-donkey r: SBR negative,0.85,feasible
+E implied r,within-donkey r: ET positive,0.84,feasible
+E implied r,within-donkey r: ET negative,0.83,feasible
+E implied r,within-donkey r: RMSSD positive,0.83,feasible
+E implied r,within-donkey r: RMSSD negative,0.94,feasible
+F power,"correlation, point-biserial model, two-sided","n required 42, power at n = 34: 0.904",does not give n = 34
+F power,"correlation, point-biserial model, one-sided","n required 34, power at n = 34: 0.950",gives n = 34
+F power,"correlation, bivariate normal (Fisher z approx.), two-sided","n required 47, power at n = 34: 0.864",does not give n = 34
+F power,"correlation, bivariate normal (Fisher z approx.), one-sided","n required 39, power at n = 34: 0.921",does not give n = 34
+F power,"paired t, d_z = 0.5, two-sided","n required 54, power at n = 34: 0.808",does not give n = 34
+F power,"paired t, d_z = 0.5, one-sided","n required 45, power at n = 34: 0.887",does not give n = 34
+F power,"paired t at the paper's own d_z (Δ SBR positive), two-sided","n required 4, power at n = 34: 1.000",does not give n = 34
+F power,"paired t at the paper's own d_z (Δ SBR negative), two-sided","n required 6, power at n = 34: 1.000",does not give n = 34
+F power,"paired t at the paper's own d_z (Δ ET positive), two-sided","n required 9, power at n = 34: 1.000",does not give n = 34
+F power,"paired t at the paper's own d_z (Δ ET negative), two-sided","n required 6, power at n = 34: 1.000",does not give n = 34
+F power,"paired t at the paper's own d_z (Δ RMSSD positive), two-sided","n required 5, power at n = 34: 1.000",does not give n = 34
+F power,"paired t at the paper's own d_z (Δ RMSSD negative), two-sided","n required 8, power at n = 34: 1.000",does not give n = 34

@@ -1,0 +1,5 @@
+table,term,covariate,estimate,b,x_pos,x_neg,y_pos,y_neg,implied_from_table2,difference,raw_treatment_difference,assumption
+3,Intercept,dSBR,1.72,1.32,19,6.79,37.73,10.73,1.7672000000000008,-0.0472000000000008,26.999999999999996,OLS identities; exact only if the donkey random-intercept variance is 0 and groups balanced
+3,treatment_positive,dSBR,10.82,1.32,19,6.79,37.73,10.73,10.882799999999996,-0.06279999999999575,26.999999999999996,OLS identities; exact only if the donkey random-intercept variance is 0 and groups balanced
+4,Intercept,dET,26.43,-12.76,0.81,1.22,37.73,10.73,26.2972,0.13279999999999959,26.999999999999996,OLS identities; exact only if the donkey random-intercept variance is 0 and groups balanced
+4,treatment_positive,dET,21.66,-12.76,0.81,1.22,37.73,10.73,21.7684,-0.10839999999999961,26.999999999999996,OLS identities; exact only if the donkey random-intercept variance is 0 and groups balanced

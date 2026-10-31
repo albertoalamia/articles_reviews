@@ -1,0 +1,13 @@
+test,effect,n_required,power_at_34,alpha,power_target,n_stated,gives_34
+"correlation, point-biserial model, two-sided",0.5,42,0.903868238115263,0.05,0.95,34,FALSE
+"correlation, point-biserial model, one-sided",0.5,34,0.950445484262921,0.05,0.95,34,TRUE
+"correlation, bivariate normal (Fisher z approx.), two-sided",0.5,47,0.8639944942141264,0.05,0.95,34,FALSE
+"correlation, bivariate normal (Fisher z approx.), one-sided",0.5,39,0.9212534857575678,0.05,0.95,34,FALSE
+"paired t, d_z = 0.5, two-sided",0.5,54,0.8077766855150784,0.05,0.95,34,FALSE
+"paired t, d_z = 0.5, one-sided",0.5,45,0.8868653118503238,0.05,0.95,34,FALSE
+"paired t at the paper's own d_z (Δ SBR positive), two-sided",2.8700906344410875,4,1,0.05,0.95,34,FALSE
+"paired t at the paper's own d_z (Δ SBR negative), two-sided",2.141955835962145,6,1,0.05,0.95,34,FALSE
+"paired t at the paper's own d_z (Δ ET positive), two-sided",1.4464285714285714,9,0.9999999997401885,0.05,0.95,34,FALSE
+"paired t at the paper's own d_z (Δ ET negative), two-sided",2.1403508771929824,6,1,0.05,0.95,34,FALSE
+"paired t at the paper's own d_z (Δ RMSSD positive), two-sided",2.3655172413793104,5,1,0.05,0.95,34,FALSE
+"paired t at the paper's own d_z (Δ RMSSD negative), two-sided",1.5241477272727273,8,0.999999999985456,0.05,0.95,34,FALSE

@@ -76,17 +76,22 @@ Line numbers refer to `paper/Bukhari_2026_fulltext.txt`. Quotes are verbatim. It
 - ⚑ Internal contradiction: horse data "not used to derive the effect size", then ρ justified by
   comparability with horses [DES-POWER, confirmed].
 - ⚑ ρ is a correlation effect size. The primary analyses are within-subject condition contrasts and
-  mixed models; no correlation test is reported as primary. Which G*Power test yields n = 34 for ρ = 0.5,
-  α = 0.05, 1−β = 0.95 is unclear (a two-sided bivariate correlation test needs ≈ 46; one-sided ≈ 38).
-  → recompute in `R/02_consistency_checks.R` with `pwr` [DES-POWER, confirmed/needs recomputation].
+  mixed models; no correlation test is reported as primary. Recomputed 2026-10-31
+  (`R/02_consistency_checks.R`, block F): the only standard test that gives exactly n = 34 is
+  G*Power's "Correlation: point biserial model", **one-sided**, ρ = 0.5, α = 0.05, power 0.95
+  (power at n = 34: 0.950). Two-sided it needs 42; the bivariate-normal model needs 47 (two-sided)
+  or 39 (one-sided); a paired t at d_z = 0.5 needs 54. So the number is reproducible, but it comes
+  from a one-sided correlation test unrelated to the paired contrasts actually analysed. The paper's
+  own effect sizes (d_z 1.4–2.9) would have required 4–9 donkeys [DES-POWER, confirmed].
 
 ### 5.3 Animals (ll. 642–656)
 - 34 Pakistani working donkeys; age 6.05 ± 0.31 y; 20 jennies, 14 jacks; BCS 2.88 ± 0.40 (Donkey Sanctuary
   1–5 scale); health by SEBWAT (ref 15); no medication in the previous month (owner report).
 - ⚑ Age SD 0.31 y in 34 working donkeys implies nearly all animals aged exactly 6. If ages are integers,
   6.05 is GRIM-inconsistent (6.05 × 34 = 205.7, not an integer; nearest feasible means 6.03 and 6.06).
-  Ages estimated by dentition in half-years would make it feasible. [CON-GRIM, needs-data] → check with
-  `grim_consistent(6.05, 34)` and `(…, items = 2)` for half-year resolution.
+  Checked 2026-10-31 (block C): **not attainable at half-year resolution either** (68 half-years would
+  have to sum to a value in [411.06, 411.74)); nearest 6.04 and 6.06. Quarter-years would attain it.
+  [CON-GRIM, needs-data: age resolution and n]
 - BCS 2.88 with half-point scale: 2.88 × 34 = 97.9 ≈ 98/34 = 2.882 → feasible.
 - Table 1 title mentions BCS but the table lists only ambient variables (ll. 258–262) [CON-XREF, minor, confirmed].
 

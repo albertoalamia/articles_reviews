@@ -51,8 +51,10 @@ Evidence tags: confirmed / inferred / needs-data.
 - B7 Sample size justification: G*Power, α = 0.05, power 0.95, "effect size (ρ = 0.5)" → n = 34.
   ρ is a correlation effect size; the primary analyses are paired condition contrasts. Text says
   horse data were "not [used] to derive the effect size", then justifies ρ by comparability with
-  horses. Which test gives 34 is unclear (bivariate correlation two-sided ≈ 46, one-sided ≈ 38).
-  → recompute with `pwr`. [DES-POWER, confirmed]
+  horses. Recomputed (block F of the consistency script): n = 34 is exactly what G*Power's
+  point-biserial correlation model gives **one-sided** at ρ = 0.5 (two-sided 42; bivariate-normal 47/39;
+  paired t at d_z = 0.5: 54). Reproducible, but a one-sided correlation test for a paired-contrast
+  design; the paper's own d_z (1.4–2.9) need 4–9 donkeys. [DES-POWER, confirmed]
 - B8 Blinding: none stated for coders (condition visible on video), thermography reading, or
   analysis. [DES-BLIND, confirmed as unreported]
 - B9 Manipulation check: none. No behaviour other than blinking, no HR, no latency, no approach/
@@ -123,9 +125,11 @@ Evidence tags: confirmed / inferred / needs-data.
   t ≈ 11). Ordering argument: the contrast with the larger t has the larger p for both SBR and
   RMSSD. Tables 3–4: estimate/SE reproduces t, t² reproduces F, CI = ±1.96 SE — internally
   consistent. [CON-STAT, confirmed]
-- E2 GRIM / GRIMMER: age 6.05 ± 0.31 y, n = 34: 6.05 × 34 = 205.7, inconsistent with integer ages;
-  feasible with half-year ages. BCS 2.88 feasible on a half-point scale. → `grim_consistent()`.
-  [CON-GRIM, needs-data]
+- E2 GRIM / GRIMMER: age 6.05 ± 0.31 y, n = 34: not attainable with whole-year ages (205.7) nor with
+  half-year ages (411.4); quarter-years would. BCS 2.88 attainable on a half-point scale. SBR means:
+  18.94, 37.94, 19.0, 6.79 attainable with 34 integers, **12.20 not** (12.18 / 12.21); Fig. 1C bias
+  −0.17 not attainable with 34 integer differences (−0.15 / −0.18). Script block C.
+  [CON-GRIM: age needs-data; SBR 12.20 inferred (assumes n = 34)]
 - E3 Derived quantities: difference of means vs reported Δ: SBR pos exact; SBR neg 6.74 vs 6.79;
   ET pos 0.78 vs 0.81; ET neg 1.20 vs 1.22; RMSSD pos 32.97 vs 37.73; RMSSD neg 10.09 vs 10.73.
   Signs: 5/6 contradict the definition. Implied within-donkey correlations from the Δ SDs are

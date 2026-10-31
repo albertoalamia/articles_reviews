@@ -1,0 +1,4 @@
+outcome,larger_t_treatment,larger_t_p_reported,larger_t_p_type,smaller_t_treatment,smaller_t_p_reported,smaller_t_p_type,ordering_violated
+ET,negative,0.001,less_than,positive,0.001,less_than,FALSE
+RMSSD,positive,0.005,exact,negative,0.001,less_than,TRUE
+SBR,positive,0.002,exact,negative,0.001,less_than,TRUE

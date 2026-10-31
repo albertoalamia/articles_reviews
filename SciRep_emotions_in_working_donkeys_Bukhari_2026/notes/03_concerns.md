@@ -149,8 +149,12 @@ the SBR GRIM failure, pre-registration, overgeneralisation. Downgraded none; upg
 - Location: Methods FT l. 632–641
 - What: G*Power with "effect size (ρ = 0.5)", α 0.05, power 0.95 → 34. ρ is a correlation; the
   primary analyses are paired contrasts. Horse data "not [used] to derive the effect size", then ρ
-  justified by comparability with horses. A two-sided correlation test needs ≈ 46, one-sided ≈ 38.
-- How to check: `pwr::pwr.r.test` and `pwr.t.test(type = "paired")` in the consistency script.
+  justified by comparability with horses. Recomputed (script block F, 2026-10-31): n = 34 is
+  reproduced exactly by G*Power's point-biserial correlation model, one-sided (power 0.950 at 34);
+  two-sided it needs 42, the bivariate-normal model 47 (two-sided) or 39 (one-sided), a paired t at
+  d_z = 0.5 needs 54. So the figure is reproducible but rests on a one-sided correlation test
+  unrelated to the paired contrasts analysed; at the paper's own d_z (1.4–2.9) 4–9 donkeys suffice.
+- How to check: done, `output/tables/consistency_power.csv`.
 
 ### M8. Blink-rate mean for the negative condition fails GRIM
 - Code: CON-GRIM — Severity: major — Evidence: inferred (assumes integer SBR, supported by Fig. 1,
@@ -241,9 +245,10 @@ the SBR GRIM failure, pre-registration, overgeneralisation. Downgraded none; upg
 
 ### m8. Age summary not attainable with integer ages
 - Code: CON-GRIM — Severity: minor — Evidence: needs-data
-- What: 6.05 × 34 = 205.7; attainable with half-year ages (dentition). SD 0.31 y in 34 working
-  donkeys is unusually homogeneous.
-- How to check: `grim_consistent(6.05, 34)` and `grim_consistent(6.05, 34, items = 2)`.
+- What: 6.05 × 34 = 205.7; not attainable with whole-year ages, nor with half-year ages (411.4);
+  quarter-year resolution would attain it. SD 0.31 y in 34 working donkeys is unusually homogeneous.
+- How to check: done, `output/tables/consistency_grim.csv` (both resolutions FALSE); ask the
+  authors how age was estimated.
 
 ### m9. Text–table–figure disagreements
 - Code: CON-XREF — Severity: minor — Evidence: confirmed
