@@ -24,6 +24,10 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 - `notes/02_methods_inventory.md` — protocol checklist A–G filled in.
 - `notes/03_concerns.md` — one entry per concern, tagged confirmed / inferred / needs-data,
   mirrored as rows in `registry/issues.csv`.
+- `notes/04_analysis_plan.md` — the shared specification for stages 3 (frequentist) and 4
+  (Bayesian): estimands, family, structure, contrasts, priors; written before fitting.
+- `correspondence/` — every message sent (`tools/send_email.py`) and received
+  (`tools/fetch_email.py`), plus `contacts.md` with the log table.
 - `data/raw/` — numbers as extracted from tables/figures (one CSV per table, with an
   `EXTRACTION_LOG.md` saying where each came from) or data received from the authors.
 - `data/derived/` — tidy data and `*.json` for CmdStan, produced by `R/01_prepare_data.R`.

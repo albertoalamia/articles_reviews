@@ -42,17 +42,29 @@ quarto render                               # full render; writes _freeze/ (comm
 
 ## Workflow for one paper
 
-Phases, one conversation each, started from the repo root:
+Five stages, each its own conversation, started from the repo root. Stages 3 and 4 share one
+model so that their results can be compared in a single table.
 
-1. **Reading and inventory.** Fill `notes/01_reading_notes.md` and `notes/02_methods_inventory.md`
-   (protocol A–G). Extract reported numbers into `data/raw/` with an `EXTRACTION_LOG.md`.
-   Run `R/02_consistency_checks.R`. Write `notes/03_concerns.md`; add rows to `registry/issues.csv`.
-2. **Data.** Reconstruct from tables/figures/supplement, or request from authors (log the
-   request in `correspondence/`). `R/01_prepare_data.R` writes JSON for CmdStan.
-3. **Re-analysis.** `.stan` files in `stan/`, run via `run_model.sh`, draws in `$FITS_DIR`,
-   post-processing in `R/03_postprocess.R`. Report what changes and what does not.
-4. **Write-up.** `review.qmd` following the template sections. Keep `draft: true` until the
-   authors have been contacted. Freeze, render, check, then set `draft: false` and push.
+1. **Methodology review.** Fill `notes/01_reading_notes.md` (section by section, verbatim quotes)
+   and `notes/02_methods_inventory.md` (protocol A–H). Transcribe every reported number into
+   `data/raw/` with an `EXTRACTION_LOG.md`; save native figure rasters with hashes. Write and run
+   `R/02_consistency_checks.R` from the raw files, outputs in `output/tables/`. Re-verify
+   `notes/03_concerns.md` with evidence tags; add rows to `registry/issues.csv`. Send the data
+   request and log it in `correspondence/`.
+2. **Reproduce the authors' analysis.** On their data if they share it, otherwise on data
+   reconstructed from tables and figures (digitised points, simulated pairs from means, SDs and
+   implied correlations), each with its own log in `data/derived/`. Refit exactly the models
+   described and report what reproduces and what does not. `R/01_prepare_data.R` writes JSON for
+   CmdStan.
+3. **Frequentist alternative.** Write `notes/04_analysis_plan.md` first: outcome families, fixed
+   and random structure, contrasts and estimands, stated so that each maps one-to-one onto a Stan
+   program. Then fit it (lme4/glmmTMB or equivalent) and report estimates with intervals.
+4. **Bayesian analysis.** The same likelihood, structure, contrasts and estimands as stage 3, as
+   `.stan` files in `stan/`, run via `run_model.sh`, draws in `$FITS_DIR`, post-processing in
+   `R/03_postprocess.R`. Priors, diagnostics and sensitivity reported. Stage 3 and stage 4 results
+   go side by side in one table in `review.qmd`.
+5. **Write-up.** `review.qmd` following the template sections. Keep `draft: true` until the
+   right-of-reply rule below is satisfied. Freeze, render, check, then set `draft: false` and push.
 
 End every session by updating the article `CLAUDE.md` STATUS (done / decided and why / open
 questions / next step) and `registry/papers.csv` status.
@@ -66,8 +78,12 @@ questions / next step) and `registry/papers.csv` status.
   (depends on an assumption), `needs-data`. Do not upgrade a tag without saying why.
 - **Phrasing.** Criticise methods and numbers, never intent or integrity. Write "inconsistent with
   the reported data", not "wrong" or "manipulated". Italian defamation law applies to Alberto.
-- **Right of reply.** Nothing is published before the corresponding author has been sent the
-  review. Record dates and text in `correspondence/`. Replies are published with the review.
+- **Right of reply.** The corresponding authors are contacted at the data-request stage, with
+  notice that a methodological commentary will be published. If they engage, they receive the
+  full review before publication and their reply is published with it. If no reply arrives
+  within three weeks of the request, publication proceeds without a second notice, as the request
+  itself states. Record every message, sent and received, in `correspondence/` (send with
+  `tools/send_email.py`, fetch with `tools/fetch_email.py`).
 - **Separate judgment.** Claude drafts, recomputes, and proposes; Alberto decides what goes in
   the final review. Flag anything Claude is unsure of rather than smoothing it over.
 - **Reproducibility.** Every number in a review comes from code in the article folder, run in
