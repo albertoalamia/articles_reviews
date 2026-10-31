@@ -19,6 +19,12 @@ Draft format (what correspondence/*.md already look like):
 
 Header lines are matched case-insensitively. The "(optional)" word in a Cc line is dropped.
 
+The body is reflowed before sending: lines that were hard-wrapped by the editor (a line of 60+
+characters followed by more text) are joined into one paragraph line, so the recipient's client
+wraps them. Blank-line paragraph breaks, list items, quotes, URLs on their own line, fenced
+blocks and short lines (greeting, signature) are left as written. --no-reflow disables this.
+The preview shows the body exactly as it will be sent.
+
 Credentials: an OAuth client secret and a token with the gmail.compose scope, in the directory
 $GMAIL_CREDENTIALS_DIR (default ~/.config/gmail_sender/): client_secret*.json and token.json.
 The first run (or an expired token) opens a browser for Google login and rewrites token.json.
@@ -62,6 +68,34 @@ def parse_draft(path: Path):
     if not body.strip():
         sys.exit(f"{path}: empty body")
     return headers, body
+
+
+WRAP_MIN = 60   # a line at least this long followed by text is treated as hard-wrapped prose
+
+
+def reflow(body: str, wrap_min: int = WRAP_MIN) -> str:
+    """Join hard-wrapped lines inside paragraphs so the mail client wraps them itself.
+
+    A line is joined to the previous one when the previous line is at least `wrap_min`
+    characters long (i.e. it was wrapped by the editor, not ended on purpose) and the current
+    line is not blank, not a list item, not a quote, not a bare URL and not inside a ``` fence.
+    Short lines (greetings, signature, addresses) and blank-line-separated paragraphs are kept.
+    """
+    out, in_fence, prev = [], False, None
+    starts_block = re.compile(r"^\s*(?:[-*•]\s|\d+[.)]\s|>|https?://)")
+    for line in body.splitlines():
+        if line.strip().startswith("```"):
+            in_fence = not in_fence
+            out.append(line); prev = None
+            continue
+        if (prev is not None and not in_fence and line.strip()
+                and len(prev.rstrip()) >= wrap_min and not starts_block.match(line)):
+            out[-1] = out[-1].rstrip() + " " + line.strip()
+            prev = out[-1]
+            continue
+        out.append(line)
+        prev = line if line.strip() else None
+    return "\n".join(out)
 
 
 def build_message(headers, body, attachments):
@@ -127,9 +161,13 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="show the message and exit without sending")
     ap.add_argument("--no-mark", action="store_true", help="do not rename/annotate the draft after sending")
     ap.add_argument("--yes", action="store_true", help="skip the confirmation prompt")
+    ap.add_argument("--no-reflow", action="store_true",
+                    help="send the body line by line as written (default: join hard-wrapped lines within paragraphs)")
     args = ap.parse_args()
 
     headers, body = parse_draft(args.draft)
+    if not args.no_reflow:
+        body = reflow(body)
     msg = build_message(headers, body, args.attach)
 
     print("=" * 72)
