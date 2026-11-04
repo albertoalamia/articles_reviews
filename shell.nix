@@ -39,6 +39,11 @@ let
     loo
     tidybayes
     ggdist
+    # frequentist mixed models (stage 2 reproduction of lme4/lmerTest fits, stage 3 alternative)
+    lme4
+    lmerTest        # Satterthwaite df, as the paper's p-values presumably were
+    emmeans
+    glmmTMB         # count / Gamma GLMMs for stage 3
     # consistency checks and tests of lib/
     testthat
     # editor support (R.nvim / LSP)
