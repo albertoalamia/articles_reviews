@@ -1,0 +1,15 @@
+table,test,statistic,df,p
+3,"Shapiro-Wilk, studentised residuals",0.9507445079941018,NA,0.009212330122753215
+3,Breusch-Pagan (Koenker) on x + treatment,14.130505529644754,2,8.542789613995681e-4
+3,Brown-Forsythe: residual variance by treatment,13.056667847316872,"1,66",5.843703068857423e-4
+3,"F ratio of residual variances, positive / negative",4.944280481118928,"33,33",1.3942121475621284e-5
+3,"RESET (fitted^2, fitted^3): functional form",1.9756187609313323,"2,63",0.1471740115705136
+3,x × treatment interaction (F vs authors' model),0.0574438271971501,"1,64",0.8113486232587941
+3,Spearman |studentised residual| vs fitted (variance grows with mean),0.5408680573823921,NA,1.920134301480769e-6
+4,"Shapiro-Wilk, studentised residuals",0.9107647250961695,NA,1.325990865002474e-4
+4,Breusch-Pagan (Koenker) on x + treatment,9.071969476949521,2,0.010716349227539279
+4,Brown-Forsythe: residual variance by treatment,11.115957786754619,"1,66",0.0014068908282649714
+4,"F ratio of residual variances, positive / negative",5.542889629569657,"33,33",3.7203948427338203e-6
+4,"RESET (fitted^2, fitted^3): functional form",3.0340743341008265,"2,63",0.055204709717488296
+4,x × treatment interaction (F vs authors' model),3.6368014353278357,"1,64",0.06100581982507441
+4,Spearman |studentised residual| vs fitted (variance grows with mean),0.5208823379305876,NA,5.269548527406864e-6
