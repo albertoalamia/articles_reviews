@@ -45,8 +45,11 @@ let
     languageserver
   ];
 
-  # Python only for tools/send_email.py (Gmail API). Credentials live outside the repo.
-  myPython = pkgs.python3.withPackages (p: [ p.google-api-python-client p.google-auth-oauthlib p.google-auth-httplib2 ]);
+  # Python for tools/: Gmail API scripts (credentials live outside the repo) and the figure digitiser.
+  myPython = pkgs.python3.withPackages (p: [
+    p.google-api-python-client p.google-auth-oauthlib p.google-auth-httplib2   # tools/send_email.py, fetch_email.py
+    p.pillow p.numpy p.scipy                                                   # tools/digitise_scatter.py
+  ]);
 
   myR = pkgs.rWrapper.override { packages = rlibs; };
   myQuarto = pkgs.quarto.override { extraRPackages = rlibs; };

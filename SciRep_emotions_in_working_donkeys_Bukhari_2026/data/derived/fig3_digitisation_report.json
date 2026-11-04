@@ -1,0 +1,104 @@
+{
+ "image": "data/raw/figures/fig3_dRMSSD_vs_dSBR_p8.png",
+ "size": [
+  1263,
+  947
+ ],
+ "calibration": {
+  "x": {
+   "a": -6.303114628311519,
+   "b": 0.045935573185859474,
+   "px": [
+    137.49923242247468,
+    354.54024556616645,
+    572.5063414634146,
+    790.4970722186076
+   ],
+   "ticks": [
+    0.0,
+    10.0,
+    20.0,
+    30.0
+   ],
+   "max_abs_resid": 0.017105230774291158,
+   "spacing_px": [
+    217.04101314369177,
+    217.96609589724818,
+    217.990730755193
+   ],
+   "spacing_cv": 0.002030676464504145
+  },
+  "y": {
+   "a": 80.6248524477324,
+   "b": -0.10009730248723617,
+   "px": [
+    205.9992110453649,
+    405.99839163650984,
+    605.5163580246914,
+    805.5116829340432
+   ],
+   "ticks": [
+    60.0,
+    40.0,
+    20.0,
+    0.0
+   ],
+   "max_abs_resid": 0.014491369238704976,
+   "spacing_px": [
+    199.99918059114495,
+    199.51796638818155,
+    199.99532490935178
+   ],
+   "spacing_cv": 0.001130634898541795
+  },
+  "panel_px": [
+   -80.2,
+   1008.2,
+   6.2,
+   1005.3
+  ],
+  "px_per_unit_x": 21.769620593475775,
+  "px_per_unit_y": -9.990279209846982
+ },
+ "series": {
+  "positive": {
+   "blobs": 30,
+   "points": 34,
+   "blobs_split": 4,
+   "alpha_estimate": 0.804,
+   "fitted_line": {
+    "slope_px": -0.6086810568280165,
+    "intercept_px": 763.8975409350497,
+    "half_width_px": 4.069611416753657,
+    "n_pixels": 4458
+   },
+   "single_point_area_px": 229.0,
+   "blob_area_min": 86,
+   "blob_area_max": 398
+  },
+  "negative": {
+   "blobs": 23,
+   "points": 35,
+   "blobs_split": 5,
+   "alpha_estimate": 0.808,
+   "fitted_line": {
+    "slope_px": -0.6029533420303597,
+    "intercept_px": 867.4909608076537,
+    "half_width_px": 5.352561638740701,
+    "n_pixels": 4144
+   },
+   "single_point_area_px": 262.0,
+   "blob_area_min": 60,
+   "blob_area_max": 807
+  }
+ },
+ "tol": 70,
+ "open_radius": 3,
+ "seed": 1,
+ "xpad": 1.0,
+ "ypad": 1.0,
+ "gridline_candidates": {
+  "vertical": 4,
+  "horizontal": 4
+ }
+}

@@ -1,0 +1,5 @@
+figure,series,n,x_resid_mean,x_resid_max,y_resid_mean,y_resid_max,n_y_resid_over_0.3
+3,negative,34,0,0,0,0,0
+3,positive,34,0,0,0,0,0
+4,negative,34,8.163404592832034e-17,4.440892098500626e-16,0,0,0
+4,positive,34,5.0613108475558606e-17,2.220446049250313e-16,0,0,0
