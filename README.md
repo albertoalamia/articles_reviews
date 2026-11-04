@@ -10,7 +10,7 @@ list of papers and flagged issues.
 
 | id | paper | track | status |
 |----|-------|-------|--------|
-| P001 | Bukhari et al. 2026, Sci Rep — HRV, eye temperature and blink rate in working donkeys | selected | reading |
+| P001 | Bukhari et al. 2026, Sci Rep — HRV, eye temperature and blink rate in working donkeys | selected | reanalysis |
 
 ## One-time setup (Alberto)
 

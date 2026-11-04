@@ -81,3 +81,45 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
   condition contrasts. Then write `notes/04_analysis_plan.md` for stages 3–4 (GLMM for SBR,
   log-normal/Gamma for RMSSD, three-level condition factor, positive − negative contrast,
   order; identical structure in Stan).
+
+### 2026-11-04 — Stage 2 complete (commits 29ea1b9 … 7a211d4)
+- Done: Figures 3–4 digitised with `tools/digitise_scatter.py` (transparency-based counting of
+  overlapping points) and `tools/resolve_stacks.py` (stacks under the fitted line resolved by the
+  cross-figure and Table 2 constraints); all 68 + 68 change scores recovered,
+  `data/derived/deltas_*.csv`, log in `DIGITISATION_LOG.md`. `R/04_reconcile_digitised.R`: every
+  Table 2 Δ mean and SD reproduced to the printed digit, Table 3 to the second decimal by OLS,
+  Table 4 within plotting rounding. `R/05_gof_authors_models.R`: goodness of fit of the Tables
+  3–4 models. `R/06_condition_contrasts.R` + `R/lib_simulate_conditions.R`: exact
+  signed-difference results for the six contrasts, enumeration of reversed-direction donkeys,
+  positive-vs-negative bounds, and the described mixed model refitted on 1800 simulated complete
+  datasets (3 outcomes × 3 pairing scenarios × 200), log in `SIMULATION_LOG.md`. `shell.nix`
+  gained pillow/numpy/scipy and lme4/lmerTest/emmeans/glmmTMB. Concerns updated (28 entries, M15
+  added), registry 32 rows, status `reanalysis`.
+- Key findings: (1) Table 2 Δ rows are the means/SDs of the plotted unsigned values; the donkeys
+  that moved against the group direction are pinned: none (SBR-pos), exactly one (SBR-neg), 2–4
+  (RMSSD-pos), 1–6 (RMSSD-neg), 1–5 and 0–2 (ET). (2) With reversals accounted for, the paired t
+  are 16.7 (SBR-pos) and 7.8 (RMSSD-pos) vs 3.4 and 3.0 needed for the reported p; the described
+  mixed model never reproduces 0.002 or 0.005 and orders the RMSSD p-values the other way round
+  (negative p 0.004–0.065 under it, not < 0.001). (3) The Tables 3–4 mean structure is adequate
+  (within-treatment slopes 1.21/1.36 for ΔSBR) but the error model is not: residual SD 2.2–2.4×
+  larger in the positive treatment, non-normal, negative fitted values in the ΔET model; GLS or
+  Gamma better by 17–28 AICc with the same predictive error. 55 % of R² is the treatment dummy;
+  the donkey random intercept is ≈ 0 (confirmed). (4) Positive vs negative differs for all three
+  outcomes under any pairing (ET: p 0.009 to 0.059).
+- Decided: reconstruction-based findings tagged `inferred` (assumption: n = 34 complete pairs, Δ
+  per donkey on the same values as the condition means, plotting rounding of ΔRMSSD/ΔET); the
+  absolute-value reading not upgraded to `confirmed` for the same reason. The RMSSD 0.005 matching
+  the negative contrast under the described model is noted as an observation, not written up as a
+  transposition (does not hold for SBR). Stage 3–4 outcome families: Gamma or log-normal for RMSSD
+  with condition-specific dispersion; count model for SBR; Gaussian for ET; three-level condition
+  factor, order, donkey intercept; positive − negative as a named contrast. The simulated example
+  dataset is for developing code only; inference on the ensemble or the authors' data.
+- Open questions: authors' data (request 2026-10-25, McElligott deferred to Parkes/Bukhari on
+  2026-10-26, follow-up due 2026-11-15); whether the condition models were six two-level or three
+  three-level fits; order as factor or numeric; version of record and reviewer reports;
+  `contacts.md` summary cell for McElligott's reply still to fill by hand; whether to add Panzera
+  & Statelli 2025 (PubPeer pointer filed) as a `selected` candidate.
+- Next step: Stage 3 — write `notes/04_analysis_plan.md` from the template (estimands, families,
+  fixed/random structure, contrasts, one row per Stan program), then fit with lme4/glmmTMB on the
+  simulated ensemble (or the authors' data) and report estimates with intervals; stage 4 mirrors
+  it in `stan/`.
