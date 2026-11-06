@@ -21,6 +21,7 @@ P001,INF-COMPAR,major,confirmed,Discussion para 2; Conclusion,"Claims that donke
 P001,REP-EFFECT,major,confirmed,Results 2.4,"No estimates or CIs for the six condition contrasts; RMSSD negative p reported only as a figure bracket"
 P001,REP-CODE,major,confirmed,Declarations,"Data on request only; no code statement"
 P001,MOD-ASSUMP,major,inferred,Methods 5.8; Results 2.4; Fig 2,"Condition mixed models pool one residual variance across conditions, so every contrast of an outcome gets the same SE; for RMSSD the pooled SE (3.4-3.9 ms) is 2.5-2.9 times the paired SE of the negative contrast and smaller than that of the positive one; under the described model the negative RMSSD contrast has p 0.004-0.065, not < 0.001"
+P001,INF-FOLLOW,major,confirmed,Results 2.5; Tables 3-4; Discussion para 1,"Coefficients on unsigned change scores read as a signed association (SBR rose under lucerne and fell under the clipper while RMSSD rose under both), as a treatment effect (10.82 = 27.0 - 1.32 x 12.2 at equal change in SBR; treatments overlap on that scale only between 10 and 14 blinks/min) and as a level (higher RMSSD level); intercepts refer to zero change, outside the data"
 P001,MOD-MULT,minor,confirmed,Results,"Ten tests across three outcomes without adjustment or framing"
 P001,MOD-STRUCT,minor,inferred,Methods 5.8,"Six two-condition models vs one three-level model not stated"
 P001,INF-GENER,minor,confirmed,Discussion para 3-4,"Generalisation from one stimulus per valence and one 3-min window; absence of a time course read as absence of a rebound"

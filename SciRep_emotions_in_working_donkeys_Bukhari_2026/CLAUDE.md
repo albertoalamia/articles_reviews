@@ -93,8 +93,9 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
   signed-difference results for the six contrasts, enumeration of reversed-direction donkeys,
   positive-vs-negative bounds, and the described mixed model refitted on 1800 simulated complete
   datasets (3 outcomes × 3 pairing scenarios × 200), log in `SIMULATION_LOG.md`. `shell.nix`
-  gained pillow/numpy/scipy and lme4/lmerTest/emmeans/glmmTMB. Concerns updated (28 entries, M15
-  added), registry 32 rows, status `reanalysis`.
+  gained pillow/numpy/scipy and lme4/lmerTest/emmeans/glmmTMB. Concerns updated (29 entries: M15 pooled
+  variance, M16 reading of the regression coefficients, added 2026-11-06), registry 33 rows,
+  status `reanalysis`.
 - Key findings: (1) Table 2 Δ rows are the means/SDs of the plotted unsigned values; the donkeys
   that moved against the group direction are pinned: none (SBR-pos), exactly one (SBR-neg), 2–4
   (RMSSD-pos), 1–6 (RMSSD-neg), 1–5 and 0–2 (ET). (2) With reversals accounted for, the paired t

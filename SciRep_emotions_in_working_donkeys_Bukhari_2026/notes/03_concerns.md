@@ -19,7 +19,7 @@ the SBR GRIM failure, pre-registration, overgeneralisation. Downgraded none; upg
 Tables 3–4 models tested (`R/05_gof_authors_models.R`), and the condition contrasts recomputed
 exactly from the signed-difference identity plus a simulated refit of the described mixed model
 (`data/derived/SIMULATION_LOG.md`). Entries C1, C2, C4, M1–M4, M13, m2 carry a "Stage 2" bullet;
-M15 added. 27 → 28 entries. Tags from stage 2 are `inferred` where they rest on the
+M15 added; M16 (2026-11-06) on the reading of the Tables 3–4 coefficients. 27 → 29 entries. Tags from stage 2 are `inferred` where they rest on the
 reconstruction (n = 34 complete pairs; plotting rounding of ΔRMSSD and ΔET), `confirmed` where
 the paper's own numbers suffice.
 
@@ -253,6 +253,11 @@ the paper's own numbers suffice.
 - Stage 2: Tables 3–4 also report no fit statistic; on the reconstructed data R² is 0.69 and 0.70,
   of which 0.55 is the treatment dummy (M1).
 
+### M14. Data on request only; no code
+- Code: REP-CODE — Severity: major — Evidence: confirmed
+- Location: Declarations FT l. 1029; Methods l. 785
+- What: no repository, no supplement, no code statement. Request sent 2026-10-25.
+
 ### M15. Condition models pool the residual variance across conditions
 - Code: MOD-ASSUMP — Severity: major — Evidence: inferred (simulation on data reconstructed to match
   Table 2 and Figures 3–4; `data/derived/SIMULATION_LOG.md`)
@@ -269,10 +274,40 @@ the paper's own numbers suffice.
 - How to check: stage 3 model with condition-specific residual variance (or unstructured
   within-donkey covariance); compare contrast SEs with the pooled model.
 
-### M14. Data on request only; no code
-- Code: REP-CODE — Severity: major — Evidence: confirmed
-- Location: Declarations FT l. 1029; Methods l. 785
-- What: no repository, no supplement, no code statement. Request sent 2026-10-25.
+### M16. The regression coefficients are read as signed associations, treatment effects and levels
+- Code: INF-FOLLOW — Severity: major — Evidence: confirmed (the paper's own definitions, Table 2
+  means and the printed coefficients suffice; the per-donkey counts quoted in support are
+  `inferred`, from the reconstruction)
+- Location: Results 2.5 FT l. 338–341 and 376–385; Tables 3–4; Discussion FT l. 429–433
+- What: the models regress the size of the RMSSD change on the size of the SBR or ET change plus a
+  treatment dummy (C1). Four readings in the text do not follow from that model.
+  (a) "A positive association was found between change in SBR and RMSSD (estimates = 1.32 …)": the
+  slope relates magnitudes within a treatment. In signed terms SBR rose under lucerne and fell
+  under the clipper (Table 2: 37.94 and 12.20 vs 18.94) while RMSSD rose under both, so the signed
+  relation is opposite in the two treatments and no single "positive association" exists. Per
+  donkey, SBR rose in all 34 lucerne trials and fell in 33 of 34 clipper trials; RMSSD rose in at
+  least 30 and 28 of 34 (`output/tables/contrasts_reversed_counts.csv`). The ΔET slope (−12.76)
+  keeps its sign only because ET and RMSSD moved the same way under both treatments.
+  (b) "the positive treatment predicted a higher change in RMSSD (estimates = 10.82 …) relative to
+  negative treatment": 10.82 is the difference at equal ΔSBR, i.e. 27.0 − 1.32 × 12.2, where 27.0
+  ms is the unadjusted difference and 12.2 blinks/min the treatment difference in ΔSBR. The
+  treatments overlap on ΔSBR only between 10 and 14 blinks/min (clipper 1–14, lucerne 10–37), so
+  the comparison is an extrapolation for most donkeys, and ΔSBR is itself a treatment response
+  (M1). The 21.66 of Table 4 is the same quantity adjusted for ΔET; the text presents the two as
+  two findings about the treatment.
+  (c) "A greater change in SBR and positive treatment was associated with a higher RMSSD level"
+  (l. 340–341; l. 384–385 for ET): the outcome is the magnitude of a change, not a level. The
+  Discussion then builds on this: "When we calculated the change in each parameter … the direction
+  of change in each variable became more obvious" (l. 429–431), whereas the unsigned definition
+  removed direction.
+  (d) The intercepts, 1.72 and 26.43 ms, are the expected size of the RMSSD change under the clipper
+  when SBR or ET did not change at all. No clipper trial has ΔSBR below 1, and the ΔET line reaches
+  zero at 2.09 °C, inside the observed range (two donkeys beyond, fitted −3.8 ms; M4).
+- Why it matters: Results 2.5 is the only place where the two treatments are compared, and the
+  sentences that carry that comparison into the Discussion and the valence argument (C4) describe
+  quantities the model did not estimate.
+- How to check: quotes above against the FT; `R/02_consistency_checks.R` block D for the 27.0 −
+  1.32 × 12.2 identity; `gof_fit_summary.csv` for the zero crossing and ranges.
 
 ## Minor
 
