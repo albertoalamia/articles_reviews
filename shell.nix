@@ -44,6 +44,7 @@ let
     lmerTest        # Satterthwaite df, as the paper's p-values presumably were
     emmeans
     glmmTMB         # count / Gamma GLMMs for stage 3
+    DHARMa          # simulation-based quantile residuals for the GLMMs
     # consistency checks and tests of lib/
     testthat
     # editor support (R.nvim / LSP)
