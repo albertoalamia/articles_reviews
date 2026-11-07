@@ -148,7 +148,7 @@ Everything in the table is identical between engines; the only differences are t
 - Sampler: CmdStan 2.36 via `run_model.sh`; 4 chains, 1000 warmup, 1000 sampling, seed 20261025
   + replicate index; `adapt_delta` 0.95 for the hierarchical models. `run_model.sh` gains an
   optional data-file argument and output suffix so one compiled model runs over the replicate JSON
-  files (`data/derived/stan/<model>_rep<k>_rho<s>.json`).
+  files (`data/derived/stan_data/<model>_rep<k>_rho<s>.json`).
 - Diagnostics: R-hat < 1.01, bulk and tail ESS > 400, no divergences, E-BFMI > 0.3, reported per
   run and summarised across replicates; posterior predictive checks of condition means, SDs and
   the 68 unsigned changes per outcome (the reconstruction's own inputs must be recovered), plus
@@ -179,6 +179,7 @@ of the exercise.
 | date | what changed | why |
 |---|---|---|
 | 2026-11-06 (before fitting) | RMSSD family: Gamma(log) primary, log-normal as sensitivity (draft had the reverse); E5 made optional and last; prior sensitivity both halved and doubled; DHARMa adopted | Alberto's review of the draft plan |
+| 2026-11-07 (S1) | generator option `floor` applied to every cell of every condition (SBR ≥ 0, RMSSD > 5 ms), sign pattern and pairing redrawn until feasible, instead of a floor on the control values only; ensemble file long with an `outcome` column instead of one row per donkey with three outcome columns | first S1 run produced negative counts / RMSSD in 35–40 % of replicates (treatment cells); outcomes are generated independently, so donkey k is not the same unit across outcomes |
 
 ## 8. Execution schedule
 
@@ -189,12 +190,12 @@ starts before the previous one is committed. Estimated run times are on Alberto'
 | step | Claude prepares | Alberto runs | check before committing |
 |---|---|---|---|
 | S0 | `shell.nix` + DHARMa (done 2026-11-06) | re-enter the shell; `Rscript -e 'library(DHARMa); library(glmmTMB)'` | both load |
-| S1 | `R/lib_simulate_conditions.R`: options `integer_control`, `control_floor`; `R/01_prepare_data.R`: ensemble (200 × 3 scenarios), E4 pair files, Stan JSON for the 10-replicate subset, seed table; addendum to `SIMULATION_LOG.md` | `Rscript <art>/R/01_prepare_data.R` (≈ 1 min) | SBR integer in every cell; min RMSSD > 5; Δ multisets per replicate identical to `deltas_fig3/4.csv`; condition means/SDs within 0.1 of Table 2 (printed table); file list and sizes as announced |
+| S1 | `R/lib_simulate_conditions.R`: options `integer_control`, `floor`, `order`; `R/01_prepare_data.R`: ensemble (200 × 3 scenarios), E4 pair files, Stan JSON for the 10-replicate subset, seed table; addendum to `SIMULATION_LOG.md` | `Rscript <art>/R/01_prepare_data.R` (≈ 1 min) | SBR integer in every cell; min RMSSD > 5; Δ multisets per replicate identical to `deltas_fig3/4.csv`; condition means/SDs within 0.1 of Table 2 (printed table); file list and sizes as announced |
 | S2 | `R/02_fit_frequentist.R` section A: the three condition models and the two E4 models on the example replicate; DHARMa plots; emmeans contrasts | `Rscript <art>/R/02_fit_frequentist.R --example` (seconds) | models converge; dispersion ratio 0.8–1.2 or explained; contrasts on the response scale reproduce the Table 2 differences of the example data; E4 slopes match `gof_by_group.csv` signs |
 | S3 | section B: ensemble fits for E1–E3 (600 replicates × 3 outcomes), Rubin pooling, diagnostics summary, model comparison (pooled vs condition-specific, Poisson vs NB2, Gamma vs log-normal) | `Rscript <art>/R/02_fit_frequentist.R --ensemble` (≈ 10–20 min) | share of non-converged fits < 1 %; pooled E1 medians within rounding of `contrasts_exact.csv` means; between-replicate variance small relative to within for E1, larger for E2 as expected |
 | S4 | section C: E4 on the ensemble; parametric bootstrap of E1–E2 on one replicate | `Rscript <art>/R/02_fit_frequentist.R --e4 --bootstrap` (≈ 5 min) | bootstrap and Wald intervals agree to ±10 % of width; E4 slopes per treatment with intervals |
 | S5 | `stan/sbr_nb2.stan`, `stan/et_normal.stan`, `stan/rmssd_gamma.stan`, `stan/delta_slopes.stan`; `run_model.sh` data-file argument; prior predictive section of `R/03_postprocess.R` | `./<art>/run_model.sh <model> --prior-only` per model; `Rscript <art>/R/03_postprocess.R --prior` | all four compile; prior predictive means and SDs cover Table 2 ranges without concentrating on them |
-| S6 | mapping check: fit the example replicate with each Stan model | `./<art>/run_model.sh <model> data/derived/stan/<model>_example.json` ×4; `Rscript <art>/R/03_postprocess.R --example` | posterior medians within 1 SE of the glmmTMB estimates of S2; no divergences, R-hat < 1.01 |
+| S6 | mapping check: fit the example replicate with each Stan model | `./<art>/run_model.sh <model> data/derived/stan_data/<model>_example.json` ×4; `Rscript <art>/R/03_postprocess.R --example` | posterior medians within 1 SE of the glmmTMB estimates of S2; no divergences, R-hat < 1.01 |
 | S7 | loop script over the 30 replicates per model, plus sensitivities (i, i′, ii, iii, iv) on the same replicates; diagnostics collector | `./<art>/run_all.sh` (≈ 1–2 h, background) | every run passes R-hat/ESS/divergence thresholds or is listed; disk usage on `$FITS_DIR` as announced |
 | S8 | `R/03_postprocess.R` main: pooled draws, `stage4_*.csv`, posterior predictive checks, side-by-side table with stage 3 | `Rscript <art>/R/03_postprocess.R` (≈ 5 min) | PPC recovers the 68 unsigned changes per outcome and the Table 2 moments; stage 3 vs stage 4 columns differ by less than the prior-sensitivity spread |
 | S9 (optional) | E5 from the SBR fits | `Rscript <art>/R/03_postprocess.R --e5` | AUCs with intervals |

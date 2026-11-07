@@ -97,33 +97,50 @@ tune_pairing <- function(ctrl, d_pos, d_neg, target, iter = 3000, tol = 0.01) {
 # absd: list(positive = <34 unsigned Δ>, negative = <34 unsigned Δ>)
 # cond: data frame with columns condition, mean, sd for this outcome (control, positive, negative)
 # rho_dd: assumed correlation between a donkey's two changes (unknown; scenario parameter)
-# Returns a long data frame (donkey, condition, order, y) with attributes "check" and "targets".
-simulate_conditions <- function(absd, cond, rho_dd = 0, step, tol_plot, dp = NULL) {
+# integer_control: round the control values to integers (SBR: ΔSBR are integers, so the treatment
+#   values stay integers and the Δ multisets stay exact; the control mean/SD move by < 0.1).
+# floor: every value of every condition must exceed this (SBR: −0.5, i.e. counts ≥ 0; RMSSD: 5 ms).
+#   The sign pattern, the control draw and the pairing are redrawn together until it holds, so the
+#   result is uniform over the admissible sign patterns × pairings that are also feasible — a
+#   constraint the real data satisfy (a reversed donkey with |Δ| = 54 ms needs a control > 59 ms).
+# order: optional n × 3 matrix of sequence positions (control, positive, negative) so that the
+#   three outcomes of one replicate share the same session order; drawn at random if NULL.
+# Returns a long data frame (donkey, condition, order, y) with attributes "check", "targets",
+# "signed" (the signed changes d = control − treatment and the reversed flags, in the order of absd)
+# and "dp" (the subset-sum tables, reusable across replicates).
+simulate_conditions <- function(absd, cond, rho_dd = 0, step, tol_plot, dp = NULL,
+                                integer_control = FALSE, floor = -Inf, order = NULL, max_attempts = 200) {
   g <- function(cn, what) cond[[what]][cond$condition == cn]
   n <- length(absd$positive)
   mu_c <- g("control", "mean"); sd_c <- g("control", "sd")
   trt <- c("positive", "negative")
-  sg <- lapply(trt, function(tn) signed_changes(absd[[tn]], mu_c - g(tn, "mean"), step, tol_plot, dp[[tn]]))
-  names(sg) <- trt
-  d <- lapply(sg, `[[`, "d")
-  # target correlations between control and each signed change, from Var(treatment) = Var(c) + Var(d) − 2 Cov(c, d)
-  r_cd <- vapply(trt, function(tn) {
-    vd <- var(d[[tn]]); cov_cd <- (sd_c^2 + vd - g(tn, "sd")^2) / 2
-    max(-0.99, min(0.99, cov_cd / (sd_c * sqrt(vd))))
-  }, numeric(1))
-  Sigma <- matrix(c(1, r_cd[1], r_cd[2],  r_cd[1], 1, rho_dd,  r_cd[2], rho_dd, 1), 3, 3)
-  pd_fixed <- FALSE
-  if (min(eigen(Sigma, symmetric = TRUE, only.values = TRUE)$values) <= 1e-8) {
-    Sigma <- as.matrix(Matrix::nearPD(Sigma, corr = TRUE)$mat); pd_fixed <- TRUE
+  for (attempt in seq_len(max_attempts)) {                        # redraw everything until the floor holds
+    sg <- lapply(trt, function(tn) signed_changes(absd[[tn]], mu_c - g(tn, "mean"), step, tol_plot, dp[[tn]]))
+    names(sg) <- trt
+    if (is.null(dp)) dp <- lapply(sg, `[[`, "Tm")                 # reuse the subset-sum tables from now on
+    d <- lapply(sg, `[[`, "d")
+    # target correlations between control and each signed change, from Var(treatment) = Var(c) + Var(d) − 2 Cov(c, d)
+    r_cd <- vapply(trt, function(tn) {
+      vd <- var(d[[tn]]); cov_cd <- (sd_c^2 + vd - g(tn, "sd")^2) / 2
+      max(-0.99, min(0.99, cov_cd / (sd_c * sqrt(vd))))
+    }, numeric(1))
+    Sigma <- matrix(c(1, r_cd[1], r_cd[2],  r_cd[1], 1, rho_dd,  r_cd[2], rho_dd, 1), 3, 3)
+    pd_fixed <- FALSE
+    if (min(eigen(Sigma, symmetric = TRUE, only.values = TRUE)$values) <= 1e-8) {
+      Sigma <- as.matrix(Matrix::nearPD(Sigma, corr = TRUE)$mat); pd_fixed <- TRUE
+    }
+    Z <- MASS::mvrnorm(n, rep(0, 3), Sigma)
+    ctrl <- mu_c + sd_c * as.numeric(scale(Z[, 1]))              # exact control mean and SD …
+    if (integer_control) ctrl <- round(ctrl)                       # … up to integer rounding if requested
+    d_pos <- sort(d$positive)[rank(Z[, 2], ties.method = "first")]  # rank coupling to the Gaussian scores …
+    d_neg <- sort(d$negative)[rank(Z[, 3], ties.method = "first")]
+    tuned <- tune_pairing(ctrl, d_pos, d_neg, c(r_cd[1], r_cd[2], Sigma[2, 3]))   # … then permuted to hit the targets
+    d_pos <- tuned$d_pos; d_neg <- tuned$d_neg
+    wide <- data.frame(donkey = seq_len(n), control = ctrl, positive = ctrl - d_pos, negative = ctrl - d_neg)
+    if (min(wide$control, wide$positive, wide$negative) > floor) break
+    if (attempt == max_attempts) stop("floor ", floor, " not met in ", max_attempts, " draws")
   }
-  Z <- MASS::mvrnorm(n, rep(0, 3), Sigma)
-  ctrl <- mu_c + sd_c * as.numeric(scale(Z[, 1]))                # exact control mean and SD
-  d_pos <- sort(d$positive)[rank(Z[, 2], ties.method = "first")]  # rank coupling to the Gaussian scores …
-  d_neg <- sort(d$negative)[rank(Z[, 3], ties.method = "first")]
-  tuned <- tune_pairing(ctrl, d_pos, d_neg, c(r_cd[1], r_cd[2], Sigma[2, 3]))   # … then permuted to hit the targets
-  d_pos <- tuned$d_pos; d_neg <- tuned$d_neg
-  wide <- data.frame(donkey = seq_len(n), control = ctrl, positive = ctrl - d_pos, negative = ctrl - d_neg)
-  ord <- t(replicate(n, sample(3)))                                # random sequence per donkey
+  ord <- if (is.null(order)) t(replicate(n, sample(3))) else order # sequence per donkey
   long <- data.frame(
     donkey    = rep(wide$donkey, 3),
     condition = factor(rep(c("control", "positive", "negative"), each = n), levels = c("control", "positive", "negative")),
@@ -135,10 +152,12 @@ simulate_conditions <- function(absd, cond, rho_dd = 0, step, tol_plot, dp = NUL
                       sd_target = c(sd_c, g("positive", "sd"), g("negative", "sd")),
                       sd_sim = c(sd(wide$control), sd(wide$positive), sd(wide$negative)))
   attr(long, "check") <- check
-  attr(long, "targets") <- list(r_cd = r_cd, rho_dd = rho_dd, pd_fixed = pd_fixed,
+  attr(long, "targets") <- list(r_cd = r_cd, rho_dd = rho_dd, pd_fixed = pd_fixed, attempts = attempt,
                                 n_reversed = vapply(sg, `[[`, integer(1), "n_reversed"),
                                 r_cd_achieved = c(positive = cor(ctrl, d_pos), negative = cor(ctrl, d_neg)),
                                 rho_dd_achieved = cor(d_pos, d_neg))
-  attr(long, "dp") <- lapply(sg, `[[`, "Tm")
+  attr(long, "signed") <- list(d_positive = sg$positive$d, d_negative = sg$negative$d,
+                               reversed_positive = sg$positive$reversed, reversed_negative = sg$negative$reversed)
+  attr(long, "dp") <- dp
   long
 }
