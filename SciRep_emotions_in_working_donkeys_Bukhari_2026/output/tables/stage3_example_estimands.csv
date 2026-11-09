@@ -1,0 +1,61 @@
+outcome,family_used,estimand,term,scale,estimate,se,ci_low,ci_high,p
+SBR,poisson (NB2 phi not identified),E1,positive - control,link,0.7140952629250096,0.05071956619867532,0.6146849131756059,0.8135056126744132,5.092188528740827e-45
+SBR,poisson (NB2 phi not identified),E1,negative - control,link,-0.41567929516195967,0.06513943971724072,-0.5433525970077515,-0.28800599331616783,1.7550313412006418e-10
+SBR,poisson (NB2 phi not identified),E2,positive - negative,link,1.1297745580869694,0.057605628812713555,1.0168675256140507,1.242681590559888,1.2159419281008685e-85
+SBR,poisson (NB2 phi not identified),E3,order 2 - 1,link,-0.013536585263352828,0.05604867945628799,-0.12339199699767729,0.09631882647097163,0.8091561519752503
+SBR,poisson (NB2 phi not identified),E3,order 3 - 1,link,0.06258183612042481,0.05497569336508838,-0.04517052287514842,0.17033419511599804,0.2549724229839924
+SBR,poisson (NB2 phi not identified),E1,positive / control,ratio,2.0423380671603226,0.10358650079741258,1.8490772666262953,2.2557979895467315,5.092188528740827e-45
+SBR,poisson (NB2 phi not identified),E1,negative / control,ratio,0.6598918670669034,0.04298498649470198,0.5807991662567861,0.7497553397459888,1.7550313412006418e-10
+SBR,poisson (NB2 phi not identified),E1,positive / negative,ratio,3.094958688062236,0.1782870413751961,2.764527129585431,3.4648852522739944,1.2159419281008685e-85
+SBR,poisson (NB2 phi not identified),E1,positive - control,difference (blinks/min),18.93144933615915,1.5126392895037972,15.966730807131453,21.89616786518685,6.141359769987208e-36
+SBR,poisson (NB2 phi not identified),E1,negative - control,difference (blinks/min),-6.17720880614087,0.9934264536641119,-8.124288876611878,-4.2301287356698625,5.032632086153539e-10
+SBR,poisson (NB2 phi not identified),E2,positive - negative,difference (blinks/min),25.108658142300023,1.5711076935545798,22.029343647099253,28.187972637500792,1.7195675471801466e-57
+SBR,poisson (NB2 phi not identified),mean,mean control,"response, u = 0",18.162484833480892,1.0294267556595753,16.25287643926404,20.296459925672135,0
+SBR,poisson (NB2 phi not identified),mean,mean positive,"response, u = 0",37.09393416964004,1.8032400097759362,33.722798407271476,40.80206913922357,0
+SBR,poisson (NB2 phi not identified),mean,mean negative,"response, u = 0",11.985276027340023,0.7593442133347361,10.585684739925467,13.569914935190374,0
+SBR,poisson (NB2 phi not identified),E3,"tau (donkey SD, link scale)",link,0.22709609389907176,NA,NA,NA,NA
+SBR,poisson (NB2 phi not identified),E3,"sigma_latent (residual SD, link scale)",link,0.23464557449969295,NA,NA,NA,NA
+SBR,poisson (NB2 phi not identified),E3,ICC (latent),link,0.48365436020143354,NA,NA,NA,NA
+ET,gaussian MVN (unstructured donkey covariance),E1,positive - control,link,0.734668897831483,0.1114099566143091,0.5163053828674372,0.9530324127955289,4.2731294760812256e-11
+ET,gaussian MVN (unstructured donkey covariance),E1,negative - control,link,1.1516871287486552,0.12125008135126686,0.9140369693001722,1.3893372881971382,2.130494934775194e-21
+ET,gaussian MVN (unstructured donkey covariance),E2,positive - negative,link,-0.41701823091717216,0.1566402017464608,-0.7240330263402353,-0.11000343549410901,0.0077616003339336164
+ET,gaussian MVN (unstructured donkey covariance),E3,order 2 - 1,link,0.08109605216352912,0.1256968979377427,-0.16526986779444652,0.3274619721215048,0.5188160738529028
+ET,gaussian MVN (unstructured donkey covariance),E3,order 3 - 1,link,-0.016153802308665755,0.10835461906975961,-0.2285288556853946,0.1962212510680631,0.8814883538620332
+ET,gaussian MVN (unstructured donkey covariance),mean,mean control,response,34.56827139220249,0.15881237273072527,34.25699914165027,34.87954364275471,NA
+ET,gaussian MVN (unstructured donkey covariance),mean,mean positive,response,35.30294029003397,0.17271966050320453,34.96440975544769,35.64147082462026,NA
+ET,gaussian MVN (unstructured donkey covariance),mean,mean negative,response,35.719958520951145,0.16687576136565654,35.39288202867446,36.047035013227834,NA
+ET,gaussian MVN (unstructured donkey covariance),E3,"sigma control (donkey-level SD, link scale)",link,0.9160228212146257,0.11130300451129878,0.7219009523767602,1.1623447873609078,NA
+ET,gaussian MVN (unstructured donkey covariance),E3,"sigma positive (donkey-level SD, link scale)",link,1.0029205040555949,0.12168607878929447,0.7906547011204186,1.2721729675796047,NA
+ET,gaussian MVN (unstructured donkey covariance),E3,"sigma negative (donkey-level SD, link scale)",link,0.9690087488399621,0.11768210233208874,0.7637494206941716,1.2294319705996661,NA
+ET,gaussian MVN (unstructured donkey covariance),E3,"corr(control, positive)",link,0.7994114532611439,0.06196313361499843,0.6413740536547997,0.8923723744562131,NA
+ET,gaussian MVN (unstructured donkey covariance),E3,"corr(control, negative)",link,0.7448528884221549,0.07646895343482284,0.5543451681769709,0.8611952100899372,NA
+ET,gaussian MVN (unstructured donkey covariance),E3,"corr(positive, negative)",link,0.5786594740493002,0.11431481269262579,0.312753666925882,0.7604558873546698,NA
+ET,gaussian MVN (unstructured donkey covariance),E1,positive - control,difference (degC),0.734668897831483,0.1114099566143091,0.5163053828674372,0.9530324127955289,4.2731294760812256e-11
+ET,gaussian MVN (unstructured donkey covariance),E1,negative - control,difference (degC),1.1516871287486552,0.12125008135126686,0.9140369693001722,1.3893372881971382,2.130494934775194e-21
+ET,gaussian MVN (unstructured donkey covariance),E2,positive - negative,difference (degC),-0.41701823091717216,0.1566402017464608,-0.7240330263402353,-0.11000343549410901,0.0077616003339336164
+RMSSD,log-normal MVN (unstructured donkey covariance),E1,positive - control,link,0.5399700120910067,0.09059943295894934,0.36239512349146596,0.7175449006905474,2.5228237600716053e-9
+RMSSD,log-normal MVN (unstructured donkey covariance),E1,negative - control,link,0.19960680388729468,0.04139458891970462,0.11847340960467363,0.28074019816991574,1.4208986137105621e-6
+RMSSD,log-normal MVN (unstructured donkey covariance),E2,positive - negative,link,0.340363208203712,0.07776296528502359,0.18794779624506577,0.4927786201623583,1.2036152545352138e-5
+RMSSD,log-normal MVN (unstructured donkey covariance),E3,order 2 - 1,link,0.022045211260796407,0.048159989935207224,-0.07234836901220976,0.11643879153380257,0.6471324215384284
+RMSSD,log-normal MVN (unstructured donkey covariance),E3,order 3 - 1,link,-0.029136877031411226,0.04627794030840303,-0.11984164003588116,0.061567885973058706,0.5289522818173802
+RMSSD,log-normal MVN (unstructured donkey covariance),mean,mean control,"response, u = 0 (median donkey)",43.68090999905675,3.563419475059954,37.22637323136314,51.254573914232175,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),mean,mean positive,"response, u = 0 (median donkey)",74.9544935426269,5.076942216521114,65.63592623718529,85.5960511919886,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),mean,mean negative,"response, u = 0 (median donkey)",53.33101028275188,3.5045961771139975,46.88596836772258,60.66200095244272,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),E3,"sigma control (donkey-level SD, link scale)",link,0.47162961809061976,0.05733401433749829,0.3716397885427395,0.5985217501401181,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),E3,"sigma positive (donkey-level SD, link scale)",link,0.3932424562874329,0.0481515767340492,0.3093363368618922,0.4999077411846856,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),E3,"sigma negative (donkey-level SD, link scale)",link,0.38105101135174724,0.04626704135229511,0.3003507448496554,0.4834343704553525,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),E3,"corr(control, positive)",link,0.2877578219676897,0.15775460462718954,-0.04097068385467387,0.5602747153201363,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),E3,"corr(control, negative)",link,0.8873729233493088,0.03655658740478674,0.7903481940787295,0.9409759201782213,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),E3,"corr(positive, negative)",link,0.3214763491373439,0.1545209351951586,-0.004475617955489154,0.58567747152198,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),E1,positive - control,"ratio (marginal, arithmetic means)",1.6587637209216881,0.1584654734481968,1.375516528544943,2.000337345823513,1.1746386769734524e-7
+RMSSD,log-normal MVN (unstructured donkey covariance),E1,negative - control,"ratio (marginal, arithmetic means)",1.1746726255043158,0.051652504678736534,1.0776736670338596,1.2804022398608434,2.510404993705185e-4
+RMSSD,log-normal MVN (unstructured donkey covariance),E2,positive - negative,"ratio (marginal, arithmetic means)",1.412107241547014,0.11552006693780997,1.2029076050351108,1.6576891303063248,2.4618871575255067e-5
+RMSSD,log-normal MVN (unstructured donkey covariance),E1,positive - control,"difference (ms, marginal)",32.16047011609411,6.11753219661499,20.17010701072873,44.15083322145949,1.4634583699998123e-7
+RMSSD,log-normal MVN (unstructured donkey covariance),E1,negative - control,"difference (ms, marginal)",8.527418214184031,2.148991761696399,4.31539436125909,12.739442067108973,7.244736814675115e-5
+RMSSD,log-normal MVN (unstructured donkey covariance),E2,positive - negative,"difference (ms, marginal)",23.63305190191008,5.854040127662523,12.159133251691534,35.10697055212862,5.412756732112047e-5
+RMSSD,log-normal MVN (unstructured donkey covariance),mean,mean control,"response, marginal",48.81943114763184,4.1843346235367855,40.61813528549974,57.02072700976394,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),mean,mean positive,"response, marginal",80.97990126372595,5.694439726683536,69.81879939942623,92.14100312802567,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),mean,mean negative,"response, marginal",57.34684936181587,3.901354175127726,49.70019517856553,64.99350354506622,NA
+RMSSD,log-normal MVN (unstructured donkey covariance),E1,positive - control,"ratio (conditional, median donkey)",1.7159554034988165,0.15546458653983788,1.4367665300270438,2.0493955595843136,2.5228237600716053e-9
+RMSSD,log-normal MVN (unstructured donkey covariance),E1,negative - control,"ratio (conditional, median donkey)",1.2209226017476174,0.05053958920211886,1.1257769388501389,1.324109553159539,1.4208986137105621e-6
+RMSSD,log-normal MVN (unstructured donkey covariance),E2,positive - negative,"ratio (conditional, median donkey)",1.4054579717359756,0.10929257946566434,1.2067705157529456,1.636858113892298,1.2036152545352138e-5

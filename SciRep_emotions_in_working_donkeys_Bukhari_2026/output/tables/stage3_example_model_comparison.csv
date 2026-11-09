@@ -1,0 +1,12 @@
+outcome,model,converged,optimizer,n_par,aicc,delta_aicc,e1_positive,e1_negative
+SBR,"NB2, donkey intercept, one phi (planned)",FALSE,nlminb,7,NA,NA,2.0423377696583804,0.6598913776027144
+SBR,"Poisson, donkey intercept",TRUE,nlminb,6,651.507810044966,NA,2.0423380671603226,0.6598918670669034
+ET,"Gaussian MVN, unstructured donkey covariance (planned)",TRUE,nlminb,11,244.26879981351723,2.587422163193679,0.734668897831483,1.1516871287486543
+ET,"Gaussian, donkey intercept, sigma by condition (v1.0)",TRUE,BFGS (nlminb stopped at a boundary),9,241.68137765032355,0,0.7318239228915719,1.1504480662383116
+ET,"Gaussian, donkey intercept, pooled sigma",TRUE,nlminb,7,244.01077573856108,2.329398088237525,0.7226782441630312,1.131679453131201
+RMSSD,"log-normal MVN, unstructured donkey covariance (planned)",TRUE,nlminb,11,898.6388264440102,36.61927598191221,1.6587637209216872,1.1746726255043163
+RMSSD,"Gamma(log), donkey intercept, alpha by condition (v1.0; sens. ii)",TRUE,nlminb,9,901.5382526988508,39.5187022367528,1.8319330349092955,1.193909805894132
+RMSSD,"Gamma(log), donkey intercept, pooled alpha",TRUE,nlminb,7,913.0984814846678,51.078931022569805,1.7376564708141686,1.2197428698940138
+RMSSD,"log-normal, donkey intercept, sigma by condition",TRUE,nlminb,9,907.5562928708713,45.53674240877331,1.8444911389985477,1.1855680825204746
+RMSSD,"log-normal, donkey intercept, pooled sigma",TRUE,nlminb,7,923.0355740623479,61.01602360024992,1.7174365677584882,1.2334678854549912
+RMSSD,"Gaussian MVN on y, unstructured donkey covariance (raw-scale check)",TRUE,nlminb,11,862.019550462098,0,1.6947530590047104,1.2072036650894833
