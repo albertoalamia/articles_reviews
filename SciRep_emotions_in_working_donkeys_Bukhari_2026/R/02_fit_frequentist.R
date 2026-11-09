@@ -8,7 +8,8 @@
 # Sections (one command-line flag each; later sections are added at their step of the schedule):
 #   A  --example   (S2)  the three condition models and the two E4 models on the example replicate
 #                        (scenario rho_dd = 0, replicate 1): estimands, DHARMa diagnostics, model comparison
-#   B  --ensemble  (S3)  E1–E3 on the 600 replicates, Rubin pooling, diagnostics summary, model comparison
+#   B  --ensemble  (S3)  E1–E3 on the 600 replicates, Rubin pooling, diagnostics summary, model comparison,
+#                        share of replicates with Cov(c, c') > Var(c); --cores N (default: all but two); --reps N (smoke test)
 #   C  --e4 --bootstrap (S4)  E4 on the ensemble; parametric bootstrap of E1–E2 on one replicate
 # Outputs (A): output/tables/stage3_example_estimands.csv        E1, E2, E3 per outcome, link and response scale, Wald 95 %
 #              output/tables/stage3_example_dispersion.csv       variance parameters by condition (sigma_c, alpha_c, phi), planned vs comparison fits
@@ -18,7 +19,15 @@
 #              output/tables/stage3_example_moments.csv          observed condition means/SDs of the example vs model-implied (marginal)
 #              output/tables/stage3_example_e4.csv               E4: a_t, b_t, s_t, r_t per treatment, slope difference, per-group OLS check
 #              output/figures/stage3_example_dharma_<outcome>.png, stage3_example_e4.png
+# Outputs (B): output/tables/stage3_ensemble_estimands.csv          E1–E3 pooled by Rubin's rules per scenario (K = 200), Wald 95 %
+#              output/tables/stage3_ensemble_check_vs_exact.csv     pooled E1 differences (rho_dd = 0) vs the exact paired results of stage 2
+#              output/tables/stage3_ensemble_diagnostics.csv        shares of replicates failing each diagnostic, per scenario and outcome
+#              output/tables/stage3_ensemble_model_comparison.csv   share of replicates preferring each model by AICc, median E1 per model
+#              output/tables/stage3_ensemble_random_structure.csv   share of replicates with Cov(c, c') > min Var, mean correlations
+#              output/tables/stage3_ensemble_per_replicate_{estimands,diagnostics,model_comparison,random_structure}.csv.gz
+#              output/tables/stage3_ensemble_errors.csv             only if a replicate failed
 # Run    : Rscript SciRep_emotions_in_working_donkeys_Bukhari_2026/R/02_fit_frequentist.R --example     (seconds)
+#          Rscript SciRep_emotions_in_working_donkeys_Bukhari_2026/R/02_fit_frequentist.R --ensemble    (≈ 10–20 min on 10 cores)
 #
 # Models (plan §3, v1.1):
 #   SBR    y ~ NB2 (Poisson if phi is not identified), log link, condition + order, shared donkey intercept.
@@ -33,8 +42,13 @@
 
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) == 0) args <- "--example"
-if (!identical(args, "--example"))
-  stop("S2: only --example is implemented; --ensemble (S3) and --e4 --bootstrap (S4) are added at their steps")
+if (any(c("--e4", "--bootstrap") %in% args)) stop("--e4 --bootstrap (S4) is added at its step")
+opt_cores <- match("--cores", args); opt_reps <- match("--reps", args)
+allowed <- c("--example", "--ensemble", "--cores", "--reps", if (!is.na(opt_cores)) args[opt_cores + 1], if (!is.na(opt_reps)) args[opt_reps + 1])
+if (!all(args %in% allowed)) stop("unknown argument(s): ", paste(setdiff(args, allowed), collapse = " "))
+RUN_EXAMPLE  <- "--example" %in% args
+RUN_ENSEMBLE <- "--ensemble" %in% args
+if (!RUN_EXAMPLE && !RUN_ENSEMBLE) stop("nothing to do: use --example and/or --ensemble")
 
 suppressPackageStartupMessages({ library(tidyverse); library(glmmTMB); library(emmeans); library(DHARMa) })
 emm_options(msg.interaction = FALSE)      # E4 intercepts at x = 0 are wanted despite the treatment × x interaction
@@ -48,11 +62,14 @@ SEED_DHARMA  <- 20261107L
 OUTCOMES     <- c("SBR", "ET", "RMSSD")
 COND_LEVELS  <- c("control", "positive", "negative")
 FIXEF_NAMES  <- c("(Intercept)", "conditionpositive", "conditionnegative", "order2", "order3")
+N_CORES      <- if (is.na(opt_cores)) max(1L, parallel::detectCores() - 2L) else as.integer(args[opt_cores + 1])
+N_REPS       <- if (is.na(opt_reps)) Inf else as.integer(args[opt_reps + 1])      # --reps N: first N replicates per scenario (smoke test)
 
 cond_t2 <- read_csv(here_art("data/raw/table2_conditions.csv"), show_col_types = FALSE)
 ens     <- read_csv(here_art("data/derived/stage3/ensemble_conditions.csv.gz"), show_col_types = FALSE)
 e4pairs <- read_csv(here_art("data/derived/stage3/ensemble_e4_pairs.csv.gz"), show_col_types = FALSE)
 gof_grp <- read_csv(here_art("output/tables/gof_by_group.csv"), show_col_types = FALSE)
+exact   <- read_csv(here_art("output/tables/contrasts_exact.csv"), show_col_types = FALSE)   # stage 2: exact paired results (d = control − treatment)
 
 # ---- data handling ---------------------------------------------------------------------------
 prep_condition <- function(d) d |>
@@ -250,8 +267,8 @@ group_tests <- function(r, g) {
   z <- abs(r - ave(r, g, FUN = median))
   list(ks_p_min = min(ks), levene_p = anova(lm(z ~ g))[["Pr(>F)"]][1])
 }
-diagnostics_condition <- function(fit, d, outcome, plot_file = NULL) {
-  res <- simulateResiduals(fit, n = N_SIM_DHARMA, seed = SEED_DHARMA)       # marginal: new donkey effects in every simulation
+diagnostics_condition <- function(fit, d, outcome, plot_file = NULL, seed = SEED_DHARMA) {
+  res <- simulateResiduals(fit, n = N_SIM_DHARMA, seed = seed)              # marginal: new donkey effects in every simulation
   tu <- testUniformity(res, plot = FALSE); td <- testDispersion(res, plot = FALSE); to <- testOutliers(res, plot = FALSE)
   tc <- group_tests(res$scaledResiduals, d$condition); tord <- group_tests(res$scaledResiduals, d$order)
   re <- as.matrix(ranef(fit)$cond$donkey)                                   # one column (intercept) or three (one per condition)
@@ -300,9 +317,9 @@ e1_marginal <- function(fit, outcome) {
   if (isTRUE(attr(fit, "response_log"))) { v <- logscale_var_by_condition(fit); dlt <- dlt + (v[2:3] - v[1]) / 2 }
   exp(dlt)
 }
-compare_models <- function(d, outcome) {
-  jac <- 2 * sum(log(d$y))
-  fits <- switch(outcome,
+# the comparison set of §4; the first element is the planned model (SBR: the NB2 attempt, see planned_from_comparison)
+comparison_fits <- function(d, outcome) {
+  switch(outcome,
     SBR   = list("NB2, donkey intercept, one phi (planned)" = tag(suppressWarnings(glmmTMB(y ~ condition + order + (1 | donkey), data = d, family = nbinom2())), "nbinom2", "intercept", FALSE),
                  "Poisson, donkey intercept"                  = fit_condition(d, "SBR", family_alt = "poisson")),
     ET    = list("Gaussian MVN, unstructured donkey covariance (planned)" = fit_condition(d, "ET"),
@@ -316,31 +333,46 @@ compare_models <- function(d, outcome) {
                  # raw-scale check: the reconstruction draws control RMSSD as normal on y, so the log-normal back-transformation
                  # exp(eta + sigma²/2) overshoots the control mean; this row shows what the log scale costs on such data
                  "Gaussian MVN on y, unstructured donkey covariance (raw-scale check)" = fit_condition(d, "RMSSD", family_alt = "gaussian_raw")))
+}
+# the planned fit taken from the comparison set (no refit): SBR falls back to Poisson when phi is not identified, as in fit_condition
+planned_from_comparison <- function(fits, outcome) {
+  if (outcome != "SBR") return(fits[[1]])
+  nb2 <- fits[[1]]
+  if (converged(nb2) && sigma(nb2) <= 1e3) nb2 else tag(fits[[2]], "poisson (NB2 phi not identified)", "intercept", FALSE)
+}
+compare_table <- function(fits, d, outcome) {
+  jac <- 2 * sum(log(d$y))
   tb <- imap_dfr(fits, function(f, nm) {
     e1 <- e1_marginal(f, outcome)
     tibble(outcome = outcome, model = nm, converged = converged(f), optimizer = optimizer_label(f),
            n_par = attr(logLik(f), "df"), aicc = aicc(f, if (isTRUE(attr(f, "response_log"))) jac else 0),
            e1_positive = e1[1], e1_negative = e1[2])
   })
-  tb |> mutate(delta_aicc = aicc - min(aicc), .after = aicc)
+  tb |> mutate(delta_aicc = aicc - min(aicc, na.rm = TRUE), .after = aicc)     # a non-converged fit has no AICc (SBR NB2)
 }
+compare_models <- function(d, outcome) compare_table(comparison_fits(d, outcome), d, outcome)
 
 # ---- within-donkey covariance of the condition values: example data vs model -----------------------
 # The reconstructed data pin this matrix (Table 2 SDs and the SD of the signed changes). A shared intercept
 # implies equal covariances for all pairs, each below both variances; the MVN fit reproduces the sample matrix.
 random_structure <- function(fit, d, outcome) {
-  log_scale <- outcome == "RMSSD"                      # scalar; inside mutate() `outcome` would be the data column
-  W <- d |> mutate(v = if (log_scale) log(y) else y) |> select(donkey, condition, v) |>
-    pivot_wider(names_from = condition, values_from = v) |> select(all_of(COND_LEVELS)) |> as.matrix()
-  S <- cov(W); Rs <- cov2cor(S)
+  # RMSSD on both scales: the structural argument (Cov > Var) is made on the raw scale, the planned model is on log y;
+  # the model-implied matrix is given on the scale the model is fitted on
+  scales <- if (outcome == "RMSSD") c("y", "log y") else "y"
+  model_scale <- if (isTRUE(attr(fit, "response_log"))) "log y" else "y"
   Sm <- if (is_us(fit)) { vc <- VarCorr(fit)$cond$donkey; matrix(as.numeric(vc), 3, 3) } else NULL
   Rm <- if (is_us(fit)) cov2cor(Sm) else NULL
-  map_dfr(list(c(1, 2), c(1, 3), c(2, 3)), function(ij) tibble(
-    outcome = outcome, scale = if (log_scale) "log y" else "y", pair = paste(COND_LEVELS[ij], collapse = " - "),
-    var_a = S[ij[1], ij[1]], var_b = S[ij[2], ij[2]], cov_obs = S[ij[1], ij[2]], corr_obs = Rs[ij[1], ij[2]],
-    cov_exceeds_min_var = S[ij[1], ij[2]] > min(S[ij[1], ij[1]], S[ij[2], ij[2]]),
-    cov_model = if (is_us(fit)) Sm[ij[1], ij[2]] else NA_real_, corr_model = if (is_us(fit)) Rm[ij[1], ij[2]] else NA_real_,
-    model = family_label(fit)))
+  map_dfr(scales, function(sc) {
+    W <- d |> mutate(v = if (sc == "log y") log(y) else y) |> select(donkey, condition, v) |>
+      pivot_wider(names_from = condition, values_from = v) |> select(all_of(COND_LEVELS)) |> as.matrix()
+    S <- cov(W); Rs <- cov2cor(S); on_model_scale <- is_us(fit) && sc == model_scale
+    map_dfr(list(c(1, 2), c(1, 3), c(2, 3)), function(ij) tibble(
+      outcome = outcome, scale = sc, pair = paste(COND_LEVELS[ij], collapse = " - "),
+      var_a = S[ij[1], ij[1]], var_b = S[ij[2], ij[2]], cov_obs = S[ij[1], ij[2]], corr_obs = Rs[ij[1], ij[2]],
+      cov_exceeds_min_var = S[ij[1], ij[2]] > min(S[ij[1], ij[1]], S[ij[2], ij[2]]),
+      cov_model = if (on_model_scale) Sm[ij[1], ij[2]] else NA_real_, corr_model = if (on_model_scale) Rm[ij[1], ij[2]] else NA_real_,
+      model = family_label(fit)))
+  })
 }
 
 # ---- moment check: the example's condition means/SDs vs the model, marginal over donkeys --------------
@@ -403,6 +435,7 @@ plot_e4 <- function(p3, p4, e4tab, file) {
 # ======================================================================================================
 # Section A — the example replicate
 # ======================================================================================================
+if (RUN_EXAMPLE) {
 ex <- ens |> filter(rho_dd == EXAMPLE$rho_dd, rep == EXAMPLE$rep)
 stopifnot(nrow(ex) == 3 * 102)
 est <- list(); diag <- list(); cmp <- list(); mom <- list(); disp <- list(); rs <- list()
@@ -460,3 +493,133 @@ print(gof_grp |> select(x, treatment, slope, se, r, resid_sd))
 cat("\nExpected signs on signed data: dSBR negative treatment flips (x < 0, y > 0), the other three keep their sign.\n")
 cat("\nwritten: output/tables/stage3_example_{estimands,dispersion,diagnostics,model_comparison,random_structure,moments,e4}.csv;",
     "output/figures/stage3_example_dharma_{sbr,et,rmssd}.png, stage3_example_e4.png\n")
+}   # end of section A
+
+# ======================================================================================================
+# Section B — the ensemble: E1–E3 on every replicate, pooled by Rubin's rules per scenario (plan §2, §4, S3)
+# ======================================================================================================
+# The replicates are draws of the unknowns of the reconstruction (sign patterns, pairings) consistent with
+# everything the paper reports, so they are treated like multiple imputations: within-replicate variance W
+# (mean squared SE), between-replicate variance B, total T = W + (1 + 1/K) B. Pooling is done on the scale on
+# which the Wald interval is formed (link / log for ratios and positive parameters, Fisher z for correlations)
+# and back-transformed. Rows without an SE (SBR tau, sigma_latent, ICC) get the mean and the between-replicate
+# spread only.
+
+# the scale each row is pooled on, recovered from the estimands tables (se on the reported scale is the delta-method
+# se, so est_raw and se_raw are exact inverses of what estimands_mvn / emmeans produced)
+add_transform <- function(est) est |> mutate(
+  transform = case_when(grepl("^corr\\(", term) ~ "tanh",
+                        grepl("ratio", scale) | grepl("^sigma .*donkey-level SD", term) |
+                          (grepl("^response", scale) & outcome != "ET") ~ "exp",
+                        TRUE ~ "identity"),
+  est_raw = case_when(transform == "exp" ~ log(estimate), transform == "tanh" ~ atanh(estimate), TRUE ~ estimate),
+  se_raw  = case_when(transform == "exp" ~ se / estimate,  transform == "tanh" ~ se / (1 - estimate^2), TRUE ~ se))
+
+back <- function(x, transform) case_when(transform == "exp" ~ exp(x), transform == "tanh" ~ tanh(x), TRUE ~ x)
+
+pool_rubin <- function(per_rep) per_rep |>
+  group_by(rho_dd, outcome, estimand, term, scale, transform) |>
+  summarise(K = n(), qbar = mean(est_raw), W = mean(se_raw^2), B = var(est_raw),
+            between_sd_estimate = sd(estimate), q025_estimate = quantile(estimate, 0.025), q975_estimate = quantile(estimate, 0.975),
+            .groups = "drop") |>
+  mutate(T = W + (1 + 1 / K) * B, se_total = sqrt(T), fmi = (1 + 1 / K) * B / T, between_within_ratio = B / W,
+         estimate = back(qbar, transform), ci_low = back(qbar - 1.96 * se_total, transform), ci_high = back(qbar + 1.96 * se_total, transform),
+         p = if_else(estimand %in% c("E1", "E2") | grepl("^order", term), 2 * pnorm(-abs(qbar / se_total)), NA_real_)) |>
+  select(rho_dd, outcome, estimand, term, scale, K, estimate, ci_low, ci_high, p, se_total, within_var = W, between_var = B,
+         between_within_ratio, fmi, between_sd_estimate, q025_estimate, q975_estimate, transform)
+
+# one replicate: the three planned fits taken from the comparison sets, with estimands, diagnostics, AICc table and covariance table
+fit_replicate <- function(rho, k) {
+  dd <- ens |> filter(rho_dd == rho, rep == k)
+  parts <- lapply(OUTCOMES, function(o) {
+    d <- prep_condition(dd |> filter(outcome == o))
+    tryCatch({
+      fits <- comparison_fits(d, o); fit <- planned_from_comparison(fits, o)
+      list(est  = estimands_condition(fit, o, d) |> add_transform(),
+           diag = diagnostics_condition(fit, d, o, seed = SEED_DHARMA + k),
+           cmp  = compare_table(fits, d, o),
+           rs   = random_structure(fit, d, o))
+    }, error = function(e) list(err = tibble(outcome = o, error = conditionMessage(e))))
+  })
+  key <- function(x) if (is.null(x)) NULL else mutate(x, rho_dd = rho, rep = k, .before = 1)
+  list(est = key(bind_rows(map(parts, "est"))), diag = key(bind_rows(map(parts, "diag"))),
+       cmp = key(bind_rows(map(parts, "cmp"))), rs = key(bind_rows(map(parts, "rs"))), err = key(bind_rows(map(parts, "err"))))
+}
+
+share <- function(x) mean(x, na.rm = TRUE)
+summarise_diagnostics <- function(diag) diag |> group_by(rho_dd, outcome) |> summarise(
+  K = n(), share_converged = share(converged), share_bfgs = share(grepl("BFGS", optimizer)),
+  share_poisson_fallback = share(grepl("poisson", family_used)),
+  median_dharma_dispersion_ratio = median(dharma_dispersion_ratio), share_dispersion_ratio_outside_0.8_1.2 = share(dharma_dispersion_ratio < 0.8 | dharma_dispersion_ratio > 1.2),
+  share_dharma_dispersion_p_lt_0.05 = share(dharma_dispersion_p < 0.05), share_uniformity_p_lt_0.05 = share(dharma_uniformity_p < 0.05),
+  share_outliers_p_lt_0.05 = share(dharma_outliers_p < 0.05), share_homogeneity_by_condition_p_lt_0.05 = share(homogeneity_by_condition_p < 0.05),
+  share_uniformity_by_condition_p_min_lt_0.05 = share(uniformity_by_condition_p_min < 0.05), share_homogeneity_by_order_p_lt_0.05 = share(homogeneity_by_order_p < 0.05),
+  share_ranef_shapiro_p_min_lt_0.05 = share(ranef_shapiro_p_min < 0.05), median_pearson_ratio = median(pearson_ratio), .groups = "drop")
+summarise_comparison <- function(cmp) cmp |> group_by(rho_dd, outcome, model) |> summarise(
+  K = n(), share_converged = share(converged), share_best_aicc = share(delta_aicc == 0), mean_delta_aicc = mean(delta_aicc, na.rm = TRUE),
+  median_delta_aicc = median(delta_aicc, na.rm = TRUE), median_e1_positive = median(e1_positive), median_e1_negative = median(e1_negative),
+  q025_e1_positive = quantile(e1_positive, 0.025), q975_e1_positive = quantile(e1_positive, 0.975), .groups = "drop")
+summarise_random_structure <- function(rs) rs |> group_by(rho_dd, outcome, scale, pair) |> summarise(
+  K = n(), share_cov_exceeds_min_var = share(cov_exceeds_min_var), mean_corr_obs = mean(corr_obs), min_corr_obs = min(corr_obs), max_corr_obs = max(corr_obs),
+  mean_corr_model = mean(corr_model), .groups = "drop")
+
+# pooled E1 differences at rho_dd = 0 against the exact paired results of stage 2 (contrasts_exact.csv: d = control − treatment)
+check_vs_exact <- function(pooled) {
+  ex <- exact |> transmute(outcome, term = paste(treatment, "- control"), exact_diff = -mean_d, exact_ci_low = -ci_high_d, exact_ci_high = -ci_low_d,
+                           exact_se = sd_d_signed / sqrt(n))
+  pooled |> filter(rho_dd == 0, estimand == "E1", scale %in% c("difference (blinks/min)", "difference (degC)", "difference (ms, marginal)")) |>
+    select(outcome, term, scale, estimate, ci_low, ci_high, se_total, between_within_ratio) |>
+    left_join(ex, by = c("outcome", "term")) |>
+    mutate(diff_minus_exact = estimate - exact_diff, se_ratio = se_total / exact_se)
+}
+
+if (RUN_ENSEMBLE) {
+  grid <- ens |> distinct(rho_dd, rep) |> filter(rep <= N_REPS) |> arrange(rho_dd, rep)
+  if (is.finite(N_REPS)) cat("\n** smoke test: --reps", N_REPS, "— the outputs written now are partial and must not be committed **\n")
+  cat(sprintf("\n== ensemble: %d replicates (%d scenarios), %d cores ==\n", nrow(grid), n_distinct(grid$rho_dd), N_CORES))
+  t0 <- Sys.time()
+  res <- parallel::mclapply(seq_len(nrow(grid)), function(i) fit_replicate(grid$rho_dd[i], grid$rep[i]),
+                            mc.cores = N_CORES, mc.preschedule = FALSE)
+  failed <- vapply(res, inherits, logical(1), "try-error")
+  if (any(failed)) stop("mclapply: ", sum(failed), " replicate(s) returned an error object: ", res[[which(failed)[1]]])
+  per_est <- bind_rows(map(res, "est")); per_diag <- bind_rows(map(res, "diag")); per_cmp <- bind_rows(map(res, "cmp"))
+  per_rs  <- bind_rows(map(res, "rs"));  errs <- bind_rows(map(res, "err"))
+  cat(sprintf("fitted in %.1f min; %d replicate-outcome fits, %d errors\n", as.numeric(difftime(Sys.time(), t0, units = "mins")), nrow(per_diag), nrow(errs)))
+  if (nrow(errs) > 0) { write_csv(errs, file.path(out_tab, "stage3_ensemble_errors.csv")); print(errs) }
+
+  pooled   <- pool_rubin(per_est)
+  diag_sum <- summarise_diagnostics(per_diag)
+  cmp_sum  <- summarise_comparison(per_cmp)
+  rs_sum   <- summarise_random_structure(per_rs)
+  chk      <- check_vs_exact(pooled)
+
+  write_csv(pooled,   file.path(out_tab, "stage3_ensemble_estimands.csv"))
+  write_csv(chk,      file.path(out_tab, "stage3_ensemble_check_vs_exact.csv"))
+  write_csv(diag_sum, file.path(out_tab, "stage3_ensemble_diagnostics.csv"))
+  write_csv(cmp_sum,  file.path(out_tab, "stage3_ensemble_model_comparison.csv"))
+  write_csv(rs_sum,   file.path(out_tab, "stage3_ensemble_random_structure.csv"))
+  write_csv(per_est,  file.path(out_tab, "stage3_ensemble_per_replicate_estimands.csv.gz"))
+  write_csv(per_diag, file.path(out_tab, "stage3_ensemble_per_replicate_diagnostics.csv.gz"))
+  write_csv(per_cmp,  file.path(out_tab, "stage3_ensemble_per_replicate_model_comparison.csv.gz"))
+  write_csv(per_rs,   file.path(out_tab, "stage3_ensemble_per_replicate_random_structure.csv.gz"))
+
+  options(width = 170, pillar.sigfig = 4)
+  cat("\n-- convergence and diagnostics: shares of replicates --\n")
+  print(diag_sum |> select(rho_dd, outcome, K, share_converged, share_bfgs, share_poisson_fallback, median_dharma_dispersion_ratio,
+                           share_dispersion_ratio_outside_0.8_1.2, share_dharma_dispersion_p_lt_0.05, share_uniformity_p_lt_0.05,
+                           share_homogeneity_by_condition_p_lt_0.05, share_ranef_shapiro_p_min_lt_0.05))
+  cat("\n-- S3 check: pooled E1 differences (rho_dd = 0) vs the exact paired results of stage 2 --\n")
+  print(chk)
+  cat("\n-- E1, E2 pooled over K = 200, response scale, by scenario --\n")
+  print(pooled |> filter(estimand %in% c("E1", "E2"), scale != "link", !grepl("^difference", scale) | outcome == "ET") |>
+          select(rho_dd, outcome, estimand, term, scale, estimate, ci_low, ci_high, between_within_ratio, fmi) |> arrange(outcome, term, scale, rho_dd), n = 60)
+  cat("\n-- E3 pooled, rho_dd = 0 (tau/ICC for SBR; sigma_c and correlations for ET, RMSSD) --\n")
+  print(pooled |> filter(rho_dd == 0, estimand == "E3") |> select(outcome, term, estimate, ci_low, ci_high, between_sd_estimate, q025_estimate, q975_estimate), n = 40)
+  cat("\n-- within-donkey covariance: share of replicates with Cov(c, c') > min Var, mean correlation --\n")
+  print(rs_sum |> select(rho_dd, outcome, pair, share_cov_exceeds_min_var, mean_corr_obs, min_corr_obs, max_corr_obs, mean_corr_model), n = 40)
+  cat("\n-- model comparison: share of replicates preferring each model by AICc, median E1 --\n")
+  print(cmp_sum |> select(rho_dd, outcome, model, share_converged, share_best_aicc, median_delta_aicc, median_e1_positive, median_e1_negative) |>
+          arrange(outcome, rho_dd, median_delta_aicc), n = 60)
+  cat("\nwritten: output/tables/stage3_ensemble_{estimands,check_vs_exact,diagnostics,model_comparison,random_structure}.csv;",
+      "stage3_ensemble_per_replicate_{estimands,diagnostics,model_comparison,random_structure}.csv.gz\n")
+}

@@ -14,6 +14,7 @@
 !**/stan/.gitkeep
 # … but the small reconstructed ensemble that feeds stages 3–4 is committed (1.5 MB; draws never land there)
 !**/data/derived/stage3/*.csv.gz
+!**/output/tables/stage3_ensemble_per_replicate_*.csv.gz
 
 # R
 .Rhistory

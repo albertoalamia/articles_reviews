@@ -1,0 +1,10 @@
+rho_dd,outcome,K,share_converged,share_bfgs,share_poisson_fallback,median_dharma_dispersion_ratio,share_dispersion_ratio_outside_0.8_1.2,share_dharma_dispersion_p_lt_0.05,share_uniformity_p_lt_0.05,share_outliers_p_lt_0.05,share_homogeneity_by_condition_p_lt_0.05,share_uniformity_by_condition_p_min_lt_0.05,share_homogeneity_by_order_p_lt_0.05,share_ranef_shapiro_p_min_lt_0.05,median_pearson_ratio
+-0.5,ET,200,1,0,0,1.0217456974013397,0,0,0,0.02,0,0,0.01,0.145,NA
+-0.5,RMSSD,200,1,0,0,1.0180648629444646,0,0,0.41,0.4,0.05,0.135,0.01,0.985,NA
+-0.5,SBR,200,1,0,0.505,0.8319587402673502,0.19,0,0,0.04,0.37,0.01,0,0.115,0.8821052557802818
+0,ET,200,1,0,0,1.0238428111227493,0,0,0,0.015,0,0,0.005,0.12,NA
+0,RMSSD,200,1,0,0,1.0194013874134864,0,0,0.305,0.36,0.06,0.125,0.005,0.97,NA
+0,SBR,200,1,0,1,0.7984758196091721,0.525,0,0,0.01,0.365,0.005,0,0.08,0.776735662137061
+0.5,ET,200,1,0,0,1.0250912401819283,0,0,0,0.015,0,0,0,0.185,NA
+0.5,RMSSD,200,1,0,0,1.019985619083601,0,0,0.305,0.43,0.07,0.115,0,0.975,NA
+0.5,SBR,200,1,0,1,0.7568395399532469,0.875,0,0.005,0.01,0.42,0.005,0.005,0.07,0.6732368105115623
