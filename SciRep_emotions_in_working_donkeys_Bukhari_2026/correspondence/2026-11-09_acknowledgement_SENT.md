@@ -1,4 +1,4 @@
-# Acknowledgement of Parkes's reply — DRAFT (not sent)
+# Acknowledgement of Parkes's reply — SENT
 
 To: rebecca.sv.parkes@hkjc.org.hk, habukhari2-c@my.cityu.edu.hk
 Cc: alan.mcelligott@cityu.edu.hk, pmortens@cityu.edu.hk
@@ -34,7 +34,9 @@ alberto.alamia@telepsichiatria.org
 
 ---
 
-Notes (not sent): reply to Gmail-id 1a1bf29873a8a6ab, thread 1a1748c4d68d2a1a. tools/send_email.py
-does not set In-Reply-To, so sending it from the script opens a new thread on their side; sending
-from the Gmail web client as a reply keeps the thread. The "end of November" date is a proposal
-for Alberto to confirm or change before sending.
+Notes (not sent): answers Parkes's message of 2026-11-09 (Gmail-id 1a1bf29873a8a6ab, thread
+1a1748c4d68d2a1a). Sent with tools/send_email.py, which sets no In-Reply-To header, so on the
+recipients' side it may appear as a new thread with the same subject. Data proposed by end of
+November 2026, more time on request; full text before publication confirmed.
+
+Sent: 2026-11-09T19:43+01:00  gmail-id 1a1c19f20ee8acfa
