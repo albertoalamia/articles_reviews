@@ -153,7 +153,9 @@ def slug(s: str) -> str:
 def sender_slug(from_header: str) -> str:
     name, addr = parseaddr(from_header)
     if name:
-        return slug(name.split()[-1])              # surname
+        if "," in name:                            # "PARKES, Rebecca S V" -> parkes
+            return slug(name.split(",")[0])
+        return slug(name.split()[-1])              # "Alan McElligott" -> mcelligott
     return slug(addr.split("@")[0])
 
 

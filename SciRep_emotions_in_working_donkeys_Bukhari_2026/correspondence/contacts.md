@@ -21,3 +21,4 @@ Notes
 |------|-----------|---------|---------|---------|------|
 | 2026-10-25 | sent | Bukhari, Parkes (cc McElligott, Steagall) | email | Data request: per-animal values, order, ambient covariates, HRV exports, code; follow-up if silent by 2026-11-15 | 2026-10-25_data_request_SENT.md |
 | 2026-10-26 | received | Prof. Alan McElligott | email | Defers to Parkes and Bukhari on the data; points to PubPeer thread on Panzera & Statelli 2025 | 2026-10-26_reply_mcelligott_RECEIVED.md |
+| 2026-11-09 | received | Dr Rebecca Parkes (corresponding; cc Bukhari, McElligott, Steagall) | email | Request had gone to spam; "we will discuss and review the data, and get back to you as soon as possible". No data yet, no date given | 2026-11-09_reply_parkes_RECEIVED.md |
