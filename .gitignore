@@ -16,6 +16,7 @@
 !**/data/derived/stage3/*.csv.gz
 !**/output/tables/stage3_ensemble_per_replicate_*.csv.gz
 !**/output/tables/stage3_e4_per_replicate.csv.gz
+!**/output/tables/stage4_per_replicate_*.csv.gz
 
 # R
 .Rhistory

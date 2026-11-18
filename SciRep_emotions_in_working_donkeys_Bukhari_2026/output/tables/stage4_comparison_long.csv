@@ -1,0 +1,1333 @@
+rho_dd,outcome,estimand,term,scale,source,estimate,ci_low,ci_high,post_sd
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 3 (K = 200),19.10703019694501,14.21989640067054,23.99416399321948,NA
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 3 (same 10 replicates),19.383368322309014,14.612985355990176,24.153751288627852,NA
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 4,19.321,14.1936575,24.252270000000003,2.5724753613353064
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x0.5 (i')",19.1933,14.209270000000002,24.158027500000003,2.527693608633127
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x2 (i)",19.392449999999997,14.407462500000001,24.36436,2.5493792322783957
+0,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 3 (K = 200),18.933971150939044,14.016365247449285,23.851577054428805,NA
+0,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 3 (same 10 replicates),18.617820173826622,13.33552846579165,23.900111881861594,NA
+0,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 4,18.7398,12.6525725,23.593255000000003,2.7590498755690764
+0,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x0.5 (i')",18.531,12.570670000000002,23.4055025,2.7405460378873094
+0,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x2 (i)",18.73605,12.7360075,23.6821425,2.7600484005331327
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 3 (K = 200),19.008622837419615,14.059899861673465,23.95734581316577,NA
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 3 (same 10 replicates),18.919787563815536,13.448599274514397,24.390975853116675,NA
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,stage 4,18.88395,13.0317875,24.3768475,2.8503266142992025
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x0.5 (i')",18.7309,12.899665,24.140705,2.824186622973023
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x2 (i)",18.91935,13.09482,24.485207499999998,2.869319493093375
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 3 (K = 200),45.84128965230837,32.22472383501466,59.45785546960208,NA
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 3 (same 10 replicates),45.42414266311704,31.29732204016259,59.550963286071486,NA
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 4,44.87135,29.316482500000003,57.823220000000006,7.256423250245123
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x0.5 (i')",42.24665,27.404695,54.5914475,6.960928710071044
+-0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x2 (i)",45.58015,29.6388775,58.806955,7.414709627781132
+0,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 3 (K = 200),45.79693998382442,32.436292290731274,59.15758767691757,NA
+0,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 3 (same 10 replicates),47.06504062779073,34.20961006878932,59.92047118679214,NA
+0,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 4,46.0903,32.809512500000004,59.20702,6.730038446118093
+0,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x0.5 (i')",43.408500000000004,30.547849999999997,55.9015475,6.428483157544583
+0,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x2 (i)",46.87335,33.3277775,60.0651625,6.830257869494998
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 3 (K = 200),45.128550205922465,31.59717266992383,58.6599277419211,NA
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 3 (same 10 replicates),45.014758063275664,31.72299679379671,58.30651933275462,NA
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,stage 4,44.291250000000005,29.66395,57.22656750000001,7.051018718449563
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x0.5 (i')",41.742149999999995,27.544082500000002,53.936745,6.689070779486102
+0.5,E4 (x = dET),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x2 (i)",44.8938,30.5407325,58.03138750000001,7.019775261717881
+-0.5,E4 (x = dET),E4,"b (slope), negative",response,stage 3 (K = 200),-7.655932102865174,-11.307524243871454,-4.004339961858895,NA
+-0.5,E4 (x = dET),E4,"b (slope), negative",response,stage 3 (same 10 replicates),-7.858972320532102,-11.483294024248469,-4.234650616815734,NA
+-0.5,E4 (x = dET),E4,"b (slope), negative",response,stage 4,-7.810779999999999,-11.538007499999999,-3.9881872499999993,1.9372034556209716
+-0.5,E4 (x = dET),E4,"b (slope), negative",response,"stage 4, prior SDs x0.5 (i')",-7.698145,-11.4494,-3.9855112499999996,1.8967511520119997
+-0.5,E4 (x = dET),E4,"b (slope), negative",response,"stage 4, prior SDs x2 (i)",-7.852869999999999,-11.663245,-4.075386999999998,1.9209484323946855
+0,E4 (x = dET),E4,"b (slope), negative",response,stage 3 (K = 200),-7.512133085809648,-11.211592321247853,-3.812673850371445,NA
+0,E4 (x = dET),E4,"b (slope), negative",response,stage 3 (same 10 replicates),-7.3092348916031,-11.38926736923007,-3.229202413976129,NA
+0,E4 (x = dET),E4,"b (slope), negative",response,stage 4,-7.39651,-11.091917500000001,-2.6687184999999998,2.1079720953409935
+0,E4 (x = dET),E4,"b (slope), negative",response,"stage 4, prior SDs x0.5 (i')",-7.2887900000000005,-10.9175325,-2.5641864999999973,2.1011018593202033
+0,E4 (x = dET),E4,"b (slope), negative",response,"stage 4, prior SDs x2 (i)",-7.421965,-11.1158175,-2.660383249999995,2.115851363193498
+0.5,E4 (x = dET),E4,"b (slope), negative",response,stage 3 (K = 200),-7.558822997620497,-11.273191713343154,-3.84445428189784,NA
+0.5,E4 (x = dET),E4,"b (slope), negative",response,stage 3 (same 10 replicates),-7.493959419335085,-11.62559096129728,-3.3623278773728895,NA
+0.5,E4 (x = dET),E4,"b (slope), negative",response,stage 4,-7.493785,-11.5891475,-3.034083999999999,2.1476398676647266
+0.5,E4 (x = dET),E4,"b (slope), negative",response,"stage 4, prior SDs x0.5 (i')",-7.3832450000000005,-11.3469075,-2.9488427499999945,2.1177066836615195
+0.5,E4 (x = dET),E4,"b (slope), negative",response,"stage 4, prior SDs x2 (i)",-7.4949200000000005,-11.636917500000001,-3.0343947499999997,2.1557853392707598
+-0.5,E4 (x = dET),E4,"b (slope), positive",response,stage 3 (K = 200),-16.86216268607767,-31.872315179182703,-1.8520101929726336,NA
+-0.5,E4 (x = dET),E4,"b (slope), positive",response,stage 3 (same 10 replicates),-16.500889144674346,-32.65395953945631,-0.3478187498923866,NA
+-0.5,E4 (x = dET),E4,"b (slope), positive",response,stage 4,-16.121850000000002,-30.21742,1.4522257500000038,8.11320325296554
+-0.5,E4 (x = dET),E4,"b (slope), positive",response,"stage 4, prior SDs x0.5 (i')",-13.7574,-27.2316675,2.887170000000002,7.7576067565085305
+-0.5,E4 (x = dET),E4,"b (slope), positive",response,"stage 4, prior SDs x2 (i)",-16.853650000000002,-31.0752775,1.259695250000001,8.283853364177702
+0,E4 (x = dET),E4,"b (slope), positive",response,stage 3 (K = 200),-16.811997317125556,-31.456818938221645,-2.1671756960294655,NA
+0,E4 (x = dET),E4,"b (slope), positive",response,stage 3 (same 10 replicates),-18.39219367932555,-32.20791550084179,-4.576471857809313,NA
+0,E4 (x = dET),E4,"b (slope), positive",response,stage 4,-17.37575,-31.3741925,-3.4873042499999953,7.118766957210771
+0,E4 (x = dET),E4,"b (slope), positive",response,"stage 4, prior SDs x0.5 (i')",-14.9474,-28.1735125,-1.4075097500000002,6.798003163453236
+0,E4 (x = dET),E4,"b (slope), positive",response,"stage 4, prior SDs x2 (i)",-18.1388,-32.340027500000005,-3.9194207499999965,7.2512036687817965
+0.5,E4 (x = dET),E4,"b (slope), positive",response,stage 3 (K = 200),-15.969804691624867,-30.813078605467982,-1.1265307777817526,NA
+0.5,E4 (x = dET),E4,"b (slope), positive",response,stage 3 (same 10 replicates),-15.928406449967065,-30.48191241637849,-1.374900483555642,NA
+0.5,E4 (x = dET),E4,"b (slope), positive",response,stage 4,-15.2829,-29.137410000000003,0.4956673500000004,7.589552192912263
+0.5,E4 (x = dET),E4,"b (slope), positive",response,"stage 4, prior SDs x0.5 (i')",-12.8971,-25.839545,2.1044332500000063,7.149389577677623
+0.5,E4 (x = dET),E4,"b (slope), positive",response,"stage 4, prior SDs x2 (i)",-15.92145,-29.624795000000002,-0.14110962499999657,7.547609672271055
+-0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 3 (K = 200),-9.206230583212497,-24.620749711754232,6.208288545329239,NA
+-0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 3 (same 10 replicates),-8.641916824142244,-24.86511186376601,7.5812782154815235,NA
+-0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 4,-8.23179,-22.778925,9.265932250000008,8.199128733665868
+-0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x0.5 (i')",-5.97425,-19.8788,10.550767500000005,7.855244714574942
+-0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x2 (i)",-8.90173,-23.564764999999998,9.25521500000001,8.38097106254298
+0,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 3 (K = 200),-9.299864231315906,-24.41464625497461,5.814917792342797,NA
+0,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 3 (same 10 replicates),-11.082958787722452,-25.677576023380887,3.5116584479359805,NA
+0,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 4,-10.110949999999999,-24.8964225,4.653422500000003,7.510186651689596
+0,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x0.5 (i')",-7.79613,-21.85532,6.599620750000007,7.218616539866422
+0,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x2 (i)",-10.85065,-25.856804999999998,4.197434500000006,7.620302771391502
+0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 3 (K = 200),-8.410981694004372,-23.75089331490247,6.928929926893728,NA
+0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 3 (same 10 replicates),-8.434447030631981,-23.292501513616664,6.423607452352703,NA
+0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,stage 4,-7.725255,-22.280105,8.1681315,7.7961544329036325
+0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x0.5 (i')",-5.54349,-18.8929325,9.659736250000002,7.335057772277775
+0.5,E4 (x = dET),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x2 (i)",-8.384284999999998,-22.788679999999996,7.588436000000001,7.760529069626211
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 3 (K = 200),-0.6271442142382485,NA,NA,NA
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 3 (same 10 replicates),-0.6381235648073228,NA,NA,NA
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 4,-0.6362975,-0.924899725,-0.32911209999999974,0.1523904469627201
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x0.5 (i')",-0.6266505,-0.9162332249999999,-0.3296180249999999,0.1493016621059124
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x2 (i)",-0.6389115000000001,-0.9324383999999999,-0.3376745499999998,0.1511443767576207
+0,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 3 (K = 200),-0.6201539604470582,NA,NA,NA
+0,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 3 (same 10 replicates),-0.6058690985913476,NA,NA,NA
+0,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 4,-0.6130955,-0.916777475,-0.22480102499999988,0.17309981673775848
+0,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x0.5 (i')",-0.6038755,-0.9035043249999999,-0.21530084999999977,0.17251887222834214
+0,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x2 (i)",-0.6148235,-0.91728855,-0.2239668499999997,0.17370907936323282
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 3 (K = 200),-0.6226044565235053,NA,NA,NA
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 3 (same 10 replicates),-0.6111238282260052,NA,NA,NA
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,stage 4,-0.6141905000000001,-0.9157046,-0.25360557499999964,0.1665985290892792
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x0.5 (i')",-0.6052854999999999,-0.899652925,-0.24721527499999996,0.1646779254168822
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x2 (i)",-0.6158165,-0.92116515,-0.2538775999999999,0.16726902389753362
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 3 (K = 200),-0.4333962432513828,NA,NA,NA
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 3 (same 10 replicates),-0.42961224206881654,NA,NA,NA
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 4,-0.41970050000000003,-0.7895807,0.03773874500000019,0.21201047233900266
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x0.5 (i')",-0.35773849999999996,-0.71155,0.07431002750000003,0.20259651946616739
+-0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x2 (i)",-0.438152,-0.8118156000000001,0.03218677750000013,0.2164344914380869
+0,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 3 (K = 200),-0.4328930466229786,NA,NA,NA
+0,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 3 (same 10 replicates),-0.47320732672364413,NA,NA,NA
+0,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 4,-0.4491275,-0.7960963750000001,-0.09029330249999994,0.1803896160871536
+0,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x0.5 (i')",-0.386343,-0.7159563750000001,-0.03647695499999992,0.17290630291808454
+0,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x2 (i)",-0.469121,-0.821023425,-0.10204874999999988,0.18374807560097406
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 3 (K = 200),-0.4118735663602808,NA,NA,NA
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 3 (same 10 replicates),-0.41448774137504657,NA,NA,NA
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,stage 4,-0.3973675,-0.7607343999999999,0.0125974175000001,0.1984835101228289
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x0.5 (i')",-0.3348595,-0.674663025,0.054086709999999996,0.18687802468401715
+0.5,E4 (x = dET),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x2 (i)",-0.4140235,-0.77420025,-0.003544954249999972,0.1974884796138252
+-0.5,E4 (x = dET),E4,"s (residual SD), negative",response,stage 3 (K = 200),6.164743358436342,NA,NA,NA
+-0.5,E4 (x = dET),E4,"s (residual SD), negative",response,stage 3 (same 10 replicates),6.085638035306972,NA,NA,NA
+-0.5,E4 (x = dET),E4,"s (residual SD), negative",response,stage 4,6.455815,4.945157999999999,8.649343750000002,0.940829141163656
+-0.5,E4 (x = dET),E4,"s (residual SD), negative",response,"stage 4, prior SDs x0.5 (i')",6.44829,4.9376315,8.55497075,0.9260141151052308
+-0.5,E4 (x = dET),E4,"s (residual SD), negative",response,"stage 4, prior SDs x2 (i)",6.44572,4.933363249999999,8.597747250000001,0.9313863715235045
+0,E4 (x = dET),E4,"s (residual SD), negative",response,stage 3 (K = 200),6.187358242750103,NA,NA,NA
+0,E4 (x = dET),E4,"s (residual SD), negative",response,stage 3 (same 10 replicates),6.296065232616708,NA,NA,NA
+0,E4 (x = dET),E4,"s (residual SD), negative",response,stage 4,6.63827,5.052791999999999,9.06497075,1.0284432001921169
+0,E4 (x = dET),E4,"s (residual SD), negative",response,"stage 4, prior SDs x0.5 (i')",6.63157,5.062488,9.089500000000001,1.0296633397656638
+0,E4 (x = dET),E4,"s (residual SD), negative",response,"stage 4, prior SDs x2 (i)",6.644525,5.0520890000000005,9.105533500000002,1.0385447083958772
+0.5,E4 (x = dET),E4,"s (residual SD), negative",response,stage 3 (K = 200),6.161467104453899,NA,NA,NA
+0.5,E4 (x = dET),E4,"s (residual SD), negative",response,stage 3 (same 10 replicates),6.250151733334817,NA,NA,NA
+0.5,E4 (x = dET),E4,"s (residual SD), negative",response,stage 4,6.599360000000001,4.97216475,9.02274925,1.025242743586299
+0.5,E4 (x = dET),E4,"s (residual SD), negative",response,"stage 4, prior SDs x0.5 (i')",6.610215,4.97765875,8.95638375,1.0190358555228505
+0.5,E4 (x = dET),E4,"s (residual SD), negative",response,"stage 4, prior SDs x2 (i)",6.61684,4.9875275,9.0389905,1.028248166780765
+-0.5,E4 (x = dET),E4,"s (residual SD), positive",response,stage 3 (K = 200),21.542744782198877,NA,NA,NA
+-0.5,E4 (x = dET),E4,"s (residual SD), positive",response,stage 3 (same 10 replicates),21.55275575222134,NA,NA,NA
+-0.5,E4 (x = dET),E4,"s (residual SD), positive",response,stage 4,22.720950000000002,17.423395,30.578232500000002,3.379374495471085
+-0.5,E4 (x = dET),E4,"s (residual SD), positive",response,"stage 4, prior SDs x0.5 (i')",22.54585,17.397585000000003,30.093445,3.27107299879295
+-0.5,E4 (x = dET),E4,"s (residual SD), positive",response,"stage 4, prior SDs x2 (i)",22.7752,17.435857499999997,30.687167500000005,3.4179766123920543
+0,E4 (x = dET),E4,"s (residual SD), positive",response,stage 3 (K = 200),21.566502904581498,NA,NA,NA
+0,E4 (x = dET),E4,"s (residual SD), positive",response,stage 3 (same 10 replicates),21.113701632247555,NA,NA,NA
+0,E4 (x = dET),E4,"s (residual SD), positive",response,stage 4,22.34695,16.9894975,29.751815000000008,3.230478442219871
+0,E4 (x = dET),E4,"s (residual SD), positive",response,"stage 4, prior SDs x0.5 (i')",22.175,16.963795,29.2571125,3.136380440893504
+0,E4 (x = dET),E4,"s (residual SD), positive",response,"stage 4, prior SDs x2 (i)",22.379649999999998,16.99786,29.873005,3.2634957791314143
+0.5,E4 (x = dET),E4,"s (residual SD), positive",response,stage 3 (K = 200),21.813983390098873,NA,NA,NA
+0.5,E4 (x = dET),E4,"s (residual SD), positive",response,stage 3 (same 10 replicates),21.845423720185053,NA,NA,NA
+0.5,E4 (x = dET),E4,"s (residual SD), positive",response,stage 4,23.0853,17.8121975,30.90742,3.349966177961102
+0.5,E4 (x = dET),E4,"s (residual SD), positive",response,"stage 4, prior SDs x0.5 (i')",22.851399999999998,17.7202625,30.2661025,3.2111683081715485
+0.5,E4 (x = dET),E4,"s (residual SD), positive",response,"stage 4, prior SDs x2 (i)",23.0649,17.8387675,30.911527500000002,3.3499213646789854
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 3 (K = 200),1.6016808766313029,-4.005259899812481,7.208621653075086,NA
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 3 (same 10 replicates),2.4130901334334363,-3.336309803568059,8.16249007043493,NA
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 4,2.4999700000000002,-3.442663,8.66286275,3.075061676328025
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x0.5 (i')",2.8079549999999998,-2.9076447499999998,8.992111500000005,3.005375452080565
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x2 (i)",2.375365,-3.6223382499999994,8.633438250000008,3.104535361959561
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 3 (K = 200),1.5068741415687228,-4.051101301337201,7.064849584474646,NA
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 3 (same 10 replicates),1.1835028979989792,-4.401530433418277,6.7685362294162355,NA
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 4,1.27582,-4.46016825,7.342913250000001,2.9868815854225637
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x0.5 (i')",1.657555,-3.90735425,7.621278500000001,2.9184530325002487
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x2 (i)",1.205905,-4.6175255,7.3360520000000005,3.02844137198368
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 3 (K = 200),1.6930717652053209,-3.9141582048553016,7.300301735265943,NA
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 3 (same 10 replicates),1.5777770472817638,-3.958453582081301,7.114007676644828,NA
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,stage 4,1.6703999999999999,-4.23942975,7.6887715000000005,3.017627235970632
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x0.5 (i')",2.0591350000000004,-3.58907275,7.9518425,2.9336180474624047
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), negative",response,"stage 4, prior SDs x2 (i)",1.584215,-4.2217725,7.677561250000004,3.0214534785567286
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 3 (K = 200),1.6839306229630506,-24.68346420646434,28.05132545239044,NA
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 3 (same 10 replicates),1.8041358376065944,-24.117546144054067,27.725817819267256,NA
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 4,2.50486,-21.620932500000002,29.109107500000036,12.995255079129116
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x0.5 (i')",4.620229999999999,-16.755705000000003,27.78461250000001,11.309579036509726
+-0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x2 (i)",1.89567,-23.176495000000003,29.67369250000001,13.477774306908204
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 3 (K = 200),1.7660441073309878,-23.905179920527875,27.43726813518985,NA
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 3 (same 10 replicates),0.9201623149123458,-23.220872942574246,25.06119757239894,NA
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 4,1.8870200000000001,-21.718629999999997,26.684915000000007,12.325660305845402
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x0.5 (i')",4.216835,-16.19751,26.259855,10.774970307601755
+0,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x2 (i)",1.176795,-23.2984275,26.986065000000004,12.72086427553728
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 3 (K = 200),1.6551823310288476,-23.855240090202148,27.16560475225984,NA
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 3 (same 10 replicates),0.9294185595098007,-24.412040626086483,26.270877745106088,NA
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,stage 4,1.794895,-22.2592,28.196105000000006,12.719140997813057
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x0.5 (i')",4.038795,-16.745855,26.91099250000002,11.084153636713905
+0.5,E4 (x = dSBR),E4,"a (intercept at x = 0), positive",response,"stage 4, prior SDs x2 (i)",0.8594335,-24.2025775,28.68822750000003,13.317613649387997
+-0.5,E4 (x = dSBR),E4,"b (slope), negative",response,stage 3 (K = 200),-1.2484840379142814,-2.0072485620903926,-0.4897195137381702,NA
+-0.5,E4 (x = dSBR),E4,"b (slope), negative",response,stage 3 (same 10 replicates),-1.1290609199383934,-1.9125509581242464,-0.34557088175254047,NA
+-0.5,E4 (x = dSBR),E4,"b (slope), negative",response,stage 4,-1.114045,-1.91888225,-0.2761149499999999,0.4169264398667165
+-0.5,E4 (x = dSBR),E4,"b (slope), negative",response,"stage 4, prior SDs x0.5 (i')",-1.070545,-1.84434275,-0.23734917499999966,0.4065560920969637
+-0.5,E4 (x = dSBR),E4,"b (slope), negative",response,"stage 4, prior SDs x2 (i)",-1.134785,-1.94404075,-0.28478877499999994,0.4223502960190445
+0,E4 (x = dSBR),E4,"b (slope), negative",response,stage 3 (K = 200),-1.264306806252318,-2.0160719216159477,-0.5125416908886883,NA
+0,E4 (x = dSBR),E4,"b (slope), negative",response,stage 3 (same 10 replicates),-1.3055058401512456,-2.065671090130013,-0.5453405901724786,NA
+0,E4 (x = dSBR),E4,"b (slope), negative",response,stage 4,-1.293275,-2.06269075,-0.46853257499999973,0.40405257433437924
+0,E4 (x = dSBR),E4,"b (slope), negative",response,"stage 4, prior SDs x0.5 (i')",-1.23333,-1.9780227499999998,-0.4100971999999998,0.3944025208671772
+0,E4 (x = dSBR),E4,"b (slope), negative",response,"stage 4, prior SDs x2 (i)",-1.307165,-2.08975125,-0.4599796999999983,0.4100247117696492
+0.5,E4 (x = dSBR),E4,"b (slope), negative",response,stage 3 (K = 200),-1.238059210383951,-1.9965182470178175,-0.4796001737500841,NA
+0.5,E4 (x = dSBR),E4,"b (slope), negative",response,stage 3 (same 10 replicates),-1.2513346088711697,-2.000958719648345,-0.5017104980939943,NA
+0.5,E4 (x = dSBR),E4,"b (slope), negative",response,stage 4,-1.2387350000000001,-2.020136,-0.4267562499999997,0.4049545176330476
+0.5,E4 (x = dSBR),E4,"b (slope), negative",response,"stage 4, prior SDs x0.5 (i')",-1.181805,-1.942114,-0.3887608749999996,0.3940616097939848
+0.5,E4 (x = dSBR),E4,"b (slope), negative",response,"stage 4, prior SDs x2 (i)",-1.2485499999999998,-2.03956325,-0.42899174999999934,0.4086421138071552
+-0.5,E4 (x = dSBR),E4,"b (slope), positive",response,stage 3 (K = 200),1.6459232493312088,0.3118435147991432,2.9800029838632742,NA
+-0.5,E4 (x = dSBR),E4,"b (slope), positive",response,stage 3 (same 10 replicates),1.6384819723412352,0.3289142959124789,2.9480496487699916,NA
+-0.5,E4 (x = dSBR),E4,"b (slope), positive",response,stage 4,1.602445,0.2484376,2.819131,0.6549963955279688
+-0.5,E4 (x = dSBR),E4,"b (slope), positive",response,"stage 4, prior SDs x0.5 (i')",1.481185,0.30308907500000004,2.5656232500000002,0.5743540677221987
+-0.5,E4 (x = dSBR),E4,"b (slope), positive",response,"stage 4, prior SDs x2 (i)",1.631855,0.22490565,2.8995740000000003,0.6790374714759917
+0,E4 (x = dSBR),E4,"b (slope), positive",response,stage 3 (K = 200),1.641895668499339,0.34578127678282056,2.9380100602158574,NA
+0,E4 (x = dSBR),E4,"b (slope), positive",response,stage 3 (same 10 replicates),1.688412733726583,0.4772346940151253,2.8995907734380406,NA
+0,E4 (x = dSBR),E4,"b (slope), positive",response,stage 4,1.637155,0.39364657500000005,2.822042,0.6170657309395658
+0,E4 (x = dSBR),E4,"b (slope), positive",response,"stage 4, prior SDs x0.5 (i')",1.50762,0.396793625,2.53975,0.5438176104618909
+0,E4 (x = dSBR),E4,"b (slope), positive",response,"stage 4, prior SDs x2 (i)",1.677625,0.38850527500000004,2.9087567500000002,0.6389761115474409
+0.5,E4 (x = dSBR),E4,"b (slope), positive",response,stage 3 (K = 200),1.6472815722615213,0.3595394810358492,2.9350236634871933,NA
+0.5,E4 (x = dSBR),E4,"b (slope), positive",response,stage 3 (same 10 replicates),1.6848293965629029,0.40398759217957547,2.9656712009462303,NA
+0.5,E4 (x = dSBR),E4,"b (slope), positive",response,stage 4,1.64368,0.30653715,2.83623,0.640913373637104
+0.5,E4 (x = dSBR),E4,"b (slope), positive",response,"stage 4, prior SDs x0.5 (i')",1.5175,0.343257425,2.563390500000001,0.5609968283340081
+0.5,E4 (x = dSBR),E4,"b (slope), positive",response,"stage 4, prior SDs x2 (i)",1.689055,0.283381675,2.936591,0.6706564680535759
+-0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 3 (K = 200),2.8944072872454902,1.3510579105539524,4.437756663937028,NA
+-0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 3 (same 10 replicates),2.7675428922796286,1.3126755976174826,4.222410186941774,NA
+-0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 4,2.700245,1.2243382500000002,4.1370525,0.7445417858644352
+-0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x0.5 (i')",2.52989,1.1892655,3.8505210000000005,0.6776729201463163
+-0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x2 (i)",2.75516,1.22037425,4.2573704999999995,0.7753614329334431
+0,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 3 (K = 200),2.906202474751657,1.4184528122152174,4.393952137288097,NA
+0,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 3 (same 10 replicates),2.9939185738778287,1.5697227054535328,4.418114442302125,NA
+0,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 4,2.9169799999999997,1.4695829999999999,4.366408250000001,0.7349883798985206
+0,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x0.5 (i')",2.731785,1.38776825,4.010849000000001,0.6696489145570483
+0,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x2 (i)",2.9720500000000003,1.456447,4.449993250000002,0.7608900555169422
+0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 3 (K = 200),2.885340782645472,1.3775642390114324,4.393117326279512,NA
+0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 3 (same 10 replicates),2.9361640054340725,1.4565548917164997,4.415773119151646,NA
+0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,stage 4,2.863635,1.33446475,4.326860750000001,0.7605562418437752
+0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x0.5 (i')",2.685675,1.29944625,3.999280750000002,0.6876188290627416
+0.5,E4 (x = dSBR),E4,"b positive - b negative, positive - negative",response,"stage 4, prior SDs x2 (i)",2.920745,1.337492,4.43059175,0.7867084933887786
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 3 (K = 200),-0.5115384498088876,NA,NA,NA
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 3 (same 10 replicates),-0.4636263000163788,NA,NA,NA
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 4,-0.4572425,-0.791042275,-0.11292174999999981,0.1722501774968683
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x0.5 (i')",-0.4388605,-0.758756,-0.09680387249999994,0.1678993627007396
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x2 (i)",-0.4654595,-0.80036475,-0.11575602499999976,0.1743715026387442
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 3 (K = 200),-0.5189698883926775,NA,NA,NA
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 3 (same 10 replicates),-0.5321149677941386,NA,NA,NA
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 4,-0.5270265000000001,-0.8422600499999999,-0.19060672499999995,0.16506018985894827
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x0.5 (i')",-0.503264,-0.8069554999999999,-0.16604689999999983,0.1611936601887783
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x2 (i)",-0.532717,-0.852968725,-0.1862676249999998,0.1675769786703461
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 3 (K = 200),-0.5089616702690093,NA,NA,NA
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 3 (same 10 replicates),-0.5124093493692459,NA,NA,NA
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,stage 4,-0.5072635,-0.8287342249999999,-0.17474174999999995,0.16626690044829182
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x0.5 (i')",-0.483474,-0.797363525,-0.15897452499999998,0.16183174649896306
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), negative",response,"stage 4, prior SDs x2 (i)",-0.5113829999999999,-0.835822,-0.17470917499999983,0.16776997400113464
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 3 (K = 200),0.4444770790917465,NA,NA,NA
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 3 (same 10 replicates),0.44198582510269596,NA,NA,NA
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 4,0.4322945,0.0671904725,0.761765675,0.17670720373883816
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x0.5 (i')",0.399409,0.08156052,0.6927658000000001,0.15502194936524602
+-0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x2 (i)",0.4402115,0.060687055,0.782491175,0.1832292961786331
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 3 (K = 200),0.4435648055620759,NA,NA,NA
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 3 (same 10 replicates),0.4569895762579545,NA,NA,NA
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 4,0.443161,0.10661445000000001,0.763373525,0.16678597489034735
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x0.5 (i')",0.408226,0.10710432500000001,0.6869553250000002,0.1469543959437038
+0,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x2 (i)",0.45463,0.10526392500000001,0.7867160500000004,0.1726843827560733
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 3 (K = 200),0.4448504018757594,NA,NA,NA
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 3 (same 10 replicates),0.4548156456927095,NA,NA,NA
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,stage 4,0.443473,0.0824037175,0.7658868750000003,0.17320967758438174
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x0.5 (i')",0.40951150000000003,0.092639545,0.6926846500000001,0.15167504512317095
+0.5,E4 (x = dSBR),E4,"r (within-treatment correlation), positive",response,"stage 4, prior SDs x2 (i)",0.456051,0.07623331500000001,0.7933453500000002,0.18126015069492468
+-0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 3 (K = 200),6.8099184466287035,NA,NA,NA
+-0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 3 (same 10 replicates),7.017572957871529,NA,NA,NA
+-0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 4,7.42162,5.773103,9.85209,1.0410398419982665
+-0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,"stage 4, prior SDs x0.5 (i')",7.412985,5.761106000000001,9.8667535,1.0547731316136006
+-0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,"stage 4, prior SDs x2 (i)",7.4116599999999995,5.7628365,9.884393750000001,1.0541024900578748
+0,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 3 (K = 200),6.762722660454104,NA,NA,NA
+0,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 3 (same 10 replicates),6.7475220956315205,NA,NA,NA
+0,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 4,7.130475,5.5869047499999995,9.484418750000001,1.0056323799434612
+0,E4 (x = dSBR),E4,"s (residual SD), negative",response,"stage 4, prior SDs x0.5 (i')",7.1236049999999995,5.572456,9.480379000000001,1.001694396925143
+0,E4 (x = dSBR),E4,"s (residual SD), negative",response,"stage 4, prior SDs x2 (i)",7.136595,5.5917442500000005,9.514941499999999,1.0069773366545252
+0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 3 (K = 200),6.798679402575798,NA,NA,NA
+0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 3 (same 10 replicates),6.817602978390403,NA,NA,NA
+0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,stage 4,7.206485000000001,5.62550425,9.616321250000006,1.0195994145626086
+0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,"stage 4, prior SDs x0.5 (i')",7.211080000000001,5.63853975,9.573973749999999,1.0095920694188643
+0.5,E4 (x = dSBR),E4,"s (residual SD), negative",response,"stage 4, prior SDs x2 (i)",7.22098,5.637665749999999,9.630846500000002,1.0159872115687143
+-0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 3 (K = 200),21.492974452576167,NA,NA,NA
+-0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 3 (same 10 replicates),21.593454424179143,NA,NA,NA
+-0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 4,22.7615,17.6439725,30.188092500000003,3.1920815803908646
+-0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,"stage 4, prior SDs x0.5 (i')",22.478,17.574669999999998,29.552035000000004,3.0566216050121557
+-0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,"stage 4, prior SDs x2 (i)",22.819650000000003,17.76134,30.421515000000003,3.2235070402755914
+0,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 3 (K = 200),21.528573720056368,NA,NA,NA
+0,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 3 (same 10 replicates),21.388017009178007,NA,NA,NA
+0,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 4,22.5254,17.67079,29.7614025,3.1027560563844507
+0,E4 (x = dSBR),E4,"s (residual SD), positive",response,"stage 4, prior SDs x0.5 (i')",22.28835,17.592945,29.1257225,2.958834971431958
+0,E4 (x = dSBR),E4,"s (residual SD), positive",response,"stage 4, prior SDs x2 (i)",22.5518,17.73851,29.886405,3.1159233732978104
+0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 3 (K = 200),21.529287390225036,NA,NA,NA
+0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 3 (same 10 replicates),21.44704506669883,NA,NA,NA
+0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,stage 4,22.58265,17.6723975,30.088017500000003,3.1657484508754687
+0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,"stage 4, prior SDs x0.5 (i')",22.304949999999998,17.571695000000002,29.4279425,3.045082181534464
+0.5,E4 (x = dSBR),E4,"s (residual SD), positive",response,"stage 4, prior SDs x2 (i)",22.6604,17.730059999999998,30.189575000000005,3.1874958770597326
+-0.5,ET,E1,negative - control,difference (degC),"stage 2 described model, simulated (median over 200)",1.183506704591574,0.8967099949110023,1.4703034142721454,NA
+-0.5,ET,E1,negative - control,difference (degC),stage 2 exact paired t (treatment - control),1.2000000000000028,0.9768322599765784,1.423167740023427,NA
+-0.5,ET,E1,negative - control,difference (degC),stage 3 (K = 200),1.187546241106944,0.963427365776113,1.411665116437775,NA
+-0.5,ET,E1,negative - control,difference (degC),stage 3 (same 10 replicates),1.2014184234934482,0.9822553317929092,1.4205815151939871,NA
+-0.5,ET,E1,negative - control,difference (degC),stage 4,1.19829,0.946989125,1.44868025,0.12715439460374411
+-0.5,ET,E1,negative - control,difference (degC),"stage 4, alternative program (ii/ii'/iii)",1.19933,0.952241875,1.440641,0.1238498651006584
+-0.5,ET,E1,negative - control,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",1.19141,0.8912903,1.4843520000000001,0.15123425571171034
+-0.5,ET,E1,negative - control,difference (degC),"stage 4, pooled sigma (iv)",1.19726,0.95583565,1.4299220000000001,0.12030360058563443
+-0.5,ET,E1,negative - control,difference (degC),"stage 4, prior SDs x0.5 (i')",1.18747,0.933144475,1.4272817500000001,0.12503268709170917
+-0.5,ET,E1,negative - control,difference (degC),"stage 4, prior SDs x2 (i)",1.20096,0.95048815,1.45363075,0.12692312332053446
+0,ET,E1,negative - control,difference (degC),"stage 2 described model, simulated (median over 200)",1.1830920705689447,0.9257157512431717,1.4404683898947177,NA
+0,ET,E1,negative - control,difference (degC),stage 2 exact paired t (treatment - control),1.2000000000000028,0.9768322599765784,1.423167740023427,NA
+0,ET,E1,negative - control,difference (degC),stage 3 (K = 200),1.1852862632472885,0.9588411390671232,1.4117313874274535,NA
+0,ET,E1,negative - control,difference (degC),stage 3 (same 10 replicates),1.1719700400530315,0.9298457398062434,1.4140943402998196,NA
+0,ET,E1,negative - control,difference (degC),stage 4,1.1651850000000001,0.8836824500000001,1.4402347500000001,0.14010999153963732
+0,ET,E1,negative - control,difference (degC),"stage 4, alternative program (ii/ii'/iii)",1.167495,0.89867965,1.42578175,0.13384703087495323
+0,ET,E1,negative - control,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",1.15883,0.8740667999999999,1.43383175,0.14146887224620863
+0,ET,E1,negative - control,difference (degC),"stage 4, pooled sigma (iv)",1.165565,0.8924635500000001,1.4353405000000001,0.13721747046755914
+0,ET,E1,negative - control,difference (degC),"stage 4, prior SDs x0.5 (i')",1.148855,0.87521485,1.41661075,0.13785923487811988
+0,ET,E1,negative - control,difference (degC),"stage 4, prior SDs x2 (i)",1.1706750000000001,0.8863214999999999,1.4479202500000001,0.14262970933124736
+0.5,ET,E1,negative - control,difference (degC),"stage 2 described model, simulated (median over 200)",1.1840656848737954,0.9622392426144141,1.4058921271331768,NA
+0.5,ET,E1,negative - control,difference (degC),stage 2 exact paired t (treatment - control),1.2000000000000028,0.9768322599765784,1.423167740023427,NA
+0.5,ET,E1,negative - control,difference (degC),stage 3 (K = 200),1.1861067727901182,0.958215089512368,1.4139984560678684,NA
+0.5,ET,E1,negative - control,difference (degC),stage 3 (same 10 replicates),1.1938001663914086,0.9724386226367826,1.4151617101460348,NA
+0.5,ET,E1,negative - control,difference (degC),stage 4,1.18557,0.921052925,1.4491005000000001,0.13344395479699636
+0.5,ET,E1,negative - control,difference (degC),"stage 4, alternative program (ii/ii'/iii)",1.188105,0.946306225,1.4245415,0.12062072897807737
+0.5,ET,E1,negative - control,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",1.18532,0.9558850750000001,1.41461125,0.1167359943580841
+0.5,ET,E1,negative - control,difference (degC),"stage 4, pooled sigma (iv)",1.185805,0.9280602750000001,1.4436850000000003,0.13063030460106517
+0.5,ET,E1,negative - control,difference (degC),"stage 4, prior SDs x0.5 (i')",1.166655,0.90277965,1.4213822500000002,0.1312353281541495
+0.5,ET,E1,negative - control,difference (degC),"stage 4, prior SDs x2 (i)",1.19331,0.927528725,1.45256125,0.1340724483133176
+-0.5,ET,E1,negative - control,link,stage 3 (K = 200),1.187546241106944,0.963427365776113,1.411665116437775,NA
+-0.5,ET,E1,negative - control,link,stage 3 (same 10 replicates),1.2014184234934482,0.9822553317929092,1.4205815151939871,NA
+-0.5,ET,E1,negative - control,link,stage 4,1.19829,0.946989125,1.44868025,0.12715439460374411
+-0.5,ET,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",1.19933,0.952241875,1.440641,0.1238498651006584
+-0.5,ET,E1,negative - control,link,"stage 4, alternative program, pooled dispersion (iv)",1.19141,0.8912903,1.4843520000000001,0.15123425571171034
+-0.5,ET,E1,negative - control,link,"stage 4, pooled sigma (iv)",1.19726,0.95583565,1.4299220000000001,0.12030360058563443
+-0.5,ET,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",1.18747,0.933144475,1.4272817500000001,0.12503268709170917
+-0.5,ET,E1,negative - control,link,"stage 4, prior SDs x2 (i)",1.20096,0.95048815,1.45363075,0.12692312332053446
+0,ET,E1,negative - control,link,stage 3 (K = 200),1.1852862632472885,0.9588411390671232,1.4117313874274535,NA
+0,ET,E1,negative - control,link,stage 3 (same 10 replicates),1.1719700400530315,0.9298457398062434,1.4140943402998196,NA
+0,ET,E1,negative - control,link,stage 4,1.1651850000000001,0.8836824500000001,1.4402347500000001,0.14010999153963732
+0,ET,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",1.167495,0.89867965,1.42578175,0.13384703087495323
+0,ET,E1,negative - control,link,"stage 4, alternative program, pooled dispersion (iv)",1.15883,0.8740667999999999,1.43383175,0.14146887224620863
+0,ET,E1,negative - control,link,"stage 4, pooled sigma (iv)",1.165565,0.8924635500000001,1.4353405000000001,0.13721747046755914
+0,ET,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",1.148855,0.87521485,1.41661075,0.13785923487811988
+0,ET,E1,negative - control,link,"stage 4, prior SDs x2 (i)",1.1706750000000001,0.8863214999999999,1.4479202500000001,0.14262970933124736
+0.5,ET,E1,negative - control,link,stage 3 (K = 200),1.1861067727901182,0.958215089512368,1.4139984560678684,NA
+0.5,ET,E1,negative - control,link,stage 3 (same 10 replicates),1.1938001663914086,0.9724386226367826,1.4151617101460348,NA
+0.5,ET,E1,negative - control,link,stage 4,1.18557,0.921052925,1.4491005000000001,0.13344395479699636
+0.5,ET,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",1.188105,0.946306225,1.4245415,0.12062072897807737
+0.5,ET,E1,negative - control,link,"stage 4, alternative program, pooled dispersion (iv)",1.18532,0.9558850750000001,1.41461125,0.1167359943580841
+0.5,ET,E1,negative - control,link,"stage 4, pooled sigma (iv)",1.185805,0.9280602750000001,1.4436850000000003,0.13063030460106517
+0.5,ET,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",1.166655,0.90277965,1.4213822500000002,0.1312353281541495
+0.5,ET,E1,negative - control,link,"stage 4, prior SDs x2 (i)",1.19331,0.927528725,1.45256125,0.1340724483133176
+-0.5,ET,E1,positive - control,difference (degC),"stage 2 described model, simulated (median over 200)",0.7613931340240376,0.473984190593155,1.0488020774549203,NA
+-0.5,ET,E1,positive - control,difference (degC),stage 2 exact paired t (treatment - control),0.7800000000000011,0.5668569582024181,0.9931430417975842,NA
+-0.5,ET,E1,positive - control,difference (degC),stage 3 (K = 200),0.7629292267230735,0.5494129092678186,0.9764455441783284,NA
+-0.5,ET,E1,positive - control,difference (degC),stage 3 (same 10 replicates),0.7619618582748316,0.5470709057350437,0.9768528108146196,NA
+-0.5,ET,E1,positive - control,difference (degC),stage 4,0.7615540000000001,0.515573175,1.0071115000000002,0.12468790911103342
+-0.5,ET,E1,positive - control,difference (degC),"stage 4, alternative program (ii/ii'/iii)",0.7584895,0.517880875,1.0040105000000001,0.12302457819922726
+-0.5,ET,E1,positive - control,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",0.7547265,0.45611545000000003,1.0580215000000002,0.1517872367414405
+-0.5,ET,E1,positive - control,difference (degC),"stage 4, pooled sigma (iv)",0.7595565,0.5222933500000001,0.9940476,0.11893359765146566
+-0.5,ET,E1,positive - control,difference (degC),"stage 4, prior SDs x0.5 (i')",0.7571905,0.51337945,0.9997193000000001,0.12318149028580162
+-0.5,ET,E1,positive - control,difference (degC),"stage 4, prior SDs x2 (i)",0.76137,0.5125997499999999,1.0115212500000001,0.12603740042274023
+0,ET,E1,positive - control,difference (degC),"stage 2 described model, simulated (median over 200)",0.7610377093709193,0.5045366250099899,1.0175387937318487,NA
+0,ET,E1,positive - control,difference (degC),stage 2 exact paired t (treatment - control),0.7800000000000011,0.5668569582024181,0.9931430417975842,NA
+0,ET,E1,positive - control,difference (degC),stage 3 (K = 200),0.7631222922895472,0.545978495163706,0.9802660894153884,NA
+0,ET,E1,positive - control,difference (degC),stage 3 (same 10 replicates),0.7597441054351826,0.5403070198188781,0.979181191051487,NA
+0,ET,E1,positive - control,difference (degC),stage 4,0.7555885,0.494877825,1.0068942500000004,0.13019658721444313
+0,ET,E1,positive - control,difference (degC),"stage 4, alternative program (ii/ii'/iii)",0.756668,0.514384975,1.0008225000000002,0.12357173163657638
+0,ET,E1,positive - control,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",0.7508165,0.472607775,1.0238057500000004,0.13983854846882654
+0,ET,E1,positive - control,difference (degC),"stage 4, pooled sigma (iv)",0.755306,0.50594635,1.00006175,0.12550882229316707
+0,ET,E1,positive - control,difference (degC),"stage 4, prior SDs x0.5 (i')",0.7448365,0.490130375,0.9941057000000001,0.12848224470848618
+0,ET,E1,positive - control,difference (degC),"stage 4, prior SDs x2 (i)",0.7600985,0.497135325,1.0155427500000003,0.13036899020044126
+0.5,ET,E1,positive - control,difference (degC),"stage 2 described model, simulated (median over 200)",0.7622195055195664,0.5398654411432975,0.9845735698958353,NA
+0.5,ET,E1,positive - control,difference (degC),stage 2 exact paired t (treatment - control),0.7800000000000011,0.5668569582024181,0.9931430417975842,NA
+0.5,ET,E1,positive - control,difference (degC),stage 3 (K = 200),0.7609960579945201,0.5456343768169687,0.9763577391720716,NA
+0.5,ET,E1,positive - control,difference (degC),stage 3 (same 10 replicates),0.7625000848916074,0.5518729382018263,0.9731272315813885,NA
+0.5,ET,E1,positive - control,difference (degC),stage 4,0.755914,0.5044993499999999,1.0068312499999998,0.12726194707957594
+0.5,ET,E1,positive - control,difference (degC),"stage 4, alternative program (ii/ii'/iii)",0.7586145,0.527303875,0.9918564750000002,0.11824356449252406
+0.5,ET,E1,positive - control,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",0.7560815000000001,0.526956175,0.9851073,0.11575761097820268
+0.5,ET,E1,positive - control,difference (degC),"stage 4, pooled sigma (iv)",0.7563489999999999,0.5126145,0.9984770500000001,0.12322131228881945
+0.5,ET,E1,positive - control,difference (degC),"stage 4, prior SDs x0.5 (i')",0.7416134999999999,0.49339299999999997,0.9851460500000002,0.1249828622130212
+0.5,ET,E1,positive - control,difference (degC),"stage 4, prior SDs x2 (i)",0.762005,0.509627,1.0171302500000001,0.12864945030973154
+-0.5,ET,E1,positive - control,link,stage 3 (K = 200),0.7629292267230735,0.5494129092678186,0.9764455441783284,NA
+-0.5,ET,E1,positive - control,link,stage 3 (same 10 replicates),0.7619618582748316,0.5470709057350437,0.9768528108146196,NA
+-0.5,ET,E1,positive - control,link,stage 4,0.7615540000000001,0.515573175,1.0071115000000002,0.12468790911103342
+-0.5,ET,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.7584895,0.517880875,1.0040105000000001,0.12302457819922726
+-0.5,ET,E1,positive - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.7547265,0.45611545000000003,1.0580215000000002,0.1517872367414405
+-0.5,ET,E1,positive - control,link,"stage 4, pooled sigma (iv)",0.7595565,0.5222933500000001,0.9940476,0.11893359765146566
+-0.5,ET,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.7571905,0.51337945,0.9997193000000001,0.12318149028580162
+-0.5,ET,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.76137,0.5125997499999999,1.0115212500000001,0.12603740042274023
+0,ET,E1,positive - control,link,stage 3 (K = 200),0.7631222922895472,0.545978495163706,0.9802660894153884,NA
+0,ET,E1,positive - control,link,stage 3 (same 10 replicates),0.7597441054351826,0.5403070198188781,0.979181191051487,NA
+0,ET,E1,positive - control,link,stage 4,0.7555885,0.494877825,1.0068942500000004,0.13019658721444313
+0,ET,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.756668,0.514384975,1.0008225000000002,0.12357173163657638
+0,ET,E1,positive - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.7508165,0.472607775,1.0238057500000004,0.13983854846882654
+0,ET,E1,positive - control,link,"stage 4, pooled sigma (iv)",0.755306,0.50594635,1.00006175,0.12550882229316707
+0,ET,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.7448365,0.490130375,0.9941057000000001,0.12848224470848618
+0,ET,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.7600985,0.497135325,1.0155427500000003,0.13036899020044126
+0.5,ET,E1,positive - control,link,stage 3 (K = 200),0.7609960579945201,0.5456343768169687,0.9763577391720716,NA
+0.5,ET,E1,positive - control,link,stage 3 (same 10 replicates),0.7625000848916074,0.5518729382018263,0.9731272315813885,NA
+0.5,ET,E1,positive - control,link,stage 4,0.755914,0.5044993499999999,1.0068312499999998,0.12726194707957594
+0.5,ET,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.7586145,0.527303875,0.9918564750000002,0.11824356449252406
+0.5,ET,E1,positive - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.7560815000000001,0.526956175,0.9851073,0.11575761097820268
+0.5,ET,E1,positive - control,link,"stage 4, pooled sigma (iv)",0.7563489999999999,0.5126145,0.9984770500000001,0.12322131228881945
+0.5,ET,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.7416134999999999,0.49339299999999997,0.9851460500000002,0.1249828622130212
+0.5,ET,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.762005,0.509627,1.0171302500000001,0.12864945030973154
+-0.5,ET,E2,positive - negative,difference (degC),"stage 2 described model, simulated (median over 200)",-0.42401247945309595,-0.7114070784355317,-0.1366178804706601,NA
+-0.5,ET,E2,positive - negative,difference (degC),stage 3 (K = 200),-0.4246170143838705,-0.7994637957195934,-0.04977023304814765,NA
+-0.5,ET,E2,positive - negative,difference (degC),stage 3 (same 10 replicates),-0.43945656521861665,-0.81499061183426,-0.06392251860297327,NA
+-0.5,ET,E2,positive - negative,difference (degC),stage 4,-0.4370255,-0.8522284749999999,-0.017319772499999903,0.21283146887044124
+-0.5,ET,E2,positive - negative,difference (degC),"stage 4, alternative program (ii/ii'/iii)",-0.4394515,-0.768761475,-0.11133624999999983,0.16786671700543193
+-0.5,ET,E2,positive - negative,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",-0.43463450000000003,-0.7417560750000001,-0.12666349999999993,0.15554709515049195
+-0.5,ET,E2,positive - negative,difference (degC),"stage 4, pooled sigma (iv)",-0.4377475,-0.8129284999999999,-0.05822761249999971,0.19180290001379507
+-0.5,ET,E2,positive - negative,difference (degC),"stage 4, prior SDs x0.5 (i')",-0.4305425,-0.835045575,-0.014088492499999952,0.20890432955877966
+-0.5,ET,E2,positive - negative,difference (degC),"stage 4, prior SDs x2 (i)",-0.43918250000000003,-0.8619619,-0.017682824999999985,0.21407571003410591
+0,ET,E2,positive - negative,difference (degC),"stage 2 described model, simulated (median over 200)",-0.4229601643028765,-0.679800800149394,-0.16611952845635897,NA
+0,ET,E2,positive - negative,difference (degC),stage 3 (K = 200),-0.4221639709577414,-0.7316897950856254,-0.1126381468298574,NA
+0,ET,E2,positive - negative,difference (degC),stage 3 (same 10 replicates),-0.41222593461784884,-0.7202223380313557,-0.10422953120434197,NA
+0,ET,E2,positive - negative,difference (degC),stage 4,-0.410186,-0.7648384,-0.05474357999999995,0.17967236247560436
+0,ET,E2,positive - negative,difference (degC),"stage 4, alternative program (ii/ii'/iii)",-0.4075515,-0.7209515249999999,-0.09433623999999999,0.15931242397696208
+0,ET,E2,positive - negative,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",-0.406932,-0.67270525,-0.138988975,0.13623177823876753
+0,ET,E2,positive - negative,difference (degC),"stage 4, pooled sigma (iv)",-0.40984,-0.73694295,-0.08726543999999997,0.16553893454806679
+0,ET,E2,positive - negative,difference (degC),"stage 4, prior SDs x0.5 (i')",-0.403034,-0.7515446499999999,-0.059763672499999726,0.17585407588320628
+0,ET,E2,positive - negative,difference (degC),"stage 4, prior SDs x2 (i)",-0.410028,-0.767362,-0.054681372499999506,0.18081107095911983
+0.5,ET,E2,positive - negative,difference (degC),"stage 2 described model, simulated (median over 200)",-0.42443200889560107,-0.6464840146656696,-0.20238000312553245,NA
+0.5,ET,E2,positive - negative,difference (degC),stage 3 (K = 200),-0.4251107147955981,-0.6490350670598337,-0.20118636253136243,NA
+0.5,ET,E2,positive - negative,difference (degC),stage 3 (same 10 replicates),-0.43130008149980126,-0.6585150881332938,-0.20408507486630867,NA
+0.5,ET,E2,positive - negative,difference (degC),stage 4,-0.43038299999999996,-0.693364425,-0.16453642499999985,0.133984823756717
+0.5,ET,E2,positive - negative,difference (degC),"stage 4, alternative program (ii/ii'/iii)",-0.4300535,-0.6789262,-0.17420487499999984,0.12795259231283518
+0.5,ET,E2,positive - negative,difference (degC),"stage 4, alternative program, pooled dispersion (iv)",-0.4302775,-0.6668400499999999,-0.191867825,0.12055552557877185
+0.5,ET,E2,positive - negative,difference (degC),"stage 4, pooled sigma (iv)",-0.4298655,-0.6825610999999999,-0.17337987500000002,0.12892042537356574
+0.5,ET,E2,positive - negative,difference (degC),"stage 4, prior SDs x0.5 (i')",-0.42684,-0.6882129750000001,-0.15695117499999994,0.13403324703048947
+0.5,ET,E2,positive - negative,difference (degC),"stage 4, prior SDs x2 (i)",-0.43039,-0.697187425,-0.15958412499999988,0.13568363047364812
+-0.5,ET,E2,positive - negative,link,stage 3 (K = 200),-0.4246170143838705,-0.7994637957195934,-0.04977023304814765,NA
+-0.5,ET,E2,positive - negative,link,stage 3 (same 10 replicates),-0.43945656521861665,-0.81499061183426,-0.06392251860297327,NA
+-0.5,ET,E2,positive - negative,link,stage 4,-0.4370255,-0.8522284749999999,-0.017319772499999903,0.21283146887044124
+-0.5,ET,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",-0.4394515,-0.768761475,-0.11133624999999983,0.16786671700543193
+-0.5,ET,E2,positive - negative,link,"stage 4, alternative program, pooled dispersion (iv)",-0.43463450000000003,-0.7417560750000001,-0.12666349999999993,0.15554709515049195
+-0.5,ET,E2,positive - negative,link,"stage 4, pooled sigma (iv)",-0.4377475,-0.8129284999999999,-0.05822761249999971,0.19180290001379507
+-0.5,ET,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",-0.4305425,-0.835045575,-0.014088492499999952,0.20890432955877966
+-0.5,ET,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",-0.43918250000000003,-0.8619619,-0.017682824999999985,0.21407571003410591
+0,ET,E2,positive - negative,link,stage 3 (K = 200),-0.4221639709577414,-0.7316897950856254,-0.1126381468298574,NA
+0,ET,E2,positive - negative,link,stage 3 (same 10 replicates),-0.41222593461784884,-0.7202223380313557,-0.10422953120434197,NA
+0,ET,E2,positive - negative,link,stage 4,-0.410186,-0.7648384,-0.05474357999999995,0.17967236247560436
+0,ET,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",-0.4075515,-0.7209515249999999,-0.09433623999999999,0.15931242397696208
+0,ET,E2,positive - negative,link,"stage 4, alternative program, pooled dispersion (iv)",-0.406932,-0.67270525,-0.138988975,0.13623177823876753
+0,ET,E2,positive - negative,link,"stage 4, pooled sigma (iv)",-0.40984,-0.73694295,-0.08726543999999997,0.16553893454806679
+0,ET,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",-0.403034,-0.7515446499999999,-0.059763672499999726,0.17585407588320628
+0,ET,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",-0.410028,-0.767362,-0.054681372499999506,0.18081107095911983
+0.5,ET,E2,positive - negative,link,stage 3 (K = 200),-0.4251107147955981,-0.6490350670598337,-0.20118636253136243,NA
+0.5,ET,E2,positive - negative,link,stage 3 (same 10 replicates),-0.43130008149980126,-0.6585150881332938,-0.20408507486630867,NA
+0.5,ET,E2,positive - negative,link,stage 4,-0.43038299999999996,-0.693364425,-0.16453642499999985,0.133984823756717
+0.5,ET,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",-0.4300535,-0.6789262,-0.17420487499999984,0.12795259231283518
+0.5,ET,E2,positive - negative,link,"stage 4, alternative program, pooled dispersion (iv)",-0.4302775,-0.6668400499999999,-0.191867825,0.12055552557877185
+0.5,ET,E2,positive - negative,link,"stage 4, pooled sigma (iv)",-0.4298655,-0.6825610999999999,-0.17337987500000002,0.12892042537356574
+0.5,ET,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",-0.42684,-0.6882129750000001,-0.15695117499999994,0.13403324703048947
+0.5,ET,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",-0.43039,-0.697187425,-0.15958412499999988,0.13568363047364812
+-0.5,ET,E3,"corr(control, negative)",link,stage 3 (K = 200),0.7674081394210817,0.5746790320096063,0.8794880421708912,NA
+-0.5,ET,E3,"corr(control, negative)",link,stage 3 (same 10 replicates),0.7729636684463397,0.5861412922794845,0.8817393426978912,NA
+-0.5,ET,E3,"corr(control, negative)",link,stage 4,0.723142,0.5151017499999999,0.8519891500000001,0.08677233899511576
+0,ET,E3,"corr(control, negative)",link,stage 3 (K = 200),0.7682537684769646,0.5760712706880837,0.8799491388148192,NA
+0,ET,E3,"corr(control, negative)",link,stage 3 (same 10 replicates),0.7619422195712731,0.5705342755415725,0.8748402695645653,NA
+0,ET,E3,"corr(control, negative)",link,stage 4,0.6934075,0.46471847499999996,0.83405205,0.09446039003004562
+0.5,ET,E3,"corr(control, negative)",link,stage 3 (K = 200),0.7701724440732938,0.5784016286884393,0.8812745506642334,NA
+0.5,ET,E3,"corr(control, negative)",link,stage 3 (same 10 replicates),0.7738722637622654,0.5875519891884087,0.8822657895161753,NA
+0.5,ET,E3,"corr(control, negative)",link,stage 4,0.6959805,0.46278964999999994,0.834823475,0.0958759690205346
+-0.5,ET,E3,"corr(control, positive)",link,stage 3 (K = 200),0.7975053420597615,0.632396657515532,0.8933027857557181,NA
+-0.5,ET,E3,"corr(control, positive)",link,stage 3 (same 10 replicates),0.7920096775930402,0.6275362550373278,0.8888161016518538,NA
+-0.5,ET,E3,"corr(control, positive)",link,stage 4,0.7447595,0.5492877749999999,0.8608550500000001,0.07932020613616254
+0,ET,E3,"corr(control, positive)",link,stage 3 (K = 200),0.7987378264001608,0.6332349594562057,0.8943868520625269,NA
+0,ET,E3,"corr(control, positive)",link,stage 3 (same 10 replicates),0.80198318957047,0.6369735714297999,0.8967215628315354,NA
+0,ET,E3,"corr(control, positive)",link,stage 4,0.738119,0.534974325,0.8599412000000001,0.08396916671967962
+0.5,ET,E3,"corr(control, positive)",link,stage 3 (K = 200),0.8002773089066476,0.6342208076207617,0.895756201590605,NA
+0.5,ET,E3,"corr(control, positive)",link,stage 3 (same 10 replicates),0.7996675522047609,0.6357815380197948,0.8945636026738953,NA
+0.5,ET,E3,"corr(control, positive)",link,stage 4,0.726891,0.514000575,0.85157855,0.08666987036136682
+-0.5,ET,E3,"corr(positive, negative)",link,stage 3 (K = 200),0.3811566505464291,0.05490062735882953,0.6338756220000277,NA
+-0.5,ET,E3,"corr(positive, negative)",link,stage 3 (same 10 replicates),0.3830289083295837,0.06140046412136605,0.632595377663892,NA
+-0.5,ET,E3,"corr(positive, negative)",link,stage 4,0.2878005,-0.03971110749999999,0.5548537,0.15244802938792462
+0,ET,E3,"corr(positive, negative)",link,stage 3 (K = 200),0.588751969943381,0.3176764781388456,0.7708612954525778,NA
+0,ET,E3,"corr(positive, negative)",link,stage 3 (same 10 replicates),0.5806831146131035,0.31066228645193256,0.7639806284149104,NA
+0,ET,E3,"corr(positive, negative)",link,stage 4,0.4857045,0.1909938,0.6975108250000001,0.12971265728861614
+0.5,ET,E3,"corr(positive, negative)",link,stage 3 (K = 200),0.7967888325959367,0.6284749260273782,0.8938223181770575,NA
+0.5,ET,E3,"corr(positive, negative)",link,stage 3 (same 10 replicates),0.790367295257092,0.6141090711290536,0.891528652248819,NA
+0.5,ET,E3,"corr(positive, negative)",link,stage 4,0.7173164999999999,0.49711745,0.8490160999999999,0.09043572915376179
+-0.5,ET,E3,order 2 - 1,link,stage 3 (K = 200),-0.00446289383638547,-0.24856897524755345,0.23964318757478245,NA
+-0.5,ET,E3,order 2 - 1,link,stage 3 (same 10 replicates),0.03730078813970299,-0.17184846725733782,0.24645004353674377,NA
+-0.5,ET,E3,order 2 - 1,link,stage 4,0.03513895,-0.195571,0.26073255000000006,0.11617804822791676
+0,ET,E3,order 2 - 1,link,stage 3 (K = 200),0.01879483485778201,-0.30117459182744144,0.33876426154300543,NA
+0,ET,E3,order 2 - 1,link,stage 3 (same 10 replicates),0.021466397157878084,-0.2764990532880655,0.31943184760382165,NA
+0,ET,E3,order 2 - 1,link,stage 4,0.01806375,-0.281172225,0.3440159250000001,0.1582417439197091
+0.5,ET,E3,order 2 - 1,link,stage 3 (K = 200),-0.01104313747918025,-0.3508786643682976,0.32879238940993716,NA
+0.5,ET,E3,order 2 - 1,link,stage 3 (same 10 replicates),0.0544763043427714,-0.32568733279405687,0.43463994147959967,NA
+0.5,ET,E3,order 2 - 1,link,stage 4,0.05975075,-0.31249819999999995,0.40447147500000014,0.18916081087548361
+-0.5,ET,E3,order 3 - 1,link,stage 3 (K = 200),-0.00665237626943833,-0.2575010078589996,0.24419625532012296,NA
+-0.5,ET,E3,order 3 - 1,link,stage 3 (same 10 replicates),-0.0067809048152794125,-0.25790721584618115,0.2443454062156223,NA
+-0.5,ET,E3,order 3 - 1,link,stage 4,0.004850575,-0.295359225,0.229451325,0.13380162719556088
+0,ET,E3,order 3 - 1,link,stage 3 (K = 200),0.00791637273733169,-0.32645959107808725,0.34229233655275065,NA
+0,ET,E3,order 3 - 1,link,stage 3 (same 10 replicates),-0.04817545810534824,-0.41219865928973803,0.31584774307904157,NA
+0,ET,E3,order 3 - 1,link,stage 4,-0.05605105,-0.3877969,0.33545600000000003,0.1839665395413863
+0.5,ET,E3,order 3 - 1,link,stage 3 (K = 200),-0.00409265451664859,-0.3618097104170052,0.35362440138370804,NA
+0.5,ET,E3,order 3 - 1,link,stage 3 (same 10 replicates),0.02023087305842654,-0.28389969821015126,0.3243614443270043,NA
+0.5,ET,E3,order 3 - 1,link,stage 4,0.02656525,-0.305506775,0.3159264250000001,0.1584390893816053
+-0.5,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (K = 200),0.9145869751082504,0.7199504360032388,1.161842945302274,NA
+-0.5,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.9114885794963149,0.7172471516860878,1.1583335376085606,NA
+-0.5,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 4,0.897668,0.725555,1.1479320000000002,0.10854910450929196
+0,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (K = 200),0.9141907296196892,0.7186491478866883,1.1629383998857177,NA
+0,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.9176873341067786,0.7222649533074884,1.1659849191401641,NA
+0,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 4,0.907379,0.732989825,1.15668025,0.10892214223753346
+0.5,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (K = 200),0.9138235369696271,0.7184784438674965,1.162280460669862,NA
+0.5,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.9225436467972646,0.725662767262947,1.172840634301968,NA
+0.5,ET,E3,"sigma control (donkey-level SD, link scale)",link,stage 4,0.9136275,0.7390408749999999,1.1637410000000001,0.10876393558094166
+-0.5,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (K = 200),0.9744887161600831,0.7672392636072941,1.2377211425005843,NA
+-0.5,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.9748462234359349,0.7677069698865985,1.237874861925093,NA
+-0.5,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 4,0.9939150000000001,0.795277775,1.2797005000000001,0.12443853391297517
+0,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (K = 200),0.9707665574765012,0.7635056438389595,1.234290429572185,NA
+0,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.9747397621819587,0.767533001733514,1.2378850184065706,NA
+0,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 4,0.9865055,0.7926989750000001,1.2705625,0.12283466615744479
+0.5,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (K = 200),0.9723385831294592,0.7643739758580599,1.2368844964676924,NA
+0.5,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.9682117125358323,0.7608801860922463,1.2320388116637304,NA
+0.5,ET,E3,"sigma negative (donkey-level SD, link scale)",link,stage 4,0.960599,0.77690585,1.2264305,0.1155839379710807
+-0.5,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (K = 200),1.0042051809317352,0.7907836401967103,1.2752262365459266,NA
+-0.5,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),1.0071180448231944,0.7929062650730914,1.2792013392844048,NA
+-0.5,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 4,1.0237500000000002,0.8206913,1.3207272500000005,0.12871856399744036
+0,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (K = 200),1.0045825866093006,0.7903156395639932,1.2769406586403729,NA
+0,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.9962595074729779,0.7829155906018159,1.267739483214729,NA
+0,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 4,1.00178,0.8056833749999999,1.2864440000000004,0.12374406784713513
+0.5,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (K = 200),1.0026259928001355,0.7883928071969127,1.2750736336783688,NA
+0.5,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.9978076612960047,0.7853153101880676,1.2677966620854124,NA
+0.5,ET,E3,"sigma positive (donkey-level SD, link scale)",link,stage 4,0.9863845,0.79616575,1.25294025,0.1172127391662047
+-0.5,ET,mean,mean control,response,stage 3 (K = 200),34.54995921242529,34.24146292135139,34.858455503499194,NA
+-0.5,ET,mean,mean control,response,stage 3 (same 10 replicates),34.54534434500182,34.23831233033304,34.85237635967061,NA
+-0.5,ET,mean,mean control,response,stage 4,34.5487,34.2381975,34.8602,0.1573299475073749
+-0.5,ET,mean,mean control,response,"stage 4, alternative program (ii/ii'/iii)",34.54945,34.2241,34.87220249999999,0.16452471919009803
+-0.5,ET,mean,mean control,response,"stage 4, alternative program, pooled dispersion (iv)",34.5522,34.2131,34.9019,0.17456264307200814
+-0.5,ET,mean,mean control,response,"stage 4, pooled sigma (iv)",34.55265,34.2197,34.8837025,0.16965372969838774
+-0.5,ET,mean,mean control,response,"stage 4, prior SDs x0.5 (i')",34.5632,34.269597499999996,34.8675,0.15143428377945775
+-0.5,ET,mean,mean control,response,"stage 4, prior SDs x2 (i)",34.5462,34.2355975,34.8559025,0.15748962422614407
+0,ET,mean,mean control,response,stage 3 (K = 200),34.550050176768714,34.240696711367654,34.859403642169774,NA
+0,ET,mean,mean control,response,stage 3 (same 10 replicates),34.5545265906495,34.24077380977443,34.86827937152457,NA
+0,ET,mean,mean control,response,stage 4,34.5592,34.24599250000001,34.876802500000004,0.15935866136289228
+0,ET,mean,mean control,response,"stage 4, alternative program (ii/ii'/iii)",34.5571,34.2327975,34.8871025,0.1658754729477686
+0,ET,mean,mean control,response,"stage 4, alternative program, pooled dispersion (iv)",34.5642,34.217295,34.9089025,0.17609020727868735
+0,ET,mean,mean control,response,"stage 4, pooled sigma (iv)",34.5641,34.234395000000006,34.8896025,0.1675868257083311
+0,ET,mean,mean control,response,"stage 4, prior SDs x0.5 (i')",34.5743,34.2741975,34.8856,0.15619634669685104
+0,ET,mean,mean control,response,"stage 4, prior SDs x2 (i)",34.5566,34.235195,34.8795025,0.16306771497560033
+0.5,ET,mean,mean control,response,stage 3 (K = 200),34.55047548598603,34.241199534181014,34.85975143779104,NA
+0.5,ET,mean,mean control,response,stage 3 (same 10 replicates),34.54672359421438,34.23561563654006,34.857831551888694,NA
+0.5,ET,mean,mean control,response,stage 4,34.5536,34.2385975,34.8728025,0.16039376484594725
+0.5,ET,mean,mean control,response,"stage 4, alternative program (ii/ii'/iii)",34.5532,34.2056975,34.895405000000004,0.17467397788682595
+0.5,ET,mean,mean control,response,"stage 4, alternative program, pooled dispersion (iv)",34.5542,34.212,34.900307500000004,0.17509610132447911
+0.5,ET,mean,mean control,response,"stage 4, pooled sigma (iv)",34.5546,34.2307,34.8764025,0.16385619433546159
+0.5,ET,mean,mean control,response,"stage 4, prior SDs x0.5 (i')",34.5684,34.2657975,34.8770025,0.15488269401633692
+0.5,ET,mean,mean control,response,"stage 4, prior SDs x2 (i)",34.5481,34.2341975,34.861602500000004,0.1594471538840471
+-0.5,ET,mean,mean negative,response,stage 3 (K = 200),35.737505453532236,35.4076022717471,36.06740863531737,NA
+-0.5,ET,mean,mean negative,response,stage 3 (same 10 replicates),35.74676276849527,35.41675732789899,36.076768209091554,NA
+-0.5,ET,mean,mean negative,response,stage 4,35.74665,35.4014,36.0926,0.17504262261882741
+-0.5,ET,mean,mean negative,response,"stage 4, alternative program (ii/ii'/iii)",35.7482,35.352297500000006,36.1447,0.20125571258436017
+-0.5,ET,mean,mean negative,response,"stage 4, alternative program, pooled dispersion (iv)",35.7445,35.3969,36.0933,0.17753631230468633
+-0.5,ET,mean,mean negative,response,"stage 4, pooled sigma (iv)",35.7497,35.4137,36.0839025,0.17079415002934384
+-0.5,ET,mean,mean negative,response,"stage 4, prior SDs x0.5 (i')",35.75005,35.4159,36.085405,0.16948176112355814
+-0.5,ET,mean,mean negative,response,"stage 4, prior SDs x2 (i)",35.7469,35.4017975,36.09,0.17504418007547476
+0,ET,mean,mean negative,response,stage 3 (K = 200),35.735336440016006,35.40623167266271,36.0644412073693,NA
+0,ET,mean,mean negative,response,stage 3 (same 10 replicates),35.726496630702535,35.39508993809402,36.05790332331105,NA
+0,ET,mean,mean negative,response,stage 4,35.724850000000004,35.383892499999995,36.0682,0.17383842603062855
+0,ET,mean,mean negative,response,"stage 4, alternative program (ii/ii'/iii)",35.7233,35.335995,36.105805,0.19459617891282494
+0,ET,mean,mean negative,response,"stage 4, alternative program, pooled dispersion (iv)",35.7214,35.3757975,36.0643,0.17511293828433114
+0,ET,mean,mean negative,response,"stage 4, pooled sigma (iv)",35.7301,35.3961975,36.0543,0.16739343393601053
+0,ET,mean,mean negative,response,"stage 4, prior SDs x0.5 (i')",35.7234,35.389,36.0567,0.16959565048876343
+0,ET,mean,mean negative,response,"stage 4, prior SDs x2 (i)",35.7269,35.3777,36.0722025,0.17585560830294059
+0.5,ET,mean,mean negative,response,stage 3 (K = 200),35.736582258776146,35.40615642533481,36.067008092217485,NA
+0.5,ET,mean,mean negative,response,stage 3 (same 10 replicates),35.74052376060579,35.41198173436899,36.069065786842586,NA
+0.5,ET,mean,mean negative,response,stage 4,35.7392,35.4013,36.074,0.17045780917251102
+0.5,ET,mean,mean negative,response,"stage 4, alternative program (ii/ii'/iii)",35.7388,35.3852,36.0980025,0.18056145739519625
+0.5,ET,mean,mean negative,response,"stage 4, alternative program, pooled dispersion (iv)",35.7407,35.394197500000004,36.0885,0.17659905739137818
+0.5,ET,mean,mean negative,response,"stage 4, pooled sigma (iv)",35.7394,35.4193,36.0649,0.1640297199137198
+0.5,ET,mean,mean negative,response,"stage 4, prior SDs x0.5 (i')",35.736149999999995,35.409594999999996,36.0616025,0.1655423397085013
+0.5,ET,mean,mean negative,response,"stage 4, prior SDs x2 (i)",35.7399,35.406594999999996,36.0731,0.16904269912879694
+-0.5,ET,mean,mean positive,response,stage 3 (K = 200),35.31288843914837,34.97352799255779,35.65224888573894,NA
+-0.5,ET,mean,mean positive,response,stage 3 (same 10 replicates),35.30730620327665,34.96748095953108,35.647131447022225,NA
+-0.5,ET,mean,mean positive,response,stage 4,35.3102,34.9585,35.6685025,0.1794317348912771
+-0.5,ET,mean,mean positive,response,"stage 4, alternative program (ii/ii'/iii)",35.3081,34.9173975,35.6949025,0.1982950430019489
+-0.5,ET,mean,mean positive,response,"stage 4, alternative program, pooled dispersion (iv)",35.30995,34.965,35.6569,0.1762449190618424
+-0.5,ET,mean,mean positive,response,"stage 4, pooled sigma (iv)",35.3116,34.9762975,35.64531,0.17047088471104752
+-0.5,ET,mean,mean positive,response,"stage 4, prior SDs x0.5 (i')",35.3213,34.9816975,35.6652025,0.17357551382947942
+-0.5,ET,mean,mean positive,response,"stage 4, prior SDs x2 (i)",35.3086,34.950897499999996,35.6619,0.17997538925725493
+0,ET,mean,mean positive,response,stage 3 (K = 200),35.313172469058266,34.97284453401393,35.6535004041026,NA
+0,ET,mean,mean positive,response,stage 3 (same 10 replicates),35.314270696084684,34.97779378284329,35.650747609326075,NA
+0,ET,mean,mean positive,response,stage 4,35.3144,34.9730975,35.6603,0.17498180614832437
+0,ET,mean,mean positive,response,"stage 4, alternative program (ii/ii'/iii)",35.3147,34.9412,35.6875025,0.18995999571486333
+0,ET,mean,mean positive,response,"stage 4, alternative program, pooled dispersion (iv)",35.3148,34.971,35.6600025,0.17436180921590533
+0,ET,mean,mean positive,response,"stage 4, pooled sigma (iv)",35.3175,34.9948975,35.6439,0.1652599408797393
+0,ET,mean,mean positive,response,"stage 4, prior SDs x0.5 (i')",35.3211,34.9847,35.6598025,0.17101143793611792
+0,ET,mean,mean positive,response,"stage 4, prior SDs x2 (i)",35.3165,34.9668,35.6640025,0.1769614767374813
+0.5,ET,mean,mean positive,response,stage 3 (K = 200),35.311471543980545,34.97202858567739,35.6509145022837,NA
+0.5,ET,mean,mean positive,response,stage 3 (same 10 replicates),35.30922367910599,34.97179311431128,35.6466542439007,NA
+0.5,ET,mean,mean positive,response,stage 4,35.3093,34.9627,35.6496,0.17315556183446232
+0.5,ET,mean,mean positive,response,"stage 4, alternative program (ii/ii'/iii)",35.3117,34.955392499999995,35.664902500000004,0.17958502791749004
+0.5,ET,mean,mean positive,response,"stage 4, alternative program, pooled dispersion (iv)",35.3102,34.9621975,35.6579,0.17682615710519267
+0.5,ET,mean,mean positive,response,"stage 4, pooled sigma (iv)",35.3106,34.9848925,35.633305,0.16431624333858658
+0.5,ET,mean,mean positive,response,"stage 4, prior SDs x0.5 (i')",35.30985,34.9789,35.6426,0.16796699937598955
+0.5,ET,mean,mean positive,response,"stage 4, prior SDs x2 (i)",35.3095,34.9716975,35.6538025,0.17319570568085005
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",10.043663194864887,2.345125415116472,17.742200974613304,NA
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 2 exact paired t (treatment - control),10.090000000000003,7.309576740365552,12.870423259634457,NA
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 3 (K = 200),9.96489281295137,6.113071272338393,13.816714353564343,NA
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 3 (same 10 replicates),9.857316901024081,6.272816809417993,13.44181699263017,NA
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 4,9.849495000000001,5.7565645,14.60451,2.2178647019623967
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",10.5055,5.89883825,15.791909999999996,2.5076734835204193
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",10.343350000000001,2.39038975,18.539322499999994,4.071725844681326
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, pooled sigma (iv)",10.7553,6.88825775,15.553812500000001,2.2006608740206377
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",9.9036,5.7889335,14.634640000000003,2.2228061658067477
+-0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",9.82895,5.77137775,14.590309999999999,2.2100545484000373
+0,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",10.014329306559627,2.8002712482882153,17.22838736483104,NA
+0,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 2 exact paired t (treatment - control),10.090000000000003,7.309576740365552,12.870423259634457,NA
+0,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 3 (K = 200),10.02022900390248,6.201192942637607,13.83926506516735,NA
+0,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 3 (same 10 replicates),10.399973176801833,5.98671177816263,14.813234575441037,NA
+0,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 4,10.3229,5.04816625,15.79893,2.6675790986694774
+0,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",10.5513,5.594718749999999,15.646452499999988,2.5400803554326905
+0,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",10.2425,2.5148772500000005,18.15628499999998,3.9651657432664704
+0,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, pooled sigma (iv)",10.93395,6.569891500000001,16.721422500000003,2.55480761870385
+0,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",10.2302,4.96412625,15.635705,2.6427652449702124
+0,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",10.3544,5.11018775,15.895109999999999,2.688628298305134
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",10.046715788436886,3.4144110163669907,16.679020560506782,NA
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 2 exact paired t (treatment - control),10.090000000000003,7.309576740365552,12.870423259634457,NA
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 3 (K = 200),9.914907239618255,6.170611450741235,13.65920302849528,NA
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 3 (same 10 replicates),9.721895107421732,6.014932602394547,13.428857612448917,NA
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)",stage 4,9.536764999999999,5.06591075,14.24252,2.2780693848660856
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",10.09305,5.5629945,14.9949,2.374093399439236
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",9.8159,2.5165157500000004,17.175529999999995,3.690513984450607
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, pooled sigma (iv)",10.52615,6.557194750000001,15.2127125,2.1793969924980248
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",9.40285,4.993055,13.9180125,2.2454368517964114
+0.5,RMSSD,E1,negative - control,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",9.57506,5.1610775,14.276815000000001,2.3023688189611953
+-0.5,RMSSD,E1,negative - control,link,stage 3 (K = 200),0.20003562961952,0.13562437260789115,0.2644468866311488,NA
+-0.5,RMSSD,E1,negative - control,link,stage 3 (same 10 replicates),0.2034754003597119,0.13557366537357202,0.2713771353458518,NA
+-0.5,RMSSD,E1,negative - control,link,stage 4,0.201986,0.12862695,0.282754125,0.038648424492813534
+-0.5,RMSSD,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",0.19906249999999998,0.113179,0.2892317999999998,0.04450641550323479
+-0.5,RMSSD,E1,negative - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.1984165,0.04602108750000001,0.34779144999999967,0.07622858423361754
+-0.5,RMSSD,E1,negative - control,link,"stage 4, pooled sigma (iv)",0.202068,0.13156394999999999,0.28224182500000006,0.03806747195968031
+-0.5,RMSSD,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",0.20128,0.1287578,0.2796398000000001,0.038022791946438095
+-0.5,RMSSD,E1,negative - control,link,"stage 4, prior SDs x2 (i)",0.20218150000000001,0.129838275,0.2821121,0.03848929237972096
+0,RMSSD,E1,negative - control,link,stage 3 (K = 200),0.201439842660186,0.13577029283620223,0.2671093924841698,NA
+0,RMSSD,E1,negative - control,link,stage 3 (same 10 replicates),0.20945627555451257,0.13376940713024885,0.28514314397877627,NA
+0,RMSSD,E1,negative - control,link,stage 4,0.206348,0.126465,0.30265895000000004,0.043711065577169875
+0,RMSSD,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",0.2005845,0.1069817,0.28997219999999996,0.046163571149737036
+0,RMSSD,E1,negative - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.196943,0.04818188500000001,0.34086382499999957,0.0742170317781833
+0,RMSSD,E1,negative - control,link,"stage 4, pooled sigma (iv)",0.20645449999999999,0.126264825,0.3053274000000001,0.04435667492605692
+0,RMSSD,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",0.203662,0.122654475,0.294514275,0.04276417829644622
+0,RMSSD,E1,negative - control,link,"stage 4, prior SDs x2 (i)",0.2068735,0.12701337499999998,0.3048435,0.044221082309466336
+0.5,RMSSD,E1,negative - control,link,stage 3 (K = 200),0.19995025028886704,0.13543752855343533,0.26446297202429875,NA
+0.5,RMSSD,E1,negative - control,link,stage 3 (same 10 replicates),0.19957546899086426,0.13424859763492775,0.26490234034680077,NA
+0.5,RMSSD,E1,negative - control,link,stage 4,0.197786,0.1221367,0.2749981,0.03868584081847307
+0.5,RMSSD,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",0.191962,0.10635195,0.27695852499999984,0.04321751503428297
+0.5,RMSSD,E1,negative - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.1874825,0.048093580000000004,0.3196794749999998,0.06846750795013817
+0.5,RMSSD,E1,negative - control,link,"stage 4, pooled sigma (iv)",0.1976255,0.125415875,0.27350747500000006,0.03737488584826024
+0.5,RMSSD,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",0.193703,0.118972725,0.26987514999999995,0.03803541495283891
+0.5,RMSSD,E1,negative - control,link,"stage 4, prior SDs x2 (i)",0.198586,0.123592775,0.2783220250000001,0.03912253807128016
+-0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 3 (K = 200),1.221446277051,1.145251624908396,1.3027102300257218,NA
+-0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.2256550065980765,1.1451935538382214,1.311769691825516,NA
+-0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 4,1.22383,1.13726975,1.32678025,0.04753605880438126
+-0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.22393,1.14061,1.3261022500000001,0.04687232206245227
+-0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.22297,1.13741,1.322651,0.046686107151212554
+-0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.22407,1.1386489999999998,1.32593,0.047358735572922306
+0,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 3 (K = 200),1.2231626526381678,1.1454187524803263,1.306183325154297,NA
+0,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.2330074613646282,1.14312919180963,1.329952389173199,NA
+0,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 4,1.22918,1.134809,1.35345125,0.05446187932955459
+0,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.22931,1.13457875,1.35707175,0.055291425774886334
+0,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.22588,1.1304895,1.3424705000000001,0.05298255390571908
+0,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.22983,1.1354292499999998,1.3564107499999998,0.055160388015344716
+0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 3 (K = 200),1.2213419952372555,1.1450376614409492,1.3027311848004646,NA
+0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.2208843448637328,1.1436770997296182,1.303303689376779,NA
+0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)",stage 4,1.218705,1.12990975,1.31653,0.04723486051304547
+0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.218505,1.1336197500000003,1.3145705,0.045679321439116086
+0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.21374,1.1263397499999999,1.30980025,0.046259278497019066
+0.5,RMSSD,E1,negative - control,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.21968,1.13154975,1.32091125,0.04785773969694857
+-0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.207677956467271,1.1250634378692572,1.2963589407004208,NA
+-0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.2046141600028863,1.1256480441802246,1.2891198825262016,NA
+-0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 4,1.2049,1.1097997499999999,1.30311225,0.04863340037566558
+-0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.22026,1.11983,1.3354009999999998,0.0545484013929764
+-0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.21947,1.0471,1.4159322499999993,0.09322936379320058
+-0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.22393,1.14061,1.3261022500000001,0.04687232206245227
+-0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.20499,1.11042975,1.3020307500000001,0.048382899005608535
+-0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.205475,1.11088,1.30378025,0.04842674520090533
+0,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.2094606257321587,1.1269701745628864,1.2979891022970451,NA
+0,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.2179294068738564,1.122571923841666,1.32138708320067,NA
+0,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 4,1.21723,1.09653925,1.3314405,0.05844335095003372
+0,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.22212,1.11290975,1.3363902499999998,0.05641459367482171
+0,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.21767,1.04935925,1.4061624999999995,0.09055464351295951
+0,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.22931,1.13457875,1.35707175,0.055291425774886334
+0,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.214275,1.094018,1.325491,0.0575965871488256
+0,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.21833,1.09755925,1.3336327500000003,0.058992231840593885
+0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.2071009863806956,1.1259420415677566,1.294109943076998,NA
+0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.202536525301594,1.121015489408435,1.2899858283381456,NA
+0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)",stage 4,1.1993,1.0972187500000001,1.30040025,0.050712511552638596
+0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.211625,1.11221,1.3191107499999997,0.05243631496053779
+0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.20621,1.0492697500000001,1.3766904999999998,0.0826056968832584
+0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.218505,1.1336197500000003,1.3145705,0.045679321439116086
+0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.19493,1.09418975,1.29271175,0.049805387651119123
+0.5,RMSSD,E1,negative - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.20024,1.0986174999999998,1.30168,0.05115199256106235
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",32.9265531579815,25.231663573756002,40.621442742207,NA
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 2 exact paired t (treatment - control),32.970000000000006,24.412048321278785,41.52795167872123,NA
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 3 (K = 200),34.096695026195164,20.668774303095255,47.52461574929507,NA
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 3 (same 10 replicates),33.540026314285306,20.576607670557486,46.50344495801313,NA
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 4,34.1148,21.1363275,51.44393750000002,7.632151598046021
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",41.15095,27.88408,60.216429999999995,8.225321651535657
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",35.4584,24.9165825,47.368629999999996,5.686906999091216
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, pooled sigma (iv)",33.5398,21.038765,47.38305750000001,6.670305390950922
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",33.16565,20.551265,49.4557075,7.224357534363935
+-0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",34.3643,21.3193025,51.892260000000014,7.785676317364683
+0,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",32.95847368084227,25.75619148261326,40.160755879071274,NA
+0,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 2 exact paired t (treatment - control),32.970000000000006,24.412048321278785,41.52795167872123,NA
+0,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 3 (K = 200),34.17411686333324,21.037206739559544,47.311026987106935,NA
+0,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 3 (same 10 replicates),34.1276910291257,21.076140987762404,47.179241070489,NA
+0,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 4,34.50375,21.058474999999998,51.452442500000004,7.671153242903499
+0,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",39.98075,27.5977975,56.776305,7.420612329365794
+0,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",35.233999999999995,25.1671775,46.3981025,5.388243307568721
+0,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, pooled sigma (iv)",33.9685,22.022195000000004,47.296055,6.401697048512166
+0,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",33.46815,20.6135925,49.447837500000006,7.300096334740519
+0,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",34.7386,21.406562500000003,52.368175000000015,7.752188140964506
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",32.964727144234,26.330634718884824,39.59881956958317,NA
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 2 exact paired t (treatment - control),32.970000000000006,24.412048321278785,41.52795167872123,NA
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 3 (K = 200),34.23665069764194,20.9225454181344,47.550755977149485,NA
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 3 (same 10 replicates),33.97613723124047,20.927526301821807,47.024748160659136,NA
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)",stage 4,34.16405,21.0864525,51.627772500000006,7.662861511661199
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",37.837050000000005,26.485415,53.060810000000004,6.743635703374284
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",34.451,25.0012925,45.29489749999998,5.122965216427876
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, pooled sigma (iv)",33.3014,21.699755,46.55036750000001,6.279112695642951
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",33.07145,20.2337775,49.197734999999994,7.2926712039853925
+0.5,RMSSD,E1,positive - control,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",34.47895,21.333949999999998,52.42804000000001,7.860099748585065
+-0.5,RMSSD,E1,positive - control,link,stage 3 (K = 200),0.531590954549488,0.3542202949125348,0.7089616141864412,NA
+-0.5,RMSSD,E1,positive - control,link,stage 3 (same 10 replicates),0.5344039365985263,0.355423376193332,0.7133844970037205,NA
+-0.5,RMSSD,E1,positive - control,link,stage 4,0.530461,0.33372692499999995,0.7200120000000001,0.09767091026064857
+-0.5,RMSSD,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.622774,0.461758475,0.8014569749999997,0.08595295114769144
+-0.5,RMSSD,E1,positive - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.5615375,0.403867725,0.714568,0.07876028459466403
+-0.5,RMSSD,E1,positive - control,link,"stage 4, pooled sigma (iv)",0.530569,0.33604875,0.7158714,0.09624887030759907
+-0.5,RMSSD,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.516582,0.32303147499999996,0.6985437250000001,0.09446495428298257
+-0.5,RMSSD,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.5355165,0.33424380000000004,0.72578025,0.09870327030670174
+0,RMSSD,E1,positive - control,link,stage 3 (K = 200),0.5300674209594353,0.3557846109752728,0.7043502309435977,NA
+0,RMSSD,E1,positive - control,link,stage 3 (same 10 replicates),0.5430692954877718,0.3676331033851826,0.718505487590361,NA
+0,RMSSD,E1,positive - control,link,stage 4,0.5372635,0.33853535,0.7297015250000001,0.09846993463014589
+0,RMSSD,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.6113995,0.45579555,0.7721023749999999,0.08041950260099157
+0,RMSSD,E1,positive - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.5586964999999999,0.408900725,0.7015074749999999,0.07449568942715673
+0,RMSSD,E1,positive - control,link,"stage 4, pooled sigma (iv)",0.5379084999999999,0.35281775000000004,0.7194469250000003,0.09279851461207762
+0,RMSSD,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.5219229999999999,0.332114825,0.7059565500000001,0.09509068189419756
+0,RMSSD,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.5414300000000001,0.34789359999999997,0.7363941749999999,0.0983535337999633
+0.5,RMSSD,E1,positive - control,link,stage 3 (K = 200),0.5289143800392643,0.3530622961780114,0.7047664639005171,NA
+0.5,RMSSD,E1,positive - control,link,stage 3 (same 10 replicates),0.529939894107584,0.354786422688394,0.705093365526774,NA
+0.5,RMSSD,E1,positive - control,link,stage 4,0.5244055,0.32720772500000006,0.7140979500000001,0.09754088399277486
+0.5,RMSSD,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.58382,0.440371925,0.7365802,0.07485209063179679
+0.5,RMSSD,E1,positive - control,link,"stage 4, alternative program, pooled dispersion (iv)",0.544684,0.40647755,0.6785815499999999,0.06873930116100097
+0.5,RMSSD,E1,positive - control,link,"stage 4, pooled sigma (iv)",0.5259165,0.34691985000000003,0.7022429750000002,0.08989000398425741
+0.5,RMSSD,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.5092065,0.31277892499999993,0.689950525,0.09502209621455117
+0.5,RMSSD,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.5297965,0.33013444999999997,0.723350075,0.0989340279977731
+-0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 3 (K = 200),1.7016373839596035,1.425069087373193,2.0318802871699653,NA
+-0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.7064307981078266,1.4267845930555219,2.0408869586227723,NA
+-0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 4,1.6997149999999999,1.39616,2.0544522500000006,0.1667433612200164
+-0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.6999,1.39940825,2.0459650000000003,0.16419101898497102
+-0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.6762899999999998,1.3813065,2.0108215,0.15835543026442167
+-0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.7083300000000001,1.39687975,2.0663405,0.16891823580058146
+0,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 3 (K = 200),1.6990468561262213,1.4273000903790467,2.0225320791129233,NA
+0,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.721281885465379,1.4443120285562934,2.0513651279307146,NA
+0,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 4,1.71132,1.40288925,2.0744610000000003,0.16950176602356593
+0,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.712425,1.42306975,2.0532980000000003,0.1598131592812518
+0,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.68527,1.39391825,2.02578125,0.1607178850812157
+0,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.71846,1.4160795000000002,2.0883905,0.17030220544982477
+0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 3 (K = 200),1.6970889145861017,1.4234198142857812,2.023374098846702,NA
+0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.6988301958448073,1.4258760869769649,2.0240356512555286,NA
+0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)",stage 4,1.689455,1.3870882500000001,2.042344,0.1653246367251618
+0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.69201,1.4147,2.018276,0.15285411604430008
+0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.66397,1.36722,1.9936209999999999,0.15812060091194147
+0.5,RMSSD,E1,positive - control,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.698585,1.3911592499999998,2.06132425,0.16882918325105473
+-0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.7104446274562854,1.4136267689772632,2.0695850473394133,NA
+-0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.696146564689809,1.4033478260855317,2.050035718467488,NA
+-0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 4,1.70811,1.3941424999999998,2.1167302500000003,0.1822403787750638
+-0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.86409,1.5868592499999998,2.2287822499999996,0.16275187563749996
+-0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.753365,1.4976095,2.0433,0.13853384769291907
+-0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.6999,1.39940825,2.0459650000000003,0.16419101898497102
+-0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.6856849999999999,1.3840685,2.06493025,0.17177638909841236
+-0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.71712,1.39834875,2.1268902499999998,0.18599690122703127
+0,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.7142929193303025,1.4233432252853562,2.0647164795243476,NA
+0,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.71516492010781,1.4167315588774068,2.0764630283943513,NA
+0,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 4,1.7251349999999999,1.3943987500000001,2.129141,0.18703549680872653
+0,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.84301,1.57742925,2.16431075,0.14936770727991155
+0,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.7483900000000001,1.50515975,2.0167909999999996,0.13028208787414391
+0,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.712425,1.42306975,2.0532980000000003,0.1598131592812518
+0,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.697635,1.38252975,2.08252175,0.17708384438184444
+0,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.72929,1.4006695000000002,2.1532355000000005,0.19017604619448725
+0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.715001021423777,1.4212401271738992,2.0694803413221656,NA
+0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.707679699044177,1.4182109454551612,2.0562314540533273,NA
+0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)",stage 4,1.713355,1.393529,2.1183785000000004,0.18239307238166957
+0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.79287,1.55328975,2.0887804999999995,0.13559761373463258
+0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.72406,1.50151925,1.9710809999999999,0.11877735161931793
+0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.69201,1.4147,2.018276,0.15285411604430008
+0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.686345,1.37609875,2.064011,0.17271314705295496
+0.5,RMSSD,E1,positive - control,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.72091,1.40221975,2.13790175,0.18656303402886953
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",22.922407573043177,15.215923918863837,30.628891227222518,NA
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 3 (K = 200),24.131802213243795,9.169339599012162,39.09426482747543,NA
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 3 (same 10 replicates),23.682709413261225,9.256167576515201,38.10925125000725,NA
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 4,24.2719,9.356304,42.86449000000001,8.418094404020344
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",30.5709,17.57039,49.24184249999997,8.04796320011087
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",25.153,14.3666425,37.015757499999985,5.770162436136507
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, pooled sigma (iv)",22.71185,7.977168,38.410917500000004,7.680000481584804
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",23.2941,8.8225605,40.9486175,8.015440763427433
+-0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",24.51375,9.61530475,43.295635000000004,8.569380388352567
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",22.952289676650523,15.759443472078626,30.14513588122242,NA
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 3 (K = 200),24.153887859430757,10.60619850078446,37.701577218077055,NA
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 3 (same 10 replicates),23.727717852323867,10.53384617767619,36.921589526971545,NA
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 4,24.2374,10.266615,40.92161,7.747451655113508
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",29.429,17.3244825,45.753902499999974,7.203473076149736
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",25.0091,14.646790000000001,36.248932499999995,5.449655631496167
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, pooled sigma (iv)",22.9825,9.825343,36.5329475,6.721885575124192
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",23.28235,9.76725425,39.239250000000006,7.385092131165445
+0,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",24.42505,10.301815000000001,41.812607500000006,7.858955393986666
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 2 described model, simulated (median over 200)",22.9160708949314,16.27026320758033,29.56187858228247,NA
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 3 (K = 200),24.32174345802369,11.971481482499886,36.67200543354748,NA
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 3 (same 10 replicates),24.25424212381874,12.289574576132763,36.21890967150472,NA
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)",stage 4,24.5801,12.79229,40.7604225,7.037512346650976
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, alternative program (ii/ii'/iii)",27.6846,16.6869675,42.458382499999956,6.5580207562425334
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, alternative program, pooled dispersion (iv)",24.6691,14.87646,35.56606499999999,5.223033138566312
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, pooled sigma (iv)",22.7254,11.6150825,34.82492000000001,5.864083767579555
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, prior SDs x0.5 (i')",23.59735,12.076085,38.730312500000004,6.717325329337898
+0.5,RMSSD,E2,positive - negative,"difference (ms, marginal)","stage 4, prior SDs x2 (i)",24.8601,12.849895,41.48349250000001,7.264695771455666
+-0.5,RMSSD,E2,positive - negative,link,stage 3 (K = 200),0.331555324929968,0.13926718521542564,0.5238434646445103,NA
+-0.5,RMSSD,E2,positive - negative,link,stage 3 (same 10 replicates),0.3309285362388143,0.14061029193521327,0.5212467805424154,NA
+-0.5,RMSSD,E2,positive - negative,link,stage 4,0.326709,0.11725195,0.5325552,0.10471151418421688
+-0.5,RMSSD,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",0.42249349999999997,0.26251395,0.6059412749999998,0.08678363814285338
+-0.5,RMSSD,E2,positive - negative,link,"stage 4, alternative program, pooled dispersion (iv)",0.3635355,0.209425825,0.515723025,0.07786693812389466
+-0.5,RMSSD,E2,positive - negative,link,"stage 4, pooled sigma (iv)",0.326757,0.11493725,0.5358662500000001,0.1062769806321933
+-0.5,RMSSD,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",0.313521,0.109653375,0.5109853500000001,0.10143594962092536
+-0.5,RMSSD,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",0.33074099999999995,0.120173625,0.538490225,0.10585089211584019
+0,RMSSD,E2,positive - negative,link,stage 3 (K = 200),0.3286275782992493,0.15718518534491288,0.5000699712535858,NA
+0,RMSSD,E2,positive - negative,link,stage 3 (same 10 replicates),0.3336130199332592,0.16413517241417347,0.5030908674523449,NA
+0,RMSSD,E2,positive - negative,link,stage 4,0.3298855,0.13676055,0.5150416250000001,0.09517379282510355
+0,RMSSD,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",0.410469,0.259969,0.572223075,0.07933317366228317
+0,RMSSD,E2,positive - negative,link,"stage 4, alternative program, pooled dispersion (iv)",0.361905,0.215879925,0.5062749499999998,0.0736093357694561
+0,RMSSD,E2,positive - negative,link,"stage 4, pooled sigma (iv)",0.330768,0.14102530000000002,0.510704,0.09295403575472082
+0,RMSSD,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",0.3176625,0.1307633,0.493747625,0.09213613384703123
+0,RMSSD,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",0.33324750000000003,0.142155575,0.51881,0.09518728746084662
+0.5,RMSSD,E2,positive - negative,link,stage 3 (K = 200),0.32896412975039724,0.17689699863053288,0.4810312608702616,NA
+0.5,RMSSD,E2,positive - negative,link,stage 3 (same 10 replicates),0.33036442511671976,0.18177887833152637,0.47894997190191313,NA
+0.5,RMSSD,E2,positive - negative,link,stage 4,0.326122,0.160521425,0.48827115,0.08263433227219859
+0.5,RMSSD,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",0.391408,0.252501725,0.5452453249999999,0.07395465673406112
+0.5,RMSSD,E2,positive - negative,link,"stage 4, alternative program, pooled dispersion (iv)",0.357476,0.21939535000000002,0.49566520000000003,0.06987437984711356
+0.5,RMSSD,E2,positive - negative,link,"stage 4, pooled sigma (iv)",0.32728900000000005,0.16767674999999999,0.4849736250000001,0.07982423520136946
+0.5,RMSSD,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",0.31451450000000003,0.147867875,0.4701936500000001,0.08128057897778512
+0.5,RMSSD,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",0.3303995,0.15928865,0.49696922499999996,0.08439373002216928
+-0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 3 (K = 200),1.3931332191440735,1.1494311699942694,1.6885049030751491,NA
+-0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.3922602925958663,1.1509760159368718,1.6841260769116178,NA
+-0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 4,1.3864,1.1244075,1.703282,0.14645918839536393
+-0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.386465,1.1218057499999998,1.7089240000000003,0.14847939431131657
+-0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.3682349999999999,1.1158892500000002,1.6669305,0.1395085844667618
+-0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.392,1.1276897500000003,1.71342025,0.14857100958365776
+0,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 3 (K = 200),1.3890604429931268,1.1702123000051463,1.648836637830397,NA
+0,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.3960028137707732,1.1783735879305115,1.6538251332317184,NA
+0,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 4,1.39081,1.1465494999999999,1.673711,0.13282744796625984
+0,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.392035,1.1514492500000002,1.66646,0.12968693853855678
+0,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.373915,1.13969925,1.6384412499999998,0.1265956516316353
+0,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.395495,1.15275725,1.68003,0.13342856272570924
+0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 3 (K = 200),1.389528011977045,1.1935081538214751,1.6177418561295274,NA
+0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 3 (same 10 replicates),1.3914751245617942,1.1993489625130749,1.6143783692589413,NA
+0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)",stage 4,1.385585,1.1741267499999999,1.62950025,0.11479721261958274
+0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, pooled sigma (iv)",1.3872,1.1825497500000002,1.6241310000000002,0.11122798210240423
+0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, prior SDs x0.5 (i')",1.369595,1.15935975,1.6003027500000002,0.11132876505745072
+0.5,RMSSD,E2,positive - negative,"ratio (conditional, median donkey)","stage 4, prior SDs x2 (i)",1.3915250000000001,1.1726794999999999,1.6437305,0.11780274418384354
+-0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.41630855999038,1.154726624675693,1.737147039166428,NA
+-0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.4080413637888374,1.1535612706220038,1.7186607531226454,NA
+-0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 4,1.41699,1.1442882500000002,1.7794412499999999,0.16050452356192907
+-0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.52576,1.30019,1.8329805,0.1348604330942633
+-0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.43841,1.23296975,1.67485,0.11241592469690315
+-0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.386465,1.1218057499999998,1.7089240000000003,0.14847939431131657
+-0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.398975,1.1361694999999998,1.73806375,0.1517682145352403
+-0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.423015,1.148939,1.7907575000000004,0.16383597229196634
+0,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.4174028346665175,1.1806107737890512,1.7016876690637834,NA
+0,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.40826299983202,1.174842353415291,1.6880602498970718,NA
+0,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 4,1.418285,1.1583892500000001,1.73891175,0.1463702534326702
+0,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.50752,1.2968887500000001,1.7722002499999998,0.12089782768684239
+0,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.43606,1.24095,1.6591014999999998,0.10600400210584858
+0,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.392035,1.1514492500000002,1.66646,0.12968693853855678
+0,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.40069,1.15207925,1.7030720000000001,0.13893284490715999
+0,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.42123,1.1596597499999999,1.7540517500000001,0.14888868577562872
+0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 3 (K = 200),1.4207601855797836,1.2071067391764354,1.6722295049946372,NA
+0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 3 (same 10 replicates),1.4200647241179587,1.2123951723032236,1.6633057164466014,NA
+0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)",stage 4,1.42754,1.2072297500000002,1.7220247500000003,0.12994000608474315
+0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, alternative program (ii/ii'/iii)",1.47906,1.28723975,1.7250305,0.11069921824617064
+0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, alternative program, pooled dispersion (iv)",1.429715,1.2453192499999999,1.6415902500000001,0.10027718791301875
+0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, pooled sigma (iv)",1.3872,1.1825497500000002,1.6241310000000002,0.11122798210240423
+0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, prior SDs x0.5 (i')",1.409675,1.1951385,1.6865812500000001,0.12400111430003058
+0.5,RMSSD,E2,positive - negative,"ratio (marginal, arithmetic means)","stage 4, prior SDs x2 (i)",1.432895,1.207028,1.73528225,0.13381959819912387
+-0.5,RMSSD,E3,"corr(control, negative)",link,stage 3 (K = 200),0.919770470220645,0.8185192679547426,0.96560046980977,NA
+-0.5,RMSSD,E3,"corr(control, negative)",link,stage 3 (same 10 replicates),0.9321807819050172,0.8538742531979759,0.9692207541941752,NA
+-0.5,RMSSD,E3,"corr(control, negative)",link,stage 4,0.9069555,0.8058949750000001,0.958510175,0.03956340720129843
+0,RMSSD,E3,"corr(control, negative)",link,stage 3 (K = 200),0.9148622374218164,0.8101565152895127,0.9629992973807524,NA
+0,RMSSD,E3,"corr(control, negative)",link,stage 3 (same 10 replicates),0.9197073749260154,0.7588248019410165,0.9748060860632181,NA
+0,RMSSD,E3,"corr(control, negative)",link,stage 4,0.891688,0.6626998749999999,0.9573291500000001,0.07577162386103334
+0.5,RMSSD,E3,"corr(control, negative)",link,stage 3 (K = 200),0.9170903032319052,0.8211713606144471,0.962616944423722,NA
+0.5,RMSSD,E3,"corr(control, negative)",link,stage 3 (same 10 replicates),0.9185203843523388,0.8361627043713215,0.9603720147396472,NA
+0.5,RMSSD,E3,"corr(control, negative)",link,stage 4,0.8885985000000001,0.77139035,0.946730025,0.045295044330727535
+-0.5,RMSSD,E3,"corr(control, positive)",link,stage 3 (K = 200),0.3486515084485969,-0.01290283476630397,0.6295795030633602,NA
+-0.5,RMSSD,E3,"corr(control, positive)",link,stage 3 (same 10 replicates),0.35158151449777375,-0.004750873885773055,0.6286889661914604,NA
+-0.5,RMSSD,E3,"corr(control, positive)",link,stage 4,0.3124985,-0.014458485,0.5774688000000004,0.15244975292214516
+0,RMSSD,E3,"corr(control, positive)",link,stage 3 (K = 200),0.3429347976592801,-0.01188462959252586,0.6210512473854203,NA
+0,RMSSD,E3,"corr(control, positive)",link,stage 3 (same 10 replicates),0.31538717160800567,-0.03595098747585875,0.5973387820029287,NA
+0,RMSSD,E3,"corr(control, positive)",link,stage 4,0.25682150000000004,-0.07087477249999999,0.5345837000000002,0.1561282757298098
+0.5,RMSSD,E3,"corr(control, positive)",link,stage 3 (K = 200),0.3374738567891301,-0.01398700364092386,0.6147153825624903,NA
+0.5,RMSSD,E3,"corr(control, positive)",link,stage 3 (same 10 replicates),0.3556320338209263,-0.0025818699777157995,0.632957377754335,NA
+0.5,RMSSD,E3,"corr(control, positive)",link,stage 4,0.278219,-0.064459185,0.562648,0.16041056430182063
+-0.5,RMSSD,E3,"corr(positive, negative)",link,stage 3 (K = 200),0.17315050727784256,-0.1901207194104157,0.494717849949689,NA
+-0.5,RMSSD,E3,"corr(positive, negative)",link,stage 3 (same 10 replicates),0.18867085386556426,-0.180081105123346,0.5109272040143206,NA
+-0.5,RMSSD,E3,"corr(positive, negative)",link,stage 4,0.135319,-0.19901592499999998,0.44484992500000003,0.16538519812848834
+0,RMSSD,E3,"corr(positive, negative)",link,stage 3 (K = 200),0.3267951470136007,-0.03381542191411952,0.6121172635702729,NA
+0,RMSSD,E3,"corr(positive, negative)",link,stage 3 (same 10 replicates),0.3306655529554982,-0.025217775650437067,0.6121632100341667,NA
+0,RMSSD,E3,"corr(positive, negative)",link,stage 4,0.2725025,-0.0595141025,0.5532414500000002,0.1571304231105614
+0.5,RMSSD,E3,"corr(positive, negative)",link,stage 3 (K = 200),0.4865431610270215,0.1598900359172127,0.7171580676129202,NA
+0.5,RMSSD,E3,"corr(positive, negative)",link,stage 3 (same 10 replicates),0.5095457004120421,0.19119727841780598,0.7308978925317834,NA
+0.5,RMSSD,E3,"corr(positive, negative)",link,stage 4,0.4487335,0.1397235,0.6798765500000001,0.13849673955025554
+-0.5,RMSSD,E3,order 2 - 1,link,stage 3 (K = 200),0.00103641218310391,-0.10642584100753788,0.10849866537374572,NA
+-0.5,RMSSD,E3,order 2 - 1,link,stage 3 (same 10 replicates),0.03273760448953284,-0.07566318736483132,0.141138396343897,NA
+-0.5,RMSSD,E3,order 2 - 1,link,stage 4,0.0297746,-0.07210256749999999,0.14650107499999998,0.056467432355594614
+0,RMSSD,E3,order 2 - 1,link,stage 3 (K = 200),-0.0023970048046238,-0.12177731056559464,0.116983300956347,NA
+0,RMSSD,E3,order 2 - 1,link,stage 3 (same 10 replicates),-0.03125056412738081,-0.16620524365548733,0.10370411540072572,NA
+0,RMSSD,E3,order 2 - 1,link,stage 4,-0.03144795,-0.16028525000000002,0.10584635000000008,0.06850659927156387
+0.5,RMSSD,E3,order 2 - 1,link,stage 3 (K = 200),-0.0028073807919486,-0.1161709630228712,0.110556201438974,NA
+0.5,RMSSD,E3,order 2 - 1,link,stage 3 (same 10 replicates),0.004911338358436767,-0.14503509724152377,0.1548577739583973,NA
+0.5,RMSSD,E3,order 2 - 1,link,stage 4,0.005759520000000001,-0.14426775,0.1461857750000001,0.0746061977909544
+-0.5,RMSSD,E3,order 3 - 1,link,stage 3 (K = 200),8.584806814069876e-4,-0.10849380647323396,0.11021076783604793,NA
+-0.5,RMSSD,E3,order 3 - 1,link,stage 3 (same 10 replicates),0.030918762789941906,-0.08353093739365708,0.1453684629735409,NA
+-0.5,RMSSD,E3,order 3 - 1,link,stage 4,0.03355515,-0.08854427000000001,0.136012075,0.05890248809435896
+0,RMSSD,E3,order 3 - 1,link,stage 3 (K = 200),-6.800073713143722e-4,-0.1218932579681055,0.12053324322547676,NA
+0,RMSSD,E3,order 3 - 1,link,stage 3 (same 10 replicates),-0.043069012551060756,-0.18488164905821314,0.09874362395609164,NA
+0,RMSSD,E3,order 3 - 1,link,stage 4,-0.046778299999999995,-0.17294067500000002,0.10060212500000007,0.07242958311782922
+0.5,RMSSD,E3,order 3 - 1,link,stage 3 (K = 200),-5.048746843601546e-4,-0.1105987603649315,0.1095890109962112,NA
+0.5,RMSSD,E3,order 3 - 1,link,stage 3 (same 10 replicates),0.028609419714915714,-0.0932326230542661,0.15045146248409752,NA
+0.5,RMSSD,E3,order 3 - 1,link,stage 4,0.02892355,-0.09711014250000001,0.15291770000000005,0.0630421008536991
+-0.5,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (K = 200),0.43762370503217046,0.3197227001383258,0.5990019073504218,NA
+-0.5,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.45413474695140676,0.33375502273108676,0.6179333773046727,NA
+-0.5,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 4,0.4516485,0.34588597500000007,0.6149640500000001,0.06924944626790644
+0,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (K = 200),0.42728150228976175,0.3173952739702722,0.575211722327332,NA
+0,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.4405195392636651,0.33241189325322806,0.5837861653320592,NA
+0,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 4,0.442187,0.3402147,0.5879183250000001,0.06367997302108717
+0.5,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (K = 200),0.4276215501365741,0.3179479534674268,0.5751261744162798,NA
+0.5,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.43534341909703483,0.31896472591202224,0.5941844886113568,NA
+0.5,RMSSD,E3,"sigma control (donkey-level SD, link scale)",link,stage 4,0.43320349999999996,0.33437595000000003,0.60256745,0.06891050132416346
+-0.5,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (K = 200),0.411366300524963,0.3008429788170015,0.562493543552265,NA
+-0.5,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.4122919501915546,0.2890671729179748,0.5880455067825704,NA
+-0.5,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 4,0.41303599999999996,0.300221,0.580341825,0.07237034839777658
+0,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (K = 200),0.40028778611692856,0.29653923733902027,0.540334267910751,NA
+0,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.40911628488235846,0.2942291643504781,0.5688631680188203,NA
+0,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 4,0.4078905,0.31117775000000003,0.5696120000000002,0.06691799603931102
+0.5,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (K = 200),0.3997793229132156,0.2978614137037282,0.5365700277912454,NA
+0.5,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.4004550893414314,0.29722959794480464,0.5395299784688111,NA
+0.5,RMSSD,E3,"sigma negative (donkey-level SD, link scale)",link,stage 4,0.3952065,0.30744455000000004,0.5409545000000001,0.059791555420066596
+-0.5,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (K = 200),0.4456044233097826,0.3129356193349956,0.6345180599613467,NA
+-0.5,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.4395461694596234,0.3151255089815784,0.6130917034010157,NA
+-0.5,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 4,0.467169,0.34083532499999997,0.647563275,0.08021426823849193
+0,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (K = 200),0.4450697632889471,0.3202658519037184,0.6185083205612266,NA
+0,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.4298594743267351,0.3098127063943363,0.5964221733154681,NA
+0,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 4,0.455384,0.33621555000000003,0.6307603500000002,0.07657006037271548
+0.5,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (K = 200),0.44878600377416944,0.323358464328472,0.6228656410830642,NA
+0.5,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 3 (same 10 replicates),0.44535563695838887,0.3162497269914018,0.6271677931788532,NA
+0.5,RMSSD,E3,"sigma positive (donkey-level SD, link scale)",link,stage 4,0.4698445,0.33485745,0.64936915,0.08153607164306204
+-0.5,RMSSD,mean,mean control,"response, marginal",stage 3 (K = 200),47.98093171228724,40.97595583201734,56.18343150839516,NA
+-0.5,RMSSD,mean,mean control,"response, marginal",stage 3 (same 10 replicates),48.17729299798769,40.8907090209324,56.76232122621749,NA
+-0.5,RMSSD,mean,mean control,"response, marginal",stage 4,48.3339,41.536155,58.026505,4.19793808255533
+-0.5,RMSSD,mean,mean control,"response, marginal","stage 4, alternative program (ii/ii'/iii)",47.624399999999994,41.11447,56.48721749999999,3.8929382099303598
+-0.5,RMSSD,mean,mean control,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",47.16095,40.813175,55.00593999999998,3.5918513859492442
+-0.5,RMSSD,mean,mean control,"response, marginal","stage 4, pooled sigma (iv)",48.0028,41.4335575,56.7175725,3.901302983091464
+-0.5,RMSSD,mean,mean control,"response, marginal","stage 4, prior SDs x0.5 (i')",48.54175,41.9152975,58.1352225,4.1073158343584755
+-0.5,RMSSD,mean,mean control,"response, marginal","stage 4, prior SDs x2 (i)",48.2057,41.3755975,58.0020225,4.1972176936205905
+0,RMSSD,mean,mean control,"response, marginal",stage 3 (K = 200),47.834620655831195,41.05070261668741,55.739628981578576,NA
+0,RMSSD,mean,mean control,"response, marginal",stage 3 (same 10 replicates),47.71600739176328,40.7082923038482,55.93006320227238,NA
+0,RMSSD,mean,mean control,"response, marginal",stage 4,47.91305,41.25103,57.296565,4.075736321131659
+0,RMSSD,mean,mean control,"response, marginal","stage 4, alternative program (ii/ii'/iii)",47.4913,41.134260000000005,56.03423999999999,3.8020272742410746
+0,RMSSD,mean,mean control,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",47.1645,40.987392500000006,55.134409999999995,3.5781327245181633
+0,RMSSD,mean,mean control,"response, marginal","stage 4, pooled sigma (iv)",47.7158,41.154889999999995,56.140577500000006,3.7999936478365783
+0,RMSSD,mean,mean control,"response, marginal","stage 4, prior SDs x0.5 (i')",48.173,41.5797525,57.373780000000004,4.0083552013137345
+0,RMSSD,mean,mean control,"response, marginal","stage 4, prior SDs x2 (i)",47.858599999999996,41.1654925,57.335645,4.127023812308977
+0.5,RMSSD,mean,mean control,"response, marginal",stage 3 (K = 200),47.87401648248915,41.07990776143846,55.79178676533105,NA
+0.5,RMSSD,mean,mean control,"response, marginal",stage 3 (same 10 replicates),48.003743976586776,41.05481685311578,56.12884461314571,NA
+0.5,RMSSD,mean,mean control,"response, marginal",stage 4,48.15365,41.6031,57.4632225,4.020772211833015
+0.5,RMSSD,mean,mean control,"response, marginal","stage 4, alternative program (ii/ii'/iii)",47.72365,41.34079,56.326215,3.8153306752243936
+0.5,RMSSD,mean,mean control,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",47.666,41.419795,55.6837225,3.626204375212554
+0.5,RMSSD,mean,mean control,"response, marginal","stage 4, pooled sigma (iv)",48.14845,41.5207525,56.880372500000014,3.901209003092183
+0.5,RMSSD,mean,mean control,"response, marginal","stage 4, prior SDs x0.5 (i')",48.4125,41.998802500000004,57.816452500000004,3.9916000805495844
+0.5,RMSSD,mean,mean control,"response, marginal","stage 4, prior SDs x2 (i)",48.0878,41.51686,57.55335000000001,4.049638017280637
+-0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 3 (K = 200),43.5090653174765,37.432137165916494,50.57255364313332,NA
+-0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),43.38112116351217,37.114416675323206,50.705947768662725,NA
+-0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 4,43.60425,37.1029925,50.924915,3.4945253995422654
+-0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",43.52445,37.351667500000005,50.629362500000006,3.3709098464250595
+-0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",43.9337,37.7153975,51.1620075,3.4119647463909826
+-0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",43.4717,36.861035,50.857855,3.5107805632258975
+0,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 3 (K = 200),43.59534466706459,37.65521070105902,50.47253862761431,NA
+0,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),43.26376887695216,37.215077795701966,50.295573952945126,NA
+0,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 4,43.4235,37.15927,50.6381225,3.411507089293781
+0,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",43.429050000000004,37.2565725,50.4457175,3.3321819097000382
+0,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",43.799400000000006,37.754565,50.93862250000001,3.341388203318206
+0,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",43.327,37.032587500000005,50.596835,3.445712166732077
+0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 3 (K = 200),43.62547857821123,37.68202459550556,50.506372776078635,NA
+0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),43.58879301535601,37.53009316980562,50.62558379322535,NA
+0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)",stage 4,43.765550000000005,37.46838,50.888110000000005,3.376012996509329
+0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",43.73015,37.5310875,50.816357499999995,3.3720035959904546
+0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",44.1235,38.0536575,51.24622000000001,3.329163156968003
+0.5,RMSSD,mean,mean control,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",43.66135,37.295395,50.8242075,3.405638163545849
+-0.5,RMSSD,mean,mean negative,"response, marginal",stage 3 (K = 200),57.94551355969074,49.98919294301746,67.168168638443845,NA
+-0.5,RMSSD,mean,mean negative,"response, marginal",stage 3 (same 10 replicates),58.03504933598391,50.02393345678684,67.32911066139155,NA
+-0.5,RMSSD,mean,mean negative,"response, marginal",stage 4,58.225,50.6735475,68.90704500000001,4.621868970789248
+-0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, alternative program (ii/ii'/iii)",58.1333,50.255562499999996,68.95271249999999,4.733290618623978
+-0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",57.45375,49.87799,66.9913225,4.36682587338117
+-0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, pooled sigma (iv)",58.82795,50.778195000000004,69.25454500000001,4.72688774950277
+-0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, prior SDs x0.5 (i')",58.50445,51.136892499999995,69.044935,4.537297037142336
+-0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, prior SDs x2 (i)",58.082,50.5190525,68.81011500000001,4.638073188137508
+0,RMSSD,mean,mean negative,"response, marginal",stage 3 (K = 200),57.85409023006204,50.147219623772614,66.74539050139978,NA
+0,RMSSD,mean,mean negative,"response, marginal",stage 3 (same 10 replicates),58.1147285810388,50.09463077018496,67.41883563413552,NA
+0,RMSSD,mean,mean negative,"response, marginal",stage 4,58.223,50.638085000000004,68.85456250000001,4.6012755514038535
+0,RMSSD,mean,mean negative,"response, marginal","stage 4, alternative program (ii/ii'/iii)",58.0025,50.47139000000001,68.2345025,4.505418336047645
+0,RMSSD,mean,mean negative,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",57.4339,49.802690000000005,66.83946749999998,4.32522914703918
+0,RMSSD,mean,mean negative,"response, marginal","stage 4, pooled sigma (iv)",58.7359,50.72819750000001,69.33542000000001,4.734440204586236
+0,RMSSD,mean,mean negative,"response, marginal","stage 4, prior SDs x0.5 (i')",58.37125,50.9315925,68.7348175,4.5137299012473635
+0,RMSSD,mean,mean negative,"response, marginal","stage 4, prior SDs x2 (i)",58.22839999999999,50.5932975,68.9452775,4.665844180760005
+0.5,RMSSD,mean,mean negative,"response, marginal",stage 3 (K = 200),57.788772518018355,50.12126095467028,66.62925404369932,NA
+0.5,RMSSD,mean,mean negative,"response, marginal",stage 3 (same 10 replicates),57.72625548307199,50.07195484937252,66.55063861838939,NA
+0.5,RMSSD,mean,mean negative,"response, marginal",stage 4,57.779700000000005,50.5964975,67.5428425,4.299808103279966
+0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, alternative program (ii/ii'/iii)",57.82365,50.336785,67.79286999999998,4.449154949554993
+0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",57.45295,49.8302825,67.01105999999999,4.3768410014053645
+0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, pooled sigma (iv)",58.713750000000005,50.6223375,69.39197250000001,4.750771822722801
+0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, prior SDs x0.5 (i')",57.86435,50.773182500000004,67.48610249999999,4.233880472045709
+0.5,RMSSD,mean,mean negative,"response, marginal","stage 4, prior SDs x2 (i)",57.7213,50.4224725,67.50155,4.344105969967511
+-0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 3 (K = 200),53.14398585000044,46.13475293960351,61.218128462125016,NA
+-0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),53.17028834589645,46.05766444443281,61.381305302542174,NA
+-0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 4,53.45155,45.85628,61.505410000000005,3.9663283094173916
+-0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",53.3479,45.798985,61.9236325,4.132155865617247
+-0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",53.8322,46.6023325,61.80464250000001,3.8657230698589635
+-0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",53.25265,45.5786575,61.40732000000001,3.9918432147006015
+0,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 3 (K = 200),53.32419742564191,46.493511253001984,61.15842736883505,NA
+0,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),53.34454983203678,46.30445359484509,61.45501730095894,NA
+0,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 4,53.48595,46.0851975,61.7763025,3.9434516051238084
+0,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",53.47155,45.9000675,62.243010000000005,4.128923878049331
+0,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",53.79085,46.627955,61.867335000000004,3.838396777503242
+0,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",53.44425,45.9992825,61.6536075,3.9740371382795976
+0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 3 (K = 200),53.281629049892665,46.46211011010536,61.10208915356406,NA
+0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),53.216875003953795,46.372437291955166,61.071531939464236,NA
+0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)",stage 4,53.3516,46.3549375,61.19509500000001,3.750294078871292
+0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",53.33125,45.734987499999995,61.9824375,4.11153375398036
+0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",53.590999999999994,46.6837525,61.36352,3.7072691903346238
+0.5,RMSSD,mean,mean negative,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",53.2819,46.128495,61.153255000000016,3.797869487004845
+-0.5,RMSSD,mean,mean positive,"response, marginal",stage 3 (K = 200),82.06872686762863,69.6224370552864,96.74001966241173,NA
+-0.5,RMSSD,mean,mean positive,"response, marginal",stage 3 (same 10 replicates),81.7157500145912,69.71734198306784,95.77909327164119,NA
+-0.5,RMSSD,mean,mean positive,"response, marginal",stage 4,82.55435,70.6043,100.507025,7.605596415750897
+-0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, alternative program (ii/ii'/iii)",88.80285,72.679485,112.685025,10.159014666057137
+-0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",82.5892,71.5758775,96.63577999999998,6.388297260699688
+-0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, pooled sigma (iv)",81.5746,70.2630775,96.0957325,6.614978536681809
+-0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, prior SDs x0.5 (i')",81.87305,70.357185,98.6887,7.200398857748289
+-0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, prior SDs x2 (i)",82.71185,70.7135925,100.9431,7.717221349791367
+0,RMSSD,mean,mean positive,"response, marginal",stage 3 (K = 200),82.00255148914248,69.7216727840653,96.44660235785838,NA
+0,RMSSD,mean,mean positive,"response, marginal",stage 3 (same 10 replicates),81.84082200595732,70.04334460228311,95.6253614764202,NA
+0,RMSSD,mean,mean positive,"response, marginal",stage 4,82.45095,70.8178675,99.78072000000002,7.360363249327643
+0,RMSSD,mean,mean positive,"response, marginal","stage 4, alternative program (ii/ii'/iii)",87.471,72.3740975,108.86204999999998,9.272725723554409
+0,RMSSD,mean,mean positive,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",82.4178,71.58327249999999,96.12701249999999,6.24652611351828
+0,RMSSD,mean,mean positive,"response, marginal","stage 4, pooled sigma (iv)",81.72985,70.6601875,95.860015,6.397904098522314
+0,RMSSD,mean,mean positive,"response, marginal","stage 4, prior SDs x0.5 (i')",81.7576,70.334765,97.96827500000002,7.024031490932281
+0,RMSSD,mean,mean positive,"response, marginal","stage 4, prior SDs x2 (i)",82.76275,71.14155,100.22627500000002,7.431723859912946
+0.5,RMSSD,mean,mean positive,"response, marginal",stage 3 (K = 200),82.10398716712767,69.70148386515704,96.7133601026483,NA
+0.5,RMSSD,mean,mean positive,"response, marginal",stage 3 (same 10 replicates),81.97501906693144,69.70765955652881,96.40122468283884,NA
+0.5,RMSSD,mean,mean positive,"response, marginal",stage 4,82.46770000000001,70.57508000000001,100.35207500000001,7.546394977104138
+0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, alternative program (ii/ii'/iii)",85.6144,71.41274999999999,105.57702499999999,8.675820818181801
+0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, alternative program, pooled dispersion (iv)",82.0721,71.2607775,96.24547749999999,6.350515907213299
+0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, pooled sigma (iv)",81.4647,70.30797,96.0761175,6.534989354020472
+0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, prior SDs x0.5 (i')",81.6456,70.0967425,98.3369025,7.192001721127265
+0.5,RMSSD,mean,mean positive,"response, marginal","stage 4, prior SDs x2 (i)",82.6869,70.67537,100.98602500000001,7.765122176908224
+-0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 3 (K = 200),74.03665208535821,63.39898481478595,86.45920542768685,NA
+-0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),74.02688120986441,63.61534200115383,86.14241422391446,NA
+-0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 4,74.0339,62.3692225,86.9202875,6.202038589485729
+-0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",73.9213,63.24663999999999,86.0994075,5.818156157234636
+-0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",73.62790000000001,62.22058,85.90396750000001,6.004873187251897
+-0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",74.08305,62.488355,87.10501500000001,6.217060873147003
+0,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 3 (K = 200),74.07053329831514,63.52178527710782,86.37105961620438,NA
+0,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),74.46914166485861,64.24369593560611,86.32213604054473,NA
+0,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 4,74.30485,63.0828975,86.9692,6.053833834051657
+0,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",74.36025000000001,63.8891725,86.24933500000003,5.669870932225544
+0,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",73.85515,62.69908,86.09593500000001,5.905741685907743
+0,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",74.5247,63.30028,87.1117175,6.029582764843402
+0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 3 (K = 200),74.03631608859571,63.408430019705015,86.44554199287138,NA
+0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 3 (same 10 replicates),74.04995777491605,63.49688230493531,86.35693670964145,NA
+0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)",stage 4,73.9607,62.42158499999999,86.78403250000001,6.127168659673467
+0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, pooled sigma (iv)",74.0093,63.4691125,86.0640425,5.728978971995786
+0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, prior SDs x0.5 (i')",73.3902,61.966922499999995,85.74883249999999,6.020957886526793
+0.5,RMSSD,mean,mean positive,"response, u = 0 (median donkey)","stage 4, prior SDs x2 (i)",74.0698,62.4021925,87.00519000000003,6.216673839655576
+-0.5,SBR,E1,negative - control,difference (blinks/min),"stage 2 described model, simulated (median over 200)",-6.732961841148351,-8.995658800868311,-4.470264881428392,NA
+-0.5,SBR,E1,negative - control,difference (blinks/min),stage 2 exact paired t (treatment - control),-6.740000000000002,-7.889968252045986,-5.590031747954018,NA
+-0.5,SBR,E1,negative - control,difference (blinks/min),stage 3 (K = 200),-6.56520862982132,-8.512119477988978,-4.618297781653661,NA
+-0.5,SBR,E1,negative - control,difference (blinks/min),stage 3 (same 10 replicates),-6.5744804337799465,-8.526872501942204,-4.622088365617689,NA
+-0.5,SBR,E1,negative - control,difference (blinks/min),stage 4,-6.58126,-8.702062,-4.576397249999999,1.05037166378993
+-0.5,SBR,E1,negative - control,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",-6.54921,-8.541411,-4.665324999999998,0.9871998424805548
+-0.5,SBR,E1,negative - control,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",-6.555770000000001,-8.6320045,-4.5939885,1.0261540010433559
+-0.5,SBR,E1,negative - control,difference (blinks/min),"stage 4, prior SDs x2 (i)",-6.561065,-8.694018000000002,-4.577824249999999,1.0519556141905302
+0,SBR,E1,negative - control,difference (blinks/min),"stage 2 described model, simulated (median over 200)",-6.7338116341468055,-8.800798618874094,-4.666824649419517,NA
+0,SBR,E1,negative - control,difference (blinks/min),stage 2 exact paired t (treatment - control),-6.740000000000002,-7.889968252045986,-5.590031747954018,NA
+0,SBR,E1,negative - control,difference (blinks/min),stage 3 (K = 200),-6.5583243430622105,-8.498422281612132,-4.6182264045122885,NA
+0,SBR,E1,negative - control,difference (blinks/min),stage 3 (same 10 replicates),-6.514305003164346,-8.509838083441736,-4.518771922886957,NA
+0,SBR,E1,negative - control,difference (blinks/min),stage 4,-6.50225,-8.59629475,-4.50984975,1.0396584108505906
+0,SBR,E1,negative - control,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",-6.49457,-8.5434215,-4.570314999999999,1.0065899887631318
+0,SBR,E1,negative - control,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",-6.503185,-8.585389,-4.538913749999999,1.0308618829149103
+0,SBR,E1,negative - control,difference (blinks/min),"stage 4, prior SDs x2 (i)",-6.508839999999999,-8.6029685,-4.4957277499999995,1.0437991042126162
+0.5,SBR,E1,negative - control,difference (blinks/min),"stage 2 described model, simulated (median over 200)",-6.714357012737253,-8.557510376191363,-4.871203649283142,NA
+0.5,SBR,E1,negative - control,difference (blinks/min),stage 2 exact paired t (treatment - control),-6.740000000000002,-7.889968252045986,-5.590031747954018,NA
+0.5,SBR,E1,negative - control,difference (blinks/min),stage 3 (K = 200),-6.541825422947405,-8.478966160574608,-4.604684685320204,NA
+0.5,SBR,E1,negative - control,difference (blinks/min),stage 3 (same 10 replicates),-6.53899057471243,-8.464824938898676,-4.613156210526183,NA
+0.5,SBR,E1,negative - control,difference (blinks/min),stage 4,-6.547644999999999,-8.55994675,-4.60498975,1.0042966372512951
+0.5,SBR,E1,negative - control,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",-6.51586,-8.509188750000002,-4.62579625,0.9913887008748296
+0.5,SBR,E1,negative - control,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",-6.5257000000000005,-8.534006,-4.634198,0.9954502588648764
+0.5,SBR,E1,negative - control,difference (blinks/min),"stage 4, prior SDs x2 (i)",-6.529705,-8.567301749999999,-4.604210999999996,1.0126980095257538
+-0.5,SBR,E1,negative - control,link,stage 3 (K = 200),-0.4388350780054095,-0.5657047949935379,-0.31196536101728123,NA
+-0.5,SBR,E1,negative - control,link,stage 3 (same 10 replicates),-0.4390772508331584,-0.5664652235845248,-0.31168927808179203,NA
+-0.5,SBR,E1,negative - control,link,stage 4,-0.440795,-0.5751391,-0.30832782499999994,0.06784503124094371
+-0.5,SBR,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",-0.43838299999999997,-0.5644353249999999,-0.31438295000000005,0.06375152235380101
+-0.5,SBR,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",-0.4380455,-0.5703676249999999,-0.30817469999999997,0.06660253185596347
+-0.5,SBR,E1,negative - control,link,"stage 4, prior SDs x2 (i)",-0.43989900000000004,-0.5743446750000001,-0.3078408249999998,0.06801972733886642
+0,SBR,E1,negative - control,link,stage 3 (K = 200),-0.43926332679821273,-0.5656212612194991,-0.3129053923769264,NA
+0,SBR,E1,negative - control,link,stage 3 (same 10 replicates),-0.4361513457540289,-0.5661210184710355,-0.3061816730370224,NA
+0,SBR,E1,negative - control,link,stage 4,-0.43691599999999997,-0.56922225,-0.3054005999999998,0.06733522603087548
+0,SBR,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",-0.436222,-0.5656921250000001,-0.3088524249999998,0.06543779967905687
+0,SBR,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",-0.435017,-0.567908675,-0.30542417499999996,0.06685029667482739
+0,SBR,E1,negative - control,link,"stage 4, prior SDs x2 (i)",-0.4373985,-0.5696377749999999,-0.3053438499999999,0.0677058826552175
+0.5,SBR,E1,negative - control,link,stage 3 (K = 200),-0.43889336162532144,-0.5648239772426238,-0.3129627460080191,NA
+0.5,SBR,E1,negative - control,link,stage 3 (same 10 replicates),-0.4386074611718003,-0.5637470455296493,-0.3134678768139513,NA
+0.5,SBR,E1,negative - control,link,stage 4,-0.440913,-0.569025125,-0.31133065,0.06525291206058746
+0.5,SBR,E1,negative - control,link,"stage 4, alternative program (ii/ii'/iii)",-0.4382515,-0.5645702,-0.3138003499999999,0.06404333062203128
+0.5,SBR,E1,negative - control,link,"stage 4, prior SDs x0.5 (i')",-0.43685450000000003,-0.564125025,-0.31253569999999997,0.06418569623446738
+0.5,SBR,E1,negative - control,link,"stage 4, prior SDs x2 (i)",-0.4392795,-0.568674225,-0.311853725,0.06562075861602734
+-0.5,SBR,E1,negative / control,ratio,stage 3 (K = 200),0.6447871104377554,0.5679597105008897,0.7320068837629619,NA
+-0.5,SBR,E1,negative / control,ratio,stage 3 (same 10 replicates),0.6446309794260321,0.5675279818686979,0.7322090062722334,NA
+-0.5,SBR,E1,negative / control,ratio,stage 4,0.6435245,0.56262695,0.73467415,0.0437746863519316
+-0.5,SBR,E1,negative / control,ratio,"stage 4, alternative program (ii/ii'/iii)",0.6450785,0.568680825,0.730240025,0.04122025935260031
+-0.5,SBR,E1,negative / control,ratio,"stage 4, prior SDs x0.5 (i')",0.6452964999999999,0.56531765,0.734786225,0.04306298618121931
+-0.5,SBR,E1,negative / control,ratio,"stage 4, prior SDs x2 (i)",0.6441015,0.56307405,0.735032325,0.04389084007414001
+0,SBR,E1,negative / control,ratio,stage 3 (K = 200),0.6445110402536761,0.5680071563006456,0.7313190976576497,NA
+0,SBR,E1,negative / control,ratio,stage 3 (same 10 replicates),0.646519870493329,0.5677233615255148,0.7362528500140392,NA
+0,SBR,E1,negative / control,ratio,stage 4,0.6460255,0.5659658499999999,0.7368275250000001,0.04361732358623274
+0,SBR,E1,negative / control,ratio,"stage 4, alternative program (ii/ii'/iii)",0.646474,0.56796735,0.7342889000000001,0.042415087097826334
+0,SBR,E1,negative / control,ratio,"stage 4, prior SDs x0.5 (i')",0.647254,0.566709625,0.736810625,0.043326758564091246
+0,SBR,E1,negative / control,ratio,"stage 4, prior SDs x2 (i)",0.645714,0.5657305499999999,0.73686985,0.0438640679649347
+0.5,SBR,E1,negative / control,ratio,stage 3 (K = 200),0.6447495310060298,0.5684601998833106,0.7312771550547034,NA
+0.5,SBR,E1,negative / control,ratio,stage 3 (same 10 replicates),0.6449338915424767,0.5690727224634252,0.7309078577155945,NA
+0.5,SBR,E1,negative / control,ratio,stage 4,0.6434485000000001,0.5660769250000001,0.73247125,0.04213465867756269
+0.5,SBR,E1,negative / control,ratio,"stage 4, alternative program (ii/ii'/iii)",0.6451635,0.568604325,0.7306652,0.041419316510495706
+0.5,SBR,E1,negative / control,ratio,"stage 4, prior SDs x0.5 (i')",0.6460655,0.568857975,0.731589225,0.04152220131307261
+0.5,SBR,E1,negative / control,ratio,"stage 4, prior SDs x2 (i)",0.6445004999999999,0.566275875,0.7320892,0.04237087034257009
+-0.5,SBR,E1,positive - control,difference (blinks/min),"stage 2 described model, simulated (median over 200)",18.99932338055428,16.738149875431642,21.26049688567692,NA
+-0.5,SBR,E1,positive - control,difference (blinks/min),stage 2 exact paired t (treatment - control),18.999999999999996,16.687144329311465,21.312855670688528,NA
+-0.5,SBR,E1,positive - control,difference (blinks/min),stage 3 (K = 200),18.609818499564888,15.648265690230506,21.57137130889927,NA
+-0.5,SBR,E1,positive - control,difference (blinks/min),stage 3 (same 10 replicates),18.633500122543325,15.644509248401796,21.622490996684853,NA
+-0.5,SBR,E1,positive - control,difference (blinks/min),stage 4,18.659300000000002,15.5394825,22.0765025,1.6617786700443595
+-0.5,SBR,E1,positive - control,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",18.56955,15.715179999999998,21.713010000000004,1.5306446648291023
+-0.5,SBR,E1,positive - control,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",18.56255,15.466395,21.8514225,1.633146022227447
+-0.5,SBR,E1,positive - control,difference (blinks/min),"stage 4, prior SDs x2 (i)",18.6979,15.5781775,22.14844,1.6707714185429894
+0,SBR,E1,positive - control,difference (blinks/min),"stage 2 described model, simulated (median over 200)",19.012598632457312,16.951014953225958,21.074182311688666,NA
+0,SBR,E1,positive - control,difference (blinks/min),stage 2 exact paired t (treatment - control),18.999999999999996,16.687144329311465,21.312855670688528,NA
+0,SBR,E1,positive - control,difference (blinks/min),stage 3 (K = 200),18.541888236281185,15.588626280969397,21.495150191592973,NA
+0,SBR,E1,positive - control,difference (blinks/min),stage 3 (same 10 replicates),18.526183380731958,15.576619852601766,21.47574690886215,NA
+0,SBR,E1,positive - control,difference (blinks/min),stage 4,18.53315,15.54959,21.774720000000002,1.5840328403278898
+0,SBR,E1,positive - control,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",18.4716,15.5869975,21.5727125,1.5238141723520922
+0,SBR,E1,positive - control,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",18.4678,15.451780000000001,21.684127500000002,1.5899263993092572
+0,SBR,E1,positive - control,difference (blinks/min),"stage 4, prior SDs x2 (i)",18.5528,15.554570000000002,21.836442500000004,1.5957482072834412
+0.5,SBR,E1,positive - control,difference (blinks/min),"stage 2 described model, simulated (median over 200)",19.0072841104168,17.16341209076227,20.85115613007133,NA
+0.5,SBR,E1,positive - control,difference (blinks/min),stage 2 exact paired t (treatment - control),18.999999999999996,16.687144329311465,21.312855670688528,NA
+0.5,SBR,E1,positive - control,difference (blinks/min),stage 3 (K = 200),18.507260397035108,15.539057968654763,21.47546282541545,NA
+0.5,SBR,E1,positive - control,difference (blinks/min),stage 3 (same 10 replicates),18.45287274179018,15.510927332881312,21.39481815069905,NA
+0.5,SBR,E1,positive - control,difference (blinks/min),stage 4,18.40235,15.411697499999999,21.610805000000003,1.5727008053824003
+0.5,SBR,E1,positive - control,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",18.369750000000003,15.455192499999999,21.483215,1.5314661868219408
+0.5,SBR,E1,positive - control,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",18.3491,15.372487500000002,21.56301,1.580057705689852
+0.5,SBR,E1,positive - control,difference (blinks/min),"stage 4, prior SDs x2 (i)",18.4704,15.507480000000001,21.710642500000002,1.585388509504098
+-0.5,SBR,E1,positive - control,link,stage 3 (K = 200),0.696581319562543,0.5972230008189119,0.7959396383061741,NA
+-0.5,SBR,E1,positive - control,link,stage 3 (same 10 replicates),0.6967078907115221,0.5969908297422112,0.7964249516808329,NA
+-0.5,SBR,E1,positive - control,link,stage 4,0.6984589999999999,0.591615875,0.80612712500000006,0.054836272749611274
+-0.5,SBR,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.696191,0.5974151249999999,0.7945553750000001,0.05030964438997791
+-0.5,SBR,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.6943984999999999,0.5894838250000001,0.8005242250000001,0.053672559770065534
+-0.5,SBR,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.700056,0.593741575,0.8086701000000001,0.0549214912788724
+0,SBR,E1,positive - control,link,stage 3 (K = 200),0.6956633979821377,0.5973337348209959,0.7939930611432795,NA
+0,SBR,E1,positive - control,link,stage 3 (same 10 replicates),0.6958052904682029,0.5959899187881045,0.7956206621483014,NA
+0,SBR,E1,positive - control,link,stage 4,0.697542,0.594888875,0.801345725,0.0524482097606103
+0,SBR,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.69538,0.597047425,0.7940083250000001,0.050037864254185625
+0,SBR,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.693207,0.591136875,0.7979295750000001,0.052964491558768714
+0,SBR,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.6978635,0.59619455,0.804054025,0.05284046542650483
+0.5,SBR,E1,positive - control,link,stage 3 (K = 200),0.695660976460897,0.5975299345933066,0.7937920183284873,NA
+0.5,SBR,E1,positive - control,link,stage 3 (same 10 replicates),0.694133088471695,0.5976412177314413,0.7906249592119486,NA
+0.5,SBR,E1,positive - control,link,stage 4,0.6943455000000001,0.59446245,0.7933686999999999,0.05062848610997128
+0.5,SBR,E1,positive - control,link,"stage 4, alternative program (ii/ii'/iii)",0.6934685,0.597140975,0.7907771499999999,0.049290958805183464
+0.5,SBR,E1,positive - control,link,"stage 4, prior SDs x0.5 (i')",0.6906345,0.590525175,0.7898383000000001,0.050556200115536805
+0.5,SBR,E1,positive - control,link,"stage 4, prior SDs x2 (i)",0.6956145,0.596116425,0.7959771750000001,0.05116423029167248
+-0.5,SBR,E1,positive / control,ratio,stage 3 (K = 200),2.006880084827438,1.8170657973139623,2.216522748284983,NA
+-0.5,SBR,E1,positive / control,ratio,stage 3 (same 10 replicates),2.007134114021683,1.8166439761605944,2.217598717489966,NA
+-0.5,SBR,E1,positive / control,ratio,stage 4,2.01065,1.80690975,2.23922025,0.1105721495506124
+-0.5,SBR,E1,positive / control,ratio,"stage 4, alternative program (ii/ii'/iii)",2.006095,1.81741825,2.21345325,0.10114674645176662
+-0.5,SBR,E1,positive / control,ratio,"stage 4, prior SDs x0.5 (i')",2.0025,1.8030595000000003,2.2267127500000004,0.10780443007719351
+-0.5,SBR,E1,positive / control,ratio,"stage 4, prior SDs x2 (i)",2.013865,1.81074925,2.2449202500000003,0.11099017232961024
+0,SBR,E1,positive / control,ratio,stage 3 (K = 200),2.005038771508194,1.817267019422608,2.2122123123812596,NA
+0,SBR,E1,positive / control,ratio,stage 3 (same 10 replicates),2.0053232916292965,1.8148265869792382,2.2158158431238375,NA
+0,SBR,E1,positive / control,ratio,stage 4,2.00881,1.81282975,2.2285415,0.10566029450485215
+0,SBR,E1,positive / control,ratio,"stage 4, alternative program (ii/ii'/iii)",2.00447,1.816749,2.2122505,0.10051856409265748
+0,SBR,E1,positive / control,ratio,"stage 4, prior SDs x0.5 (i')",2.00012,1.8060362500000002,2.2209412500000005,0.10629925633341145
+0,SBR,E1,positive / control,ratio,"stage 4, prior SDs x2 (i)",2.009455,1.81519925,2.23458,0.1066199715739425
+0.5,SBR,E1,positive / control,ratio,stage 3 (K = 200),2.0050339162700985,1.8176236017775909,2.2117676076948993,NA
+0.5,SBR,E1,positive / control,ratio,stage 3 (same 10 replicates),2.0019727881574276,1.81782588389103,2.204773889534449,NA
+0.5,SBR,E1,positive / control,ratio,stage 4,2.002395,1.812059,2.2108315000000003,0.1015533107433933
+0.5,SBR,E1,positive / control,ratio,"stage 4, alternative program (ii/ii'/iii)",2.00064,1.81692,2.2051102499999997,0.09881877438259201
+0.5,SBR,E1,positive / control,ratio,"stage 4, prior SDs x0.5 (i')",1.99498,1.8049385,2.20304075,0.10106424957066078
+0.5,SBR,E1,positive / control,ratio,"stage 4, prior SDs x2 (i)",2.00494,1.81505875,2.21661025,0.10285393655299355
+-0.5,SBR,E2,positive - negative,difference (blinks/min),"stage 2 described model, simulated (median over 200)",25.734477777545777,23.4720757415041,27.996879813587455,NA
+-0.5,SBR,E2,positive - negative,difference (blinks/min),stage 3 (K = 200),25.17502712938621,22.09831638564401,28.251737873128405,NA
+-0.5,SBR,E2,positive - negative,difference (blinks/min),stage 3 (same 10 replicates),25.20798055632327,22.07151203034065,28.344449082305893,NA
+-0.5,SBR,E2,positive - negative,difference (blinks/min),stage 4,25.23715,22.0490925,28.8291025,1.7364142798210094
+-0.5,SBR,E2,positive - negative,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",25.136850000000003,22.085987499999998,28.454667500000003,1.6215975110267171
+-0.5,SBR,E2,positive - negative,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",25.119549999999997,21.924590000000002,28.6476225,1.706383084855527
+-0.5,SBR,E2,positive - negative,difference (blinks/min),"stage 4, prior SDs x2 (i)",25.2641,22.0031975,28.93201,1.7504821090930838
+0,SBR,E2,positive - negative,difference (blinks/min),"stage 2 described model, simulated (median over 200)",25.74408063979098,23.68089691399128,27.80726436559068,NA
+0,SBR,E2,positive - negative,difference (blinks/min),stage 3 (K = 200),25.100212579343395,22.000413286246435,28.200011872440356,NA
+0,SBR,E2,positive - negative,difference (blinks/min),stage 3 (same 10 replicates),25.040488383896303,21.975631828224753,28.105344939567853,NA
+0,SBR,E2,positive - negative,difference (blinks/min),stage 4,25.0503,21.9357825,28.4794225,1.665478722428142
+0,SBR,E2,positive - negative,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",24.980150000000002,21.9479,28.23981,1.6163789384758103
+0,SBR,E2,positive - negative,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",24.9723,21.872997500000004,28.333217500000003,1.6434962919603942
+0,SBR,E2,positive - negative,difference (blinks/min),"stage 4, prior SDs x2 (i)",25.080150000000003,21.953084999999998,28.536335,1.6709493587620083
+0.5,SBR,E2,positive - negative,difference (blinks/min),"stage 2 described model, simulated (median over 200)",25.73103546670488,23.88830878444147,27.573762148968292,NA
+0.5,SBR,E2,positive - negative,difference (blinks/min),stage 3 (K = 200),25.049085819982512,21.91643590060904,28.181735739355982,NA
+0.5,SBR,E2,positive - negative,difference (blinks/min),stage 3 (same 10 replicates),24.99186331650261,21.851251851930797,28.13247478107442,NA
+0.5,SBR,E2,positive - negative,difference (blinks/min),stage 4,24.949350000000003,21.81628,28.412205,1.6841362589969975
+0.5,SBR,E2,positive - negative,difference (blinks/min),"stage 4, alternative program (ii/ii'/iii)",24.8822,21.7662875,28.25984,1.6555653894771067
+0.5,SBR,E2,positive - negative,difference (blinks/min),"stage 4, prior SDs x0.5 (i')",24.87305,21.709797500000004,28.3612025,1.6955451086141404
+0.5,SBR,E2,positive - negative,difference (blinks/min),"stage 4, prior SDs x2 (i)",25.0002,21.843575,28.484705,1.6936284553012098
+-0.5,SBR,E2,positive - negative,link,stage 3 (K = 200),1.1354163975679523,1.0206970782595308,1.2501357168763745,NA
+-0.5,SBR,E2,positive - negative,link,stage 3 (same 10 replicates),1.1357851415446805,1.0183808494129054,1.2531894336764555,NA
+-0.5,SBR,E2,positive - negative,link,stage 4,1.138271,1.018716925,1.265769675,0.06288586672725377
+-0.5,SBR,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",1.1338335000000002,1.0205829,1.25274375,0.05861087101884245
+-0.5,SBR,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",1.132245,1.0136596,1.2577143,0.062263969892377466
+-0.5,SBR,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",1.13929,1.019274775,1.2691233000000004,0.06312171269770725
+0,SBR,E2,positive - negative,link,stage 3 (K = 200),1.1349267247803505,1.0207523948791064,1.2491010546815946,NA
+0,SBR,E2,positive - negative,link,stage 3 (same 10 replicates),1.1319566362222317,1.017562210961972,1.2463510614824915,NA
+0,SBR,E2,positive - negative,link,stage 4,1.1345014999999998,1.01769915,1.25355325,0.060085176308456265
+0,SBR,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",1.1319110000000001,1.0176409,1.24604115,0.05844268900802154
+0,SBR,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",1.128668,1.0107867,1.24700735,0.06000708769629111
+0,SBR,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",1.135423,1.0191799,1.2548596500000002,0.060232329265896445
+0.5,SBR,E2,positive - negative,link,stage 3 (K = 200),1.1345543380862184,1.0209444858805488,1.248164190291888,NA
+0.5,SBR,E2,positive - negative,link,stage 3 (same 10 replicates),1.1327405496434952,1.0194463051259275,1.246034794161063,NA
+0.5,SBR,E2,positive - negative,link,stage 4,1.1341014999999999,1.018715975,1.2527415499999999,0.059491041456540716
+0.5,SBR,E2,positive - negative,link,"stage 4, alternative program (ii/ii'/iii)",1.1319795,1.0195607999999998,1.246377075,0.05785198229903286
+0.5,SBR,E2,positive - negative,link,"stage 4, prior SDs x0.5 (i')",1.1272389999999999,1.0127207,1.244748,0.05915791248566178
+0.5,SBR,E2,positive - negative,link,"stage 4, prior SDs x2 (i)",1.1353345,1.0212137000000001,1.2527433500000003,0.05959404911925209
+-0.5,SBR,E2,positive / negative,ratio,stage 3 (K = 200),3.1124692977577335,2.775128571673052,3.490816688051394,NA
+-0.5,SBR,E2,positive / negative,ratio,stage 3 (same 10 replicates),3.113617213694569,2.7687081772440463,3.5014929464560196,NA
+-0.5,SBR,E2,positive / negative,ratio,stage 4,3.121365,2.76963975,3.54582225,0.19768427010543307
+-0.5,SBR,E2,positive / negative,ratio,"stage 4, alternative program (ii/ii'/iii)",3.10755,2.77480975,3.49993275,0.18320544449803405
+-0.5,SBR,E2,positive / negative,ratio,"stage 4, prior SDs x0.5 (i')",3.102615,2.7556689999999997,3.51737125,0.19450655100278347
+-0.5,SBR,E2,positive / negative,ratio,"stage 4, prior SDs x2 (i)",3.12455,2.7711892499999995,3.5577317500000007,0.19874087500798618
+0,SBR,E2,positive / negative,ratio,stage 3 (K = 200),3.1109455793325456,2.77528208665045,3.4872067398558677,NA
+0,SBR,E2,positive / negative,ratio,stage 3 (same 10 replicates),3.1017195033760183,2.7664425337687035,3.4776301188938916,NA
+0,SBR,E2,positive / negative,ratio,stage 4,3.1096250000000003,2.76681775,3.502761,0.1876337611036513
+0,SBR,E2,positive / negative,ratio,"stage 4, alternative program (ii/ii'/iii)",3.1015800000000002,2.76665975,3.4765505,0.1817112451199805
+0,SBR,E2,positive / negative,ratio,"stage 4, prior SDs x0.5 (i')",3.0915350000000004,2.7477592499999997,3.47991125,0.1861902082873545
+0,SBR,E2,positive / negative,ratio,"stage 4, prior SDs x2 (i)",3.11249,2.77091975,3.5073457500000007,0.18832158888593661
+0.5,SBR,E2,positive / negative,ratio,stage 3 (K = 200),3.1097873202661503,2.77581524457154,3.4839412299505734,NA
+0.5,SBR,E2,positive / negative,ratio,stage 3 (same 10 replicates),3.1041519362075163,2.7716596852605093,3.476530432037944,NA
+0.5,SBR,E2,positive / negative,ratio,stage 4,3.10838,2.76963975,3.499922,0.1857453482962147
+0.5,SBR,E2,positive / negative,ratio,"stage 4, alternative program (ii/ii'/iii)",3.1017900000000003,2.7719792500000002,3.4777202500000004,0.18002825059497324
+0.5,SBR,E2,positive / negative,ratio,"stage 4, prior SDs x0.5 (i')",3.08712,2.7530792500000003,3.47206,0.18343726274817987
+0.5,SBR,E2,positive / negative,ratio,"stage 4, prior SDs x2 (i)",3.112215,2.7765592499999996,3.49993125,0.18621490067204088
+-0.5,SBR,E3,ICC (latent),link,stage 3 (K = 200),0.4612939928839551,NA,NA,NA
+-0.5,SBR,E3,ICC (latent),link,stage 3 (same 10 replicates),0.4581172216195961,NA,NA,NA
+-0.5,SBR,E3,ICC (latent),link,stage 4,0.4570105,0.27540909999999996,0.6366984750000001,0.09265400881407236
+0,SBR,E3,ICC (latent),link,stage 3 (K = 200),0.48779451846773575,NA,NA,NA
+0,SBR,E3,ICC (latent),link,stage 3 (same 10 replicates),0.47985506229802866,NA,NA,NA
+0,SBR,E3,ICC (latent),link,stage 4,0.489042,0.32170325,0.6573404,0.08630562268942908
+0.5,SBR,E3,ICC (latent),link,stage 3 (K = 200),0.507063957337918,NA,NA,NA
+0.5,SBR,E3,ICC (latent),link,stage 3 (same 10 replicates),0.5129820741818519,NA,NA,NA
+0.5,SBR,E3,ICC (latent),link,stage 4,0.5254540000000001,0.36257780000000006,0.685101325,0.08269822229970708
+-0.5,SBR,E3,order 2 - 1,link,stage 3 (K = 200),-0.00464815699783655,-0.15563313748119167,0.14633682348551855,NA
+-0.5,SBR,E3,order 2 - 1,link,stage 3 (same 10 replicates),-0.018335358028786986,-0.16522105098355203,0.12855033492597803,NA
+-0.5,SBR,E3,order 2 - 1,link,stage 4,-0.01794405,-0.16713202500000002,0.12498440000000002,0.07489173910259042
+0,SBR,E3,order 2 - 1,link,stage 3 (K = 200),0.00341902418278219,-0.14687419034130658,0.15371223870687098,NA
+0,SBR,E3,order 2 - 1,link,stage 3 (same 10 replicates),0.014505143148157032,-0.15371739100981513,0.1827276773061292,NA
+0,SBR,E3,order 2 - 1,link,stage 4,0.013889,-0.14638922499999998,0.175499275,0.08272158050188466
+0.5,SBR,E3,order 2 - 1,link,stage 3 (K = 200),0.0015395750310101,-0.13856766954430336,0.14164681960632355,NA
+0.5,SBR,E3,order 2 - 1,link,stage 3 (same 10 replicates),-0.007875828131611029,-0.1531254493466727,0.13737379308345063,NA
+0.5,SBR,E3,order 2 - 1,link,stage 4,-0.008853155,-0.14338945,0.13453942500000016,0.07209560020711553
+-0.5,SBR,E3,order 3 - 1,link,stage 3 (K = 200),-0.00502610948416049,-0.14871358369432694,0.13866136472600596,NA
+-0.5,SBR,E3,order 3 - 1,link,stage 3 (same 10 replicates),-0.030773181024359626,-0.15555405045945092,0.09400768841073166,NA
+-0.5,SBR,E3,order 3 - 1,link,stage 4,-0.031946,-0.15551607499999998,0.0997241325,0.06546594623662003
+0,SBR,E3,order 3 - 1,link,stage 3 (K = 200),0.00372223093444171,-0.14462958519524508,0.1520740470641285,NA
+0,SBR,E3,order 3 - 1,link,stage 3 (same 10 replicates),0.020395412999759954,-0.1394862201190299,0.18027704611854978,NA
+0,SBR,E3,order 3 - 1,link,stage 4,0.017431549999999997,-0.126502,0.18672220000000003,0.07942205217610053
+0.5,SBR,E3,order 3 - 1,link,stage 3 (K = 200),0.00147987652828119,-0.14121317124382565,0.14417292430038803,NA
+0.5,SBR,E3,order 3 - 1,link,stage 3 (same 10 replicates),-0.009823546978619457,-0.14519745422351588,0.12555036026627697,NA
+0.5,SBR,E3,order 3 - 1,link,stage 4,-0.0101353,-0.14303329999999997,0.12070552500000004,0.06769259634872754
+-0.5,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 3 (K = 200),0.2343208753359364,NA,NA,NA
+-0.5,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 3 (same 10 replicates),0.23388958742283497,NA,NA,NA
+-0.5,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 4,0.24373028125348994,0.224470521446808,0.286923482800636,0.016281857017163066
+0,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 3 (K = 200),0.23281939143765337,NA,NA,NA
+0,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 3 (same 10 replicates),0.23294827724374353,NA,NA,NA
+0,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 4,0.23931798929448733,0.2235007662179014,0.2700988846700269,0.01178159353789224
+0.5,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 3 (K = 200),0.23303619766693504,NA,NA,NA
+0.5,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 3 (same 10 replicates),0.23302406196183237,NA,NA,NA
+0.5,SBR,E3,"sigma_latent (residual SD, link scale)",link,stage 4,0.23768287696001356,0.22266355786182288,0.26269718308023504,0.010052349437603962
+-0.5,SBR,E3,"tau (donkey SD, link scale)",link,stage 3 (K = 200),0.2169479943098681,NA,NA,NA
+-0.5,SBR,E3,"tau (donkey SD, link scale)",link,stage 3 (same 10 replicates),0.2151855210980213,NA,NA,NA
+-0.5,SBR,E3,"tau (donkey SD, link scale)",link,stage 4,0.225854,0.157013625,0.32229435000000006,0.04227274895277782
+0,SBR,E3,"tau (donkey SD, link scale)",link,stage 3 (K = 200),0.227341666654987,NA,NA,NA
+0,SBR,E3,"tau (donkey SD, link scale)",link,stage 3 (same 10 replicates),0.22381916140451139,NA,NA,NA
+0,SBR,E3,"tau (donkey SD, link scale)",link,stage 4,0.235405,0.167918275,0.33160987500000016,0.04163208547665785
+0.5,SBR,E3,"tau (donkey SD, link scale)",link,stage 3 (K = 200),0.23653768943644815,NA,NA,NA
+0.5,SBR,E3,"tau (donkey SD, link scale)",link,stage 3 (same 10 replicates),0.23931897483495831,NA,NA,NA
+0.5,SBR,E3,"tau (donkey SD, link scale)",link,stage 4,0.2510655,0.18140745,0.35196345,0.043241676816154935
+-0.5,SBR,mean,mean control,"response, u = 0",stage 3 (K = 200),18.482334345646024,16.584316881136594,20.597573316558307,NA
+-0.5,SBR,mean,mean control,"response, u = 0",stage 3 (same 10 replicates),18.50072979631213,16.6094105796298,20.60741417374128,NA
+-0.5,SBR,mean,mean control,"response, u = 0",stage 4,18.4873,16.457782499999997,20.7443025,1.0958781851350792
+-0.5,SBR,mean,mean control,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",18.4812,16.471192499999997,20.638230000000004,1.0566950735736487
+-0.5,SBR,mean,mean control,"response, u = 0","stage 4, prior SDs x0.5 (i')",18.5233,16.493172500000004,20.684732500000003,1.0661086222212508
+-0.5,SBR,mean,mean control,"response, u = 0","stage 4, prior SDs x2 (i)",18.46085,16.4137,20.727535,1.0962722549890298
+0,SBR,mean,mean control,"response, u = 0",stage 3 (K = 200),18.448698683289464,16.520214855231973,20.602303667922076,NA
+0,SBR,mean,mean control,"response, u = 0",stage 3 (same 10 replicates),18.428437988097077,16.494964468564167,20.588545512077793,NA
+0,SBR,mean,mean control,"response, u = 0",stage 4,18.38765,16.3618925,20.644005,1.0909147251230022
+0,SBR,mean,mean control,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",18.40455,16.390285000000002,20.6267175,1.076546274561353
+0,SBR,mean,mean control,"response, u = 0","stage 4, prior SDs x0.5 (i')",18.4651,16.4443825,20.6648025,1.0815477090458685
+0,SBR,mean,mean control,"response, u = 0","stage 4, prior SDs x2 (i)",18.392,16.322895000000003,20.67222,1.1022338591351983
+0.5,SBR,mean,mean control,"response, u = 0",stage 3 (K = 200),18.414384513661258,16.453748043652254,20.608651361218936,NA
+0.5,SBR,mean,mean control,"response, u = 0",stage 3 (same 10 replicates),18.416207909064294,16.452053844747972,20.614855564562358,NA
+0.5,SBR,mean,mean control,"response, u = 0",stage 4,18.39215,16.310295,20.678402499999997,1.100860678189653
+0.5,SBR,mean,mean control,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",18.3862,16.2803925,20.6424,1.105654931072601
+0.5,SBR,mean,mean control,"response, u = 0","stage 4, prior SDs x0.5 (i')",18.461,16.3768,20.7367025,1.106344813428129
+0.5,SBR,mean,mean control,"response, u = 0","stage 4, prior SDs x2 (i)",18.39085,16.3199,20.676127500000003,1.1111634730244575
+-0.5,SBR,mean,mean negative,"response, u = 0",stage 3 (K = 200),11.91717095687358,10.540136858816322,13.474110015617024,NA
+-0.5,SBR,mean,mean negative,"response, u = 0",stage 3 (same 10 replicates),11.926143568693062,10.548186196753628,13.48410975764282,NA
+-0.5,SBR,mean,mean negative,"response, u = 0",stage 4,11.89675,10.439789999999999,13.522305,0.785052226806841
+-0.5,SBR,mean,mean negative,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",11.92485,10.49499,13.485405000000002,0.7621974705832538
+-0.5,SBR,mean,mean negative,"response, u = 0","stage 4, prior SDs x0.5 (i')",11.94635,10.4946825,13.5421025,0.7794845946396847
+-0.5,SBR,mean,mean negative,"response, u = 0","stage 4, prior SDs x2 (i)",11.88985,10.4317875,13.5046125,0.7850554830625974
+0,SBR,mean,mean negative,"response, u = 0",stage 3 (K = 200),11.890389979693522,10.495920169951273,13.47012663777267,NA
+0,SBR,mean,mean negative,"response, u = 0",stage 3 (same 10 replicates),11.914351341458866,10.51934041583192,13.49436012870931,NA
+0,SBR,mean,mean negative,"response, u = 0",stage 4,11.87985,10.434495,13.5057025,0.7823694164075424
+0,SBR,mean,mean negative,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",11.9028,10.430280000000002,13.507320000000002,0.7868589997430274
+0,SBR,mean,mean negative,"response, u = 0","stage 4, prior SDs x0.5 (i')",11.95135,10.464492499999999,13.571305,0.7882405274990737
+0,SBR,mean,mean negative,"response, u = 0","stage 4, prior SDs x2 (i)",11.8781,10.397692500000002,13.497630000000001,0.7931178856261524
+0.5,SBR,mean,mean negative,"response, u = 0",stage 3 (K = 200),11.872665778947798,10.462690646219237,13.472652252175212,NA
+0.5,SBR,mean,mean negative,"response, u = 0",stage 3 (same 10 replicates),11.877236634248172,10.462923404494743,13.482727973075425,NA
+0.5,SBR,mean,mean negative,"response, u = 0",stage 4,11.83555,10.342,13.4756025,0.7996129613929601
+0.5,SBR,mean,mean negative,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",11.85455,10.366295,13.5045025,0.7958757627222145
+0.5,SBR,mean,mean negative,"response, u = 0","stage 4, prior SDs x0.5 (i')",11.92895,10.419095,13.5621,0.8007090784506158
+0.5,SBR,mean,mean negative,"response, u = 0","stage 4, prior SDs x2 (i)",11.8472,10.353892499999999,13.511212500000001,0.8021091237635153
+-0.5,SBR,mean,mean positive,"response, u = 0",stage 3 (K = 200),37.09182871939917,33.77914634471672,40.7293820781954,NA
+-0.5,SBR,mean,mean positive,"response, u = 0",stage 3 (same 10 replicates),37.13344590847549,33.803398897852524,40.791543158261334,NA
+-0.5,SBR,mean,mean positive,"response, u = 0",stage 4,37.15515,33.531392499999995,41.175627500000004,1.9427793437437764
+-0.5,SBR,mean,mean positive,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",37.079499999999996,33.579789999999996,40.850662500000006,1.8540905672658758
+-0.5,SBR,mean,mean positive,"response, u = 0","stage 4, prior SDs x0.5 (i')",37.1037,33.445870000000006,40.9643125,1.90772846671334
+-0.5,SBR,mean,mean positive,"response, u = 0","stage 4, prior SDs x2 (i)",37.169700000000006,33.48569,41.20304,1.9574610224456723
+0,SBR,mean,mean positive,"response, u = 0",stage 3 (K = 200),36.99035614386756,33.61173974803045,40.708587472933104,NA
+0,SBR,mean,mean positive,"response, u = 0",stage 3 (same 10 replicates),36.9549759258772,33.62404413507828,40.615883092344276,NA
+0,SBR,mean,mean positive,"response, u = 0",stage 4,36.94555,33.351594999999996,40.88840999999999,1.909319735417804
+0,SBR,mean,mean positive,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",36.8911,33.328395,40.7114325,1.884893223787439
+0,SBR,mean,mean positive,"response, u = 0","stage 4, prior SDs x0.5 (i')",36.9485,33.373475,40.77880999999999,1.8856753680289793
+0,SBR,mean,mean positive,"response, u = 0","stage 4, prior SDs x2 (i)",36.9748,33.3626825,40.9447025,1.927805805040677
+0.5,SBR,mean,mean positive,"response, u = 0",stage 3 (K = 200),36.92146549712969,33.46977404338042,40.729125111179165,NA
+0.5,SBR,mean,mean positive,"response, u = 0",stage 3 (same 10 replicates),36.86874709499631,33.396039751830934,40.70256600650605,NA
+0.5,SBR,mean,mean positive,"response, u = 0",stage 4,36.812349999999995,33.088375,40.8870475,1.9710192674442752
+0.5,SBR,mean,mean positive,"response, u = 0","stage 4, alternative program (ii/ii'/iii)",36.769999999999996,33.006295,40.732705,1.9610731875460816
+0.5,SBR,mean,mean positive,"response, u = 0","stage 4, prior SDs x0.5 (i')",36.8178,33.06899,40.8533225,1.9881691459730364
+0.5,SBR,mean,mean positive,"response, u = 0","stage 4, prior SDs x2 (i)",36.8785,33.1302,40.9221175,1.9828105908211306
