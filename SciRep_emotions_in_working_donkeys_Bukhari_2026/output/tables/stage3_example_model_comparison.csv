@@ -1,6 +1,8 @@
 outcome,model,converged,optimizer,n_par,aicc,delta_aicc,e1_positive,e1_negative
 SBR,"NB2, donkey intercept, one phi (planned)",FALSE,nlminb,7,NA,NA,2.0423377696583804,0.6598913776027144
-SBR,"Poisson, donkey intercept",TRUE,nlminb,6,651.507810044966,0,2.0423380671603226,0.6598918670669034
+SBR,"Poisson, donkey intercept",TRUE,nlminb,6,651.507810044966,18.301425521943884,2.0423380671603226,0.6598918670669034
+SBR,"Conway-Maxwell-Poisson, donkey intercept, dispersion by condition",TRUE,nlminb,9,652.0903454103296,18.883960887307467,2.0250125353525057,0.6585365595026853
+SBR,"Gaussian MVN on y, unstructured donkey covariance (raw-scale check)",TRUE,nlminb,11,633.2063845230222,0,2.057457672081725,0.6680089694584711
 ET,"Gaussian MVN, unstructured donkey covariance (planned)",TRUE,nlminb,11,244.26879981351723,2.587422163193679,0.734668897831483,1.1516871287486543
 ET,"Gaussian, donkey intercept, sigma by condition (v1.0)",TRUE,BFGS (nlminb stopped at a boundary),9,241.68137765032355,0,0.7318239228915719,1.1504480662383116
 ET,"Gaussian, donkey intercept, pooled sigma",TRUE,nlminb,7,244.01077573856108,2.329398088237525,0.7226782441630312,1.131679453131201

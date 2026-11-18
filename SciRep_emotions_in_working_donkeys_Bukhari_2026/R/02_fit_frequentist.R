@@ -10,7 +10,9 @@
 #                        (scenario rho_dd = 0, replicate 1): estimands, DHARMa diagnostics, model comparison
 #   B  --ensemble  (S3)  E1–E3 on the 600 replicates, Rubin pooling, diagnostics summary, model comparison,
 #                        share of replicates with Cov(c, c') > Var(c); --cores N (default: all but two); --reps N (smoke test)
-#   C  --e4 --bootstrap (S4)  E4 on the ensemble; parametric bootstrap of E1–E2 on one replicate
+#   C  --e4        (S4)  E4 on the 600 replicates (two models each), Rubin pooling
+#      --bootstrap (S4)  parametric bootstrap (1000 refits) of E1–E2 on the example replicate against the Wald intervals,
+#                        and leave-one-donkey-out influence; --nboot N (smoke test)
 # Outputs (A): output/tables/stage3_example_estimands.csv        E1, E2, E3 per outcome, link and response scale, Wald 95 %
 #              output/tables/stage3_example_dispersion.csv       variance parameters by condition (sigma_c, alpha_c, phi), planned vs comparison fits
 #              output/tables/stage3_example_diagnostics.csv      convergence, optimiser, Pearson ratio (SBR), DHARMa tests, random-effect normality
@@ -26,8 +28,13 @@
 #              output/tables/stage3_ensemble_random_structure.csv   share of replicates with Cov(c, c') > min Var, mean correlations
 #              output/tables/stage3_ensemble_per_replicate_{estimands,diagnostics,model_comparison,random_structure}.csv.gz
 #              output/tables/stage3_ensemble_errors.csv             only if a replicate failed
+# Outputs (C): output/tables/stage3_e4_ensemble.csv                 E4 pooled by Rubin's rules per scenario and regressor
+#              output/tables/stage3_e4_per_replicate.csv.gz
+#              output/tables/stage3_bootstrap_example.csv           E1–E2: Wald vs parametric bootstrap SE and 95 % limits, per outcome
+#              output/tables/stage3_influence_example.csv           E1–E2: largest leave-one-donkey-out shift, in SE units
 # Run    : Rscript SciRep_emotions_in_working_donkeys_Bukhari_2026/R/02_fit_frequentist.R --example     (seconds)
 #          Rscript SciRep_emotions_in_working_donkeys_Bukhari_2026/R/02_fit_frequentist.R --ensemble    (≈ 10–20 min on 10 cores)
+#          Rscript SciRep_emotions_in_working_donkeys_Bukhari_2026/R/02_fit_frequentist.R --e4 --bootstrap   (≈ 5 min on 10 cores)
 #
 # Models (plan §3, v1.1):
 #   SBR    y ~ NB2 (Poisson if phi is not identified), log link, condition + order, shared donkey intercept.
@@ -42,13 +49,15 @@
 
 args <- commandArgs(trailingOnly = TRUE)
 if (length(args) == 0) args <- "--example"
-if (any(c("--e4", "--bootstrap") %in% args)) stop("--e4 --bootstrap (S4) is added at its step")
-opt_cores <- match("--cores", args); opt_reps <- match("--reps", args)
-allowed <- c("--example", "--ensemble", "--cores", "--reps", if (!is.na(opt_cores)) args[opt_cores + 1], if (!is.na(opt_reps)) args[opt_reps + 1])
+opt_cores <- match("--cores", args); opt_reps <- match("--reps", args); opt_nboot <- match("--nboot", args)
+allowed <- c("--example", "--ensemble", "--e4", "--bootstrap", "--cores", "--reps", "--nboot",
+             if (!is.na(opt_cores)) args[opt_cores + 1], if (!is.na(opt_reps)) args[opt_reps + 1], if (!is.na(opt_nboot)) args[opt_nboot + 1])
 if (!all(args %in% allowed)) stop("unknown argument(s): ", paste(setdiff(args, allowed), collapse = " "))
 RUN_EXAMPLE  <- "--example" %in% args
 RUN_ENSEMBLE <- "--ensemble" %in% args
-if (!RUN_EXAMPLE && !RUN_ENSEMBLE) stop("nothing to do: use --example and/or --ensemble")
+RUN_E4       <- "--e4" %in% args
+RUN_BOOT     <- "--bootstrap" %in% args
+if (!any(RUN_EXAMPLE, RUN_ENSEMBLE, RUN_E4, RUN_BOOT)) stop("nothing to do: use --example, --ensemble, --e4 and/or --bootstrap")
 
 suppressPackageStartupMessages({ library(tidyverse); library(glmmTMB); library(emmeans); library(DHARMa) })
 emm_options(msg.interaction = FALSE)      # E4 intercepts at x = 0 are wanted despite the treatment × x interaction
@@ -64,6 +73,8 @@ COND_LEVELS  <- c("control", "positive", "negative")
 FIXEF_NAMES  <- c("(Intercept)", "conditionpositive", "conditionnegative", "order2", "order3")
 N_CORES      <- if (is.na(opt_cores)) max(1L, parallel::detectCores() - 2L) else as.integer(args[opt_cores + 1])
 N_REPS       <- if (is.na(opt_reps)) Inf else as.integer(args[opt_reps + 1])      # --reps N: first N replicates per scenario (smoke test)
+N_BOOT       <- if (is.na(opt_nboot)) 1000L else as.integer(args[opt_nboot + 1])  # --nboot N: bootstrap refits (plan §4: 1000)
+SEED_BOOT    <- 20261109L
 
 cond_t2 <- read_csv(here_art("data/raw/table2_conditions.csv"), show_col_types = FALSE)
 ens     <- read_csv(here_art("data/derived/stage3/ensemble_conditions.csv.gz"), show_col_types = FALSE)
@@ -93,6 +104,11 @@ fit_condition <- function(d, outcome, re_structure = c("us", "intercept"), dispe
   df <- if (dispersion == "by_condition") ~ condition else ~ 1
   if (outcome == "SBR") {
     if (identical(family_alt, "poisson")) return(tag(glmmTMB(f, data = d, family = poisson()), "poisson", "intercept", FALSE))
+    # comparison fits added at S4 (plan §7, 2026-11-09): Conway–Maxwell–Poisson, mean-parameterised, dispersion by condition
+    # (under- and overdispersion per condition, which NB2 cannot give); Gaussian MVN on the counts as the raw-scale check row
+    if (identical(family_alt, "compois")) return(tag(fit_retry(f, d, compois(link = "log"), df), "compois", "intercept", FALSE))
+    if (identical(family_alt, "gaussian_raw"))
+      return(tag(fit_retry(y ~ condition + order + us(0 + condition | donkey), d, gaussian(), ~ 0), "gaussian MVN on y (raw-scale check)", "us", FALSE))
     fit <- suppressWarnings(glmmTMB(f, data = d, family = nbinom2()))
     # plan §3: Poisson is the limit phi -> Inf and is reported when phi is not identified (non-PD Hessian or phi > 1e3)
     if (!converged(fit) || sigma(fit) > 1e3) return(tag(glmmTMB(f, data = d, family = poisson()), "poisson (NB2 phi not identified)", "intercept", FALSE))
@@ -122,7 +138,15 @@ fit_retry <- function(formula, d, family, df) {
 }
 fit_e4 <- function(p) glmmTMB(dRMSSD ~ treatment * x, dispformula = ~ treatment, data = p)   # a_t + b_t x, SD s_t
 
-converged <- function(fit) isTRUE(fit$fit$convergence == 0) && isTRUE(fit$sdr$pdHess)
+# Converged: optimiser code 0, positive-definite Hessian, and a numerically sane log-likelihood. The last clause was
+# added at S4 (plan §7, 2026-11-11): on 5/200 replicates (rho_dd = 0.5) the BFGS retry of the Gamma alpha-by-condition
+# sensitivity fit returned code 0 and a PD Hessian from a degenerate region (beta ~ 70-100, log alpha_c ~ 40-85,
+# logLik ~ +1e56 from density overflow), which then "won" the AICc comparison. For data at these scales the mean
+# log-density per observation of a legitimate fit is below zero (ensemble maximum about -1, ET), so 20 is a generous bound.
+converged <- function(fit) {
+  ll <- as.numeric(logLik(fit))
+  isTRUE(fit$fit$convergence == 0) && isTRUE(fit$sdr$pdHess) && is.finite(ll) && ll < 20 * nobs(fit)
+}
 family_label    <- function(fit) { fu <- attr(fit, "family_used"); if (is.null(fu)) family(fit)$family else fu }
 optimizer_label <- function(fit) if (is.null(attr(fit, "optimizer"))) "nlminb" else attr(fit, "optimizer")
 is_us           <- function(fit) identical(attr(fit, "structure"), "us")
@@ -321,7 +345,9 @@ e1_marginal <- function(fit, outcome) {
 comparison_fits <- function(d, outcome) {
   switch(outcome,
     SBR   = list("NB2, donkey intercept, one phi (planned)" = tag(suppressWarnings(glmmTMB(y ~ condition + order + (1 | donkey), data = d, family = nbinom2())), "nbinom2", "intercept", FALSE),
-                 "Poisson, donkey intercept"                  = fit_condition(d, "SBR", family_alt = "poisson")),
+                 "Poisson, donkey intercept"                  = fit_condition(d, "SBR", family_alt = "poisson"),
+                 "Conway-Maxwell-Poisson, donkey intercept, dispersion by condition" = fit_condition(d, "SBR", "intercept", family_alt = "compois"),
+                 "Gaussian MVN on y, unstructured donkey covariance (raw-scale check)" = fit_condition(d, "SBR", family_alt = "gaussian_raw")),
     ET    = list("Gaussian MVN, unstructured donkey covariance (planned)" = fit_condition(d, "ET"),
                  "Gaussian, donkey intercept, sigma by condition (v1.0)"   = fit_condition(d, "ET", "intercept"),
                  "Gaussian, donkey intercept, pooled sigma"                = fit_condition(d, "ET", "intercept", "pooled")),
@@ -622,4 +648,132 @@ if (RUN_ENSEMBLE) {
           arrange(outcome, rho_dd, median_delta_aicc), n = 60)
   cat("\nwritten: output/tables/stage3_ensemble_{estimands,check_vs_exact,diagnostics,model_comparison,random_structure}.csv;",
       "stage3_ensemble_per_replicate_{estimands,diagnostics,model_comparison,random_structure}.csv.gz\n")
+}
+
+# ======================================================================================================
+# Section C — E4 on the ensemble; parametric bootstrap and leave-one-donkey-out influence on the example (plan §4, S4)
+# ======================================================================================================
+
+# ---- E4 on every replicate, pooled by Rubin's rules (identity scale; s_t and r_t have no SE: mean and spread only) ----
+pool_identity <- function(per_rep, ...) per_rep |>
+  group_by(...) |>
+  summarise(K = n(), qbar = mean(estimate), W = mean(se^2), B = var(estimate),
+            between_sd_estimate = sd(estimate), q025_estimate = quantile(estimate, 0.025), q975_estimate = quantile(estimate, 0.975), .groups = "drop") |>
+  mutate(T = W + (1 + 1 / K) * B, se_total = sqrt(T), fmi = (1 + 1 / K) * B / T, between_within_ratio = B / W,
+         estimate = qbar, ci_low = qbar - 1.96 * se_total, ci_high = qbar + 1.96 * se_total, p = 2 * pnorm(-abs(qbar / se_total))) |>
+  select(-qbar, -T)
+
+fit_e4_replicate <- function(rho, k) {
+  pp <- e4pairs |> filter(rho_dd == rho, rep == k)
+  bind_rows(estimands_e4(prep_e4(pp |> filter(x_name == "dSBR")), "dSBR"),
+            estimands_e4(prep_e4(pp |> filter(x_name == "dET")),  "dET")) |>
+    mutate(rho_dd = rho, rep = k, .before = 1)
+}
+
+# ---- parametric bootstrap of E1–E2 on one replicate --------------------------------------------------
+# New data are simulated from the planned fit (new donkey effects and new responses), the same model is refitted,
+# and the spread of the refitted contrasts is compared with the Wald SE and limits. Quantities on the Wald scale:
+# link-scale contrasts for all outcomes, plus the marginal log ratios for RMSSD.
+refit_same <- function(fit, d_b, outcome) {
+  if (is_us(fit)) return(tag(fit_retry(formula(fit), d_b, gaussian(), ~ 0), family_label(fit), "us", isTRUE(attr(fit, "response_log"))))
+  tag(fit_retry(y ~ condition + order + (1 | donkey), d_b, family(fit), ~ 1), family_label(fit), "intercept", FALSE)
+}
+boot_quantities <- function(fit, outcome) {
+  b <- fixef(fit)$cond; q <- c("positive - control" = unname(b["conditionpositive"]), "negative - control" = unname(b["conditionnegative"]))
+  q <- c(q, "positive - negative" = unname(q[1] - q[2]))
+  out <- tibble(term = names(q), scale = "link", value = unname(q))
+  if (outcome == "RMSSD") {
+    s2 <- as.numeric(attr(VarCorr(fit)$cond$donkey, "stddev"))^2
+    m <- c(q[1] + (s2[2] - s2[1]) / 2, q[2] + (s2[3] - s2[1]) / 2, q[1] - q[2] + (s2[2] - s2[3]) / 2)
+    out <- bind_rows(out, tibble(term = names(q), scale = "ratio (marginal, arithmetic means)", value = unname(m)))
+  }
+  out
+}
+bootstrap_example <- function(fit, d, outcome, est_raw) {
+  sims <- simulate(fit, nsim = N_BOOT, seed = SEED_BOOT)                # on the model's response scale (log y for RMSSD)
+  one <- function(b) {
+    d_b <- d; d_b$y <- if (isTRUE(attr(fit, "response_log"))) exp(sims[[b]]) else sims[[b]]
+    tryCatch({ f_b <- refit_same(fit, d_b, outcome)
+               boot_quantities(f_b, outcome) |> mutate(b = b, converged = converged(f_b)) },
+             error = function(e) tibble(term = NA_character_, scale = NA_character_, value = NA_real_, b = b, converged = FALSE))
+  }
+  bs <- bind_rows(parallel::mclapply(seq_len(N_BOOT), one, mc.cores = N_CORES, mc.preschedule = TRUE))
+  ok <- bs |> filter(converged, !is.na(value))
+  wald <- est_raw |> filter(estimand %in% c("E1", "E2"), scale %in% c("link", "ratio (marginal, arithmetic means)")) |>
+    select(term, scale, wald_est = est_raw, wald_se = se_raw)
+  ok |> group_by(term, scale) |>
+    summarise(n_boot_ok = n(), boot_mean = mean(value), boot_sd = sd(value),
+              boot_q025 = quantile(value, 0.025), boot_q975 = quantile(value, 0.975), .groups = "drop") |>
+    inner_join(wald, by = c("term", "scale")) |>
+    mutate(outcome = outcome, share_converged = n_distinct(ok$b) / N_BOOT,
+           wald_lo = wald_est - 1.96 * wald_se, wald_hi = wald_est + 1.96 * wald_se,
+           se_ratio_boot_wald = boot_sd / wald_se, width_ratio_boot_wald = (boot_q975 - boot_q025) / (wald_hi - wald_lo),
+           boot_bias = boot_mean - wald_est, boot_bias_in_se = boot_bias / wald_se,
+           transform = if_else(outcome == "ET", "identity", "exp"),
+           est_resp = back(wald_est, transform), wald_lo_resp = back(wald_lo, transform), wald_hi_resp = back(wald_hi, transform),
+           boot_q025_resp = back(boot_q025, transform), boot_q975_resp = back(boot_q975, transform)) |>
+    select(outcome, term, scale, n_boot_ok, share_converged, wald_est, wald_se, boot_mean, boot_sd, boot_bias_in_se, se_ratio_boot_wald,
+           width_ratio_boot_wald, est_resp, wald_lo_resp, wald_hi_resp, boot_q025_resp, boot_q975_resp)
+}
+
+# ---- leave-one-donkey-out influence on E1–E2 (one replicate) -------------------------------------------
+influence_example <- function(fit, d, outcome, est_raw) {
+  full <- boot_quantities(fit, outcome)
+  lodo <- bind_rows(parallel::mclapply(levels(d$donkey), function(k) {
+    d_k <- droplevels(d |> filter(donkey != k)); f_k <- refit_same(fit, d_k, outcome)
+    boot_quantities(f_k, outcome) |> mutate(donkey = k, converged = converged(f_k))
+  }, mc.cores = N_CORES))
+  wald <- est_raw |> filter(estimand %in% c("E1", "E2"), scale %in% c("link", "ratio (marginal, arithmetic means)")) |> select(term, scale, wald_se = se_raw)
+  lodo |> left_join(full |> rename(full_value = value), by = c("term", "scale")) |> left_join(wald, by = c("term", "scale")) |>
+    mutate(shift_in_se = (value - full_value) / wald_se) |>
+    group_by(term, scale) |>
+    summarise(n_converged = sum(converged), max_abs_shift_in_se = max(abs(shift_in_se)), donkey_max = donkey[which.max(abs(shift_in_se))],
+              mean_abs_shift_in_se = mean(abs(shift_in_se)), .groups = "drop") |>
+    mutate(outcome = outcome, .before = 1)
+}
+
+if (RUN_E4) {
+  grid <- e4pairs |> distinct(rho_dd, rep) |> filter(rep <= N_REPS) |> arrange(rho_dd, rep)
+  cat(sprintf("\n== E4 on the ensemble: %d replicates x 2 regressors, %d cores ==\n", nrow(grid), N_CORES))
+  if (is.finite(N_REPS)) cat("** smoke test: --reps", N_REPS, "— the outputs written now are partial and must not be committed **\n")
+  t0 <- Sys.time()
+  per_e4 <- bind_rows(parallel::mclapply(seq_len(nrow(grid)), function(i) fit_e4_replicate(grid$rho_dd[i], grid$rep[i]), mc.cores = N_CORES))
+  cat(sprintf("fitted in %.1f min\n", as.numeric(difftime(Sys.time(), t0, units = "mins"))))
+  e4_pooled <- pool_identity(per_e4 |> filter(!is.na(se)), rho_dd, x_name, quantity, treatment)
+  e4_nose   <- per_e4 |> filter(is.na(se)) |> group_by(rho_dd, x_name, quantity, treatment) |>
+    summarise(K = n(), between_sd_estimate = sd(estimate), q025_estimate = quantile(estimate, 0.025), q975_estimate = quantile(estimate, 0.975),
+              estimate = mean(estimate), .groups = "drop")                      # mean last: it would shadow the column
+  e4_pooled <- bind_rows(e4_pooled, e4_nose) |> arrange(rho_dd, x_name, quantity, treatment)
+  e4_check  <- per_e4 |> filter(quantity == "b (slope)") |> summarise(max_abs_slope_minus_ols = max(abs(estimate - b_ols)), share_converged = mean(converged))
+  write_csv(e4_pooled, file.path(out_tab, "stage3_e4_ensemble.csv"))
+  write_csv(per_e4,    file.path(out_tab, "stage3_e4_per_replicate.csv.gz"))
+  options(width = 170, pillar.sigfig = 4)
+  cat("\n-- E4 pooled over K replicates per scenario: a_t, b_t, b_pos - b_neg (Wald 95 %), s_t and r_t (mean, spread) --\n")
+  print(e4_pooled |> select(rho_dd, x_name, quantity, treatment, K, estimate, ci_low, ci_high, between_within_ratio, fmi, q025_estimate, q975_estimate), n = 60)
+  cat("\n-- check: ML slopes equal per-group OLS; convergence --\n"); print(e4_check)
+  cat("\n-- stage 2 unsigned slopes (gof_by_group.csv) --\n"); print(gof_grp |> select(x, treatment, slope, se, r, resid_sd))
+}
+
+if (RUN_BOOT) {
+  cat(sprintf("\n== bootstrap of E1–E2 on the example replicate: %d refits per outcome, %d cores; leave-one-donkey-out ==\n", N_BOOT, N_CORES))
+  if (N_BOOT < 1000L) cat("** smoke test: --nboot", N_BOOT, "— the outputs written now are partial and must not be committed **\n")
+  ex <- ens |> filter(rho_dd == EXAMPLE$rho_dd, rep == EXAMPLE$rep)
+  t0 <- Sys.time(); boot <- list(); infl <- list()
+  for (o in OUTCOMES) {
+    d <- prep_condition(ex |> filter(outcome == o))
+    fit <- fit_condition(d, o)
+    est_raw <- estimands_condition(fit, o, d) |> add_transform()
+    boot[[o]] <- bootstrap_example(fit, d, o, est_raw)
+    infl[[o]] <- influence_example(fit, d, o, est_raw)
+  }
+  boot <- bind_rows(boot); infl <- bind_rows(infl)
+  cat(sprintf("done in %.1f min\n", as.numeric(difftime(Sys.time(), t0, units = "mins"))))
+  write_csv(boot, file.path(out_tab, "stage3_bootstrap_example.csv"))
+  write_csv(infl, file.path(out_tab, "stage3_influence_example.csv"))
+  options(width = 190, pillar.sigfig = 4)
+  cat("\n-- Wald vs parametric bootstrap (S4 check: width ratio within 0.9–1.1) --\n")
+  print(boot |> select(outcome, term, scale, n_boot_ok, share_converged, boot_bias_in_se, se_ratio_boot_wald, width_ratio_boot_wald,
+                       est_resp, wald_lo_resp, wald_hi_resp, boot_q025_resp, boot_q975_resp), n = 30)
+  cat("\n-- leave-one-donkey-out: largest shift of E1–E2 in Wald SE units --\n")
+  print(infl, n = 30)
 }

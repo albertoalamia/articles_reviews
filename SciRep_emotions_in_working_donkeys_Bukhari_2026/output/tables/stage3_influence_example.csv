@@ -1,0 +1,13 @@
+outcome,term,scale,n_converged,max_abs_shift_in_se,donkey_max,mean_abs_shift_in_se
+SBR,negative - control,link,34,0.32001703616403426,10,0.09481176834088488
+SBR,positive - control,link,34,0.4228850512551063,26,0.11224427110772477
+SBR,positive - negative,link,34,0.5843321121226093,26,0.17270152603227343
+ET,negative - control,link,34,0.45394849100763185,1,0.14548958152654798
+ET,positive - control,link,34,0.42683300775107796,14,0.1349560927332188
+ET,positive - negative,link,34,0.4216476021356473,25,0.13946305060493364
+RMSSD,negative - control,link,34,0.8310404225144864,23,0.1259744434510496
+RMSSD,negative - control,"ratio (marginal, arithmetic means)",34,0.4808294841416141,23,0.10259602906343987
+RMSSD,positive - control,link,34,0.49854467584725753,7,0.10892008619872894
+RMSSD,positive - control,"ratio (marginal, arithmetic means)",34,0.2976996609481042,24,0.08030796598123191
+RMSSD,positive - negative,link,34,0.4537176611556141,34,0.13782388689721858
+RMSSD,positive - negative,"ratio (marginal, arithmetic means)",34,0.35122503664450344,24,0.11238760409184329
