@@ -3,7 +3,7 @@
 # output/. Never copies draws into the project tree. R is for post-processing only, no fitting from R (CLAUDE.md).
 # Usage (repo root, inside nix-shell):
 #   Rscript <art>/R/03_postprocess.R --prior     S5: prior predictive of the seven models vs Table 2 / the example data
-#   Rscript <art>/R/03_postprocess.R --example   S6: mapping check against the glmmTMB estimates of S2   (not yet written)
+#   Rscript <art>/R/03_postprocess.R --example   S6: mapping check of the posterior runs on the example replicate against glmmTMB (S2/S4 tables)
 #   Rscript <art>/R/03_postprocess.R             S8: pooled posteriors over the 30 replicates, stage 3 vs 4   (not yet written)
 suppressPackageStartupMessages({ library(tidyverse); library(posterior); library(jsonlite) })
 here_art <- function(...) here::here("SciRep_emotions_in_working_donkeys_Bukhari_2026", ...)
@@ -43,12 +43,17 @@ read_run <- function(model, suffix) {
   cs <- cmdstanr::read_cmdstan_csv(files, format = "draws_df")
   list(draws = cs$post_warmup_draws, sampler = cs$post_warmup_sampler_diagnostics, n_chains = length(files))
 }
+# plan §5 thresholds: R-hat < 1.01, bulk and tail ESS > 400, no divergences, E-BFMI > 0.3 (per chain: mean squared
+# energy increment over the energy variance); treedepth saturations are counted as well
 convergence <- function(run, exclude = c("y_rep", "log_lik")) {
   keep <- setdiff(variables(run$draws), grep(paste(exclude, collapse = "|"), variables(run$draws), value = TRUE))
   s <- summarise_draws(subset_draws(run$draws, variable = keep), "rhat", "ess_bulk", "ess_tail")
-  div <- sum(as_draws_matrix(subset_draws(run$sampler, variable = "divergent__")))
+  sd_df <- as_draws_df(run$sampler)
+  ebfmi <- sd_df |> group_by(.chain) |> summarise(e = mean(diff(energy__)^2) / var(energy__), .groups = "drop")
   tibble(n_draws = ndraws(run$draws), max_rhat = max(s$rhat, na.rm = TRUE), min_ess_bulk = min(s$ess_bulk, na.rm = TRUE),
-         min_ess_tail = min(s$ess_tail, na.rm = TRUE), divergences = div)
+         min_ess_tail = min(s$ess_tail, na.rm = TRUE), divergences = sum(sd_df$divergent__),
+         max_treedepth_hits = sum(sd_df$treedepth__ >= 10), min_ebfmi = min(ebfmi$e),
+         passes = max_rhat < 1.01 & min_ess_bulk > 400 & min_ess_tail > 400 & divergences == 0 & min_ebfmi > 0.3)
 }
 yrep_matrix <- function(run, guarded = FALSE) {
   m <- as_draws_matrix(subset_draws(run$draws, variable = "y_rep"))
@@ -147,4 +152,148 @@ if (RUN_PRIOR) {
   cat("\nwritten: output/tables/stage4_prior_predictive.csv, stage4_prior_convergence.csv; output/figures/stage4_prior_predictive.png\n")
 }
 
-if (RUN_EXAMPLE) stop("--example (S6 mapping check) is not written yet")
+# ---- S6: mapping check on the example replicate (plan §8: posterior medians within 1 SE of the glmmTMB estimates of
+# S2/S4, no divergences, R-hat < 1.01). One row per stage 3 quantity, matched by the exact term/scale strings of
+# stage3_example_estimands.csv and stage3_example_e4.csv. The stage 3 SBR fit on the example is the Poisson (phi not
+# identified), so both sbr_nb2 and sbr_poisson are compared with it. The sensitivity models et_normal and rmssd_gamma
+# are compared on E1 only, with the corresponding rows of stage3_example_model_comparison.csv.
+MAP_COND <- tribble(
+  ~outcome, ~term,                                         ~scale,                               ~stan_var,
+  "SBR",   "positive - control",                           "link",                               "b_cond[1]",
+  "SBR",   "negative - control",                           "link",                               "b_cond[2]",
+  "SBR",   "positive - negative",                          "link",                               "lr_pos_neg",
+  "SBR",   "order 2 - 1",                                  "link",                               "b_ord[1]",
+  "SBR",   "order 3 - 1",                                  "link",                               "b_ord[2]",
+  "SBR",   "positive / control",                           "ratio",                              "rr_pos",
+  "SBR",   "negative / control",                           "ratio",                              "rr_neg",
+  "SBR",   "positive / negative",                          "ratio",                              "rr_pos_neg",
+  "SBR",   "positive - control",                           "difference (blinks/min)",            "diff_pos",
+  "SBR",   "negative - control",                           "difference (blinks/min)",            "diff_neg",
+  "SBR",   "positive - negative",                          "difference (blinks/min)",            "diff_pos_neg",
+  "SBR",   "mean control",                                 "response, u = 0",                    "mu_c[1]",
+  "SBR",   "mean positive",                                "response, u = 0",                    "mu_c[2]",
+  "SBR",   "mean negative",                                "response, u = 0",                    "mu_c[3]",
+  "SBR",   "tau (donkey SD, link scale)",                  "link",                               "tau",
+  "SBR",   "sigma_latent (residual SD, link scale)",       "link",                               "sigma_latent",
+  "SBR",   "ICC (latent)",                                 "link",                               "icc",
+  "ET",    "positive - control",                           "link",                               "b_cond[1]",
+  "ET",    "negative - control",                           "link",                               "b_cond[2]",
+  "ET",    "positive - negative",                          "link",                               "diff_pos_neg",
+  "ET",    "order 2 - 1",                                  "link",                               "b_ord[1]",
+  "ET",    "order 3 - 1",                                  "link",                               "b_ord[2]",
+  "ET",    "mean control",                                 "response",                           "eta_c[1]",
+  "ET",    "mean positive",                                "response",                           "eta_c[2]",
+  "ET",    "mean negative",                                "response",                           "eta_c[3]",
+  "ET",    "sigma control (donkey-level SD, link scale)",  "link",                               "sigma[1]",
+  "ET",    "sigma positive (donkey-level SD, link scale)", "link",                               "sigma[2]",
+  "ET",    "sigma negative (donkey-level SD, link scale)", "link",                               "sigma[3]",
+  "ET",    "corr(control, positive)",                      "link",                               "rho_cp",
+  "ET",    "corr(control, negative)",                      "link",                               "rho_cn",
+  "ET",    "corr(positive, negative)",                     "link",                               "rho_pn",
+  "ET",    "positive - control",                           "difference (degC)",                  "diff_pos",
+  "ET",    "negative - control",                           "difference (degC)",                  "diff_neg",
+  "ET",    "positive - negative",                          "difference (degC)",                  "diff_pos_neg",
+  "RMSSD", "positive - control",                           "link",                               "lr_pos",
+  "RMSSD", "negative - control",                           "link",                               "lr_neg",
+  "RMSSD", "positive - negative",                          "link",                               "lr_pos_neg",
+  "RMSSD", "order 2 - 1",                                  "link",                               "b_ord[1]",
+  "RMSSD", "order 3 - 1",                                  "link",                               "b_ord[2]",
+  "RMSSD", "mean control",                                 "response, u = 0 (median donkey)",    "med_c[1]",
+  "RMSSD", "mean positive",                                "response, u = 0 (median donkey)",    "med_c[2]",
+  "RMSSD", "mean negative",                                "response, u = 0 (median donkey)",    "med_c[3]",
+  "RMSSD", "sigma control (donkey-level SD, link scale)",  "link",                               "sigma[1]",
+  "RMSSD", "sigma positive (donkey-level SD, link scale)", "link",                               "sigma[2]",
+  "RMSSD", "sigma negative (donkey-level SD, link scale)", "link",                               "sigma[3]",
+  "RMSSD", "corr(control, positive)",                      "link",                               "rho_cp",
+  "RMSSD", "corr(control, negative)",                      "link",                               "rho_cn",
+  "RMSSD", "corr(positive, negative)",                     "link",                               "rho_pn",
+  "RMSSD", "positive - control",                           "ratio (marginal, arithmetic means)", "ratio_pos",
+  "RMSSD", "negative - control",                           "ratio (marginal, arithmetic means)", "ratio_neg",
+  "RMSSD", "positive - negative",                          "ratio (marginal, arithmetic means)", "ratio_pos_neg",
+  "RMSSD", "positive - control",                           "difference (ms, marginal)",          "diff_pos",
+  "RMSSD", "negative - control",                           "difference (ms, marginal)",          "diff_neg",
+  "RMSSD", "positive - negative",                          "difference (ms, marginal)",          "diff_pos_neg",
+  "RMSSD", "mean control",                                 "response, marginal",                 "m_c[1]",
+  "RMSSD", "mean positive",                                "response, marginal",                 "m_c[2]",
+  "RMSSD", "mean negative",                                "response, marginal",                 "m_c[3]",
+  "RMSSD", "positive - control",                           "ratio (conditional, median donkey)", "ratio_med_pos",
+  "RMSSD", "negative - control",                           "ratio (conditional, median donkey)", "ratio_med_neg",
+  "RMSSD", "positive - negative",                          "ratio (conditional, median donkey)", "ratio_med_pos_neg")
+MAP_E4 <- tribble(
+  ~quantity,                          ~treatment,            ~stan_var,
+  "a (intercept at x = 0)",           "negative",            "a[1]",
+  "a (intercept at x = 0)",           "positive",            "a[2]",
+  "b (slope)",                        "negative",            "b[1]",
+  "b (slope)",                        "positive",            "b[2]",
+  "b positive - b negative",          "positive - negative", "b_diff",
+  "s (residual SD)",                  "negative",            "s[1]",
+  "s (residual SD)",                  "positive",            "s[2]",
+  "r (within-treatment correlation)", "negative",            "r[1]",
+  "r (within-treatment correlation)", "positive",            "r[2]")
+# E1 columns of the model-comparison table for the sensitivity models (ET: degC differences; RMSSD, SBR: ratios)
+MAP_SENS <- tribble(
+  ~model,         ~outcome, ~cmp_model,                                                            ~var_pos,    ~var_neg,
+  "et_normal",    "ET",     "Gaussian, donkey intercept, sigma by condition (v1.0)",               "diff_pos",  "diff_neg",
+  "rmssd_gamma",  "RMSSD",  "Gamma(log), donkey intercept, alpha by condition (v1.0; sens. ii)",   "ratio_pos", "ratio_neg")
+
+post_summary <- function(draws, vars)
+  summarise_draws(subset_draws(draws, variable = vars), median, sd, ~ quantile2(.x, probs = c(0.025, 0.975))) |>
+  rename(stan_var = variable, post_median = median, post_sd = sd, post_q025 = q2.5, post_q975 = q97.5)
+finish_map <- function(tb) tb |>
+  mutate(diff = post_median - glmmtmb, diff_in_se = diff / se, within_1se = abs(diff_in_se) <= 1,
+         width_ratio = (post_q975 - post_q025) / (s3_ci_high - s3_ci_low)) |>
+  select(model, outcome, term, scale, stan_var, glmmtmb, se, s3_ci_low, s3_ci_high, post_median, post_sd, post_q025, post_q975,
+         diff, diff_in_se, within_1se, width_ratio)
+mapping_condition <- function(model, outcome, stage3, suffix = "rho0_rep01") {
+  run <- read_run(model, suffix)
+  d <- run$draws
+  if (outcome == "SBR") d <- mutate_variables(d, lr_pos_neg = `b_cond[1]` - `b_cond[2]`, sigma_latent = sqrt(sigma2_latent))
+  map <- MAP_COND |> filter(outcome == .env$outcome)
+  s3  <- stage3 |> filter(outcome == .env$outcome) |> select(outcome, term, scale, glmmtmb = estimate, se, s3_ci_low = ci_low, s3_ci_high = ci_high)
+  tb <- map |> left_join(s3, by = c("outcome", "term", "scale")) |> left_join(post_summary(d, map$stan_var), by = "stan_var") |>
+    mutate(model = model)
+  list(map = finish_map(tb), convergence = convergence(run) |> mutate(model = model, run = suffix, .before = 1))
+}
+mapping_e4 <- function(x_name, stage3_e4) {
+  suffix <- paste0(tolower(sub("^d", "", x_name)), "_rho0_rep01")
+  run <- read_run("delta_slopes", suffix)
+  s3  <- stage3_e4 |> filter(x_name == .env$x_name) |> select(quantity, treatment, glmmtmb = estimate, se, s3_ci_low = ci_low, s3_ci_high = ci_high)
+  tb <- MAP_E4 |> left_join(s3, by = c("quantity", "treatment")) |> left_join(post_summary(run$draws, MAP_E4$stan_var), by = "stan_var") |>
+    mutate(model = "delta_slopes", outcome = paste0("E4 (x = ", x_name, ")"), term = paste(quantity, treatment, sep = ", "), scale = "response")
+  list(map = finish_map(tb), convergence = convergence(run) |> mutate(model = "delta_slopes", run = suffix, .before = 1))
+}
+mapping_sensitivity <- function(model, outcome, cmp_model, var_pos, var_neg, stage3_cmp, suffix = "rho0_rep01") {
+  run <- read_run(model, suffix)
+  cmp <- stage3_cmp |> filter(outcome == .env$outcome, model == cmp_model)
+  stopifnot(nrow(cmp) == 1)
+  tb <- tibble(model = model, outcome = outcome, term = c("positive - control", "negative - control"),
+               scale = "E1 of stage3_example_model_comparison.csv", stan_var = c(var_pos, var_neg),
+               glmmtmb = c(cmp$e1_positive, cmp$e1_negative), se = NA_real_, s3_ci_low = NA_real_, s3_ci_high = NA_real_) |>
+    left_join(post_summary(run$draws, c(var_pos, var_neg)), by = "stan_var")
+  list(map = finish_map(tb), convergence = convergence(run) |> mutate(model = model, run = suffix, .before = 1))
+}
+
+if (RUN_EXAMPLE) {
+  cat("== S6 mapping check on the example replicate (rho_dd = 0, rep 1)\n")
+  stage3     <- read_csv(here_art("output/tables/stage3_example_estimands.csv"), show_col_types = FALSE)
+  stage3_e4  <- read_csv(here_art("output/tables/stage3_example_e4.csv"), show_col_types = FALSE)
+  stage3_cmp <- read_csv(here_art("output/tables/stage3_example_model_comparison.csv"), show_col_types = FALSE)
+  res <- c(list(mapping_condition("sbr_nb2", "SBR", stage3), mapping_condition("sbr_poisson", "SBR", stage3),
+                mapping_condition("et_mvn", "ET", stage3), mapping_condition("rmssd_lognormal_mvn", "RMSSD", stage3),
+                mapping_e4("dSBR", stage3_e4), mapping_e4("dET", stage3_e4)),
+           pmap(MAP_SENS, mapping_sensitivity, stage3_cmp = stage3_cmp))
+  map  <- map_dfr(res, "map")
+  conv <- map_dfr(res, "convergence")
+  write_csv(map,  file.path(out_tab, "stage4_example_mapping.csv"))
+  write_csv(conv, file.path(out_tab, "stage4_example_convergence.csv"))
+  options(width = 220)
+  cat("\n-- sampler diagnostics (plan §5 thresholds; passes = all met)\n"); print(conv, n = Inf)
+  cat("\n-- posterior median vs glmmTMB (diff_in_se = difference / glmmTMB SE; width_ratio = posterior 95 % / Wald 95 %)\n")
+  print(map |> mutate(across(c(glmmtmb, post_median, diff, diff_in_se, width_ratio), ~ signif(.x, 3))) |>
+          select(model, outcome, term, scale, glmmtmb, post_median, diff, diff_in_se, within_1se, width_ratio), n = Inf)
+  cat("\n-- summary per model\n")
+  print(map |> group_by(model, outcome) |> summarise(n = n(), n_with_se = sum(!is.na(se)), n_within_1se = sum(within_1se, na.rm = TRUE),
+                                                     max_abs_diff_in_se = if (any(!is.na(diff_in_se))) max(abs(diff_in_se), na.rm = TRUE) else NA_real_,
+                                                     median_width_ratio = median(width_ratio, na.rm = TRUE), .groups = "drop"))
+  cat("\nwritten: output/tables/stage4_example_mapping.csv, stage4_example_convergence.csv\n")
+}
