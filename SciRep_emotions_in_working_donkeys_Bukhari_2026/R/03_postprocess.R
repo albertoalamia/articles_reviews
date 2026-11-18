@@ -4,16 +4,20 @@
 # Usage (repo root, inside nix-shell):
 #   Rscript <art>/R/03_postprocess.R --prior     S5: prior predictive of the seven models vs Table 2 / the example data
 #   Rscript <art>/R/03_postprocess.R --example   S6: mapping check of the posterior runs on the example replicate against glmmTMB (S2/S4 tables)
+#   Rscript <art>/R/03_postprocess.R --collect   S7: sampler diagnostics of every run on the archive disk, plan §5 thresholds
 #   Rscript <art>/R/03_postprocess.R             S8: pooled posteriors over the 30 replicates, stage 3 vs 4   (not yet written)
 suppressPackageStartupMessages({ library(tidyverse); library(posterior); library(jsonlite) })
 here_art <- function(...) here::here("SciRep_emotions_in_working_donkeys_Bukhari_2026", ...)
 
 args <- commandArgs(trailingOnly = TRUE)
-allowed <- c("--prior", "--example")
+allowed <- c("--prior", "--example", "--collect", "--cores")
+opt_cores <- match("--cores", args); if (!is.na(opt_cores)) allowed <- c(allowed, args[opt_cores + 1])
 if (!all(args %in% allowed)) stop("unknown argument(s): ", paste(setdiff(args, allowed), collapse = " "))
 RUN_PRIOR   <- "--prior" %in% args
 RUN_EXAMPLE <- "--example" %in% args
-if (!any(RUN_PRIOR, RUN_EXAMPLE)) stop("nothing to do: use --prior or --example (S8 main run comes later)")
+RUN_COLLECT <- "--collect" %in% args
+if (!any(RUN_PRIOR, RUN_EXAMPLE, RUN_COLLECT)) stop("nothing to do: use --prior, --example or --collect (S8 main run comes later)")
+N_CORES <- if (is.na(opt_cores)) max(1L, parallel::detectCores() - 2L) else as.integer(args[opt_cores + 1])
 
 stopifnot("FITS_DIR not set: run inside nix-shell" = nzchar(Sys.getenv("FITS_DIR")))
 fits_dir <- file.path(Sys.getenv("FITS_DIR"), "SciRep_emotions_in_working_donkeys_Bukhari_2026")
@@ -296,4 +300,47 @@ if (RUN_EXAMPLE) {
                                                      max_abs_diff_in_se = if (any(!is.na(diff_in_se))) max(abs(diff_in_se), na.rm = TRUE) else NA_real_,
                                                      median_width_ratio = median(width_ratio, na.rm = TRUE), .groups = "drop"))
   cat("\nwritten: output/tables/stage4_example_mapping.csv, stage4_example_convergence.csv\n")
+}
+
+# ---- S7: sampler diagnostics of every run (plan §8: every run passes the §5 thresholds or is listed) -----------
+# A run is a set of chain files <model>_<suffix>_<chain>.csv next to a <model>_<suffix>_diagnose.txt. The suffix encodes
+# the data file and the switches: [sbr_|et_]<scenario>_rep<k>[_prior][_ps<scale>][_pooled].
+list_runs <- function() {
+  map_dfr(list.dirs(fits_dir, recursive = FALSE), function(dir) {
+    model <- basename(dir)
+    dg <- list.files(dir, pattern = paste0("^", model, "_.*_diagnose\\.txt$"))
+    if (length(dg) == 0) return(NULL)
+    tibble(model = model, suffix = sub(paste0("^", model, "_(.*)_diagnose\\.txt$"), "\\1", dg))
+  }) |>
+    filter(!grepl("_prior($|_)", suffix)) |>
+    mutate(x_name     = if_else(model == "delta_slopes", paste0("d", toupper(sub("_.*$", "", suffix))), NA_character_),
+           scenario   = str_extract(suffix, "rhom05|rho0|rhop05"),
+           rho_dd     = c(rhom05 = -0.5, rho0 = 0, rhop05 = 0.5)[scenario],
+           rep        = as.integer(str_extract(suffix, "(?<=_rep)\\d+")),
+           prior_scale = coalesce(as.numeric(str_extract(suffix, "(?<=_ps)[0-9.]+")), 1),
+           pooled     = grepl("_pooled", suffix))
+}
+if (RUN_COLLECT) {
+  cat("== S7 sampler diagnostics of every run in", fits_dir, "\n")
+  runs <- list_runs()
+  cat(nrow(runs), "runs found\n")
+  conv <- parallel::mclapply(seq_len(nrow(runs)), function(i) {
+    r <- runs[i, ]
+    tryCatch(convergence(read_run(r$model, r$suffix)) |> mutate(model = r$model, suffix = r$suffix, .before = 1),
+             error = function(e) tibble(model = r$model, suffix = r$suffix, error = conditionMessage(e)))
+  }, mc.cores = N_CORES) |> list_rbind()
+  out <- runs |> left_join(conv, by = c("model", "suffix")) |>
+    arrange(model, prior_scale, pooled, rho_dd, rep)
+  write_csv(out, file.path(out_tab, "stage4_runs_convergence.csv"))
+  options(width = 220)
+  cat("\n-- runs per model and setting; share passing the plan §5 thresholds\n")
+  print(out |> group_by(model, x_name, prior_scale, pooled) |>
+          summarise(n = n(), share_passes = mean(passes, na.rm = TRUE), max_rhat = max(max_rhat, na.rm = TRUE),
+                    min_ess_bulk = min(min_ess_bulk, na.rm = TRUE), min_ess_tail = min(min_ess_tail, na.rm = TRUE),
+                    runs_with_divergences = sum(divergences > 0, na.rm = TRUE), total_divergences = sum(divergences, na.rm = TRUE),
+                    min_ebfmi = min(min_ebfmi, na.rm = TRUE), .groups = "drop"), n = Inf)
+  fails <- out |> filter(is.na(passes) | !passes)
+  cat("\n-- runs not passing:", nrow(fails), "\n")
+  if (nrow(fails) > 0) print(fails |> select(model, suffix, max_rhat, min_ess_bulk, min_ess_tail, divergences, min_ebfmi, any_of("error")), n = Inf)
+  cat("\nwritten: output/tables/stage4_runs_convergence.csv\n")
 }

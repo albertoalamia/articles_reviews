@@ -13,7 +13,8 @@
 # Draws:    $FITS_DIR/<article>/<model>/<model>_<suffix>_<chain>.csv   (archive disk; never the project tree)
 #           suffix = data name without its cond_<outcome>_ / delta_ prefix, then _prior, _psX, _pooled as applicable
 # Also there: the data copy (data/<model>_<suffix>.json), <model>_<suffix>_diagnose.txt, and a line in runs.log.
-# Seed: 20261025 + replicate index + 1000 × scenario index (rhom05 1, rho0 2, rho05 3), so no two data files share a seed.
+# Seed: 20261025 + replicate index + 1000 × scenario index (rhom05 1, rho0 2, rhop05 3), so no two data files share a seed.
+# SKIP_DONE=1 in the environment skips a run whose diagnose file already exists (run_all.sh resumes that way).
 set -euo pipefail
 
 usage() { sed -n '2,15p' "${BASH_SOURCE[0]}" >&2; exit 1; }
@@ -66,12 +67,13 @@ suffix="$(echo "$base" | sed -E 's/^cond_(sbr|et|rmssd)_//; s/^delta_//')"
 [ "$pooled" = 1 ] && suffix="${suffix}_pooled"
 
 rep="$(echo "$base" | sed -nE 's/.*_rep0*([0-9]+)$/\1/p')"
-case "$base" in *rhom05*) sc=1 ;; *rho0_*) sc=2 ;; *rho05*) sc=3 ;; *) sc=0 ;; esac
+case "$base" in *rhom05*) sc=1 ;; *rho0_*) sc=2 ;; *rhop05*) sc=3 ;; *) sc=0 ;; esac
 seed=$((20261025 + ${rep:-0} + 1000 * sc))
 if [ -z "$adapt_delta" ]; then case "$model" in delta_*) adapt_delta=0.8 ;; *) adapt_delta=0.95 ;; esac; fi
 
 out_dir="$FITS_DIR/$art_name/$model"
 mkdir -p "$out_dir/data"
+if [ "${SKIP_DONE:-0}" = 1 ] && [ -f "$out_dir/${model}_${suffix}_diagnose.txt" ]; then echo "== $model [$suffix] already done, skipped"; exit 0; fi
 run_data="$out_dir/data/${model}_${suffix}.json"
 sed -E "s/\"prior_only\":[0-9]+/\"prior_only\":$prior_only/; s/\"prior_scale\":[0-9.]+/\"prior_scale\":$prior_scale/; s/\"pooled\":[0-9]+/\"pooled\":$pooled/" \
   "$data_file" > "$run_data"
