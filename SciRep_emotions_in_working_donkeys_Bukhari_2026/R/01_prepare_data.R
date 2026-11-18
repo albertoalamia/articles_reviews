@@ -9,6 +9,7 @@
 #          data/derived/stage3/ensemble_checks.csv         per replicate: Δ-multiset identity, integer SBR, min value, moments, redraws
 #          data/derived/stage3/seeds.csv                   scenario, rep, seed
 #          data/derived/stan_data/cond_<outcome>_<scenario>_rep<k>.json, delta_<x>_<scenario>_rep<k>.json  for k = 1..K_STAN
+#          (with the switches prior_only = 0, prior_scale = 1, pooled = 0 and, for delta files, b_prior_sd; added 2026-11-18 for S5)
 # Run    : Rscript SciRep_emotions_in_working_donkeys_Bukhari_2026/R/01_prepare_data.R     (≈ 1–2 min)
 #
 # Scenarios: rho_dd ∈ {−0.5, 0, 0.5} (correlation between a donkey's two changes; unidentified).
@@ -65,10 +66,16 @@ sign_by_value <- function(values, ref_values, ref_reversed) {
 }
 signed <- function(a, reversed, mu_d) { d <- sign(mu_d) * a; d[reversed] <- -d[reversed]; -d }   # treatment − control
 
+# Stan data (plan §3, §5). Coding: cond 1 control, 2 positive, 3 negative (factor levels); ord 1..3; trt 1 negative,
+# 2 positive. The switches prior_only, prior_scale, pooled are written with their defaults; run_model.sh rewrites them
+# in a copy for prior-predictive and sensitivity runs. b_prior_sd: prior SD of the E4 slope, 3 ms per blink/min (x = dSBR),
+# 40 ms per degC (x = dET): one prior SD at the slope where the implied correlation reaches 1 (plan §5, §7 2026-11-18).
 stan_cond <- function(dat) list(N = nrow(dat), J = N, donkey = as.integer(dat$donkey),
-                                cond = as.integer(dat$condition), ord = as.integer(dat$order), y = dat$y)
+                                cond = as.integer(dat$condition), ord = as.integer(dat$order), y = dat$y,
+                                prior_only = 0L, prior_scale = 1, pooled = 0L)
 stan_delta <- function(pairs) list(N = nrow(pairs), trt = as.integer(factor(pairs$treatment, levels = c("negative", "positive"))),
-                                   x = pairs$x, y = pairs$dRMSSD)
+                                   x = pairs$x, y = pairs$dRMSSD,
+                                   prior_only = 0L, prior_scale = 1, b_prior_sd = if (unique(pairs$x_name) == "dSBR") 3 else 40)
 
 # ---- main loop -------------------------------------------------------------------------------
 dp_cache <- list(); ens <- list(); e4 <- list(); checks <- list(); seeds <- list(); n_json <- 0L
