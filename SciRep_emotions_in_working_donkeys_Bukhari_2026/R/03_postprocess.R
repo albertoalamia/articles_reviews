@@ -6,17 +6,19 @@
 #   Rscript <art>/R/03_postprocess.R --example   S6: mapping check of the posterior runs on the example replicate against glmmTMB (S2/S4 tables)
 #   Rscript <art>/R/03_postprocess.R --collect   S7: sampler diagnostics of every run on the archive disk, plan §5 thresholds
 #   Rscript <art>/R/03_postprocess.R             S8: pooled posteriors over the 30 replicates, posterior predictive checks, LOO, stage 3 vs 4
+#   Rscript <art>/R/03_postprocess.R --e5        S9: E5, SBR as a single-reading indicator (AUC and best threshold) from the SBR posteriors
 suppressPackageStartupMessages({ library(tidyverse); library(posterior); library(jsonlite) })
 here_art <- function(...) here::here("SciRep_emotions_in_working_donkeys_Bukhari_2026", ...)
 
 args <- commandArgs(trailingOnly = TRUE)
-allowed <- c("--prior", "--example", "--collect", "--cores")
+allowed <- c("--prior", "--example", "--collect", "--e5", "--cores")
 opt_cores <- match("--cores", args); if (!is.na(opt_cores)) allowed <- c(allowed, args[opt_cores + 1])
 if (!all(args %in% allowed)) stop("unknown argument(s): ", paste(setdiff(args, allowed), collapse = " "))
 RUN_PRIOR   <- "--prior" %in% args
 RUN_EXAMPLE <- "--example" %in% args
 RUN_COLLECT <- "--collect" %in% args
-RUN_MAIN    <- !any(RUN_PRIOR, RUN_EXAMPLE, RUN_COLLECT)
+RUN_E5      <- "--e5" %in% args
+RUN_MAIN    <- !any(RUN_PRIOR, RUN_EXAMPLE, RUN_COLLECT, RUN_E5)
 N_CORES <- if (is.na(opt_cores)) max(1L, parallel::detectCores() - 2L) else as.integer(args[opt_cores + 1])
 
 stopifnot("FITS_DIR not set: run inside nix-shell" = nzchar(Sys.getenv("FITS_DIR")))
@@ -672,4 +674,86 @@ if (RUN_MAIN) {
   print(loo_runs |> group_by(model, prior_scale, pooled) |> summarise(runs = n(), runs_with_k_gt_0.7 = sum(n_pareto_k_gt_0.7 > 0), max_k = signif(max(max_pareto_k), 2), .groups = "drop"), n = Inf)
   cat(sprintf("\nwritten: output/tables/stage4_ensemble_estimands.csv, stage4_per_replicate_estimands.csv.gz, stage4_comparison_long.csv, stage4_side_by_side.csv,\n  stage4_per_replicate_ppc.csv.gz, stage4_ppc_summary.csv, stage4_ppc_sbr_counts.csv, stage4_loo.csv, stage4_loo_comparison.csv;\n  output/figures/stage4_forest_e1_e2.png, stage4_ppc_example.png, stage4_ppc_sbr_counts.png  (%.1f min)\n",
               as.numeric(difftime(Sys.time(), t_start, units = "mins"))))
+}
+
+# ---- S9: E5, SBR as a single-reading indicator (plan §1) ----------------------------------------------------------
+# AUC = P(one reading from condition A exceeds one from condition B) + ½ P(equal), from the SBR posterior of each run:
+# three versions per draw. (0) The plan §3 definition: the typical donkey (u = 0), independent readings from the two
+# conditions, computed exactly by summation over the support 0..T_MAX. Then, with M new donkeys u ~ N(0, tau²) and counts
+# from the fitted NB2 (Poisson for sbr_poisson): (a) different donkeys in A and B, the field use of a reading from an
+# unknown donkey; (b) the same donkey in both, the paired design. For (a) also the best single threshold t (a reading ≥ t
+# called "A"): Youden's J, sensitivity and specificity. Observed counterparts on each replicate: the Mann–Whitney AUC over
+# the 34 × 33 cross-donkey pairs and over the 34 within-donkey pairs. Draws are thinned to N_E5_DRAWS per run; pooling
+# over replicates stacks them as in S8. (0) and (a) were added to the plan's definition (plan §7, S9).
+E5_PAIRS <- tribble(~contrast, ~a, ~b,                 # A = the condition with the higher mean, so AUC > 0.5 and "reading >= t called A"
+                    "positive vs negative", 2L, 3L,
+                    "positive vs control",  2L, 1L,
+                    "control vs negative",  1L, 3L)        # AUC(negative vs control) = 1 - this one
+N_E5_DRAWS <- 1000L; M_E5 <- 2000L; T_MAX <- 200L
+auc_of <- function(x, y) mean(x > y) + 0.5 * mean(x == y)
+auc_cross_obs <- function(x, y) { o <- outer(x, y, function(p, q) (p > q) + 0.5 * (p == q)); diag(o) <- NA; mean(o, na.rm = TRUE) }
+e5_run <- function(model, suffix, seed) {
+  run <- read_run(model, suffix)
+  d <- run$draws
+  dat <- read_json(file.path(stan_data, paste0(data_name_of(model, suffix), ".json")), simplifyVector = TRUE)
+  idx <- sapply(1:3, function(c) { w <- which(dat$cond == c); w[order(dat$donkey[w])] })
+  Y <- sapply(1:3, function(c) dat$y[idx[, c]])                                     # J × 3, rows = donkeys
+  obs <- pmap_dfr(E5_PAIRS, function(contrast, a, b)
+    tibble(contrast = contrast, quantity = c("AUC, different donkeys", "AUC, same donkey"),
+           observed = c(auc_cross_obs(Y[, a], Y[, b]), auc_of(Y[, a], Y[, b]))))
+  mu  <- unclass(as_draws_matrix(subset_draws(d, variable = "mu_c")))[, paste0("mu_c[", 1:3, "]")]   # plain matrix
+  tau <- as.numeric(as_draws_matrix(subset_draws(d, variable = "tau")))
+  phi <- if ("phi" %in% variables(d)) as.numeric(as_draws_matrix(subset_draws(d, variable = "phi"))) else rep(Inf, length(tau))
+  keep <- round(seq(1, nrow(mu), length.out = N_E5_DRAWS))
+  set.seed(seed)
+  draws <- map_dfr(keep, function(s) {
+    u1 <- rnorm(M_E5, 0, tau[s]); u2 <- rnorm(M_E5, 0, tau[s])
+    rcount <- function(m) if (is.finite(phi[s])) rnbinom(M_E5, size = phi[s], mu = m) else rpois(M_E5, m)
+    y1 <- sapply(1:3, function(c) rcount(mu[s, c] * exp(u1)))                       # one donkey set, all three conditions
+    y2 <- sapply(1:3, function(c) rcount(mu[s, c] * exp(u2)))                       # an independent donkey set
+    pmf <- function(m) if (is.finite(phi[s])) dnbinom(0:T_MAX, size = phi[s], mu = m) else dpois(0:T_MAX, m)
+    pmap_dfr(E5_PAIRS, function(contrast, a, b) {
+      pa <- pmf(mu[s, a]); pb <- pmf(mu[s, b])
+      auc0 <- sum(pa * (c(0, cumsum(pb)[-(T_MAX + 1L)]) + 0.5 * pb))                 # u = 0: sum_t P(Y_A = t) [P(Y_B < t) + ½ P(Y_B = t)]
+      ca <- cumsum(tabulate(pmin(y1[, a], T_MAX) + 1L, nbins = T_MAX + 1L)) / M_E5   # P(y_A <= t), t = 0..T_MAX
+      cb <- cumsum(tabulate(pmin(y2[, b], T_MAX) + 1L, nbins = T_MAX + 1L)) / M_E5
+      J <- c(0, cb[-length(cb)] - ca[-length(ca)])                                  # threshold t = 0..T_MAX: sens 1 - P(y_A <= t-1), spec P(y_B <= t-1)
+      t_best <- which.max(J) - 1L
+      tibble(contrast = contrast,
+             quantity = c("AUC, typical donkey (u = 0)", "AUC, different donkeys", "AUC, same donkey", "best threshold (reading >= t called A)",
+                          "Youden J at best threshold", "sensitivity at best threshold", "specificity at best threshold"),
+             value = c(auc0, auc_of(y1[, a], y2[, b]), auc_of(y1[, a], y1[, b]), t_best, J[t_best + 1L],
+                       if (t_best == 0) 1 else 1 - ca[t_best], if (t_best == 0) 0 else cb[t_best]))
+    }) |> mutate(draw = s)
+  })
+  summ <- draws |> group_by(contrast, quantity) |> summarise(post_median = median(value), post_q025 = quantile(value, 0.025), post_q975 = quantile(value, 0.975), .groups = "drop") |>
+    left_join(obs, by = c("contrast", "quantity"))
+  list(summary = summ, draws = draws |> select(-draw))
+}
+if (RUN_E5) {
+  cat("== S9 E5: SBR as a single-reading indicator, from the sbr_nb2 and sbr_poisson posteriors\n")
+  runs <- list_runs() |> filter(model %in% c("sbr_nb2", "sbr_poisson"), prior_scale == 1, !pooled) |> arrange(model, rho_dd, rep)
+  cat(nrow(runs), "runs;", N_E5_DRAWS, "draws per run,", M_E5, "simulated donkeys per draw\n")
+  res <- parallel::mclapply(seq_len(nrow(runs)), function(i) {
+    r <- runs[i, ]
+    tryCatch(e5_run(r$model, r$suffix, seed = 20261025L + r$rep + 1000L * match(r$scenario, c("rhom05", "rho0", "rhop05"))),
+             error = function(e) structure(conditionMessage(e), class = "s8_error"))
+  }, mc.cores = N_CORES)
+  err <- map_lgl(res, inherits, c("s8_error", "try-error"))
+  if (any(err)) stop("runs failed:\n", paste0("  ", runs$model[err], " ", runs$suffix[err], ": ", map_chr(res[err], 1), collapse = "\n"))
+  per_run <- map2_dfr(res, seq_len(nrow(runs)), ~ bind_cols(runs[.y, c("model", "scenario", "rho_dd", "rep")], .x$summary))
+  pooled <- map2_dfr(res, seq_len(nrow(runs)), ~ bind_cols(runs[.y, c("model", "scenario", "rho_dd", "rep")], .x$draws)) |>
+    group_by(model, scenario, rho_dd, contrast, quantity) |>
+    summarise(K = n_distinct(rep), estimate = median(value), ci_low = quantile(value, 0.025), ci_high = quantile(value, 0.975), .groups = "drop") |>
+    left_join(per_run |> group_by(model, scenario, contrast, quantity) |>
+                summarise(observed_mean = mean(observed), observed_min = min(observed), observed_max = max(observed),
+                          between_sd_estimate = sd(post_median), .groups = "drop"), by = c("model", "scenario", "contrast", "quantity")) |>
+    arrange(model, contrast, quantity, rho_dd)
+  write_csv(pooled, file.path(out_tab, "stage4_e5_auc.csv"))
+  write_csv(per_run, file.path(out_tab, "stage4_per_replicate_e5.csv.gz"))
+  options(width = 220)
+  cat("\n-- E5 pooled over the 10 replicates of each scenario (observed: Mann-Whitney AUC on the replicate data, mean over the 10)\n")
+  print(pooled |> mutate(across(c(estimate, ci_low, ci_high, observed_mean, between_sd_estimate), ~ signif(.x, 3))) |>
+          select(model, rho_dd, contrast, quantity, estimate, ci_low, ci_high, observed_mean, between_sd_estimate), n = Inf)
+  cat("\nwritten: output/tables/stage4_e5_auc.csv, stage4_per_replicate_e5.csv.gz\n")
 }
