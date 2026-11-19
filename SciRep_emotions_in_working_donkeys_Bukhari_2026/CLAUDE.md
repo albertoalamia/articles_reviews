@@ -35,6 +35,13 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
   claude.ai conversation, plus notes on publication status and on the metascience landscape.
   Source of the initial concerns list; every item still has to be re-verified against the PDF.
 - `paper/Bukhari_2026_SciRep_s41598-026-62753-3_accepted_manuscript.pdf`
+- `notes/04_analysis_plan.md` — the stage 3–4 specification (v1.1). §7 logs every deviation
+  from the plan with its reason; §8 is the execution schedule S1–S10 with the exact commands.
+- `run_all.sh` — the 660 stage 4 CmdStan runs (resumable, `--dry-run`, `--reruns-only`);
+  `run_model.sh <model> <data.json> [switches]` for one run. Draws live under
+  `$FITS_DIR/SciRep_emotions_in_working_donkeys_Bukhari_2026/<model>/`, never in this tree.
+- `R/03_postprocess.R` — stage 4 post-processing: `--prior`, `--example`, `--collect`, main
+  pass (side-by-side table, PPC, LOO), `--e5`.
 
 ## STATUS
 
@@ -124,3 +131,61 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
   fixed/random structure, contrasts, one row per Stan program), then fit with lme4/glmmTMB on the
   simulated ensemble (or the authors' data) and report estimates with intervals; stage 4 mirrors
   it in `stan/`.
+
+### 2026-11-19 — Stages 3 and 4 complete (commits d552249 … d561b97)
+- Done: `notes/04_analysis_plan.md` v1.1 (estimands E1–E5, families, one shared model table
+  mapping each row onto a Stan program, priors, schedule S1–S10, 15 deviations logged in §7).
+  S1: reconstructed ensemble, three pairing scenarios (ρ_dd = −0.5, 0, 0.5) × 200 replicates,
+  30 of them written as CmdStan JSON. Stage 3 (`R/02_fit_frequentist.R`, glmmTMB): planned
+  models on the 600 replicates with Rubin pooling, DHARMa diagnostics, AICc comparison set,
+  E4 slopes, parametric bootstrap and leave-one-donkey-out on the example; `output/tables/stage3_*`.
+  Stage 4: seven Stan programs in `stan/` (`sbr_nb2`, `sbr_poisson`, `et_mvn`, `et_normal`,
+  `rmssd_lognormal_mvn`, `rmssd_gamma`, `delta_slopes`), prior predictive check, mapping check
+  against glmmTMB on the example replicate (89 of 91 quantities within 1 SE), `run_all.sh` over
+  660 runs (22 per replicate × 30; 7.0 GB in `$FITS_DIR`, 63 min; three SBR runs rerun at 2000
+  iterations), all 660 within the §5 thresholds (max R-hat 1.0096, min ESS 594, no divergences,
+  E-BFMI ≥ 0.32); `R/03_postprocess.R`: pooled posteriors, `stage4_side_by_side.csv`, posterior
+  predictive checks, LOO, E5 (`stage4_e5_auc.csv`).
+- Key findings (ensemble, ρ_dd = 0; the other scenarios agree to the rounding shown unless
+  stated; all `inferred`, reconstruction assumptions as in stage 2): (1) Condition differences,
+  stage 3 and stage 4 identical to the second digit. SBR positive − control +18.5 [15.6, 21.5]
+  blinks/min, negative − control −6.5 [−8.5, −4.5], positive − negative +25.1 [22.0, 28.2]
+  (ratio 3.1). ET +0.76 [0.55, 0.98] and +1.17 [0.93, 1.41] °C, positive − negative −0.41
+  [−0.72, −0.10]. RMSSD +34 [21, 47] and +10.3 [6.0, 14.8] ms, positive − negative +24 [10.5,
+  37] ms (ratio 1.4). The Table 2 |Δ| means are reproduced; positive vs negative, never tested
+  in the paper, differs for all three outcomes. (2) E4: the common Δ-on-Δ slopes of Tables 3–4
+  do not hold within treatment. ΔRMSSD on ΔSBR is +1.64 [0.35, 2.94] in the positive and −1.26
+  [−2.02, −0.51] in the negative treatment (difference 2.9 [1.4, 4.4]); on ΔET −16.8 [−31.5,
+  −2.2] and −7.5 [−11.2, −3.8] (difference −9.3 [−24.4, 5.8]); residual SD 3.2 × larger in the
+  positive treatment. (3) E3: SBR latent ICC 0.49 [0.32, 0.66]; ET within-donkey correlations
+  0.59–0.80; RMSSD 0.92 between control and negative but 0.3 between control and positive.
+  (4) Stage 3 vs stage 4: the 27 E1/E2 rows differ by at most 0.07 posterior SD and lie inside
+  the prior ×2 / ×0.5 bracket; posterior intervals are 1.01–1.37 × the Wald widths; the largest
+  difference over 234 rows is 0.84 SD, on the ET correlations (LKJ shrinkage). Prior scale,
+  Poisson vs NB2, Gamma vs log-normal and pooled σ change no conclusion. (5) The PPC recovers
+  every mean and mean |Δ| but not the SBR variances nor the RMSSD positive tail; read as a
+  property of the Gaussian reconstruction (`needs-data`), consistent with stage 3 AICc (the
+  raw-scale Gaussian MVN best in ≥ 98 % of replicates). glmmTMB could not identify the NB2 φ on
+  the reconstructed counts (Poisson fallback in 50–100 % of replicates, DHARMa dispersion ratio
+  0.76–0.83); the Bayesian NB2 samples under the half-normal prior on 1/√φ and agrees with it.
+  LOO is reliable for the MVN programs and E4 only. (6) E5: one SBR reading from an unknown
+  donkey separates positive from negative (AUC 0.99) and positive from control (0.94), control
+  from negative only moderately (0.81; best cut-off ≥ 16 blinks/min, sensitivity 0.71,
+  specificity 0.75).
+- Decided: plan v1.1 (ET and RMSSD as MVN with an unstructured 3 × 3 donkey covariance;
+  log-normal MVN as the RMSSD Bayesian program, Gamma with condition dispersion as sensitivity);
+  the family question raised by the PPC is deferred to the authors' data, planned families kept;
+  the candidate Poisson–log-normal MVN SBR program is not written unless the failure reappears on
+  real data; E5 extended beyond the §3 definition (different-donkey and same-donkey AUC, Youden
+  threshold), logged in §7; stage 4 on 10 replicates per scenario, compared with stage 3 both on
+  the same 10 (Rubin) and on 200; no draws in the project tree.
+- Open questions: authors' data (Parkes, 2026-11-09: will review the data and reply; the
+  acknowledgement proposed end of November 2026, more time on request). If data arrive, S1–S9
+  rerun unchanged on them and the PPC decides the family question. Version of record and
+  reviewer reports; Panzera & Statelli 2025 as a `selected` candidate;
+  `_freeze/.../review/execute-results/html.json` is modified locally and left out of commits
+  until the stage 5 render.
+- Next step: Stage 5 — `review.qmd` following the template sections, with the side-by-side
+  table from `stage4_side_by_side.csv`, `stage4_forest_e1_e2.png`, the PPC figures and the E5
+  table; every number from the output tables, none typed. Keep `draft: true`: the authors
+  engaged on 2026-11-09, so they receive the full review before publication.
