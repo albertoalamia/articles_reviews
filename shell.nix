@@ -68,7 +68,8 @@ pkgs.mkShell {
     myQuarto
     myPython
     pkgs.cmdstan          # 2.36.0: stanc, makefiles, prebuilt libs; sets $CMDSTAN
-    pkgs.texliveMedium
+    # Quarto PDF output needs tcolorbox (callouts) and a few small packages that scheme-medium lacks
+    (pkgs.texliveMedium.withPackages (ps: with ps; [ tcolorbox environ pdfcol tikzfill multirow upquote framed ]))
     pkgs.poppler-utils    # pdftotext for extracting tables from papers
     pkgs.git
   ];

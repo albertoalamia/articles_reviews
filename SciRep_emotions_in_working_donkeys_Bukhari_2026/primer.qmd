@@ -1,0 +1,158 @@
+---
+title: "Can you read a donkey's mood from its blinks? A plain-language guide"
+description: "What a 2026 study on donkey emotions measured, what we checked, and what the numbers do and do not show. Companion to the technical review."
+date: 2026-11-19
+author: Alberto Alamia
+categories: [ethology, primer]
+draft: true
+format:
+  html: default
+  pdf:
+    pdf-engine: xelatex
+    documentclass: article
+    papersize: a4
+    geometry: margin=22mm
+    fontsize: 10pt
+    mainfont: texgyrepagella
+    mainfontoptions:
+      - Extension=.otf
+      - UprightFont=*-regular
+      - BoldFont=*-bold
+      - ItalicFont=*-italic
+      - BoldItalicFont=*-bolditalic
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    colorlinks: true
+    echo: false
+comments: false
+---
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+library(dplyr)
+library(readr)
+art <- here::here("SciRep_emotions_in_working_donkeys_Bukhari_2026")
+rd  <- function(p) read_csv(file.path(art, p), show_col_types = FALSE, progress = FALSE)
+f   <- function(x, d = 1) formatC(round(x, d), format = "f", digits = d)
+t2c <- rd("data/raw/table2_conditions.csv")
+t2d <- rd("data/raw/table2_changes.csv")
+cc  <- rd("output/tables/consistency_contrasts.csv")
+sbs <- rd("output/tables/stage4_side_by_side.csv")
+e5  <- rd("output/tables/stage4_e5_auc.csv")
+T2  <- function(o, cnd) t2c$mean[t2c$outcome == o & t2c$condition == cnd]
+D2  <- function(o, t) t2d$delta_mean[t2d$outcome == o & t2d$treatment == t]
+S   <- function(o, term, scale) sbs$stage4[sbs$outcome == o & sbs$term == term & sbs$scale == scale & sbs$rho_dd == 0][1]
+A   <- function(contrast, quantity, w = "estimate") e5[[w]][e5$model == "sbr_nb2" & e5$rho_dd == 0 & e5$contrast == contrast & e5$quantity == quantity][1]
+```
+
+::: {.callout-note appearance="simple"}
+This page explains, without statistics, what the [technical review](review.qmd) of Bukhari and
+colleagues (Scientific Reports, 2026) found. The review is the reference; this page is a guide to it.
+The authors have been contacted and their reply will be published with the review.
+:::
+
+## What the study did
+
+Thirty-four working donkeys in Pakistan were each filmed and measured for three minutes in three
+situations: standing quietly as usual (the control), eating fresh lucerne from a bucket (meant to be a
+pleasant experience) and hearing hair clippers held close to one ear (meant to be an unpleasant one).
+Three things were measured each time: how often the donkey blinked, the temperature of the inner corner
+of its eye, and a heart-rhythm measure called RMSSD that tends to be higher when an animal is relaxed.
+
+The authors report that blinking went up with the lucerne and down with the clippers, that eye temperature
+went up in both situations, and that RMSSD went up in both situations too. They conclude that the three
+measures "may act as indicators of emotions in donkeys" and suggest that blink rate could be a simple
+field test of how a donkey feels.
+
+## What we did
+
+We read the paper against a fixed checklist, recomputed every number that can be recomputed from the
+tables, recovered the individual data points that the paper plots in two of its figures, and rebuilt
+complete datasets consistent with everything the paper reports. On those we refitted the authors' own
+analysis and then a better-specified one, twice over with two different statistical approaches, to see
+what the design can actually tell us. All of this is code in a public repository, and the authors have
+been asked for the original data so that the same code can be run on them.
+
+## Five things a reader should know
+
+**1. The "changes" in the paper have lost their sign.** The authors define each change as the control
+value minus the treatment value. By that definition, when a measure goes *up* under a treatment the
+change is negative. Five of the six changes in the paper should be negative; all six are printed as
+positive numbers. Working back from the figures, the printed changes are the sizes of the per-donkey
+changes with the direction removed. That matters because the paper's second analysis, which relates the
+heart measure to blinking and to eye temperature, was run on these direction-free numbers, and the text
+then talks about "the direction of change" becoming "more obvious".
+
+**2. Two of the p-values cannot come from the data as reported.** A p-value is a way of saying how
+surprising a result would be if nothing were going on. For the blink rate under lucerne the paper
+reports p = `{r} f(cc$p_reported[cc$outcome == "SBR" & cc$treatment == "positive"], 3)`. From the paper's
+own averages and spreads, the effect is so large (every donkey blinked more, by about
+`{r} f(D2("SBR", "positive"), 0)` blinks a minute on an average of `{r} f(T2("SBR", "control"), 0)`) that the
+p-value should be smaller by many orders of magnitude. The same holds for the heart measure under
+lucerne. Whatever produced those two numbers, it was not the analysis the paper describes applied to the
+data the paper summarises. This is a statement about the numbers, not about anyone's intentions; a
+transcription slip or an undescribed analysis step would both produce it.
+
+**3. The discussion says one result went the opposite way from what the results show.** The paper's
+Discussion states that the heart measure *fell* under the clippers, "consistent with previous studies in
+horses". Its own Table 2 shows it *rose*, from `{r} f(T2("RMSSD", "control"), 0)` to
+`{r} f(T2("RMSSD", "negative"), 0)` milliseconds, and its own figure marks that rise as highly significant.
+This is the sentence on which the claim that heart rhythm tells pleasant from unpleasant rests.
+
+**4. The comparison the conclusions need was never made.** To say that a measure distinguishes a
+pleasant from an unpleasant experience, you have to compare the two experiences with each other. The
+paper only compares each of them with standing quietly. For eye temperature and the heart measure, both
+experiences pushed the measure the same way; what differs is how far. A thermometer that reads higher
+whether the donkey is pleased or frightened cannot tell you which it is.
+
+**5. Nothing shows the donkeys felt what the labels say.** The lucerne is assumed pleasant and the
+clippers unpleasant, which is reasonable, but nothing independent was recorded to check it: no behaviour
+beyond blinking, no heart rate, no sign of approach or avoidance. And the "pleasant" situation is eating.
+Chewing and a head down in a bucket change breathing, heart rhythm, and what a camera pointed at the eye
+can see, whatever the donkey feels about it. The study cannot separate "eating" from "happy".
+
+## What our re-analysis shows
+
+With a model suited to the kind of data (counts for blinks, a skewed positive quantity for the heart
+measure, each donkey's three values analysed together), fitted two ways with the same result:
+
+- **Blinking does separate the three situations**, and in opposite directions: about
+  `{r} S("SBR", "positive - control", "difference (blinks/min)")` blinks a minute more with lucerne and
+  `{r} S("SBR", "negative - control", "difference (blinks/min)")` fewer with the clippers (the numbers in
+  brackets are the range we are fairly confident the true value lies in). This is the one claim of the
+  paper that the data clearly support.
+- **Eye temperature and the heart measure rose in both situations.** The two treatments do differ from
+  each other in how much (eye temperature `{r} S("ET", "positive - negative", "difference (degC)")` °C,
+  heart measure `{r} S("RMSSD", "positive - negative", "difference (ms, marginal)")` milliseconds, lucerne
+  minus clippers), but a difference in how far a needle moves in the same direction is not a
+  direction.
+- **The link between blinking and heart rhythm has opposite signs in the two situations.** With lucerne,
+  donkeys that blinked more also had a higher heart measure; with the clippers, donkeys that blinked less
+  did. The paper's single combined slope averages these two opposite relations.
+- **As a field test for one donkey**, a single blink count tells lucerne from clippers almost perfectly
+  (the chance that a random "lucerne" reading beats a random "clipper" reading is
+  `{r} f(A("positive vs negative", "AUC, different donkeys"), 2)`, where 0.5 would be a coin toss), and
+  lucerne from calm well (`{r} f(A("positive vs control", "AUC, different donkeys"), 2)`). It tells
+  clippers from calm only moderately (`{r} f(A("control vs negative", "AUC, different donkeys"), 2)`): at the
+  best cut-off of `{r} f(A("control vs negative", "best threshold (reading >= t called A)"), 0)` blinks a
+  minute, about one reading in four is misclassified either way. The part of the claim most useful in
+  practice, spotting a stressed donkey from its blinking, is the weak one.
+
+Everything in this section rests on data rebuilt from the paper's figures and tables, not on the
+original records, and the review says so at each step. If the authors share their data, the same code
+runs on them and this page will be updated.
+
+## What this does and does not mean
+
+It does not mean the donkeys felt nothing, nor that blink rate is useless. It means that this paper, as
+published, does not support its claims about eye temperature and heart rhythm as markers of pleasant
+versus unpleasant emotion, and that its numbers are not internally consistent in ways the authors should
+be able to resolve with their data. The group-level finding about blinking stands on the reported
+numbers and on our re-analysis.
+
+Methods and numbers are criticised here, never people. The authors received a data request and notice
+of this commentary before anything was written, will receive the full text before it is published, and
+their reply will appear alongside it.

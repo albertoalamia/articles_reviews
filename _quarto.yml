@@ -4,11 +4,15 @@ project:
   render:
     - "*.qmd"
     - "*/review.qmd"
+    - "*/primer.qmd"
     - "!_template/"
   resources:
     - CNAME
   preview:
     port: 4321
+
+filters:
+  - tools/pdf-divs.lua
 
 execute:
   # Analyses run locally inside the nix shell; results are frozen and committed.
