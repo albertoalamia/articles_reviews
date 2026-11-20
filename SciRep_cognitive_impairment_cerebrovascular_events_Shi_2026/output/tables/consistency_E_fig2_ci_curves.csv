@@ -1,0 +1,4 @@
+panel,n_steps,final_value,outcome,events,pct,at_risk_y4,expected_final_if_percent,expected_final_if_proportion,steps_vs_events
+A,4,1,ischemic stroke,15,7.8,181,7.8,0.078,"4 steps drawn, 15 events reported"
+B,4,1,any stroke,15,7.8,181,7.8,0.078,"4 steps drawn, 15 events reported"
+C,4,1,all-cause mortality,15,7.8,186,7.8,0.078,"4 steps drawn, 15 events reported"

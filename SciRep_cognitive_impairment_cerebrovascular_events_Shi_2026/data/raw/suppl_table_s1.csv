@@ -1,0 +1,21 @@
+variable,table1_variable,type,excluded_n,excluded_pct,excluded_med,excluded_q1,excluded_q3,included_n,included_pct,included_med,included_q1,included_q3,p_reported,p_type,p_scope
+age,Age,median,,,54.6,46.7,68.4,,,51.6,45.3,59.7,0.0001,less_than,row
+male,Male,count,1049,67.0,,,,2208,57.0,,,,0.0001,less_than,row
+education: illiteracy/primary school,Education: illiteracy/primary school,count,267,17.1,,,,396,10.2,,,,0.0001,less_than,education (3 levels)
+education: middle school,Education: middle school,count,732,46.8,,,,2394,42.9,,,,0.0001,less_than,education (3 levels)
+education: high school or higher,Education: high school or higher,count,566,36.2,,,,1817,46.9,,,,0.0001,less_than,education (3 levels)
+manual worker,Manual worker,count,653,75.0,,,,2009,73.3,,,,0.3352,exact,row
+smoking,Smoking,count,951,60.8,,,,2449,63.2,,,,0.0933,exact,row
+heavy drink,Heavy drinking,count,220,14.1,,,,561,14.5,,,,0.6893,exact,row
+inactive or moderately active,Inactive or moderately active,count,528,33.7,,,,1346,34.7,,,,0.4834,exact,row
+BMI,BMI,median,,,24.8,22.6,27.3,,,24.7,22.7,27.0,0.3937,exact,row
+hypertension,Hypertension,count,835,53.4,,,,1773,45.8,,,,0.0001,less_than,row
+diabetes,Diabetes,count,232,14.8,,,,423,10.9,,,,0.0001,less_than,row
+hyperlipidemia,Hyperlipidemia,count,726,46.4,,,,1780,45.9,,,,0.7609,exact,row
+cholesterol,Cholesterol,median,,,5.1,4.5,5.8,,,5.1,4.5,5.8,0.8191,exact,row
+triglyceride,Triglyceride,median,,,1.3,0.9,1.9,,,1.2,0.9,1.9,0.1492,exact,row
+LDL,LDL,median,,,2.5,1.9,3.0,,,2.5,1.9,3.1,0.5095,exact,row
+HDL,HDL,median,,,1.3,1.1,1.6,,,1.4,1.1,1.6,0.0001,less_than,row
+Hcy,Homocysteine,median,,,14.4,10.0,21.3,,,13.4,9.5,18.5,0.0001,less_than,row
+ICAS,ICAS,count,245,15.7,,,,471,12.2,,,,0.0005,exact,row
+ECAS,ECAS,count,1,0.5,,,,60,1.6,,,,0.2184,exact,row

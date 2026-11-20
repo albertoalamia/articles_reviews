@@ -1,0 +1,504 @@
+Scientific Reports
+
+
+ARTICLE | Article in Press
+
+Baseline cognitive impairment predicts cerebrovascular
+events in stroke-free chinese adults
+Zhaobo Shi · Anxin Wang · Xia Meng · Xue Tian · Yong Sun · Jing Li · Xiaoli Zhang ·
+Xinsheng Han
+
+Received: 21 July 2026 / Accepted: 26 October 2026
+© The Author(s) 2026
+
+Abstract
+Cognitive dysfunction and cerebrovascular diseases are major public health challenges, yet the prognostic role
+of cognitive impairment before a stroke in populations without stroke history remains unclear. We conducted
+a community-based longitudinal study on 3,875 Chinese adults aged 40 and older who were free of stroke,
+assessing their initial cognitive function with the Mini-Mental State Examination (MMSE), where scores less
+than 24 indicate impairment, and they were followed for 4.1 years. After adjusting for demographic factors,
+vascular risks, homocysteine, and intracranial arterial stenosis, Cox proportional hazards models indicated
+that cognitive impairment independently forecasted the occurrence of ischemic stroke [adjusted Hazard Ratio
+(aHR) = 2.55, 95% Confidence Interval (CI): 1.33–4.87] and any stroke (aHR = 2.32, 95% CI:1.24–4.36), but
+not all-cause mortality (aHR = 1.79, 95% CI:0.96–3.36). These findings indicate that baseline cognitive impair-
+ment in stroke-free adults aged 40 and older is a significant predictor of future cerebrovascular events, empha-
+sizing its importance in early risk assessment and prevention strategies for groups like Chinese adults who
+have not experienced a stroke.
+
+Keywords Baseline cognitive impairment · Ischemic stroke · Mini-Mental State Examination · Risk
+stratification · Community-based population
+
+
+Abbreviations
+95% CI	95% confidence interval
+aHR	adjusted hazard ratio
+APAC	Asymptomatic Polyvascular Abnormalities Community
+APOE	apolipoprotein E
+BMI	body mass index
+CI	cognitive impairment
+CVD	cardiovascular disease
+ECAS	extracranial arterial stenosis
+HDL	high density lipoprotein
+HR	hazard ratio
+
+This Article in Press is shared early to give you faster access to new research. It is citable and carries a permanent DOI.
+The final edited version will replace it automatically.
+
+
+
+
+          Scientific Reports                                                         https://doi.org/10.1038/s41598-026-78298-4
+Article in Press                                                  https://doi.org/10.1038/s41598-026-78298-4
+
+ICAS	intracranial arterial stenosis
+IQR	interquartile range
+LDL	low density lipoprotein
+MMSE	Mini-Mental State Examination
+NCI	normal cognition
+PSCI	post-stroke cognitive impairment
+TIA	transient ischemic attack
+BMI	body mass index
+CI	cognitive impairment
+
+
+Introduction
+
+Cognitive dysfunction and cerebrovascular diseases are increasingly recognized as significant global health chal-
+lenges. In the United States, 22.7% of individuals over 65 are affected by mild cognitive impairment from all
+causes. This prevalence is double that of Alzheimer’s disease, which is 11.3%, thereby imposing substantial soci-
+etal costs1. Concurrently, the incidence of stroke in China increased by 86% from 1990 to 2019, reaching 276.7
+cases per 100,000 population2. The intricate relationship between these conditions is highlighted by the fact that
+cerebrovascular diseases significantly contribute to cognitive decline and dementia.
+   Current studies mainly concentrate on cognitive impairment following a stroke, impacting 30–50% of those
+who have experienced a stroke3. A cross-sectional study across multiple centers in China found that 78.7% of
+patients with first-ever ischemic stroke developed post-stroke cognitive impairment (PSCI) when evaluated 3
+to 6 months later4. The Berlin Manifesto also emphasizes that preventing stroke could significantly reduce the
+incidence of dementia5. Furthermore, previous studies suggest that PSCI is associated with recurrent stroke and
+increased mortality, mediated by vascular risk factors and neurodegeneration6. However, the predictive role of
+baseline cognitive deficits in cerebrovascular events remains underexplored.
+   Increasing evidence suggests that a slight decline in cognitive function may indicate subclinical vascular
+issues, such as cerebral small vessel disease or systemic vascular dysfunction7. The presence of apolipoprotein E
+(APOE)-ε4 and other genetic factors emphasize potential shared mechanisms between cognitive decline and the
+risk of stroke8. Nevertheless, previous research, mainly involving Western groups9, has demonstrated inconsis-
+tent associations between baseline cognitive impairment and stroke risk, with a hazard ratio (HR) of 1.19 reported
+in meta-analyses10. These studies often failed to adequately adjust for vascular markers or socioeconomic con-
+founders. Notably, no large-scale investigations have addressed this issue in Chinese populations, where stroke
+etiology and risk profiles differ significantly from those in Western populations. These differences include a
+higher prevalence of intracranial atherosclerosis (ICAS) and elevated homocysteine levels11,12. Therefore, this
+study was performed to evaluate whether baseline cognitive impairment can independently predict incident cere-
+brovascular events in a Chinese community-based cohort without a history of stroke, utilizing samples from the
+Asymptomatic Polyvascular Abnormalities Community (APAC) study.
+
+
+Materials and methods
+
+Study design and population
+
+The APAC study is a community-based, prospective, long-term follow-up investigation aimed at examining the
+epidemiology of asymptomatic polyvascular abnormalities in Chinese adults. The study design has been pre-
+viously detailed in the literature13. Briefly, the APAC study initially enrolled 5,440 participants aged 40 years
+
+
+                                                                                                   Scientific Reports
+https://doi.org/10.1038/s41598-026-78298-4                                                        Article in Press
+
+or older, who had no history of cardiovascular disease (CVD), transient ischemic attack (TIA), or stroke at
+baseline, and exhibited no neurological deficits indicative of prior stroke. During 2010 and 2011, data on poten-
+tial cardiovascular risk factors were collected, and all participants underwent transcranial Doppler sonography,
+ankle-brachial index measurement, and bilateral carotid duplex sonography. In the first follow-up examination
+conducted in 2012/2013, additional assessments, including cognitive function evaluation, were performed. The
+present study further excluded individuals with documented stroke or CVD prior to the first follow-up. Ethical
+approval was obtained from the Ethics Committees of Beijing Tiantan Hospital (Approval No: 2010-014-01) and
+Kailuan General Hospital (Approval No: 2006-05), in accordance with the Declaration of Helsinki. Informed
+consent was obtained from all participants.
+
+Assessment of cognitive function
+
+Cognitive function was measured using the Mini-Mental State Examination (MMSE) in the first follow-up exam-
+ination from 2012 to 2013. The MMSE assesses orientation to time and place, attention, calculation and construc-
+tion, learning, language, and memory, with a range of 0 to 3014. Higher scores indicate better performance. A
+score of < 24 was defined as cognitive impairment in the present study15.
+
+Association of covariates
+
+Information on baseline characteristics such as age, gender, smoking status, alcohol consumption, physical activ-
+ity, and education was obtained through standardized questionnaires conducted by trained individuals. Educa-
+tional levels were categorized into three levels: illiteracy/primary school, middle school, and high school or
+above. The classification of smoking and alcohol consumption included never, former, or current, while alcohol
+use was further broken down into moderate, intermediate, heavy, unspecified quantity, or former use. Physical
+activity was categorized as inactive (no exercise), moderately active (1–80 min per week), or very active (more
+than 80 min per week). Hypertension was defined by a systolic/diastolic blood pressure of ≥ 140/90 mmHg, the
+use of antihypertensive medication, or a self-reported history of hypertension. Diabetes was identified by a fast-
+ing blood glucose level of ≥ 126 mg/dl, the use of glucose-lowering medications, or a self-reported diagnosis.
+Dyslipidemia was defined by a self-reported history, current use of cholesterol lowering medicine, or a total
+cholesterol level ≥ 220 mg/dl or triglyceride ≥ 150 mg/dl or low density lipoprotein ≥ 160 mg/dl13. Transcranial
+Doppler ultrasound was used to assess ICAS, using established velocity thresholds. Carotid stenosis, defined as
+≥ 50% stenosis, was evaluated using duplex ultrasound following the guidelines established by the Society of
+Radiologists in Ultrasound16.
+
+Follow-up and events
+
+Participants in the study were observed through in-person interviews held every two years during regular medical
+check-ups until December 31, 2015, the occurrence of a predefined final event, or death. These follow-ups were
+conducted by physicians and nurses who were blinded to the baseline data. For those participants who missed
+the follow-up exams, outcome data was gathered by reviewing death certificates from provincial vital statistics
+offices, discharge summaries from the 11 hospitals, and medical records. The primary outcome was the first
+incidence of stroke, diagnosed in accordance with the American Heart Association/American Stroke Association
+(AHA/ASA) criteria17, confirmed by brain computed tomography (CT) or magnetic resonance imaging (MRI).
+Strokes were divided into three primary categories: ischemic stroke, intracerebral hemorrhage, and subarachnoid
+hemorrhage. The same diagnostic criteria were used in all the hospitals involved. In cases of fatal incidents or
+when neuroimaging was unavailable, diagnosis was based on clinical evaluation and examination of medical
+records following AHA/ASA guidelines.
+
+
+
+Scientific Reports
+Article in Press                                                  https://doi.org/10.1038/s41598-026-78298-4
+
+Statistical analysis
+
+All analyses were conducted using SAS version 9.4 (SAS Institute Inc.). A two-sided P < 0.05 was considered sta-
+tistically significant. Normality of continuous variables was assessed using the Shapiro-Wilk test; variables with
+non-normal distribution were summarized as median (IQR) and compared using the Kruskal-Wallis tests. Cat-
+egorical variables were presented as frequencies and percentages and were compared using the chi-square test.
+To investigate the associations between baseline cognitive impairment and outcomes such as ischemic stroke,
+any stroke (including ischemic stroke, intracerebral hemorrhage, and subarachnoid hemorrhage), and mortal-
+ity, Cox proportional hazards models were employed, using participants with normal cognition as the reference
+group. The proportional hazard assumption was met for survival analysis using the Schoenfeld residual plot
+method (P > 0.05). Both unadjusted and adjusted hazard ratios (HRs), along with their 95% confidence intervals
+(CIs), were computed. Three models were developed: Unadjusted Model; Model 1 was adjusted for age, gender,
+and education; and Model 2 included additional adjustments for homocysteine levels, ICAS, hypertension, and
+occupation. Covariates were selected based on their established association with stroke risk and their imbalance
+between groups in baseline comparisons. The Kaplan-Meier method and log-rank test were utilized to estimate
+the cumulative incidence of ischemic stroke, any stroke, and mortality.
+
+
+Results
+
+Study population and exclusions
+
+The original APAC study had 5,440 participants. In this study, 53 participants with a recorded history of stroke or
+CVD before the first follow-up, along with 1,512 people missing MMSE scores, were not included. As a result,
+3,875 participants were enrolled in the final longitudinal cohort study to explore the link between initial cogni-
+tive function and stroke risk (Fig. 1). Compared to the participants who were included, the excluded individuals
+(n = 1,565) were older (mean age: 54.6 vs. 51.6 years, p < 0.0001), had a higher population of males (67.0% vs.
+57.0%, p < 0.0001), and had higher prevalences of hypertension (53.4% vs. 45.8%, p < 0.0001), diabetes (14.8%
+vs. 10.9%, p < 0.0001) and ICAS (15.7% vs. 12.2%) (Supplementary Table S1).
+
+
+
+Fig. 1 Flowchart of the studied
+population. Captions: A total
+of 5,440 participants from the
+APAC study were initially
+enrolled. After excluding 1,565
+individuals due to missing
+MMSE data (n = 1,512) or a his-
+tory of stroke/cardiovascular dis-
+ease prior to the first follow-up
+(n = 53), 3,875 participants were
+included in the present study and
+categorized according to baseline
+MMSE scores. Abbreviations:
+APAC, Asymptomatic Polyvas-
+cular Abnormalities Community;
+MMSE, Mini-Mental State
+Examination; NCI, normal cog-
+nition; CI, cognitive impairment.
+
+
+
+                                                                                                    Scientific Reports
+https://doi.org/10.1038/s41598-026-78298-4                                                                                Article in Press
+
+Basic characteristics of the studied population
+
+A total of 3,875 community residents without strokes participated in the study, showing a median MMSE score
+of 29 (IQR: 27–30). Among these participants, 192 individuals (5.0%) had cognitive impairment at baseline.
+These participants were significantly older (median age: 62.8 vs. 51.3 years, P < 0.0001), had lower educational
+attainment (48.4% vs. 8.2% with primary education or less, P < 0.0001), and were more likely to be manual
+workers (51.8.% vs. 53.1%, P = 0.0005) than their cognitively normal counterparts. Additionally, they had higher
+prevalence of hypertension (57.3% vs. 45.2%, P = 0.0010), elevated homocysteine levels (15.8 vs. 13.2 µmol/L,
+P < 0.0001), and ICAS (24.0% vs. 11.5%, P < 0.0001) (Table 1).
+
+Association between cognitive function and cerebrovascular events over a 4.1-year follow-up
+
+Over a median follow-up of 4.1 years, the cumulative incidences of ischemic stroke, any stroke, and all-cause
+mortality were 2.1%, 2.3%, and 2.2%, respectively. Kaplan–Meier curves showed significantly higher event rates
+in participants with cognitive impairment across all outcomes (log-rank test P < 0.01 for each; Fig. 2). In fully
+adjusted Cox models, cognitive impairment remained an independent predictor of ischemic stroke (aHR = 2.55,
+95% CI: 1.33–4.87) and any stroke (aHR = 2.32, 95% CI: 1.24–4.36), but was not significantly associated with
+all-cause mortality (aHR = 1.79, 95% CI: 0.96–3.36; Table 2).
+
+
+Discussion
+
+This community-based longitudinal study provides evidence that baseline cognitive impairment, as evaluated by
+the MMSE, independently predicts cerebrovascular events in Chinese adults without a history of stroke. Over
+a median follow-up of 4.1 years, individuals with cognitive impairment had a 2.32 to 2.55 times higher risk of
+experiencing ischemic and any strokes than those with normal cognitive function. This association remained
+
+
+
+Table 1 Baseline char-            Variables                              Overall 3875        NCI 3683            CI 192              P
+acteristics of the studied        MMSE, median (IQR)                     29 (27, 30)         29 (28, 30)         22 (20, 23)         < 0.0001
+population.                       Age, median (IQR)                      51.6 (45.3, 59.7)   51.3 (45.2, 59.1)   62.8 (53.4, 74.9)   < 0.0001
+                                  Male, n (%)                            2208 (57.0)         2075 (56.3)         133 (69.3)          0.0004
+                                  Education                                                                                          < 0.0001
+                                  Illiteracy/primary school              396 (10.2)          303 (8.2)           93 (48.4)
+                                  Middle school                          1662 (42.9)         1587 (43.1)         75 (39.1)
+                                  High school or higher                  1817 (46.9)         1793 (48.7)         24 (12.5)
+                                  Manual worker, n (%)                   2009 (51.9)         1907 (51.8)         102 (53.1)          0.0005
+                                  Smoking, n (%)                         2449 (63.2)         2337 (63.5)         112 (58.3)          0.1515
+                                  Heavy drinking, n (%)                  561 (14.5)          538 (14.6)          23 (12.0)           0.3129
+                                  Inactive or moderately active, n (%)   1346 (34.7)         1279 (34.7)         67 (34.9)           0.9618
+                                  BMI, median (IQR)                      24.7 (22.7, 27.0)   24.7 (22.7, 27.0)   24.9 (22.8, 26.7)   0.8507
+                                  Hypertension, n (%)                    1773 (45.8)         1663 (45.2)         110 (57.3)          0.0010
+                                  Diabetes, n (%)                        423 (10.9)          396 (10.8)          27 (14.1)           0.1516
+Abbreviations: MMSE, the
+Mini-Mental State Examina-        Hyperlipidemia, n (%)                  1780 (45.9)         1703 (46.2)         77 (40.1)           0.0963
+tion; NCI, normal cognition;      Cholesterol, median (IQR)              5.1 (4.5, 5.8)      5.1 (4.5, 5.8)      5.1 (4.3, 5.7)      0.3187
+CI, cognitive impairment; IQR,    Triglyceride, median (IQR)             1.2 (0.9, 1.9)      1.2 (0.9, 1.9)      1.2 (0.8, 1.7)      0.1365
+interquartile range; BMI, body    LDL, median (IQR)                      2.5 (1.5, 3.1)      2.5 (1.9, 3.1)      2.4 (1.9, 3.1)      0.9989
+mass index; LDL, low density      HDL, median (IQR)                      1.4 (1.1, 1.6)      1.4 (1.2, 1.6)      1.3 (1.1, 1.7)      0.4073
+lipoprotein; HDL, high density    Homocysteine, median (IQR)             13.4 (9.5, 18.5)    13.2 (9.4, 18.2)    15.8 (12.2, 22.2)   < 0.0001
+lipoprotein; ICAS, intracranial
+                                  ICAS, n (%)                            471 (12.2)          425 (11.5)          46 (24.0)           < 0.0001
+arterial stenosis; ECAS, extra-
+cranial arterial stenosis.        ECAS, n (%)                            60 (1.6)            56 (1.5)            4 (2.1)             0.5368
+
+
+Scientific Reports
+Article in Press                                                                 https://doi.org/10.1038/s41598-026-78298-4
+
+
+
+
+Fig. 2 Distribution of poor outcome within 4.1 year according to cognitive function. Captions: Panels show cumulative inci-
+dence of (A) ischemic stroke, (B) any stroke, and (C) all-cause mortality. The blue line denotes the NCI group, and the red
+line denotes the CI group. Numbers at risk are presented below the x-axis. P values were calculated using the log-rank test.
+Abbreviations: NCI, normal cognition; CI, cognitive impairment.
+
+
+Table 2 Association between cognitive function and cerebrovascular events at 4.1 years.
+Outcomes                         HRs (95%CIs)
+                                 Events, n (%)              Unadjusted                     Model 1                       Model 2
+ischemic stroke                  81 (2.1)
+NCI                              66 (1.8)                   Ref.                           Ref.                          Ref.
+CI                               15 (7.8)                   4.55 [2.60, 7.98]              2.47 [1.31, 4.68]             2.55 [1.33, 4.87]
+any stroke                       90 (2.3)
+NCI                              75 (2.0)                   Ref.                           Ref.                          Ref.
+CI                               15 (7.8)                   3.99 [2.29, 6.94]              2.28 [1.22, 4.25]             2.32 [1.24, 4.36]
+all-cause mortality              86 (2.2)
+NCI                              71 (1.9)                   Ref.                           Ref.                          Ref.
+CI                               15 (7.8)                   4.16 [2.38, 7.26]              1.83 [0.98, 3.44]             1.79 [0.96, 3.36]
+Model 1 adjust age, gender, and education.
+Model 2 adjust age, gender, education, homocysteine, ICAS, hypertension, and occupation.
+Abbreviations: NCI, normal cognition; CI, cognitive impairment; HRs, Hazard Ratios; CIs, confidence intervals; Ref.,reference.
+
+
+significant after adjusting for sociodemographic variables, vascular risk factors and ICAS. The study suggests
+that cognitive screening could be valuable for identifying stroke-free adults who are at a greater risk of experienc-
+ing cerebrovascular events in the future.
+   Our findings are consistent with emerging evidence that baseline cognitive impairment may reflect subclinical
+vascular pathology. However, the effect sizes in our study (aHRs: 2.32–2.55 for cognitive impairment predicting
+stroke occurrence) were significantly larger than the pooled HR of 1.19 from previous meta-analyses of mainly
+Western groups10. This difference may be attributed to several factors. First, the higher prevalence of intracranial
+atherosclerosis in Chinese populations18 may amplify the vascular burden associated with cognitive decline. Sec-
+ond, unlike previous studies, we adjusted for homocysteine and ICAS, key vascular markers prevalent in Asian
+populations, yet cognitive impairment remained an independent predictor, suggesting its potential role as an inte-
+grative marker of diffuse vascular injury or neurovascular unit dysfunction beyond focal stenosis19.
+   The link between cognitive function and cerebrovascular health is well documented. In a 10-year follow-up
+of older Chinese adults, cognitive impairment predicted all-cause and cardiovascular mortality20. This associa-
+tion extends to cerebrovascular events, including stroke21, and is further supported by neuroimaging evidence:
+the Framingham Offspring Study reported that white matter hyperintensities and brain infarcts, both markers
+of cerebrovascular disease, were associated with high risk of stroke and dementia22. Several mechanisms may
+explain the elevated stroke risk observed in stroke-free individuals with cognitive impairment. On one hand,
+traditional vascular risk factors, including hypertension, diabetes, and hyperlipidemia, are prevalent in this popu-
+lation and may promote subclinical cerebrovascular damage such as silent brain lesions or microinfarcts. These
+subclinical damage may initially be asymptomatic but increase the risk of clinical stroke. Empirical evidence
+
+                                                                                                                         Scientific Reports
+https://doi.org/10.1038/s41598-026-78298-4                                                                       Article in Press
+
+suggests an association between cognitive impairment and vascular alterations in the brain, potentially predispos-
+ing individuals to ischemic events23,24. Beyond these conventional pathways, cognitive impairment itself might
+reflect underlying cerebrovascular pathology, such as cerebral small vessel disease, characterized by white matter
+changes and lacunar infarcts. These are associated with both cognitive decline and higher stroke risk, suggest-
+ing that cognitive impairment may not only result from but also contribute to the progression of cerebrovascular
+disease25,26. In addition to these vascular mechanisms, systemic immunometabolic dysregulation has emerged
+as a complementary pathway linking cognitive impairment to cerebrovascular risk. Recent work found that the
+neutrophil-to-HDL cholesterol ratio (NHR), a marker of peripheral inflammation and metabolic imbalance, was
+nonlinearly associated with cognitive impairment in older adults27, suggesting that peripheral immuno-metabolic
+status may reflect—and potentially contribute to—brain vulnerability to vascular events.
+   Our study has several strengths, including its prospective design, community-based sample, and thorough
+adjustment for ICAS, a critical confounder frequently neglected in stroke prediction research. Nonetheless, sev-
+eral limitations should be noted. Firstly, cognitive function was assessed using the MMSE alone. Although prac-
+tical for large-scale screening, this tool has known limitations, including potential educational bias and lower
+sensitivity for detecting mild or domain-specific cognitive deficits. Although we adjusted for education, residual
+confounding cannot be excluded. Secondly, about 28.8% of participants were excluded due to missing MMSE
+data, and these individuals differed from those included in several baseline characteristics, which may have intro-
+duced selection bias—though we have adjusted for these factors in our models. Thirdly, the study did not measure
+certain socioeconomic factors (e.g., income, dietary habits) or other potential biological confounders, which may
+contribute to residual confounding. Fourthly, the relative short follow-up period may have limited our ability to
+detect long-term associations between cognitive trajectories, cerebrovascular outcomes, and mortality. The lack
+of an association with all-cause mortality differs from results found in previous dementia research28, which may
+be partly explained by this shorter follow-up and the relatively young baseline age (median: 53.4 years), where
+competing risks are non-negligible. Finally, our findings may not be generalizable to non-Asian populations,
+given the distinct stroke etiology in Chinese cohorts.
+   In conclusion, our findings suggest that cognitive impairment is associated with an increased risk of future
+cerebrovascular events in stroke-free Chinese adults. This may aid early risk identification in this population.
+Further studies are needed to explore whether vascular risk reduction or cognitive monitoring could improve
+stroke prediction.
+
+Supplementary Information The online version contains supplementary material available at https://doi.org/10.1038/
+s41598-026-78298-4.
+
+Acknowledgements We thank all the study participants, their relatives, the members of the survey teams of the APAC
+study.
+
+Author contributions Z.S., X.H., X.M., and A.W. conceived and designed the study. Z.S. performed the data analysis and
+drafted the manuscript. X.H. supervised the study and critically revised the manuscript. X. T. and A. W. contributed to the
+statistics analysis. Y. S., J. L. and X. Z. contributed to the acquisition of data. All authors contributed to critical revisions of
+the manuscript and final approval of the version to be published.
+
+Funding Not applicable.
+
+Data availability The datasets generated and analyzed during the current study are not publicly available due to privacy or
+ethical restrictions, but are available from the corresponding author on reasonable request.
+
+Declarations
+Competing interests The authors declare no competing interests.
+
+Ethics approval and consent to participate The study was approved by the ethics committees of Beijing Tiantan hospital
+
+
+Scientific Reports
+Article in Press                                                                        https://doi.org/10.1038/s41598-026-78298-4
+
+(Approval No: 2010-014-01) and Kailuan General Hospital (Approval No: 2006-05) according to the principles mentioned
+in the Declaration of Helsinki. All participants or their legal proxies provided written informed consent before enrolment in
+this study.
+
+Open Access This article is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 Interna-
+tional License, which permits any non-commercial use, sharing, distribution and reproduction in any medium or format, as
+long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence,
+and indicate if you modified the licensed material. You do not have permission under this licence to share adapted material
+derived from this article or parts of it. The images or other third party material in this article are included in the article’s Cre-
+ative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article’s
+Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you
+will need to obtain permission directly from the copyright holder. To view a copy of this licence, visit ​h​t​t​p​:​/​/​c​r​e​a​t​i​v​e​c​o​m​m​o​
+n​s​.​o​r​g​/​l​i​c​e​n​s​e​s​/​b​y​-​n​c​-​n​d​/​4​.​0​/​​​.​ ​​
+
+
+
+References
+ 1. Rajan, K. B., Weuve, J., Barnes, L. L., Wilson, R. S. & Evans, D. A. Population estimate of people with clinical Alzheimer’s
+    disease and mild cognitive impairment in the United States (2020–2060). Alzheimers Dement.17, 1966–1975. ​h​t​t​p​s​:​/​/​d​o​
+    i​.​o​r​g​/​1​0​.​1​0​0​2​/​a​l​z​.​1​2​3​6​2​​​​ (2021).
+ 2. Ma, Q. et al. Temporal trend and attributable risk factors of stroke burden in China, 1990–2019: an analysis for the Global
+    Burden of Disease Study 2019. Lancet Public. Health. 6, e897–e906. https://doi.org/10.1016/S2468-2667(21)00228-0
+    (2021).
+ 3. Pendlebury, S. T. & Rothwell, P. M. Incidence and prevalence of dementia associated with transient ischaemic attack and
+    stroke: analysis of the population-based Oxford Vascular Study. Lancet Neurol.18, 248–258. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​S​1​
+    4​7​4​-​4​4​2​2​(​1​8​)​3​0​4​4​2​-​3​​​​ (2019).
+ 4. He, A. et al. Incidence of post-stroke cognitive impairment in patients with first-ever ischemic stroke: a multicenter
+    cross-sectional study in China. Lancet Reg. Health West. Pac.33, 100687. https://doi.org/10.1016/j.lanwpc.2023.100687
+    (2023).
+ 5. Hachinski, V. et al. Special topic section: linkages among cerebrovascular, cardiovascular, and cognitive disorders:
+    Preventing dementia by preventing stroke: The Berlin Manifesto. Int. J. Stroke. 14, 1747493019871915. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​
+    1​0​.​1​1​7​7​/​1​7​4​7​4​9​3​0​1​9​8​7​1​9​1​5​​​​ (2019).
+ 6. Schmidt, K. et al. Post-stroke cognitive impairment and the risk of stroke recurrence and death in patients with insulin
+    resistance. J. Stroke Cerebrovasc. Dis.31, 106744. https://doi.org/10.1016/j.jstrokecerebrovasdis.2022.106744 (2022).
+ 7. Markus, H. S. & Joutel, A. The pathogenesis of cerebral small vessel disease and vascular cognitive impairment. Physiol.
+    Rev.105, 1075–1171. https://doi.org/10.1152/physrev.00028.2024 (2025).
+ 8. Pendlebury, S. T. et al. APOE-ε4 Genotype and Dementia Before and After Transient Ischemic Attack and Stroke:
+    Population-Based Cohort Study. Stroke51, 751–758. https://doi.org/10.1161/STROKEAHA.119.026927 (2020).
+ 9. DeFries, T., Avendaño, M. & Glymour, M. M. Level and change in cognitive test scores predict risk of first stroke. J. Am.
+    Geriatr. Soc.57, 499–505. https://doi.org/10.1111/j.1532-5415.2008.02132.x (2009).
+10. Rostamian, S., Mahinrad, S., Stijnen, T., Sabayan, B. & de Craen, A. J. M. Cognitive impairment and risk of stroke: a
+    systematic review and meta-analysis of prospective cohort studies. Stroke45, 1342–1348. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​6​1​/​S​T​R​O​
+    K​E​A​H​A​.​1​1​4​.​0​0​4​6​5​8​​​​ (2014).
+11. Gutierrez, J., Turan, T. N., Hoh, B. L. & Chimowitz, M. I. Intracranial atherosclerotic stenosis: risk factors, diagnosis,
+    and treatment. Lancet Neurol.21, 355–368. https://doi.org/10.1016/S1474-4422(21)00376-8 (2022).
+12. Zeng, Y. et al. Prevalence of hyper homocysteinemia in China: an updated meta-analysis. Biology10, 959. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​
+    /​1​0​.​3​3​9​0​/​b​i​o​l​o​g​y​1​0​1​0​0​9​5​9​​​​ (2021).
+13. Zhou, Y. et al. Asymptomatic polyvascular abnormalities in community (APAC) study in China: objectives, design and
+    baseline characteristics. PLoS One. 8, e84685. https://doi.org/10.1371/journal.pone.0084685 (2013).
+14. Arevalo-Rodriguez, I. et al. Mini-Mental State Examination (MMSE) for the early detection of dementia in people with
+    mild cognitive impairment (MCI). Cochrane Database Syst. Rev.7, CD010783. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​0​2​/​1​4​6​5​1​8​5​8​.​C​D​0​1​
+    0​7​8​3​.​p​u​b​3​​​ (2021).
+15. Yuan, J. Q. et al. Association between late-life blood pressure and the incidence of cognitive impairment: A community-
+    based prospective cohort study. J. Am. Med. Dir. Assoc.20 (2), 177–182e. https://doi.org/10.1016/j.jamda.2018.05.029
+    (2019).
+16. Ishaque, N., Khan, K. & Shuaib, A. Monitoring intracranial atherosclerosis with transcranial and extracranial carotid
+    Doppler: A promising initial step. Atherosclerosis363, 73–74. https://doi.org/10.1016/j.atherosclerosis.2022.11.001
+    (2022).
+
+
+                                                                                                                                     Scientific Reports
+https://doi.org/10.1038/s41598-026-78298-4                                                                                                 Article in Press
+
+17. Warner, J. J. et al. Guidelines for the early management of patients with acute ischemic stroke: 2019 update to the 2018
+    guidelines for the early management of acute ischemic stroke. Stroke50, 3331–3332. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​6​1​/​S​T​R​O​K​E​A​
+    H​A​.​1​1​9​.​0​2​7​7​0​8​​​​ (2019).
+18. AbuRahma, A. F. et al. Society for Vascular Surgery clinical practice guidelines for management of extracranial
+    cerebrovascular disease. J. Vasc Surg.75, 4S–22. https://doi.org/10.1016/j.jvs.2021.04.073 (2022).
+19. Little, K. et al. Common pathways in dementia and diabetic retinopathy: understanding the mechanisms of diabetes-
+    related cognitive decline. Trends Endocrinol. Metab.33, 50–71. https://doi.org/10.1016/j.tem.2021.10.008 (2022).
+20. Li, Z. et al. Cognitive impairment assessed by Mini-Mental State Examination predicts all-cause and CVD mortality in
+    Chinese older adults: A 10-year follow-up study. Front. Public. Health. 10, 908120. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​3​3​8​9​/​f​p​u​b​h​.​2​0​2​2​.​
+    9​0​8​1​2​0​​​ (2022).
+21. Fogg, C. et al. Cognitive impairment is independently associated with mortality, extended hospital stays and early
+    readmission of older people with emergency hospital admissions: A retrospective cohort study. Int. J. Nurs. Stud.96, 1–8.
+    https://doi.org/10.1016/j.ijnurstu.2019.02.005 (2019).
+22. Debette, S. et al. Association of MRI markers of vascular brain injury with incident stroke, mild cognitive impairment,
+    dementia, and mortality: the Framingham Offspring Study. Stroke41, 600–606. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​1​6​1​/​S​T​R​O​K​E​A​H​A​.​1​
+    0​9​.​5​7​0​0​4​4​​​ (2010).
+23. Papanastasiou, C. A. et al. Atrial fibrillation is associated with cognitive impairment, all-cause dementia, vascular
+    dementia, and Alzheimer’s disease: a systematic review and meta-analysis. J. Gen. Intern. Med.36, 3122–3135. ​h​t​t​p​s​:​/​/​d​
+    o​i​.​o​r​g​/​1​0​.​1​0​0​7​/​s​1​1​6​0​6​-​0​2​1​-​0​6​9​5​4​-​8​​​​ (2021).
+24. Havlovska, Y. Y., Lytvynenko, N. V. & Shkodina, A. D. Serum level of brain-derived neurotrophic factor and thrombotic
+    type are predictive of cognitive impairment in the acute period of ischemic strokes patients. Neurol. Res. Int. 5578850;
+    (2023). https://doi.org/10.1155/2023/5578850 (2023).
+25. Hong, H. et al. The relationship between amyloid pathology, cerebral small vessel disease, glymphatic dysfunction, and
+    cognition: a study based on Alzheimer’s disease continuum participants. Alzheimers Res. Ther.16, 43. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​
+    1​1​8​6​/​s​1​3​1​9​5​-​0​2​4​-​0​1​4​0​7​-​w​​​​ (2024).
+26. Hainsworth, A. H., Markus, H. S. & Schneider, J. A. Cerebral small vessel disease, hypertension, and vascular contributions to
+    cognitive impairment and dementia. Hypertension81, 75–86. https://doi.org/10.1161/HYPERTENSIONAHA.123.19943
+    (2024).
+27. Cui, Y. Immunometabolic biomarkers of brain aging: Nonlinear association between neutrophil-to-HDL cholesterol
+    ratio and cognitive decline in older adults. Brain Behav. Immun.130, 106106. https://doi.org/10.1016/j.bbi.2025.106106
+    (2025).
+28. Jia, L. et al. Prevalence, risk factors, and management of dementia and mild cognitive impairment in adults aged 60 years
+    or older in China: a cross-sectional study. Lancet Public. Health. 5, e661–e671. ​h​t​t​p​s​:​/​/​d​o​i​.​o​r​g​/​1​0​.​1​0​1​6​/​S​2​4​6​8​-​2​6​6​7​(​2​0​)​
+    3​0​1​8​5​-​7​​​​ (2020).
+
+Publisher’s note        Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional
+affiliations.
+
+
+
+Authors and Affiliations
+
+Zhaobo Shi1,2 · Anxin Wang3,4 · Xia Meng3,5 · Xue Tian3,4 · Yong Sun1,2 · Jing Li3,4 ·
+Xiaoli Zhang3,4 · Xinsheng Han1,2
+
+    Xinsheng Han
+    hansong2022@126.com
+1
+    Department of Neurology, Kaifeng Central Hospital, No. 85 Hedao Road, Longting District, Kaifeng
+    475000, China
+2
+    Henan Provincial Engineering Research Center for Precision Medicine in Neuromuscular Disorders, Zhengzhou,
+    China
+3
+    National Clinical Research Center for Neurological Diseases, Beijing Tiantan Hospital, Capital Medical University,
+    Beijing, China
+4
+    Epidemiological Research Office, Beijing Neurosurgical Institute, Beijing, China
+5
+    Department of Neurology, Beijing Tiantan Hospital, Capital Medical University, Beijing, China
+
+Scientific Reports
+

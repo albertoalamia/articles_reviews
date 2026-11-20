@@ -1,0 +1,14 @@
+variable,overall_n,overall_pct,overall_pct_rec,nci_n,nci_pct,nci_pct_rec,ci_n,ci_pct,ci_pct_rec,sum_groups,pct_ok,sum_ok
+Male,2208,57,57,2075,56.3,56.3,133,69.3,69.3,2208,TRUE,TRUE
+Education: illiteracy/primary school,396,10.2,10.2,303,8.2,8.2,93,48.4,48.4,396,TRUE,TRUE
+Education: middle school,1662,42.9,42.9,1587,43.1,43.1,75,39.1,39.1,1662,TRUE,TRUE
+Education: high school or higher,1817,46.9,46.9,1793,48.7,48.7,24,12.5,12.5,1817,TRUE,TRUE
+Manual worker,2009,51.9,51.8,1907,51.8,51.8,102,53.1,53.1,2009,FALSE,TRUE
+Smoking,2449,63.2,63.2,2337,63.5,63.5,112,58.3,58.3,2449,TRUE,TRUE
+Heavy drinking,561,14.5,14.5,538,14.6,14.6,23,12,12,561,TRUE,TRUE
+Inactive or moderately active,1346,34.7,34.7,1279,34.7,34.7,67,34.9,34.9,1346,TRUE,TRUE
+Hypertension,1773,45.8,45.8,1663,45.2,45.2,110,57.3,57.3,1773,TRUE,TRUE
+Diabetes,423,10.9,10.9,396,10.8,10.8,27,14.1,14.1,423,TRUE,TRUE
+Hyperlipidemia,1780,45.9,45.9,1703,46.2,46.2,77,40.1,40.1,1780,TRUE,TRUE
+ICAS,471,12.2,12.2,425,11.5,11.5,46,24,24,471,TRUE,TRUE
+ECAS,60,1.6,1.5,56,1.5,1.5,4,2.1,2.1,60,FALSE,TRUE

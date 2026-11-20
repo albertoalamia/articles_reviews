@@ -1,0 +1,40 @@
+quantity,value,unit,location,fulltext_line,note
+apac_enrolled,5440,participants,Results; Fig. 1,180,
+excluded_total,1565,participants,Results; Fig. 1,184,
+excluded_missing_mmse,1512,participants,Results; Fig. 1,181,
+excluded_prior_stroke_or_cvd,53,participants,Results; Fig. 1,180,before the first follow-up
+analysed,3875,participants,Results; Fig. 1; Table 1,182,
+n_ci,192,participants,Results; Table 1,217,MMSE < 24
+pct_ci,5.0,percent,Results,217,
+n_nci,3683,participants,Table 1,243,
+apac_baseline_years,2010-2011,calendar,Methods,106,risk factors; TCD; ABI; carotid duplex
+mmse_visit_years,2012-2013,calendar,Methods,109 and 117,first follow-up examination
+follow_up_end,2015-12-31,date,Methods,142,
+follow_up_interval,2,years,Methods,141,in-person interviews
+hospitals,11,count,Methods,145,
+median_follow_up,4.1,years,Abstract; Results; Discussion,19 and 226,
+cum_incidence_ischemic,2.1,percent,Results,227,
+cum_incidence_any_stroke,2.3,percent,Results,227,
+cum_incidence_mortality,2.2,percent,Results,227,
+logrank_p_text,0.01,p less than,Results,228,"""P < 0.01 for each"""
+logrank_p_figure,0.0001,p less than,Fig. 2,277,printed in the panels
+text_manual_worker,51.8 vs 53.1; P = 0.0005,percent,Results,219-220,"""more likely to be manual workers (51.8.% vs. 53.1%)""; NCI value printed first"
+text_age_ci_vs_nci,62.8 vs 51.3,years,Results,218,median
+text_education_primary,48.4 vs 8.2,percent,Results,219,
+text_hypertension,57.3 vs 45.2; P = 0.0010,percent,Results,221,
+text_homocysteine,15.8 vs 13.2,umol/L,Results,221,
+text_icas,24.0 vs 11.5,percent,Results,222,
+discussion_median_age,53.4,years,Discussion,346,"""relatively young baseline age (median: 53.4 years)"""
+discussion_excluded_pct,28.8,percent,Discussion,339,"""about 28.8% of participants were excluded due to missing MMSE data"""
+discussion_hr_range,2.32-2.55,HR,Discussion,238 and 304,
+meta_analysis_hr,1.19,HR,Introduction; Discussion,83 and 305,ref 10
+excluded_vs_included_age,54.6 vs 51.6,years,Results,184,"""mean age""; 51.6 is the Table 1 median"
+excluded_vs_included_male,67.0 vs 57.0,percent,Results,184,p < 0.0001
+excluded_vs_included_hypertension,53.4 vs 45.8,percent,Results,185,p < 0.0001
+excluded_vs_included_diabetes,14.8 vs 10.9,percent,Results,185,p < 0.0001
+excluded_vs_included_icas,15.7 vs 12.2,percent,Results,186,no p given
+alpha,0.05,two-sided,Methods,160,
+software,SAS 9.4,,Methods,160,
+model1_covariates,age; gender; education,,Methods; Table 2,169 and 295,
+model2_covariates,age; gender; education; homocysteine; ICAS; hypertension; occupation,,Methods; Table 2,170 and 296,
+ph_assumption,Schoenfeld residual plot; P > 0.05,,Methods,167-168,no statistic

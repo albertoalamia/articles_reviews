@@ -1,0 +1,34 @@
+panel,group,feature,value,unit,precision,note
+A,both,y_axis_label,Cumulative incidence (%),label,exact,ticks printed at 0 and 1 only
+A,both,y_axis_max_tick,1,axis units,exact,
+A,both,x_axis_end,4.2,years,0.05,ticks at 0 1 2 3 4
+A,both,logrank_p,0.0001,p less than,exact,printed inside the panel
+A,CI,n_steps,4,count,exact,four vertical jumps of equal height
+A,CI,step_height,0.25,axis units,0.01,plateaus at 0.25 0.50 0.75 1.00
+A,CI,step_1_time,0.75,years,0.05,
+A,CI,step_2_time,2.70,years,0.05,
+A,CI,step_3_time,2.80,years,0.05,
+A,CI,step_4_time,3.25,years,0.05,curve reaches the top of the axis
+A,CI,final_value,1.00,axis units,0.01,
+A,NCI,first_step_time,1.4,years,0.1,
+A,NCI,final_value,0.58,axis units,0.03,many small steps from 2.5 years on
+B,both,logrank_p,0.0001,p less than,exact,
+B,CI,n_steps,4,count,exact,
+B,CI,step_height,0.25,axis units,0.01,
+B,CI,step_1_time,0.75,years,0.05,
+B,CI,step_2_time,2.65,years,0.05,
+B,CI,step_3_time,2.80,years,0.05,
+B,CI,step_4_time,3.25,years,0.05,
+B,CI,final_value,1.00,axis units,0.01,
+B,NCI,first_step_time,0.2,years,0.1,
+B,NCI,final_value,0.70,axis units,0.03,
+C,both,logrank_p,0.0001,p less than,exact,
+C,CI,n_steps,4,count,exact,
+C,CI,step_height,0.25,axis units,0.01,
+C,CI,step_1_time,2.00,years,0.05,
+C,CI,step_2_time,2.70,years,0.05,
+C,CI,step_3_time,2.95,years,0.05,
+C,CI,step_4_time,3.35,years,0.05,
+C,CI,final_value,1.00,axis units,0.01,
+C,NCI,first_step_time,0.05,years,0.05,further steps at about 0.1 0.25 and 0.6 years
+C,NCI,final_value,0.45,axis units,0.03,

@@ -1,0 +1,3 @@
+time_origin,earliest,latest,end,max_follow_up,min_follow_up,median_reported,median_possible,share_at_risk_4y_nci,share_at_risk_4y_ci,four_years_possible_for_all,deaths_in_first_year_possible
+MMSE visit (2012-2013),2012-01-01,2013-12-31,2015-12-31,3.997262149212868,1.998631074606434,4.1,FALSE,0.9918544664675536,0.96875,FALSE,TRUE
+APAC baseline (2010-2011),2010-01-01,2011-12-31,2015-12-31,5.9958932238193015,4,4.1,TRUE,0.9918544664675536,0.96875,TRUE,FALSE
