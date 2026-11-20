@@ -747,10 +747,13 @@ copy, on 2026-10-25. A co-author replied on 2026-10-26 and deferred to the corre
 data. The corresponding author replied on 2026-11-09: the request had been filtered to spam; "We will
 discuss and review the data, and get back to you as soon as possible." Acknowledged the same day, with
 the offer that per-animal values received by the end of November 2026 would replace the reconstruction,
-more time on request, and the confirmation that the full text would be sent before publication.
+more time on request, and the confirmation that the full text would be sent before publication. The
+full text, this review and the primer as PDF files with a summary of the five main points, was sent to
+all four authors on 2026-11-19, with publication proposed on or after 2026-12-11, the authors' reply to
+be published in full alongside, and more time on request.
 
-<!-- TODO before publication: date the full review was sent; reply received on YYYY-MM-DD and reproduced
-here with permission / summarised; changes made to the review in response. -->
+<!-- TODO before publication: reply received on YYYY-MM-DD and reproduced here with permission /
+summarised; changes made to the review in response; or no reply by the proposed date. -->
 
 ## Reproducibility
 

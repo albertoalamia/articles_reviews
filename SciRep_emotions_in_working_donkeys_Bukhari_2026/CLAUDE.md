@@ -189,3 +189,21 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
   table from `stage4_side_by_side.csv`, `stage4_forest_e1_e2.png`, the PPC figures and the E5
   table; every number from the output tables, none typed. Keep `draft: true`: the authors
   engaged on 2026-11-09, so they receive the full review before publication.
+
+### 2026-11-20 — Stage 5 draft written and sent to the authors (commits 5044f8f …)
+- Done: `review.qmd` (technical review, 13 pages as PDF) and `primer.qmd` (plain-language
+  companion, 2 pages) written from the stage 1–4 outputs, every number read from
+  `output/tables/`; HTML and PDF formats (XeLaTeX, TeX Gyre Pagella, `fig-pos: H`,
+  `tools/pdf-divs.lua` for the evidence tags); both `draft: true`. Full text sent to all four
+  authors on 2026-11-19 22:36 (`correspondence/2026-11-19_full_text_SENT.md`): PDFs attached,
+  five-point summary, publication proposed on or after 2026-12-11, reply published in full, more
+  time on request. Registry status `authors-contacted`.
+- Decided (and why): verdict kept as "conclusions not supported" for the HRV/ET valence claims
+  and "major concerns" overall, pending Alberto's reading pass; publication date three weeks
+  from sending, mirroring the data-request rule; figures placed in text in the PDF because a
+  float deferred past a longtable was lost.
+- Open questions: authors' reply and data (if data arrive before publication, S1–S9 rerun and
+  the text recomputed); version of record and reviewer reports; whether to translate the primer.
+- Next step: wait for the reply window; on reply, fill the Right of reply section (TODO comment),
+  re-render, set `draft: false` on both pages, push; then `verdict` and
+  `date_review_published` in the registry.

@@ -1,0 +1,15 @@
+{
+  "hash": "fd98263a5c649529aa4b7c514cf269dc",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Baseline cognitive impairment and cerebrovascular events in stroke-free adults: a methodological review\"\ndescription: \"Systematic-track review of Shi et al. (Sci Rep 2026). In progress.\"\ndate: 2026-11-20\nauthor: Alberto Alamia\ncategories: [psychiatry, cohort, systematic track]\ndraft: true\nparams:\n  protocol_version: \"0.1\"\n  track: \"systematic\"\n---\n\n::: {.callout-note appearance=\"simple\"}\n**Paper reviewed.** Author A, Author B, ... (Year). *Title*. Journal. DOI.\nVersion: accepted manuscript / version of record. Protocol version 0\\.1,\ntrack systematic. Authors contacted on YYYY-MM-DD; reply: pending / received\n(see the end of this page).\n:::\n\n## Summary\n\n::: {.verdict}\n**Verdict:** sound | minor concerns | major concerns | conclusions not supported.\nTwo or three sentences on why.\n:::\n\n## What the paper does\n\nDesign, sample, outcomes, primary analysis, in the authors' own terms.\n\n## Design\n\n## Measurement\n\n## Model adequacy\n\n## Internal consistency\n\n\n::: {.cell}\n\n```{.r .cell-code}\nsource(here::here(\"lib/consistency.R\"))\n```\n:::\n\n\nRecomputations from the reported numbers go here, each with a short interpretation and an\nevidence tag, e.g.\n\n::: {.evidence-confirmed}\nThe reported mean change does not equal the difference of the condition means.\n:::\n\n## Reporting\n\n## Do the conclusions follow?\n\n## Re-analysis\n\n(If performed.) Model, priors, data source, diagnostics, what changes and what does not.\nStan code and data in the repository.\n\n## What would settle the open points\n\n## Minor\n\n## Right of reply\n\nSent to the corresponding author on YYYY-MM-DD. Reply received on YYYY-MM-DD and reproduced\nhere with permission / summarised. Changes made to the review in response: ...\n\n## Reproducibility\n\nAll numbers above are produced by the code in\n`<this folder>/` of the [repository](https://github.com/albertoalamia/articles_reviews).\nEnvironment pinned in `shell.nix`.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

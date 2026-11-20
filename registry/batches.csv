@@ -1,0 +1,2 @@
+batch,track,field,journal,issn,window_from,window_to,subfields,frame_size,seed,date_drawn,n_screened,picked_doi,paper_id,notes
+B01,systematic,psychiatry,Scientific Reports,2045-2322,2026-10-01,2026-10-31,2738,30,20261120,2026-11-20,1,10.1038/s41598-026-78298-4,P002,frame from OpenAlex; first in the drawn order eligible
