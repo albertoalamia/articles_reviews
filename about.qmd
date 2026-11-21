@@ -4,8 +4,9 @@ comments: false
 ---
 
 I am Alberto Alamia, a psychiatrist and biostatistician ([telepsichiatria.org](https://telepsichiatria.org)).
-This site collects methodological reviews of published research in two fields I work in:
-psychiatry and animal behaviour. They share the same weak spots, small samples, latent
+*After Peer Review* collects methodological appraisals of published research in two fields I work
+in: psychiatry and animal behaviour. The name says where each review starts: after the journal's
+peer review, on the published text, tables and figures. They share the same weak spots, small samples, latent
 constructs measured through proxies, mis-specified models, and conclusions that outrun the data.
 
 ## Two tracks

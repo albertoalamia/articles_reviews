@@ -9,7 +9,8 @@ A programme of methodological appraisal of published research in psychiatry and 
 Alberto Alamia (psychiatrist, biostatistician). Premise: a large share of published studies has
 serious methodological problems. The programme builds a repeatable appraisal protocol, applies it
 paper after paper, makes every numerical check reproducible, and accumulates evidence on
-recurring failure modes. Outputs: a Quarto website at https://reviews.telepsichiatria.org, and
+recurring failure modes. Outputs: a Quarto website, *After Peer Review*, at
+https://reviews.telepsichiatria.org, and
 for the strongest findings PubPeer comments or Matters Arising.
 
 Two tracks, never pooled: `systematic` (papers chosen by the sampling rule in
@@ -24,7 +25,7 @@ shell.nix, .envrc             pinned nix environment (R, Quarto, CmdStan, TeX). 
 _quarto.yml, index.qmd, about.qmd, protocol.qmd, theme.scss, CNAME   the website
 protocol/                     checklist.md (versioned), taxonomy.csv (issue codes), selection.md
 registry/                     papers.csv (one row per paper), issues.csv (one row per issue)
-lib/consistency.R             shared R functions for recomputation checks; tests in lib/tests/
+lib/consistency.R, lib/quality_table.R   shared R functions: recomputation checks; quality and programme tables from the registry; tests in lib/tests/
 _template/                    skeleton copied for each new article
 <Journal>_<shorttitle>_<FirstAuthor>_<Year>/   one folder per paper (see _template/CLAUDE.md)
 .github/workflows/publish.yml renders the site from _freeze/ and deploys to GitHub Pages

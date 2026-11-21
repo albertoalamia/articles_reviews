@@ -34,7 +34,7 @@ format:
         \usepackage{etoolbox}
         \AtBeginEnvironment{longtable}{\footnotesize}
 params:
-  protocol_version: "0.1"
+  protocol_version: "0.2"
   track: "selected"
 ---
 
@@ -69,6 +69,7 @@ reg <- rd("data/raw/tables3_4_regressions.csv")
 T2  <- function(o, cnd, w = "mean") t2c[[w]][t2c$outcome == o & t2c$condition == cnd]
 D2  <- function(o, t, w = "delta_mean") t2d[[w]][t2d$outcome == o & t2d$treatment == t]
 RG  <- function(tab, term, w = "estimate") reg[[w]][reg$table == tab & reg$term == term]
+PVt <- function(o, t) { r <- pv[pv$outcome == o & pv$contrast == paste0(t, "_vs_control"), ][1, ]; paste(ifelse(r$p_type == "less_than", "p <", "p ="), r$p_reported) }
 
 # stage 1: consistency checks on the reported numbers (R/02_consistency_checks.R)
 cc <- rd("output/tables/consistency_contrasts.csv")
@@ -139,6 +140,13 @@ never run; nothing independent of the outcomes shows that the two stimuli induce
 the positive stimulus is eating. The one claim the reported data do support is that the blink rate moves
 in opposite directions under the two treatments at the group level.
 :::
+
+```{r}
+#| label: tbl-quality
+#| tbl-cap: "Issues by protocol domain, from the registry (`registry/issues.csv`). Rating rule (protocol H2): any critical issue, conclusions at risk; any major, major concerns; only minor, minor concerns; none, no concern found. The verdict above is the overall judgement; the table counts the entries behind it."
+source(here::here("lib/quality_table.R"))
+quality_table("P001") |> kb(align = "lrrrrrrll")
+```
 
 The review has three parts. The first (Design to Reporting) applies the appraisal protocol to the text,
 tables and figures. The second (Internal consistency) recomputes what can be recomputed from the reported
@@ -718,6 +726,29 @@ indicate a stressful situation" is true at the group level; as a field tool for 
 clipper-versus-calm distinction is the weak one. The observed cross-donkey Mann–Whitney values on the
 reconstructed data agree with the model within 0.01.
 :::
+
+## What the estimates mean
+
+Protocol H3. Each row sets a number the paper reports beside the quantity the re-analysis estimates
+for the same question, and says what each number is. The paper's values come from `data/raw/`, the
+re-analysis values from `output/tables/` (stage 4 posterior median and 95 % interval, scenario
+ρ = 0; stage 3 agrees to the digits shown). The reconstruction caveat of the Re-analysis section
+applies to every right-hand cell.
+
+| Quantity | The paper reports | What that number is | Re-analysis | What that number is |
+|:------|:--------|:--------------|:--------|:--------------|
+| SBR, lucerne | change `{r} f(D2("SBR", "positive"), 2)` (SD `{r} f(D2("SBR", "positive", "delta_sd"), 2)`) blinks/min, `{r} PVt("SBR", "positive")` | The mean of \|control − treatment\| over 34 donkeys: a magnitude whose direction has been discarded, presented as a signed change; the p-value is from a model whose output does not match these summaries | `{r} S("SBR", "positive - control", "difference (blinks/min)")` blinks/min, ratio `{r} S("SBR", "positive / control", "ratio")` | The expected blink rate of a typical donkey while eating lucerne minus the same donkey's control rate, averaged over sequence positions; a within-animal difference with a direction |
+| SBR, clipper | change `{r} f(D2("SBR", "negative"), 2)` (SD `{r} f(D2("SBR", "negative", "delta_sd"), 2)`), `{r} PVt("SBR", "negative")` | As above; the printed positive value hides that the blink rate fell | `{r} S("SBR", "negative - control", "difference (blinks/min)")` blinks/min, ratio `{r} S("SBR", "negative / control", "ratio")` | As above; negative because the rate fell |
+| SBR, lucerne vs clipper | no estimate ("numerically greater") | — | `{r} S("SBR", "positive - negative", "difference (blinks/min)")` blinks/min, ratio `{r} S("SBR", "positive / negative", "ratio")` | The comparison the valence claim needs: expected rate under lucerne over expected rate under the clipper for a typical donkey; a ratio of 3 means three times the blinks |
+| ET, lucerne | change `{r} f(D2("ET", "positive"), 2)` °C (SD `{r} f(D2("ET", "positive", "delta_sd"), 2)`), `{r} PVt("ET", "positive")` | Unsigned mean change; the paper reads it as a rise | `{r} S("ET", "positive - control", "difference (degC)")` °C | Mean eye temperature under lucerne minus control for a typical donkey; positive is warmer |
+| ET, clipper | change `{r} f(D2("ET", "negative"), 2)` °C (SD `{r} f(D2("ET", "negative", "delta_sd"), 2)`), `{r} PVt("ET", "negative")` | Unsigned mean change; read as a rise | `{r} S("ET", "negative - control", "difference (degC)")` °C | As above; both treatments warm the eye |
+| ET, lucerne vs clipper | no estimate; "the change in ET during the negative treatment … was greater" | A comparison of two magnitudes in the same direction, read as a difference in valence | `{r} S("ET", "positive - negative", "difference (degC)")` °C | How much less the eye warms under lucerne than under the clipper; a difference in size, not in direction |
+| RMSSD, lucerne | change `{r} f(D2("RMSSD", "positive"), 2)` ms (SD `{r} f(D2("RMSSD", "positive", "delta_sd"), 2)`), `{r} PVt("RMSSD", "positive")` | Unsigned mean change of a skewed quantity; the Discussion also reads the clipper change as a fall | `{r} S("RMSSD", "positive - control", "difference (ms, marginal)")` ms, ratio `{r} S("RMSSD", "positive - control", "ratio (marginal, arithmetic means)")` | Difference and ratio of the arithmetic mean RMSSD across donkeys, lucerne vs control; the ratio is the scale the log-normal model estimates directly |
+| RMSSD, clipper | change `{r} f(D2("RMSSD", "negative"), 2)` ms (SD `{r} f(D2("RMSSD", "negative", "delta_sd"), 2)`), `{r} PVt("RMSSD", "negative")` | As above | `{r} S("RMSSD", "negative - control", "difference (ms, marginal)")` ms, ratio `{r} S("RMSSD", "negative - control", "ratio (marginal, arithmetic means)")` | As above; a rise, not the fall stated in the Discussion |
+| RMSSD, lucerne vs clipper | no estimate | — | `{r} S("RMSSD", "positive - negative", "difference (ms, marginal)")` ms, ratio `{r} S("RMSSD", "positive - negative", "ratio (marginal, arithmetic means)")` | Mean RMSSD under lucerne over mean RMSSD under the clipper; both above control, lucerne more so |
+| ΔRMSSD on ΔSBR (Table 3) | slope `{r} f(RG(3, "dSBR"), 2)` [`{r} f(RG(3, "dSBR", "ci_low"), 2)`, `{r} f(RG(3, "dSBR", "ci_high"), 2)`] ms per blink/min | One slope through the unsigned changes of both treatments with a treatment dummy; read by the paper as a signed association and as a treatment effect at equal ΔSBR | lucerne `{r} S("E4 (x = dSBR)", "b (slope), positive", "response")`, clipper `{r} S("E4 (x = dSBR)", "b (slope), negative", "response")` ms per blink/min | Within each treatment, how much a donkey's signed change in RMSSD moves per unit of its signed change in blink rate: an association between two responses, opposite in sign in the two treatments, not an effect of one on the other |
+| ΔRMSSD on ΔET (Table 4) | slope `{r} f(RG(4, "dET"), 2)` [`{r} f(RG(4, "dET", "ci_low"), 2)`, `{r} f(RG(4, "dET", "ci_high"), 2)`] ms per °C | As above, on unsigned ΔET | lucerne `{r} S("E4 (x = dET)", "b (slope), positive", "response")`, clipper `{r} S("E4 (x = dET)", "b (slope), negative", "response")` ms per °C | As above; same sign in both treatments, twofold different in size |
+| SBR as a field indicator | a proposal, no estimate | — | AUC lucerne vs clipper `{r} f(A("positive vs negative", "AUC, different donkeys"), 2)`, lucerne vs calm `{r} f(A("positive vs control", "AUC, different donkeys"), 2)`, calm vs clipper `{r} f(A("control vs negative", "AUC, different donkeys"), 2)` | The probability that one blink count from a donkey of unknown baseline in the first state exceeds one from another donkey in the second; 0.5 is a coin toss, 1 perfect separation |
 
 ## What would settle the open points
 

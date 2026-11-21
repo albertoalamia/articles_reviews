@@ -6,7 +6,7 @@ author: Alberto Alamia
 categories: [psychiatry, cohort, systematic track]
 draft: true
 params:
-  protocol_version: "0.1"
+  protocol_version: "0.2"
   track: "systematic"
 ---
 
@@ -23,6 +23,13 @@ track `{r} params$track`. Authors contacted on YYYY-MM-DD; reply: pending / rece
 **Verdict:** sound | minor concerns | major concerns | conclusions not supported.
 Two or three sentences on why.
 :::
+
+```{r}
+#| label: tbl-quality
+#| tbl-cap: "Issues by protocol domain, from the registry. Rating rule (protocol H2): any critical issue, conclusions at risk; any major, major concerns; only minor, minor concerns; none, no concern found."
+source(here::here("lib/quality_table.R"))
+quality_table("P002") |> knitr::kable(format = "pipe", align = "lrrrrrrll")
+```
 
 ## What the paper does
 
@@ -57,6 +64,20 @@ The reported mean change does not equal the difference of the condition means.
 
 (If performed.) Model, priors, data source, diagnostics, what changes and what does not.
 Stan code and data in the repository.
+
+## What the estimates mean
+
+Protocol H3; to be completed at stage 5 with the re-analysis estimands. The left half is already
+fixed by the paper: the headline quantity is an adjusted hazard ratio of 2.55 (1.33–4.87) for
+ischaemic stroke, which the Discussion reads as "a 2.32 to 2.55 times higher risk". What it is: a
+cause-specific hazard ratio, MMSE < 24 against ≥ 24, conditional on seven covariates, in the
+participants with complete covariate data (an unstated number, at most about 2,740), over a time
+scale whose origin is not stated, with death treated as censoring. The absolute figures behind it
+are 15 of 192 against 66 of 3,683 events.
+
+| Quantity | The paper reports | What that number is | Re-analysis | What that number is |
+|:------|:--------|:--------------|:--------|:--------------|
+| | | | | |
 
 ## What would settle the open points
 

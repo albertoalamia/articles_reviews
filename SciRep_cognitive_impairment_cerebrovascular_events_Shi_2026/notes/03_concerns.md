@@ -203,7 +203,9 @@ participants; covariate missingness is not reported anywhere (added to the missi
   greater risk". From Table 2, 15 of the 81 ischaemic strokes occurred in the CI group: as a
   screening rule MMSE < 24 has sensitivity 18.5 %, specificity 95.3 %, positive predictive value
   7.8 % and a positive likelihood ratio of about 4; no discrimination, calibration or added value
-  over age is reported. A hazard ratio is not a measure of screening performance.
+  over age is reported. A hazard ratio is not a measure of screening performance. The Discussion's
+  "2.32 to 2.55 times higher risk" also reads the hazard ratio as a risk ratio (protocol G7); the
+  absolute risks, 7.8 % against 1.8 %, are never stated as such.
 - Why it matters: it is the practical conclusion of the paper and the one a clinical reader takes
   away.
 - How to check further: none needed for the statement; with the data, C-index with and without

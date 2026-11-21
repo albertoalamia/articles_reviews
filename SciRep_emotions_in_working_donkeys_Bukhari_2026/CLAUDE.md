@@ -12,7 +12,8 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
   Check later whether the version of record and Transparent Peer Review reports are out.
 - Track: `selected` — source: own interest (Alberto works on donkey-assisted therapy).
 - Field: ethology
-- Registry id: P001 — protocol version: 0.1
+- Registry id: P001 — protocol version: 0.2 (stages run under 0.1; 0.2 of 2026-11-21 adds G7 and the
+  H2 quality table and H3 estimates table, applied before publication)
 - Data availability as stated: "on request".
 - What the paper claims: three physiological measures (RMSSD, eye temperature, spontaneous blink
   rate) discriminate positive and negative emotional states induced in working donkeys, and the
@@ -207,3 +208,18 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
 - Next step: wait for the reply window; on reply, fill the Right of reply section (TODO comment),
   re-render, set `draft: false` on both pages, push; then `verdict` and
   `date_review_published` in the registry.
+
+### 2026-11-21 — Protocol v0.2 applied before publication
+- Done: `review.qmd` gains the quality table (H2, from `registry/issues.csv` via
+  `lib/quality_table.R`, after the verdict) and the section "What the estimates mean" (H3, 12 rows:
+  six condition changes, three positive-vs-negative contrasts, the two Δ-on-Δ slopes, SBR as a
+  single-reading indicator; left half from `data/raw/`, right half from `output/tables/`); params
+  protocol_version 0.2; registry 0.2; inventory G7 and H1–H3 filled. The primer already carries the
+  interpretation in words ("What our re-analysis shows"); unchanged.
+- Decided (and why): no override of the rule-based domain ratings; v0.2 applied although the
+  stages ran under v0.1, because the new items change how the review reports, not what counts as
+  a flaw (protocol Changes section).
+- Open questions: as in the 2026-11-20 entry (authors' reply window to 2026-12-11).
+- Next step: Alberto re-renders `review.qmd` (HTML and PDF) and checks the two new tables in the
+  PDF (a 5-column pipe table with long cells; if it overflows, `\footnotesize` via the longtable
+  hook already applies, otherwise shorten the cells); then as before.

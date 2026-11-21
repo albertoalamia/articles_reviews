@@ -15,7 +15,8 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 - Track: `systematic` — source: batch B01 (selection v0.2; Scientific Reports, October 2026,
   OpenAlex subfield Psychiatry and Mental health, seed 20261120, rank 1 of 30, eligible on the title).
 - Field: psychiatry
-- Registry id: P002 — protocol version: 0.1
+- Registry id: P002 — protocol version: 0.2 (stages run under 0.1; 0.2 of 2026-11-21 adds G7 and the
+  H2 quality table and H3 estimates table, applied before publication)
 - Data availability as stated: "not publicly available due to privacy or ethical restrictions, but
   are available from the corresponding author on reasonable request"; no code; SAS 9.4.
 - What the paper claims (in the authors' terms): baseline cognitive impairment (MMSE < 24)
@@ -108,3 +109,16 @@ form and handling of death as a competing event not stated.
   so it names the 51.9 % vs 73.3 % discrepancy only indirectly through the P = 0.0005). Then stage 2:
   reconstruct the Cox and Kaplan–Meier results from Table 2 and the numbers at risk while waiting
   for data.
+
+### 2026-11-21 — Protocol v0.2 applied
+- Done: `review.qmd` gains the quality table chunk (H2) and the "What the estimates mean" section
+  (H3) with the left half fixed from the paper (cause-specific HR conditional on seven covariates
+  in an unsized complete-case subset, read by the Discussion as "2.32 to 2.55 times higher risk");
+  params protocol_version 0.2; registry 0.2; inventory G7 and H1–H3 filled; G7 note added to the
+  screening concern.
+- Decided (and why): v0.2 applied at stage 1 since nothing is published; the right half of the H3
+  table waits for the stage 3–4 estimands.
+- Open questions: as in the previous entry.
+- Next step: Alberto renders `review.qmd` once so the freeze matches; stage 2 in a fresh
+  conversation (reconstruction from Table 2 and the numbers at risk; H3 right half defined in
+  `notes/04_analysis_plan.md` with an interpretation sentence per estimand).

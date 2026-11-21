@@ -1,7 +1,7 @@
-# articles_reviews
+# articles_reviews — After Peer Review
 
-Methodological reviews of published research in psychiatry and ethology, with reproducible
-checks and Bayesian re-analyses. Published at https://reviews.telepsichiatria.org.
+*After Peer Review*: methodological appraisal of published research in psychiatry and ethology,
+with reproducible checks and Bayesian re-analyses. Published at https://reviews.telepsichiatria.org.
 
 See `CLAUDE.md` for conventions, `protocol/` for the appraisal checklist, `registry/` for the
 list of papers and flagged issues.

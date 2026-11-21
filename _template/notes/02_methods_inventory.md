@@ -1,4 +1,4 @@
-# Methods inventory — protocol v0.1
+# Methods inventory — protocol v0.2
 
 Fill in every item. "n/a" is an answer; blank is not.
 
@@ -59,5 +59,9 @@ Fill in every item. "n/a" is an answer; blank is not.
 - G4 Causal language:
 - G5 Mechanism:
 - G6 Comparisons without comparator:
+- G7 Interpretation of the estimates (scale, population, role, reference; what the number does say):
 
-## H. Verdict (provisional)
+## H. Verdict (provisional) and summary
+- H1 Verdict:
+- H2 Quality table: generated in `review.qmd`; overrides and reasons, if any:
+- H3 Estimates table: headline quantities to include:

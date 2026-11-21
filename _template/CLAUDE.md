@@ -9,7 +9,7 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 - Version reviewed (preprint / accepted manuscript / version of record): 
 - Track: `systematic` | `selected` — source: 
 - Field: psychiatry | ethology | other
-- Registry id: P0xx — protocol version: 0.1
+- Registry id: P0xx — protocol version: 0.2
 - Data availability as stated: 
 - What the paper claims (two sentences, in the authors' terms): 
 
@@ -21,7 +21,7 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 
 - `paper/` — PDF(s), supplementary material, authors' code if any. Read-only.
 - `notes/01_reading_notes.md` — section-by-section notes with page references.
-- `notes/02_methods_inventory.md` — protocol checklist A–G filled in.
+- `notes/02_methods_inventory.md` — protocol checklist A–H filled in.
 - `notes/03_concerns.md` — one entry per concern, tagged confirmed / inferred / needs-data,
   mirrored as rows in `registry/issues.csv`.
 - `notes/04_analysis_plan.md` — the shared specification for stages 3 (frequentist) and 4

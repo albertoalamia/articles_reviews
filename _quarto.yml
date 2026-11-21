@@ -20,8 +20,8 @@ execute:
   freeze: auto
 
 website:
-  title: "Reviews"
-  description: "Methodological reviews of published research in psychiatry and ethology, with reproducible checks."
+  title: "After Peer Review"
+  description: "Methodological appraisal of published research in psychiatry and ethology, with reproducible checks and re-analyses."
   site-url: https://reviews.telepsichiatria.org
   repo-url: https://github.com/albertoalamia/articles_reviews
   repo-actions: [issue]

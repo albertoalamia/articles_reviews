@@ -1,6 +1,6 @@
 ---
-title: "Reviews"
-subtitle: "Methodological reviews of published research in psychiatry and ethology"
+title: "After Peer Review"
+subtitle: "Methodological appraisal of published research in psychiatry and ethology"
 listing:
   id: reviews
   contents:
@@ -15,7 +15,8 @@ title-block-banner: false
 comments: false
 ---
 
-Each review applies the same [protocol](protocol.qmd) to one published paper: design,
+A review here starts where the journal's peer review stopped. Each one applies the same
+[protocol](protocol.qmd) to one published paper: design,
 measurement, model adequacy, internal consistency of the reported numbers, reporting-guideline
 compliance, and whether the conclusions follow. Every numerical check is reproducible from the
 code in the [repository](https://github.com/albertoalamia/articles_reviews). Authors are
@@ -25,3 +26,21 @@ Methods and numbers are criticised, never people.
 
 ::: {#reviews}
 :::
+
+## Across reviews
+
+```{r}
+#| label: tbl-programme
+#| echo: false
+#| message: false
+#| results: asis
+source(here::here("lib/quality_table.R"))
+pt <- programme_table()
+if (nrow(pt) == 0) {
+  cat("No review is published yet; the first two are with their authors for reply.")
+} else {
+  knitr::kable(pt[, c("Paper", "Field", "Track", "Verdict", "Critical", "Major", "Minor", "Confirmed", "Inferred", "Needs data", "Worst domain")],
+               format = "pipe", align = "llllrrrrrrl",
+               caption = "Issue counts per published review, from the registry (protocol H2). Systematic and selected tracks are never pooled.")
+}
+```

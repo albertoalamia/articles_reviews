@@ -1,4 +1,4 @@
-# Methods inventory — protocol v0.1 — Shi et al. 2026 (P002)
+# Methods inventory — protocol v0.2 (v0.1 items unchanged; G7, H2, H3 added 2026-11-21) — Shi et al. 2026 (P002)
 
 ## A. Selection and provenance
 - A1 Track / source: `systematic`; batch B01 (Scientific Reports, October 2026, OpenAlex subfield
@@ -123,7 +123,19 @@
 - G6 Comparisons without comparator: "significantly larger than the pooled HR of 1.19" with no test
   and a different exposure definition in the meta-analysis.
 
-## H. Verdict (provisional)
+- G7 Interpretation of the estimates: "individuals with cognitive impairment had a 2.32 to 2.55 times higher risk" reads a
+  hazard ratio as a risk ratio; the quantity is a cause-specific hazard ratio conditional on seven
+  covariates in the complete-case subset (at most about 2,740), origin of the time scale unstated,
+  death as censoring; "independently predicts" and the screening sentence read a conditional
+  association as individual-level prediction (sensitivity 18.5 %, PPV 7.8 % from Table 2). Absolute
+  risks 7.8 % vs 1.8 % are never stated as such.
+
+## H. Verdict (provisional) and summary
+- H1 Verdict: major concerns (provisional, stage 1).
+- H2 Quality table: generated from the registry in `review.qmd`; no override.
+- H3 Estimates table: the three adjusted HRs (left half fixed at stage 1); re-analysis estimands to be defined in `notes/04_analysis_plan.md` (cumulative incidence with death as competing event, age-scale HR, continuous MMSE, added value over age).
+
+Verdict text:
 `major concerns`. The association in Table 2 is arithmetically coherent (CIs match the event
 counts) and plausibly real in direction, but the figure that supports it cannot have been drawn from
 the reported data, the follow-up timeline is internally impossible as stated, one Table 1 p-value

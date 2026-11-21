@@ -5,9 +5,12 @@ every row below must map one-to-one onto the Stan program. Changes after fitting
 the end, with the reason.
 
 ## 1. Estimands
-What quantities answer the paper's question, on which scale, with which contrasts.
-- E1:
-- E2:
+What quantities answer the paper's question, on which scale, with which contrasts. For each, one
+sentence saying how a reader should interpret the number (scale; conditional on what; typical
+unit or average over units; what 0 or 1 means), which becomes the right half of the estimates
+table in `review.qmd` (protocol H3).
+- E1: … — reads as: …
+- E2: … — reads as: …
 
 ## 2. Data
 - Source (authors' data / digitised / simulated) and the log that documents it:

@@ -1,4 +1,4 @@
-# Appraisal protocol — version 0.1 (2026-10-25)
+# Appraisal protocol — version 0.2 (2026-11-21)
 
 Applied identically to every paper. Each item gets an answer and, where a concern arises, an
 entry in `registry/issues.csv` with an evidence tag:
@@ -85,14 +85,38 @@ Recompute whatever can be recomputed from reported numbers (functions in `lib/co
 - G4. Causal language in non-causal designs.
 - G5. Claims about mechanism (e.g. neurotransmitters) labelled as speculation or not.
 - G6. Comparative claims (vs other groups or species) made without the comparison in the data.
+- G7. Interpretation of the estimates: does the sentence the authors attach to each headline
+  quantity match the quantity they estimated? Check the scale (relative or absolute; hazard, odds
+  or risk; difference or ratio), the population (conditional on covariates or marginal; complete
+  cases or the whole cohort; a typical unit or the average over units), the role (association,
+  prediction or effect) and the reference (what a value of 0 or 1 means). State what the number
+  does say.
 
-## H. Verdict
+## H. Verdict and summary
 
-One of: `sound`, `minor concerns`, `major concerns`, `conclusions not supported`. Written with
-the phrasing rule: describe inconsistencies with the reported data, never intent.
+- H1. Verdict, one of: `sound`, `minor concerns`, `major concerns`, `conclusions not supported`.
+  Written with the phrasing rule: describe inconsistencies with the reported data, never intent.
+- H2. Quality table at the head of the review: one row per protocol domain (design, measurement,
+  model adequacy, internal consistency, reporting, inference) with the issue counts by severity
+  and by evidence tag and a rule-based rating: any critical issue → *conclusions at risk*; any
+  major → *major concerns*; only minor → *minor concerns*; none → *no concern found*. Generated
+  from `registry/issues.csv` by `lib/quality_table.R`; an override is a stated decision with its
+  reason, never an edit of the table.
+- H3. Estimates table: for each headline quantity, the authors' estimate and their interpretation
+  of it (quoted) beside the estimand, estimate and interpretation from the re-analysis (stages 3
+  and 4 side by side); where no re-analysis was done, the correct reading of the authors' own
+  quantity (G7). The plain-language primer carries the same table in words.
 
 ## I. Right of reply
 
 - I1. Authors contacted (date, channel, what was sent) before public posting.
 - I2. Reply received and incorporated; disagreements stated fairly.
 - I3. Post-publication route taken (blog only, PubPeer, Matters Arising, letter to editor).
+
+## Changes
+
+- **0.2 (2026-11-21).** G7 added (interpretation of the estimates); H split into H1 verdict, H2
+  quality table, H3 estimates table. Applied to P001 and P002, both unpublished at the time; the
+  new items change how a review reports, not what counts as a flaw, so no earlier judgement was
+  revisited.
+- **0.1 (2026-10-25).** Initial version.

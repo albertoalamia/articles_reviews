@@ -1,4 +1,4 @@
-# Methods inventory — protocol v0.1
+# Methods inventory — protocol v0.2 (v0.1 items unchanged; G7, H2, H3 added 2026-11-21)
 
 Paper: Bukhari et al. 2026, Sci Rep, doi 10.1038/s41598-026-62753-3 (accepted manuscript).
 Filled 2026-10-29 from `notes/01_reading_notes.md` (line refs "RN l.") and the full text ("FT l.").
@@ -178,7 +178,19 @@ Evidence tags: confirmed / inferred / needs-data.
   in a similar way to horses, goats, dogs, and cattle" — no other species, no pain measured.
   [INF-COMPAR, confirmed]
 
-## H. Verdict (provisional)
+- G7 Interpretation of the estimates: the six "changes" are unsigned magnitudes read as signed changes; the Table 3–4
+  coefficients are common slopes on unsigned Δ read as a signed association, as a treatment effect
+  at equal ΔSBR/ΔET and as a level ("higher RMSSD"); p-values stand in for estimates. Correct
+  readings and the re-analysis estimands (treatment − control for a typical donkey, positive −
+  negative, within-treatment slopes, single-reading AUC) are in `review.qmd`, "What the estimates
+  mean".
+
+## H. Verdict (provisional) and summary
+- H1 Verdict: conclusions not supported for the HRV/ET valence claims; major concerns overall.
+- H2 Quality table: generated from the registry in `review.qmd`; no override.
+- H3 Estimates table: the six condition changes, the three positive-vs-negative contrasts, the two Δ-on-Δ slopes, SBR as a single-reading indicator (12 rows).
+
+Verdict text:
 Proposed: **conclusions not supported** for the HRV and ET valence claims and for the
 "use changes" recommendation; **major concerns** for the design as a whole (no manipulation
 check, confounded positive stimulus, unsigned change scores, p-values inconsistent with the

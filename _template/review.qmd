@@ -6,7 +6,7 @@ author: Alberto Alamia
 categories: [ethology | psychiatry, <design type>, <main issue>]
 draft: true
 params:
-  protocol_version: "0.1"
+  protocol_version: "0.2"
   track: "selected"
 ---
 
@@ -23,6 +23,13 @@ track `{r} params$track`. Authors contacted on YYYY-MM-DD; reply: pending / rece
 **Verdict:** sound | minor concerns | major concerns | conclusions not supported.
 Two or three sentences on why.
 :::
+
+```{r}
+#| label: tbl-quality
+#| tbl-cap: "Issues by protocol domain, from the registry. Rating rule (protocol H2): any critical issue, conclusions at risk; any major, major concerns; only minor, minor concerns; none, no concern found."
+source(here::here("lib/quality_table.R"))
+quality_table("P0xx") |> knitr::kable(format = "pipe", align = "lrrrrrrll")
+```
 
 ## What the paper does
 
@@ -57,6 +64,16 @@ The reported mean change does not equal the difference of the condition means.
 
 (If performed.) Model, priors, data source, diagnostics, what changes and what does not.
 Stan code and data in the repository.
+
+## What the estimates mean
+
+Protocol H3. One row per headline quantity; the left half is the paper, the right half the
+re-analysis (or, without one, the correct reading of the paper's own quantity, G7). Numbers from
+`data/raw/` and `output/tables/`, never typed.
+
+| Quantity | The paper reports | The paper reads it as | What it is | Re-analysis estimate | What it means |
+|---|---|---|---|---|---|
+| | | "verbatim sentence" | scale, population, role, reference | stage 3 / stage 4 | one plain sentence |
 
 ## What would settle the open points
 
