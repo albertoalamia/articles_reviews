@@ -122,3 +122,33 @@ form and handling of death as a competing event not stated.
 - Next step: Alberto renders `review.qmd` once so the freeze matches; stage 2 in a fresh
   conversation (reconstruction from Table 2 and the numbers at risk; H3 right half defined in
   `notes/04_analysis_plan.md` with an interpretation sentence per estimand).
+
+### 2026-11-21 (evening) — Stage 2 run: reconstruction, reproduction, Model 1 calibration
+- Done: `R/01_prepare_data.R` rebuilds 3,875 persons from Table 2 and the Fig. 2 numbers at risk
+  under three timing scenarios (log `data/derived/RECONSTRUCTION_LOG.md`, assumptions A1–A6,
+  results §4); `R/04_reproduce_cox_km.R` refits the unadjusted Cox, log-rank, 1 − KM and
+  Aalen–Johansen curves and interval rates; `R/05_model1_age_confounding.R` calibrates an
+  exponential model to the Table 2 counts and asks what age effect reproduces Model 1. Run three
+  times by Alberto (two reconstruction bugs fixed: tail events censored before they happened;
+  survivors censored before the tail events in the deterministic scenarios). Outputs
+  `output/tables/stage2_*.csv`, two figures. Concerns, registry notes and status `reanalysis`
+  updated; no evidence tag changed.
+- Results in one line each: the three unadjusted HRs, CIs and log-rank p reproduce to the second
+  decimal; the curves the numbers imply end at 8 % (CI) and 2 % (NCI) against the 100 % and
+  0.45–0.70 drawn; two thirds of the exposed strokes and 60 % of the exposed deaths are forced
+  into the last 0.2 years (rates 28–85 times those before); Model 1 is reproduced only if age
+  multiplies the stroke hazard by ~1.5–1.7 per decade, and with a doubling per decade the
+  adjusted HR would be 1.6–1.8 with a CI including 1.
+- Decided (and why): the age distribution above the Table 1 quartiles is an explicit assumption
+  (A6, log-normal truncated at 90, sensitivity 80–100) because an untruncated log-normal with
+  that spread produces ages above 200 and made the first run meaningless; the figure is drawn
+  from the deterministic scenario so that nothing in it is random; the KM value at the axis end
+  under uniform timing (0.26) is reported as an artefact of A3–A4, not as a finding.
+- Open questions: as before, plus whether the authors' Model 1 used age linear, categorical or as
+  time scale (determines whether the calibration applies).
+- Next step: stage 3 in a fresh conversation: `notes/04_analysis_plan.md` with estimands and an
+  interpretation sentence each (cumulative incidence with death competing by group; exposure HR
+  as a function of the age effect, with the age effect as a parameter; added value of MMSE over
+  age for screening in the calibrated population), then the frequentist fit and the matching Stan
+  model (stage 4) sharing the same likelihood. On the authors' data, if it arrives, the plan
+  switches to the measured covariates and the continuous MMSE.

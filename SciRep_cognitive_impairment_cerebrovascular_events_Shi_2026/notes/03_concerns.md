@@ -9,6 +9,11 @@ from the run: the Table 1 overall percentages for manual worker (51.9; 2009 / 38
 off in the last digit, as they would be if those rows were computed on slightly fewer than 3,875
 participants; covariate missingness is not reported anywhere (added to the missing-data entry).
 
+Stage 2 (2026-11-21): the individual data were rebuilt from Table 2 and the numbers at risk
+(`data/derived/RECONSTRUCTION_LOG.md`, `R/01_prepare_data.R`, `R/04_reproduce_cox_km.R`,
+`R/05_model1_age_confounding.R`). The three unadjusted HRs, their CIs and the log-rank tests
+reproduce to the second decimal. Entries touched by stage 2 carry a "Stage 2" line; no tag changed.
+
 ### Kaplan–Meier curves incompatible with Table 2 and with their own numbers at risk
 - Code: CON-XREF — Severity: major — Evidence: confirmed
 - Location: Fig. 2 (all three panels) vs Table 2
@@ -23,6 +28,12 @@ participants; covariate missingness is not reported anywhere (added to the missi
   the figure, but what dataset the curves and the log-rank tests were computed on is unknown.
 - How to check further: ask for the dataset and code behind Fig. 2; with the individual data, redraw
   the curves (and cumulative incidence functions with death as a competing event).
+- Stage 2: the curves the reported numbers imply end at 0.080 (strokes) and 0.078 (death) for the
+  CI group and 0.018–0.020 for the NCI group, with 15 and 66–75 distinct event times
+  (`output/figures/stage2_km_reconstructed.png`, `stage2_curves_at_end.csv`); Fig. 2's end values
+  are 12.5 times (CI) and 30 times (NCI) these as proportions, or one eighth and one third of them
+  as percent. The unadjusted HRs and the log-rank "P < 0.0001" reproduce from the same numbers, so
+  the discrepancy is confined to the figure. Tag unchanged.
 
 ### Follow-up timeline cannot hold as stated
 - Code: CON-XREF — Severity: major — Evidence: confirmed
@@ -51,6 +62,13 @@ participants; covariate missingness is not reported anywhere (added to the missi
   the numbers at risk and the totals come from different datasets.
 - How to check further: distribution of event dates by source of ascertainment (interview, death
   certificate, hospital record).
+- Stage 2: the same arithmetic applied to all three panels (`data/derived/recon_counts.csv`) puts
+  27 of 66 NCI and 10 of 15 CI ischaemic strokes after year 4 as well, besides 41 of 71 and 9 of 15
+  deaths; in event rates per 100 person-years, the last 0.2 years run at 56 (CI) and 7.5 (NCI) for
+  ischaemic stroke against 0.66 and 0.27 before, and at 48 and 11 for death against 0.79 and 0.20
+  (`stage2_interval_rates.csv`). The stroke part rests on assumption A2 (deaths before year 4 in
+  people without a prior stroke), which is the minimum. Tag unchanged: the arithmetic is confirmed,
+  the explanation needs the event dates.
 
 ### The manual-worker row of Table 1: percentages and p-value from different denominators
 - Code: CON-STAT — Severity: major — Evidence: confirmed
@@ -129,6 +147,15 @@ participants; covariate missingness is not reported anywhere (added to the missi
   residual confounding by age and schooling is the alternative the design cannot exclude.
 - How to check further: with the data, age as the time scale or splines, education-adjusted MMSE
   cut-offs, the continuous score, a model with all measured covariates (stage 3).
+- Stage 2: with ages rebuilt from the Table 1 medians and quartiles (ceiling 90 years) and the
+  Table 2 counts held fixed, an exponential model reproduces Model 1 only if a decade of age
+  multiplies the hazard by about 1.5–1.7 for stroke and 1.8–2.1 for death (sex HR 1.3; range over
+  the age ceiling 80–100 and the shift; `stage2_model1_implied_age_hr*.csv`). If age doubles the
+  stroke hazard per decade, as population studies commonly report after middle age, the same
+  counts give an adjusted HR of 1.6–1.8 with a simulated spread of 0.6–3.9
+  (`stage2_model1_sim_summary.csv`). The headline result therefore rests on the age effect being
+  weak in this cohort, which the paper does not report. Tag unchanged (`inferred`: it depends on
+  the assumed age distribution above the quartiles and on the model form).
 
 ### Death not treated as a competing event
 - Code: MOD-STRUCT — Severity: major — Evidence: inferred
@@ -156,6 +183,11 @@ participants; covariate missingness is not reported anywhere (added to the missi
   adjusted estimates are fragile to the specification, and nothing in the paper shows how fragile.
 - How to check further: sensitivity to covariate sets and functional forms with the data; Firth or
   penalised Cox; Bayesian model with weakly informative priors (stage 4).
+- Stage 2: the printed Model 1 CI for ischaemic stroke (1.31–4.68) corresponds to an SE of 0.325
+  on the log HR; the unadjusted SE that 15 and 66 events give is 0.286, and the simulated adjusted
+  model at the age effect that reproduces Model 1 has a mean SE of 0.38 (0.43 if age doubles per
+  decade). Across 200 simulated cohorts the adjusted HR ranged 1.1–4.7. Needs the data to go
+  further; tag unchanged.
 
 ### Hypothesis tests on descriptives, then used to choose covariates
 - Code: MOD-MULT — Severity: minor — Evidence: confirmed
