@@ -76,6 +76,30 @@ analysis and then a better-specified one, twice over with two different statisti
 what the design can actually tell us. All of this is code in a public repository, and the authors have
 been asked for the original data so that the same code can be run on them.
 
+## What we found, area by area
+
+The checklist looks at six areas. The table counts the problems recorded in each; the technical
+review lists every one of them with its evidence.
+
+```{r}
+#| label: tbl-quality-plain
+#| tbl-cap: "Problems found, by area. A problem is 'settled by the paper's own numbers' when no assumption and no extra data are needed to see it; the others depend on a stated assumption or on the original data. 'Serious' means it affects a conclusion of the paper."
+source(here::here("lib/quality_table.R"))
+plain_area <- c("Design" = "How the study was set up", "Measurement" = "What was measured, and how",
+                "Model adequacy" = "How the data were analysed",
+                "Internal consistency" = "Whether the numbers agree with each other",
+                "Reporting" = "How it was reported", "Inference" = "What was concluded")
+plain_rating <- c("conclusions at risk" = "puts the conclusions at risk", "major concerns" = "serious",
+                  "minor concerns" = "minor", "no concern found" = "none found")
+quality_table("P001") |>
+  transmute(Area = unname(plain_area[Domain]),
+            `Problems found` = Critical + Major + Minor,
+            `Of which serious` = Critical + Major,
+            `Settled by the paper's own numbers` = Confirmed,
+            `Our reading` = unname(plain_rating[Rating])) |>
+  knitr::kable(format = "pipe", align = "lrrrl")
+```
+
 ## Five things a reader should know
 
 **1. The "changes" in the paper have lost their sign.** The authors define each change as the control
@@ -144,6 +168,26 @@ measure, each donkey's three values analysed together), fitted two ways with the
 Everything in this section rests on data rebuilt from the paper's figures and tables, not on the
 original records, and the review says so at each step. If the authors share their data, the same code
 runs on them and this page will be updated.
+
+### The numbers side by side
+
+The same results as a table. The paper's numbers are as printed; ours are the central estimate with,
+in brackets, the range we are fairly confident the true value lies in (the technical review has the
+full version of this table, with what each quantity is).
+
+| What was compared | The paper's number | Our number | In plain words |
+|:----------|:--------|:--------|:--------------|
+| Blinks, lucerne vs quiet | `{r} f(D2("SBR", "positive"), 1)` per minute (printed without a direction) | `{r} S("SBR", "positive - control", "difference (blinks/min)")` per minute | A donkey eating lucerne blinks about twice as often (`{r} S("SBR", "positive / control", "ratio")` times) |
+| Blinks, clippers vs quiet | `{r} f(D2("SBR", "negative"), 1)` per minute (printed as a positive number) | `{r} S("SBR", "negative - control", "difference (blinks/min)")` per minute | About a third fewer blinks |
+| Blinks, lucerne vs clippers | not compared | `{r} S("SBR", "positive - negative", "difference (blinks/min)")` per minute | Three times as many blinks with lucerne as with the clippers; the one clear opposite-direction result |
+| Eye temperature, lucerne vs quiet | `{r} f(D2("ET", "positive"), 2)` °C | `{r} S("ET", "positive - control", "difference (degC)")` °C | The eye warms |
+| Eye temperature, clippers vs quiet | `{r} f(D2("ET", "negative"), 2)` °C | `{r} S("ET", "negative - control", "difference (degC)")` °C | The eye warms here too, a little more |
+| Eye temperature, lucerne vs clippers | not compared; described as a difference in emotion | `{r} S("ET", "positive - negative", "difference (degC)")` °C | A difference in how much, not in which direction |
+| Heart measure, lucerne vs quiet | `{r} f(D2("RMSSD", "positive"), 1)` ms | `{r} S("RMSSD", "positive - control", "difference (ms, marginal)")` ms | Goes up |
+| Heart measure, clippers vs quiet | `{r} f(D2("RMSSD", "negative"), 1)` ms (the discussion calls it a fall) | `{r} S("RMSSD", "negative - control", "difference (ms, marginal)")` ms | Goes up as well, not down |
+| Heart measure, lucerne vs clippers | not compared | `{r} S("RMSSD", "positive - negative", "difference (ms, marginal)")` ms | Both up; lucerne more |
+| Blinks and heart measure together | one slope for both situations | lucerne `{r} S("E4 (x = dSBR)", "b (slope), positive", "response")`, clippers `{r} S("E4 (x = dSBR)", "b (slope), negative", "response")` ms per blink | The link runs one way with lucerne and the opposite way with the clippers; averaging them hides both |
+| One blink count as a field test | proposed, not tested | lucerne vs clippers `{r} f(A("positive vs negative", "AUC, different donkeys"), 2)`, lucerne vs quiet `{r} f(A("positive vs control", "AUC, different donkeys"), 2)`, quiet vs clippers `{r} f(A("control vs negative", "AUC, different donkeys"), 2)` | Chance that a reading from one state beats a reading from the other (0.5 is a coin toss): near-certain for lucerne vs clippers, three times in four for quiet vs clippers |
 
 ## What this does and does not mean
 
