@@ -27,6 +27,8 @@ protocol/                     checklist.md (versioned), taxonomy.csv (issue code
 registry/                     papers.csv (one row per paper), issues.csv (one row per issue)
 lib/consistency.R, lib/quality_table.R, lib/model_dag.R   shared R functions: recomputation checks; quality and programme tables from the registry; DAGs of the Bayesian models; tests in lib/tests/
 _template/                    skeleton copied for each new article
+tools/                        send_email.py, fetch_email.py (Gmail, credentials outside the repo), sample_frame.py (systematic batches), digitise_scatter.py, stan_to_dag.R (model-graph skeleton from a Stan file)
+.claude/skills/               procedures Claude follows on request: dagify (H4e model graphs), render-check (after quarto render, before a commit), new-review (stage 1 scaffolding, data request)
 <Journal>_<shorttitle>_<FirstAuthor>_<Year>/   one folder per paper (see _template/CLAUDE.md)
 .github/workflows/publish.yml renders the site from _freeze/ and deploys to GitHub Pages
 ```
