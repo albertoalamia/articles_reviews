@@ -17,6 +17,10 @@ Notes
   be found in the APAC design paper, Zhou et al. 2013, PLoS One 8:e84685).
 - Data availability statement: "not publicly available due to privacy or ethical restrictions, but
   are available from the corresponding author on reasonable request".
+- If the authors engage (2026-11-22): the first addition to the request is the MMSE at item or
+  domain level (30 items or 11 domain scores per participant), for the pre-specified latent-variable
+  analysis (plan §3c); the second is the number who missed each follow-up exam, by group, and the
+  date of last contact (concern "Loss to follow-up not reported").
 
 ## Log
 

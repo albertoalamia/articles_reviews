@@ -72,6 +72,14 @@ the numbers at risk fix, 4.2 years the end of the axis.
     people who will have a stroke in four years, how many the MMSE flags (and how many of those
     flagged go on to have one); compared with flagging by age alone.
 
+- **E5 — the effect of cognition, not of a cut-off** (source B only; added 2026-11-22, see §3c):
+  the hazard ratio per standard deviation of latent cognition θ, measured by the MMSE through a
+  measurement model with education-specific item parameters, with death competing; and the share
+  of the 192 "impaired" whose θ is within the range of the "unimpaired". — *Reads as:* how much the
+  stroke rate changes per unit of cognition as the MMSE items measure it, once the score's dependence
+  on schooling is in the measurement part and not in the exposure; and how many of those labelled
+  impaired by "< 24" the scale itself cannot separate from the rest.
+
 Not estimands: Model 2 (an undisclosed subset, four more covariates); anything on the continuous
 MMSE, education-specific cut-offs, or MMSE × age interaction; all need the authors' data and
 move to section 7 if they arrive.
@@ -95,7 +103,10 @@ move to section 7 if they arrive.
 - **Source B: the authors' data** if they arrive (request 2026-11-20; window to 2026-12-11).
   Same estimands; E1 on the real times, E2 with age as a measured covariate (then θ_age is
   estimated, not assumed), E3 with the real age–MMSE joint distribution; source A becomes a
-  sensitivity analysis.
+  sensitivity analysis. E5 (§3c) needs, in addition, the MMSE at item or domain level (the 30
+  items, or the 11 domain scores); with total scores only, E5 reduces to a measurement-error
+  model with an assumed reliability and is reported as a sensitivity analysis, not an estimate.
+  Item-level scores are the first addition to the data request if the authors engage.
 - Unit: person (3,683 + 192); for E1 the aggregated cell (2 groups × 5 intervals × 2 causes per
   model, two models: {ischaemic, death} and {any stroke, death}).
 - Outcomes: counts per cell with person-years offset (E1); counts per group (E2).
@@ -116,6 +127,42 @@ move to section 7 if they arrive.
 
 The {any stroke, death} model reuses the same program with the stroke counts replaced. Other
 stroke is not modelled separately (0 of 192 against 9 of 3,683; the ML contrast is infinite).
+
+## 3c. Pre-specified for source B: cognition as a latent variable (added 2026-11-22)
+
+Written before any data, so that it is on record. Convention of Levy and Mislevy, *Bayesian
+Psychometric Modeling*: a measurement part, a structural part, an outcome part, one Stan program.
+
+- **Measurement.** Items $y_{ij}$, $j = 1..J$ ($J = 30$ binary items, or 11 ordinal domain scores),
+  $$\Pr(y_{ij} \ge c) = \operatorname{logit}^{-1}\big(a_j(\theta_i - b_{jc}) \big), \qquad
+  b_{jc} = b^{0}_{jc} + \delta_{j}\,\mathrm{edu}_i,$$
+  a graded response model (two-parameter logistic for binary items) with location shifts $\delta_j$
+  by education level: the "educational bias" the authors mention becomes a parameter per item
+  instead of a property of the exposure. The total score and the cut-off at 24 are not used.
+- **Structural.** $\theta_i \sim \mathrm{N}(\gamma_{a} a_i + \gamma_{e}\,\mathrm{edu}_i + \gamma_{m} m_i,\ 1)$:
+  cognition depends on age, education and sex; its scale is fixed by the unit variance.
+- **Outcome.** Cause-specific hazards as in E1, with $\theta_i$ in place of $\mathrm{CI}_i$:
+  $\log h_{ik}(t) = \alpha_{jk} + \beta_k\,\theta_i + \beta_{ak} a_i + \beta_{mk} m_i + \beta_{ek}\,\mathrm{edu}_i$,
+  $t \in I_j$, death competing. $\exp(\beta_k)$ is the hazard ratio per SD of cognition.
+- **Derived.** The posterior of $\theta_i$ for each person; the share of the 192 with MMSE < 24
+  whose posterior mean $\theta$ lies above the 10th percentile of the other group; $\exp(\beta_k)$
+  for a difference in θ equal to the mean difference between the two MMSE groups, which is the
+  quantity comparable to the paper's HR; the attenuation factor between that and the HR of the
+  indicator.
+- **What the paper's analysis is in this notation.** $\theta_i$ replaced by $\mathbf 1[\sum_j y_{ij} < 24]$:
+  one item, no error, $\delta_j = 0$ for every item, and the education adjustment moved from the
+  measurement part to the hazard, where it competes with the exposure for the same variance.
+- **Priors.** $a_j \sim \mathrm{LogN}(0, 0.5)$; $b_{jc}$ ordered, $\mathrm{N}(0, 2)$; $\delta_j \sim \mathrm{N}(0, 0.5)$;
+  $\gamma \sim \mathrm{N}(0, 1)$; $\alpha_{jk}$, $\beta_k$ as in §5. The MMSE ceiling (median 29 of
+  30) means θ is measured well only in its lower range; the posterior SDs of $\theta_i$ say where.
+- **Limitations, stated in advance.** One administration: no test-retest, so reliability comes
+  from the item model, not from repetition; the model is identified by the item structure, and
+  with domain scores only the discrimination parameters are weakly identified; with total scores
+  only, none of it is identified without an assumed reliability. Fifteen exposed events bound the
+  precision of $\beta_k$ whatever the measurement model does.
+- **Stage mapping.** Stage 3 counterpart: a two-step version (factor scores from a frequentist
+  GRM, then the Cox or PEM on the scores), reported as the approximation it is; stage 4: the joint
+  program `stan/latent_cognition_pem.stan`, drawn with `lib/model_dag.R`.
 
 ## 3b. The models in notation (draft of the public section "The models, written out")
 
@@ -374,6 +421,9 @@ stage 4 integrates over a stated prior.
 | date | what changed | why |
 |---|---|---|
 | 2026-11-22 (S1) | Stan data files: `pem_{isch,any}.json` (uniform replicate 1) plus `_early` / `_late` copies with the bounding person-years; `exposure_age_{isch,any,death}.json` carry the ages at the three ceilings (`age_90`, `age_80`, `age_100`) and an `age_max` switch, instead of one file per ceiling; the E1 wide-prior sensitivity is a `beta_sd` switch (1; 2) rather than a `prior_scale` multiplier; ages are written to 3 decimals (years) so that stages 3 and 4 read identical inputs | one population file per outcome keeps the data folder small (the population is the same for the three outcomes); the switches are the keys `run_model.sh` rewrites, as in P001 |
+| 2026-11-22 (S2) | E1 checks: the tolerance for the PEM hazard ratios against the stage 2 Cox fit is 0.15, not 0.05; the 4.2-year check of the split model against the crude proportion is 0.005 (the constant hazard over a 0.2-year tail holding 19 exposed events at its start overshoots by 0.006 in that group; the late scenario undershoots; the two bracket the crude 7.8 %); the E2 check at θ_age = 1 compares with Table 2's unadjusted HR, not with the stage 2 Cox | a step baseline against exact event times in a tail that holds half the events: the PEM is within 1–3 % of Table 2 and the exponential model within 2 %, while the stage 2 Cox under uniform timing is 1–2 % below Table 2 (first run of `R/06`: differences 0.06–0.14 and 0.02–0.11) |
+| 2026-11-22 (S2) | E1 absolute risks are reported from two structures: the planned proportional group effect, and the group effect split before and after year 4; the figure and the 4.2-year values come from the early scenario (everyone followed to 4.2) | the proportional model gives the exposed group 4.3 % by year 4 where the Aalen–Johansen estimate is 2.6 %: it averages a group effect of 2.5 before year 4 and 7.5 after; the split model follows the data. Under uniform censoring in (4.0, 4.2] the 4.2-year risk from the uniform scenario is an extrapolation of the tail hazard (10.7 % against the 7.8 % observed): the 4.2-year value is identified only when everyone is followed to 4.2 |
+| 2026-11-22 | §1 E5 and §3c added: cognition as a latent variable measured by the MMSE items, with education in the measurement part; pre-specified for the authors' data only | the paper's claim is about cognitive impairment, its analysis is about one score below a cut-off; the difference is a measurement model, which only item-level data can fit. Added after S2 so that it is on record before any reply from the authors (Alberto, 2026-11-22) |
 
 ## 8. Execution schedule
 

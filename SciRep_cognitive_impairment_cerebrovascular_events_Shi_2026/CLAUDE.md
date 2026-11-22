@@ -198,6 +198,31 @@ form and handling of death as a competing event not stated.
   the direction of the bias is not knowable from the paper; `confirmed` because the omission and
   the numbers at risk are the paper's own; the ascertainment argument is stated as a consequence.
 - Open questions: as before.
-- Next step: Alberto runs `Rscript <art>/R/01_prepare_data.R` and `Rscript <art>/R/05_model1_age_confounding.R`
-  and checks that `git status` shows only new files under `data/derived/` (recon_* and stage2_*
-  unchanged); commit; then S2 (`R/06_fit_frequentist.R`).
+- S1 run by Alberto and committed (recon_* and stage2_* unchanged; 9 JSON files; events match
+  Table 2 in all 28 blocks). S2 prepared: `R/06_fit_frequentist.R` (E1 two models × three scenarios
+  with 10,000-draw bootstrap, E1b vs stage 2 Cox and Table 2, E1c crude tail ratios and the group HR
+  split at year 4, E2 profiled over θ_age ∈ {1, 1.25, 1.5, 1.75, 2, 2.5, implied} at three ceilings
+  with profile-likelihood intervals, E3 age-equivalent, expected c-index and screening metrics for
+  three flag rules, four checks of plan §8, two figures). Parse-checked only: the permission layer
+  does not let Claude execute analysis scripts, so the first run is Alberto's.
+- First run of `R/06` by Alberto: a bug in E2 (the per-decade age effect divided by 10 a second
+  time, so the adjustment barely acted and HR(θ_implied) was 4.1, not 2.47) found by check 4 and
+  fixed; two tolerances revised (plan §7); E1 gains the split-at-year-4 structure next to the
+  proportional one, because the proportional model gives the exposed group 4.3 % by year 4 against
+  2.6 % observed; the 4.2-year risks and the figure now come from the early scenario (plan §7).
+  Confirmed by that run: E1b HRs 4.52 / 3.96 / 4.21 within 1–3 % of Table 2; tail rates 28–85 times
+  the first four years; group HR for stroke 2.5 (0.99–6.4) before year 4 and 7.5 (3.6–15.5) after.
+  Agreed with Alberto: a latent-variable (psychometric) model of cognition measured by the MMSE is
+  added to the plan as a pre-specified source-B analysis after S2 (needs item or domain scores).
+- Second run: all seven checks pass; figures checked (two rows, two columns; HR on a log scale).
+  Stage 3 results: E1b 4.52 / 3.96 / 4.21; stroke HR 2.5 (0.99–6.4) before year 4, 7.5 (3.6–15.5)
+  after; exposed CIF by year 4 4.3 % under proportionality against 2.6 % observed; 4.2-year risk
+  8.1 vs 1.8 per 100 (RD 6, 3–12); E2 ischaemic stroke 4.4 → 2.47 (θ 1.56) → 1.84 (0.98–3.27, θ 2)
+  → 1.47 (θ 2.5); death crosses 1 at θ 2; E3 at θ 2: 9 years of age (0.4–17), c 0.74 → 0.74
+  (+0.003), "age ≥ 65" catches 53 % of future strokes vs 19 % for MMSE < 24. Committed as S2.
+  Plan addition after S2: §1 E5 and §3c, cognition as a latent variable (GRM with education in the
+  item locations, structural part, PEM outcome), source B only; §7 row; contacts.md notes the data
+  to ask for if the authors engage.
+- Next step: S3 in a fresh conversation: `stan/pem_competing.stan`, `stan/exposure_age.stan`,
+  `run_model.sh` (switches prior_only, beta_sd, prior, age_max), prior-predictive section of
+  `R/03_postprocess.R`, DAGs redrawn from the programs (dagify skill), review chunk updated.
