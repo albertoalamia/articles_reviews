@@ -29,6 +29,35 @@ table in `review.qmd` (protocol H3).
 | contrasts / derived quantities | | | |
 | dispersion / variance structure | | | |
 
+## 3b. The models in notation (protocol H4; draft of the review section "The models, written out")
+
+### 3b.1 What the paper fits
+The paper's model(s) in notation, from the Methods wording (quote it). For each parameter: what
+it is (scale, conditional on what, for which unit), what the paper reads it as (quote), what it
+hides. Then the p-value table:
+
+| where | $H_0$ in symbols | was $H_0$ the question? | what the number hides |
+|---|---|---|---|
+
+### 3b.2 What this review fits
+The stage 3–4 model(s) in the same notation, derived quantities written out, and the model's own
+limitations listed under it.
+
+### 3b.3 Parameters side by side (feeds the H3 table)
+
+| symbol | the paper | this review | read as |
+|---|---|---|---|
+
+### 3b.4 Causal diagram of the question
+dagitty code (rendered with ggdag in `review.qmd`); every edge labelled P (stated by the paper),
+D (standard for the design), A (assumed here); adjustment sets from `dagitty::adjustmentSets()`;
+what the diagram says about the paper's coefficients; what a graph cannot show (time origin,
+competing events, selection into the sample).
+
+### 3b.5 Graphical models of the stage 4 programs
+One plate diagram per Stan program (`lib/plate_diagram.R`): data nodes, parameters, prior
+constants, derived quantities; each node a line of the program.
+
 ## 4. Stage 3 specifics (frequentist)
 - Software and version; estimation method (ML/REML, df method):
 - Intervals (profile, Wald, bootstrap):

@@ -15,8 +15,9 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 - Track: `systematic` — source: batch B01 (selection v0.2; Scientific Reports, October 2026,
   OpenAlex subfield Psychiatry and Mental health, seed 20261120, rank 1 of 30, eligible on the title).
 - Field: psychiatry
-- Registry id: P002 — protocol version: 0.2 (stages run under 0.1; 0.2 of 2026-11-21 adds G7 and the
-  H2 quality table and H3 estimates table, applied before publication)
+- Registry id: P002 — protocol version: 0.3 (stages run under 0.1; 0.2 of 2026-11-21 adds G7 and the
+  H2 quality table and H3 estimates table; 0.3 of 2026-11-22 adds H4, the models written out;
+  both applied before publication)
 - Data availability as stated: "not publicly available due to privacy or ethical restrictions, but
   are available from the corresponding author on reasonable request"; no code; SAS 9.4.
 - What the paper claims (in the authors' terms): baseline cognitive impairment (MMSE < 24)
@@ -152,3 +153,22 @@ form and handling of death as a competing event not stated.
   age for screening in the calibrated population), then the frequentist fit and the matching Stan
   model (stage 4) sharing the same likelihood. On the authors' data, if it arrives, the plan
   switches to the measured covariates and the continuous MMSE.
+
+### 2026-11-22 — Stage 3 plan drafted; protocol v0.3 (the models written out)
+- Done: `notes/04_analysis_plan.md` v1.0 (E1 piecewise-exponential competing risks on the
+  reconstructed life table; E2 exposure HR as a function of the age effect, profiled in stage 3
+  and under three priors in stage 4; E3 age-equivalent, c-index gain, screening metrics vs an age
+  rule; section 8 steps S1–S5) with section 3b: the paper's Cox model and KM in notation, the
+  p-value table, the re-analysis models, the parameter table, the causal diagram as dagitty code
+  with every edge sourced (P/D/A/H) and the adjustment-set reading, the plate diagrams to draw in
+  S3. Protocol v0.3 (checklist H4) applied: `review.qmd` gains "The models, written out" with
+  the equations, the p-value table and the DAG chunk (adjustment sets computed in the chunk);
+  params and registry 0.3. `lib/plate_diagram.R` added for the stage 4 figures; `shell.nix` gains
+  dagitty and ggdag.
+- Decided (and why): the DAG carries U (subclinical cerebrovascular disease) as an explicit
+  assumed node because it separates the paper's prediction wording, which survives it, from its
+  causal wording, which does not; the prior P2 reference for the age effect is left for Alberto
+  to choose before stage 5.
+- Open questions: as before; Alberto's reading of the plan (estimands, priors, the DAG edges).
+- Next step: Alberto enters the rebuilt shell, runs the tests, previews the review (DAG renders,
+  adjustment sets print), reads the plan; commit; then S1 of the plan.

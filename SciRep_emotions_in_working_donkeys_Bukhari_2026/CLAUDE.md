@@ -12,8 +12,9 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
   Check later whether the version of record and Transparent Peer Review reports are out.
 - Track: `selected` — source: own interest (Alberto works on donkey-assisted therapy).
 - Field: ethology
-- Registry id: P001 — protocol version: 0.2 (stages run under 0.1; 0.2 of 2026-11-21 adds G7 and the
-  H2 quality table and H3 estimates table, applied before publication)
+- Registry id: P001 — protocol version: 0.3 (stages run under 0.1; 0.2 of 2026-11-21 adds G7 and the
+  H2 quality table and H3 estimates table; 0.3 of 2026-11-22 adds H4, the models written out;
+  both applied before publication)
 - Data availability as stated: "on request".
 - What the paper claims: three physiological measures (RMSSD, eye temperature, spontaneous blink
   rate) discriminate positive and negative emotional states induced in working donkeys, and the
@@ -223,3 +224,16 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
 - Next step: Alberto re-renders `review.qmd` (HTML and PDF) and checks the two new tables in the
   PDF (a 5-column pipe table with long cells; if it overflows, `\footnotesize` via the longtable
   hook already applies, otherwise shorten the cells); then as before.
+
+### 2026-11-22 — Protocol v0.3 applied: the models written out
+- Done: `notes/04_analysis_plan.md` section 3b (the paper's six condition models, change scores
+  and change regressions in notation with the three readings the paper gives $b$ and $d$ and the
+  shared-control covariance written out; the p-value table; the NB2 and MVN models of stages 3–4
+  with the paper's model as their special case; the parameter table); `review.qmd` gains "The
+  models, written out" before "What the estimates mean" (equations, p-value table, re-analysis
+  models, parameter table; the causal diagram and the plate diagrams of the four Stan programs
+  follow once the P002 diagram is reviewed); params and registry 0.3. The review is with the
+  authors since 2026-11-19: the Right of reply note planned for the H2/H3 tables will cover this
+  section too.
+- Next step: render both formats after the shell rebuild; DAG of the design and plate diagrams
+  at the same time as P002's.

@@ -6,7 +6,7 @@ author: Alberto Alamia
 categories: [ethology | psychiatry, <design type>, <main issue>]
 draft: true
 params:
-  protocol_version: "0.2"
+  protocol_version: "0.3"
   track: "selected"
 ---
 
@@ -64,6 +64,47 @@ The reported mean change does not equal the difference of the condition means.
 
 (If performed.) Model, priors, data source, diagnostics, what changes and what does not.
 Stan code and data in the repository.
+
+## The models, written out
+
+Protocol H4. The paper's model in notation, what each parameter is, what the paper reads it as,
+what the p-values test; then the re-analysis model, its causal diagram and the graphical model of
+the Stan program. Drafted in `notes/04_analysis_plan.md` section 3b.
+
+### What the paper fits
+
+$$ \ldots $$
+
+| where | $H_0$ in symbols | was $H_0$ the question? | what the number hides |
+|---|---|---|---|
+| | | | |
+
+### The question as a diagram
+
+```{r}
+#| label: dag
+#| fig-width: 7
+#| fig-height: 4.5
+#| fig-cap: "Structure implied by the paper's Methods. Arrow labels: P stated by the paper, D standard for the design, A assumed here."
+library(dagitty); library(ggdag)
+g <- dagitty('dag { X [exposure] Y [outcome] X -> Y }')
+ggdag(g) + theme_dag()
+adjustmentSets(g)
+```
+
+### What this review fits
+
+$$ \ldots $$
+
+```{r}
+#| label: plate
+#| fig-cap: "Graphical model of `stan/<model>.stan`."
+source(here::here("lib/plate_diagram.R"))
+```
+
+| symbol | the paper | this review | read as |
+|---|---|---|---|
+| | | | |
 
 ## What the estimates mean
 

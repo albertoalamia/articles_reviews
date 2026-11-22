@@ -106,6 +106,20 @@ Recompute whatever can be recomputed from reported numbers (functions in `lib/co
   of it (quoted) beside the estimand, estimate and interpretation from the re-analysis (stages 3
   and 4 side by side); where no re-analysis was done, the correct reading of the authors' own
   quantity (G7). The plain-language primer carries the same table in words.
+- H4. The models, written out: (a) the model(s) the paper fitted, in mathematical notation as
+  the Methods describe them, with each parameter named and three things said about it: what it
+  is, what the paper reads it as, what it hides; (b) a table of the paper's p-values with, for
+  each, the null hypothesis in symbols, whether that hypothesis was the question, and the estimate
+  it stands in front of; (c) a causal diagram of the question with every arrow labelled by its
+  source (stated by the paper, standard for the design, assumed here) and the adjustment sets it
+  implies, computed, not asserted; (d) the model(s) of the re-analysis in the same notation, with
+  their own limitations listed; (e) a graphical model in plate notation of each Stan program,
+  drawn node for node from the program; (f) a parameter table pairing each symbol with the
+  paper's value, the re-analysis value and the sentence that reads it, which feeds H3. Drafted in
+  `notes/04_analysis_plan.md` section 3b before fitting, so that the code is checked against the
+  equations; published in `review.qmd` as "The models, written out". The emphasis is on what each
+  parameter means and on what a p-value does and does not answer. None of it goes into the
+  plain-language primer, which carries the readings in words only.
 
 ## I. Right of reply
 
@@ -115,6 +129,10 @@ Recompute whatever can be recomputed from reported numbers (functions in `lib/co
 
 ## Changes
 
+- **0.3 (2026-11-22).** H4 added (the models written out: notation, p-value table, causal
+  diagram with adjustment sets, graphical models of the Stan programs, parameter table). Applied
+  to P001 and P002, both unpublished at the time; as with 0.2, the item changes how a review
+  explains, not what counts as a flaw.
 - **0.2 (2026-11-21).** G7 added (interpretation of the estimates); H split into H1 verdict, H2
   quality table, H3 estimates table. Applied to P001 and P002, both unpublished at the time; the
   new items change how a review reports, not what counts as a flaw, so no earlier judgement was

@@ -45,6 +45,9 @@ let
     emmeans
     glmmTMB         # count / Gamma GLMMs for stage 3
     DHARMa          # simulation-based quantile residuals for the GLMMs
+    # causal diagrams and adjustment sets (protocol H4)
+    dagitty
+    ggdag
     # consistency checks and tests of lib/
     testthat
     # editor support (R.nvim / LSP)

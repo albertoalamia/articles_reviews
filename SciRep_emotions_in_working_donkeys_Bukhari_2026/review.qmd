@@ -34,7 +34,7 @@ format:
         \usepackage{etoolbox}
         \AtBeginEnvironment{longtable}{\footnotesize}
 params:
-  protocol_version: "0.2"
+  protocol_version: "0.3"
   track: "selected"
 ---
 
@@ -726,6 +726,145 @@ indicate a stressful situation" is true at the group level; as a field tool for 
 clipper-versus-calm distinction is the weak one. The observed cross-donkey Mann–Whitney values on the
 reconstructed data agree with the model within 0.01.
 :::
+
+## The models, written out
+
+Protocol H4. What the paper fitted, in notation, with what each parameter is and what the paper
+reads it as; what its p-values test; the models of the re-analysis in the same notation and the
+parameter table that feeds the next section. Index $i$ = donkey, $c$ = condition (control $0$,
+positive $P$, negative $N$), $o$ = position in the sequence. Drafted in
+`notes/04_analysis_plan.md`, section 3b.
+
+### What the paper fits
+
+**Condition models.** "Linear mixed-effects models (with an individual donkey as a random
+effect) were fitted to individually compare SBR, ET, and HRV … under the positive or negative
+treatment with the control. The order of the treatment application was included in the model as
+a fixed effect." For each outcome $y$ and, as the wording suggests, each treatment
+$T \in \{P, N\}$ against control separately:
+
+$$y_{ic} = \beta_0 + \beta_T\, \mathbb{1}[c = T] + \beta_{o(ic)} + u_i + \varepsilon_{ic},
+\qquad u_i \sim \mathrm{N}(0, \tau^2),\quad \varepsilon_{ic} \sim \mathrm{N}(0, \sigma^2),$$
+
+with one residual variance for both conditions and $y$ on its raw scale. Reported: one p-value
+per $T$, six in all. Not reported: $\hat\beta_T$ and its interval, $\hat\beta_o$, $\hat\tau$,
+$\hat\sigma$.
+
+$\beta_T$ is the expected value of $y$ under treatment $T$ minus its expected value under control
+for the same donkey, at a given position in the sequence: a signed within-animal difference in the
+outcome's own unit. It is the quantity every claim of the paper is about, and it is never
+printed. What stands in for it is the change-score row of Table 2.
+
+**Change scores.** "The change in each parameter … was calculated (control minus positive and
+control minus negative treatment)": $\Delta_{iT} = y_{i0} - y_{iT}$, reported as mean ± SD. Under
+this definition the mean of $\Delta_{iT}$ equals $-\hat\beta_T$ up to the order term. The
+printed means are all positive while the condition means of the same table say that the blink rate
+rose under lucerne and fell under the clipper, so what is printed is
+$\overline{|\Delta_{iT}|}$ or a sign-flipped version. A mean of absolute values is not the
+absolute value of a mean, $\mathbb{E}|\Delta| \ge |\mathbb{E}\Delta|$, with equality only if no
+donkey moved against the group; its SD is not the SD of the signed changes; and the paired $t$ the
+printed row implies, $\bar\Delta/(s_\Delta/\sqrt{n})$, runs from
+`{r} f(min(cc$t_paired), 1)` to `{r} f(max(cc$t_paired), 1)`, which the p-values printed beside it
+(`{r} PVt("SBR", "positive")` for SBR under lucerne, `{r} PVt("RMSSD", "positive")` for RMSSD) cannot
+come from.
+
+**Change regressions** (Tables 3–4), two rows per donkey, $x$ = ΔSBR or ΔET as printed:
+
+$$\Delta\mathrm{RMSSD}_{iT} = a + b\, x_{iT} + d\, \mathbb{1}[T = P] + v_i + e_{iT},
+\qquad v_i \sim \mathrm{N}(0, \nu^2),\quad e_{iT} \sim \mathrm{N}(0, s^2).$$
+
+Reported: $\hat a$, $\hat b$, $\hat d$ with SE, $t$, $F$ and p. The reconstruction shows
+$\hat\nu \approx 0$: the fit is ordinary least squares on 68 rows. Three readings the paper gives
+these coefficients, against what the model allows:
+
+- $b$ is one slope through the unsigned changes of both treatments (parallel slopes forced). The
+  paper reads it as "a greater change in SBR was associated with a higher RMSSD": signed language
+  for an unsigned quantity, and a level where the outcome is a change.
+- $d$ is the difference between treatments in ΔRMSSD *at equal $x$*: a treatment effect adjusted
+  for another response to the same treatment. Since $x$ is itself moved by $T$, $d$ is neither the
+  total effect of the treatment nor a direct effect; it is a coefficient without a question.
+- The two rows of a donkey share the control value,
+  $\Delta_{iP} = y_{i0} - y_{iP}$ and $\Delta_{iN} = y_{i0} - y_{iN}$, so that
+  $\mathrm{Cov}(\Delta_{iP}, \Delta_{iN}) = \mathrm{Var}(y_{i0}) - \mathrm{Cov}(y_{i0}, y_{iP}) - \mathrm{Cov}(y_{i0}, y_{iN}) + \mathrm{Cov}(y_{iP}, y_{iN})$,
+  positive whenever the control value varies more than it co-varies with the treatments, and the
+  same for the two $x$ rows. A donkey with an extreme control value gets large changes in both
+  rows and both variables, which $b$ reads as an association. A random intercept does not remove
+  this; the three condition values would.
+
+**Normality.** Shapiro–Wilk on "the data", the raw outcome pooled over conditions,
+$H_0: y \sim$ Normal. The assumption concerns $\varepsilon_{ic}$, not $y$; and SBR is a count,
+RMSSD a positive skewed quantity whose SD is proportional to its mean (coefficient of variation
+`{r} f(min(t2c$sd[t2c$outcome == "RMSSD"] / t2c$mean[t2c$outcome == "RMSSD"]), 2)` to
+`{r} f(max(t2c$sd[t2c$outcome == "RMSSD"] / t2c$mean[t2c$outcome == "RMSSD"]), 2)` across conditions),
+for which a Gaussian with one $\sigma$ is the wrong family twice over.
+
+**What the p-values test.**
+
+| where | $H_0$ in symbols | was $H_0$ the question? | what the number stands in front of |
+|---|---|---|---|
+| Results 2.4, Fig. 2, six contrasts | $\beta_T = 0$ | partly: that lucerne and a clipper change something was the premise; the question is how much, in which direction, and whether the two directions differ | $\hat\beta_T$ with an interval, never printed; two of the six p-values are inconsistent with every summary the paper gives |
+| the valence claim | $\beta_P = \beta_N$ | yes, this is the claim ("bidirectional", "valence") | never tested, never estimated |
+| Tables 3–4, $b$ | $b = 0$ | a coupling between two responses, which the design does not need | the two within-treatment slopes, opposite in sign for SBR (E4 below) |
+| Tables 3–4, $d$ | $d = 0$ | no (adjusted for a co-outcome) | — |
+| Methods, Shapiro–Wilk | $y$ Normal | a model check on the wrong quantity | the family question (count, positive skewed) |
+| Methods, power | $\rho = 0.5$ against 0, one-sided point-biserial | unrelated to the paired contrasts analysed | the standardised changes the design produced ($d_z$ from `{r} f(min(cc$delta_mean / cc$delta_sd), 1)` to `{r} f(max(cc$delta_mean / cc$delta_sd), 1)` on the printed rows) |
+
+*The causal diagram of the design (condition to outcomes, sequence position and carryover, the
+eating component of the positive stimulus, the shared control value behind both change scores)
+is added once the P002 diagram has been reviewed.*
+
+### What this review fits
+
+One model per outcome, all three conditions in one likelihood, the condition effects signed;
+$\eta_{ic} = \beta_0 + \beta_c + \beta_{o(ic)}$ with $\beta_0 = \beta_{o=1} = 0$ for the
+reference levels.
+
+**SBR**, a count:
+$$y_{ic} \sim \mathrm{NegBin}_2(\mu_{ic}, \phi),\qquad \log \mu_{ic} = \eta_{ic} + u_i,\qquad u_i \sim \mathrm{N}(0, \tau^2).$$
+$\exp(\beta_c)$ is the rate ratio of condition $c$ over control for the same donkey; the
+difference in blinks per minute is derived at $u_i = 0$ and averaged over positions.
+
+**ET**, the three condition values of a donkey as one vector:
+$$(y_{i0}, y_{iP}, y_{iN})^{\top} \sim \mathrm{MVN}(\boldsymbol\eta_i, \Sigma),\qquad
+\Sigma = \mathrm{diag}(\sigma_c)\, \Omega\, \mathrm{diag}(\sigma_c),$$
+with $\sigma_c$ the between-donkey SD in each condition and $\Omega$ the within-donkey
+correlations between conditions, both free; $\beta_c$ is the difference in °C for a typical
+donkey. The paper's model is the special case $\Sigma = \tau^2 \mathbf{1}\mathbf{1}^{\top} + \sigma^2 I$,
+equal SDs in all conditions and one common correlation, and the reported numbers imply a
+covariance no such $\Sigma$ represents.
+
+**RMSSD**, the same on the log scale:
+$$(\log y_{i0}, \log y_{iP}, \log y_{iN})^{\top} \sim \mathrm{MVN}(\boldsymbol\eta_i, \Sigma),$$
+$\exp(\beta_c)$ the ratio of medians; the ratio of arithmetic means, the scale of Table 2, is
+$\exp\!\big(\beta_c + (\sigma_c^2 - \sigma_0^2)/2\big)$.
+
+**Contrasts.** $\beta_P$, $\beta_N$ and $\beta_P - \beta_N$, the last being the comparison the
+valence claim requires and the paper never makes. **Variation.** $\tau$ and the ICC (SBR),
+$\sigma_c$ and $\Omega$ (ET, RMSSD), $\beta_o$. **E4**, replacing Tables 3–4, on signed changes
+with treatment-specific slopes and spreads:
+$$\Delta\mathrm{RMSSD}_{iT} \sim \mathrm{N}\big(a_T + b_T\, x_{iT},\; s_T^2\big),\qquad b_P - b_N;$$
+the shared-control problem is stated, not solved. **E5.**
+$\mathrm{AUC}_{cc'} = \Pr(Y_c > Y_{c'})$ for one blink count from each of two conditions, from
+the fitted predictive distributions.
+
+Limitations, stated: the data are reconstructed from the printed means, SDs and the 68 unsigned
+changes per outcome, with the signs of the reversed donkeys and the correlation between a
+donkey's two changes not identified; the reconstruction is Gaussian by construction and cannot
+adjudicate families; the order effect is estimable, carryover is not; E4 inherits the shared
+control. The graphical models of the four Stan programs in plate notation follow in the
+Re-analysis section when the protocol item is applied to the stage 4 write-up.
+
+### Parameters side by side
+
+| symbol | the paper | this review | read as |
+|---|---|---|---|
+| $\beta_T$, per outcome | fitted; only p printed; Table 2 shows $\overline{\lvert\Delta\rvert}$ instead | estimate with interval, signed: rate ratio and blinks/min (SBR), °C (ET), ratio of means and ms (RMSSD) | what one treatment does to a typical donkey's outcome, with its direction |
+| $\beta_P - \beta_N$ | not estimated, not tested | estimate with interval | whether the two treatments differ, and in direction or only in size |
+| $\overline{\lvert\Delta_T\rvert}$, SD | Table 2 "change" row | $\bar\Delta_T$ signed, from the reconstruction | a magnitude without direction is not an effect |
+| $\tau$, $\sigma$ | not reported; one $\sigma$ for all conditions | $\tau$, ICC (SBR); $\sigma_c$, $\Omega$ (ET, RMSSD) | how much donkeys differ, and whether a donkey's response is consistent across conditions |
+| $\beta_o$ | fitted, not reported | reported | whether the sequence position matters |
+| $b$ (one slope), $d$ | Tables 3–4 on unsigned changes | $b_P$, $b_N$ on signed changes; $d$ not estimated | within-treatment coupling of two responses; no "effect adjusted for a co-outcome" |
+| — | "simple and practical indicator" | AUC per pair of conditions | how often one reading from one state exceeds one from the other |
 
 ## What the estimates mean
 

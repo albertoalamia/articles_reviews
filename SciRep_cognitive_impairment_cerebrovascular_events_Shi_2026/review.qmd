@@ -6,7 +6,7 @@ author: Alberto Alamia
 categories: [psychiatry, cohort, systematic track]
 draft: true
 params:
-  protocol_version: "0.2"
+  protocol_version: "0.3"
   track: "systematic"
 ---
 
@@ -64,6 +64,173 @@ The reported mean change does not equal the difference of the condition means.
 
 (If performed.) Model, priors, data source, diagnostics, what changes and what does not.
 Stan code and data in the repository.
+
+## The models, written out
+
+Protocol H4. What the paper fitted, in notation, with what each parameter is and what the paper
+reads it as; what its p-values test; the structure of the question as a diagram; and the models of
+the re-analysis in the same notation. Drafted in `notes/04_analysis_plan.md`, section 3b.
+
+```{r}
+#| label: models-setup
+#| message: false
+library(readr); library(dplyr)
+art <- here::here("SciRep_cognitive_impairment_cerebrovascular_events_Shi_2026")
+rd  <- function(p) read_csv(file.path(art, p), show_col_types = FALSE, progress = FALSE)
+f   <- function(x, d = 2) formatC(round(x, d), format = "f", digits = d)
+t1  <- rd("data/raw/table1_baseline.csv")
+t2  <- rd("data/raw/table2_cox.csv")
+T2  <- function(o, g, w) t2[[w]][t2$outcome == o & t2$group == g]
+ce  <- rd("output/tables/stage2_curves_at_end.csv")
+CE  <- function(o, g, w, sc = "early", tm = 4.2) ce[[w]][ce$outcome == o & ce$group == g & ce$scenario == sc & ce$time == tm]
+risk_ci  <- T2("ischemic stroke", "CI", "events") / T2("ischemic stroke", "CI", "n_group")
+risk_nci <- T2("ischemic stroke", "NCI", "events") / T2("ischemic stroke", "NCI", "n_group")
+n_tests  <- sum(!is.na(t1$p_reported))
+age_gap  <- t1$ci_med[t1$variable == "Age"] - t1$nci_med[t1$variable == "Age"]
+```
+
+### What the paper fits
+
+One Cox proportional-hazards model per outcome $k \in \{$ischaemic stroke, any stroke, death$\}$
+and per covariate set $z$:
+
+$$h_k(t \mid \mathrm{CI}_i, z_i) = h_{0k}(t)\, \exp\!\big(\beta_k\, \mathrm{CI}_i + \gamma_k^{\top} z_i\big),$$
+
+with $z$ empty (unadjusted), $z = ($age, gender, education$)$ (Model 1), and $z$ plus
+homocysteine, intracranial stenosis, hypertension and occupation (Model 2). The paper reports
+$\exp(\hat\beta_k)$ with a Wald interval. It does not report $h_{0k}$, which the partial
+likelihood profiles out, nor any $\gamma_k$.
+
+**What $\exp(\beta_k)$ is.** The ratio of the cause-specific hazards, the instantaneous rate of
+a first event of type $k$ among people still event-free, between a person with MMSE < 24 and one
+with MMSE ≥ 24 and the same $z$, assumed constant over $t$; $t$ runs from an origin the paper
+does not state; the comparison is made in the participants with complete $z$ (an unstated
+number for Model 2), and death is treated as independent censoring in the stroke models.
+
+**What the paper reads it as.** "A 2.32 to 2.55 times higher risk" (Discussion). A hazard
+ratio is not a risk ratio. The share of a group with a first ischaemic stroke by time $t$ is
+
+$$F_g(t) = \int_0^{t} S_g(u)\, h_g(u)\, du, \qquad S_g(u) = \exp\!\Big(-\sum_{k'} \int_0^{u} h_{gk'}(v)\, dv\Big),$$
+
+which needs the baseline and the death hazard the paper does not give. From the counts of
+Table 2 it is `{r} f(100 * risk_ci, 1)` % against `{r} f(100 * risk_nci, 1)` % over the follow-up:
+a risk ratio of `{r} f(risk_ci / risk_nci, 1)` and `{r} f(100 * (risk_ci - risk_nci), 0)` more
+first strokes per 100 people, before any adjustment.
+
+**How age enters.** Presumably as $\gamma_{\text{age}}\, \text{age}_i$ on the log hazard, so
+that each decade multiplies the hazard by $\theta_{\text{age}} = \exp(10\gamma_{\text{age}})$,
+the same factor at 45 and at 75. With rare events the unadjusted and adjusted coefficients obey
+
+$$\mathrm{HR}_{\text{crude}} \approx \exp(\beta_k) \times
+\frac{\mathbb{E}\big[\exp(\gamma_k^{\top} z) \mid \mathrm{CI} = 1\big]}{\mathbb{E}\big[\exp(\gamma_k^{\top} z) \mid \mathrm{CI} = 0\big]},$$
+
+the second factor being how much more hazard the exposed group carries through $z$ alone. The
+paper gives the left side (`{r} f(T2("ischemic stroke", "CI", "hr_unadj"))`) and $\exp(\hat\beta_k)$
+(`{r} f(T2("ischemic stroke", "CI", "hr_m1"))`) and so fixes this factor at
+`{r} f(T2("ischemic stroke", "CI", "hr_unadj") / T2("ischemic stroke", "CI", "hr_m1"))` without saying
+what $\gamma_k$ produces it, in a comparison where the groups differ by `{r} f(age_gap, 1)` years at
+the median. The re-analysis inverts this identity (E2 below).
+
+**The curves.** Figure 2 draws $1 - \hat S_{gk}(t)$ with
+$\hat S_{gk}(t) = \prod_{t_j \le t} (1 - d_{gkj}/n_{gj})$ and calls it cumulative incidence. With
+death competing, the share with a stroke by $t$ is $F_g(t)$ above (the Aalen–Johansen estimate),
+and $F_g(t) \le 1 - \hat S_{g,\text{stroke}}(t)$. On the reconstruction the gap at the end of the
+axis is `{r} f(CE("ischemic stroke", "CI", "one_minus_km") - CE("ischemic stroke", "CI", "aalen_johansen"), 3)`
+for the impaired group: negligible in size, but the label names a different quantity.
+
+**What the p-values test.** Each answers "if $H_0$ held, how often would data at least this far
+from it arise"; none estimates anything the conclusion needs.
+
+| where | $H_0$ in symbols | was $H_0$ the question? | what the number stands in front of |
+|---|---|---|---|
+| Table 1, `{r} n_tests` rows | $F_v^{\mathrm{CI}} = F_v^{\mathrm{NCI}}$ for each baseline variable $v$ | no: two groups defined by cognition differ in age by construction; the question is by how much and what it does to $\beta_k$ | the size of each difference and its consequence; used instead to pick $z$ for Model 2 |
+| Fig. 2, log-rank | $h_k^{\mathrm{CI}}(t) = h_k^{\mathrm{NCI}}(t)$ for all $t$ | no: that older, less schooled people have more strokes was not in doubt | the curves, which contradict the table |
+| Methods, proportional hazards | $\beta_k(t) = \beta_k$ | a model check, legitimate in itself | with 15 exposed events the test sees gross departures only; "P > 0.05" is not evidence of proportionality |
+| Table 2, interval edges | $\beta_k = 0$ at the edge | the interval is the useful part; its width is set by 15 events | — |
+
+### The question as a diagram
+
+```{r}
+#| label: dag-p002
+#| message: false
+#| fig-width: 7.5
+#| fig-height: 5.2
+#| fig-cap: "The structure the paper's Methods and Table 1 imply. Arrow labels: P stated by the paper, D standard for the design or population, A assumed here, H the hypothesis under test. Age and sex share one node (same edges, both in Model 1). U, unmeasured subclinical cerebrovascular disease; S, selection into the analysed sample (MMSE available in 2012/13 and event-free until then); Vasc, the vascular risk factors measured in 2010/11; Occ, manual work. Competing risk and the time origin are not graph edges (text)."
+library(dagitty); library(ggdag); library(ggplot2)
+dag_txt <- '
+dag {
+  CI      [exposure, pos="1.45,0.92"]
+  Stroke  [outcome,  pos="2.89,0.97"]
+  Death   [pos="4.91,0.33"]
+  AgeSex  [pos="3.2,3.27"]
+  Edu     [pos="0.45,3.36"]
+  Occ     [pos="-1,2.14"]
+  Vasc    [pos="2.63,1.94"]
+  U       [latent, pos="1.91,0.21"]
+  S       [adjusted, pos="-0.95,-0.13"]
+  AgeSex -> CI  AgeSex -> Stroke  AgeSex -> Death  AgeSex -> Vasc  AgeSex -> S
+  Edu -> CI  Edu -> Stroke  Edu -> Occ  Edu -> S
+  Occ -> Vasc
+  Vasc -> CI  Vasc -> Stroke  Vasc -> Death  Vasc -> S
+  U -> CI  U -> Stroke
+  CI -> Stroke  CI -> Death
+  Stroke -> Death
+}'
+g <- dagitty(dag_txt)
+src <- c("AgeSex->CI" = "P", "AgeSex->Stroke" = "D", "AgeSex->Death" = "D", "AgeSex->Vasc" = "D", "AgeSex->S" = "P",
+         "Edu->CI" = "P", "Edu->Stroke" = "D", "Edu->Occ" = "A", "Edu->S" = "A", "Occ->Vasc" = "A",
+         "Vasc->CI" = "P", "Vasc->Stroke" = "P", "Vasc->Death" = "D", "Vasc->S" = "P",
+         "U->CI" = "A", "U->Stroke" = "A", "CI->Stroke" = "H", "CI->Death" = "H", "Stroke->Death" = "D")
+tl <- 0.42   # label position along each edge, chosen for clearance
+d <- tidy_dagitty(g)$data |>
+  mutate(edge = paste0(name, "->", to), src = src[edge], xm = x + tl * (xend - x), ym = y + tl * (yend - y),
+         lab = ifelse(name == "AgeSex", "Age,\nsex", name),
+         role = case_when(name == "CI" ~ "exposure", name == "Stroke" ~ "outcome", name == "U" ~ "unmeasured",
+                          name == "S" ~ "conditioned on", TRUE ~ "measured"))
+ggplot(d, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges(edge_colour = "grey55") +
+  geom_label(data = filter(d, !is.na(src)), aes(x = xm, y = ym, label = src), size = 2.6, colour = "grey15",
+             fontface = "bold", label.padding = unit(0.08, "lines"), label.size = 0, fill = "white") +
+  geom_dag_point(aes(fill = role), shape = 21, size = 15, colour = "grey30") +
+  geom_dag_text(aes(label = lab), colour = "black", size = 2.9, lineheight = 0.8) +
+  scale_fill_manual(values = c(exposure = "#f4d35e", outcome = "#f0897a", unmeasured = "white",
+                               `conditioned on` = "grey85", measured = "#cfe3f7"), name = NULL) +
+  expand_limits(x = c(-1.4, 5.4), y = c(-0.6, 3.7)) +
+  theme_dag() + theme(legend.position = "bottom")
+g_noU <- dagitty(paste(grep("\\bU\\b", strsplit(dag_txt, "\n")[[1]], value = TRUE, invert = TRUE), collapse = "\n"))
+# S is conditioned on by design and dagitty lists it in every set; shown separately in the text
+fmt_sets <- function(s) {
+  s <- lapply(s, \(v) sub("AgeSex", "Age, Sex", setdiff(v, "S")))
+  if (length(s) == 0) "none" else paste(sapply(s, \(v) paste0("{", paste(v, collapse = ", "), "}")), collapse = "; ")
+}
+```
+
+Read off the graph, with the adjustment sets computed by dagitty rather than asserted:
+
+- Without U, the minimal set that identifies the total effect of CI on stroke, besides S, is
+  `{r} fmt_sets(adjustmentSets(g_noU, "CI", "Stroke", type = "minimal"))`. Model 1 leaves the
+  vascular factors open; Model 2 adds three of them and occupation, which the graph does not
+  require once they are in, and is fitted on the subset with occupation recorded.
+- With U, the adjustment sets are `{r} fmt_sets(adjustmentSets(g, "CI", "Stroke", type = "minimal"))`:
+  no choice of the measured covariates identifies an effect of cognition on stroke if low MMSE
+  scores and later strokes share a cause in cerebrovascular disease already under way. This does
+  not touch the paper's analysis; it touches its wording. "Independently forecasted" is a
+  prediction claim, which U leaves intact; "cognitive impairment … heightens the risk" is a
+  causal one, which U does not allow.
+- Conditioning on S opens no path in this graph, but it changes the population: the estimates
+  are for people who reached the 2012/13 visit event-free and completed an MMSE, and the paper
+  reads them as for stroke-free adults aged 40 and over.
+- Death is a competing event, not a confounder: the stroke hazard ratio is cause-specific under
+  any adjustment, and the cumulative incidence needs the death hazard.
+- The time origin is not a graph edge. If follow-up starts at the 2010/11 baseline while exposure
+  is measured in 2012/13, the two years before the MMSE are immortal time for the exposed group.
+
+### What this review fits
+
+*To be completed at stages 3–4 from section 3b of the analysis plan: the piecewise-exponential
+competing-risk model (E1), the exposure effect as a function of the age effect (E2), the derived
+screening quantities (E3), each with its limitations, the plate diagrams of the two Stan programs,
+and the parameter table that feeds the next section.*
 
 ## What the estimates mean
 
