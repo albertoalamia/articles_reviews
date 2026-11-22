@@ -175,3 +175,29 @@ form and handling of death as a competing event not stated.
   way in the review from plan §3 and §5 (to be redrawn from the programs in S3); the causal
   structure stays as dagitty code in §3b.4 and is computed, not drawn, in the review.
 - Next step: Alberto runs the tests and renders; commit; then S1 of the plan.
+
+### 2026-11-22 (evening) — Skills; P2 confirmed; S1 of the stage 3 plan prepared
+- Done: repo skills `dagify`, `render-check`, `new-review` and `tools/stan_to_dag.R` (committed).
+  Alberto read the plan and confirmed P2 = LogNormal(log 2, 0.15) (plan §5; reference to quote at
+  stage 5). S1 written: `R/lib_population.R` (A6 population code moved verbatim out of `R/05`,
+  which now sources it), S1 block at the end of `R/01_prepare_data.R` writing
+  `data/derived/pem_counts.csv`, `calibrated_population.csv` and nine JSON files in
+  `data/derived/stan_data/`; `RECONSTRUCTION_LOG.md` §5; plan §7 records the file layout. A scratch
+  copy of the block run by Claude on the committed reconstruction (outputs in the scratchpad only):
+  events match Table 2 in all 28 scenario × model × group blocks; tail person-years 359 (uniform),
+  709 (early), 723 (late) in the NCI group, isch model.
+  On Alberto's question about censoring: the life table has no censoring before year 4 (A1, A4),
+  which the paper's own design implies (non-attenders followed through records, nobody censored);
+  a new concern "Loss to follow-up not reported; follow-up treated as complete through records"
+  (REP-GUIDE, major, confirmed) added to `03_concerns.md`, `registry/issues.csv` (19 entries now),
+  inventory B8 and F1, log §5. The quality table in `review.qmd` picks it up at the next render.
+- Decided (and why): one exposure JSON per outcome with the ages at all three ceilings and an
+  `age_max` switch, so the population is not written three times per outcome; ages to 3 decimals so
+  that stages 3 and 4 read the same numbers; the E1 wide prior is a `beta_sd` key. The new concern
+  is graded major because the exposed count (15) is sensitive to a few missed non-fatal strokes and
+  the direction of the bias is not knowable from the paper; `confirmed` because the omission and
+  the numbers at risk are the paper's own; the ascertainment argument is stated as a consequence.
+- Open questions: as before.
+- Next step: Alberto runs `Rscript <art>/R/01_prepare_data.R` and `Rscript <art>/R/05_model1_age_confounding.R`
+  and checks that `git status` shows only new files under `data/derived/` (recon_* and stage2_*
+  unchanged); commit; then S2 (`R/06_fit_frequentist.R`).

@@ -161,3 +161,35 @@ cumulative incidence with death competing (done here), the sensitivity of the ex
 age effect (done here as a calibration; a Bayesian version puts a prior on the age effect), and
 the added value of MMSE over age for screening only in the calibrated population. Anything on the
 continuous MMSE, education-specific cut-offs or Model 2 needs the authors' data.
+
+## 5. Inputs of stages 3 and 4 (S1, 2026-11-22)
+
+Written by the S1 block at the end of `R/01_prepare_data.R`, after the seed-dependent part, so
+`recon_counts.csv` and `recon_persons.csv` are unchanged (verified by `git diff` after the run).
+
+- `pem_counts.csv`: the life table of plan §2, one row per scenario × replicate × model × group ×
+  interval ((0, 1], (1, 2], (2, 3], (3, 4], (4, 4.2]): persons entering, person-years, events by
+  cause, censorings. Model `isch` has causes {ischaemic stroke, death}; under A5 a person with
+  another stroke stays at risk of both until censoring, so the `isch` risk set is one person larger
+  than the `any` risk set in the NCI group after each other stroke. Model `any` has causes {any
+  stroke, death}. Events per cell are the same in every scenario (they are fixed by
+  `recon_counts.csv`) and sum to Table 2 (66/15, 75/15, 71/15); person-years depend on the timing
+  scenario: uniform replicate 1 (`main = TRUE`) for the analysis, early and late as bounds. Under
+  uniform timing the tail interval has about half the person-years of the deterministic scenarios
+  (censoring is uniform on (4.0, 4.2] by A4), which is where the two bound it.
+  Censoring in the life table follows A1 and A4 and nothing else: the paper reports no loss to
+  follow-up and no censoring; the mortality panel's numbers at risk allow at most 30 (NCI) and 6
+  (CI) departures of any kind before year 4, all taken as deaths (a censoring in their place would
+  move one more death into the tail), so `n_cens` is 0 in intervals 1–4 and every event-free person
+  is censored in (4.0, 4.2]. This also mirrors the paper's own design, which follows participants
+  who missed the exams through records to 2015-12-31 without censoring them (Methods ll. 141–145;
+  concern "Loss to follow-up not reported"). With the authors' data the real last-contact dates
+  replace this.
+- `calibrated_population.csv`: the A6 population from `R/lib_population.R` (the code of `R/05`,
+  moved there without change): 3,875 rows with group, quantile, sex, and age at the three ceilings
+  (90 main; 80 and 100 sensitivity), ages rounded to 3 decimals. Sex is independent of age within
+  group by construction. No event is attached to a person.
+- `stan_data/`: `pem_isch.json`, `pem_any.json` (and `_early`, `_late`), `exposure_age_isch.json`,
+  `exposure_age_any.json`, `exposure_age_death.json`; keys documented in the S1 block header.
+  Switch keys (`prior_only`, `beta_sd`, `prior`, `age_max`) are rewritten by `run_model.sh` into a
+  copy of the file at run time; the committed files hold the defaults (0, 1, 2 = P2, 90).

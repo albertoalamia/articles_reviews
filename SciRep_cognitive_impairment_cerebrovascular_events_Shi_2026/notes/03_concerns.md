@@ -70,6 +70,38 @@ reproduce to the second decimal. Entries touched by stage 2 carry a "Stage 2" li
   people without a prior stroke), which is the minimum. Tag unchanged: the arithmetic is confirmed,
   the explanation needs the event dates.
 
+### Loss to follow-up not reported; follow-up treated as complete through records
+- Code: REP-GUIDE — Severity: major — Evidence: confirmed
+- Location: Methods ll. 141–145 ("Follow-up and events"); Results l. 226; Fig. 2 numbers at risk
+- What: follow-up was "in-person interviews held every two years ... until December 31, 2015, the
+  occurrence of a predefined final event, or death"; "for those participants who missed the
+  follow-up exams, outcome data was gathered by reviewing death certificates from provincial vital
+  statistics offices, discharge summaries from the 11 hospitals, and medical records". The paper
+  never says how many participants missed an exam, moved away or were otherwise lost; no one is
+  described as censored before 2015-12-31. The numbers at risk agree: in the mortality panel the
+  NCI risk set loses 30 of 3,683 and the CI risk set 6 of 192 by year 4, departures of any kind
+  (deaths included), so by the figure fewer than 1 % and 3 % left the cohort for any reason in
+  four years of a community cohort of adults aged 40 and over.
+- Why it matters: (i) STROBE items 12d, 13 and 14c (how loss to follow-up was addressed, numbers at
+  each stage, follow-up time by group) are absent, so the reader cannot tell complete follow-up
+  from follow-up declared complete. (ii) A participant who missed the exams contributes person-time
+  as event-free until 2015-12-31 unless a record is found; non-fatal strokes treated outside the 11
+  hospitals, or after a move, are not found, while deaths are (vital statistics). Ascertainment
+  therefore differs between attenders and non-attenders, and between stroke and death. If
+  non-attendance is more common in the impaired group (older, less schooled, more often dead or
+  dependent), the exposed stroke count is undercounted and the HR pulled towards 1; if it is more
+  common among the unimpaired who moved for work, the reverse. Which way it goes is not knowable
+  from the paper; the size of the exposed group (15 events) makes it sensitive to a handful of
+  missed events. (iii) The reconstruction of stages 2–4 takes the paper at its word (A1, no
+  censoring before year 4): every number this review computes on the reconstructed data inherits
+  the assumption that follow-up was complete.
+- How to check further: the number who missed each exam by group, and the date of last contact
+  per participant (item 2 of the data request already asks for last contact or censoring date and
+  the source of ascertainment of each event).
+- Stage 3 (2026-11-22): the life table for the piecewise-exponential model (`pem_counts.csv`) has
+  no censoring before year 4 by construction (log §5); on the authors' data the real last-contact
+  dates replace it.
+
 ### The manual-worker row of Table 1: percentages and p-value from different denominators
 - Code: CON-STAT — Severity: major — Evidence: confirmed
 - Location: Table 1 "Manual worker"; Supplementary Table S1; Results ll. 219–220; Methods ll. 170–172

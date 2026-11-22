@@ -347,8 +347,8 @@ quantities, covariates, data; each node a line of the Stan program.
   0.15); β_age under three priors, run separately and reported side by side:
   - P1 "as Model 1 implies": θ_age ~ LogNormal(log 1.55, 0.10);
   - P2 "as population studies report": θ_age ~ LogNormal(log 2, 0.15) (stroke incidence roughly
-    doubles per decade after middle age; the reference is chosen and quoted at stage 5, before
-    anything is published — flagged for Alberto);
+    doubles per decade after middle age; values confirmed by Alberto 2026-11-22 after reading the
+    plan; the literature reference is quoted at stage 5, before anything is published);
   - P3 "unknown": log θ_age ~ Uniform(0, log 3).
   The posterior for β_CI under P3 is the honest statement of what the paper's numbers say about
   the age-adjusted effect without an assumption on the age effect.
@@ -373,6 +373,7 @@ stage 4 integrates over a stated prior.
 ## 7. Deviations from this plan
 | date | what changed | why |
 |---|---|---|
+| 2026-11-22 (S1) | Stan data files: `pem_{isch,any}.json` (uniform replicate 1) plus `_early` / `_late` copies with the bounding person-years; `exposure_age_{isch,any,death}.json` carry the ages at the three ceilings (`age_90`, `age_80`, `age_100`) and an `age_max` switch, instead of one file per ceiling; the E1 wide-prior sensitivity is a `beta_sd` switch (1; 2) rather than a `prior_scale` multiplier; ages are written to 3 decimals (years) so that stages 3 and 4 read identical inputs | one population file per outcome keeps the data folder small (the population is the same for the three outcomes); the switches are the keys `run_model.sh` rewrites, as in P001 |
 
 ## 8. Execution schedule
 

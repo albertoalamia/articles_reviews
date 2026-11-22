@@ -25,7 +25,10 @@
 - B7 Sample size justification: none. 15 exposed events per outcome; 81–90 events for nine
   parameters in Model 2.
 - B8 Blinding: follow-up staff "blinded to the baseline data"; outcome adjudication not described
-  beyond AHA/ASA criteria; no statement for the analysts.
+  beyond AHA/ASA criteria; no statement for the analysts. Follow-up: two-yearly in-person exams to
+  2015-12-31; those who missed exams were followed through death certificates, discharge summaries
+  of 11 hospitals and medical records, and were not censored; the number who missed exams is not
+  given (numbers at risk: at most 30 of 3,683 and 6 of 192 departures of any kind by year 4).
 - B9 Manipulation check: n/a; the exposure is a measured state, not a manipulation.
 
 ## C. Measurement
@@ -99,8 +102,9 @@
   statements they support (refs 16, 17, 18, 21, 28).
 
 ## F. Reporting
-- F1 Guideline: none claimed; STROBE items missing: time origin and follow-up definition, n per
-  analysis, handling of missing covariates, competing risks, functional forms, absolute risks with CIs.
+- F1 Guideline: none claimed; STROBE items missing: time origin and follow-up definition, loss to
+  follow-up and numbers at each stage (12d, 13, 14c), n per analysis, handling of missing covariates,
+  competing risks, functional forms, absolute risks with CIs.
 - F2 Effect sizes with uncertainty: HRs with 95 % CIs, yes; no absolute risk difference, no
   discrimination measure for the screening claim.
 - F3 Exact p and n: Table 1 p exact to four decimals; Cox p-values not given (CIs only); n per

@@ -36,29 +36,10 @@ N <- c(NCI = 3683L, CI = 192L)
 # ---- age and sex per group from Table 1 -------------------------------------------------------
 age_row <- t1 |> filter(variable == "Age")
 male_row <- t1 |> filter(variable == "Male")
-# shifted log-normal truncated above at age_max: quantile function and parameter fit to three quantiles
-q_trunc <- function(p, mu, sigma, shift, age_max) {
-  shift + qlnorm(p * plnorm(age_max - shift, mu, sigma), mu, sigma)
-}
-fit_trunc <- function(med, q1, q3, shift, age_max) {
-  target <- c(q1, med, q3)
-  loss <- function(par) sum((q_trunc(c(0.25, 0.5, 0.75), par[1], exp(par[2]), shift, age_max) - target)^2)
-  start <- c(log(med - shift), log((log(q3 - shift) - log(q1 - shift)) / (2 * qnorm(0.75))))
-  o <- optim(start, loss, method = "Nelder-Mead", control = list(reltol = 1e-12, maxit = 5000))
-  c(mu = o$par[1], sigma = exp(o$par[2]), max_abs_dev = sqrt(max((q_trunc(c(0.25, 0.5, 0.75), o$par[1], exp(o$par[2]), shift, age_max) - target)^2)))
-}
-make_pop <- function(shift = SHIFT, age_max = AGE_MAX) {
-  pn <- fit_trunc(age_row$nci_med, age_row$nci_q1, age_row$nci_q3, shift, age_max)
-  pc <- fit_trunc(age_row$ci_med, age_row$ci_q1, age_row$ci_q3, shift, age_max)
-  bind_rows(
-    tibble(group = "NCI", ci = 0L, q = (seq_len(N[["NCI"]]) - 0.5) / N[["NCI"]]) |>
-      mutate(age = q_trunc(q, pn[["mu"]], pn[["sigma"]], shift, age_max),
-             male = as.integer(q <= male_row$nci_pct / 100)),
-    tibble(group = "CI", ci = 1L, q = (seq_len(N[["CI"]]) - 0.5) / N[["CI"]]) |>
-      mutate(age = q_trunc(q, pc[["mu"]], pc[["sigma"]], shift, age_max),
-             male = as.integer(rev(q) <= male_row$ci_pct / 100))) |>   # rev: decorrelate sex from age within group
-    mutate(age_c = (age - 50) / 10)
-}
+# shifted log-normal truncated above at age_max, fitted to the Table 1 quantiles: R/lib_population.R
+# (moved there 2026-11-22 for stages 3-4; the code is the same, the outputs of this script did not change)
+source(here_art("R/lib_population.R"))
+make_pop <- function(shift = SHIFT, age_max = AGE_MAX) make_population(age_row, male_row, N, shift, age_max)
 pop <- make_pop()
 pop_check <- pop |> group_by(group) |>
   summarise(median_age = median(age), q1 = quantile(age, 0.25), q3 = quantile(age, 0.75),
