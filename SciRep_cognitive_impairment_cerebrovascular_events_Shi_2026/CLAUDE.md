@@ -170,5 +170,8 @@ form and handling of death as a competing event not stated.
   causal wording, which does not; the prior P2 reference for the age effect is left for Alberto
   to choose before stage 5.
 - Open questions: as before; Alberto's reading of the plan (estimands, priors, the DAG edges).
-- Next step: Alberto enters the rebuilt shell, runs the tests, previews the review (DAG renders,
-  adjustment sets print), reads the plan; commit; then S1 of the plan.
+- Later the same day: the DAG of protocol H4e is the graph of the Bayesian model (Levy–Mislevy
+  convention, `lib/model_dag.R`), not a causal diagram; the two planned programs are drawn that
+  way in the review from plan §3 and §5 (to be redrawn from the programs in S3); the causal
+  structure stays as dagitty code in §3b.4 and is computed, not drawn, in the review.
+- Next step: Alberto runs the tests and renders; commit; then S1 of the plan.

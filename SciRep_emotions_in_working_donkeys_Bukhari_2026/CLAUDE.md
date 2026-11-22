@@ -235,5 +235,14 @@ See `_template/CLAUDE.md` for the folder convention. Specific to this paper:
   follow once the P002 diagram is reviewed); params and registry 0.3. The review is with the
   authors since 2026-11-19: the Right of reply note planned for the H2/H3 tables will cover this
   section too.
-- Next step: render both formats after the shell rebuild; DAG of the design and plate diagrams
-  at the same time as P002's.
+- Later the same day: two diagrams added to the review section ("The design as a diagram":
+  condition → outcomes with E latent, Eat, Coder, Order, Amb, Donkey; the change-score graph with
+  the shared control values), with the adjustment set, the three directed paths and the
+  d-connection of the two changes computed in the chunks; plan section 3b.4 records the edges and
+  their sources.
+- Later again (Alberto: "these DAGs do not look relative to the Bayesian models"): the DAG the
+  protocol wants is the graph of the Bayesian model in the Levy–Mislevy convention (as in the
+  Metilfenidato manuscript): the four Stan programs are now drawn that way in "What this review
+  fits" with `lib/model_dag.R`; the two causal graphs are no longer drawn, their chunks keep
+  computing the adjustment set, the paths and the d-connection quoted in the text.
+- Next step: render; Italian primer after the authors' reply.

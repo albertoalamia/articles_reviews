@@ -65,6 +65,7 @@ format:
     code-link: false
     fig-width: 7
     fig-height: 4.5
+    lightbox: true          # click any figure to open it full-screen; panels of one chunk browse as a gallery
     df-print: kable
     link-external-newwindow: true
 

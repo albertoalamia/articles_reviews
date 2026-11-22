@@ -2,10 +2,10 @@
 `%||%` <- function(a, b) if (is.null(a)) b else a
 source("lib/consistency.R")
 source("lib/quality_table.R")
-source("lib/plate_diagram.R")
+source("lib/model_dag.R")
 library(testthat)
 failed <- 0
-for (f in c("lib/tests/test_consistency.R", "lib/tests/test_quality_table.R", "lib/tests/test_plate_diagram.R")) {
+for (f in c("lib/tests/test_consistency.R", "lib/tests/test_quality_table.R", "lib/tests/test_model_dag.R")) {
   df <- as.data.frame(test_file(f, reporter = "summary"))
   failed <- failed + sum(df$failed) + sum(df$error)
 }

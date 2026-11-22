@@ -261,6 +261,42 @@ effect is estimable but carryover is not; E4 inherits the shared control.
 | $b$ (one slope), $d$ | Tables 3–4 on unsigned changes | $b_P$, $b_N$ on signed changes; $d$ not estimated | within-treatment coupling of two responses, per treatment; no "effect adjusted for a co-outcome" |
 | — | "simple and practical indicator" | AUC per pair of conditions | how often one reading from one state exceeds one from the other |
 
+### 3b.4 Causal structure (added 2026-11-22; computed in `review.qmd`, not drawn)
+
+Two graphs, each edge labelled by its source (P stated by the paper, D standard for the design,
+A assumed here, H the hypothesis under test).
+
+**(a) The design.** Nodes: Cond (condition presented), E (emotional state, latent), Eat (the
+feeding that the positive stimulus consists of), Coder (counts blinks, sees the condition), Amb
+(ambient conditions, Table 1), Order (position in the sequence and what preceded it), Donkey,
+Y (the three outcomes; Amb acts on ET, Coder on SBR).
+
+```
+Order -> Cond (A: allocation unreported)   Order -> Y (D)   Order -> Amb (D)   Amb -> Y (D)
+Cond -> E (H)   E -> Y (H)
+Cond -> Eat (P: the stimulus is lucerne feeding)   Eat -> Y (A: chewing, head movement, feeding thermogenesis)
+Cond -> Coder (A: no blinding reported)   Coder -> Y (A)
+Donkey -> Y (D)   Donkey -> E (A: individual reactivity)
+```
+
+Computed in the review chunk: adjustment set for Cond → Y is {Order}; three directed paths from
+Cond to Y (through E, Eat, Coder), one of which is the claimed one, and nothing in the design
+separates them (no manipulation check, feeding is the stimulus, coder not blind). The data
+identify the effect of presenting the stimulus; the claims are about E.
+
+**(b) The change-score regressions.** For one treatment T: Donkey → Y₀, Y_T, X₀, X_T (D);
+E_T → Y_T, X_T (H); ΔY = Y₀ − Y_T and ΔX = X₀ − X_T (deterministic). With the E_T edges removed,
+ΔY and ΔX are d-connected through Donkey and d-separated given Donkey: the slope b has a
+non-zero expectation under no coupling, and the remedy is the model on the condition values with
+a donkey term (stages 3–4), not a random intercept on the two change rows, which share Y₀ and X₀.
+
+### 3b.5 DAGs of the stage 4 programs
+
+Drawn in `review.qmd` with `lib/model_dag.R` (convention of Levy and Mislevy): `sbr_nb2.stan`
+(priors → β₀, β_c, β_o, τ, φ^{-1/2}, z_i; u_i = τ z_i; η_ic; y_ic), `et_mvn.stan` and
+`rmssd_lognormal_mvn.stan` (priors → β, σ_c, Ω; η_ic, Σ; the donkey vector y_i or log y_i),
+`delta_slopes.stan` (priors → a_T, b_T, s_T; x_iT, T; μ_iT; ΔRMSSD_iT).
+
 ## 4. Stage 3 specifics (frequentist)
 
 - Software: R 4.4.3, glmmTMB 1.1.10 (all five models, so that dispersion formulas and the NB2

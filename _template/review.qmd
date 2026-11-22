@@ -79,27 +79,37 @@ $$ \ldots $$
 |---|---|---|---|
 | | | | |
 
-### The question as a diagram
+### What the design identifies
 
 ```{r}
-#| label: dag
-#| fig-width: 7
-#| fig-height: 4.5
-#| fig-cap: "Structure implied by the paper's Methods. Arrow labels: P stated by the paper, D standard for the design, A assumed here."
-library(dagitty); library(ggdag)
+#| label: dag-structure
+#| include: false
+# causal structure from notes/04_analysis_plan.md §3b.4; adjustment sets and paths are quoted in the text
+library(dagitty)
 g <- dagitty('dag { X [exposure] Y [outcome] X -> Y }')
-ggdag(g) + theme_dag()
-adjustmentSets(g)
+fmt_sets <- function(s) if (length(s) == 0) "none" else paste(sapply(s, \(v) paste0("{", paste(v, collapse = ", "), "}")), collapse = "; ")
 ```
+
+The adjustment set for the effect of X on Y is `{r} fmt_sets(adjustmentSets(g, "X", "Y"))` …
 
 ### What this review fits
 
 $$ \ldots $$
 
 ```{r}
-#| label: plate
-#| fig-cap: "Graphical model of `stan/<model>.stan`."
-source(here::here("lib/plate_diagram.R"))
+#| label: fig-model-dags   # the fig- prefix is required: without it Quarto numbers every panel (a) and misplaces the caption
+#| fig-width: 6.5
+#| fig-height: 4
+#| fig-dpi: 150
+#| layout-ncol: 2
+#| fig-subcap:            # one short entry per program; without it Quarto repeats fig-cap under every panel
+#|   - "<model>"
+#| fig-cap: "The Bayesian models as graphs, one node per quantity of each Stan program: prior constants (yellow), parameters (green), derived quantities (grey), covariates (blue), data (red)."
+source(here::here("lib/model_dag.R"))
+nodes <- data.frame(name = c("h", "mu", "y"), label = c("N*'(0, 1)'", "mu", "y[i]"),
+                    group = c("hyperparameter", "parameter", "observed"), x = c(0, 1, 2), y = c(1, 1, 1))
+edges <- data.frame(from = c("h", "mu"), to = c("mu", "y"))
+model_dag(nodes, edges, title = "<model>.stan")
 ```
 
 | symbol | the paper | this review | read as |

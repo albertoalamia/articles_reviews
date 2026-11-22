@@ -25,7 +25,7 @@ shell.nix, .envrc             pinned nix environment (R, Quarto, CmdStan, TeX). 
 _quarto.yml, index.qmd, about.qmd, protocol.qmd, theme.scss, CNAME   the website
 protocol/                     checklist.md (versioned), taxonomy.csv (issue codes), selection.md
 registry/                     papers.csv (one row per paper), issues.csv (one row per issue)
-lib/consistency.R, lib/quality_table.R, lib/plate_diagram.R   shared R functions: recomputation checks; quality and programme tables from the registry; plate diagrams of Stan programs; tests in lib/tests/
+lib/consistency.R, lib/quality_table.R, lib/model_dag.R   shared R functions: recomputation checks; quality and programme tables from the registry; DAGs of the Bayesian models; tests in lib/tests/
 _template/                    skeleton copied for each new article
 <Journal>_<shorttitle>_<FirstAuthor>_<Year>/   one folder per paper (see _template/CLAUDE.md)
 .github/workflows/publish.yml renders the site from _freeze/ and deploys to GitHub Pages

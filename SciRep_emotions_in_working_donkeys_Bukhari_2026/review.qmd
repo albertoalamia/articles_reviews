@@ -809,9 +809,73 @@ for which a Gaussian with one $\sigma$ is the wrong family twice over.
 | Methods, Shapiro–Wilk | $y$ Normal | a model check on the wrong quantity | the family question (count, positive skewed) |
 | Methods, power | $\rho = 0.5$ against 0, one-sided point-biserial | unrelated to the paired contrasts analysed | the standardised changes the design produced ($d_z$ from `{r} f(min(cc$delta_mean / cc$delta_sd), 1)` to `{r} f(max(cc$delta_mean / cc$delta_sd), 1)` on the printed rows) |
 
-*The causal diagram of the design (condition to outcomes, sequence position and carryover, the
-eating component of the positive stimulus, the shared control value behind both change scores)
-is added once the P002 diagram has been reviewed.*
+### What the design identifies
+
+```{r}
+#| label: dag-p001-design
+#| include: false
+# causal structure of the design (plan §3b.4); only the computed sets and paths are quoted below
+library(dagitty); library(ggdag); library(ggplot2)
+dag_a <- '
+dag {
+  Cond   [exposure, pos="-0.17,0.88"]
+  Y      [outcome,  pos="3.3,1.16"]
+  E      [latent,   pos="1.18,1.8"]
+  Order  [pos="0.15,2.75"]
+  Amb    [pos="1.12,2.97"]
+  Eat    [pos="2.1,0.87"]
+  Coder  [pos="1.41,-0.35"]
+  Donkey [pos="3.58,2.23"]
+  Order -> Cond  Order -> Y  Order -> Amb  Amb -> Y
+  Cond -> E  E -> Y  Cond -> Eat  Eat -> Y  Cond -> Coder  Coder -> Y
+  Donkey -> Y  Donkey -> E
+}'
+g_a <- dagitty(dag_a)
+src_a <- c("Order->Cond" = "A", "Order->Y" = "D", "Order->Amb" = "D", "Amb->Y" = "D", "Cond->E" = "H", "E->Y" = "H",
+           "Cond->Eat" = "P", "Eat->Y" = "A", "Cond->Coder" = "A", "Coder->Y" = "A", "Donkey->Y" = "D", "Donkey->E" = "A")
+paths_a <- paths(g_a, "Cond", "Y", directed = TRUE)$paths
+fmt_sets <- function(s) if (length(s) == 0) "none" else paste(sapply(s, \(v) paste0("{", paste(v, collapse = ", "), "}")), collapse = "; ")
+```
+
+From the causal structure written in the plan (section 3b.4), with the sets and paths computed by dagitty:
+
+- The effect of the *condition* on an outcome is identified with the adjustment set
+  `{r} fmt_sets(adjustmentSets(g_a, "Cond", "Y", type = "minimal"))`, which is what the paper's
+  order term does, pairing within donkey doing the rest. But there are
+  `{r} length(paths_a)` directed paths from the condition to the outcome
+  (`{r} paste(gsub(" -> ", " → ", paths_a), collapse = "; ")`), and only one of them runs through
+  the emotional state. Nothing in the design separates them: no manipulation check measures E,
+  the positive stimulus *is* feeding, and the coder was not blinded. What the data identify is
+  the effect of presenting lucerne or a clipper; the paper's claims are about E.
+- Ambient conditions were measured (Table 1) and not used; they act on eye temperature through
+  the sequence position as well as directly.
+
+```{r}
+#| label: dag-p001-deltas
+#| include: false
+# the change-score regressions as a graph (plan §3b.4)
+dag_b <- '
+dag {
+  Donkey [pos="1.5,2.6"]
+  ET     [latent, pos="1.5,1.0"]
+  Y0 [pos="0,1.6"]  YT [pos="1,1.6"]  X0 [pos="3,1.6"]  XT [pos="2,1.6"]
+  dY [pos="0.5,0.2"]  dX [pos="2.5,0.2"]
+  Donkey -> Y0  Donkey -> YT  Donkey -> X0  Donkey -> XT
+  ET -> YT  ET -> XT
+  Y0 -> dY  YT -> dY  X0 -> dX  XT -> dX
+}'
+g_b <- dagitty(dag_b)
+g_b_noE <- dagitty(sub("ET -> YT  ET -> XT", "", dag_b, fixed = TRUE))
+```
+
+In that graph, for one treatment, the donkey's level feeds its control and treatment values of both
+variables, and the two changes are their differences. With the edges from $E_T$ removed, the two changes are still d-connected
+(`{r} dconnected(g_b_noE, "dY", "dX")`) through the donkey's own level, and d-separated once the
+donkey is conditioned on (d-connected given Donkey: `{r} dconnected(g_b_noE, "dY", "dX", "Donkey")`).
+So the slope $b$ has a non-zero expectation even if the two responses are not coupled at all,
+and the remedy is the model on the three condition values with a donkey term, which is what
+stages 3–4 fit; a random intercept on the two change rows does not do it, because the shared
+control value is inside both rows.
 
 ### What this review fits
 
@@ -851,8 +915,60 @@ Limitations, stated: the data are reconstructed from the printed means, SDs and 
 changes per outcome, with the signs of the reversed donkeys and the correlation between a
 donkey's two changes not identified; the reconstruction is Gaussian by construction and cannot
 adjudicate families; the order effect is estimable, carryover is not; E4 inherits the shared
-control. The graphical models of the four Stan programs in plate notation follow in the
-Re-analysis section when the protocol item is applied to the stage 4 write-up.
+control.
+
+```{r}
+#| label: fig-model-dags-p001
+#| message: false
+#| fig-width: 6.5
+#| fig-height: 4
+#| fig-dpi: 150
+#| layout-ncol: 2
+#| fig-subcap:
+#|   - "SBR, negative binomial with a donkey effect"
+#|   - "ET, multivariate normal over the three conditions"
+#|   - "RMSSD, multivariate normal on the log scale"
+#|   - "E4, signed changes with treatment-specific slopes"
+#| fig-cap: "The four Bayesian programs of stage 4 as graphs, one node per quantity of the Stan file (`stan/`): prior constants (yellow, written beside the node), parameters (green), derived quantities (grey), covariates (blue), data (red). Indices: i donkey, c condition, o position, T treatment. In the MVN programs the donkey vector is integrated out, so Σ carries the between-donkey SDs and the within-donkey correlations."
+source(here::here("lib/model_dag.R"))
+N  <- function(m, s) sprintf("N*'(%s, %s)'", m, s); Np <- function(s) sprintf("N^'+'*'(0, %s)'", s)
+cond_dag <- function(prior0, prior_b, prior_s, y_lab, title) {
+  nd <- data.frame(
+    name  = c("h0", "hb", "hs", "hO", "b0", "bc", "bo", "sig", "Om", "cond", "order", "eta", "Sig", "y"),
+    label = c(prior0, prior_b, prior_s, "LKJ(2)", "beta[0]", "beta[c]", "beta[o]", "sigma[c]", "Omega", "c[ic]", "o[ic]", "eta[ic]", "Sigma", y_lab),
+    group = c(rep("hyperparameter", 4), rep("parameter", 5), "covariate", "covariate", "derived", "derived", "observed"),
+    x = c(0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4.2),
+    y = c(3, 2.2, 1, 0.2, 3, 2.4, 1.8, 1, 0.2, 2.4, 1.8, 2, 0.6, 1.4))
+  ed <- data.frame(from = c("h0", "hb", "hb", "hs", "hO", "b0", "bc", "bo", "cond", "order", "sig", "Om", "eta", "Sig"),
+                   to   = c("b0", "bc", "bo", "sig", "Om", "eta", "eta", "eta", "eta", "eta", "Sig", "Sig", "y", "y"))
+  model_dag(nd, ed, title)
+}
+sbr_nodes <- data.frame(
+  name  = c("h0", "hb", "ht", "hp", "hz", "b0", "bc", "bo", "tau", "isp", "z", "cond", "order", "u", "phi", "eta", "y"),
+  label = c(N("log 20", 1), N(0, 1), Np(1), Np(1), N(0, 1), "beta[0]", "beta[c]", "beta[o]", "tau", "phi^{-1/2}", "z[i]", "c[ic]", "o[ic]", "u[i]", "phi", "eta[ic]", "y[ic]"),
+  group = c(rep("hyperparameter", 5), rep("parameter", 6), "covariate", "covariate", "derived", "derived", "derived", "observed"),
+  x = c(0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2.2, 3, 4.2),
+  y = c(3.2, 2.5, 1.4, 0.2, 0.8, 3.2, 2.6, 2.0, 1.4, 0.2, 0.8, 2.6, 2.0, 1.1, 0.2, 1.8, 1.4))
+sbr_edges <- data.frame(from = c("h0", "hb", "hb", "ht", "hp", "hz", "b0", "bc", "bo", "cond", "order", "tau", "z", "u", "isp", "eta", "phi"),
+                        to   = c("b0", "bc", "bo", "tau", "isp", "z", "eta", "eta", "eta", "eta", "eta", "u", "u", "eta", "phi", "y", "y"))
+ds_nodes <- data.frame(
+  name  = c("ha", "hb", "hs", "a", "b", "s", "x", "trt", "mu", "y"),
+  label = c(N(0, 50), "N*'(0, '*s[b]*')'", Np(50), "a[T]", "b[T]", "s[T]", "x[iT]", "T", "mu[iT]", "Delta*RMSSD[iT]"),
+  group = c(rep("hyperparameter", 3), rep("parameter", 3), "covariate", "covariate", "derived", "observed"),
+  x = c(0, 0, 0, 1, 1, 1, 2, 2, 3, 4.2), y = c(2.2, 1.4, 0.4, 2.2, 1.4, 0.4, 2.6, 1.4, 1.6, 1.2))
+ds_edges <- data.frame(from = c("ha", "hb", "hs", "a", "b", "x", "trt", "trt", "trt", "mu", "s"),
+                       to   = c("a", "b", "s", "mu", "mu", "mu", "a", "b", "s", "y", "y"))
+model_dag(sbr_nodes, sbr_edges, "sbr_nb2.stan")
+cond_dag(N(35, 2), N(0, 2), Np(2), "bold(y)[i]", "et_mvn.stan")
+cond_dag(N("log 50", 1), N(0, 1), Np(1), "log~bold(y)[i]", "rmssd_lognormal_mvn.stan")
+model_dag(ds_nodes, ds_edges, "delta_slopes.stan")
+```
+
+The graphs (@fig-model-dags-p001) say in one glance what the equations say: the three condition models share one
+mean structure (two condition contrasts, two position contrasts), differ in the family and in
+the variance part, and the SBR donkey effect is sampled while the MVN programs carry the donkey in
+Σ; the change-score program has a slope and a spread per treatment and nothing shared across
+them.
 
 ### Parameters side by side
 

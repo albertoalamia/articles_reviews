@@ -249,7 +249,7 @@ either).
 | $\theta_{\text{age}}$ | not reported; ≈ 1.5 implied | fixed or prior | hazard multiplier per decade of age |
 | — | "screening could be valuable" | $\Delta a$, c-index gain, sensitivity / PPV vs an age rule | what a positive screen tells beyond the birth date |
 
-### 3b.4 Causal diagram of the question (draft, 2026-11-22)
+### 3b.4 Causal structure of the question (2026-11-22; computed in `review.qmd`, not drawn)
 
 The structure the paper's Methods and Table 1 imply, drawn so that the meaning of each
 coefficient can be read off it. Every arrow carries its source: **P** stated by the paper,
@@ -315,20 +315,20 @@ in the review chunk:
   years before the MMSE are immortal time for the exposed group; a graph does not show it and
   the reconstruction cannot resolve it (needs-data).
 
-### 3b.5 Graphical models of the stage 4 programs (to be drawn in S3)
+### 3b.5 DAGs of the stage 4 programs (drawn in `review.qmd` from this plan; redrawn from the programs in S3)
 
-Plate notation, one figure per program, drawn with `lib/plate_diagram.R` so that each node is a
-line of the Stan program.
+One graph per program with `lib/model_dag.R` (convention of Levy and Mislevy, *Bayesian
+Psychometric Modeling*, as in the Metilfenidato manuscript): prior constants, parameters, derived
+quantities, covariates, data; each node a line of the Stan program.
 
-- `pem_competing.stan`: plates $g \in \{0, 1\}$, $j = 1..5$, $k \in \{1, 2\}$; data nodes
-  $D_{gjk}$ and $\mathrm{PY}_{gj}$; parameter nodes $\alpha_{jk}$ (plate $j, k$) and $\beta_k$
-  (plate $k$); prior constants $(\log 0.005, 1.5)$ and $(0, 1)$; derived nodes $F_{gk}(t)$, RD,
-  RR, tail ratio outside the plates.
-- `exposure_age.stan`: plate $i = 1..3875$ with data nodes $a_i, m_i, \mathrm{CI}_i$ (fixed by
-  A6, drawn as observed) feeding $\mu_i$; summed into $E_g$ (plate $g$) with data node $D_g$;
+- `pem_competing.stan`: indices $g \in \{0, 1\}$, $j = 1..5$, $k \in \{1, 2\}$; covariates
+  $\mathrm{CI}_g$, $\mathrm{PY}_{gj}$; parameters $\alpha_{jk}$, $\beta_k$ with priors
+  $(\log 0.005, 1.5)$ and $(0, 1)$; derived $h_{gjk}$; data $D_{gjk}$; generated $F_{gk}(t)$, RD, RR,
+  tail ratio.
+- `exposure_age.stan`: index $i = 1..3875$; covariates $a_i, m_i, \mathrm{CI}_i$ (fixed by A6);
   parameters $\lambda_0, \beta_{\mathrm{CI}}, \beta_{\text{age}}, \beta_m$ with their priors,
-  $\beta_{\text{age}}$'s prior switchable (P1, P2, P3); derived $\Delta a$, c-index, screening
-  metrics.
+  $\beta_{\text{age}}$'s switchable (P1, P2, P3); derived $\mu_i$, $E_g$; data $D_g$; generated
+  $\Delta a$, c-index, screening metrics.
 
 ## 4. Stage 3 specifics (frequentist)
 - R 4.4.3 in the pinned shell; `glm` (ML); survival only for the check against stage 2.

@@ -110,11 +110,13 @@ Recompute whatever can be recomputed from reported numbers (functions in `lib/co
   the Methods describe them, with each parameter named and three things said about it: what it
   is, what the paper reads it as, what it hides; (b) a table of the paper's p-values with, for
   each, the null hypothesis in symbols, whether that hypothesis was the question, and the estimate
-  it stands in front of; (c) a causal diagram of the question with every arrow labelled by its
-  source (stated by the paper, standard for the design, assumed here) and the adjustment sets it
-  implies, computed, not asserted; (d) the model(s) of the re-analysis in the same notation, with
-  their own limitations listed; (e) a graphical model in plate notation of each Stan program,
-  drawn node for node from the program; (f) a parameter table pairing each symbol with the
+  it stands in front of; (c) the causal structure of the question as dagitty code in the plan,
+  every edge labelled by its source (stated by the paper, standard for the design, assumed
+  here), with the adjustment sets and paths computed in the review, as text; (d) the model(s) of
+  the re-analysis in the same notation, with their own limitations listed; (e) the DAG of each
+  Bayesian model, one node per quantity of the Stan program (prior constants, parameters, derived
+  quantities, covariates, data), drawn with `lib/model_dag.R` in the convention of Levy and
+  Mislevy, *Bayesian Psychometric Modeling*; (f) a parameter table pairing each symbol with the
   paper's value, the re-analysis value and the sentence that reads it, which feeds H3. Drafted in
   `notes/04_analysis_plan.md` section 3b before fitting, so that the code is checked against the
   equations; published in `review.qmd` as "The models, written out". The emphasis is on what each
@@ -130,7 +132,7 @@ Recompute whatever can be recomputed from reported numbers (functions in `lib/co
 ## Changes
 
 - **0.3 (2026-11-22).** H4 added (the models written out: notation, p-value table, causal
-  diagram with adjustment sets, graphical models of the Stan programs, parameter table). Applied
+  structure with computed adjustment sets, DAG of each Bayesian model, parameter table). Applied
   to P001 and P002, both unpublished at the time; as with 0.2, the item changes how a review
   explains, not what counts as a flaw.
 - **0.2 (2026-11-21).** G7 added (interpretation of the estimates); H split into H1 verdict, H2

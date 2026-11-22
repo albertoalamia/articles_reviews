@@ -48,15 +48,16 @@ limitations listed under it.
 | symbol | the paper | this review | read as |
 |---|---|---|---|
 
-### 3b.4 Causal diagram of the question
-dagitty code (rendered with ggdag in `review.qmd`); every edge labelled P (stated by the paper),
-D (standard for the design), A (assumed here); adjustment sets from `dagitty::adjustmentSets()`;
-what the diagram says about the paper's coefficients; what a graph cannot show (time origin,
-competing events, selection into the sample).
+### 3b.4 Causal structure of the question
+dagitty code; every edge labelled P (stated by the paper), D (standard for the design), A
+(assumed here); adjustment sets and paths from dagitty, quoted in the review as text; what the
+structure says about the paper's coefficients; what a graph cannot show (time origin, competing
+events, selection into the sample). Not drawn.
 
-### 3b.5 Graphical models of the stage 4 programs
-One plate diagram per Stan program (`lib/plate_diagram.R`): data nodes, parameters, prior
-constants, derived quantities; each node a line of the program.
+### 3b.5 DAGs of the stage 4 programs
+One graph per Stan program (`lib/model_dag.R`, convention of Levy and Mislevy): prior constants,
+parameters, derived quantities, covariates, data; each node a line of the program; drawn in
+`review.qmd`.
 
 ## 4. Stage 3 specifics (frequentist)
 - Software and version; estimation method (ML/REML, df method):
