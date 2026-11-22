@@ -1,0 +1,8 @@
+check,value,threshold,pass
+"E1b: max |HR_pem - HR_cox(stage 2)|, main scenario",0.13875758860026544,0.15,TRUE
+"E1: max |CIF_stroke(4.2) - crude proportion|, early scenario, proportional group effect",0.001661864580566469,0.002,TRUE
+"E1: max |CIF_stroke(4.2) - crude proportion|, early scenario, group effect split at year 4",0.0031593642816245687,0.005,TRUE
+"E1: max |CIF_stroke(4) - Aalen-Johansen(4)|, main scenario, proportional (reported, not a pass/fail: the model averages the group effect over time)",0.019911411133412767,Inf,TRUE
+"E1: max |CIF_stroke(4) - Aalen-Johansen(4)|, main scenario, split at year 4",2.1681854775783965e-5,0.002,TRUE
+"E2: max |HR(theta_age = 1, theta_male = 1) - Table 2 unadjusted HR| (exponential model vs Cox)",0.05146201203685585,0.1,TRUE
+E2: max |HR(theta_implied) - Model 1|,0.0051155599646439676,0.01,TRUE

@@ -191,5 +191,5 @@ Written by the S1 block at the end of `R/01_prepare_data.R`, after the seed-depe
   group by construction. No event is attached to a person.
 - `stan_data/`: `pem_isch.json`, `pem_any.json` (and `_early`, `_late`), `exposure_age_isch.json`,
   `exposure_age_any.json`, `exposure_age_death.json`; keys documented in the S1 block header.
-  Switch keys (`prior_only`, `beta_sd`, `prior`, `age_max`) are rewritten by `run_model.sh` into a
+  Switch keys (`prior_only`, `beta_sd`, `split`, `prior`, `age_max`) are rewritten by `run_model.sh` into a
   copy of the file at run time; the committed files hold the defaults (0, 1, 2 = P2, 90).

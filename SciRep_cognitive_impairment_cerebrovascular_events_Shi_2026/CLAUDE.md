@@ -54,7 +54,7 @@ form and handling of death as a competing event not stated.
   `EXTRACTION_LOG.md` saying where each came from) or data received from the authors.
 - `data/derived/` — tidy data and `*.json` for CmdStan, produced by `R/01_prepare_data.R`.
 - `stan/` — `.stan` models, one per file, named by structure (`nb_crossover_order.stan`).
-- `run_<model>.sh` — compiles with CmdStan and samples; draws go to `$FITS_DIR/<this dir>/`.
+- `run_model.sh` — compiles with CmdStan and samples; draws go to `$FITS_DIR/<this dir>/<model>/`.
 - `R/0x_*.R` — numbered scripts: prepare, consistency checks, post-process, figures.
 - `output/figures`, `output/tables` — small artefacts only.
 - `correspondence/` — what was sent to the authors and what came back, dated.
@@ -226,3 +226,47 @@ form and handling of death as a competing event not stated.
 - Next step: S3 in a fresh conversation: `stan/pem_competing.stan`, `stan/exposure_age.stan`,
   `run_model.sh` (switches prior_only, beta_sd, prior, age_max), prior-predictive section of
   `R/03_postprocess.R`, DAGs redrawn from the programs (dagify skill), review chunk updated.
+
+### 2026-11-22 (night) — S3 of the plan prepared: the two Stan programs, the runner, the prior-predictive script
+- Done: `stan/pem_competing.stan` (E1, E1b, E1c; switches `prior_only`, `beta_sd`, `split`) and
+  `stan/exposure_age.stan` (E2, E3; switches `prior_only`, `prior`, `age_max`; the expected c-index
+  and the screening metrics of `R/06` as generated quantities), both accepted by `stanc`
+  (syntax and types only; not compiled, not sampled). `run_model.sh` rewritten from P001's
+  (`--prior-only`, `--beta-sd`, `--split`, `--prior P1|P2|P3`, `--age-max`; draws in
+  `$FITS_DIR/<article>/<model>/`, suffix scheme and seeds in its header; chain output to a log
+  file per chain). `R/03_postprocess.R --prior`: prior predictive of the cell counts, cumulative
+  incidences, HRs and tail ratios against the life table and Table 2, sampler diagnostics of the
+  prior runs, and mapping checks (CIF, tail ratio, E, c-index, screening metrics recomputed in R
+  from the parameter draws, tolerance 1e-4); parse-checked, helpers tried on synthetic draws.
+  `R/01_prepare_data.R` writes a `split` key in the six `pem_*.json`. DAGs redrawn from the
+  programs (12 and 17 nodes; scratch drawings checked for layout) in the `review.qmd` chunk;
+  plan §3b.5, §7 (S3 row) and §8 (S3 row) updated.
+- Decided (and why): the split-at-year-4 structure is a switch of the same program, because
+  stage 3 reports E1 from both structures (plan §7, S2) and the side-by-side table needs both;
+  the exposure prior runs use one outcome file, the prior being the same for the three; μ and
+  the 4.2-year risk share one node in the DAG (same hazard, two horizons).
+- Open questions: as before. To watch in the prior predictive: the tail cells of the exposed
+  group (10 strokes and 9 deaths in 17.8 person-years, a rate about 100 times the prior median
+  of α) may fall outside the prior 95 %; if so it is the tail anomaly of E1c showing up against a
+  prior written for ordinary rates, and Alberto decides whether the α prior stays as planned.
+  `R/06_fit_frequentist.R` and the `stage3_*` outputs were still untracked at the start of this
+  session although S2 is recorded as committed: they go in the S3 commit.
+- Next step: Alberto runs, from the repo root in the nix shell: `Rscript <art>/R/01_prepare_data.R`
+  (only the six `pem_*.json` should change); the five prior runs (plan §8, S3 row);
+  `Rscript <art>/R/03_postprocess.R --prior`. Claude checks the three tables and two figures;
+  render `review.qmd` (render-check skill); commit. Then S4: `run_all.sh` and the main section of
+  `R/03_postprocess.R`.
+- S3 run by Alberto (2026-11-22): `R/01` changed only the six `pem_*.json`; both programs compile;
+  the five prior runs pass the §5 thresholds (R-hat 1.00, ESS > 1,600, no divergences); the 16
+  mapping checks are below 3e-6 against a tolerance of 1e-4 (one bug fixed in the `convergence()`
+  helper of `R/03`: a column named `run` masked the run object). Prior predictive: 51 of 58 cell
+  and group counts within the prior 95 %. Outside: the six tail cells with 9–41 events (all but the
+  27 strokes of the unexposed) and the unexposed (0, 1] cell of ischaemic stroke (0 events where
+  the prior median is 18); the four crude tail ratios (23–85) lie above the prior 95 % (upper limit
+  13–16). Cumulative incidences at 4.2 years: prior 95 % 0.3–43 %, crude values at percentiles
+  0.16–0.70. The exposure priors cover the two counts of the three outcomes (percentiles 0.33–0.63).
+- Open for Alberto: whether the α prior stays as planned given the tail cells (Claude's proposal:
+  keep it; the cells have 9–41 events against a prior SD of 1.5, and the comparison with stage 3
+  shows any shrinkage). Expected in S4: under `--split` the tail group effect rests on 10 exposed
+  events, so Normal(0, 1) will pull the stage 3 HR of 7.5 towards about 6; the `--beta-sd 2` run
+  measures that.

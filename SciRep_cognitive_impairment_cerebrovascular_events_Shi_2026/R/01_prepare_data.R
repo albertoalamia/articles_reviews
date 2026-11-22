@@ -150,6 +150,7 @@ cat("persons:", nrow(persons), "rows;", "median follow-up (uniform, rep 1):",
 #     three ceilings, for E2–E3.
 # (c) Stan data (JSON) in data/derived/stan_data/, with the switches run_model.sh rewrites:
 #     prior_only (1 skips the likelihood), beta_sd (E1: prior SD of the group effects, 1; 2 = wide),
+#     split (E1: 0 one group effect per cause; 1 the group effect free before and after year 4, plan §7 S2/S3),
 #     prior (E2: 1 P1, 2 P2, 3 P3 of plan §5), age_max (E2: 90; 80, 100).
 # ================================================================================================
 source(here_art("R/lib_population.R"))            # jsonlite is called with ::
@@ -224,7 +225,7 @@ stan_pem <- function(lt) {
        PY = lapply(1:2, \(g) g_rows(g)$py),
        CI = c(0L, 1L),
        width = diff(BREAKS), t_end = BREAKS[-1],
-       prior_only = 0L, beta_sd = 1)
+       prior_only = 0L, beta_sd = 1, split = 0L)
 }
 n_json <- 0L
 for (m in c("isch", "any")) for (sc in c("uniform", "early", "late")) {

@@ -1,0 +1,17 @@
+model,run,scale,n_draws,quantity,max_diff,tolerance,pass
+pem_competing,isch_prior,absolute,25,F,9.212933799185308e-7,1e-4,TRUE
+pem_competing,isch_prior,relative,25,tail_ratio,9.63785708352205e-6,1e-4,TRUE
+pem_competing,any_prior,absolute,25,F,1.3241944720743248e-6,1e-4,TRUE
+pem_competing,any_prior,relative,25,tail_ratio,7.581535558687236e-6,1e-4,TRUE
+exposure_age,isch_P1_prior,relative,25,E,6.860770767946889e-6,1e-4,TRUE
+exposure_age,isch_P1_prior,absolute,25,c_age_sex,5.845837419693467e-7,1e-4,TRUE
+exposure_age,isch_P1_prior,absolute,25,c_with_mmse,9.06772226305641e-7,1e-4,TRUE
+exposure_age,isch_P1_prior,absolute,25,"sens, spec, ppv, npv",9.630531537796472e-7,1e-4,TRUE
+exposure_age,isch_P2_prior,relative,25,E,6.351030475082453e-6,1e-4,TRUE
+exposure_age,isch_P2_prior,absolute,25,c_age_sex,5.065039703211482e-7,1e-4,TRUE
+exposure_age,isch_P2_prior,absolute,25,c_with_mmse,6.815063335885441e-7,1e-4,TRUE
+exposure_age,isch_P2_prior,absolute,25,"sens, spec, ppv, npv",1.2434080339240872e-6,1e-4,TRUE
+exposure_age,isch_P3_prior,relative,25,E,5.6770006456874356e-6,1e-4,TRUE
+exposure_age,isch_P3_prior,absolute,25,c_age_sex,8.816803895861369e-7,1e-4,TRUE
+exposure_age,isch_P3_prior,absolute,25,c_with_mmse,1.1558893523444524e-6,1e-4,TRUE
+exposure_age,isch_P3_prior,absolute,25,"sens, spec, ppv, npv",2.4157865147200752e-6,1e-4,TRUE

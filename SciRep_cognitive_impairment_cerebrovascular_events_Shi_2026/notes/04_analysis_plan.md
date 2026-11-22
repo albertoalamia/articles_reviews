@@ -362,20 +362,24 @@ in the review chunk:
   years before the MMSE are immortal time for the exposed group; a graph does not show it and
   the reconstruction cannot resolve it (needs-data).
 
-### 3b.5 DAGs of the stage 4 programs (drawn in `review.qmd` from this plan; redrawn from the programs in S3)
+### 3b.5 DAGs of the stage 4 programs (drawn in `review.qmd` from the programs, S3, 2026-11-22)
 
 One graph per program with `lib/model_dag.R` (convention of Levy and Mislevy, *Bayesian
 Psychometric Modeling*, as in the Metilfenidato manuscript): prior constants, parameters, derived
 quantities, covariates, data; each node a line of the Stan program.
 
-- `pem_competing.stan`: indices $g \in \{0, 1\}$, $j = 1..5$, $k \in \{1, 2\}$; covariates
-  $\mathrm{CI}_g$, $\mathrm{PY}_{gj}$; parameters $\alpha_{jk}$, $\beta_k$ with priors
-  $(\log 0.005, 1.5)$ and $(0, 1)$; derived $h_{gjk}$; data $D_{gjk}$; generated $F_{gk}(t)$, RD, RR,
-  tail ratio.
-- `exposure_age.stan`: index $i = 1..3875$; covariates $a_i, m_i, \mathrm{CI}_i$ (fixed by A6);
-  parameters $\lambda_0, \beta_{\mathrm{CI}}, \beta_{\text{age}}, \beta_m$ with their priors,
-  $\beta_{\text{age}}$'s switchable (P1, P2, P3); derived $\mu_i$, $E_g$; data $D_g$; generated
-  $\Delta a$, c-index, screening metrics.
+- `pem_competing.stan` (12 nodes): indices $g \in \{1, 2\}$, $j = 1..5$, $k \in \{1, 2\}$;
+  covariates `CI`, `PY`; parameters `alpha` ($J \times K$), `beta` ($P \times K$, $P = 2$ when the
+  group effect is split at year 4) with priors $(\log 0.005, 1.5)$ and $(0,$ `beta_sd`$)$; derived
+  `log_h`; data `D`; generated `hr`, `tail_ratio`, `F`, `RD_pre`/`RR_pre` (year 4),
+  `RD_end`/`RR_end` (4.2 years). Not drawn: `D_rep`, `log_lik`, `width`, `t_end`, the switches.
+- `exposure_age.stan` (17 nodes): index $i = 1..3875$; covariates `ci`, `a`, `m` (fixed by A6);
+  parameters `lambda0`, `b_ci`, `b_age`, `b_male` with their priors, `b_age`'s switchable (P1, P2,
+  P3; under P3 the parameter is bounded to $[0, \log 3]$); derived `mu` (and the 4.2-year `risk`,
+  same hazard, one node), `E`; data `D`; generated `hr_ci`, `age_equiv_years`, and one node for
+  `c_age_sex`, `c_with_mmse`, `c_gain`, `sens`, `spec`, `ppv`, `npv` (three flag rules). Not drawn:
+  `theta_age`, `theta_male` (the exponentials of two parameters), `D_rep`, `log_lik`, the indices
+  and flags of transformed data.
 
 ## 4. Stage 3 specifics (frequentist)
 - R 4.4.3 in the pinned shell; `glm` (ML); survival only for the check against stage 2.
@@ -423,6 +427,7 @@ stage 4 integrates over a stated prior.
 | 2026-11-22 (S1) | Stan data files: `pem_{isch,any}.json` (uniform replicate 1) plus `_early` / `_late` copies with the bounding person-years; `exposure_age_{isch,any,death}.json` carry the ages at the three ceilings (`age_90`, `age_80`, `age_100`) and an `age_max` switch, instead of one file per ceiling; the E1 wide-prior sensitivity is a `beta_sd` switch (1; 2) rather than a `prior_scale` multiplier; ages are written to 3 decimals (years) so that stages 3 and 4 read identical inputs | one population file per outcome keeps the data folder small (the population is the same for the three outcomes); the switches are the keys `run_model.sh` rewrites, as in P001 |
 | 2026-11-22 (S2) | E1 checks: the tolerance for the PEM hazard ratios against the stage 2 Cox fit is 0.15, not 0.05; the 4.2-year check of the split model against the crude proportion is 0.005 (the constant hazard over a 0.2-year tail holding 19 exposed events at its start overshoots by 0.006 in that group; the late scenario undershoots; the two bracket the crude 7.8 %); the E2 check at θ_age = 1 compares with Table 2's unadjusted HR, not with the stage 2 Cox | a step baseline against exact event times in a tail that holds half the events: the PEM is within 1–3 % of Table 2 and the exponential model within 2 %, while the stage 2 Cox under uniform timing is 1–2 % below Table 2 (first run of `R/06`: differences 0.06–0.14 and 0.02–0.11) |
 | 2026-11-22 (S2) | E1 absolute risks are reported from two structures: the planned proportional group effect, and the group effect split before and after year 4; the figure and the 4.2-year values come from the early scenario (everyone followed to 4.2) | the proportional model gives the exposed group 4.3 % by year 4 where the Aalen–Johansen estimate is 2.6 %: it averages a group effect of 2.5 before year 4 and 7.5 after; the split model follows the data. Under uniform censoring in (4.0, 4.2] the 4.2-year risk from the uniform scenario is an extrapolation of the tail hazard (10.7 % against the 7.8 % observed): the 4.2-year value is identified only when everyone is followed to 4.2 |
+| 2026-11-22 (S3) | `pem_competing.stan` has a `split` switch (data key written by `R/01_prepare_data.R`, default 0; `run_model.sh --split`): the group effect free before and after year 4, each with the Normal(0, `beta_sd`) prior. S4 runs gain `pem_competing` × {isch, any} × `--split` on the main and early person-years. Prior-predictive runs (S3) are the five default ones: `pem_competing` × {isch, any}, `exposure_age` × isch × {P1, P2, P3}; the exposure prior does not depend on the outcome and is compared with the counts of the three outcomes. `R/03_postprocess.R --prior` also recomputes the generated quantities in R from the parameter draws (mapping checks, tolerance 1e-4) | stage 3 reports E1 from the proportional and the split structure (S2 row above), so stage 4 needs the same two to fill one table; the mapping checks tie the Stan formulas (CIF, tail ratio, expected c-index, screening metrics) to the stage 3 code before any posterior is read |
 | 2026-11-22 | §1 E5 and §3c added: cognition as a latent variable measured by the MMSE items, with education in the measurement part; pre-specified for the authors' data only | the paper's claim is about cognitive impairment, its analysis is about one score below a cut-off; the difference is a measurement model, which only item-level data can fit. Added after S2 so that it is on record before any reply from the authors (Alberto, 2026-11-22) |
 
 ## 8. Execution schedule
@@ -431,6 +436,6 @@ stage 4 integrates over a stated prior.
 |---|---|---|---|
 | S1 | `R/lib_population.R` (population code out of `R/05`), `R/01_prepare_data.R` block for `pem_counts.csv` (three scenarios), `calibrated_population.csv`, Stan JSON in `data/derived/stan_data/` (`pem_isch.json`, `pem_any.json`, `exposure_age_{isch,any,death}.json`, with `prior_only`, `prior`, `age_max` switches); `R/05` sources the lib and must reproduce its tables unchanged | `Rscript <art>/R/01_prepare_data.R`; `Rscript <art>/R/05_model1_age_confounding.R` | `stage2_*` tables byte-identical (diff); cell events sum to Table 2; person-years per scenario as expected |
 | S2 | `R/06_fit_frequentist.R`: E1 (two models), E1b vs stage 2, E1c, bootstrap; E2 profile over the θ_age grid; E3 derived; tables `output/tables/stage3_*.csv`, figures `stage3_cif.png`, `stage3_hr_by_age_effect.png` | `Rscript <art>/R/06_fit_frequentist.R` (seconds) | E1b within 0.05 of stage 2; CIF at 4.2 (early person-years) within 0.002 of the crude proportions; E2 at θ_age = 1 equals the unadjusted HR; E2 at the implied θ_age equals Model 1 |
-| S3 | `stan/pem_competing.stan`, `stan/exposure_age.stan`, `run_model.sh`; prior predictive section of `R/03_postprocess.R` | `./<art>/run_model.sh pem_competing --prior-only` etc.; `Rscript <art>/R/03_postprocess.R --prior` | both compile; prior predictive covers the observed cells without concentrating |
+| S3 | `stan/pem_competing.stan`, `stan/exposure_age.stan`, `run_model.sh`; prior predictive section of `R/03_postprocess.R`; `split` key in `R/01_prepare_data.R` | `Rscript <art>/R/01_prepare_data.R` (adds the key); `./<art>/run_model.sh pem_competing pem_isch --prior-only`, the same on `pem_any`; `./<art>/run_model.sh exposure_age --prior P1 --prior-only`, P2, P3; `Rscript <art>/R/03_postprocess.R --prior` | both compile; the five prior runs pass the §5 thresholds; mapping checks below 1e-4; prior predictive covers the observed cells without concentrating |
 | S4 | runs: `pem_competing` × {isch, any} × {main, early, late, wide prior}; `exposure_age` × {isch, any, death} × {P1, P2, P3} × {ceiling 90; 80, 100 for P2}; `R/03_postprocess.R` main: estimands, diagnostics, PPC, side-by-side table `stage4_side_by_side.csv`, figures | `./<art>/run_all.sh` (≈ 21 runs, minutes); `Rscript <art>/R/03_postprocess.R` | all runs pass the thresholds; stage 3 vs 4 as section 6 expects |
 | S5 | H3 right half and the results sections of `review.qmd`; STATUS; registry `status` | render | — |

@@ -1,0 +1,313 @@
+outcome,source,theta_age,is_implied,rule,metric,estimate,lo,hi
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24,sensitivity,0.1850684265640615,0.11398079424866692,0.2854715327771857
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24,specificity,0.9534158819936491,0.9518743424284202,0.9559619055613845
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24,ppv,0.07995025795508631,0.047777718154506287,0.1318856535768337
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24,npv,0.9816469524075488,0.976626601076147,0.9856456167908803
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+ischemic stroke,"model, calibrated population",1,FALSE,age >= 65,sensitivity,0.1999757914894954,0.17504994562413081,0.2349836879424631
+ischemic stroke,"model, calibrated population",1,FALSE,age >= 65,specificity,0.8284800679752492,0.8279339274037163,0.8293231093446874
+ischemic stroke,"model, calibrated population",1,FALSE,age >= 65,ppv,0.024867971205183123,0.019220165884387307,0.033024026902265975
+ischemic stroke,"model, calibrated population",1,FALSE,age >= 65,npv,0.979314904296597,0.973957974002749,0.9834045171959495
+ischemic stroke,"model, calibrated population",1,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,sensitivity,0.2950196715854673,0.23352109623874265,0.38187475846870905
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,specificity,0.8028695205168905,0.8015285103545233,0.8050420334542006
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,ppv,0.03169731240710342,0.023041681279520772,0.04486499990061814
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,npv,0.9811555273502771,0.9760022809695988,0.9852605144207413
+ischemic stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,sensitivity,0.18505247589959042,0.11224179899081863,0.27967804108765115
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,specificity,0.9534154764705284,0.9518366021231436,0.9558692350201179
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,ppv,0.07994187247818506,0.04837441153940493,0.1309652531314379
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,npv,0.9816469363433595,0.9767888026928752,0.9852968103178651
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+ischemic stroke,"model, calibrated population",1.25,FALSE,age >= 65,sensitivity,0.28501983282394866,0.25691823458064666,0.3206807539114098
+ischemic stroke,"model, calibrated population",1.25,FALSE,age >= 65,specificity,0.830340213753897,0.8296581901408523,0.8314579605910246
+ischemic stroke,"model, calibrated population",1.25,FALSE,age >= 65,ppv,0.035442952461565765,0.028580056068416532,0.0455149979155262
+ischemic stroke,"model, calibrated population",1.25,FALSE,age >= 65,npv,0.9815141135687799,0.9770796982546724,0.9849067977385668
+ischemic stroke,"model, calibrated population",1.25,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,sensitivity,0.35868865223408813,0.3013313761042503,0.4331994635247057
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,specificity,0.8042621039363963,0.8030057834755728,0.8063681270208946
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,ppv,0.038537273215279354,0.029950763000486595,0.052187699553850914
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,npv,0.9828577511952875,0.9783149766795508,0.9862692759574787
+ischemic stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24,sensitivity,0.18502572874119633,0.112831662671662,0.2804430976810812
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24,specificity,0.9534146737668014,0.9517973654627516,0.9558434841276416
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24,ppv,0.07992457223151542,0.04705004799315167,0.13087990794551876
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24,npv,0.9816476532897604,0.9768795343592221,0.985509654650763
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+ischemic stroke,"model, calibrated population",1.5,FALSE,age >= 65,sensitivity,0.37092589419872535,0.34270419566198884,0.4069047496098354
+ischemic stroke,"model, calibrated population",1.5,FALSE,age >= 65,specificity,0.8322189066243212,0.8312176935371697,0.8336894677050619
+ischemic stroke,"model, calibrated population",1.5,FALSE,age >= 65,ppv,0.04612227748002646,0.036865074054293914,0.0589809728994631
+ischemic stroke,"model, calibrated population",1.5,FALSE,age >= 65,npv,0.9837363928543997,0.9795068460538738,0.9869789969168945
+ischemic stroke,"model, calibrated population",1.5,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,sensitivity,0.4283505284225655,0.3773479117853949,0.4954770248389738
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,specificity,0.8057854410995214,0.8043866651320065,0.8079543645614078
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,ppv,0.0460183912863253,0.03589119012915032,0.06077787559410771
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,npv,0.9847209111410828,0.9807342561032564,0.9879448054972927
+ischemic stroke,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24,sensitivity,0.1850202003345374,0.11458557895335635,0.2744776069359505
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24,specificity,0.9534144833631668,0.951855775256266,0.9556779291847646
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24,ppv,0.0799203498431271,0.04793684152317082,0.1266956377271282
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24,npv,0.9816479500077048,0.9764777284109246,0.9855392285630067
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+ischemic stroke,"model, calibrated population",1.5569,TRUE,age >= 65,sensitivity,0.3900770310637195,0.3631450625715024,0.4235179849246642
+ischemic stroke,"model, calibrated population",1.5569,TRUE,age >= 65,specificity,0.8326376544203752,0.8316076478013794,0.8341018926319692
+ischemic stroke,"model, calibrated population",1.5569,TRUE,age >= 65,ppv,0.04850248641473305,0.03922667595703533,0.06160037681985702
+ischemic stroke,"model, calibrated population",1.5569,TRUE,age >= 65,npv,0.9842318737989786,0.9799963199472758,0.9873707025961388
+ischemic stroke,"model, calibrated population",1.5569,TRUE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24 or age >= 65,sensitivity,0.44442037791291444,0.3964239372141627,0.5057068729655843
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24 or age >= 65,specificity,0.8061367832661872,0.8047712547056075,0.8081521352798938
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24 or age >= 65,ppv,0.0477437054518312,0.037900306478947605,0.06172780496134089
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24 or age >= 65,npv,0.9851507680687432,0.9809448645917568,0.9883097292477618
+ischemic stroke,"model, calibrated population",1.5569,TRUE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,sensitivity,0.1849994079916075,0.11415957213458182,0.28252634392989223
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,specificity,0.9534137510759881,0.9518684014956709,0.9560113155309131
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,ppv,0.07990404197229277,0.04836033111238205,0.13331127492488368
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,npv,0.9816491644125004,0.976416591702861,0.985449694866296
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+ischemic stroke,"model, calibrated population",1.75,FALSE,age >= 65,sensitivity,0.4529384250369609,0.42678579405710915,0.4867262556019542
+ischemic stroke,"model, calibrated population",1.75,FALSE,age >= 65,specificity,0.834011905005645,0.8327396600986114,0.8358682163432732
+ischemic stroke,"model, calibrated population",1.75,FALSE,age >= 65,ppv,0.056313558362295894,0.04544362471330174,0.07206930875746208
+ischemic stroke,"model, calibrated population",1.75,FALSE,age >= 65,npv,0.9858583042082949,0.9819218399472437,0.988645311922706
+ischemic stroke,"model, calibrated population",1.75,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,sensitivity,0.4982386631563401,0.45414087664435365,0.5583300394049239
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,specificity,0.8073132169617246,0.805811972399428,0.8096559165111828
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,ppv,0.053520450963909,0.042594120238364626,0.06952247969090697
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,npv,0.9865904236599086,0.9827294885465068,0.9893842988491534
+ischemic stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24,sensitivity,0.18497637386674595,0.11648809847996255,0.28107608789816296
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24,specificity,0.9534127856452008,0.9518704248896538,0.955939771831625
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24,ppv,0.0798819045935958,0.04855361753627047,0.13355147545351245
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24,npv,0.9816514454390497,0.9767632590776593,0.9855922176088003
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+ischemic stroke,"model, calibrated population",2,FALSE,age >= 65,sensitivity,0.5278387793394093,0.5044866841912142,0.5590485302496597
+ischemic stroke,"model, calibrated population",2,FALSE,age >= 65,specificity,0.8356486659285088,0.8341545392880998,0.8377435552495925
+ischemic stroke,"model, calibrated population",2,FALSE,age >= 65,ppv,0.06561586192674121,0.05346078362899592,0.08194210154841797
+ischemic stroke,"model, calibrated population",2,FALSE,age >= 65,npv,0.9877963615259309,0.984649811876811,0.9902267108863991
+ischemic stroke,"model, calibrated population",2,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,sensitivity,0.5640854172416533,0.5270027996334348,0.6159457612123341
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,specificity,0.8087519561947016,0.8071073288031495,0.8112369710555037
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,ppv,0.06058441939939946,0.04901658251361337,0.0768759021666649
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,npv,0.9883519560574883,0.9851955502843701,0.9908802092798458
+ischemic stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,sensitivity,0.18494515908854964,0.1112368582667923,0.2891187951568867
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,specificity,0.9534109317453857,0.951811085296104,0.9559815080687968
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,ppv,0.07983749884415388,0.04763980375722857,0.13279477039232726
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,npv,0.9816578476778209,0.9766943631271363,0.9857414493578963
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+ischemic stroke,"model, calibrated population",2.5,FALSE,age >= 65,sensitivity,0.6512122656507288,0.6306278651384188,0.6772326677056012
+ischemic stroke,"model, calibrated population",2.5,FALSE,age >= 65,specificity,0.8383421187057702,0.8363365626833552,0.840991198127216
+ischemic stroke,"model, calibrated population",2.5,FALSE,age >= 65,ppv,0.08092112677188072,0.0656179979161908,0.10053307512655109
+ischemic stroke,"model, calibrated population",2.5,FALSE,age >= 65,npv,0.9909886049801063,0.9886418315374158,0.9928716634715989
+ischemic stroke,"model, calibrated population",2.5,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,sensitivity,0.6754294380226906,0.6447565869083266,0.7176116322737646
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,specificity,0.8111824060846422,0.8091496295326143,0.8139580932538594
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,ppv,0.07251500280534703,0.058757754755197136,0.09085535906776357
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,npv,0.9913305302562245,0.9888947464944755,0.9933055018360148
+ischemic stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24,sensitivity,0.16656434674978343,0.10257239592634607,0.25594255019938134
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24,specificity,0.9533024436939803,0.9517189834653598,0.955820167373258
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24,ppv,0.0799512186858362,0.04801838091542141,0.13181154512203724
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24,npv,0.979144787131479,0.9739525522705902,0.9835457562537369
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+any stroke,"model, calibrated population",1,FALSE,age >= 65,sensitivity,0.19349416565781874,0.17109983713997534,0.22470548642831675
+any stroke,"model, calibrated population",1,FALSE,age >= 65,specificity,0.8283914811857871,0.8278412146629899,0.8292316076966187
+any stroke,"model, calibrated population",1,FALSE,age >= 65,ppv,0.026735376929374704,0.02127057367812713,0.03473061382243243
+any stroke,"model, calibrated population",1,FALSE,age >= 65,npv,0.9768304592984568,0.9713300981251847,0.98124591057696
+any stroke,"model, calibrated population",1,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,sensitivity,0.2790350792567887,0.22374402272289284,0.35633106992986163
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,specificity,0.8027185670592775,0.8013573378580519,0.8048512427088403
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,ppv,0.03331085462414781,0.0250306686916883,0.046463797905590916
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,npv,0.9785870437600382,0.9732577177186845,0.983104767376337
+any stroke,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,sensitivity,0.16654852905831485,0.10397862313629047,0.25900795913683866
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,specificity,0.9533019892913216,0.9517562507114821,0.9557807810116457
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,ppv,0.07994173591165686,0.048130071978799004,0.130780975874477
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,npv,0.979144884449101,0.9737255611525146,0.9832127963002253
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+any stroke,"model, calibrated population",1.25,FALSE,age >= 65,sensitivity,0.27774460379930344,0.25350451623545744,0.3129947416520141
+any stroke,"model, calibrated population",1.25,FALSE,age >= 65,specificity,0.8304439913835252,0.8297344461332194,0.8315320420525233
+any stroke,"model, calibrated population",1.25,FALSE,age >= 65,ppv,0.03837547799168009,0.030782366453142064,0.04907109887136532
+any stroke,"model, calibrated population",1.25,FALSE,age >= 65,npv,0.979251321680627,0.9741230314094212,0.9831185348018997
+any stroke,"model, calibrated population",1.25,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,sensitivity,0.3440470573201542,0.29475618504512885,0.41698193442453857
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,specificity,0.8043023522928943,0.8030023551000175,0.8063652658753854
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,ppv,0.04107093115160626,0.03200243868568022,0.054511408072465184
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,npv,0.9805183870383631,0.9754494667154824,0.9843215044382246
+any stroke,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24,sensitivity,0.16652559857492555,0.10136680810905475,0.2578323453961159
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24,specificity,0.9533012149334097,0.9516769115511489,0.9558231317031486
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24,ppv,0.07992482288940757,0.04657763014666787,0.13194066829623335
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24,npv,0.9791458518323672,0.9736515090420408,0.9832853293622148
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+any stroke,"model, calibrated population",1.5,TRUE,age >= 65,sensitivity,0.3634201998215759,0.33812557614177874,0.3977351851212717
+any stroke,"model, calibrated population",1.5,TRUE,age >= 65,specificity,0.8325308813486728,0.8315043995987259,0.8339740796886708
+any stroke,"model, calibrated population",1.5,TRUE,age >= 65,ppv,0.050209412160261285,0.040367237814959205,0.06297660663967464
+any stroke,"model, calibrated population",1.5,TRUE,age >= 65,npv,0.9817139289946187,0.9771407322142274,0.9851810254443079
+any stroke,"model, calibrated population",1.5,TRUE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24 or age >= 65,sensitivity,0.4151031337813971,0.36901730655465637,0.4794610941807679
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24 or age >= 65,specificity,0.8060330338169852,0.8046237067277974,0.8082310625832185
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24 or age >= 65,ppv,0.049549653245593614,0.03905201403764458,0.06395270591137935
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24 or age >= 65,npv,0.9826300156653048,0.9780312882084341,0.9860885612045024
+any stroke,"model, calibrated population",1.5,TRUE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,sensitivity,0.16650239143631243,0.10232470203212062,0.2562799978514969
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,specificity,0.95330029895931,0.9517644939133458,0.9557824599036924
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,ppv,0.07990408311283324,0.048875720829614236,0.13076023967189512
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,npv,0.9791477768058564,0.9737999348870019,0.9832370244543709
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+any stroke,"model, calibrated population",1.75,FALSE,age >= 65,sensitivity,0.445548932847964,0.4216080850852102,0.47726470029448836
+any stroke,"model, calibrated population",1.75,FALSE,age >= 65,specificity,0.8345307436313107,0.8332594752790126,0.8362516133254854
+any stroke,"model, calibrated population",1.75,FALSE,age >= 65,ppv,0.061548758817409066,0.05063613866213586,0.07622614390893401
+any stroke,"model, calibrated population",1.75,FALSE,age >= 65,npv,0.9840750312186775,0.9801893892958738,0.987045505188266
+any stroke,"model, calibrated population",1.75,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,sensitivity,0.4863198642056877,0.446495334665128,0.5421341757123517
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,specificity,0.807767035253356,0.8062790007233426,0.8099810951762128
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,ppv,0.05804361253109595,0.0470592482953501,0.07281681766423055
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,npv,0.9847468085376446,0.9807925116720376,0.9877587673396329
+any stroke,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24,sensitivity,0.1664833332102377,0.10314136845727756,0.25818423657171474
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24,specificity,0.9532993593664112,0.9517399069406846,0.9559203311002414
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24,ppv,0.07988191919414903,0.047914087406307634,0.13511241475448083
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24,npv,0.9791506977099849,0.9741220878050274,0.9835424835999421
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+any stroke,"model, calibrated population",2,FALSE,age >= 65,sensitivity,0.5207482768362673,0.49860200412344824,0.5508849946808722
+any stroke,"model, calibrated population",2,FALSE,age >= 65,specificity,0.836360980811105,0.8347352219911913,0.8386767304353676
+any stroke,"model, calibrated population",2,FALSE,age >= 65,ppv,0.0719251811404989,0.05874751955208645,0.09020733346635951
+any stroke,"model, calibrated population",2,FALSE,age >= 65,npv,0.9862371530552714,0.9829244759166821,0.9889214360915514
+any stroke,"model, calibrated population",2,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,sensitivity,0.5533711520747282,0.5182895087164288,0.6032563110236457
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,specificity,0.8093987851608314,0.8076646383743938,0.8121774027147006
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,ppv,0.06603560657594923,0.0535069784013418,0.08398679713266646
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,npv,0.9867399869343314,0.9834806953030674,0.9895669982688037
+any stroke,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,sensitivity,0.1664609452039023,0.1027742239320317,0.25729943810477157
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,specificity,0.9532975851606612,0.951701343881132,0.955683582539031
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,ppv,0.07983752016797874,0.04696323742351541,0.12866845684828396
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,npv,0.9791589236047722,0.9738155516868542,0.9833145075646077
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+any stroke,"model, calibrated population",2.5,FALSE,age >= 65,sensitivity,0.6449126339939105,0.6269421178781489,0.6685284000797336
+any stroke,"model, calibrated population",2.5,FALSE,age >= 65,specificity,0.8393798170571449,0.8372481768033072,0.8421006661388726
+any stroke,"model, calibrated population",2.5,FALSE,age >= 65,ppv,0.08903709097968204,0.07297040229845485,0.1095577220757488
+any stroke,"model, calibrated population",2.5,FALSE,age >= 65,npv,0.9898071232691933,0.9872206445304881,0.9917657143202249
+any stroke,"model, calibrated population",2.5,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,sensitivity,0.6667094386679612,0.640397387613391,0.7038732392790494
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,specificity,0.8121540270721199,0.8099860597631527,0.814948427001088
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,ppv,0.07952711253969504,0.06484197980519302,0.09823649483026861
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,npv,0.9901090694955749,0.9874640958476582,0.9921348895289741
+any stroke,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24,sensitivity,0.17431056033823172,0.10667271903064776,0.26655618184946483
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24,specificity,0.9533529463896939,0.951727974308849,0.9558741695720275
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24,ppv,0.07995121315509572,0.04701117971431274,0.13289198229815766
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24,npv,0.9802567975447213,0.9747796592899179,0.9842637551861716
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+all-cause mortality,"model, calibrated population",1,FALSE,age >= 65,sensitivity,0.19620680096820356,0.1724911313597105,0.2284551516261904
+all-cause mortality,"model, calibrated population",1,FALSE,age >= 65,specificity,0.828430894158919,0.8278786576391297,0.829249799106182
+all-cause mortality,"model, calibrated population",1,FALSE,age >= 65,ppv,0.025905430313615557,0.02029599280283292,0.03413324510986885
+all-cause mortality,"model, calibrated population",1,FALSE,age >= 65,npv,0.9779345618611632,0.9722636177491085,0.9820431955035088
+all-cause mortality,"model, calibrated population",1,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,sensitivity,0.2857258659398055,0.22721366061686377,0.36549624809499914
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,specificity,0.802785744907699,0.8014053926009599,0.8049090775893035
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,ppv,0.03259378864039715,0.02396160259390587,0.04606522616215353
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,npv,0.979728507013154,0.9741066153092799,0.9838418624455414
+all-cause mortality,"model, calibrated population",1,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24,sensitivity,0.17429409747172908,0.10683480617457139,0.26611335617109677
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24,specificity,0.9533524918277188,0.9517736217108705,0.955845430204377
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24,ppv,0.07994173060399082,0.04704819407901564,0.1303290511759971
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24,npv,0.980256880921212,0.9750716840292291,0.984193826834729
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+all-cause mortality,"model, calibrated population",1.25,FALSE,age >= 65,sensitivity,0.28079244055707203,0.2546554931234266,0.315709163247051
+all-cause mortality,"model, calibrated population",1.25,FALSE,age >= 65,specificity,0.8303978633766687,0.8296645345699463,0.8315108912621969
+all-cause mortality,"model, calibrated population",1.25,FALSE,age >= 65,ppv,0.03707248279887505,0.029513171670200573,0.04753239853497821
+all-cause mortality,"model, calibrated population",1.25,FALSE,age >= 65,npv,0.980257053049784,0.9754360435908928,0.9839153548474889
+all-cause mortality,"model, calibrated population",1.25,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,sensitivity,0.3501783807987069,0.2969633518606241,0.4224989731378303
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,specificity,0.8042844957479995,0.8029415880671488,0.8063626927231073
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,ppv,0.03994515627383649,0.030778132906772948,0.05377019446555856
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,npv,0.9815581504351464,0.9767088039856533,0.9852384495338921
+all-cause mortality,"model, calibrated population",1.25,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24,sensitivity,0.1742699538503408,0.10859487577820931,0.27110464035021187
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24,specificity,0.9533517149284894,0.9518690470964961,0.9557717722034955
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24,ppv,0.07992485402983196,0.04908729582403888,0.12958703435949326
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24,npv,0.9802577369993147,0.975399613657405,0.9845229529569968
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+all-cause mortality,"model, calibrated population",1.5,FALSE,age >= 65,sensitivity,0.3665705765986191,0.3409714840535013,0.40372469224634566
+all-cause mortality,"model, calibrated population",1.5,FALSE,age >= 65,specificity,0.8323922412571374,0.831416898167085,0.8337850628188063
+all-cause mortality,"model, calibrated population",1.5,FALSE,age >= 65,ppv,0.04839409057997512,0.03924089018649439,0.060961417434640536
+all-cause mortality,"model, calibrated population",1.5,FALSE,age >= 65,npv,0.9826130086694488,0.9786282124633371,0.986025739364983
+all-cause mortality,"model, calibrated population",1.5,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,sensitivity,0.4206570516042631,0.37433330055888103,0.48896875793842715
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,specificity,0.8059230480668094,0.8046034995850991,0.8080058026756674
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,ppv,0.04798123669024244,0.03822787512526774,0.06180628859680024
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,npv,0.9835595192135403,0.9794954540389329,0.9871215714789826
+all-cause mortality,"model, calibrated population",1.5,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24,sensitivity,0.17424524621461962,0.10883750096768623,0.2641643280838858
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24,specificity,0.9533507894339351,0.9517986018185051,0.9556272718205027
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24,ppv,0.07990406899084423,0.0478647767972062,0.12614881401832895
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24,npv,0.980259481770415,0.9754217308762516,0.9843936628247412
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+all-cause mortality,"model, calibrated population",1.75,FALSE,age >= 65,sensitivity,0.4486586840994686,0.4244777087573106,0.48092540934352784
+all-cause mortality,"model, calibrated population",1.75,FALSE,age >= 65,specificity,0.8343002257227331,0.833049349602823,0.835992771386165
+all-cause mortality,"model, calibrated population",1.75,FALSE,age >= 65,ppv,0.05922423098906313,0.04836350030544896,0.0736592533817647
+all-cause mortality,"model, calibrated population",1.75,FALSE,age >= 65,npv,0.9848680337231612,0.98135658003246,0.9877806407748169
+all-cause mortality,"model, calibrated population",1.75,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,sensitivity,0.49132558426680045,0.450768111858987,0.5468680684549535
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,specificity,0.8075654537810676,0.8060842889153537,0.8097083588275489
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,ppv,0.056035243674798715,0.04540162472452816,0.07065352683971973
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,npv,0.9855666446120338,0.9819935344192079,0.9886088578423643
+all-cause mortality,"model, calibrated population",1.75,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24,sensitivity,0.174234059303218,0.1087073388967607,0.26653491134149787
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24,specificity,0.9533503045531796,0.9518004345182511,0.9557697684511581
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24,ppv,0.07989288423064608,0.04813418128304066,0.12912502363570494
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24,npv,0.9802607102947973,0.9751391948438205,0.9844046171195117
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+all-cause mortality,"model, calibrated population",1.8771,TRUE,age >= 65,sensitivity,0.48784672886709685,0.46441299102778577,0.5194078968439793
+all-cause mortality,"model, calibrated population",1.8771,TRUE,age >= 65,specificity,0.8352107705814148,0.833745611694636,0.8371600798248436
+all-cause mortality,"model, calibrated population",1.8771,TRUE,age >= 65,ppv,0.06439228508468262,0.052222864981363096,0.08006959563013474
+all-cause mortality,"model, calibrated population",1.8771,TRUE,age >= 65,npv,0.9859446435146315,0.9824852592700513,0.9887088810549408
+all-cause mortality,"model, calibrated population",1.8771,TRUE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24 or age >= 65,sensitivity,0.5258719473112226,0.48773385040773576,0.5795906148239273
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24 or age >= 65,specificity,0.8083680607846456,0.8067357599696008,0.8106894390168505
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24 or age >= 65,ppv,0.059970680568432994,0.048129927577429545,0.07577144865869817
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24 or age >= 65,npv,0.9865478980477875,0.9830084276817668,0.9893968568100308
+all-cause mortality,"model, calibrated population",1.8771,TRUE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24,sensitivity,0.17422445036505047,0.10756146603505924,0.26731816175625905
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24,specificity,0.9533498378640852,0.9517605182625636,0.9559969666543109
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24,ppv,0.07988192458967175,0.047547864284116934,0.13480074638309222
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24,npv,0.9802620999146402,0.974974143944182,0.9844188716240114
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+all-cause mortality,"model, calibrated population",2,FALSE,age >= 65,sensitivity,0.5237419885668456,0.5010885129749257,0.5539425683057324
+all-cause mortality,"model, calibrated population",2,FALSE,age >= 65,specificity,0.8360445771728242,0.8344439005606759,0.8384302341115026
+all-cause mortality,"model, calibrated population",2,FALSE,age >= 65,ppv,0.06912453204521894,0.05635579494252311,0.08796427323711292
+all-cause mortality,"model, calibrated population",2,FALSE,age >= 65,npv,0.9869308127613977,0.9834661605330319,0.9895554938437107
+all-cause mortality,"model, calibrated population",2,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,sensitivity,0.5578817575328713,0.5216209182131738,0.6083846647874618
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,specificity,0.8091115247291748,0.8073709704247815,0.8118233283025499
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,ppv,0.0636158750597926,0.05129329497166291,0.08232886217396941
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,npv,0.987457118920581,0.9840346379176551,0.9901289602459965
+all-cause mortality,"model, calibrated population",2,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24,sensitivity,0.17419834410204404,0.10770504097135267,0.26287739526979625
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24,specificity,0.9533480269845523,0.951798170458086,0.9556845778337537
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24,ppv,0.07983752111124845,0.047894011415692064,0.12788061665043496
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24,npv,0.9802694913762653,0.9752826417636138,0.984514579447742
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24,flagged,0.04954838709677419,0.04954838709677419,0.04954838709677419
+all-cause mortality,"model, calibrated population",2.5,FALSE,age >= 65,sensitivity,0.6475924357367946,0.6291022172542083,0.6707259072406323
+all-cause mortality,"model, calibrated population",2.5,FALSE,age >= 65,specificity,0.8389190172565693,0.8368439396557164,0.8416373106050273
+all-cause mortality,"model, calibrated population",2.5,FALSE,age >= 65,ppv,0.08543585770013702,0.06985889098782459,0.10570956218832965
+all-cause mortality,"model, calibrated population",2.5,FALSE,age >= 65,npv,0.990333369629494,0.9878594235518708,0.9922363307173658
+all-cause mortality,"model, calibrated population",2.5,FALSE,age >= 65,flagged,0.17212903225806453,0.17212903225806453,0.17212903225806453
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,sensitivity,0.6704023944370374,0.6427496275730452,0.7068761848360837
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,specificity,0.8117226329784516,0.809577354542407,0.8145087148662321
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,ppv,0.07641568433835798,0.06213003239148855,0.09489532610021213
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,npv,0.9906531231049429,0.9881948294107469,0.9927148803149419
+all-cause mortality,"model, calibrated population",2.5,FALSE,MMSE < 24 or age >= 65,flagged,0.1992258064516129,0.1992258064516129,0.1992258064516129
+ischemic stroke,"observed, Table 2 counts",NA,NA,MMSE < 24,sensitivity,0.18518518518518517,0.10751669597964443,0.2869760896780985
+ischemic stroke,"observed, Table 2 counts",NA,NA,MMSE < 24,specificity,0.9533473906167633,0.9461473038422733,0.959838242805242
+ischemic stroke,"observed, Table 2 counts",NA,NA,MMSE < 24,ppv,0.078125,0.044384219256911085,0.1255815350209375
+ischemic stroke,"observed, Table 2 counts",NA,NA,MMSE < 24,npv,0.982079826228618,0.9772569102930162,0.9861141248164
+any stroke,"observed, Table 2 counts",NA,NA,MMSE < 24,sensitivity,0.16666666666666666,0.09639142758918184,0.25995055360841957
+any stroke,"observed, Table 2 counts",NA,NA,MMSE < 24,specificity,0.9532364597093791,0.9460197381769924,0.9597424338057323
+any stroke,"observed, Table 2 counts",NA,NA,MMSE < 24,ppv,0.078125,0.044384219256911085,0.1255815350209375
+any stroke,"observed, Table 2 counts",NA,NA,MMSE < 24,npv,0.979636166168884,0.9745398590681953,0.9839497005888308
+all-cause mortality,"observed, Table 2 counts",NA,NA,MMSE < 24,sensitivity,0.1744186046511628,0.1010376217134008,0.27130919384326224
+all-cause mortality,"observed, Table 2 counts",NA,NA,MMSE < 24,specificity,0.953285827395091,0.9460765085573845,0.9597850719601343
+all-cause mortality,"observed, Table 2 counts",NA,NA,MMSE < 24,ppv,0.078125,0.044384219256911085,0.1255815350209375
+all-cause mortality,"observed, Table 2 counts",NA,NA,MMSE < 24,npv,0.9807222373065436,0.9757451680863662,0.98491398167834

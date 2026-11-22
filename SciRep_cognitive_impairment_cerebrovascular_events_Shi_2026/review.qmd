@@ -210,7 +210,7 @@ and the selection S into the analysed sample), with the adjustment sets computed
 *To be completed at stages 3–4 from section 3b of the analysis plan: the piecewise-exponential
 competing-risk model (E1), the exposure effect as a function of the age effect (E2), the derived
 screening quantities (E3), each with its limitations, and the parameter table that feeds the next
-section.* The two Bayesian programs, as planned (@fig-model-dags-p002; priors of plan section 5):
+section.* The two Bayesian programs, drawn from the Stan files (@fig-model-dags-p002; priors of plan section 5):
 
 ```{r}
 #| label: fig-model-dags-p002
@@ -222,26 +222,27 @@ section.* The two Bayesian programs, as planned (@fig-model-dags-p002; priors of
 #| fig-subcap:
 #|   - "E1, cause-specific piecewise-exponential hazards"
 #|   - "E2, exposure effect given an age effect"
-#| fig-cap: "The two Bayesian programs planned for stage 4, one node per quantity: prior constants (yellow, beside the node), parameters (green), derived quantities (grey), covariates (blue), data (red). Left: cause-specific piecewise-exponential hazards, g group, j interval, k cause; the cumulative incidences and their contrasts are generated quantities. Right: the exposure effect given an age effect, i person in the calibrated population, g group; the prior on the age coefficient is one of P1, P2, P3; the age-equivalent and the c-index are generated quantities. Redrawn from the programs once written."
+#| fig-cap: "The two Bayesian programs of stage 4, one node per quantity of the Stan file (`stan/pem_competing.stan`, `stan/exposure_age.stan`): prior constants (yellow, beside the node), parameters (green), derived quantities (grey), covariates (blue), data (red). Left: cause-specific piecewise-exponential hazards, g group, j interval, k cause; the hazard ratio, the ratio of the last interval's hazard to the earlier ones (tail), the cumulative incidences F and their contrasts are generated quantities; in the variant with the group effect split at year 4 the coefficient has one value before and one after. Right: the exposure effect given an age effect, i person in the calibrated population, g group; the prior on the age coefficient is one of P1, P2, P3; μ is the probability of an event within the 4.1 years of follow-up and r the 4.2-year risk, from the same hazard; the hazard ratio, the age-equivalent Δa, the c-index and the screening metrics are generated quantities."
 source(here::here("lib/model_dag.R"))
 N <- function(m, s) sprintf("N*'(%s, %s)'", m, s)
 pem_nodes <- data.frame(
-  name  = c("ha", "hb", "alpha", "beta", "ci", "py", "h", "D", "F", "RD"),
-  label = c(N("log 0.005", 1.5), N(0, 1), "alpha[jk]", "beta[k]", "CI[g]", "PY[gj]", "h[gjk]", "D[gjk]", "F[gk](t)", "atop(RD[k], RR[k])"),
-  group = c("hyperparameter", "hyperparameter", "parameter", "parameter", "covariate", "covariate", "derived", "observed", "derived", "derived"),
-  x = c(0, 0, 1, 1, 2, 2, 3, 4.2, 4.2, 5.4), y = c(2.2, 1.2, 2.2, 1.2, 1.2, 0.2, 1.7, 1.7, 0.4, 0.4))
-pem_edges <- data.frame(from = c("ha", "hb", "alpha", "beta", "ci", "h", "py", "h", "F"),
-                        to   = c("alpha", "beta", "h", "h", "h", "D", "D", "F", "RD"))
+  name  = c("ha", "hb", "alpha", "beta", "ci", "py", "h", "D", "hr", "tail", "F", "RD"),
+  label = c(N("log 0.005", 1.5), N(0, 1), "alpha[jk]", "beta[k]", "CI[g]", "PY[gj]", "h[gjk]", "D[gjk]", "HR[k]", "tail[gk]", "F[gjk]", "atop(RD[k], RR[k])"),
+  group = c("hyperparameter", "hyperparameter", "parameter", "parameter", "covariate", "covariate", "derived", "observed", "derived", "derived", "derived", "derived"),
+  x = c(0, 0, 1, 1, 2.1, 3.3, 3, 4.4, 1.9, 4.4, 4.4, 5.6), y = c(2.4, 1.4, 2.4, 1.4, 0.8, 3.1, 1.9, 2.4, 0.2, 1.4, 0.4, 0.4))
+pem_edges <- data.frame(from = c("ha", "hb", "alpha", "beta", "ci", "h", "py", "beta", "h", "py", "h", "F"),
+                        to   = c("alpha", "beta", "h", "h", "h", "D", "D", "hr", "tail", "tail", "F", "RD"))
 ea_nodes <- data.frame(
-  name  = c("hl", "hc", "hage", "hm", "l0", "bci", "bage", "bm", "ci", "a", "m", "mu", "E", "D", "da"),
-  label = c("LogN*'(log 0.004, 1.5)'", N(0, 1), "P[1]*', '*P[2]*', '*P[3]", "N*'(log 1.3, 0.15)'", "lambda[0]", "beta[CI]", "beta[age]", "beta[m]", "CI[i]", "a[i]", "m[i]", "mu[i]", "E[g]", "D[g]", "Delta*a*', c'"),
-  group = c(rep("hyperparameter", 4), rep("parameter", 4), rep("covariate", 3), "derived", "derived", "observed", "derived"),
-  x = c(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 4, 5.2, 4),
-  y = c(3, 2.2, 1.4, 0.6, 3, 2.2, 1.4, 0.6, 2.6, 1.8, 1.0, 1.8, 1.8, 1.8, 0.4))
-ea_edges <- data.frame(from = c("hl", "hc", "hage", "hm", "l0", "bci", "bage", "bm", "ci", "a", "m", "mu", "E", "bci", "bage"),
-                       to   = c("l0", "bci", "bage", "bm", "mu", "mu", "mu", "mu", "mu", "mu", "mu", "E", "D", "da", "da"))
-model_dag(pem_nodes, pem_edges, "pem_competing.stan (planned)")
-model_dag(ea_nodes, ea_edges, "exposure_age.stan (planned)")
+  name  = c("hc", "hage", "hl", "hm", "bci", "bage", "l0", "bm", "ci", "a", "m", "mu", "E", "D", "hr", "da", "cs"),
+  label = c(N(0, 1), "P[1]*', '*P[2]*', '*P[3]", "LogN*'(log 0.004, 1.5)'", "N*'(log 1.3, 0.15)'", "beta[CI]", "beta[age]", "lambda[0]", "beta[m]",
+            "CI[i]", "a[i]", "m[i]", "atop(mu[i], r[i])", "E[g]", "D[g]", "HR[CI]", "Delta*a", "atop(c, sens)"),
+  group = c(rep("hyperparameter", 4), rep("parameter", 4), rep("covariate", 3), "derived", "derived", "observed", "derived", "derived", "derived"),
+  x = c(0, 0, 0, 0, 1, 1, 1, 1, 2.3, 3, 3.7, 3, 4.1, 5.2, 2, 2.9, 4.1),
+  y = c(3, 2.2, 1.4, 0.6, 3, 2.2, 1.4, 0.6, 0.1, 0.1, 0.1, 1.8, 1.8, 1.8, 3.9, 3.9, 3.0))
+ea_edges <- data.frame(from = c("hc", "hage", "hl", "hm", "bci", "bage", "l0", "bm", "ci", "a", "m", "mu", "E", "bci", "bci", "bage", "mu"),
+                       to   = c("bci", "bage", "l0", "bm", "mu", "mu", "mu", "mu", "mu", "mu", "mu", "E", "D", "hr", "da", "da", "cs"))
+model_dag(pem_nodes, pem_edges, "pem_competing.stan")
+model_dag(ea_nodes, ea_edges, "exposure_age.stan")
 ```
 
 ## What the estimates mean

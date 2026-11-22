@@ -1,0 +1,120 @@
+model,run,prior,quantity,group,interval,cause,reference,reference_source,q025,q25,q50,q75,q975,percentile,covers,width_ratio,share_guarded
+pem_competing,isch_prior,NA,events per cell,NCI,"(0, 1]",ischemic stroke,0,life table (pem_counts.csv),0,6,18,52,327,0.015375,FALSE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(0, 1]",ischemic stroke,1,life table (pem_counts.csv),0,0,1,3,28,0.508,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(1, 2]",ischemic stroke,1,life table (pem_counts.csv),1,7,19,49,325.0500000000002,0.039749999999999994,TRUE,325.0500000000002,0
+pem_competing,isch_prior,NA,events per cell,CI,"(1, 2]",ischemic stroke,0,life table (pem_counts.csv),0,0,1,3,29,0.200625,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(2, 3]",ischemic stroke,15,life table (pem_counts.csv),0,7,18,48,365.10000000000036,0.452625,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(2, 3]",ischemic stroke,2,life table (pem_counts.csv),0,0,1,3,32,0.655625,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(3, 4]",ischemic stroke,23,life table (pem_counts.csv),0,7,18,51,391.0750000000003,0.562625,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(3, 4]",ischemic stroke,2,life table (pem_counts.csv),0,0,1,3,31,0.649,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(4, 4.2]",ischemic stroke,27,life table (pem_counts.csv),0,0,2,5,35,0.959625,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(4, 4.2]",ischemic stroke,10,life table (pem_counts.csv),0,0,0,0,4,0.994375,FALSE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(0, 1]",all-cause mortality,6,life table (pem_counts.csv),0,6,19,52,379.12500000000045,0.241625,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(0, 1]",all-cause mortality,0,life table (pem_counts.csv),0,0,1,3,35,0.20975,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(1, 2]",all-cause mortality,1,life table (pem_counts.csv),0,7,18,48,333.0250000000001,0.056374999999999995,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(1, 2]",all-cause mortality,1,life table (pem_counts.csv),0,0,1,3,32,0.51725,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(2, 3]",all-cause mortality,4,life table (pem_counts.csv),0,7,19,52,372.2000000000007,0.16075,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(2, 3]",all-cause mortality,2,life table (pem_counts.csv),0,0,1,3,33,0.651875,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(3, 4]",all-cause mortality,19,life table (pem_counts.csv),0,6,18,51,386.0250000000001,0.5108750000000001,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(3, 4]",all-cause mortality,3,life table (pem_counts.csv),0,0,1,3,35.02500000000009,0.73225,TRUE,Inf,0
+pem_competing,isch_prior,NA,events per cell,NCI,"(4, 4.2]",all-cause mortality,41,life table (pem_counts.csv),0,0,2,5,36,0.97925,FALSE,Inf,0
+pem_competing,isch_prior,NA,events per cell,CI,"(4, 4.2]",all-cause mortality,9,life table (pem_counts.csv),0,0,0,0,3,0.995,FALSE,Inf,0
+pem_competing,isch_prior,NA,cumulative incidence at 4 y,NCI,NA,ischemic stroke,0.010589193592180288,events to that time / n (crude),0.0071398725,0.020506075000000002,0.036358650000000006,0.064597675,0.22399360000000007,0.066,TRUE,31.372212879151565,0
+pem_competing,isch_prior,NA,cumulative incidence at 4 y,CI,NA,ischemic stroke,0.026041666666666668,events to that time / n (crude),0.00298813125,0.015695975,0.037621749999999995,0.08819882500000001,0.4143741000000003,0.3945,TRUE,138.67332634736184,0
+pem_competing,isch_prior,NA,cumulative incidence at 4.2 y,NCI,NA,ischemic stroke,0.017920173771382025,events to that time / n (crude),0.0082619225,0.022999025,0.03894095,0.06768765,0.22491142500000008,0.1565,TRUE,27.222650055117327,0
+pem_competing,isch_prior,NA,cumulative incidence at 4.2 y,CI,NA,ischemic stroke,0.078125,events to that time / n (crude),0.0034030467500000003,0.017238299999999998,0.040640300000000004,0.09405920000000001,0.42658202500000025,0.70125,TRUE,125.35297230342199,0
+pem_competing,isch_prior,NA,cumulative incidence at 4 y,NCI,NA,all-cause mortality,0.008145533532446375,events to that time / n (crude),0.007563701,0.020961325,0.03690255,0.067478775,0.22457905000000009,0.031,TRUE,29.691687971272277,0
+pem_competing,isch_prior,NA,cumulative incidence at 4 y,CI,NA,all-cause mortality,0.03125,events to that time / n (crude),0.0027767992500000007,0.0149088,0.036669900000000005,0.08879485000000001,0.41981440000000037,0.45025,TRUE,151.1864424480813,0
+pem_competing,isch_prior,NA,cumulative incidence at 4.2 y,NCI,NA,all-cause mortality,0.01927776269345642,events to that time / n (crude),0.008747038750000002,0.02294155,0.03970835,0.07069249999999999,0.22589017500000014,0.1805,TRUE,25.82475983657899,0
+pem_competing,isch_prior,NA,cumulative incidence at 4.2 y,CI,NA,all-cause mortality,0.078125,events to that time / n (crude),0.0031574847500000004,0.01629955,0.0395448,0.09451152500000001,0.4281502750000001,0.70025,TRUE,135.59852506017646,0
+pem_competing,isch_prior,NA,HR CI vs NCI,NA,NA,ischemic stroke,4.55,"Table 2, unadjusted",0.14991655,0.53113925,1.017215,1.9552525,6.485916500000007,0.94675,TRUE,43.263512267324764,0
+pem_competing,isch_prior,NA,HR CI vs NCI,NA,NA,all-cause mortality,4.16,"Table 2, unadjusted",0.13988655000000003,0.506212,0.985779,1.9046625000000001,6.574306500000002,0.9285,TRUE,46.997416835285456,0
+pem_competing,isch_prior,NA,rate in the last interval / rate before,NCI,NA,ischemic stroke,28.260950615150467,life table (crude),0.0168989,0.15372575,0.47635249999999996,1.6583700000000001,16.08251750000003,0.99025,FALSE,951.6901987703359,0
+pem_competing,isch_prior,NA,rate in the last interval / rate before,CI,NA,ischemic stroke,85.01182110841798,life table (crude),0.016738237500000003,0.15389175,0.47763449999999996,1.664895,16.096585000000026,0.99775,FALSE,961.6654680637686,0
+pem_competing,isch_prior,NA,rate in the last interval / rate before,NCI,NA,all-cause mortality,55.7892099180563,life table (crude),0.015445935000000003,0.1493175,0.48163999999999996,1.4600300000000002,13.218242500000011,0.9975,FALSE,855.7748365508471,0
+pem_competing,isch_prior,NA,rate in the last interval / rate before,CI,NA,all-cause mortality,63.758865831313486,life table (crude),0.015318737500000002,0.148786,0.48199899999999996,1.4615175,13.225490000000013,0.9975,FALSE,863.3537848664103,0
+pem_competing,any_prior,NA,events per cell,NCI,"(0, 1]",any stroke,1,life table (pem_counts.csv),1,7,18,52,316.17500000000064,0.044,TRUE,316.17500000000064,0
+pem_competing,any_prior,NA,events per cell,CI,"(0, 1]",any stroke,1,life table (pem_counts.csv),0,0,1,3,30,0.499,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(1, 2]",any stroke,5,life table (pem_counts.csv),0,6,19,53,349.0250000000001,0.203625,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(1, 2]",any stroke,0,life table (pem_counts.csv),0,0,1,3,34,0.206125,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(2, 3]",any stroke,18,life table (pem_counts.csv),0,6,19,50,330,0.4865,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(2, 3]",any stroke,2,life table (pem_counts.csv),0,0,1,3,31,0.650125,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(3, 4]",any stroke,24,life table (pem_counts.csv),0,6,18,51,366.0500000000002,0.569375,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(3, 4]",any stroke,2,life table (pem_counts.csv),0,0,1,3,32,0.6565,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(4, 4.2]",any stroke,27,life table (pem_counts.csv),0,0,2,5,35,0.961875,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(4, 4.2]",any stroke,10,life table (pem_counts.csv),0,0,0,0,4,0.996125,FALSE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(0, 1]",all-cause mortality,6,life table (pem_counts.csv),0,6,18,49,328.0750000000003,0.243375,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(0, 1]",all-cause mortality,0,life table (pem_counts.csv),0,0,1,3,33.02500000000009,0.209,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(1, 2]",all-cause mortality,1,life table (pem_counts.csv),0,7,19,52,349.0250000000001,0.053125000000000006,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(1, 2]",all-cause mortality,1,life table (pem_counts.csv),0,0,1,3,33,0.502375,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(2, 3]",all-cause mortality,4,life table (pem_counts.csv),0,7,19,49,329.15000000000055,0.158125,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(2, 3]",all-cause mortality,2,life table (pem_counts.csv),0,0,1,3,35,0.655375,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(3, 4]",all-cause mortality,19,life table (pem_counts.csv),0,6,18,50,368.2250000000008,0.50975,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(3, 4]",all-cause mortality,3,life table (pem_counts.csv),0,0,1,3,36,0.736375,TRUE,Inf,0
+pem_competing,any_prior,NA,events per cell,NCI,"(4, 4.2]",all-cause mortality,41,life table (pem_counts.csv),0,0,2,5,34,0.981875,FALSE,Inf,0
+pem_competing,any_prior,NA,events per cell,CI,"(4, 4.2]",all-cause mortality,9,life table (pem_counts.csv),0,0,0,0,4,0.992625,FALSE,Inf,0
+pem_competing,any_prior,NA,cumulative incidence at 4 y,NCI,NA,any stroke,0.0130328536519142,events to that time / n (crude),0.00708988625,0.020521425000000003,0.03661635,0.067664875,0.21438302499999998,0.1125,TRUE,30.237865240785773,0
+pem_competing,any_prior,NA,cumulative incidence at 4 y,CI,NA,any stroke,0.026041666666666668,events to that time / n (crude),0.0026800315,0.014995925,0.03700445,0.087269075,0.41638262500000006,0.38975,TRUE,155.36482500298973,0
+pem_competing,any_prior,NA,cumulative incidence at 4.2 y,NCI,NA,any stroke,0.020363833831115938,events to that time / n (crude),0.0085186155,0.0231385,0.0393396,0.0711696,0.216215825,0.2035,TRUE,25.381568753748777,0
+pem_competing,any_prior,NA,cumulative incidence at 4.2 y,CI,NA,any stroke,0.078125,events to that time / n (crude),0.003131139,0.016388075000000002,0.0398935,0.09282165,0.42406245000000004,0.70375,TRUE,135.4339267595594,0
+pem_competing,any_prior,NA,cumulative incidence at 4 y,NCI,NA,all-cause mortality,0.008145533532446375,events to that time / n (crude),0.006951692500000001,0.020535275,0.036166050000000005,0.06512657499999999,0.23179045000000018,0.034,TRUE,33.34302401897094,0
+pem_competing,any_prior,NA,cumulative incidence at 4 y,CI,NA,all-cause mortality,0.03125,events to that time / n (crude),0.002606884,0.01456795,0.0366029,0.089209475,0.43771997500000015,0.4525,TRUE,167.9092644705327,0
+pem_competing,any_prior,NA,cumulative incidence at 4.2 y,NCI,NA,all-cause mortality,0.01927776269345642,events to that time / n (crude),0.0086543575,0.02300695,0.03903055,0.06809757500000001,0.23615337500000005,0.187,TRUE,27.287222072811307,0
+pem_competing,any_prior,NA,cumulative incidence at 4.2 y,CI,NA,all-cause mortality,0.078125,events to that time / n (crude),0.0030127770000000003,0.0160047,0.03933025,0.093484975,0.4500585750000001,0.69975,TRUE,149.38330151883133,0
+pem_competing,any_prior,NA,HR CI vs NCI,NA,NA,any stroke,3.99,"Table 2, unadjusted",0.145016475,0.50030775,0.9710635000000001,1.9397275,7.252025500000002,0.92075,TRUE,50.008286989461034,0
+pem_competing,any_prior,NA,HR CI vs NCI,NA,NA,all-cause mortality,4.16,"Table 2, unadjusted",0.13738097500000002,0.50419625,0.989154,1.940565,7.677264000000005,0.91875,TRUE,55.883021648376015,0
+pem_competing,any_prior,NA,rate in the last interval / rate before,NCI,NA,any stroke,22.99267385336162,life table (crude),0.015949675000000003,0.1650075,0.5167444999999999,1.6413175,13.237295000000014,0.989,FALSE,829.9413624415552,0
+pem_competing,any_prior,NA,rate in the last interval / rate before,CI,NA,any stroke,85.01182110841798,life table (crude),0.016085802500000003,0.16509975,0.5161534999999999,1.6387675,13.290522500000012,0.999,FALSE,826.2268854786704,0
+pem_competing,any_prior,NA,rate in the last interval / rate before,NCI,NA,all-cause mortality,55.86368165853785,life table (crude),0.013990105000000001,0.16243825,0.5442594999999999,1.693995,13.228652500000036,0.997,FALSE,945.5720668286647,0
+pem_competing,any_prior,NA,rate in the last interval / rate before,CI,NA,all-cause mortality,63.758865831313486,life table (crude),0.01386288,0.16216575,0.543856,1.69512,13.253087500000031,0.99775,FALSE,956.0125673741699,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",events per group,NCI,NA,ischemic stroke,66,Table 2 counts,4,32,92,237.25,1224.1750000000006,0.411875,TRUE,306.04375000000016,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",events per group,CI,NA,ischemic stroke,15,Table 2 counts,0,2,9,28,131,0.627375,TRUE,Inf,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",events per group,NCI,NA,any stroke,75,Table 2 counts,4,32,92,237.25,1224.1750000000006,0.44237499999999996,TRUE,306.04375000000016,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",events per group,CI,NA,any stroke,15,Table 2 counts,0,2,9,28,131,0.627375,TRUE,Inf,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",events per group,NCI,NA,all-cause mortality,71,Table 2 counts,4,32,92,237.25,1224.1750000000006,0.42925,TRUE,306.04375000000016,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",events per group,CI,NA,all-cause mortality,15,Table 2 counts,0,2,9,28,131,0.627375,TRUE,Inf,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",HR for MMSE < 24 at given age and sex,NA,NA,ischemic stroke,2.47,"Table 2, Model 1",0.13398375,0.504555,1.0104,1.9568575,7.150456750000003,0.81625,TRUE,53.36808941382819,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",HR for MMSE < 24 at given age and sex,NA,NA,any stroke,2.28,"Table 2, Model 1",0.13398375,0.504555,1.0104,1.9568575,7.150456750000003,0.7935,TRUE,53.36808941382819,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",HR for MMSE < 24 at given age and sex,NA,NA,all-cause mortality,1.83,"Table 2, Model 1",0.13398375,0.504555,1.0104,1.9568575,7.150456750000003,0.72875,TRUE,53.36808941382819,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",hazard multiplier per decade of age,NA,NA,NA,NA,NA,1.2841977500000001,1.4567875,1.5534949999999998,1.6550775000000002,1.87582125,NA,NA,1.4606950136768264,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies","hazard multiplier, male",NA,NA,NA,NA,NA,0.96688405,1.1740375,1.29983,1.4347725,1.7382440000000001,NA,NA,1.7977791649370989,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies","hazard per person-year at the reference (woman, 50, MMSE >= 24)",NA,NA,NA,NA,NA,2.310105e-4,0.00146199,0.0040371,0.010752024999999998,0.06764865750000004,NA,NA,292.83802034972456,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies","age-equivalent of MMSE < 24, years",NA,NA,NA,NA,NA,-49.9085,-15.450775,0.2246865,15.512775000000001,48.699357500000055,NA,NA,-0.9757728142500788,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies","c-index, age and sex",NA,NA,NA,NA,NA,0.55948925,0.6059332500000001,0.634506,0.6634455,0.724719075,NA,NA,1.2953226089688048,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",c-index gain from MMSE status,NA,NA,NA,NA,NA,8.449953000000004e-6,8.091535e-4,0.004155664999999999,0.011388825,0.038807607500000015,NA,NA,4592.641817060994,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",sensitivity of MMSE < 24,NA,NA,NA,NA,NA,0.012886080000000001,0.045767575000000005,0.0841424,0.142104,0.34649965000000005,NA,NA,26.889453580918325,0
+exposure_age,isch_P1_prior,"P1, as Model 1 implies",sensitivity of age >= 65,NA,NA,NA,NA,NA,0.235738175,0.30740025,0.34837799999999997,0.391899,0.490680975,NA,NA,2.081465910220099,0
+exposure_age,isch_P2_prior,"P2, as population studies report",events per group,NCI,NA,ischemic stroke,66,Table 2 counts,5,46,125.5,312,1444.1750000000006,0.32975,TRUE,288.83500000000015,0
+exposure_age,isch_P2_prior,"P2, as population studies report",events per group,CI,NA,ischemic stroke,15,Table 2 counts,0,5,16,44,147,0.49,TRUE,Inf,0
+exposure_age,isch_P2_prior,"P2, as population studies report",events per group,NCI,NA,any stroke,75,Table 2 counts,5,46,125.5,312,1444.1750000000006,0.36412500000000003,TRUE,288.83500000000015,0
+exposure_age,isch_P2_prior,"P2, as population studies report",events per group,CI,NA,any stroke,15,Table 2 counts,0,5,16,44,147,0.49,TRUE,Inf,0
+exposure_age,isch_P2_prior,"P2, as population studies report",events per group,NCI,NA,all-cause mortality,71,Table 2 counts,5,46,125.5,312,1444.1750000000006,0.35112499999999996,TRUE,288.83500000000015,0
+exposure_age,isch_P2_prior,"P2, as population studies report",events per group,CI,NA,all-cause mortality,15,Table 2 counts,0,5,16,44,147,0.49,TRUE,Inf,0
+exposure_age,isch_P2_prior,"P2, as population studies report",HR for MMSE < 24 at given age and sex,NA,NA,ischemic stroke,2.47,"Table 2, Model 1",0.1413385,0.499975,0.995877,2.0280475,7.0978605,0.8095,TRUE,50.21887525338107,0
+exposure_age,isch_P2_prior,"P2, as population studies report",HR for MMSE < 24 at given age and sex,NA,NA,any stroke,2.28,"Table 2, Model 1",0.1413385,0.499975,0.995877,2.0280475,7.0978605,0.7875,TRUE,50.21887525338107,0
+exposure_age,isch_P2_prior,"P2, as population studies report",HR for MMSE < 24 at given age and sex,NA,NA,all-cause mortality,1.83,"Table 2, Model 1",0.1413385,0.499975,0.995877,2.0280475,7.0978605,0.72075,TRUE,50.21887525338107,0
+exposure_age,isch_P2_prior,"P2, as population studies report",hazard multiplier per decade of age,NA,NA,NA,NA,NA,1.48973875,1.8058699999999999,2.001065,2.2167625,2.67164375,NA,NA,1.7933639371332726,0
+exposure_age,isch_P2_prior,"P2, as population studies report","hazard multiplier, male",NA,NA,NA,NA,NA,0.9793259000000001,1.178745,1.29752,1.4339175,1.7300025,NA,NA,1.7665237894760057,0
+exposure_age,isch_P2_prior,"P2, as population studies report","hazard per person-year at the reference (woman, 50, MMSE >= 24)",NA,NA,NA,NA,NA,2.10789825e-4,0.001515465,0.00408812,0.011232575000000002,0.07957985750000005,NA,NA,377.5317783958502,0
+exposure_age,isch_P2_prior,"P2, as population studies report","age-equivalent of MMSE < 24, years",NA,NA,NA,NA,NA,-32.102465,-10.072025,-0.0743366,9.99653,30.90923500000001,NA,NA,-0.9628305801439238,0
+exposure_age,isch_P2_prior,"P2, as population studies report","c-index, age and sex",NA,NA,NA,NA,NA,0.61151365,0.68761225,0.727853,0.76726925,0.827624075,NA,NA,1.353402454712172,0
+exposure_age,isch_P2_prior,"P2, as population studies report",c-index gain from MMSE status,NA,NA,NA,NA,NA,6.638980250000001e-6,6.8373175e-4,0.002836075,0.007705122500000001,0.029085242500000004,NA,NA,4380.980422407492,0
+exposure_age,isch_P2_prior,"P2, as population studies report",sensitivity of MMSE < 24,NA,NA,NA,NA,NA,0.01833575,0.05890955,0.1013435,0.1694225,0.3820724750000001,NA,NA,20.837570047584638,0
+exposure_age,isch_P2_prior,"P2, as population studies report",sensitivity of age >= 65,NA,NA,NA,NA,NA,0.29163245,0.4139465,0.4820165,0.5514005000000001,0.6718012250000001,NA,NA,2.3035887295806763,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",events per group,NCI,NA,ischemic stroke,66,Table 2 counts,6,40,114,311,1397.3500000000013,0.362125,TRUE,232.89166666666688,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",events per group,CI,NA,ischemic stroke,15,Table 2 counts,0,3,12,39,131.0250000000001,0.547625,TRUE,Inf,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",events per group,NCI,NA,any stroke,75,Table 2 counts,6,40,114,311,1397.3500000000013,0.391625,TRUE,232.89166666666688,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",events per group,CI,NA,any stroke,15,Table 2 counts,0,3,12,39,131.0250000000001,0.547625,TRUE,Inf,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",events per group,NCI,NA,all-cause mortality,71,Table 2 counts,6,40,114,311,1397.3500000000013,0.37825,TRUE,232.89166666666688,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",events per group,CI,NA,all-cause mortality,15,Table 2 counts,0,3,12,39,131.0250000000001,0.547625,TRUE,Inf,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",HR for MMSE < 24 at given age and sex,NA,NA,ischemic stroke,2.47,"Table 2, Model 1",0.143814725,0.506567,0.9999370000000001,1.9251825,7.247342750000001,0.8225,TRUE,50.3936071219411,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",HR for MMSE < 24 at given age and sex,NA,NA,any stroke,2.28,"Table 2, Model 1",0.143814725,0.506567,0.9999370000000001,1.9251825,7.247342750000001,0.79775,TRUE,50.3936071219411,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",HR for MMSE < 24 at given age and sex,NA,NA,all-cause mortality,1.83,"Table 2, Model 1",0.143814725,0.506567,0.9999370000000001,1.9251825,7.247342750000001,0.73125,TRUE,50.3936071219411,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",hazard multiplier per decade of age,NA,NA,NA,NA,NA,1.0352697499999999,1.3384224999999998,1.74877,2.2616375,2.90747475,NA,NA,2.808422394260047,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3","hazard multiplier, male",NA,NA,NA,NA,NA,0.954369225,1.171405,1.30497,1.4446649999999999,1.7659807500000002,NA,NA,1.8504166980028094,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3","hazard per person-year at the reference (woman, 50, MMSE >= 24)",NA,NA,NA,NA,NA,2.4201472499999998e-4,0.001503825,0.00421225,0.011822075,0.07526327750000007,NA,NA,310.98635630538627,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3","age-equivalent of MMSE < 24, years",NA,NA,NA,NA,NA,-106.431625,-12.8997,-4.18215e-4,13.012575,142.81020000000004,NA,NA,-1.341802307349907,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3","c-index, age and sex",NA,NA,NA,NA,NA,0.5192029499999999,0.5837375,0.6794695,0.7668935,0.8486843000000001,NA,NA,1.6345906740321876,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",c-index gain from MMSE status,NA,NA,NA,NA,NA,7.235905500000002e-6,7.629867499999999e-4,0.003373615,0.010106125,0.03589692500000001,NA,NA,4960.9444180828505,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",sensitivity of MMSE < 24,NA,NA,NA,NA,NA,0.014110675000000001,0.05028845,0.08998075,0.1500165,0.36624600000000007,NA,NA,25.95524310495423,0
+exposure_age,isch_P3_prior,"P3, unknown between 1 and 3",sensitivity of age >= 65,NA,NA,NA,NA,NA,0.163067575,0.27006275,0.40350149999999996,0.53766,0.708125825,NA,NA,4.342529929693257,0
