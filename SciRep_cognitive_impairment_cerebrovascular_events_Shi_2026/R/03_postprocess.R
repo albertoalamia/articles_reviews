@@ -459,7 +459,7 @@ if (!RUN_PRIOR) {
     scale_y_log10(breaks = c(0.5, 0.75, 1, 1.5, 2, 3, 4, 6)) +
     scale_colour_manual(values = c("stage 4, posterior median and 95 %" = "#2166ac", "stage 3, age effect fixed, profile 95 %" = "grey45"), name = NULL) +
     facet_wrap(~ outcome) +
-    labs(x = "prior on the age effect (P1 as Model 1 implies, P2 doubling per decade, P3 unknown between 1 and 3)",
+    labs(x = "prior on the hazard multiplier per decade of age (P1 centred at 1.55, P2 at 2, P3 unknown between 1 and 3)",
          y = "hazard ratio, MMSE < 24, at given age and sex",
          title = "exposure_age: the adjusted hazard ratio under three priors on the age effect",
          subtitle = "Dashed: the paper's Model 1 hazard ratio; solid: no association") +

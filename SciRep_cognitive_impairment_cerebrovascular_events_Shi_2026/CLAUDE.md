@@ -308,3 +308,25 @@ form and handling of death as a competing event not stated.
   an upper limit above 200 years (θ_age near 1): report the median and the share above 10 years.
 - Next step: Alberto reruns `Rscript <art>/R/03_postprocess.R` (pairing fix; only the stage 3
   columns of the death P1 rows and the grey P1 point of the death panel change), commit; then S5.
+
+### 2026-11-23 (later) — S4 committed; S5 written: re-analysis sections of the review
+- Done: S4 committed (`19ee88b`). `review.qmd`: header callout; Re-analysis (data, stage 2, E1 hazard
+  ratios, split at year 4, tail rates, cumulative incidences, E2 by prior, E3; seven tables, three
+  figures, six evidence boxes, all numbers inline from `output/tables/`); "What this review fits"
+  (equations, priors, limitations) and "Parameters side by side"; "What the estimates mean" (five
+  rows); Right of reply; Reproducibility. Two-line DAG labels reduced so that they stay inside the
+  nodes. `R/03_postprocess.R`: x label of `stage4_hr_by_prior.png` no longer says "P1 as Model 1
+  implies". `references.bib`: Kelly-Hayes 2010 for P2. A scratch run of every chunk and inline
+  expression by Claude (tables printed to the terminal only, system R): no error, no missing value.
+- Decided (and why): absolute risks are quoted from the early-scenario split-at-year-4 run, because
+  it is the structure that reproduces both the year-4 and the 4.2-year crude proportions (plan §7,
+  S2); the death row under P1 is kept in the tables and labelled as not corresponding to Model 1;
+  the P3 age-equivalent is shown with a sentence on why its upper limit is not interpretable.
+  Registry status stays `reanalysis`: the stage 1 sections of the review are not drafted yet.
+- Open: Alberto checks the Kelly-Hayes wording against the full text (the search excerpt says
+  "after the age of 45"); Summary and verdict, What the paper does, Design, Measurement, Model
+  adequacy, Internal consistency, Reporting, Do the conclusions follow, What would settle the open
+  points and Minor are still the template text (stage 5 proper, from `notes/01`–`03` and the
+  consistency tables); the primer.
+- Next step: Alberto reruns `Rscript <art>/R/03_postprocess.R` (figure label), renders
+  `review.qmd`; Claude checks the render (render-check skill); commit. Then the stage 1 sections.
