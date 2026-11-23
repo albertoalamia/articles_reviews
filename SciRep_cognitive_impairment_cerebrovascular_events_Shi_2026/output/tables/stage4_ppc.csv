@@ -1,0 +1,311 @@
+program,run,model,scenario,structure,beta_sd,prior,age_max,quantity,outcome,group,interval,observed,q025,q25,q50,q75,q975,percentile,covers,share_guarded
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(0, 1]",0,0,0,1,3,6,0.132375,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(0, 1]",1,0,0,0,1,2,0.822125,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(1, 2]",1,0,1,1,3,6,0.38575,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(1, 2]",0,0,0,0,1,2,0.361375,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(2, 3]",15,6,10,14,17,25,0.6015,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(2, 3]",2,0,1,3,4,7,0.369125,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(3, 4]",23,10,16,20,25,34,0.661875,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(3, 4]",2,0,2,4,6,10,0.18987500000000002,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(4, 4.2]",27,17,25,29,35,46.02500000000009,0.369875,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(4, 4.2]",10,1,4,6,8,13,0.899375,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,13,0.6138750000000001,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.1965,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,3,8,0.285625,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.77425,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.36,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.807,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,14,18,22,31.02500000000009,0.57675,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,9,0.466,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,35,40,46,59,0.5277499999999999,TRUE,0
+pem_competing,isch,isch,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,10,15.025000000000091,0.6890000000000001,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(0, 1]",0,0,0,1,3,6,0.131625,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(0, 1]",1,0,0,0,1,2,0.81275,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(1, 2]",1,0,0,1,3,6,0.39975,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(1, 2]",0,0,0,0,1,2,0.358125,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(2, 3]",15,5,11,14,17,25,0.595625,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(2, 3]",2,0,1,3,4,8,0.35875,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(3, 4]",23,10,16,20,25,34,0.657625,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(3, 4]",2,0,2,4,6,10,0.183375,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(4, 4.2]",27,17,25,30,35,46,0.346,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(4, 4.2]",10,1,4,5,7,12,0.913125,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,12,0.61625,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.186625,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,7,0.26737500000000003,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.7709999999999999,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.368,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.79675,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,14,18,22,31,0.586875,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,9,0.452625,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,35,41,47,59,0.5065000000000001,TRUE,0
+pem_competing,isch_early,isch,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,9,15,0.7115,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(0, 1]",0,0,0,1,3,6,0.126375,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(0, 1]",1,0,0,0,1,2,0.825125,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(1, 2]",1,0,0,1,3,6,0.39037499999999997,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(1, 2]",0,0,0,0,1,2,0.359875,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(2, 3]",15,5,10,14,17,26,0.5876250000000001,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(2, 3]",2,0,1,3,4,7,0.37375,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(3, 4]",23,10,16,20,25,35,0.64575,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(3, 4]",2,0,2,4,5,10,0.197,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,NCI,"(4, 4.2]",27,17,25,30,35,46,0.355375,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,ischemic stroke,CI,"(4, 4.2]",10,1,4,6,8,13,0.9053749999999999,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,13,0.61875,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.197875,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,8,0.264375,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.7729999999999999,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.35162499999999997,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.81275,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,14,18,22,31,0.5585,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,8,0.47675,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,35,41,47,60,0.511375,TRUE,0
+pem_competing,isch_late,isch,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,10,16,0.68225,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,NCI,"(0, 1]",0,0,0,1,3,6,0.1305,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,CI,"(0, 1]",1,0,0,0,1,2,0.80575,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,NCI,"(1, 2]",1,0,0,1,3,6,0.39825,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,CI,"(1, 2]",0,0,0,0,1,2,0.345,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,NCI,"(2, 3]",15,6,10,14,17,25,0.59675,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,CI,"(2, 3]",2,0,2,3,4,8,0.333,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,NCI,"(3, 4]",23,10,16,20,24,33,0.684875,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,CI,"(3, 4]",2,1,3,4,6,10,0.1655,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,NCI,"(4, 4.2]",27,16,24,29,34,46,0.38675000000000004,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,ischemic stroke,CI,"(4, 4.2]",10,1,4,6,8,13,0.875,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,12,0.6201249999999999,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.185625,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,8,0.26575,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,3,0.75525,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.370125,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.77875,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,14,18,22,31,0.5810000000000001,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,9,0.43112500000000004,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,34,40,46,59,0.5535,TRUE,0
+pem_competing,isch_bsd2,isch,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,8,10,17,0.6305,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(0, 1]",0,0,1,1,3,6,0.120625,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(0, 1]",1,0,0,0,0,2,0.8999999999999999,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(1, 2]",1,0,1,1,3,6,0.376125,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(1, 2]",0,0,0,0,0,2,0.416875,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(2, 3]",15,6,12,15,19,28,0.5008750000000001,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(2, 3]",2,0,0,1,2,5,0.667125,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(3, 4]",23,11,18,22,27,37,0.5503750000000001,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(3, 4]",2,0,1,2,3,7,0.491625,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(4, 4.2]",27,15,22,27,32,43,0.49337499999999995,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(4, 4.2]",10,2,5,8,11,18,0.7030000000000001,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,8,13,0.5985,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,1,3,0.232625,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,8,0.249375,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.815625,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,8,13,0.329625,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,1,4,0.8482500000000001,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,15,19,23,32,0.5301250000000001,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,1,3,4,8,0.574875,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,35,40,47,60,0.525125,TRUE,0
+pem_competing,isch_split,isch,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,10,16,0.6745,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(0, 1]",0,0,1,1,3,6,0.11825,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(0, 1]",1,0,0,0,0,2,0.892,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(1, 2]",1,0,1,1,3,7,0.375,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(1, 2]",0,0,0,0,0,1,0.415875,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(2, 3]",15,6,12,15,19,28,0.485375,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(2, 3]",2,0,0,1,2,5,0.6625000000000001,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(3, 4]",23,11,18,22,27,36,0.55,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(3, 4]",2,0,1,2,3,7,0.4955,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,NCI,"(4, 4.2]",27,15,23,27,32,43,0.48324999999999996,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,ischemic stroke,CI,"(4, 4.2]",10,2,5,8,11,17,0.7045,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,8,13.025000000000091,0.5871249999999999,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,1,4,0.229375,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,8,0.25475,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.815625,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.336875,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,1,3,0.847,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,9,15,18,23,33,0.536375,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,1,3,4,8,0.580375,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,35,41,47,60,0.5075,TRUE,0
+pem_competing,isch_early_split,isch,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,10,16,0.684875,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,NCI,"(0, 1]",0,0,1,1,3,6,0.119375,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,CI,"(0, 1]",1,0,0,0,0,2,0.88625,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,NCI,"(1, 2]",1,0,1,1,3,6,0.37424999999999997,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,CI,"(1, 2]",0,0,0,0,0,2,0.407125,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,NCI,"(2, 3]",15,6,11,15,19,27,0.519375,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,CI,"(2, 3]",2,0,1,2,3,6,0.607375,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,NCI,"(3, 4]",23,11,18,22,27,36,0.5619999999999999,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,CI,"(3, 4]",2,0,1,2,4,7,0.450125,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,NCI,"(4, 4.2]",27,14,21,26,31,42,0.5690000000000001,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,ischemic stroke,CI,"(4, 4.2]",10,3,6,9,12,19,0.5795,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,13,0.60475,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.209125,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,7,0.274125,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.790875,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.34075,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.816875,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,14,18,22,32,0.549875,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,8,0.5237499999999999,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,24,34,39,45,58,0.581125,TRUE,0
+pem_competing,isch_split_bsd2,isch,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,6,8,11,18,0.571875,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,NCI,"(0, 1]",1,0,1,2,3,7,0.26875,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,CI,"(0, 1]",1,0,0,0,1,2,0.785375,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,NCI,"(1, 2]",5,0,3,4,6,12,0.603625,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,CI,"(1, 2]",0,0,0,1,1,3,0.229,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,NCI,"(2, 3]",18,7,13,16,20,29,0.625375,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,CI,"(2, 3]",2,0,2,3,4,8,0.335375,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,NCI,"(3, 4]",24,11,18,22,26,36,0.6501250000000001,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,CI,"(3, 4]",2,0,2,4,5,9,0.20600000000000002,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,NCI,"(4, 4.2]",27,17,25,30,36,46,0.34875,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,any stroke,CI,"(4, 4.2]",10,1,3,5,7,12,0.931875,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,13,0.608625,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.184375,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,3,8,0.27625,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,3,0.77675,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.34900000000000003,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.8158749999999999,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,9,14,18,22,31,0.574,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,8,0.46975,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,24,35,41,47,60,0.5195000000000001,TRUE,0
+pem_competing,any,any,uniform,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,10,15,0.6915,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,NCI,"(0, 1]",1,0,1,2,4,8,0.26925,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,CI,"(0, 1]",1,0,0,0,1,2,0.773375,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,NCI,"(1, 2]",5,0,3,4,6,12,0.6058749999999999,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,CI,"(1, 2]",0,0,0,1,1,3,0.2205,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,NCI,"(2, 3]",18,7,13,17,20,29,0.599125,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,CI,"(2, 3]",2,0,2,3,4,8,0.319,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,NCI,"(3, 4]",24,11,17,22,26,35,0.6445,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,CI,"(3, 4]",2,0,2,4,5,9,0.209375,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,NCI,"(4, 4.2]",27,17,25,30,36,47,0.32375,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,any stroke,CI,"(4, 4.2]",10,1,3,5,7,11,0.9400000000000001,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,13,0.624375,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.184125,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,7,0.265625,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.7685,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.353625,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.80025,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,14,18,22,31,0.564,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,9,0.457625,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25.97500000000001,35,41,47,60,0.513,TRUE,0
+pem_competing,any_early,any,early,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,9,15,0.7055,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,NCI,"(0, 1]",1,0,1,2,4,7,0.26675,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,CI,"(0, 1]",1,0,0,0,1,2,0.783375,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,NCI,"(1, 2]",5,0,3,4,6,12,0.59275,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,CI,"(1, 2]",0,0,0,1,1,3,0.224375,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,NCI,"(2, 3]",18,8,13,17,21,29,0.5976250000000001,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,CI,"(2, 3]",2,0,2,3,4,8,0.336375,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,NCI,"(3, 4]",24,11,18,22,26,35,0.64425,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,CI,"(3, 4]",2,0,2,4,5,9,0.215375,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,NCI,"(4, 4.2]",27,17,26,30,35,47,0.32275000000000004,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,any stroke,CI,"(4, 4.2]",10,1,3,5,7,12,0.9355,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,13,0.612625,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.185625,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,7,0.2595,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.77375,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.35375,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.802,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,14,18,22,31,0.56725,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,8,0.45625000000000004,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,26,35,41,47,60,0.509625,TRUE,0
+pem_competing,any_late,any,late,proportional,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,10,15,0.682875,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,NCI,"(0, 1]",1,0,1,2,3,7,0.265,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,CI,"(0, 1]",1,0,0,0,1,2,0.772375,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,NCI,"(1, 2]",5,0,3,4,6,12,0.59675,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,CI,"(1, 2]",0,0,0,1,1,4,0.217125,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,NCI,"(2, 3]",18,7,13,16,20,29,0.620375,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,CI,"(2, 3]",2,0,2,3,5,8,0.31074999999999997,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,NCI,"(3, 4]",24,10,17,21,26,36,0.662875,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,CI,"(3, 4]",2,0,2,4,6,10,0.19037500000000002,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,NCI,"(4, 4.2]",27,16,25,30,35,46,0.361375,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,any stroke,CI,"(4, 4.2]",10,1,4,5,7,12,0.9155,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,13,0.619,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.183,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,7,0.268625,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,3,0.757375,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.35775,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,2,4,0.7815,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,8,14,18,22,31,0.581625,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,9,0.415625,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,34,40,47,59,0.5396249999999999,TRUE,0
+pem_competing,any_bsd2,any,uniform,proportional,2,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,8,10,16,0.632625,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(0, 1]",1,0,1,2,4,8,0.23975000000000002,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(0, 1]",1,0,0,0,0,2,0.87575,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(1, 2]",5,1,3,5,7,12.025000000000091,0.52925,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(1, 2]",0,0,0,0,1,2,0.322125,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(2, 3]",18,8,14,18,22,32,0.5075,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(2, 3]",2,0,1,1,2,5,0.649625,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(3, 4]",24,12,19,23,28,38,0.53675,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(3, 4]",2,0,1,2,3,6,0.530875,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(4, 4.2]",27,15,22,27,32,43,0.5095,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(4, 4.2]",10,2,5,8,11,18,0.70675,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,8,13,0.591375,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,1,3.025000000000091,0.233625,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,8,0.25675,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.80825,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,8,13,0.33625000000000005,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,1,4,0.85275,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,9,15,19,23,33,0.530375,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,1,2,4,8,0.592,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,34,40,46,59,0.5397500000000001,TRUE,0
+pem_competing,any_split,any,uniform,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,10,16,0.668375,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(0, 1]",1,0,1,2,4,8,0.24624999999999997,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(0, 1]",1,0,0,0,0,2,0.8848750000000001,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(1, 2]",5,1,3,5,7,12,0.542875,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(1, 2]",0,0,0,0,1,2,0.321375,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(2, 3]",18,8,14,18,22,31,0.52025,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(2, 3]",2,0,1,1,2,5,0.6561250000000001,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(3, 4]",24,12,19,23,28,38,0.545625,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(3, 4]",2,0,1,2,3,7,0.54,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,NCI,"(4, 4.2]",27,15,23,28,33,43,0.468375,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,any stroke,CI,"(4, 4.2]",10,2,5,8,10,17,0.71775,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,7,13,0.592875,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,1,3,0.226125,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,8,0.25925,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.81275,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,8,13,0.341875,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,1,4,0.855875,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,9,15,19,23,32,0.5235,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,1,2,4,8,0.593375,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,25,35,41,47,61,0.517,TRUE,0
+pem_competing,any_early_split,any,early,split at year 4,1,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,5,7,10,17,0.675875,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,NCI,"(0, 1]",1,0,1,2,4,8,0.243875,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,CI,"(0, 1]",1,0,0,0,0,2,0.870125,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,NCI,"(1, 2]",5,1,3,5,7,12,0.54025,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,CI,"(1, 2]",0,0,0,0,1,2,0.313125,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,NCI,"(2, 3]",18,8,14,18,22,31,0.521,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,CI,"(2, 3]",2,0,1,2,3,6,0.60125,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,NCI,"(3, 4]",24,12,19,23,28,39,0.545125,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,CI,"(3, 4]",2,0,1,2,3,7,0.50125,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,NCI,"(4, 4.2]",27,13,21,26,31,42,0.56675,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,any stroke,CI,"(4, 4.2]",10,3,6,9,12,19,0.58575,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(0, 1]",6,1,3,5,8,13,0.60475,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(0, 1]",0,0,0,1,2,4,0.20325,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(1, 2]",1,0,1,2,4,8,0.256,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(1, 2]",1,0,0,0,1,2,0.789875,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(2, 3]",4,1,3,5,7,13,0.354125,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(2, 3]",2,0,0,1,1,4,0.82725,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(3, 4]",19,9,14,18,23,31,0.55125,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(3, 4]",3,0,2,3,5,9,0.51825,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,NCI,"(4, 4.2]",41,24,34,39,46,58,0.5722499999999999,TRUE,0
+pem_competing,any_split_bsd2,any,uniform,split at year 4,2,NA,NA,events per cell,all-cause mortality,CI,"(4, 4.2]",9,2,6,8,11,18,0.5723750000000001,TRUE,0
+exposure_age,isch_P1,isch,NA,NA,NA,P1,90,events per group,ischemic stroke,NCI,NA,66,46,59,66,74,91,0.491125,TRUE,0
+exposure_age,isch_P1,isch,NA,NA,NA,P1,90,events per group,ischemic stroke,CI,NA,15,5,10,13,17,25,0.618375,TRUE,0
+exposure_age,isch_P2,isch,NA,NA,NA,P2,90,events per group,ischemic stroke,NCI,NA,66,45,59,66,75,91,0.491625,TRUE,0
+exposure_age,isch_P2,isch,NA,NA,NA,P2,90,events per group,ischemic stroke,CI,NA,15,6,11,14,18,26,0.58,TRUE,0
+exposure_age,isch_P3,isch,NA,NA,NA,P3,90,events per group,ischemic stroke,NCI,NA,66,46,59,66,74,91,0.484375,TRUE,0
+exposure_age,isch_P3,isch,NA,NA,NA,P3,90,events per group,ischemic stroke,CI,NA,15,6,11,14,18,26,0.579,TRUE,0
+exposure_age,isch_P2_amax80,isch,NA,NA,NA,P2,80,events per group,ischemic stroke,NCI,NA,66,46,59,67,75,90,0.47375,TRUE,0
+exposure_age,isch_P2_amax80,isch,NA,NA,NA,P2,80,events per group,ischemic stroke,CI,NA,15,5.9750000000000085,11,14,18,26,0.570375,TRUE,0
+exposure_age,isch_P2_amax100,isch,NA,NA,NA,P2,100,events per group,ischemic stroke,NCI,NA,66,46,59,66,74,90,0.49337499999999995,TRUE,0
+exposure_age,isch_P2_amax100,isch,NA,NA,NA,P2,100,events per group,ischemic stroke,CI,NA,15,6,11,14,18,27,0.5557500000000001,TRUE,0
+exposure_age,any_P1,any,NA,NA,NA,P1,90,events per group,any stroke,NCI,NA,75,54,67,75,84,102,0.4915,TRUE,0
+exposure_age,any_P1,any,NA,NA,NA,P1,90,events per group,any stroke,CI,NA,15,5.9750000000000085,10,14,17,26,0.5935,TRUE,0
+exposure_age,any_P2,any,NA,NA,NA,P2,90,events per group,any stroke,NCI,NA,75,53,67,75,84,101,0.488375,TRUE,0
+exposure_age,any_P2,any,NA,NA,NA,P2,90,events per group,any stroke,CI,NA,15,6,11,14,18,27,0.569375,TRUE,0
+exposure_age,any_P3,any,NA,NA,NA,P3,90,events per group,any stroke,NCI,NA,75,54,67,75,83,101,0.489125,TRUE,0
+exposure_age,any_P3,any,NA,NA,NA,P3,90,events per group,any stroke,CI,NA,15,6,11,14,18,26,0.575625,TRUE,0
+exposure_age,any_P2_amax80,any,NA,NA,NA,P2,80,events per group,any stroke,NCI,NA,75,53,67,75,84,102,0.487,TRUE,0
+exposure_age,any_P2_amax80,any,NA,NA,NA,P2,80,events per group,any stroke,CI,NA,15,6,11,14,18,26,0.566125,TRUE,0
+exposure_age,any_P2_amax100,any,NA,NA,NA,P2,100,events per group,any stroke,NCI,NA,75,53,67,75,83,102,0.486,TRUE,0
+exposure_age,any_P2_amax100,any,NA,NA,NA,P2,100,events per group,any stroke,CI,NA,15,6,11,14,18,26,0.5491250000000001,TRUE,0
+exposure_age,death_P1,death,NA,NA,NA,P1,90,events per group,all-cause mortality,NCI,NA,71,50,63,71,80,96,0.490625,TRUE,0
+exposure_age,death_P1,death,NA,NA,NA,P1,90,events per group,all-cause mortality,CI,NA,15,5,10,14,18,27,0.595,TRUE,0
+exposure_age,death_P2,death,NA,NA,NA,P2,90,events per group,all-cause mortality,NCI,NA,71,49,64,72,80,96,0.476,TRUE,0
+exposure_age,death_P2,death,NA,NA,NA,P2,90,events per group,all-cause mortality,CI,NA,15,6,11,14,18,26,0.5522499999999999,TRUE,0
+exposure_age,death_P3,death,NA,NA,NA,P3,90,events per group,all-cause mortality,NCI,NA,71,49,64,71,80,95,0.48874999999999996,TRUE,0
+exposure_age,death_P3,death,NA,NA,NA,P3,90,events per group,all-cause mortality,CI,NA,15,6,11,14,18,26,0.570625,TRUE,0
+exposure_age,death_P2_amax80,death,NA,NA,NA,P2,80,events per group,all-cause mortality,NCI,NA,71,50,64,71,80,97,0.48662500000000003,TRUE,0
+exposure_age,death_P2_amax80,death,NA,NA,NA,P2,80,events per group,all-cause mortality,CI,NA,15,6,11,14,18,26,0.58475,TRUE,0
+exposure_age,death_P2_amax100,death,NA,NA,NA,P2,100,events per group,all-cause mortality,NCI,NA,71,50,64,71,80,97,0.48774999999999996,TRUE,0
+exposure_age,death_P2_amax100,death,NA,NA,NA,P2,100,events per group,all-cause mortality,CI,NA,15,6,11,14,18,27,0.5627500000000001,TRUE,0

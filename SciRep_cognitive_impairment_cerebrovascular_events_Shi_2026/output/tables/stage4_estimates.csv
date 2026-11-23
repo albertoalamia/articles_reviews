@@ -1,0 +1,621 @@
+estimand,program,run,role,model,outcome,scenario,structure,beta_sd,prior,age_max,quantity,group,time,period,rule,stage4_median,stage4_lo,stage4_hi,pr_gt_1
+E1,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,F,CI,4,NA,NA,0.030468711000000002,0.016326246025,0.05262875417500001,NA
+E1,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.10268041,0.058500980274999996,0.162493804,NA
+E1,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,F,NCI,4,NA,NA,0.0086047287,0.0062192100575,0.01156579945,NA
+E1,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.0305678905,0.024044757075,0.037947064575,NA
+E1,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,F,CI,4,NA,NA,0.042339022500000004,0.023648878700000004,0.069653368325,NA
+E1,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.0935194145,0.054385957275,0.14499932150000003,NA
+E1,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,F,NCI,4,NA,NA,0.0123977785,0.009319372925,0.016067743675,NA
+E1,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.0286218595,0.022688195175,0.035610970925,NA
+E1,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,RD,NA,4,NA,NA,0.021850091000000002,0.00808983536,0.04330770382500003,NA
+E1,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.071901013,0.026828730500000002,0.13167864475,NA
+E1,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,RD,NA,4,NA,NA,0.0299090355,0.011565382700000001,0.05623366325000001,NA
+E1,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.0647927895,0.02565843655,0.11676459650000001,NA
+E1,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,RR,NA,4,NA,NA,3.54380895,1.9013981949999998,5.997263250000001,1
+E1,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.35672235,1.82206424,5.555244915,1
+E1,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,RR,NA,4,NA,NA,3.4069255,1.9161188500000002,5.6605619874999995,1
+E1,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.26165875,1.8424372725,5.352947889999999,1
+E1,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,F,CI,4,NA,NA,0.032700862,0.017887443024999998,0.05339863525,NA
+E1,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,F,CI,4.2,NA,NA,0.10929384,0.062773376625,0.16994103725,NA
+E1,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,F,NCI,4,NA,NA,0.0084694053,0.006066117875,0.011407884,NA
+E1,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,F,NCI,4.2,NA,NA,0.030156947,0.023682117699999998,0.037492480175,NA
+E1,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,F,CI,4,NA,NA,0.0445858555,0.025038830625,0.07294167630000001,NA
+E1,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,F,CI,4.2,NA,NA,0.0979247795,0.0574933123,0.15469192275,NA
+E1,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,F,NCI,4,NA,NA,0.012323785,0.0092987319175,0.016030767450000004,NA
+E1,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,F,NCI,4.2,NA,NA,0.028439361,0.0222478516,0.0356442365,NA
+E1,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,RD,NA,4,NA,NA,0.0242347895,0.0096854965325,0.044179139700000016,NA
+E1,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,RD,NA,4.2,NA,NA,0.07912677800000001,0.032055527400000006,0.13943561450000003,NA
+E1,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,RD,NA,4,NA,NA,0.0322482495,0.012942938225,0.059997767775,NA
+E1,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,RD,NA,4.2,NA,NA,0.069395305,0.02877067035,0.12516021000000002,NA
+E1,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,RR,NA,4,NA,NA,3.85517705,2.120023975,6.43723621,0.99975
+E1,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,RR,NA,4.2,NA,NA,3.62305095,2.0339668375,5.937841512500001,0.99975
+E1,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,RR,NA,4,NA,NA,3.6010751,2.02857789,6.100519087500001,1
+E1,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,RR,NA,4.2,NA,NA,3.4353027,1.942843535,5.7340970975,1
+E1,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,F,CI,4,NA,NA,0.031716509000000004,0.017471261749999998,0.0528899019,NA
+E1,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.0713144915,0.0415761908,0.11207135725000002,NA
+E1,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,F,NCI,4,NA,NA,0.00859063815,0.006174423797500001,0.0116130676,NA
+E1,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.020026051,0.01576765605,0.024474779475,NA
+E1,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,F,CI,4,NA,NA,0.043321,0.02543306685,0.069784859275,NA
+E1,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.0718570285,0.042969139100000005,0.11099855825000002,NA
+E1,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,F,NCI,4,NA,NA,0.0124086005,0.00928639486,0.016184821024999997,NA
+E1,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.020887281,0.016862752225000003,0.02569986625,NA
+E1,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,RD,NA,4,NA,NA,0.023029976,0.0092627504975,0.04348823985000001,NA
+E1,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.0515254835,0.021334471625,0.09181726967500001,NA
+E1,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,RD,NA,4,NA,NA,0.0309417545,0.013082520225,0.056779490975,NA
+E1,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.050802956499999996,0.021830529075000004,0.09016216852500002,NA
+E1,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,RR,NA,4,NA,NA,3.69360005,2.0571519625000003,6.2179959025,0.9995
+E1,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.5837492,2.007798695,5.9459193275,0.9995
+E1,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,RR,NA,4,NA,NA,3.4850977,2.01213195,5.857570252500002,1
+E1,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.40594835,1.9739297325,5.6723877425,1
+E1,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,F,CI,4,NA,NA,0.024654008999999998,0.010074992075,0.051339331050000006,NA
+E1,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,F,CI,4.2,NA,NA,0.067854447,0.039590081,0.105564297,NA
+E1,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,F,NCI,4,NA,NA,0.00887998835,0.0062390318375,0.012242924325,NA
+E1,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,F,NCI,4.2,NA,NA,0.0201936385,0.016111307249999998,0.025050088325,NA
+E1,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,F,CI,4,NA,NA,0.022396759,0.008429777195,0.04659992552500001,NA
+E1,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,F,CI,4.2,NA,NA,0.0676566455,0.040121762899999996,0.10643968500000002,NA
+E1,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,F,NCI,4,NA,NA,0.0134666295,0.010187194725,0.017478476375,NA
+E1,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,F,NCI,4.2,NA,NA,0.021101466,0.016951852325,0.026029333325,NA
+E1,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,RD,NA,4,NA,NA,0.015746047,0.0011524224800000004,0.04252424045000001,NA
+E1,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,RD,NA,4.2,NA,NA,0.047472178500000003,0.0187524974,0.08585104404999999,NA
+E1,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,RD,NA,4,NA,NA,0.00895418615,-0.005488911459999999,0.03367468727500001,NA
+E1,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,RD,NA,4.2,NA,NA,0.04647793,0.019621715325000004,0.085327914675,NA
+E1,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,RR,NA,4,NA,NA,2.8060156999999997,1.1064959775,6.131269082500001,0.985
+E1,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,RR,NA,4.2,NA,NA,3.3623440999999996,1.891124615,5.51229986,0.99975
+E1,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,RR,NA,4,NA,NA,1.66485015,0.61711905,3.6082488050000006,0.85325
+E1,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,RR,NA,4.2,NA,NA,3.1969144500000004,1.85555546,5.277808402500001,0.99975
+E1,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,F,CI,4,NA,NA,0.0303460105,0.016601445575,0.050915152124999995,NA
+E1,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.067478803,0.039464923774999994,0.10635617950000001,NA
+E1,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,F,NCI,4,NA,NA,0.0085393507,0.00611163558,0.011560157925000003,NA
+E1,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.01963062,0.015691707975,0.024121145224999998,NA
+E1,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,F,CI,4,NA,NA,0.041514987,0.0233384021,0.0663901327,NA
+E1,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.0677948035,0.03876194625,0.10433040100000003,NA
+E1,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,F,NCI,4,NA,NA,0.012438310000000001,0.0094825667125,0.01600075995,NA
+E1,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.0206881935,0.016559819049999997,0.025336286000000003,NA
+E1,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,RD,NA,4,NA,NA,0.021654763,0.0085240822925,0.041880977150000005,NA
+E1,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.0477801405,0.019330667375000003,0.086773005925,NA
+E1,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,RD,NA,4,NA,NA,0.0290889295,0.0112447625,0.052967391125,NA
+E1,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.046962016499999995,0.0181784902,0.08390848822500001,NA
+E1,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,RR,NA,4,NA,NA,3.542535,1.9836653425,5.9151603475000005,1
+E1,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.4418147,1.9435997049999998,5.687814507500001,1
+E1,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,RR,NA,4,NA,NA,3.35232215,1.848719475,5.446299177500001,1
+E1,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.2857229500000003,1.8218246075,5.314303712499999,1
+E1,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,F,CI,4,NA,NA,0.024550158000000002,0.010157618775,0.0506631107,NA
+E1,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,F,CI,4.2,NA,NA,0.0989245975,0.057028025100000004,0.1595922495,NA
+E1,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,F,NCI,4,NA,NA,0.00884842295,0.0063493081775000005,0.012217275525000003,NA
+E1,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,F,NCI,4.2,NA,NA,0.0305719535,0.024131314700000003,0.0387639517,NA
+E1,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,F,CI,4,NA,NA,0.0220419395,0.0082716923325,0.046863623199999996,NA
+E1,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,F,CI,4.2,NA,NA,0.10187605,0.059097833075,0.16231502400000003,NA
+E1,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,F,NCI,4,NA,NA,0.013442329499999999,0.01018873375,0.017464162425,NA
+E1,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,F,NCI,4.2,NA,NA,0.028124463000000002,0.02247073275,0.03504692922500001,NA
+E1,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,RD,NA,4,NA,NA,0.015405103,9.818667205000004e-4,0.0409865795,NA
+E1,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,RD,NA,4.2,NA,NA,0.068069605,0.02609774085,0.12837145575,NA
+E1,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,RD,NA,4,NA,NA,0.00858640835,-0.005493005782499999,0.033117057825,NA
+E1,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,RD,NA,4.2,NA,NA,0.073408784,0.030929510475,0.1339343675,NA
+E1,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,RR,NA,4,NA,NA,2.76639715,1.1056185675,5.9887447300000005,0.98475
+E1,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,RR,NA,4.2,NA,NA,3.21226855,1.8094281225,5.438293505000001,1
+E1,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,RR,NA,4,NA,NA,1.6443784,0.6164624109999999,3.6208484400000005,0.85325
+E1,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,RR,NA,4.2,NA,NA,3.61527185,2.073487525,6.0343918775,1
+E1,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,F,CI,4,NA,NA,0.028214294,0.011307851075,0.058107760775,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,F,CI,4.2,NA,NA,0.110633285,0.064253788525,0.17235194525000003,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,F,NCI,4,NA,NA,0.0087153357,0.006172712794999999,0.011815277925000001,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,F,NCI,4.2,NA,NA,0.0299382995,0.023727271275,0.03751739905,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,F,CI,4,NA,NA,0.02379829,0.0086183652275,0.051450859349999996,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,F,CI,4.2,NA,NA,0.11474232000000001,0.065336968875,0.17715427475,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,F,NCI,4,NA,NA,0.013385917,0.01005010575,0.017257776475,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,F,NCI,4.2,NA,NA,0.027475977999999998,0.0214254655,0.034297071275,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,RD,NA,4,NA,NA,0.019473331500000003,0.0022477696050000008,0.049335871950000006,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,RD,NA,4.2,NA,NA,0.08039504750000001,0.032719205274999996,0.14247691875000004,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,RD,NA,4,NA,NA,0.010415028,-0.00556777251,0.038560447125,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,RD,NA,4.2,NA,NA,0.0871033065,0.03772781687500001,0.15005226825,NA
+E1,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,RR,NA,4,NA,NA,3.2320894,1.2433922625,7.19986082,0.9925
+E1,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,RR,NA,4.2,NA,NA,3.6841881499999998,2.0292122074999996,6.1648696875,0.99975
+E1,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,RR,NA,4,NA,NA,1.7823892,0.60802389075,4.069892462500001,0.88375
+E1,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,RR,NA,4.2,NA,NA,4.1800643,2.318708235,6.956976490000001,1
+E1,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,F,CI,4,NA,NA,0.030473768499999998,0.016662347924999998,0.05071117505,NA
+E1,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.10237302000000001,0.06047468835,0.161178953,NA
+E1,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,F,NCI,4,NA,NA,0.0086047394,0.00614035933,0.011515693025,NA
+E1,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.030379792,0.023914592999999998,0.038024181625,NA
+E1,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,F,CI,4,NA,NA,0.0393185795,0.022315764925,0.064239813475,NA
+E1,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.095220885,0.054379773225000004,0.14879091625,NA
+E1,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,F,NCI,4,NA,NA,0.0103544265,0.0075629572299999994,0.013712337625,NA
+E1,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.0262855165,0.020311210525,0.033171266425,NA
+E1,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,RD,NA,4,NA,NA,0.021866975,0.008874663725,0.04138849470000001,NA
+E1,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.071821434,0.0301141731,0.13036086575000003,NA
+E1,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,RD,NA,4,NA,NA,0.028721145,0.011880077375,0.052923499075000005,NA
+E1,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.068974898,0.02879672765,0.12211763025,NA
+E1,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,RR,NA,4,NA,NA,3.57760145,2.0248871375,5.966136565,1
+E1,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.3653886,1.9457210875000002,5.5406759375,1
+E1,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,RR,NA,4,NA,NA,3.7777344,2.0842549150000003,6.319602390000001,1
+E1,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.59775905,2.030251515,5.919664270000001,1
+E1,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,F,CI,4,NA,NA,0.032717198,0.017594300650000002,0.05475329662500002,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,F,CI,4.2,NA,NA,0.109120915,0.063328135575,0.1712316335,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,F,NCI,4,NA,NA,0.0084573548,0.0060289133725,0.011685739200000001,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,F,NCI,4.2,NA,NA,0.030072322999999998,0.023721187875,0.0376179945,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,F,CI,4,NA,NA,0.041674934999999996,0.023371525825000003,0.06919109872500001,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,F,CI,4.2,NA,NA,0.10096531,0.05912638005,0.15838416225000002,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,F,NCI,4,NA,NA,0.0102396125,0.0074550809425,0.013635819675000002,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,F,NCI,4.2,NA,NA,0.0260258855,0.020176593899999998,0.033167363549999995,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,RD,NA,4,NA,NA,0.024296647999999997,0.009473270865,0.045790487000000005,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,RD,NA,4.2,NA,NA,0.079196938,0.032116117575,0.14155468100000004,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,RD,NA,4,NA,NA,0.031479891,0.013538002625,0.058028133525000004,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,RD,NA,4.2,NA,NA,0.0745396215,0.032314207224999995,0.13223441375,NA
+E1,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,RR,NA,4,NA,NA,3.88570965,2.1036446625,6.568476492500001,1
+E1,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,RR,NA,4.2,NA,NA,3.64669925,2.0063407174999996,6.0255668125,1
+E1,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,RR,NA,4,NA,NA,4.07890115,2.2388727525000003,6.959922575,1
+E1,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,RR,NA,4.2,NA,NA,3.87369635,2.1526143125,6.4986007400000005,1
+E1,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,F,CI,4,NA,NA,0.0319358575,0.016996348,0.053639159375,NA
+E1,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.07186166699999999,0.040317491025000006,0.11306712225000001,NA
+E1,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,F,NCI,4,NA,NA,0.0085430958,0.006142873515,0.011462362700000003,NA
+E1,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.0198769905,0.015751895250000002,0.024869239625,NA
+E1,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,F,CI,4,NA,NA,0.0405050035,0.022823096225000002,0.066759650825,NA
+E1,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.071578582,0.041587460725,0.11231843975,NA
+E1,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,F,NCI,4,NA,NA,0.01037425,0.0076174190675,0.01367251135,NA
+E1,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.018611072,0.01471038495,0.023186645425000003,NA
+E1,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,RD,NA,4,NA,NA,0.023282153,0.0089550863525,0.04404221667500002,NA
+E1,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.051928658,0.02047899305,0.09311232112500001,NA
+E1,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,RD,NA,4,NA,NA,0.0300646885,0.012725690650000001,0.0557049607,NA
+E1,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.0529162685,0.022504461225,0.09391160805000003,NA
+E1,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,RR,NA,4,NA,NA,3.7490786,2.045417385,6.2334131699999995,1
+E1,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.62773785,1.9903240224999998,5.956446145,1
+E1,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,RR,NA,4,NA,NA,3.9122437999999997,2.1925093425,6.650337222500001,1
+E1,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.81503525,2.15275126,6.437643955,1
+E1,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,F,CI,4,NA,NA,0.0249952295,0.009913940999999999,0.05074191332500002,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,F,CI,4.2,NA,NA,0.0667859395,0.039429492475,0.10599454275,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,F,NCI,4,NA,NA,0.00888211985,0.00620828997,0.012317355925,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,F,NCI,4.2,NA,NA,0.020204167000000002,0.0159684529,0.025183852550000004,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,F,CI,4,NA,NA,0.021559582,0.00816656306,0.046627218875,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,F,CI,4.2,NA,NA,0.0669142525,0.039015140075,0.10691314325000001,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,F,NCI,4,NA,NA,0.011346715,0.0083967130925,0.014941661525,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,F,NCI,4.2,NA,NA,0.018969401,0.015161365299999998,0.02365314635,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,RD,NA,4,NA,NA,0.016004587,5.5615220825e-4,0.041783925225000004,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,RD,NA,4.2,NA,NA,0.046579035000000005,0.018977238849999998,0.08573383062500001,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,RD,NA,4,NA,NA,0.010069697999999998,-0.0034067382974999998,0.035410765425,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,RD,NA,4.2,NA,NA,0.0480162985,0.019439737925000002,0.088178523675,NA
+E1,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,RR,NA,4,NA,NA,2.8187688,1.0610697150000001,6.184340645,0.98075
+E1,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,RR,NA,4.2,NA,NA,3.3195644,1.907071555,5.5425596225,1
+E1,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,RR,NA,4,NA,NA,1.8964807000000001,0.7153041607500001,4.250926075000001,0.9055
+E1,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,RR,NA,4.2,NA,NA,3.5199756,1.970790965,5.871050605000003,1
+E1,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,F,CI,4,NA,NA,0.030070218,0.016331244225,0.051353338975,NA
+E1,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.06722682599999999,0.0392054748,0.1068060525,NA
+E1,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,F,NCI,4,NA,NA,0.0086036819,0.0060563495499999995,0.011796561725000002,NA
+E1,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.019731894,0.015609176374999999,0.0243915771,NA
+E1,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,F,CI,4,NA,NA,0.038853640499999995,0.02167095735,0.06377210670000001,NA
+E1,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,F,CI,4.2,NA,NA,0.067519552,0.038845672925,0.10806917925,NA
+E1,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,F,NCI,4,NA,NA,0.010354097,0.007708682089999999,0.013738604925,NA
+E1,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,F,NCI,4.2,NA,NA,0.018439972,0.01471411405,0.022828512850000003,NA
+E1,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,RD,NA,4,NA,NA,0.021440674,0.00813783588,0.041757046000000006,NA
+E1,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.047480352,0.018884121225,0.08672087472500002,NA
+E1,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,RD,NA,4,NA,NA,0.028388317500000003,0.011411888949999999,0.052794932825,NA
+E1,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,RD,NA,4.2,NA,NA,0.048977608,0.020071430100000003,0.089546758975,NA
+E1,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,RR,NA,4,NA,NA,3.51248575,1.923949565,5.955792427500002,1
+E1,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.4074121,1.889824515,5.735423110000001,1
+E1,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,RR,NA,4,NA,NA,3.73181745,2.0510156025,6.3359534475000014,1
+E1,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,RR,NA,4.2,NA,NA,3.6466818,2.01233059,6.139453410000001,1
+E1,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,F,CI,4,NA,NA,0.024500476,0.0099352591350000009,0.05129119307500002,NA
+E1,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,F,CI,4.2,NA,NA,0.0989877545,0.0565555812,0.157462091,NA
+E1,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,F,NCI,4,NA,NA,0.0088433839,0.0062581821025,0.012175215525,NA
+E1,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,F,NCI,4.2,NA,NA,0.0306851635,0.024478519724999998,0.03838427345,NA
+E1,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,F,CI,4,NA,NA,0.021200050999999998,0.008171319375000001,0.044792572875000006,NA
+E1,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,F,CI,4.2,NA,NA,0.100892485,0.057607578675,0.16516760575000003,NA
+E1,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,F,NCI,4,NA,NA,0.011235859,0.0083039151275,0.014965860075,NA
+E1,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,F,NCI,4.2,NA,NA,0.02600364,0.020315985874999998,0.03266540112500001,NA
+E1,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,RD,NA,4,NA,NA,0.0155591015,9.659620157500004e-4,0.04261956875000001,NA
+E1,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,RD,NA,4.2,NA,NA,0.0682001225,0.025448228875,0.1268198345,NA
+E1,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,RD,NA,4,NA,NA,0.0098019979,-0.0034992128125,0.03340565127500001,NA
+E1,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,RD,NA,4.2,NA,NA,0.0750024985,0.031975212875000006,0.13925680650000002,NA
+E1,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,RR,NA,4,NA,NA,2.77859245,1.1035011125,6.159897237500001,0.985
+E1,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,RR,NA,4.2,NA,NA,3.2098253999999997,1.7856714200000001,5.400530815000002,1
+E1,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,RR,NA,4,NA,NA,1.8742469000000002,0.7049412305,4.202991392500001,0.90825
+E1,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,RR,NA,4.2,NA,NA,3.8858067500000004,2.162141075,6.637002757500001,1
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,F,CI,4,NA,NA,0.028038577000000002,0.0111706847,0.056430059125,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,F,CI,4.2,NA,NA,0.11086694,0.064905610925,0.17111264175000002,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,F,NCI,4,NA,NA,0.008716289799999999,0.0061137410075,0.011808100225,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,F,NCI,4.2,NA,NA,0.029991143999999997,0.02330998995,0.0373351417,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,F,CI,4,NA,NA,0.0236224585,0.00873020747,0.05083378865,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,F,CI,4.2,NA,NA,0.113952675,0.06409464247499999,0.18430436625000002,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,F,NCI,4,NA,NA,0.011184101,0.008159121837499998,0.014872540900000002,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,F,NCI,4.2,NA,NA,0.0251358395,0.019559821925000002,0.0321221306,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,RD,NA,4,NA,NA,0.0192883085,0.0021206606175000007,0.04700749475000002,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,RD,NA,4.2,NA,NA,0.0805301635,0.0341986429,0.14091454900000003,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,RD,NA,4,NA,NA,0.012382941500000001,-0.0028968504224999997,0.040186433875000004,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,RD,NA,4.2,NA,NA,0.0883322735,0.039127343375000005,0.15763509750000004,NA
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,RR,NA,4,NA,NA,3.1970279,1.2302903575000002,6.925460582500001,0.9915
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,RR,NA,4.2,NA,NA,3.7084575,2.0361927675,6.106333247499999,1
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,RR,NA,4,NA,NA,2.115097,0.7594119877500001,4.9087580650000024,0.92975
+E1,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,RR,NA,4.2,NA,NA,4.5055850500000005,2.4768065525000003,7.737212275000001,1
+E1b,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.64610495,1.9415603175,6.219259645,1
+E1b,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.50013795,1.9535594575000002,5.895143812500001,1
+E1b,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,HR,NA,NA,NA,NA,3.9837839500000003,2.16840181,6.6784554725,0.99975
+E1b,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,HR,NA,NA,NA,NA,3.7092743500000003,2.0565957950000002,6.358574015000002,1
+E1b,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.8018840000000003,2.1115019624999998,6.483087175000001,0.9995
+E1b,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.5880386,2.0496616149999998,6.096831905000001,1
+E1b,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.64267575,2.0248177725,6.136137022500001,1
+E1b,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.44438835,1.8789942375000002,5.6509145325,1
+E1b,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.6744661499999998,2.06727084,6.178909625,1
+E1b,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.8842938,2.1258989375,6.567181055000001,1
+E1b,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,HR,NA,NA,NA,NA,3.99924095,2.148530125,6.846333735,1
+E1b,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,HR,NA,NA,NA,NA,4.2140546,2.287857975,7.229787325000002,1
+E1b,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.8530854999999997,2.0820228650000003,6.4755392975,1
+E1b,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,HR,NA,NA,NA,NA,4.0285661,2.2239766975,6.9246299575000005,1
+E1b,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.6078185,1.9558818825,6.175736732500001,1
+E1b,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,HR,NA,NA,NA,NA,3.83252815,2.0862648100000003,6.590903877500001,1
+E1c,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,52.920799,34.87753742499999,80.64238680000001,1
+E1c,pem_competing,any,planned,any,all-cause mortality,uniform,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,52.557471,34.618124875,80.277918025,1
+E1c,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,27.2012085,17.517823925000002,41.144085225000005,1
+E1c,pem_competing,any,planned,any,any stroke,uniform,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,27.024053000000002,17.402194025000004,40.857539375,1
+E1c,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,tail ratio,CI,NA,NA,NA,52.964016,35.406371225,80.0503736,1
+E1c,pem_competing,any_bsd2,sensitivity,any,all-cause mortality,uniform,proportional,2,NA,NA,tail ratio,NCI,NA,NA,NA,52.590012,35.190398125,79.58677065,1
+E1c,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,tail ratio,CI,NA,NA,NA,27.192697,17.619618525,41.1050258,1
+E1c,pem_competing,any_bsd2,sensitivity,any,any stroke,uniform,proportional,2,NA,NA,tail ratio,NCI,NA,NA,NA,27.0345725,17.496626250000002,40.867219425,1
+E1c,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,27.351533500000002,17.722577125,41.06407395,1
+E1c,pem_competing,any_early,sensitivity,any,all-cause mortality,early,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,27.113155499999998,17.565640475,40.705418325,1
+E1c,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,13.9419655,8.9287633225,21.606048649999998,1
+E1c,pem_competing,any_early,sensitivity,any,any stroke,early,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,13.804306,8.8370139925,21.400550875,1
+E1c,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,HR,NA,NA,"(0, 4]",NA,2.8435324,1.1150891025,6.266431077500001,0.986
+E1c,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,HR,NA,NA,"(4, 4.2]",NA,3.9223051499999997,1.7473413775,7.766587615000001,0.999
+E1c,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,HR,NA,NA,"(0, 4]",NA,1.6879631,0.61994227575,3.700234025,0.85725
+E1c,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,HR,NA,NA,"(4, 4.2]",NA,6.19450975,2.877256285,12.387781450000002,1
+E1c,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,tail ratio,CI,NA,NA,NA,35.59804,12.8329892,111.48758875000001,1
+E1c,pem_competing,any_early_split,sensitivity,any,all-cause mortality,early,split at year 4,1,NA,NA,tail ratio,NCI,NA,NA,NA,25.862858,16.474344324999997,41.14192905,1
+E1c,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,tail ratio,CI,NA,NA,NA,42.133181,14.618272975000002,137.5433635,1
+E1c,pem_competing,any_early_split,sensitivity,any,any stroke,early,split at year 4,1,NA,NA,tail ratio,NCI,NA,NA,NA,11.592074,7.25903215,18.007454974999998,1
+E1c,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,26.5551785,17.573202124999998,40.65088475000001,1
+E1c,pem_competing,any_late,sensitivity,any,all-cause mortality,late,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,26.3963685,17.464559425,40.363304025000005,1
+E1c,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,13.5067,8.93667825,20.167241425,1
+E1c,pem_competing,any_late,sensitivity,any,any stroke,late,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,13.4376435,8.897506250000001,20.048982475000003,1
+E1c,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,HR,NA,NA,"(0, 4]",NA,2.8022868499999998,1.1068169449999998,6.140211262500003,0.98475
+E1c,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,HR,NA,NA,"(4, 4.2]",NA,3.6812578499999997,1.6832746250000001,7.3077090775,0.99975
+E1c,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,HR,NA,NA,"(0, 4]",NA,1.66464765,0.6216441805,3.7406418075000003,0.858
+E1c,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,HR,NA,NA,"(4, 4.2]",NA,5.9003987,2.7432542575,11.595115075000002,1
+E1c,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,tail ratio,CI,NA,NA,NA,67.39356000000001,22.9677166,201.72467075000003,1
+E1c,pem_competing,any_split,planned,any,all-cause mortality,uniform,split at year 4,1,NA,NA,tail ratio,NCI,NA,NA,NA,50.895069,32.93109905,78.68034415000001,1
+E1c,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,tail ratio,CI,NA,NA,NA,80.7676125,28.025828525,253.6406415000001,1
+E1c,pem_competing,any_split,planned,any,any stroke,uniform,split at year 4,1,NA,NA,tail ratio,NCI,NA,NA,NA,22.3672955,13.92355585,34.67349150000001,1
+E1c,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,HR,NA,NA,"(0, 4]",NA,3.2848858,1.253885195,7.4195199325,0.99275
+E1c,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,HR,NA,NA,"(4, 4.2]",NA,4.27651925,1.8923191775000001,8.33016784,0.9995
+E1c,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,HR,NA,NA,"(0, 4]",NA,1.81259135,0.6150161719999999,4.1899606375,0.8885
+E1c,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,HR,NA,NA,"(4, 4.2]",NA,7.11713635,3.3736345275,14.41070015,1
+E1c,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,tail ratio,CI,NA,NA,NA,66.0732835,23.132000174999998,196.11853375,1
+E1c,pem_competing,any_split_bsd2,sensitivity,any,all-cause mortality,uniform,split at year 4,2,NA,NA,tail ratio,NCI,NA,NA,NA,50.345324500000004,32.242512325,79.29799870000002,1
+E1c,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,tail ratio,CI,NA,NA,NA,84.690757,30.385906925,269.6276910000001,1
+E1c,pem_competing,any_split_bsd2,sensitivity,any,any stroke,uniform,split at year 4,2,NA,NA,tail ratio,NCI,NA,NA,NA,21.542179,13.363748524999998,34.09091865000002,1
+E1c,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,52.760607,34.668562925,81.42395852499999,1
+E1c,pem_competing,isch,planned,isch,all-cause mortality,uniform,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,52.41151,34.412820124999996,80.69741015000001,1
+E1c,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,31.766351999999998,20.473589575,48.76783270000001,1
+E1c,pem_competing,isch,planned,isch,ischemic stroke,uniform,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,31.5180955,20.298363400000003,48.3776777,1
+E1c,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,tail ratio,CI,NA,NA,NA,53.1509395,34.577522675000004,81.72319817500001,1
+E1c,pem_competing,isch_bsd2,sensitivity,isch,all-cause mortality,uniform,proportional,2,NA,NA,tail ratio,NCI,NA,NA,NA,52.7636275,34.332676975000005,81.05951435000001,1
+E1c,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,tail ratio,CI,NA,NA,NA,31.853425,20.850481225,48.770776624999996,1
+E1c,pem_competing,isch_bsd2,sensitivity,isch,ischemic stroke,uniform,proportional,2,NA,NA,tail ratio,NCI,NA,NA,NA,31.5890075,20.686939675,48.393848774999995,1
+E1c,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,27.1278705,18.392425425000003,41.2902749,1
+E1c,pem_competing,isch_early,sensitivity,isch,all-cause mortality,early,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,26.8856715,18.199366825,40.84357425,1
+E1c,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,16.5458755,10.5314435,25.426925050000005,1
+E1c,pem_competing,isch_early,sensitivity,isch,ischemic stroke,early,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,16.345377499999998,10.416236975,25.142187475,1
+E1c,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,HR,NA,NA,"(0, 4]",NA,2.85661365,1.0663692525000001,6.3446300775,0.9815
+E1c,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,HR,NA,NA,"(4, 4.2]",NA,3.9085352,1.76936455,7.6832162350000015,0.9995
+E1c,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,HR,NA,NA,"(0, 4]",NA,1.92072195,0.7161981592500001,4.3846996975,0.91
+E1c,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,HR,NA,NA,"(4, 4.2]",NA,6.2078386,2.8453581375,12.348532575,1
+E1c,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,tail ratio,CI,NA,NA,NA,35.564543,12.658865325,110.32827200000006,1
+E1c,pem_competing,isch_early_split,sensitivity,isch,all-cause mortality,early,split at year 4,1,NA,NA,tail ratio,NCI,NA,NA,NA,25.8705425,16.731045275,40.258940825,1
+E1c,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,tail ratio,CI,NA,NA,NA,44.884341,15.161562525,140.40378675000002,1
+E1c,pem_competing,isch_early_split,sensitivity,isch,ischemic stroke,early,split at year 4,1,NA,NA,tail ratio,NCI,NA,NA,NA,13.561838999999999,8.51783649,21.493363450000007,1
+E1c,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,26.5285255,17.359586625,39.925145875000005,1
+E1c,pem_competing,isch_late,sensitivity,isch,all-cause mortality,late,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,26.3437975,17.229340699999998,39.67198505,1
+E1c,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,tail ratio,CI,NA,NA,NA,15.9564705,10.21211385,24.4219225,1
+E1c,pem_competing,isch_late,sensitivity,isch,ischemic stroke,late,proportional,1,NA,NA,tail ratio,NCI,NA,NA,NA,15.852136,10.131476825,24.222453325,1
+E1c,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,HR,NA,NA,"(0, 4]",NA,2.8206800999999997,1.1130615375,6.331896422500002,0.98575
+E1c,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,HR,NA,NA,"(4, 4.2]",NA,3.6612079,1.6809546400000002,7.286732135,0.99875
+E1c,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,HR,NA,NA,"(0, 4]",NA,1.90204605,0.7092055975,4.330611635000001,0.91175
+E1c,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,HR,NA,NA,"(4, 4.2]",NA,5.86636815,2.7266932225000002,12.0384059,1
+E1c,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,tail ratio,CI,NA,NA,NA,66.476774,22.854544875,202.24732600000007,1
+E1c,pem_competing,isch_split,planned,isch,all-cause mortality,uniform,split at year 4,1,NA,NA,tail ratio,NCI,NA,NA,NA,50.590075999999996,32.497225075,80.42011925,1
+E1c,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,tail ratio,CI,NA,NA,NA,83.939017,28.220322025,255.03404325000005,1
+E1c,pem_competing,isch_split,planned,isch,ischemic stroke,uniform,split at year 4,1,NA,NA,tail ratio,NCI,NA,NA,NA,26.764932,16.564960425000002,42.64985147500002,1
+E1c,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,HR,NA,NA,"(0, 4]",NA,3.2541292000000004,1.2405572425,7.162128877500001,0.99225
+E1c,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,HR,NA,NA,"(4, 4.2]",NA,4.3315345999999995,1.9535236675,8.257959920000001,0.9995
+E1c,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,HR,NA,NA,"(0, 4]",NA,2.15667805,0.765254207,5.09961656,0.93325
+E1c,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,HR,NA,NA,"(4, 4.2]",NA,7.12083745,3.2834511225000003,14.444429325,1
+E1c,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,tail ratio,CI,NA,NA,NA,65.986407,23.331108025000002,202.0024692500001,1
+E1c,pem_competing,isch_split_bsd2,sensitivity,isch,all-cause mortality,uniform,split at year 4,2,NA,NA,tail ratio,NCI,NA,NA,NA,49.949936,31.326214725000003,78.67141002500001,1
+E1c,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,tail ratio,CI,NA,NA,NA,85.9836935,29.928193650000004,261.52633525000005,1
+E1c,pem_competing,isch_split_bsd2,sensitivity,isch,ischemic stroke,uniform,split at year 4,2,NA,NA,tail ratio,NCI,NA,NA,NA,25.7414975,15.8532962,40.474502175,1
+E2,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,HR at given age and sex,NA,NA,NA,NA,1.9874646999999999,1.037067205,3.682098720000001,0.98
+E2,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,hazard multiplier per decade of age,NA,NA,NA,NA,1.56129325,1.2874530825,1.88051129,1
+E2,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,"hazard multiplier, male",NA,NA,NA,NA,1.31185535,0.98528072275,1.7382666150000001,0.96725
+E2,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,hazard per person-year at the reference,NA,NA,NA,NA,0.0032837025,0.0023780057875,0.004465244690000001,NA
+E2,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,HR at given age and sex,NA,NA,NA,NA,1.5166369,0.780046468,2.8848487100000004,0.88625
+E2,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,hazard multiplier per decade of age,NA,NA,NA,NA,2.0113412999999998,1.5143894525000001,2.7046371175,1
+E2,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,"hazard multiplier, male",NA,NA,NA,NA,1.30980185,0.978407547,1.75433393,0.96375
+E2,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,hazard per person-year at the reference,NA,NA,NA,NA,0.00244766345,0.0014393290275,0.0037372325375000003,NA
+E2,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,HR at given age and sex,NA,NA,NA,NA,1.4572763000000002,0.72958382275,2.8605214675,0.85475
+E2,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,hazard multiplier per decade of age,NA,NA,NA,NA,2.0076553500000003,1.5175045999999999,2.6807254125,1
+E2,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,"hazard multiplier, male",NA,NA,NA,NA,1.3014104,0.965783874,1.7511069400000001,0.9625
+E2,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,hazard per person-year at the reference,NA,NA,NA,NA,0.0021896841,0.0011326789625,0.0035518646925,NA
+E2,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,HR at given age and sex,NA,NA,NA,NA,1.6890068,0.876194478,3.0892775325,0.94025
+E2,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,hazard multiplier per decade of age,NA,NA,NA,NA,2.01940715,1.5082396175,2.6841369399999997,1
+E2,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,"hazard multiplier, male",NA,NA,NA,NA,1.30882435,0.9654195477499999,1.7762434525,0.96175
+E2,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,hazard per person-year at the reference,NA,NA,NA,NA,0.00278525855,0.001858011485,0.00402056613,NA
+E2,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,HR at given age and sex,NA,NA,NA,NA,1.6820620499999999,0.72252194375,4.074994510000001,0.88675
+E2,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,hazard multiplier per decade of age,NA,NA,NA,NA,1.8789261499999999,1.04498479,2.8869410525,1
+E2,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,"hazard multiplier, male",NA,NA,NA,NA,1.3105736000000001,0.97574193375,1.749937015,0.96225
+E2,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,hazard per person-year at the reference,NA,NA,NA,NA,0.0026859036,0.0012438719675000002,0.00480895718,NA
+E2,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,HR at given age and sex,NA,NA,NA,NA,2.09747725,1.0877654275000002,3.9012400750000014,0.9865
+E2,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,hazard multiplier per decade of age,NA,NA,NA,NA,1.5612764000000001,1.2935196725,1.9000114525,1
+E2,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,"hazard multiplier, male",NA,NA,NA,NA,1.3063302,0.9820791255000001,1.7637046825,0.96575
+E2,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,hazard per person-year at the reference,NA,NA,NA,NA,0.0031256437,0.0022012888775,0.004209382945,NA
+E2,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,HR at given age and sex,NA,NA,NA,NA,1.6125262999999999,0.7798699565,3.0138779300000005,0.91225
+E2,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,hazard multiplier per decade of age,NA,NA,NA,NA,2.00912515,1.52427401,2.6625741400000003,1
+E2,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,"hazard multiplier, male",NA,NA,NA,NA,1.30324525,0.97841712675,1.7490569800000002,0.96675
+E2,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,hazard per person-year at the reference,NA,NA,NA,NA,0.00234288505,0.00138605996,0.0035452167775,NA
+E2,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,HR at given age and sex,NA,NA,NA,NA,1.5319219,0.76258476475,3.0507288700000004,0.8825
+E2,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,hazard multiplier per decade of age,NA,NA,NA,NA,2.0110033,1.50518226,2.6729902150000004,1
+E2,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,"hazard multiplier, male",NA,NA,NA,NA,1.2957649,0.9825307127499999,1.73292865,0.966
+E2,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,hazard per person-year at the reference,NA,NA,NA,NA,0.0020572204,0.001071214625,0.0033618328325000003,NA
+E2,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,HR at given age and sex,NA,NA,NA,NA,1.7393847,0.90891197925,3.255362805000001,0.953
+E2,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,hazard multiplier per decade of age,NA,NA,NA,NA,2.027811,1.5172709275,2.676341015,1
+E2,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,"hazard multiplier, male",NA,NA,NA,NA,1.3082395999999998,0.984576303,1.774994095,0.96875
+E2,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,hazard per person-year at the reference,NA,NA,NA,NA,0.0026314182,0.0017296606225,0.0037589908525000005,NA
+E2,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,HR at given age and sex,NA,NA,NA,NA,1.7973002500000002,0.7539858394999999,4.177487932500001,0.91025
+E2,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,hazard multiplier per decade of age,NA,NA,NA,NA,1.85529605,1.0561971075,2.9140389575000003,1
+E2,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,"hazard multiplier, male",NA,NA,NA,NA,1.3056193,0.9733086955,1.7359941650000001,0.96425
+E2,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,hazard per person-year at the reference,NA,NA,NA,NA,0.00257318905,0.0011838820475000003,0.0045947520525,NA
+E2,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,HR at given age and sex,NA,NA,NA,NA,2.2521005499999998,1.1727009125,3.9637423800000007,0.992
+E2,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,hazard multiplier per decade of age,NA,NA,NA,NA,1.5643471,1.2917088925,1.8795985925,1
+E2,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,"hazard multiplier, male",NA,NA,NA,NA,1.30985245,0.98016133225,1.7495179975,0.96725
+E2,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,hazard per person-year at the reference,NA,NA,NA,NA,0.0028918009,0.0020797001775000002,0.003889515192500001,NA
+E2,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,HR at given age and sex,NA,NA,NA,NA,1.6824843,0.8479428472500001,3.299752042500001,0.93225
+E2,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,hazard multiplier per decade of age,NA,NA,NA,NA,2.0189670499999997,1.5284785075,2.6903948750000004,1
+E2,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,"hazard multiplier, male",NA,NA,NA,NA,1.3098945,0.9732282857500001,1.7451482324999998,0.96325
+E2,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,hazard per person-year at the reference,NA,NA,NA,NA,0.00216746445,0.001250976875,0.003292784665,NA
+E2,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,HR at given age and sex,NA,NA,NA,NA,1.6337971,0.8025532952500001,3.18066984,0.91725
+E2,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,hazard multiplier per decade of age,NA,NA,NA,NA,2.01332705,1.52242771,2.6586587225000002,1
+E2,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,"hazard multiplier, male",NA,NA,NA,NA,1.30703405,0.9675214682500001,1.7444817075,0.9605
+E2,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,hazard per person-year at the reference,NA,NA,NA,NA,0.0019036357000000001,0.001009490815,0.0030948860675,NA
+E2,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,HR at given age and sex,NA,NA,NA,NA,1.88806165,0.9602984992500001,3.5652919475,0.96675
+E2,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,hazard multiplier per decade of age,NA,NA,NA,NA,2.02871565,1.51742394,2.7171286975000006,1
+E2,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,"hazard multiplier, male",NA,NA,NA,NA,1.30707755,0.99095882875,1.7604265525000002,0.971
+E2,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,hazard per person-year at the reference,NA,NA,NA,NA,0.0024509035,0.0015911061075,0.0035643781800000006,NA
+E2,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,HR at given age and sex,NA,NA,NA,NA,1.9283251,0.8266973275,4.548835877500001,0.93625
+E2,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,hazard multiplier per decade of age,NA,NA,NA,NA,1.8434382,1.0543488825,2.93440283,1
+E2,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,"hazard multiplier, male",NA,NA,NA,NA,1.3094062499999999,0.97491809575,1.75662861,0.9615
+E2,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,hazard per person-year at the reference,NA,NA,NA,NA,0.00239617465,0.001049456155,0.0042502314650000005,NA
+E3a,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,"age-equivalent, years",NA,NA,NA,NA,15.378150999999999,0.8146877220000001,40.70291507499999,NA
+E3a,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,"age-equivalent, years",NA,NA,NA,NA,5.9344409,-3.1616362899999997,20.864926550000003,NA
+E3a,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,"age-equivalent, years",NA,NA,NA,NA,5.37392775,-4.273624659999999,21.2842626,NA
+E3a,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,"age-equivalent, years",NA,NA,NA,NA,7.376673,-1.74125055,21.90307540000001,NA
+E3a,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,"age-equivalent, years",NA,NA,NA,NA,7.8612884,-3.529604715,258.3105265000001,NA
+E3a,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,"age-equivalent, years",NA,NA,NA,NA,16.580565,1.6209953325000002,42.75014927500001,NA
+E3a,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,"age-equivalent, years",NA,NA,NA,NA,6.8371528,-2.9475810725000002,22.392786250000004,NA
+E3a,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,"age-equivalent, years",NA,NA,NA,NA,6.031344649999999,-3.391542425,22.146611150000023,NA
+E3a,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,"age-equivalent, years",NA,NA,NA,NA,7.8750602,-1.2707040924999997,23.084967125000002,NA
+E3a,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,"age-equivalent, years",NA,NA,NA,NA,9.105367300000001,-3.0725330625000002,217.56360700000002,NA
+E3a,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,"age-equivalent, years",NA,NA,NA,NA,18.2114025,3.0199831975,43.99830732500001,NA
+E3a,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,"age-equivalent, years",NA,NA,NA,NA,7.4303292,-1.9001145974999998,23.470731675000003,NA
+E3a,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,"age-equivalent, years",NA,NA,NA,NA,6.9999895500000004,-2.789020155,23.313532550000005,NA
+E3a,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,"age-equivalent, years",NA,NA,NA,NA,8.84850645,-0.5306240977499999,25.710663600000014,NA
+E3a,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,"age-equivalent, years",NA,NA,NA,NA,10.561136999999999,-2.036438815,239.1022227500001,NA
+E3b,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,c_age_sex,NA,NA,NA,NA,0.64849382,0.5821627772500001,0.719127685,NA
+E3b,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,c_gain,NA,NA,NA,NA,0.00513138375,5.5674444500000015e-5,0.020464013175,NA
+E3b,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,c_with_mmse,NA,NA,NA,NA,0.655002555,0.5894507485,0.7247578302500001,NA
+E3b,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,c_age_sex,NA,NA,NA,NA,0.73620314,0.6349215645,0.8296767807500001,NA
+E3b,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,c_gain,NA,NA,NA,NA,0.0012017664,2.9662854450000008e-6,0.010417040475000005,NA
+E3b,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,c_with_mmse,NA,NA,NA,NA,0.7381684900000001,0.6393214432500001,0.831788737,NA
+E3b,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,c_age_sex,NA,NA,NA,NA,0.7646708600000001,0.6513471869999999,0.86606240575,NA
+E3b,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,c_gain,NA,NA,NA,NA,8.91968505e-4,2.01948617e-6,0.009954600372500002,NA
+E3b,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,c_with_mmse,NA,NA,NA,NA,0.766252635,0.65502370025,0.866886305,NA
+E3b,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,c_age_sex,NA,NA,NA,NA,0.70461049,0.61643514275,0.7837044132500001,NA
+E3b,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,c_gain,NA,NA,NA,NA,0.00210130875,1.154907895e-5,0.011953657275000003,NA
+E3b,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,c_with_mmse,NA,NA,NA,NA,0.70710462,0.61982955075,0.7855164812500001,NA
+E3b,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,c_age_sex,NA,NA,NA,NA,0.7120954349999999,0.5462748065,0.8476066445,NA
+E3b,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,c_gain,NA,NA,NA,NA,0.0019734767,3.0311465375000004e-6,0.028317149675,NA
+E3b,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,c_with_mmse,NA,NA,NA,NA,0.7151658750000001,0.56193916475,0.84814958425,NA
+E3b,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,c_age_sex,NA,NA,NA,NA,0.650401155,0.58487444725,0.72476416625,NA
+E3b,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,c_gain,NA,NA,NA,NA,0.00596992765,9.263582125000001e-5,0.021321385275,NA
+E3b,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,c_with_mmse,NA,NA,NA,NA,0.6576795799999999,0.591527304,0.7308326039999999,NA
+E3b,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,c_age_sex,NA,NA,NA,NA,0.7376169349999999,0.6365505685,0.8264017375,NA
+E3b,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,c_gain,NA,NA,NA,NA,0.0015904542500000001,4.013368365e-6,0.010932529600000001,NA
+E3b,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,c_with_mmse,NA,NA,NA,NA,0.73956155,0.6413705575,0.8273981759999999,NA
+E3b,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,c_age_sex,NA,NA,NA,NA,0.7671990799999999,0.6478151999999999,0.86675415825,NA
+E3b,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,c_gain,NA,NA,NA,NA,0.0011056913500000001,2.562924747500002e-6,0.01104687497500001,NA
+E3b,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,c_with_mmse,NA,NA,NA,NA,0.7690496200000001,0.653510939,0.86709286725,NA
+E3b,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,c_age_sex,NA,NA,NA,NA,0.706810505,0.6188340725,0.7842766817499999,NA
+E3b,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,c_gain,NA,NA,NA,NA,0.00240555995,1.16945708e-5,0.013253338375,NA
+E3b,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,c_with_mmse,NA,NA,NA,NA,0.7102147649999999,0.62362253275,0.78616879425,NA
+E3b,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,c_age_sex,NA,NA,NA,NA,0.712471465,0.5501507434999999,0.8484297412499999,NA
+E3b,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,c_gain,NA,NA,NA,NA,0.00259389155,6.505185595000003e-6,0.02865754915,NA
+E3b,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,c_with_mmse,NA,NA,NA,NA,0.7160215750000001,0.56513519325,0.849318104,NA
+E3b,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,c_age_sex,NA,NA,NA,NA,0.65293309,0.5871402375,0.7228181687500002,NA
+E3b,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,c_gain,NA,NA,NA,NA,0.007065463100000001,2.2626195000000006e-4,0.0231698803,NA
+E3b,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,c_with_mmse,NA,NA,NA,NA,0.66121398,0.5961750505000001,0.7308459877500001,NA
+E3b,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,c_age_sex,NA,NA,NA,NA,0.74124846,0.64086738325,0.8313857775,NA
+E3b,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,c_gain,NA,NA,NA,NA,0.00189515,6.4457982574999994e-6,0.013341701175000002,NA
+E3b,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,c_with_mmse,NA,NA,NA,NA,0.74437208,0.647154098,0.8333272867500001,NA
+E3b,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,c_age_sex,NA,NA,NA,NA,0.76966601,0.65286593975,0.86523755075,NA
+E3b,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,c_gain,NA,NA,NA,NA,0.0014834227,3.4781785675000004e-6,0.01188260855,NA
+E3b,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,c_with_mmse,NA,NA,NA,NA,0.77189045,0.65778011075,0.8660352145000001,NA
+E3b,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,c_age_sex,NA,NA,NA,NA,0.7084924850000001,0.62329251875,0.7873157095,NA
+E3b,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,c_gain,NA,NA,NA,NA,0.0031098984,2.5158075950000004e-5,0.01566787975,NA
+E3b,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,c_with_mmse,NA,NA,NA,NA,0.7129364499999999,0.6294491780000001,0.78951913975,NA
+E3b,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,c_age_sex,NA,NA,NA,NA,0.70958725,0.5493215674999999,0.85234839175,NA
+E3b,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,c_gain,NA,NA,NA,NA,0.00336993995,7.574789935000001e-6,0.031934321825,NA
+E3b,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,c_with_mmse,NA,NA,NA,NA,0.714047665,0.56670835275,0.85303671725,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,npv,NA,NA,NA,MMSE < 24,0.979065495,0.9739239045,0.98332664125,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.983148405,0.97788577225,0.987441781,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,npv,NA,NA,NA,age >= 65,0.982346535,0.9771508972499999,0.9867062645,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,ppv,NA,NA,NA,MMSE < 24,0.074463086,0.042711073525,0.12048159750000002,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.050530828,0.035917312175,0.06872747617500001,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,ppv,NA,NA,NA,age >= 65,0.0520134325,0.035599582025,0.072848293975,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,MMSE < 24,0.15593500999999999,0.09336558317499999,0.24043708875,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.42702729500000003,0.32377005275000004,0.5347157185,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,age >= 65,0.38043269,0.27705396025,0.49131762,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,specificity,NA,NA,NA,MMSE < 24,0.9530354050000001,0.9514878215,0.95522940875,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.806261965,0.80364257175,0.8093658737499999,NA
+E3c,exposure_age,any_P1,planned,any,any stroke,NA,NA,NA,P1,90,specificity,NA,NA,NA,age >= 65,0.8328767800000001,0.83032571825,0.83601127425,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,npv,NA,NA,NA,MMSE < 24,0.979080505,0.9739471265,0.983503865,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.986850705,0.9808855897500001,0.9917175185,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,npv,NA,NA,NA,age >= 65,0.986334815,0.98027903725,0.99144477975,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,ppv,NA,NA,NA,MMSE < 24,0.075888346,0.045100854275000005,0.12161468724999999,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.065908855,0.044390651975,0.090941039725,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,ppv,NA,NA,NA,age >= 65,0.07182214549999999,0.046601665525,0.10138087700000002,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,MMSE < 24,0.15942845500000002,0.0979004809,0.24279892400000003,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.5523876649999999,0.402683617,0.7087085077499999,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,age >= 65,0.5207988,0.36096027825000004,0.6860568549999999,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,specificity,NA,NA,NA,MMSE < 24,0.953099975,0.95162121275,0.9553540205,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.80936523,0.80545883775,0.813937997,NA
+E3c,exposure_age,any_P2,planned,any,any stroke,NA,NA,NA,P2,90,specificity,NA,NA,NA,age >= 65,0.83631735,0.8322595362499999,0.84109703425,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,npv,NA,NA,NA,MMSE < 24,0.97903882,0.9740893935,0.9832688005,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.98836972,0.9820181435,0.9935398775,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,npv,NA,NA,NA,age >= 65,0.987923985,0.9813961425,0.99336913825,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,ppv,NA,NA,NA,MMSE < 24,0.0767110775,0.04445672915,0.12145178975,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.0711265805,0.0474943584,0.09742173880000002,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,ppv,NA,NA,NA,age >= 65,0.078290459,0.050147659025,0.1100762265,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,MMSE < 24,0.15932838500000002,0.09636541577499999,0.23917896925,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.608610645,0.43307725775,0.7761011265000002,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,age >= 65,0.58050486,0.39311637425,0.7604615360000001,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,specificity,NA,NA,NA,MMSE < 24,0.95312918,0.95155003825,0.9552806035,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.806984955,0.8025693615,0.81183949025,NA
+E3c,exposure_age,any_P2_amax100,sensitivity,any,any stroke,NA,NA,NA,P2,100,specificity,NA,NA,NA,age >= 65,0.8345640350000001,0.82989719975,0.8397670285,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,npv,NA,NA,NA,MMSE < 24,0.97909447,0.97388008525,0.98322070325,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.98497219,0.9796317005,0.98912969375,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,npv,NA,NA,NA,age >= 65,0.98427698,0.9787316807499999,0.98860138,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,ppv,NA,NA,NA,MMSE < 24,0.07576666900000001,0.043468841,0.12075205350000003,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.059955485,0.041243408275,0.083447639325,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,ppv,NA,NA,NA,age >= 65,0.0639267,0.042484953075000005,0.09114943542500001,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,MMSE < 24,0.15886394999999998,0.09487178932500001,0.23960943875000007,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.48202741000000005,0.356695657,0.6067940510000001,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,age >= 65,0.44228995,0.31165900975,0.57434555025,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,specificity,NA,NA,NA,MMSE < 24,0.95309345,0.95151877725,0.9552804112500001,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.817104045,0.81393173225,0.8210663599999999,NA
+E3c,exposure_age,any_P2_amax80,sensitivity,any,any stroke,NA,NA,NA,P2,80,specificity,NA,NA,NA,age >= 65,0.843377685,0.8400970722500001,0.8474207422500001,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,npv,NA,NA,NA,MMSE < 24,0.979013935,0.97397285,0.9833386827499999,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.9858083900000001,0.9764262364999999,0.99264972875,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,npv,NA,NA,NA,age >= 65,0.98524473,0.975129815,0.9923815227500001,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,ppv,NA,NA,NA,MMSE < 24,0.07528004399999999,0.04386611685,0.12085037075,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.061251801499999994,0.02993198125,0.09569136717500001,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,ppv,NA,NA,NA,age >= 65,0.0658259375,0.026610504150000002,0.10762297000000001,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,MMSE < 24,0.15707414,0.095493130475,0.23811234000000003,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.5181479099999999,0.26274306975000006,0.7365051165000001,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,age >= 65,0.481903735,0.2001135235,0.71888794475,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,specificity,NA,NA,NA,MMSE < 24,0.95306117,0.9515411345,0.955255522,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.80840487,0.8022476920000001,0.814836223,NA
+E3c,exposure_age,any_P3,planned,any,any stroke,NA,NA,NA,P3,90,specificity,NA,NA,NA,age >= 65,0.835287425,0.8285345162500001,0.8421641122500001,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,npv,NA,NA,NA,MMSE < 24,0.98009005,0.97501539825,0.9843662752500001,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.98399344,0.97913633675,0.98829989025,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,npv,NA,NA,NA,age >= 65,0.983179105,0.9781675780000001,0.9876162435,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,ppv,NA,NA,NA,MMSE < 24,0.0746605885,0.043345087874999993,0.12092040325,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.048916725499999994,0.034140308575,0.067477213175,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,ppv,NA,NA,NA,age >= 65,0.050195291,0.034006964325,0.071006004075,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,MMSE < 24,0.163519315,0.098096908725,0.24878603825000004,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.432841835,0.3273137175,0.543712999,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,age >= 65,0.38296590500000005,0.28053793399999993,0.5001684112500001,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,specificity,NA,NA,NA,MMSE < 24,0.9530864450000001,0.95156365875,0.9553427785,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.806139765,0.8036354025000001,0.80930237775,NA
+E3c,exposure_age,death_P1,planned,death,all-cause mortality,NA,NA,NA,P1,90,specificity,NA,NA,NA,age >= 65,0.83273205,0.83030297075,0.8358606752500001,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,npv,NA,NA,NA,MMSE < 24,0.98009624,0.975206048,0.98440161725,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.987456785,0.9821555445,0.991969549,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,npv,NA,NA,NA,age >= 65,0.98697318,0.981438675,0.9916572914999999,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,ppv,NA,NA,NA,MMSE < 24,0.07596555399999999,0.044637121225,0.11842123750000003,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.063247218,0.04394631265,0.087013407175,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,ppv,NA,NA,NA,age >= 65,0.0688317765,0.045429611450000004,0.09604824692500001,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,MMSE < 24,0.16521843,0.09998794665,0.24835048725,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.556610355,0.40601660500000003,0.7036845097500001,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,age >= 65,0.5240994800000001,0.36215258050000004,0.6810696070000001,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,specificity,NA,NA,NA,MMSE < 24,0.9531532149999999,0.95160209675,0.9552083545,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.8090484250000001,0.8054200552499999,0.8132229477499999,NA
+E3c,exposure_age,death_P2,planned,death,all-cause mortality,NA,NA,NA,P2,90,specificity,NA,NA,NA,age >= 65,0.8360058699999999,0.83223149025,0.8403477065,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,npv,NA,NA,NA,MMSE < 24,0.9801829200000001,0.97517746575,0.98434188875,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.9891112950000001,0.98299125275,0.99381501425,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,npv,NA,NA,NA,age >= 65,0.98868551,0.9823102115,0.99355500075,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,ppv,NA,NA,NA,MMSE < 24,0.0757585695,0.04424618305,0.1216364315,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.0683710775,0.04534538685,0.09394889482500002,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,ppv,NA,NA,NA,age >= 65,0.0753405855,0.047650765825000004,0.10550192950000001,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,MMSE < 24,0.165013855,0.1024877645,0.25212375875000004,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.6147892500000001,0.43211950875000005,0.7779378140000001,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,age >= 65,0.58545541,0.389624746,0.7614836340000001,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,specificity,NA,NA,NA,MMSE < 24,0.953133895,0.951619113,0.9553484277500001,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.806635285,0.80220798925,0.8113527767500001,NA
+E3c,exposure_age,death_P2_amax100,sensitivity,death,all-cause mortality,NA,NA,NA,P2,100,specificity,NA,NA,NA,age >= 65,0.83419627,0.8295178925,0.8391935275,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,npv,NA,NA,NA,MMSE < 24,0.980163695,0.9751434965,0.9844088480000001,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.98569699,0.9807310184999999,0.989912366,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,npv,NA,NA,NA,age >= 65,0.9850433949999999,0.9800181552499999,0.9894121419999999,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,ppv,NA,NA,NA,MMSE < 24,0.0748345685,0.044019315125,0.11993111325000003,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.057837403499999995,0.040519675075,0.0784420305,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,ppv,NA,NA,NA,age >= 65,0.061543596,0.04133435635,0.085563400525,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,MMSE < 24,0.163566605,0.099167393325,0.24980739649999997,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.48797974,0.36191206175,0.611150552,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,age >= 65,0.447390365,0.31720036100000004,0.57359546125,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,specificity,NA,NA,NA,MMSE < 24,0.953096265,0.9515795172499999,0.955272184,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.8169257249999999,0.81388378475,0.8202957034999999,NA
+E3c,exposure_age,death_P2_amax80,sensitivity,death,all-cause mortality,NA,NA,NA,P2,80,specificity,NA,NA,NA,age >= 65,0.84315513,0.8401110037499999,0.84670887175,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,npv,NA,NA,NA,MMSE < 24,0.980116445,0.9752805525,0.9842741895,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.98648341,0.9777255792499999,0.99306607375,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,npv,NA,NA,NA,age >= 65,0.9858558749999999,0.97637996875,0.99279751875,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,ppv,NA,NA,NA,MMSE < 24,0.0756376835,0.04341592275000001,0.12102122275,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.058400678,0.029682818575,0.093293461925,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,ppv,NA,NA,NA,age >= 65,0.062607197,0.026610726775000003,0.10434628375,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,MMSE < 24,0.164646075,0.10020106375,0.25032578125000005,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.520284365,0.27014035150000004,0.7407046327500001,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,age >= 65,0.482575115,0.2039234255,0.72176198075,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,specificity,NA,NA,NA,MMSE < 24,0.95313258,0.9515765764999999,0.9553412957499999,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.808135,0.802400438,0.8144694235000001,NA
+E3c,exposure_age,death_P3,planned,death,all-cause mortality,NA,NA,NA,P3,90,specificity,NA,NA,NA,age >= 65,0.83497173,0.82861090575,0.84170833625,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,npv,NA,NA,NA,MMSE < 24,0.9815290400000001,0.9768366887500001,0.985539049,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.98511657,0.98058562375,0.9889904749999999,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,npv,NA,NA,NA,age >= 65,0.98430991,0.97961920075,0.98827857925,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,ppv,NA,NA,NA,MMSE < 24,0.0734889295,0.042862465450000005,0.11638647750000003,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.046748095,0.03294132515,0.0639387881,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,ppv,NA,NA,NA,age >= 65,0.047957344,0.03245193345,0.06704362655,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,MMSE < 24,0.17194239,0.10578403424999999,0.25980488725000006,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.439691615,0.33545254750000003,0.5467065965,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,sensitivity,NA,NA,NA,age >= 65,0.38758071,0.28333205525,0.49800328775,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,specificity,NA,NA,NA,MMSE < 24,0.953097395,0.9516146604999999,0.9551711702499999,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.805978205,0.8035976407500001,0.80880982225,NA
+E3c,exposure_age,isch_P1,planned,isch,ischemic stroke,NA,NA,NA,P1,90,specificity,NA,NA,NA,age >= 65,0.83254988,0.8301955395,0.8354382764999999,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,npv,NA,NA,NA,MMSE < 24,0.9814358999999999,0.97669328425,0.985643108,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.9883522250000001,0.9832681625,0.9928011929999999,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,npv,NA,NA,NA,age >= 65,0.98781952,0.9824490202500001,0.99250098125,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,ppv,NA,NA,NA,MMSE < 24,0.075263216,0.0434491951,0.11842606800000001,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.0605399055,0.041132142225,0.08396382877500003,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,ppv,NA,NA,NA,age >= 65,0.06563777600000001,0.042756874199999996,0.09363673010000001,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,MMSE < 24,0.17374956,0.10634777150000001,0.26048867350000005,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.566552265,0.41788995675,0.7146300022500001,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,sensitivity,NA,NA,NA,age >= 65,0.53063693,0.36961876075000005,0.691263025,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,specificity,NA,NA,NA,MMSE < 24,0.95317948,0.9516672222499999,0.955275975,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.808745585,0.805250705,0.812934603,NA
+E3c,exposure_age,isch_P2,planned,isch,ischemic stroke,NA,NA,NA,P2,90,specificity,NA,NA,NA,age >= 65,0.83567059,0.83194096325,0.8400503675,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,npv,NA,NA,NA,MMSE < 24,0.9814788750000001,0.976774405,0.98567236175,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.989807495,0.9841270225,0.99422495125,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,npv,NA,NA,NA,age >= 65,0.989363855,0.98341992975,0.9940044160000001,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,ppv,NA,NA,NA,MMSE < 24,0.076196806,0.043810749175,0.12031710425000003,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.064962615,0.043984833625,0.0907292133,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,ppv,NA,NA,NA,age >= 65,0.07124444299999999,0.046009387799999996,0.10163683350000001,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,MMSE < 24,0.176189845,0.10701154975,0.2631684465,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.620356695,0.43996578125,0.7787322335000001,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,sensitivity,NA,NA,NA,age >= 65,0.5893277450000001,0.3971630565,0.76097185625,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,specificity,NA,NA,NA,MMSE < 24,0.9532266,0.95166801475,0.95535451075,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.806208495,0.80218060575,0.81082182975,NA
+E3c,exposure_age,isch_P2_amax100,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,100,specificity,NA,NA,NA,age >= 65,0.83376557,0.82937095475,0.83857221475,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,npv,NA,NA,NA,MMSE < 24,0.9814167199999999,0.97683507575,0.98550573,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.9867271900000001,0.981734675,0.9906086137500001,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,npv,NA,NA,NA,age >= 65,0.98600859,0.98087515675,0.9900851025,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,ppv,NA,NA,NA,MMSE < 24,0.075057438,0.04374098405,0.11894679150000002,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.0553818415,0.03931729165,0.0757436176,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,ppv,NA,NA,NA,age >= 65,0.058670796,0.039817867075,0.08201116127500001,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,MMSE < 24,0.175363945,0.10543422050000001,0.26160139175,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.493556865,0.3727890427500001,0.61760205025,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,sensitivity,NA,NA,NA,age >= 65,0.45020725,0.3238642535,0.58154331325,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,specificity,NA,NA,NA,MMSE < 24,0.9531771899999999,0.9516459815,0.95531260675,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.816670105,0.8138944195000001,0.8200529729999999,NA
+E3c,exposure_age,isch_P2_amax80,sensitivity,isch,ischemic stroke,NA,NA,NA,P2,80,specificity,NA,NA,NA,age >= 65,0.84287917,0.84000723125,0.84633154125,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,npv,NA,NA,NA,MMSE < 24,0.98150392,0.9767444394999999,0.98550765225,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,npv,NA,NA,NA,MMSE < 24 or age >= 65,0.987381045,0.9792698895,0.9937050285000001,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,npv,NA,NA,NA,age >= 65,0.986665625,0.97800396175,0.99344910525,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,ppv,NA,NA,NA,MMSE < 24,0.075072659,0.04361623765,0.11924041225000001,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,ppv,NA,NA,NA,MMSE < 24 or age >= 65,0.055452356,0.02856389,0.087858613475,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,ppv,NA,NA,NA,age >= 65,0.058965127500000006,0.025466509124999998,0.098914237525,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,MMSE < 24,0.17395987,0.10480445975000001,0.26281122325000006,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,MMSE < 24 or age >= 65,0.5190257300000001,0.27605479875,0.7511720974999999,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,sensitivity,NA,NA,NA,age >= 65,0.47861389,0.20735660499999997,0.73067794775,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,specificity,NA,NA,NA,MMSE < 24,0.9531609700000001,0.9516246795000001,0.9553422030000001,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,specificity,NA,NA,NA,MMSE < 24 or age >= 65,0.80771337,0.80241439275,0.8138253335,NA
+E3c,exposure_age,isch_P3,planned,isch,ischemic stroke,NA,NA,NA,P3,90,specificity,NA,NA,NA,age >= 65,0.834517675,0.8286639355,0.841016681,NA

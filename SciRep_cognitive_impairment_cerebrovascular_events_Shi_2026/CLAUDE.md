@@ -270,3 +270,41 @@ form and handling of death as a competing event not stated.
   shows any shrinkage). Expected in S4: under `--split` the tail group effect rests on 10 exposed
   events, so Normal(0, 1) will pull the stage 3 HR of 7.5 towards about 6; the `--beta-sd 2` run
   measures that.
+
+### 2026-11-22 (late) — S3 committed; α prior kept; S4 prepared
+- Done: S3 committed by Alberto (`e5e791f`, render checked: draft page, two DAG files in the
+  freeze, no stale files). S4 written: `run_all.sh` (29 runs through `run_model.sh`, resumable,
+  `--dry-run`) and the main section of `R/03_postprocess.R` (no argument): `stage4_convergence.csv`,
+  `stage4_ppc.csv`, `stage4_estimates.csv`, `stage4_side_by_side.csv` (paper, stage 2, stage 3 and
+  stage 4 per estimand, joined on model, scenario, structure, prior, ceiling and term),
+  `stage4_ppc_pem.png`, `stage4_hr_by_prior.png`. A scratch copy of the main section was run by
+  Claude on the five prior-only runs (outputs in the scratchpad only): it runs end to end and the
+  stage 3 and paper columns land on the right rows; the split runs and the 80/100 ceilings were
+  not exercised.
+- Decided (and why): the α prior stays as planned (Alberto; plan §7): written before the data,
+  not to be tuned to the tail anomaly. One run per outcome added, `--split --beta-sd 2`, to
+  measure the shrinkage of the tail group effect. P1 is read beside the stage 3 profile at the
+  implied θ_age and P2 beside θ_age = 2; P3 has no stage 3 counterpart.
+- Open, cosmetic: the two-line DAG labels (RD/RR, c/sens, μ/r) overflow their nodes slightly; to
+  fix when the section is rewritten in S5.
+- Next step: Alberto runs `./<art>/run_all.sh` then `Rscript <art>/R/03_postprocess.R`; Claude
+  checks the four tables and two figures against plan §6; commit. Then S5: H3 right half and the
+  results sections of `review.qmd`, the P2 literature reference, registry status.
+
+### 2026-11-23 — S4 run: 29 posterior runs, side-by-side table
+- Done: Alberto ran `run_all.sh` (29 of 29) and `R/03_postprocess.R`. All runs pass the §5 thresholds
+  (R-hat ≤ 1.01, ESS ≥ 920, no divergences, E-BFMI ≥ 0.86); 310 of 310 posterior predictive counts
+  within the 95 %; both figures checked.
+- Results: E1b HR 3.9 / 3.5 / 3.7 (isch / any / death), 12–14 % below stage 3 under Normal(0, 1),
+  5–7 % below under Normal(0, 2). Split at year 4, ischaemic stroke: 1.9 (0.71–4.3) before,
+  5.9 (2.7–12) after (stage 3: 2.5, 7.5); with SD 2: 2.2 and 7.1. E2 ischaemic stroke: P1 2.25
+  (1.17–3.96), P2 1.68 (0.85–3.30), P3 1.93 (0.83–4.55); all three outcomes include 1 under P2 and
+  P3, none under P1. E3 under P2: age-equivalent 6–7 years with intervals from below 0 to 21–24; c gain 0.001–0.002.
+- Decided (and why): the P1 counterpart for death is the stage 3 grid point 1.5, not the implied
+  1.88 (plan §7); the E1 shrinkage is larger than the "few percent" of §6 and is logged, prior kept.
+- Open for S5: P1 is not "as Model 1 implies" for death (implied 1.88): say so, or read death under
+  P2 only. The proportional-model tail ratio is common to both groups by construction, so its
+  stage 3 column (crude, by group) is comparable only in the split runs. The P3 age-equivalent has
+  an upper limit above 200 years (θ_age near 1): report the median and the share above 10 years.
+- Next step: Alberto reruns `Rscript <art>/R/03_postprocess.R` (pairing fix; only the stage 3
+  columns of the death P1 rows and the grey P1 point of the death panel change), commit; then S5.

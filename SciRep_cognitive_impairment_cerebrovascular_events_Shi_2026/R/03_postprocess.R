@@ -3,11 +3,12 @@
 # Reads the CmdStan CSV draws that run_model.sh writes to $FITS_DIR/<article>/<model>/, computes diagnostics and
 # summaries, and writes SMALL tables and figures to output/. Never copies draws into the project tree. R is for
 # post-processing only: nothing is fitted from R (cmdstanr::read_cmdstan_csv reads the files).
-# Usage (repo root, inside nix-shell):
+# Usage (repo root, in the project environment):
 #   Rscript <art>/R/03_postprocess.R --prior    S3: prior predictive of the two programs against the life table and Table 2,
 #                                               sampler diagnostics of the prior runs, and the mapping checks (the generated
 #                                               quantities of each program recomputed in R from its parameter draws)
-#   Rscript <art>/R/03_postprocess.R            S4: posteriors, diagnostics, posterior predictive, stage 3 vs 4 (not written yet)
+#   Rscript <art>/R/03_postprocess.R            S4: the 29 posterior runs of run_all.sh: sampler diagnostics, posterior predictive
+#                                               counts, every estimand of plan §1, and stage 3 next to stage 4
 #
 # --prior needs these five runs (S3 of plan §8):
 #   ./<art>/run_model.sh pem_competing pem_isch --prior-only
@@ -19,6 +20,12 @@
 #          output/tables/stage4_prior_convergence.csv  sampler diagnostics of the prior runs (plan §5 thresholds)
 #          output/tables/stage4_mapping_checks.csv     max |Stan generated quantity - R recomputation| per run and quantity
 #          output/figures/stage4_prior_predictive_pem.png, stage4_prior_predictive_exposure.png
+# Outputs of the main section (S4):
+#          output/tables/stage4_convergence.csv        sampler diagnostics per run (plan §5 thresholds)
+#          output/tables/stage4_ppc.csv                posterior predictive counts against the life table and Table 2
+#          output/tables/stage4_estimates.csv          every estimand of every run: posterior median, 95 % interval, P(> 1) for ratios
+#          output/tables/stage4_side_by_side.csv       the same rows with the paper's value, stage 2 and stage 3 beside them (plan §6)
+#          output/figures/stage4_ppc_pem.png, stage4_hr_by_prior.png
 suppressPackageStartupMessages({
   library(dplyr); library(tidyr); library(readr); library(purrr); library(stringr); library(ggplot2); library(posterior)
 })
@@ -28,7 +35,6 @@ here_art <- function(...) here::here(ART, ...)
 args <- commandArgs(trailingOnly = TRUE)
 if (!all(args %in% c("--prior"))) stop("unknown argument(s): ", paste(setdiff(args, "--prior"), collapse = " "))
 RUN_PRIOR <- "--prior" %in% args
-if (!RUN_PRIOR) stop("only --prior is written so far (S3); the main section is S4 of plan §8")
 
 stopifnot("FITS_DIR not set: run inside nix-shell" = nzchar(Sys.getenv("FITS_DIR")))
 fits_dir <- file.path(Sys.getenv("FITS_DIR"), ART)
@@ -263,4 +269,219 @@ if (RUN_PRIOR) {
               sum(mapping$pass), nrow(mapping), sum(conv$passes), nrow(conv)))
   cat("written: output/tables/stage4_prior_predictive.csv, stage4_prior_convergence.csv, stage4_mapping_checks.csv;",
       "output/figures/stage4_prior_predictive_pem.png, stage4_prior_predictive_exposure.png\n")
+}
+
+# ================================================================================================================
+# S4: posterior runs (plan §5, §6, §8)
+# ================================================================================================================
+RULES <- c("MMSE < 24", "age >= 65", "MMSE < 24 or age >= 65")
+METRICS <- c(sens = "sensitivity", spec = "specificity", ppv = "ppv", npv = "npv")
+# posterior median, central 95 % interval and, for ratios, the posterior probability of a value above 1
+est_rows <- function(m, ratio = FALSE) {
+  tibble(stage4_median = apply(m, 2, median), stage4_lo = apply(m, 2, quantile, .025), stage4_hi = apply(m, 2, quantile, .975),
+         pr_gt_1 = if (ratio) colMeans(m > 1) else NA_real_)
+}
+with_meta <- function(rows, meta) bind_cols(meta[rep(1, nrow(rows)), ], rows)
+
+post_pem <- function(suffix) {
+  run <- read_run("pem_competing", suffix); dat <- run$data; J <- dat$J
+  tok <- str_split(suffix, "_")[[1]]; split <- dat$split == 1
+  meta <- tibble(program = "pem_competing", run = suffix, model = tok[1],
+                 scenario = if ("early" %in% tok) "early" else if ("late" %in% tok) "late" else "uniform",
+                 structure = if (split) "split at year 4" else "proportional", beta_sd = dat$beta_sd,
+                 prior = NA_character_, age_max = NA_integer_)
+  outcome_of_cause <- c(stroke = OUTCOME_OF[[tok[1]]], death = "all-cause mortality")
+  h <- var_matrix(run, "hr")
+  hr <- est_rows(h$m, ratio = TRUE) |>
+    mutate(estimand = if (split) "E1c" else "E1b", quantity = "HR", cause = CAUSES[h$idx[, 2]],
+           period = if (split) c("(0, 4]", "(4, 4.2]")[h$idx[, 1]] else NA_character_)
+  f <- var_matrix(run, "F"); keep <- f$idx[, 2] %in% c(J - 1, J)
+  cif <- est_rows(f$m[, keep, drop = FALSE]) |>
+    mutate(estimand = "E1", quantity = "F", cause = CAUSES[f$idx[keep, 3]], group = GROUPS[f$idx[keep, 1]],
+           time = as.character(dat$t_end[f$idx[keep, 2]]))
+  contrasts <- map_dfr(c("RD_pre", "RR_pre", "RD_end", "RR_end"), \(v) {
+    x <- var_matrix(run, v)
+    est_rows(x$m, ratio = startsWith(v, "RR")) |>
+      mutate(estimand = "E1", quantity = substr(v, 1, 2), cause = CAUSES[x$idx[, 1]],
+             time = as.character(dat$t_end[if (endsWith(v, "pre")) J - 1 else J]))
+  })
+  tr <- var_matrix(run, "tail_ratio")
+  tail <- est_rows(tr$m, ratio = TRUE) |>
+    mutate(estimand = "E1c", quantity = "tail ratio", cause = CAUSES[tr$idx[, 2]], group = GROUPS[tr$idx[, 1]])
+  est <- bind_rows(hr, cif, contrasts, tail) |> mutate(outcome = unname(outcome_of_cause[cause])) |> with_meta(meta)
+  # posterior predictive cell counts
+  dr <- var_matrix(run, "D_rep"); mcell <- dr$m; mcell[mcell < 0] <- NA
+  interval <- sprintf("(%s, %s]", c(0, dat$t_end[-J]), dat$t_end)
+  ppc <- quant_rows(mcell, dat$D[cbind(dr$idx[, 1], dr$idx[, 2], dr$idx[, 3])]) |> mutate(share_guarded = colMeans(dr$m < 0)) |>
+    mutate(quantity = "events per cell", group = GROUPS[dr$idx[, 1]], interval = interval[dr$idx[, 2]],
+           outcome = unname(outcome_of_cause[CAUSES[dr$idx[, 3]]]), .before = 1) |> with_meta(meta)
+  list(est = est, ppc = ppc, convergence = convergence(run))
+}
+
+post_exposure <- function(suffix) {
+  run <- read_run("exposure_age", suffix); dat <- run$data
+  tok <- str_split(suffix, "_")[[1]]
+  meta <- tibble(program = "exposure_age", run = suffix, model = tok[1], scenario = NA_character_, structure = NA_character_,
+                 beta_sd = NA_real_, prior = paste0("P", dat$prior), age_max = as.integer(dat$age_max))
+  one <- function(v, estimand, quantity, ratio = FALSE) est_rows(var_matrix(run, v)$m[, 1, drop = FALSE], ratio) |>
+    mutate(estimand = estimand, quantity = quantity)
+  scr <- map_dfr(names(METRICS), \(mt) { x <- var_matrix(run, mt)
+    est_rows(x$m) |> mutate(estimand = "E3c", quantity = METRICS[[mt]], rule = RULES[x$idx[, 1]]) })
+  est <- bind_rows(
+    one("hr_ci", "E2", "HR at given age and sex", ratio = TRUE),
+    one("theta_age", "E2", "hazard multiplier per decade of age", ratio = TRUE),
+    one("theta_male", "E2", "hazard multiplier, male", ratio = TRUE),
+    one("lambda0", "E2", "hazard per person-year at the reference"),
+    one("age_equiv_years", "E3a", "age-equivalent, years"),
+    one("c_age_sex", "E3b", "c_age_sex"), one("c_with_mmse", "E3b", "c_with_mmse"), one("c_gain", "E3b", "c_gain"),
+    scr) |> mutate(outcome = OUTCOME_OF[[tok[1]]]) |> with_meta(meta)
+  dr <- var_matrix(run, "D_rep"); mrep <- dr$m; mrep[mrep < 0] <- NA
+  ppc <- quant_rows(mrep, dat$D[dr$idx[, 1]]) |> mutate(share_guarded = colMeans(dr$m < 0)) |>
+    mutate(quantity = "events per group", group = GROUPS[dr$idx[, 1]], interval = NA_character_, outcome = OUTCOME_OF[[tok[1]]], .before = 1) |>
+    with_meta(meta)
+  list(est = est, ppc = ppc, convergence = convergence(run))
+}
+
+# stage 3 estimates in the layout of the stage 4 rows (keys: model, scenario, structure, prior, age_max, quantity, cause,
+# group, time, period, rule). E2 and E3 have no one-to-one counterpart: stage 3 conditions on theta_age, stage 4 integrates
+# over a prior, so P1 is set beside the profile at the theta_age nearest its centre and P2 beside theta_age = 2; P3 has none.
+stage3_rows <- function() {
+  s3 <- \(f) rd(file.path("output/tables", f))
+  key_model <- setNames(names(OUTCOME_OF), OUTCOME_OF)
+  hr <- s3("stage3_e1_hr.csv") |>
+    transmute(model, scenario, structure = "proportional", quantity = "HR", cause, stage2 = hr_cox_stage2,
+              stage3 = hr, stage3_lo = lo, stage3_hi = hi, stage3_source = "PEM by glm, Wald")
+  per <- s3("stage3_e1_hr_by_period.csv") |>
+    transmute(model, scenario, structure = "split at year 4", quantity = "HR", cause, period,
+              stage3 = hr, stage3_lo = lo, stage3_hi = hi, stage3_source = "PEM by glm, Wald")
+  cif <- s3("stage3_e1_cif.csv")
+  cif_long <- bind_rows(
+    cif |> transmute(model, scenario, structure = group_effect, quantity = "F", cause, group = "NCI", time = as.character(time),
+                     stage3 = F_NCI, stage3_lo = F_NCI_lo, stage3_hi = F_NCI_hi),
+    cif |> transmute(model, scenario, structure = group_effect, quantity = "F", cause, group = "CI", time = as.character(time),
+                     stage3 = F_CI, stage3_lo = F_CI_lo, stage3_hi = F_CI_hi),
+    cif |> transmute(model, scenario, structure = group_effect, quantity = "RD", cause, time = as.character(time),
+                     stage3 = RD, stage3_lo = RD_lo, stage3_hi = RD_hi),
+    cif |> transmute(model, scenario, structure = group_effect, quantity = "RR", cause, time = as.character(time),
+                     stage3 = RR, stage3_lo = RR_lo, stage3_hi = RR_hi)) |>
+    mutate(stage3_source = "PEM by glm, parametric bootstrap")
+  tail <- s3("stage3_e1_tail.csv") |>
+    transmute(model, scenario, quantity = "tail ratio", cause, group, stage3 = ratio, stage3_lo = ratio_lo, stage3_hi = ratio_hi,
+              stage3_source = "crude rates of the life table") |>
+    tidyr::crossing(structure = c("proportional", "split at year 4"))
+  # P1 is centred at 1.55 for every outcome. Model 1 implies 1.56 and 1.50 for the two stroke outcomes but 1.88 for death, so
+  # the P1 counterpart is the stage 3 theta_age nearest to 1.55 within the outcome (and ceiling): the implied value for the
+  # strokes, the grid point 1.5 for death. Rows without theta_age (observed counts) are dropped.
+  link <- function(d) bind_rows(d |> filter(!is.na(theta_age)) |> group_by(outcome, across(any_of("age_max"))) |>
+                                  filter(abs(theta_age - 1.55) == min(abs(theta_age - 1.55))) |> ungroup() |>
+                                  mutate(prior = "P1", at = if_else(is_implied, "the theta_age Model 1 implies", "the grid point nearest the P1 centre 1.55")),
+                                d |> filter(!is_implied, theta_age == 2) |> mutate(prior = "P2", at = "theta_age = 2")) |>
+    mutate(stage3_source = sprintf("fixed age effect, %s (%.2f)", at, theta_age), model = unname(key_model[outcome]))
+  e2 <- s3("stage3_e2_profile.csv") |> link() |>
+    transmute(model, prior, age_max = as.integer(age_max), quantity = "HR at given age and sex",
+              stage3 = hr_ci, stage3_lo = hr_prof_lo, stage3_hi = hr_prof_hi, stage3_source = paste0(stage3_source, ", profile likelihood"))
+  e3a <- s3("stage3_e3_age_equivalent.csv") |> link() |>
+    transmute(model, prior, age_max = 90L, quantity = "age-equivalent, years", stage3 = estimate, stage3_lo = lo, stage3_hi = hi, stage3_source)
+  e3b <- s3("stage3_e3_cindex.csv") |> link() |>
+    transmute(model, prior, age_max = 90L, quantity, stage3 = estimate, stage3_lo = lo, stage3_hi = hi, stage3_source)
+  e3c <- s3("stage3_e3_screening.csv") |> filter(source == "model, calibrated population", metric %in% METRICS) |> link() |>
+    transmute(model, prior, age_max = 90L, quantity = metric, rule, stage3 = estimate, stage3_lo = lo, stage3_hi = hi, stage3_source)
+  bind_rows(hr, per, cif_long, tail, e2, e3a, e3b, e3c)
+}
+JOIN_KEYS <- c("model", "scenario", "structure", "prior", "age_max", "quantity", "cause", "group", "time", "period", "rule")
+
+if (!RUN_PRIOR) {
+  cat("== S4 posterior runs\n")
+  pem_suffix <- as.vector(outer(c("", "_early", "_late", "_bsd2", "_split", "_early_split", "_split_bsd2"), c("isch", "any"), \(v, o) paste0(o, v)))
+  exp_suffix <- as.vector(outer(c("_P1", "_P2", "_P3", "_P2_amax80", "_P2_amax100"), names(OUTCOME_OF), \(v, o) paste0(o, v)))
+  have <- function(model, suffix) length(list.files(file.path(fits_dir, model), pattern = sprintf("^%s_%s_[0-9]+\\.csv$", model, suffix))) > 0
+  missing <- c(paste("pem_competing", pem_suffix)[!map_lgl(pem_suffix, \(s) have("pem_competing", s))],
+               paste("exposure_age", exp_suffix)[!map_lgl(exp_suffix, \(s) have("exposure_age", s))])
+  if (length(missing)) stop("runs missing on the archive disk (run_all.sh): ", paste(missing, collapse = "; "))
+  res <- c(map(pem_suffix, post_pem), map(exp_suffix, post_exposure))
+  conv <- map_dfr(res, "convergence")
+  ppc <- map_dfr(res, "ppc") |>
+    select(program, run, model, scenario, structure, beta_sd, prior, age_max, quantity, outcome, group, interval,
+           observed = reference, q025, q25, q50, q75, q975, percentile, covers, share_guarded)
+  est <- map_dfr(res, "est")
+  for (k in setdiff(JOIN_KEYS, names(est))) est[[k]] <- NA_character_
+  est <- est |> mutate(role = ifelse((program == "pem_competing" & scenario == "uniform" & beta_sd == 1) |
+                                       (program == "exposure_age" & age_max == 90L), "planned", "sensitivity")) |>
+    select(estimand, program, run, role, model, outcome, scenario, structure, beta_sd, prior, age_max, quantity, cause, group, time, period, rule,
+           stage4_median, stage4_lo, stage4_hi, pr_gt_1) |>
+    arrange(program != "pem_competing", estimand, model, run, quantity, cause, group, time, period, rule)
+  # the paper's values: Table 2 unadjusted beside the proportional HR, Model 1 beside the HR at given age and sex
+  paper <- bind_rows(
+    t2 |> filter(group == "CI") |> transmute(outcome, quantity = "HR", structure = "proportional", paper = hr_unadj, paper_lo = hr_unadj_lo,
+                                             paper_hi = hr_unadj_hi, paper_source = "Table 2, unadjusted Cox"),
+    t2 |> filter(group == "CI") |> transmute(outcome, quantity = "HR at given age and sex", structure = NA_character_, paper = hr_m1,
+                                             paper_lo = hr_m1_lo, paper_hi = hr_m1_hi, paper_source = "Table 2, Model 1 (age, gender, education)"))
+  side <- est |>
+    left_join(paper, by = c("outcome", "quantity", "structure")) |>
+    left_join(stage3_rows(), by = JOIN_KEYS) |>
+    mutate(ratio_4_over_3 = ifelse(quantity %in% c("RD", "age-equivalent, years", "c_gain"), NA_real_, stage4_median / stage3),
+           diff_4_minus_3 = stage4_median - stage3) |>
+    select(estimand, program, run, role, model, outcome, scenario, structure, beta_sd, prior, age_max, quantity, group, time, period, rule,
+           paper, paper_lo, paper_hi, paper_source, stage2, stage3, stage3_lo, stage3_hi, stage3_source,
+           stage4_median, stage4_lo, stage4_hi, pr_gt_1, ratio_4_over_3, diff_4_minus_3)
+  stopifnot(nrow(side) == nrow(est))                       # the joins add columns, never rows
+  write_csv(conv, file.path(out_tab, "stage4_convergence.csv"))
+  write_csv(ppc, file.path(out_tab, "stage4_ppc.csv"))
+  write_csv(est |> select(-cause), file.path(out_tab, "stage4_estimates.csv"))
+  write_csv(side, file.path(out_tab, "stage4_side_by_side.csv"))
+
+  # figure 1: posterior predictive cell counts of the planned runs, both structures
+  cells <- ppc |> filter(program == "pem_competing", scenario == "uniform", beta_sd == 1) |>
+    mutate(group = factor(group, GROUPS), interval = factor(interval, unique(interval)), panel = sprintf("%s\n%s", outcome, structure),
+           row = sprintf("%s: %s", model, group))
+  g1 <- ggplot(cells, aes(interval)) +
+    geom_linerange(aes(ymin = q025, ymax = q975), colour = "grey55") +
+    geom_linerange(aes(ymin = q25, ymax = q75), linewidth = 1.6, colour = "grey35") +
+    geom_point(aes(y = observed, colour = covers), size = 2) +
+    scale_colour_manual(values = c(`TRUE` = "#1b7837", `FALSE` = "#b2182b"), name = "observed within the posterior predictive 95 %") +
+    scale_y_continuous(trans = scales::pseudo_log_trans(base = 10), breaks = c(0, 1, 3, 10, 30, 100)) +
+    facet_grid(group ~ model + panel) +
+    labs(x = "interval, years", y = "events in the cell", title = "pem_competing: posterior predictive cell counts",
+         subtitle = "Bars: posterior predictive 50 % and 95 % intervals; points: the life table (uniform person-years)") +
+    theme_minimal(base_size = 9) + theme(legend.position = "bottom", axis.text.x = element_text(angle = 30, hjust = 1))
+  ggsave(file.path(out_fig, "stage4_ppc_pem.png"), g1, width = 13, height = 5.5, dpi = 150, bg = "white")
+
+  # figure 2: the exposure HR at given age and sex under the three priors, with the stage 3 value it is set beside
+  e2 <- side |> filter(quantity == "HR at given age and sex", age_max == 90L) |>
+    mutate(outcome = factor(outcome, unname(OUTCOME_OF)))
+  e2_long <- bind_rows(
+    e2 |> transmute(outcome, prior, source = "stage 4, posterior median and 95 %", y = stage4_median, lo = stage4_lo, hi = stage4_hi),
+    e2 |> filter(!is.na(stage3)) |> transmute(outcome, prior, source = "stage 3, age effect fixed, profile 95 %", y = stage3, lo = stage3_lo, hi = stage3_hi))
+  g2 <- ggplot(e2_long, aes(prior, y, colour = source)) +
+    geom_hline(yintercept = 1, colour = "grey40") +
+    geom_hline(data = e2 |> distinct(outcome, paper), aes(yintercept = paper), linetype = 2, colour = "grey40") +
+    geom_pointrange(aes(ymin = lo, ymax = hi), position = position_dodge(width = 0.4)) +
+    scale_y_log10(breaks = c(0.5, 0.75, 1, 1.5, 2, 3, 4, 6)) +
+    scale_colour_manual(values = c("stage 4, posterior median and 95 %" = "#2166ac", "stage 3, age effect fixed, profile 95 %" = "grey45"), name = NULL) +
+    facet_wrap(~ outcome) +
+    labs(x = "prior on the age effect (P1 as Model 1 implies, P2 doubling per decade, P3 unknown between 1 and 3)",
+         y = "hazard ratio, MMSE < 24, at given age and sex",
+         title = "exposure_age: the adjusted hazard ratio under three priors on the age effect",
+         subtitle = "Dashed: the paper's Model 1 hazard ratio; solid: no association") +
+    theme_minimal(base_size = 9) + theme(legend.position = "bottom")
+  ggsave(file.path(out_fig, "stage4_hr_by_prior.png"), g2, width = 9, height = 4.5, dpi = 150, bg = "white")
+
+  options(width = 230)
+  sg <- \(d) d |> mutate(across(where(is.numeric), \(x) signif(x, 3)))
+  cat("\n-- sampler (plan §5 thresholds)\n"); print(conv |> sg(), n = Inf)
+  cat("\n-- posterior predictive counts outside the 95 % interval\n")
+  print(ppc |> filter(!covers) |> sg() |> select(program, run, outcome, group, interval, observed, q025, q50, q975, percentile), n = Inf)
+  show <- function(d) print(d |> sg() |> select(run, outcome, quantity, group, time, period, rule, paper, stage2, stage3, stage3_lo, stage3_hi,
+                                                 stage4_median, stage4_lo, stage4_hi, pr_gt_1, ratio_4_over_3), n = Inf)
+  cat("\n-- E1b, E1c: hazard ratios, all pem runs\n"); show(side |> filter(quantity == "HR"))
+  cat("\n-- E1: cumulative incidence, RD, RR (planned runs and the early scenario)\n")
+  show(side |> filter(estimand == "E1", scenario %in% c("uniform", "early"), beta_sd == 1))
+  cat("\n-- E1c: tail ratios (planned runs)\n"); show(side |> filter(quantity == "tail ratio", role == "planned"))
+  cat("\n-- E2: the exposure HR and the age effect, all exposure runs\n")
+  show(side |> filter(estimand == "E2", quantity %in% c("HR at given age and sex", "hazard multiplier per decade of age")))
+  cat("\n-- E3: age-equivalent, c-index, screening metrics (ceiling 90)\n"); show(side |> filter(estimand %in% c("E3a", "E3b", "E3c"), age_max == 90L))
+  cat(sprintf("\nruns passing the sampler thresholds: %d of %d; posterior predictive counts within the 95 %%: %d of %d; rows with a stage 3 counterpart: %d of %d\n",
+              sum(conv$passes), nrow(conv), sum(ppc$covers), nrow(ppc), sum(!is.na(side$stage3)), nrow(side)))
+  cat("written: output/tables/stage4_convergence.csv, stage4_ppc.csv, stage4_estimates.csv, stage4_side_by_side.csv;",
+      "output/figures/stage4_ppc_pem.png, stage4_hr_by_prior.png\n")
 }
