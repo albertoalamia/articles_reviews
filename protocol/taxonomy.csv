@@ -7,6 +7,10 @@ DES-POWER,design,Power analysis mismatch,Sample size justification does not corr
 DES-BLIND,design,Blinding absent or unreported,Raters or extractors not blinded where feasible
 DES-MANIP,design,No manipulation check,No evidence that the intended state or exposure occurred
 DES-PREREG,design,No pre-registration,Primary hypothesis and analysis not registered; hypothesis possibly post hoc
+DES-ORIGIN,design,Time origin or exposure timing unclear,Start of follow-up eligibility and exposure assessment not aligned or not identifiable (exposure measured after time zero; immortal time)
+DES-SELECT,design,Selection into the analysed sample,Inclusion in the analysis depends on the exposure the outcome or their causes (exclusions for missing data; survivors; controls from a different source population)
+DES-ATTRIT,design,Loss to follow-up unreported or unhandled,Attrition not reported by group or treated as uninformative without support
+DES-TEMPORAL,design,Temporal order not established,Exposure and outcome measured together or in an order that does not exclude the outcome preceding the exposure
 MEA-CONSTR,measurement,Construct validity gap,The measured proxy does not support the construct claimed
 MEA-RELIAB,measurement,Reliability not established,No or inadequate reliability evidence for the instrument in this setting
 MEA-SCALE,measurement,Scale type violated,Ordinal treated as interval or counts treated as continuous without justification

@@ -30,6 +30,17 @@
   of 11 hospitals and medical records, and were not censored; the number who missed exams is not
   given (numbers at risk: at most 30 of 3,683 and 6 of 192 departures of any kind by year 4).
 - B9 Manipulation check: n/a; the exposure is a measured state, not a manipulation.
+- B10 Time origin and exposure timing (protocol 0.4): not identifiable. Eligibility and covariates
+  at the 2010/2011 baseline, exposure at the 2012/2013 visit, follow-up to 2015-12-31; the reported
+  median follow-up and the numbers at risk at year 4 fit an origin in 2010/2011, before the
+  exposure was measured (concern "Follow-up timeline cannot hold as stated", DES-ORIGIN).
+- B11 Selection into the analysed sample (protocol 0.4): 1,512 of 5,440 without an MMSE excluded,
+  older and with more vascular risk; a further 53 with stroke or cardiovascular disease before the
+  MMSE visit (concern "Complete-case analysis after excluding 28 % of the cohort", DES-SELECT).
+- B12 Follow-up and attrition (protocol 0.4): losses never reported; see B8 (concern "Loss to
+  follow-up not reported", DES-ATTRIT).
+- B13 Temporal order (protocol 0.4): exposure precedes the outcomes by design (prior stroke
+  excluded); no concern.
 
 ## C. Measurement
 - C1 Operationalisation: "cognitive impairment" = MMSE < 24 at a single visit; the construct in the

@@ -6,7 +6,7 @@ author: Alberto Alamia
 categories: [psychiatry, cohort, systematic track]
 draft: true
 params:
-  protocol_version: "0.3"
+  protocol_version: "0.4"
   track: "systematic"
 ---
 
@@ -17,56 +17,12 @@ track `{r} params$track`. Corresponding author contacted on 2026-11-20 with a da
 this commentary; reply: pending (see [Right of reply](#right-of-reply)).
 :::
 
-## Summary
-
-::: {.verdict}
-**Verdict:** sound | minor concerns | major concerns | conclusions not supported.
-Two or three sentences on why.
-:::
-
-```{r}
-#| label: tbl-quality
-#| tbl-cap: "Issues by protocol domain, from the registry. Rating rule (protocol H2): any critical issue, conclusions at risk; any major, major concerns; only minor, minor concerns; none, no concern found."
-source(here::here("lib/quality_table.R"))
-quality_table("P002") |> knitr::kable(format = "pipe", align = "lrrrrrrll")
-```
-
-## What the paper does
-
-Design, sample, outcomes, primary analysis, in the authors' own terms.
-
-## Design
-
-## Measurement
-
-## Model adequacy
-
-## Internal consistency
-
 ```{r}
 #| label: setup
 #| message: false
-source(here::here("lib/consistency.R"))
-```
-
-Recomputations from the reported numbers go here, each with a short interpretation and an
-evidence tag, e.g.
-
-::: {.evidence-confirmed}
-The reported mean change does not equal the difference of the condition means.
-:::
-
-## Reporting
-
-## Do the conclusions follow?
-
-## Re-analysis
-
-```{r}
-#| label: reanalysis-setup
-#| message: false
 #| warning: false
 library(readr); library(dplyr); library(knitr)
+source(here::here("lib/consistency.R"))
 art <- here::here("SciRep_cognitive_impairment_cerebrovascular_events_Shi_2026")
 rd  <- function(p) read_csv(file.path(art, p), show_col_types = FALSE, progress = FALSE)
 f   <- function(x, d = 2) formatC(round(x, d), format = "f", digits = d)
@@ -107,7 +63,376 @@ TH  <- "hazard multiplier per decade of age"
 th3 <- function(r) sub(".*\\(([0-9.]+)\\).*", "\\1", r$stage3_source)                # the age effect the stage 3 fit was fixed at
 shr <- sbs |> filter(estimand == "E1b", run %in% c("isch", "any")) |> pull(ratio_4_over_3)
 shw <- sbs |> filter(estimand == "E1b", run %in% c("isch_bsd2", "any_bsd2")) |> pull(ratio_4_over_3)
+pf  <- function(p) ifelse(p < 1e-4, sub("e-0?", "e−", formatC(p, format = "e", digits = 0)), formatC(p, format = "f", digits = 4))
+# numbers as reported (data/raw/, EXTRACTION_LOG.md) and the stage 1 checks on them (R/02_consistency_checks.R)
+T1  <- function(v, w) t1[[w]][t1$variable == v]
+tx  <- rd("data/raw/text_numbers.csv")
+TX  <- function(q) as.numeric(tx$value[tx$quantity == q])
+cB  <- rd("output/tables/consistency_B_table1_pvalues.csv")
+cD  <- rd("output/tables/consistency_D_table2_hr.csv")
+cE  <- rd("output/tables/consistency_E_fig2_at_risk.csv")
+cEc <- rd("output/tables/consistency_E_fig2_ci_curves.csv")
+cF  <- rd("output/tables/consistency_F_timeline.csv")
+cG  <- rd("output/tables/consistency_G_screening_epv.csv")
+cH  <- rd("output/tables/consistency_H_s1_pvalues_denominators.csv")
+cHv <- rd("output/tables/consistency_H_s1_vs_table1.csv")
+occ <- cH[cH$variable == "manual worker", ]
+GRP <- c(NCI = "MMSE ≥ 24", CI = "MMSE < 24")
 ```
+
+## Summary
+
+::: {.verdict}
+**Verdict: major concerns.** The recommendation that "cognitive screening could be valuable" is
+**not supported** by the reported counts.
+The Kaplan–Meier figure cannot have been drawn from the data behind Table 2, and its own numbers at
+risk place most events in the last ten weeks of follow-up. The follow-up dates do not allow the
+median follow-up reported, so the time origin is unknown. The headline model adjusts for a variable
+missing in about 29 % of the sample without saying so. The adjusted hazard ratio of about 2.5 rests
+on 15 events in the exposed group and on an age effect the paper does not report; with an age
+effect of the size commonly reported for stroke, the interval includes 1. The MMSE flags 15 of the
+81 people who went on to an ischaemic stroke. What the reported numbers do support is that the
+group with MMSE < 24, eleven years older at the median, had about four times the event rate.
+:::
+
+```{r}
+#| label: tbl-quality
+#| tbl-cap: "Issues by protocol domain, from the registry. Rating rule (protocol H2): any critical issue, conclusions at risk; any major, major concerns; only minor, minor concerns; none, no concern found."
+source(here::here("lib/quality_table.R"))
+quality_table("P002") |> knitr::kable(format = "pipe", align = "lrrrrrrll")
+```
+
+The table counts each issue once, under the domain of its protocol code; the sections below follow
+the subject. Three points are therefore discussed in one section and counted in another row: the
+two "baselines" (under [Design](#design), counted under measurement), the adjustment for age and
+schooling (under [Model adequacy](#model-adequacy), counted under measurement) and the fifteen
+exposed events (under Model adequacy, counted under reporting).
+
+## What the paper does
+
+A secondary analysis of the APAC community cohort: `{r} f(TX("apac_enrolled"), 0)` adults aged 40 or
+older, free of stroke, transient ischaemic attack and coronary disease at the 2010/2011 baseline,
+when risk factors and vascular imaging were collected. The Mini-Mental State Examination (MMSE) was
+administered once, "in the first follow-up examination conducted in 2012/2013". After excluding
+`{r} f(TX("excluded_missing_mmse"), 0)` participants without an MMSE and
+`{r} f(TX("excluded_prior_stroke_or_cvd"), 0)` with stroke or cardiovascular disease before that visit,
+`{r} f(TX("analysed"), 0)` were analysed; `{r} f(TX("n_ci"), 0)` (`{r} f(TX("pct_ci"), 1)` %) had an MMSE
+below 24, "defined as cognitive impairment in the present study". Outcomes were a first ischaemic
+stroke, any first stroke and death from any cause, followed "until December 31, 2015", over "a
+median follow-up of 4.1 years".
+
+Analysis as described: Cox proportional-hazards models, unadjusted, adjusted for "age, gender, and
+education" (Model 1), and with "additional adjustments for homocysteine levels, ICAS, hypertension,
+and occupation" (Model 2); "Covariates were selected based on their established association with
+stroke risk and their imbalance between groups in baseline comparisons." "The Kaplan-Meier method
+and log-rank test were utilized to estimate the cumulative incidence". The paper's Table 2:
+
+```{r}
+#| label: tbl-table2
+#| tbl-cap: "The paper's Table 2 as printed: events by group and hazard ratios (95 % interval) for MMSE < 24 against ≥ 24."
+ev <- function(g) t2 |> filter(group == g) |> transmute(outcome, ev = sprintf("%d of %d (%s %%)", events, n_group, f(pct, 1)))
+t2 |> filter(group == "CI") |> left_join(ev("NCI"), by = "outcome") |>
+  transmute(Outcome = OL[outcome],
+            `Events, MMSE < 24` = sprintf("%d of %d (%s %%)", events, n_group, f(pct, 1)),
+            `Events, MMSE ≥ 24` = ev,
+            Unadjusted = sprintf("%s [%s, %s]", f(hr_unadj), f(hr_unadj_lo), f(hr_unadj_hi)),
+            `Model 1` = sprintf("%s [%s, %s]", f(hr_m1), f(hr_m1_lo), f(hr_m1_hi)),
+            `Model 2` = sprintf("%s [%s, %s]", f(hr_m2), f(hr_m2_lo), f(hr_m2_hi))) |>
+  kb(align = "lrrrrr")
+```
+
+The conclusion: cognitive impairment "independently forecasted the occurrence of ischemic stroke
+... and any stroke ... but not all-cause mortality", a "2.32 to 2.55 times higher risk", and
+"cognitive screening could be valuable for identifying stroke-free adults who are at a greater risk
+of experiencing cerebrovascular events in the future".
+
+## Design
+
+**The follow-up cannot run as stated.** The MMSE was measured in 2012/2013 and follow-up ended on
+2015-12-31. Counted from the MMSE visit, follow-up lasts between `{r} f(cF$min_follow_up[1], 1)` and
+`{r} f(cF$max_follow_up[1], 1)` years. The paper reports a median of `{r} f(TX("median_follow_up"), 1)`
+years, and the numbers at risk under Figure 2 show `{r} f(100 * cF$share_at_risk_4y_nci[1], 1)` % and
+`{r} f(100 * cF$share_at_risk_4y_ci[1], 1)` % of the two groups still under observation at year 4.
+
+::: {.evidence-confirmed}
+A median of 4.1 years and four years of observation for nearly everyone are possible only if time
+starts at the 2010/2011 baseline. In that case the exposure was measured about two years after
+time zero, every analysed participant was alive and stroke-free for those two years by
+construction, and the deaths that Figure 2 shows in the first year belong to people who could not
+have taken the MMSE in 2012/2013. The paper does not state the time origin. Which of the two holds
+needs the visit and event dates.
+:::
+
+**"Baseline" names two visits two years apart.** Covariates and vascular imaging date from
+2010/2011, the exposure from 2012/2013. Table 1 gives a median age of `{r} f(T1("Age", "overall_med"), 1)`
+and the Discussion a "relatively young baseline age (median: `{r} f(TX("discussion_median_age"), 1)` years)".
+
+::: {.evidence-inferred}
+The two-year gap between the two medians suggests that the covariates in the models are the
+2010/2011 values: hypertension, homocysteine and stenosis status measured two years before the
+exposure adjust a comparison defined at the later visit.
+:::
+
+**A quarter of the cohort is excluded for a missing exposure.** `{r} f(TX("excluded_missing_mmse"), 0)` of
+`{r} f(TX("apac_enrolled"), 0)` (`{r} f(100 * TX("excluded_missing_mmse") / TX("apac_enrolled"), 1)` %) had no
+MMSE. By Supplementary Table S1 the excluded were older and more often male, hypertensive, diabetic
+and with intracranial stenosis. No reason for the missing MMSE is given, and no weighting or
+imputation is used. The Discussion holds that selection bias was handled because "we have adjusted
+for these factors in our models".
+
+::: {.evidence-confirmed}
+Adjusting within the included sample says nothing about the excluded one. The excluded part is the
+part with more vascular disease, where low MMSE scores are most common; the estimates apply to a
+selected sample, and the paper reads them as for stroke-free adults aged 40 and over.
+:::
+
+**Loss to follow-up is never reported.** For "those participants who missed the follow-up exams,
+outcome data was gathered by reviewing death certificates ..., discharge summaries from the 11
+hospitals, and medical records". How many missed an exam is not stated, and nobody is described as
+censored before the end of 2015. By the numbers at risk of the mortality panel,
+`{r} cE$removed_by_y4[cE$panel == "C" & cE$group == "NCI"]` of `{r} cE$y0[cE$panel == "C" & cE$group == "NCI"]` and
+`{r} cE$removed_by_y4[cE$panel == "C" & cE$group == "CI"]` of `{r} cE$y0[cE$panel == "C" & cE$group == "CI"]`
+participants left the risk set for any reason, deaths included, in four years.
+
+::: {.evidence-confirmed}
+A participant who missed the exams counts as event-free unless a record is found. Deaths are found
+through vital statistics; a non-fatal stroke treated outside the 11 hospitals is not. Ascertainment
+therefore differs between attenders and non-attenders and between stroke and death, in a direction
+the paper gives no means to judge, and with 15 exposed events a handful of missed strokes matters.
+The re-analysis below takes the paper at its word on this point.
+:::
+
+## Measurement
+
+**The exposure is one MMSE below a fixed cut-off.** `{r} T1("Education: illiteracy/primary school", "ci_n")`
+of the `{r} f(TX("n_ci"), 0)` participants classed as impaired
+(`{r} f(T1("Education: illiteracy/primary school", "ci_pct"), 1)` %) have primary schooling or less, against
+`{r} f(T1("Education: illiteracy/primary school", "nci_pct"), 1)` % of the others. No education-specific
+cut-off, second instrument or repeat test is used, and the continuous score, with a median of
+`{r} f(T1("MMSE", "overall_med"), 0)`, enters no analysis. The authors mention "potential educational bias".
+
+::: {.evidence-inferred}
+Part of what the exposure measures is schooling. The title's claim is about cognitive impairment;
+the data cannot separate the two without the continuous score and an education-stratified analysis.
+:::
+
+**A Model 2 covariate is missing for about 29 % of the sample.** Table 1 prints manual work as
+`{r} T1("Manual worker", "overall_n")` participants (`{r} f(T1("Manual worker", "overall_pct"), 1)` %).
+Supplementary Table S1 prints the same `{r} occ$included_n` as `{r} f(occ$included_pct, 1)` %, which is a
+fraction of `{r} f(occ$inc_den_lo, 0)` to `{r} f(occ$inc_den_hi, 0)` people, not of
+`{r} f(TX("analysed"), 0)`.
+
+::: {.evidence-confirmed}
+Occupation is recorded for about `{r} f(100 * occ$inc_den_lo / TX("analysed"), 0)` % of the analysed sample.
+A Cox model in SAS drops records with a missing covariate, so Model 2, the model of the abstract,
+is fitted on at most about `{r} f(occ$inc_den_hi, 0)` participants and on an unknown number of the
+events of Table 2. The paper presents Models 1 and 2 side by side without an n for either, and
+reads the step from `{r} f(T2("ischemic stroke", "CI", "hr_m1"))` to `{r} f(T2("ischemic stroke", "CI", "hr_m2"))`
+as the effect of adjusting for vascular markers; part or all of it may be the change of sample.
+:::
+
+**Outcomes.** First strokes were confirmed by CT or MRI; "In cases of fatal incidents or when
+neuroimaging was unavailable, diagnosis was based on clinical evaluation and examination of medical
+records". The share of events classified that way is not reported.
+
+## Model adequacy
+
+**Age and schooling.** The group with MMSE < 24 is `{r} f(age_gap, 1)` years older at the median, with an
+upper quartile of `{r} f(T1("Age", "ci_q3"), 1)` years against `{r} f(T1("Age", "nci_q3"), 1)`. Adjusting
+for age, gender and education leaves `{r} f(100 * cD$attenuation_m1[cD$outcome == "ischemic stroke"], 0)` % of
+the unadjusted log hazard ratio for ischaemic stroke and
+`{r} f(100 * cD$attenuation_m1[cD$outcome == "all-cause mortality"], 0)` % for death. How age entered the
+model is not stated, no coefficient other than the exposure's is reported, and diabetes, body-mass
+index, lipids, smoking, alcohol, physical activity and carotid stenosis, all measured, are in no model.
+
+::: {.evidence-inferred}
+The remaining hazard ratio of about 2.5 is the whole result, and it depends on how completely a
+single age term removes an eleven-year difference. The re-analysis shows the size of the dependence
+([E2](#e2-the-hazard-ratio-at-equal-age-and-sex-depends-on-the-age-effect)).
+:::
+
+**Death is treated as censoring.** `{r} f(T2("all-cause mortality", "CI", "pct"), 1)` % of the group with
+MMSE < 24 died during follow-up against `{r} f(T2("all-cause mortality", "NCI", "pct"), 1)` % of the other.
+The stroke analyses censor at death, and the curves called cumulative incidence are one minus
+Kaplan–Meier.
+
+::: {.evidence-inferred}
+One minus Kaplan–Meier overstates the share with a stroke in the group that dies more. At these
+event rates the overstatement is small (see the re-analysis); the point is that it was not assessed,
+although the Discussion calls competing risks "non-negligible".
+:::
+
+**Fifteen exposed events.** Each of the three outcomes has `{r} T2("ischemic stroke", "CI", "events")` events
+in the group with MMSE < 24. Model 2 has `{r} cG$params_model2[1]` parameters for
+`{r} min(cG$events_total)` to `{r} max(cG$events_total)` events. "The proportional hazard assumption was
+met for survival analysis using the Schoenfeld residual plot method (P > 0.05)", with no statistic
+and no variable named.
+
+::: {.evidence-confirmed}
+The precision of the exposure's coefficient is set by 15 events whatever the sample size. A test of
+proportional hazards on 15 events detects gross departures only, and a plot has no p-value. The
+adjusted estimates are fragile to the choice of covariates and of their functional forms, and the
+paper shows no alternative specification.
+:::
+
+**Covariates chosen by baseline p-values.** Table 1 carries `{r} sum(!is.na(t1$p_reported))` tests of
+group differences, none a study hypothesis, and "imbalance between groups in baseline comparisons"
+is one of the two stated criteria for Model 2. Occupation, with a printed P = 0.0005 that the
+printed percentages do not give (below), is in the model; diabetes is not.
+
+## Internal consistency
+
+Every reported number was transcribed (`data/raw/`) and recomputed where the paper gives enough to
+do so (`R/02_consistency_checks.R`).
+
+**What is consistent.** The event percentages of Table 2 follow from the counts. The unadjusted
+intervals are those that `{r} T2("ischemic stroke", "CI", "events")` and
+`{r} T2("ischemic stroke", "NCI", "events")` events give (for ischaemic stroke
+[`{r} f(cD$ci_lo_rec[1])`, `{r} f(cD$ci_hi_rec[1])`] recomputed against
+[`{r} f(cD$hr_unadj_lo[1])`, `{r} f(cD$hr_unadj_hi[1])`] printed).
+`{r} sum(cB$p_reported_ok, na.rm = TRUE)` of the `{r} sum(!is.na(cB$p_reported_ok))` categorical p-values
+of Table 1 are reproduced from the printed counts. The hazard ratios do not depend on the figure.
+
+### Figure 2 against Table 2
+
+```{r}
+#| label: tbl-fig2
+#| tbl-cap: "Figure 2 against Table 2 for the group with MMSE < 24. Curve features read from the native raster of the figure (`data/raw/fig2_curve_features.csv`); the axis is labelled \"Cumulative incidence (%)\" with ticks at 0 and 1."
+cEc |> transmute(Panel = panel, Outcome = OL[outcome], `Steps drawn` = n_steps, `Events, Table 2` = events,
+                 `Curve ends at` = f(final_value, 2), `Table 2, %` = f(pct, 1), `At risk at year 4, of 192` = at_risk_y4) |>
+  kb(align = "llrrrrr")
+```
+
+::: {.evidence-confirmed}
+In each panel the curve of the group with MMSE < 24 rises in `{r} cEc$n_steps[1]` equal steps to
+`{r} f(cEc$final_value[1], 2)`: the shape of a Kaplan–Meier estimate for four people who all have the
+event. Table 2 reports 15 events among 192, and the numbers printed under the same axis show
+`{r} min(cEc$at_risk_y4)` to `{r} max(cEc$at_risk_y4)` of the 192 still at risk at year 4. The curves of
+the other group end near `{r} f(CE("ischemic stroke", "NCI", "fig2_final_value"), 2)`,
+`{r} f(CE("any stroke", "NCI", "fig2_final_value"), 2)` and
+`{r} f(CE("all-cause mortality", "NCI", "fig2_final_value"), 2)`, against
+`{r} f(T2("ischemic stroke", "NCI", "pct"), 1)`, `{r} f(T2("any stroke", "NCI", "pct"), 1)` and
+`{r} f(T2("all-cause mortality", "NCI", "pct"), 1)` % in Table 2: too small to be percentages, too large
+to be proportions. The figure was not produced from the data that give Table 2. The log-rank result
+is "p < 0.0001" in the figure and "P < 0.01 for each" in the text.
+:::
+
+### The numbers at risk against the event counts
+
+```{r}
+#| label: tbl-atrisk
+#| tbl-cap: "Participants removed from the risk set by year 4 (numbers at risk under Figure 2) against the events of Table 2. A removal is an event or a censoring, so the events before year 4 cannot exceed the removals; the rest must fall after year 4, on an axis that ends at 4.2 years."
+cE |> transmute(Outcome = OL[outcome], Group = GRP[group], `At risk, year 0` = y0, `At risk, year 4` = y4, `Removed by year 4` = removed_by_y4,
+                `Events, Table 2` = events_total, `Events after year 4, at least` = min_events_after_y4) |>
+  kb(align = "llrrrrr")
+```
+
+::: {.evidence-needs-data}
+At least `{r} cE$min_events_after_y4[cE$panel == "C" & cE$group == "NCI"]` of the
+`{r} cE$events_total[cE$panel == "C" & cE$group == "NCI"]` deaths in the group with MMSE ≥ 24
+(`{r} f(100 * cE$share_after_y4_min[cE$panel == "C" & cE$group == "NCI"], 0)` %) and
+`{r} cE$min_events_after_y4[cE$panel == "C" & cE$group == "CI"]` of the
+`{r} cE$events_total[cE$panel == "C" & cE$group == "CI"]` in the other group fall after year 4: a death rate
+of at least `{r} f(cE$rate_after_y4_min[cE$panel == "C" & cE$group == "NCI"], 1)` per 100 person-years against
+at most `{r} f(cE$rate_before_y4_max[cE$panel == "C" & cE$group == "NCI"], 2)` before. The arithmetic is
+the paper's own; the explanation is not available from the paper. Either event dates were set to
+the end of follow-up for events found through records, which would also distort the stroke
+analyses, or the numbers at risk and the event totals come from different datasets. The
+re-analysis carries the same arithmetic to the strokes.
+:::
+
+### Table 1 and Supplementary Table S1
+
+```{r}
+#| label: tbl-t1p
+#| tbl-cap: "Categorical rows of Table 1: the printed p-value against the chi-square test recomputed from the printed counts."
+cB |> filter(!is.na(p_reported_ok)) |>
+  transmute(Variable = variable, `MMSE ≥ 24, %` = ifelse(is.na(nci_pct), "—", f(nci_pct, 1)), `MMSE < 24, %` = ifelse(is.na(ci_pct), "—", f(ci_pct, 1)),
+            `p printed` = ifelse(p_type == "exact", pf(p_reported), paste("<", formatC(p_reported, format = "f", digits = 4))), `p recomputed` = pf(p_pearson),
+            Reproduced = ifelse(p_reported_ok, "yes", "no")) |>
+  kb(align = "lrrrrl")
+```
+
+::: {.evidence-confirmed}
+Manual work is printed as `{r} f(T1("Manual worker", "nci_pct"), 1)` % against
+`{r} f(T1("Manual worker", "ci_pct"), 1)` % with P = 0.0005; those percentages give
+p = `{r} f(cB$p_pearson[cB$variable == "Manual worker"], 2)`. In Supplementary Table S1 the p-value of the
+same variable (`{r} pf(occ$p_reported)`) is reproduced only with the reduced denominators
+(`{r} pf(occ$p_impl)`), not with the group sizes (`{r} pf(occ$p_full)`). The Table 1 p-value was in all
+likelihood also computed on the participants with occupation recorded, while the percentages beside
+it use all participants. The text reads the row as impaired participants being "more likely to be
+manual workers (51.8.% vs. 53.1%, P = 0.0005)", with the two values in the wrong order. The ECAS row
+differs in the last digits only (`{r} pf(cB$p_reported[cB$variable == "ECAS"])` printed,
+`{r} pf(cB$p_pearson[cB$variable == "ECAS"])` recomputed).
+:::
+
+`{r} sum(cHv$agree)` of the `{r} nrow(cHv)` cells that Table 1 and the "included" column of S1 share
+agree. The three that do not: middle school is `{r} cHv$included[cHv$table1_variable == "Education: middle school" & cHv$stat == "n"]`
+in S1 and `{r} cHv$overall[cHv$table1_variable == "Education: middle school" & cHv$stat == "n"]` in Table 1 with the
+same percentage; the manual-work percentage above; and the lower quartile of LDL, 1.5 in Table 1,
+which lies below the lower quartile of both groups (1.9) and is 1.9 in S1.
+
+## Reporting
+
+No reporting guideline is cited. Against STROBE, the paper does not give: the time origin and time
+scale of the survival analyses; the number of participants and events in each model; missing data
+per covariate; how loss to follow-up was handled and how many missed each examination; the
+functional form of age and homocysteine; any coefficient other than the exposure's; absolute risks.
+The percentage given for missing MMSE, "about 28.8%", is the total exclusion
+(`{r} f(TX("excluded_total"), 0)` of `{r} f(TX("apac_enrolled"), 0)`); the MMSE share is
+`{r} f(100 * TX("excluded_missing_mmse") / TX("apac_enrolled"), 1)` %. The analysis was not registered.
+Data are "available from the corresponding author on reasonable request"; no code is available.
+
+## Do the conclusions follow?
+
+**"Independently forecasted."** The claim is that the association survives adjustment. The adjusted
+estimate comes from a model whose sample is not stated, whose age term is not reported, and whose
+exposure rests on 15 events. On the paper's own counts, the hazard ratio at equal age and sex is
+between about 1.5 and 2.5 depending on an age effect that the paper leaves implicit, and its
+interval includes 1 for the larger age effects
+([E2](#e2-the-hazard-ratio-at-equal-age-and-sex-depends-on-the-age-effect)).
+
+::: {.evidence-inferred}
+The numbers are compatible with an association at equal age and with little or none. "Independent
+predictor" is one reading among those the data allow.
+:::
+
+**"A 2.32 to 2.55 times higher risk."** A hazard ratio is read as a risk ratio. The risks, never
+stated as such, are `{r} f(T2("ischemic stroke", "CI", "pct"), 1)` % against
+`{r} f(T2("ischemic stroke", "NCI", "pct"), 1)` % for ischaemic stroke before any adjustment.
+
+**"Cognitive screening could be valuable."** `{r} T2("ischemic stroke", "CI", "events")` of the
+`{r} T2("ischemic stroke", "overall", "events")` ischaemic strokes occurred in the group with MMSE < 24.
+
+::: {.evidence-confirmed}
+As a screening rule, MMSE < 24 has a sensitivity of `{r} f(100 * cG$sensitivity[cG$outcome == "ischemic stroke"], 1)` %
+and a positive predictive value of `{r} f(100 * cG$ppv[cG$outcome == "ischemic stroke"], 1)` %: it misses
+more than four future strokes in five. A hazard ratio does not measure screening performance, and
+the paper reports no discrimination, calibration or added value over age. The recommendation has
+no estimate behind it.
+:::
+
+**"But not all-cause mortality."** The mortality hazard ratio of Model 2 is
+`{r} f(T2("all-cause mortality", "CI", "hr_m2"))` [`{r} f(T2("all-cause mortality", "CI", "hr_m2_lo"))`,
+`{r} f(T2("all-cause mortality", "CI", "hr_m2_hi"))`], beside
+`{r} f(T2("any stroke", "CI", "hr_m2"))` [`{r} f(T2("any stroke", "CI", "hr_m2_lo"))`,
+`{r} f(T2("any stroke", "CI", "hr_m2_hi"))`] for any stroke. The two intervals overlap almost entirely.
+The difference between "forecasted" and "not" is the side of 1 on which a lower limit falls, with
+15 events in each case; it is not evidence that cognition relates to stroke and not to death.
+
+**Larger than the meta-analysis.** The effect sizes "were significantly larger than the pooled HR
+of 1.19 from previous meta-analyses", with no comparison performed, and the difference is
+attributed to vascular biology in Chinese populations. The paper's own attenuation from
+`{r} f(T2("ischemic stroke", "CI", "hr_unadj"))` to `{r} f(T2("ischemic stroke", "CI", "hr_m1"))` on three
+covariates points to residual confounding as the alternative it does not examine.
+
+**Prediction and cause.** "Independently forecasted" is a prediction claim. "Cognitive impairment
+is associated with an increased risk" drifts, in the Discussion's mechanisms, towards a causal one.
+If low scores and later strokes share a cause in cerebrovascular disease already under way, no
+adjustment for the measured covariates identifies an effect of cognition
+([What the design identifies](#what-the-design-identifies)).
+
+## Re-analysis
 
 ### Data
 
@@ -600,7 +925,27 @@ are 15 of 192 against 66 of 3,683 events.
 
 ## What would settle the open points
 
+The data request of 2026-11-20 asked for: one record per analysed participant with the MMSE score
+and its date, the covariates with the visit each comes from, and the date of last contact; the date,
+type and source of ascertainment of each first stroke and death; the SAS programs or listings behind
+Table 1, Table 2 and Figure 2; and, if possible, the same variables for the excluded participants.
+With these the time origin is read off the dates, Figure 2 is redrawn, the event dates show whether
+the pile-up after year 4 is real, each model gets its n, age enters with its coefficient and a
+flexible form, the continuous score replaces the cut-off, and the screening question is answered
+with the measured ages. Every script in the repository runs on such a file with the reconstruction
+replaced, and the evidence tags above can then be upgraded or the concerns withdrawn. Short of the
+data, three numbers would settle most of it: the time origin, the n and events of Model 2, and the
+age coefficient of Model 1.
+
 ## Minor
+
+The text calls the median age of the excluded (54.6) a mean; "Captions:" is left in both figure
+legends; the abbreviation list prints BMI and CI twice; consent is from "all participants" in one
+place and from "participants or their legal proxies" in another; the smoking row (63.2 % with 57 %
+men) does not say current or ever; five references do not match the statements they support (the
+carotid ultrasound criteria, the stroke diagnostic criteria, the prevalence of intracranial
+stenosis in Chinese populations, the link between cognition and stroke, and "previous dementia
+research" on mortality); funding is "Not applicable".
 
 ## Right of reply
 

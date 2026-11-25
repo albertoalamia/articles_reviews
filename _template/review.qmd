@@ -6,7 +6,7 @@ author: Alberto Alamia
 categories: [ethology | psychiatry, <design type>, <main issue>]
 draft: true
 params:
-  protocol_version: "0.3"
+  protocol_version: "0.4"
   track: "selected"
 ---
 

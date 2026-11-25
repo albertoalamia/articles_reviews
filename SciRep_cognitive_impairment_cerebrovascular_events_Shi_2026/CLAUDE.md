@@ -15,7 +15,8 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 - Track: `systematic` — source: batch B01 (selection v0.2; Scientific Reports, October 2026,
   OpenAlex subfield Psychiatry and Mental health, seed 20261120, rank 1 of 30, eligible on the title).
 - Field: psychiatry
-- Registry id: P002 — protocol version: 0.3 (stages run under 0.1; 0.2 of 2026-11-21 adds G7 and the
+- Registry id: P002 — protocol version: 0.4 (0.4 of 2026-11-23 adds B10–B13 and four design codes for
+  observational studies, three issues recoded; stages run under 0.1; 0.2 of 2026-11-21 adds G7 and the
   H2 quality table and H3 estimates table; 0.3 of 2026-11-22 adds H4, the models written out;
   both applied before publication)
 - Data availability as stated: "not publicly available due to privacy or ethical restrictions, but
@@ -330,3 +331,42 @@ form and handling of death as a competing event not stated.
   consistency tables); the primer.
 - Next step: Alberto reruns `Rscript <art>/R/03_postprocess.R` (figure label), renders
   `review.qmd`; Claude checks the render (render-check skill); commit. Then the stage 1 sections.
+
+### 2026-11-23 (evening) — S5 committed; stage 1 sections of the review drafted
+- Done: S5 committed (`ed4a3d7`, render checked). `review.qmd` now has every section: Summary and
+  verdict, What the paper does (the paper's Table 2), Design (time origin, two "baselines",
+  exclusion for missing MMSE, loss to follow-up), Measurement (cut-off and schooling, occupation
+  missing for about 29 %, outcome ascertainment), Model adequacy (age and schooling, death as
+  censoring, 15 exposed events, covariates chosen by p-values), Internal consistency (what is
+  consistent; Figure 2 against Table 2; numbers at risk against event counts; Table 1 and S1),
+  Reporting, Do the conclusions follow, What would settle the open points, Minor. Four new tables;
+  evidence boxes carry the tags of `notes/03_concerns.md` unchanged. One setup chunk at the top
+  reads all raw, consistency and stage 2–4 tables. Scratch run of all chunks and inline expressions
+  by Claude: no error, no missing value (two table bugs found and fixed that way). Registry status
+  `draft`.
+- Decided (and why): verdict drafted as "major concerns", with "not supported" for the screening
+  recommendation only: the registry rule gives major concerns (no critical issue) and the screening
+  claim is the one the paper's own counts contradict. It is Alberto's decision; the registry
+  `verdict` cell is left empty until he confirms.
+- Open: Alberto confirms or rewords the verdict; Kelly-Hayes wording to check against the full
+  text; the plain-language primer; the full text goes to the authors only if they engage (right of
+  reply), otherwise publication on or after 2026-12-11.
+- Next step: Alberto renders `review.qmd`; render-check; commit. Then the primer.
+
+### 2026-11-23 (night) — Protocol 0.4: design codes for observational studies
+- Done: render of the full draft checked (clean). Alberto noticed that the quality table showed no
+  design issue while the Design section discusses four. Cause: the taxonomy's design codes covered
+  experiments only. Protocol 0.4: checklist B10–B13 (time origin and exposure timing, selection
+  into the analysed sample, follow-up and attrition, temporal order) and codes `DES-ORIGIN`,
+  `DES-SELECT`, `DES-ATTRIT`, `DES-TEMPORAL`. Three P002 issues recoded in `registry/issues.csv`
+  and `notes/03_concerns.md` (follow-up timeline CON-XREF to DES-ORIGIN; exclusion for missing MMSE
+  MEA-MISSING to DES-SELECT; loss to follow-up REP-GUIDE to DES-ATTRIT), severity and tags
+  unchanged. Inventory B10–B13 filled; params and registry 0.4; templates updated.
+- Decided (and why): applied before publication, as 0.2 and 0.3 were; it moves issues between
+  domains and does not change what counts as a flaw. The two "baselines" stay MEA-COVAR (covariate
+  timing). A short paragraph under the quality table names the three points discussed in one
+  section and counted in another row.
+- Open: as above (verdict, Kelly-Hayes wording, primer, right of reply). Outcome ascertainment
+  differing by group has no code of its own (B12 mentions it); to decide when a paper needs it.
+- Next step: Alberto runs `Rscript lib/tests/run_tests.R`, renders the review and `protocol.qmd`;
+  render-check; commit.

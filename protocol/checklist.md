@@ -1,4 +1,4 @@
-# Appraisal protocol — version 0.2 (2026-11-21)
+# Appraisal protocol — version 0.4 (2026-11-23)
 
 Applied identically to every paper. Each item gets an answer and, where a concern arises, an
 entry in `registry/issues.csv` with an evidence tag:
@@ -33,6 +33,20 @@ Changes to this file bump the version; old reviews are not re-run silently.
 - B7. Sample size justification: does the power calculation match the primary contrast?
 - B8. Blinding of participants, operators, raters, and of data extraction.
 - B9. Manipulation check: evidence that the intended state or exposure actually occurred.
+
+Observational designs (cohort, case-control, cross-sectional, registry), in addition to B1–B9.
+B5 then reads: which common causes of exposure and outcome are measured, which are adjusted for,
+which are not measured.
+
+- B10. Time origin and exposure timing: when follow-up starts, when eligibility is assessed and
+  when the exposure is measured; whether the three coincide (exposure measured after time zero,
+  immortal time, prevalent rather than incident exposure).
+- B11. Selection into the analysed sample: the flow from the source population to the analysis,
+  with numbers and reasons; whether inclusion depends on the exposure, the outcome or their
+  causes (exclusions for missing data, survivors, controls from a different source population).
+- B12. Follow-up and attrition: length and completeness of follow-up by group, losses and their
+  reasons, how losses are handled, whether outcomes are ascertained in the same way for everyone.
+- B13. Temporal order: whether the design establishes that the exposure precedes the outcome.
 
 ## C. Measurement
 
@@ -131,6 +145,15 @@ Recompute whatever can be recomputed from reported numbers (functions in `lib/co
 
 ## Changes
 
+- **0.4 (2026-11-23).** B10–B13 added for observational designs (time origin and exposure timing,
+  selection into the analysed sample, follow-up and attrition, temporal order), with four codes in
+  the taxonomy: `DES-ORIGIN`, `DES-SELECT`, `DES-ATTRIT`, `DES-TEMPORAL`. Reason: the design codes
+  of 0.1 described experiments only, so the design problems of a cohort were filed under other
+  domains and the Design row of its quality table (H2) stayed empty. Applied to P002, unpublished
+  at the time: three issues already in the registry are recoded, with severity and evidence tag
+  unchanged, so the change moves issues between domains and does not alter what counts as a
+  flaw. P001 is an experiment and is not affected. The header of this file had stayed at 0.2
+  through 0.3; corrected here.
 - **0.3 (2026-11-22).** H4 added (the models written out: notation, p-value table, causal
   structure with computed adjustment sets, DAG of each Bayesian model, parameter table). Applied
   to P001 and P002, both unpublished at the time; as with 0.2, the item changes how a review

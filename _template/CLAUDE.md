@@ -9,7 +9,7 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 - Version reviewed (preprint / accepted manuscript / version of record): 
 - Track: `systematic` | `selected` — source: 
 - Field: psychiatry | ethology | other
-- Registry id: P0xx — protocol version: 0.3
+- Registry id: P0xx — protocol version: 0.4
 - Data availability as stated: 
 - What the paper claims (two sentences, in the authors' terms): 
 

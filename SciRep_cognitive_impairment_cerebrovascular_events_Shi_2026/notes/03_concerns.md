@@ -36,7 +36,7 @@ reproduce to the second decimal. Entries touched by stage 2 carry a "Stage 2" li
   the discrepancy is confined to the figure. Tag unchanged.
 
 ### Follow-up timeline cannot hold as stated
-- Code: CON-XREF — Severity: major — Evidence: confirmed
+- Code: DES-ORIGIN (CON-XREF until protocol 0.4, 2026-11-23) — Severity: major — Evidence: confirmed
 - Location: Methods ll. 108–109, 141–142; Results l. 226; Fig. 2 numbers at risk
 - What: the MMSE was measured "from 2012 to 2013", follow-up ran "until December 31, 2015", and the
   median follow-up is 4.1 years. From a 2012/2013 origin the longest possible follow-up is 4.0 years
@@ -71,7 +71,7 @@ reproduce to the second decimal. Entries touched by stage 2 carry a "Stage 2" li
   the explanation needs the event dates.
 
 ### Loss to follow-up not reported; follow-up treated as complete through records
-- Code: REP-GUIDE — Severity: major — Evidence: confirmed
+- Code: DES-ATTRIT (REP-GUIDE until protocol 0.4, 2026-11-23) — Severity: major — Evidence: confirmed
 - Location: Methods ll. 141–145 ("Follow-up and events"); Results l. 226; Fig. 2 numbers at risk
 - What: follow-up was "in-person interviews held every two years ... until December 31, 2015, the
   occurrence of a predefined final event, or death"; "for those participants who missed the
@@ -233,7 +233,7 @@ reproduce to the second decimal. Entries touched by stage 2 carry a "Stage 2" li
 - How to check further: none needed; a pre-specified covariate set is the remedy (stage 3 plan).
 
 ### Complete-case analysis after excluding 28 % of the cohort
-- Code: MEA-MISSING — Severity: major — Evidence: confirmed
+- Code: DES-SELECT (MEA-MISSING until protocol 0.4, 2026-11-23) — Severity: major — Evidence: confirmed
 - Location: Results ll. 180–186; Fig. 1; Discussion ll. 339–341
 - What: 1,512 of 5,440 (27.8 %) had no MMSE and were dropped; they were older, more often male,
   hypertensive, diabetic and with ICAS. No imputation, no weighting; the Discussion holds that

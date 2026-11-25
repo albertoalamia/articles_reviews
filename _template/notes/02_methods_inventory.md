@@ -1,4 +1,4 @@
-# Methods inventory — protocol v0.2
+# Methods inventory — protocol v0.4
 
 Fill in every item. "n/a" is an answer; blank is not.
 
@@ -18,6 +18,10 @@ Fill in every item. "n/a" is an answer; blank is not.
 - B7 Sample size justification:
 - B8 Blinding:
 - B9 Manipulation check:
+- B10 Time origin and exposure timing (observational):
+- B11 Selection into the analysed sample (observational):
+- B12 Follow-up and attrition (observational):
+- B13 Temporal order (observational):
 
 ## C. Measurement
 - C1 Operationalisation:
