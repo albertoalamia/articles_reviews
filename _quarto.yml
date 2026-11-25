@@ -42,7 +42,7 @@ website:
       - text: telepsichiatria.org
         href: https://telepsichiatria.org
   page-footer:
-    left: "Alberto Alamia · Methods and numbers are criticised, never people."
+    left: "Alberto Alamia · Science anyone can check."
     right: "Built with Quarto · Code and data in the repository."
   comments:
     giscus:

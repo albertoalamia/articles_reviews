@@ -370,3 +370,20 @@ form and handling of death as a competing event not stated.
   differing by group has no code of its own (B12 mentions it); to decide when a paper needs it.
 - Next step: Alberto runs `Rscript lib/tests/run_tests.R`, renders the review and `protocol.qmd`;
   render-check; commit.
+
+### 2026-11-25 — Protocol 0.4 and selection v0.3 committed and pushed; primer drafted
+- Done: `cd8e4e7` (stage 1 sections, protocol 0.4) and `938a031` (selection rule v0.3: ten journals
+  per field, one drawn at random per batch with `tools/journal_draw.py`; field journals without the
+  subfield filter; paywalled papers obtained by library, authors or purchase; colleagues' requests
+  in the selected track, disclosed) pushed. `primer.qmd` drafted (HTML only, `draft: true`): what
+  the study did, what we did, the quality table in plain labels, five things a reader should know
+  (screening misses four in five; the age gap; schooling; figure against table; dates), the
+  re-analysis in five bullets, a five-row table, what it does and does not mean. Every number
+  inline from `data/raw/` and `output/tables/`; scratch run of all chunks and inline expressions by
+  Claude: no error, no missing value. The review's opening callout links the primer.
+- Decided (and why): absolute risks from the early-scenario split run, as in the review; the
+  adjusted ratio shown under the three age-effect priors in words ("about one and a half",
+  "doubles", "we do not know").
+- Open: verdict wording and registry `verdict`; Kelly-Hayes wording against the full text;
+  right of reply (publication on or after 2026-12-11 if no reply).
+- Next step: Alberto reads the primer, renders `primer.qmd` and `review.qmd`; render-check; commit.

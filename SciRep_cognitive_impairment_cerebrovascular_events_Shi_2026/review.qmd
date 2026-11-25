@@ -14,7 +14,8 @@ params:
 **Paper reviewed.** Shi Z., Wang A., Meng X., Tian X., Sun Y., Li J., Zhang X., Han X. (2026). *Baseline cognitive impairment predicts cerebrovascular events in stroke-free chinese adults*. Scientific Reports. [doi:10.1038/s41598-026-78298-4](https://doi.org/10.1038/s41598-026-78298-4).
 Version: Article in Press (typeset accepted manuscript). Protocol version `{r} params$protocol_version`,
 track `{r} params$track`. Corresponding author contacted on 2026-11-20 with a data request and notice of
-this commentary; reply: pending (see [Right of reply](#right-of-reply)).
+this commentary; reply: pending (see [Right of reply](#right-of-reply)). A
+[plain-language primer](primer.qmd) explains the findings without statistics.
 :::
 
 ```{r}

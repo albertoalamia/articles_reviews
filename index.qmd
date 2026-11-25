@@ -20,9 +20,10 @@ A review here starts where the journal's peer review stopped. Each one applies t
 measurement, model adequacy, internal consistency of the reported numbers, reporting-guideline
 compliance, and whether the conclusions follow. Every numerical check is reproducible from the
 code in the [repository](https://github.com/albertoalamia/articles_reviews). Authors are
-contacted before a review is posted and their replies are added.
+contacted before a review is posted and their replies are added. The reviews criticise methods
+and numbers, not the people who produced them.
 
-Methods and numbers are criticised, never people.
+**Science anyone can check.**
 
 ::: {#reviews}
 :::
