@@ -483,8 +483,9 @@ and written out in [the next section](#what-this-review-fits).
   reproduces the two event counts of Table 2, given a hazard multiplier per decade of age. Stage 3
   fixes the age effect; stage 4 gives it one of three priors: P1 centred at 1.55 (the value at
   which the model returns the paper's Model 1 for the two stroke outcomes), P2 centred at 2
-  (stroke incidence is commonly reported to double per decade of age [@kellyhayes2010]), P3 uniform
-  on the log scale between 1 and 3.
+  (a review of longitudinal studies gives "the incidence doubling with each decade after the age of
+  45 years" [@kellyhayes2010]; this cohort enrols from age 40, with a median of
+  `{r} f(T1("Age", "overall_med"), 1)`), P3 uniform on the log scale between 1 and 3.
 
 Priors for stage 4: log hazard per interval Normal(log 0.005, 1.5); group coefficients Normal(0, 1),
 with Normal(0, 2) as sensitivity; in E2 male sex Normal(log 1.3, 0.15).

@@ -409,3 +409,18 @@ form and handling of death as a competing event not stated.
   the quotation remains exact.
 - Open: Alberto reads the Italian; Kelly-Hayes wording; right of reply (2026-12-11).
 - Next step: Alberto renders both primers; render-check; commit.
+
+### 2026-11-25 (night) — Kelly-Hayes wording checked
+- Done: Italian primer committed and pushed. The P2 reference read in full (PMC3006180, the
+  author manuscript; not the publisher's typeset pages). Its sentence: "The risk increases with
+  age, the incidence doubling with each decade after the age of 45 years", in the Discussion,
+  stated for both sexes together and without a reference of its own. Bibliographic details in
+  `references.bib` confirmed (J Am Geriatr Soc 2010;58 Suppl 2:S325-S328, PMID 21029062).
+  `review.qmd` now quotes the sentence, with the age threshold, instead of paraphrasing it, and
+  notes that the cohort enrols from 40.
+- Decided (and why): the reference is kept as the stated source of P2: it is a narrative review
+  by a Framingham investigator and the prior was fixed on it; the review says what kind of source
+  it is. A primary source with rates by decade of age would be stronger; not required for the
+  argument, which shows the result under three priors.
+- Open: right of reply (a reply, or 2026-12-11).
+- Next step: Alberto renders `review.qmd`; render-check; commit.
