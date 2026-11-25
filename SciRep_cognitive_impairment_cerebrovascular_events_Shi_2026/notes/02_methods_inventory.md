@@ -146,7 +146,8 @@
   risks 7.8 % vs 1.8 % are never stated as such.
 
 ## H. Verdict (provisional) and summary
-- H1 Verdict: major concerns (provisional, stage 1).
+- H1 Verdict: major concerns (provisional at stage 1; confirmed by Alberto on 2026-11-25, with the
+  screening recommendation described as not supported by the reported counts).
 - H2 Quality table: generated from the registry in `review.qmd`; no override.
 - H3 Estimates table: the three adjusted HRs (left half fixed at stage 1); re-analysis estimands to be defined in `notes/04_analysis_plan.md` (cumulative incidence with death as competing event, age-scale HR, continuous MMSE, added value over age).
 

@@ -387,3 +387,15 @@ form and handling of death as a competing event not stated.
 - Open: verdict wording and registry `verdict`; Kelly-Hayes wording against the full text;
   right of reply (publication on or after 2026-12-11 if no reply).
 - Next step: Alberto reads the primer, renders `primer.qmd` and `review.qmd`; render-check; commit.
+
+### 2026-11-25 (later) — Primer committed; verdict confirmed
+- Done: primer committed and pushed with the new site motto ("Science anyone can check"; footer
+  and front page). Alberto confirmed the verdict: `major concerns`, with the screening
+  recommendation described as not supported by the reported counts. Registry `verdict` filled.
+- Decided (and why): not `conclusions not supported`: no issue is graded critical; the screening
+  claim is contradicted by the paper's own table (confirmed), while "independently forecasted" is
+  shown to depend on an unreported age effect, on reconstructed data (inferred).
+- Open: Kelly-Hayes wording against the full text; right of reply: if no reply by 2026-12-11,
+  fill the Right of reply section, set `draft: false` in `review.qmd` and `primer.qmd`, registry
+  status `published` with the date; if the authors engage, they get the full text first.
+- Next step: nothing until a reply arrives or 2026-12-11.

@@ -1,6 +1,6 @@
 ---
 title: "Baseline cognitive impairment and cerebrovascular events in stroke-free adults: a methodological review"
-description: "Systematic-track review of Shi et al. (Sci Rep 2026). In progress."
+description: "A cohort study reports that a low MMSE score predicts stroke and recommends cognitive screening. Verdict: major concerns; the screening recommendation is not supported by the reported counts."
 date: 2026-11-20
 author: Alberto Alamia
 categories: [psychiatry, cohort, systematic track]
