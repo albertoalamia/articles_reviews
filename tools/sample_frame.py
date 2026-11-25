@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Download a sampling frame from OpenAlex and draw the screening order for a systematic batch.
 
-Implements protocol/selection.md v0.2 (track `systematic`): one journal, one calendar month,
-a set of OpenAlex subfields, `type:article`; the frame is saved and committed, then permuted
+Implements protocol/selection.md v0.3 (track `systematic`): one journal, one calendar month,
+`type:article`, and for multidisciplinary journals a set of OpenAlex subfields (field journals
+are sampled whole: omit --subfields); the journal of each batch is drawn by
+tools/journal_draw.py; the frame is saved and committed, then permuted
 with a recorded seed. Alberto screens the order file by hand, in order, until the first
 eligible paper (see the eligibility screen in selection.md).
 
@@ -13,6 +15,9 @@ Usage (inside nix-shell, from the repo root; no API key, no email is sent):
 
     python3 tools/sample_frame.py --batch B02 --field ethology \
         --from 2026-11-01 --to 2026-11-30 --subfields 1103 1105 2802 --seed 20261220
+
+    python3 tools/sample_frame.py --batch B03 --field psychiatry --issn 1471-244X \
+        --from 2026-12-01 --to 2026-12-31 --seed 20270125          # a field journal, no subfield filter
 
     python3 tools/sample_frame.py --batch B01 ... --draw-only    # redo the permutation from the saved frame
 
@@ -114,7 +119,8 @@ def main():
     ap.add_argument("--issn", default="2045-2322", help="journal ISSN (default Scientific Reports)")
     ap.add_argument("--from", dest="date_from", required=True, help="YYYY-MM-DD, first day of the window")
     ap.add_argument("--to", dest="date_to", required=True, help="YYYY-MM-DD, last day of the window")
-    ap.add_argument("--subfields", nargs="+", required=True, help="OpenAlex subfield ids, e.g. 2738")
+    ap.add_argument("--subfields", nargs="*", default=[],
+                    help="OpenAlex subfield ids, e.g. 2738; omit for a field journal (selection v0.3)")
     ap.add_argument("--seed", type=int, required=True, help="batch date as YYYYMMDD")
     ap.add_argument("--out", default="registry/batches", type=Path)
     ap.add_argument("--draw-only", action="store_true", help="skip the download, permute the saved frame")

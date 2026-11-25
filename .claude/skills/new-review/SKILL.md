@@ -15,15 +15,20 @@ paper, runs scripts, sends mail, commits.
 - **Track `systematic`** (to test the premise): one paper per batch, drawn blind.
   Alberto runs, inside the shell, from the repo root:
   ```
-  python3 tools/sample_frame.py --batch B0x --field <psychiatry|ethology> --from YYYY-MM-01 --to YYYY-MM-DD --subfields <ids> --seed YYYYMMDD
+  python3 tools/journal_draw.py --field <psychiatry|ethology> --seed YYYYMMDD
+  python3 tools/sample_frame.py --batch B0x --field <psychiatry|ethology> --issn <ISSN-L> --from YYYY-MM-01 --to YYYY-MM-DD [--subfields <ids>] --seed YYYYMMDD
   ```
+  The first draws the journal of the batch among those not yet used in the cycle (selection
+  v0.3) and prints the second command; `--subfields` only for a multidisciplinary journal. A
+  paywalled paper is not skipped: the full text is obtained by library, authors or purchase.
   It writes `registry/batches/B0x_frame.csv|json|order.csv`. He screens `B0x_order.csv` in
   order with the eligibility screen of `selection.md`, filling `eligible` and `reason` until the
   first `yes`. Then a row in `registry/batches.csv` (columns: batch, track, field, journal,
   issn, window, subfields, frame_size, seed, date_drawn, n_screened, picked_doi, paper_id,
   notes). The rule is not changed inside a batch. The `selected` share stays under the cap in
   `selection.md`.
-- **Track `selected`** (interest, a colleague's suggestion): record the source in the registry
+- **Track `selected`** (interest, a colleague's suggestion or request; a request is disclosed in
+  the review's opening callout, see `selection.md`): record the source in the registry
   `source` column and in the article `CLAUDE.md`.
 
 ## 2. Folder and registry
