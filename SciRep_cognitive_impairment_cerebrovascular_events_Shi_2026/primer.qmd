@@ -51,6 +51,7 @@ HRA <- "HR at given age and sex"
 This page explains, without statistics, what the [technical review](review.qmd) of Shi and
 colleagues (Scientific Reports, 2026) found. The review is the reference; this page is a guide to it.
 The authors were contacted on 2026-11-20; a reply, if one arrives, is published with the review.
+[Versione italiana](primer_it.qmd).
 :::
 
 ## What the study did

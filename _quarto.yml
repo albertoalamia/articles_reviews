@@ -5,6 +5,7 @@ project:
     - "*.qmd"
     - "*/review.qmd"
     - "*/primer.qmd"
+    - "*/primer_it.qmd"
     - "!_template/"
   resources:
     - CNAME

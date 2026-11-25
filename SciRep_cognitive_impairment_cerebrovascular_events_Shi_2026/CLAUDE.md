@@ -399,3 +399,13 @@ form and handling of death as a competing event not stated.
   fill the Right of reply section, set `draft: false` in `review.qmd` and `primer.qmd`, registry
   status `published` with the date; if the authors engage, they get the full text first.
 - Next step: nothing until a reply arrives or 2026-12-11.
+
+### 2026-11-25 (evening) — Italian primer drafted
+- Done: verdict commit pushed (`471d57a`, render checked). `primer_it.qmd` drafted: a translation
+  of `primer.qmd` with the same chunks and inline numbers (`lang: it`, decimal comma, `draft: true`);
+  the two primers link each other; `_quarto.yml` renders `*/primer_it.qmd`. Scratch run by Claude:
+  no error, no missing value.
+- Decided (and why): the paper's sentences stay quoted in English with an Italian gloss, so that
+  the quotation remains exact.
+- Open: Alberto reads the Italian; Kelly-Hayes wording; right of reply (2026-12-11).
+- Next step: Alberto renders both primers; render-check; commit.

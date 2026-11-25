@@ -1,0 +1,226 @@
+---
+title: "Un punteggio basso a un test di memoria predice l'ictus? Una guida in parole semplici"
+description: "Che cosa ha misurato uno studio di coorte del 2026 su deterioramento cognitivo e ictus, che cosa abbiamo controllato, e che cosa i numeri mostrano e non mostrano. Accompagna la revisione tecnica."
+date: 2026-11-25
+author: Alberto Alamia
+categories: [psychiatry, cohort, primer, italiano]
+lang: it
+draft: true
+comments: false
+execute:
+  echo: false
+---
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+library(readr); library(dplyr)
+art <- here::here("SciRep_cognitive_impairment_cerebrovascular_events_Shi_2026")
+rd  <- function(p) read_csv(file.path(art, p), show_col_types = FALSE, progress = FALSE)
+f   <- function(x, d = 2) formatC(round(x, d), format = "f", digits = d, decimal.mark = ",")   # Italian decimal comma
+# numbers as the paper reports them (data/raw/) and the checks on them (R/02_consistency_checks.R)
+t1  <- rd("data/raw/table1_baseline.csv")
+T1  <- function(v, w) t1[[w]][t1$variable == v]
+age_gap <- T1("Age", "ci_med") - T1("Age", "nci_med")
+t2  <- rd("data/raw/table2_cox.csv")
+T2  <- function(o, g, w) t2[[w]][t2$outcome == o & t2$group == g]
+tx  <- rd("data/raw/text_numbers.csv")
+TX  <- function(q) as.numeric(tx$value[tx$quantity == q])
+cE  <- rd("output/tables/consistency_E_fig2_at_risk.csv")
+cEc <- rd("output/tables/consistency_E_fig2_ci_curves.csv")
+cF  <- rd("output/tables/consistency_F_timeline.csv")
+cG  <- rd("output/tables/consistency_G_screening_epv.csv")
+occ <- rd("output/tables/consistency_H_s1_pvalues_denominators.csv") |> filter(variable == "manual worker")
+dth <- function(g, w) cE[[w]][cE$panel == "C" & cE$group == g]
+# the re-analysis: one row of the stage 3 and stage 4 table (R/03_postprocess.R); stops unless exactly one row matches
+sbs <- rd("output/tables/stage4_side_by_side.csv")
+m_  <- function(col, v) if (is.null(v)) rep(TRUE, length(col)) else (!is.na(col) & col == v)
+R4  <- function(run, quantity, outcome = NULL, group = NULL, time = NULL, period = NULL, rule = NULL) {
+  r <- sbs[sbs$run == run & sbs$quantity == quantity & m_(sbs$outcome, outcome) & m_(sbs$group, group) &
+           m_(sbs$time, time) & m_(sbs$period, period) & m_(sbs$rule, rule), ]
+  stopifnot(nrow(r) == 1)
+  r
+}
+# central estimate (da a a b); k rescales (100 = per 100 people)
+pl  <- function(r, d = 1, k = 1) sprintf("%s (da %s a %s)", f(k * r$stage4_median, d), f(k * r$stage4_lo, d), f(k * r$stage4_hi, d))
+md  <- function(r, d = 1, k = 1) f(k * r$stage4_median, d)
+HRA <- "HR at given age and sex"
+```
+
+::: {.callout-note appearance="simple"}
+Questa pagina spiega, senza statistica, che cosa ha trovato la [revisione tecnica](review.qmd)
+dell'articolo di Shi e colleghi (Scientific Reports, 2026). Il riferimento è la revisione; questa
+pagina ne è una guida. Gli autori sono stati contattati il 20 novembre 2026; la loro risposta, se
+arriva, è pubblicata con la revisione. [English version](primer.qmd).
+:::
+
+## Che cosa ha fatto lo studio
+
+Lo studio segue `{r} f(TX("analysed"), 0)` adulti di una comunità della Cina settentrionale, dai 40 anni
+in su, che non avevano mai avuto un ictus. Ciascuno ha fatto una volta il Mini-Mental State
+Examination (MMSE): un test di 30 punti, da ambulatorio, su memoria, orientamento e attenzione. Le
+`{r} f(TX("n_ci"), 0)` persone (`{r} f(TX("pct_ci"), 0)` %) con un punteggio sotto 24 sono state definite
+con deterioramento cognitivo. Tutti sono poi stati seguiti per circa quattro anni, contando i
+primi ictus e i decessi.
+
+Un primo ictus ischemico (quello causato dalla chiusura di un vaso) si è verificato in
+`{r} T2("ischemic stroke", "CI", "events")` delle `{r} f(TX("n_ci"), 0)` persone con punteggio basso
+(`{r} f(T2("ischemic stroke", "CI", "pct"), 1)` %) e in `{r} T2("ischemic stroke", "NCI", "events")` delle
+`{r} f(TX("n_nci"), 0)` altre (`{r} f(T2("ischemic stroke", "NCI", "pct"), 1)` %). Dopo aver tenuto conto di
+età, sesso, scolarità e alcune misure vascolari, gli autori riferiscono che al punteggio basso
+corrisponde una frequenza di ictus circa due volte e mezzo più alta. Concludono che il
+deterioramento cognitivo "independently forecasted" l'ictus, cioè lo prevede indipendentemente dagli
+altri fattori, e che "cognitive screening could be valuable": uno screening cognitivo potrebbe
+servire a individuare gli adulti a maggior rischio.
+
+## Che cosa abbiamo fatto
+
+Abbiamo letto l'articolo seguendo una lista di controllo fissa e abbiamo ricalcolato ogni numero
+che si può ricalcolare dalle sue tabelle e figure. I dati degli autori non sono pubblici, quindi
+abbiamo ricostruito un insieme di dati coerente con tutto ciò che l'articolo stampa: i conteggi
+degli eventi, il numero di persone ancora seguite ogni anno, l'età dei due gruppi. Su questi dati
+abbiamo ripetuto l'analisi degli autori e poi abbiamo posto due domande che l'articolo non pone.
+Quanta parte della differenza tra i gruppi resta quando si confrontano due persone della stessa
+età? E quante delle persone che poi hanno avuto un ictus sarebbero state individuate dal test?
+Tutto questo è codice in un archivio pubblico, e agli autori sono stati chiesti i dati originali
+per far girare lo stesso codice su quelli.
+
+## Che cosa abbiamo trovato, area per area
+
+La lista di controllo guarda sei aree. La tabella conta i problemi registrati in ciascuna; la
+revisione tecnica li elenca tutti con le prove.
+
+```{r}
+#| label: tbl-quality-plain
+#| tbl-cap: "Problemi trovati, per area. Un problema è 'risolto dai numeri dell'articolo' quando per vederlo non servono ipotesi né altri dati; gli altri dipendono da un'ipotesi dichiarata o dai dati originali. 'Serio' significa che tocca una conclusione dell'articolo."
+source(here::here("lib/quality_table.R"))
+plain_area <- c("Design" = "Come è stato impostato lo studio", "Measurement" = "Che cosa è stato misurato, e come",
+                "Model adequacy" = "Come sono stati analizzati i dati",
+                "Internal consistency" = "Se i numeri sono coerenti tra loro",
+                "Reporting" = "Come è stato riferito", "Inference" = "Che cosa si è concluso")
+plain_rating <- c("conclusions at risk" = "mette a rischio le conclusioni", "major concerns" = "seri",
+                  "minor concerns" = "minori", "no concern found" = "nessuno")
+quality_table("P002") |>
+  transmute(Area = unname(plain_area[Domain]),
+            `Problemi trovati` = Critical + Major + Minor,
+            `Di cui seri` = Critical + Major,
+            `Risolti dai numeri dell'articolo` = Confirmed,
+            `La nostra lettura` = unname(plain_rating[Rating])) |>
+  knitr::kable(format = "pipe", align = "lrrrl")
+```
+
+## Cinque cose che un lettore dovrebbe sapere
+
+**1. Il test non individua la maggior parte delle persone che poi hanno avuto un ictus.** Delle
+`{r} T2("ischemic stroke", "overall", "events")` persone con un primo ictus ischemico,
+`{r} T2("ischemic stroke", "CI", "events")` avevano un punteggio basso. Le altre
+`{r} T2("ischemic stroke", "NCI", "events")` lo avevano normale. Un test di screening si giudica da quanti
+casi futuri individua, e questo ne individua `{r} f(100 * cG$sensitivity[cG$outcome == "ischemic stroke"], 0)` su 100.
+Visto dall'altro lato: di 100 persone con punteggio basso, circa
+`{r} f(100 * cG$ppv[cG$outcome == "ischemic stroke"], 0)` hanno avuto un ictus negli anni successivi.
+L'articolo raccomanda lo screening senza dare nessuno dei due numeri; entrambi si ricavano dalla sua
+tabella.
+
+**2. I due gruppi differiscono per età di `{r} f(age_gap, 1)` anni.** Le persone con punteggio basso
+avevano un'età mediana di `{r} f(T1("Age", "ci_med"), 1)` anni, le altre di `{r} f(T1("Age", "nci_med"), 1)`.
+L'ictus diventa più frequente con ogni anno di età, quindi un gruppo più anziano ha più ictus
+qualunque sia il suo punteggio al test. L'articolo corregge per l'età, ma non dice quanto ha
+trovato che l'età conti, e il risultato corretto dipende proprio da questo. Se ogni dieci anni di
+età moltiplicano la frequenza di ictus per circa una volta e mezzo, il valore corretto
+dell'articolo ne segue. Se la raddoppiano, come spesso si riporta per l'ictus, la maggior parte
+della differenza tra i gruppi è età, e quel che resta potrebbe essere nulla.
+
+**3. Un punteggio basso misura in parte la scolarità.** Delle `{r} f(TX("n_ci"), 0)` persone definite
+con deterioramento, `{r} T1("Education: illiteracy/primary school", "ci_n")`
+(`{r} f(T1("Education: illiteracy/primary school", "ci_pct"), 0)` %) avevano la scuola elementare o nessuna
+istruzione, contro `{r} f(T1("Education: illiteracy/primary school", "nci_pct"), 0)` % delle altre. L'MMSE
+chiede di leggere, scrivere, contare all'indietro e copiare un disegno, e chi ha studiato poco
+ottiene punteggi più bassi senza essere malato. È stata usata una sola soglia per tutti. Alcune
+delle persone etichettate con "deterioramento cognitivo" potrebbero semplicemente aver lasciato
+presto la scuola.
+
+**4. La figura principale e la tabella principale non possono venire dagli stessi dati.** La figura
+dell'articolo mostra, per il gruppo con punteggio basso, una curva che sale in
+`{r} cEc$n_steps[1]` gradini uguali fino a `{r} f(cEc$final_value[1], 0)`, il massimo dell'asse: il disegno
+di `{r} cEc$n_steps[1]` persone che hanno avuto tutte un ictus. La tabella dice che l'hanno avuto
+`{r} T2("ischemic stroke", "CI", "events")` su `{r} f(TX("n_ci"), 0)`. I numeri stampati sotto la stessa
+figura concordano con la tabella, non con la curva. È un'affermazione sui numeri, non sulle
+intenzioni di qualcuno; una figura disegnata da un file diverso darebbe questo risultato.
+
+**5. Le date non tornano.** Il test è stato fatto nel 2012 o nel 2013 e l'osservazione è finita
+l'ultimo giorno del 2015. Restano tra `{r} f(cF$min_follow_up[1], 0)` e `{r} f(cF$max_follow_up[1], 0)`
+anni, eppure l'articolo riferisce che metà dei partecipanti è stata seguita per più di
+`{r} f(TX("median_follow_up"), 1)` anni. Una durata simile corrisponde a un inizio nel 2010 o nel 2011,
+quando la coorte è stata reclutata, cioè due anni prima del test. Inoltre, secondo i conteggi
+dell'articolo sulle persone ancora seguite, almeno `{r} dth("NCI", "min_events_after_y4")` dei
+`{r} dth("NCI", "events_total")` decessi del gruppo più numeroso sono avvenuti dopo il quarto anno, su un
+asse del tempo che finisce poche settimane dopo. Di solito i decessi non arrivano tutti insieme.
+Solo i dati originali possono dire che cosa è successo.
+
+C'è un sesto punto per chi guarda il numero principale dell'articolo. Viene da un'analisi che
+include l'occupazione dei partecipanti, e l'occupazione è stata registrata solo per circa il
+`{r} f(100 * occ$inc_den_lo / TX("analysed"), 0)` % di loro. Il risultato principale si basa quindi su meno
+persone e meno ictus di quanto la tabella lasci intendere, e l'articolo non dice quanti.
+
+## Che cosa mostra la nostra rianalisi
+
+Tutto in questa sezione poggia su dati ricostruiti dalle tabelle e dalle figure dell'articolo, non
+sui dati originali. I numeri tra parentesi sono l'intervallo in cui siamo abbastanza sicuri che si
+trovi il valore vero.
+
+- **Prima di ogni correzione, il gruppo con punteggio basso ha avuto ictus circa quattro volte più
+  spesso.** Il nostro valore è `{r} pl(R4("isch", "HR", "ischemic stroke"))` volte la frequenza
+  dell'altro gruppo. È l'unico risultato che i conteggi dell'articolo sostengono con chiarezza.
+  Confronta un gruppo più anziano con uno più giovane.
+- **In termini assoluti la differenza è di circa `{r} md(R4("isch_early_split", "RD", "ischemic stroke", time = 4.2), 0, 100)` persone su cento.**
+  Su 100 persone con punteggio basso, circa `{r} md(R4("isch_early_split", "F", "ischemic stroke", group = "CI", time = 4.2), 0, 100)` hanno avuto un
+  primo ictus ischemico in quattro anni; su 100 con punteggio normale, circa `{r} md(R4("isch_early_split", "F", "ischemic stroke", group = "NCI", time = 4.2), 0, 100)`. L'articolo
+  parla di "a 2.32 to 2.55 times higher risk", un rischio da 2,32 a 2,55 volte più alto, e così
+  confonde due tipi diversi di numero; i rischi veri e propri sono questi.
+- **A parità di età, la risposta dipende da quanto conta l'età.** Confrontando due persone della
+  stessa età e dello stesso sesso, una con punteggio basso e una senza, la frequenza di ictus della
+  prima è `{r} pl(R4("isch_P1", HRA))` volte quella della seconda se dieci anni di età moltiplicano la
+  frequenza per circa una volta e mezzo; `{r} pl(R4("isch_P2", HRA))` volte se la raddoppiano; e
+  `{r} pl(R4("isch_P3", HRA))` volte se ammettiamo di non saperlo. Il valore 1 significa nessuna
+  differenza. Solo il primo intervallo lo esclude.
+- **La data di nascita fa meglio del test.** Nella nostra popolazione ricostruita la regola "65 anni
+  o più" individua circa `{r} md(R4("isch_P2", "sensitivity", rule = "age >= 65"), 0, 100)` persone su 100 che
+  avranno un ictus; il punteggio basso al test ne individua `{r} f(100 * cG$sensitivity[cG$outcome == "ischemic stroke"], 0)`. Aggiungere il test a età e
+  sesso cambia appena la capacità di ordinare le persone per rischio.
+- **Un punteggio basso vale qualche anno di età, forse nessuno.** Nell'ipotesi del raddoppio, un
+  punteggio basso comporta lo stesso aumento della frequenza di ictus che avere circa
+  `{r} md(R4("isch_P2", "age-equivalent, years"), 0)` anni in più, con un intervallo da
+  `{r} f(R4("isch_P2", "age-equivalent, years")$stage4_lo, 0)` a
+  `{r} f(R4("isch_P2", "age-equivalent, years")$stage4_hi, 0)` anni.
+
+### I numeri a confronto
+
+Gli stessi risultati in tabella. I numeri dell'articolo sono come stampati; i nostri sono la stima
+centrale con il suo intervallo. La revisione tecnica ha la versione completa, con la definizione di
+ogni quantità.
+
+| Che cosa si confronta | Il numero dell'articolo | Il nostro numero | In parole semplici |
+|:----------|:--------|:--------|:--------------|
+| Frequenza di ictus, punteggio basso contro normale, senza correzioni | `{r} f(T2("ischemic stroke", "CI", "hr_unadj"))` volte | `{r} pl(R4("isch", "HR", "ischemic stroke"))` volte | Circa quattro volte più spesso, in un gruppo più anziano di `{r} f(age_gap, 1)` anni |
+| Lo stesso, a parità di età e sesso | `{r} f(T2("ischemic stroke", "CI", "hr_m1"))` volte (da `{r} f(T2("ischemic stroke", "CI", "hr_m1_lo"))` a `{r} f(T2("ischemic stroke", "CI", "hr_m1_hi"))`), corretto anche per la scolarità | `{r} pl(R4("isch_P1", HRA))` se l'età conta moderatamente; `{r} pl(R4("isch_P2", HRA))` se raddoppia la frequenza ogni dieci anni | Tra nessuna differenza e tre o quattro volte; il valore dell'articolo è un punto di questo intervallo |
+| Persone su 100 con un primo ictus ischemico in quattro anni | `{r} f(T2("ischemic stroke", "CI", "pct"), 1)` e `{r} f(T2("ischemic stroke", "NCI", "pct"), 1)` nella tabella; nella figura una curva che arriva al massimo dell'asse | `{r} pl(R4("isch_early_split", "F", "ischemic stroke", group = "CI", time = 4.2), 1, 100)` e `{r} pl(R4("isch_early_split", "F", "ischemic stroke", group = "NCI", time = 4.2), 1, 100)` | Circa sette su cento contro due, vicino alla tabella; la figura è in disaccordo con entrambe |
+| Ictus futuri individuati dal test | non riportato; screening raccomandato | `{r} T2("ischemic stroke", "CI", "events")` su `{r} T2("ischemic stroke", "overall", "events")`, cioè `{r} f(100 * cG$sensitivity[cG$outcome == "ischemic stroke"], 0)` su 100 | Più di quattro ictus futuri su cinque sfuggono |
+| Ictus futuri individuati da "65 anni o più" | non considerato | circa `{r} md(R4("isch_P2", "sensitivity", rule = "age >= 65"), 0, 100)` su 100 | La sola età ne trova più del test |
+
+## Che cosa significa, e che cosa no
+
+Non significa che memoria e ictus non abbiano relazione. Un danno ai piccoli vasi del cervello può
+abbassare il punteggio a un test anni prima di causare un ictus, e gli studi precedenti citati
+dall'articolo hanno trovato un legame modesto (una frequenza di ictus circa
+`{r} f(TX("meta_analysis_hr"))` volte più alta).
+
+Significa che questo articolo, così come è pubblicato, mostra che un gruppo più anziano e meno
+scolarizzato ha avuto più ictus, e non mostra quanto ne resti una volta tenuto conto dell'età in
+modo adeguato. La raccomandazione di fare screening non ha un numero a sostegno, e i numeri della
+sua stessa tabella vanno in senso contrario. La figura principale e le date sono in disaccordo con
+le tabelle, in modi che gli autori dovrebbero poter chiarire con i loro dati.
+
+Gli autori hanno ricevuto una richiesta dei dati e l'avviso di questo commento prima di ogni
+pubblicazione. Se condividono i dati, lo stesso codice gira su quelli e questa pagina viene
+aggiornata.
