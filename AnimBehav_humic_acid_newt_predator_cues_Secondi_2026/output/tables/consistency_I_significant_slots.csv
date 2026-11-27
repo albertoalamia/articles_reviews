@@ -1,0 +1,4 @@
+within,text_distance,text_time_moving,table_S2,table_S3
+clear,"5,7,9",6,"5,7,9","7,9"
+dark,"1,2,3,4,5,6","2,3,4,5,7","1,2,3,4,5,6","1,2,3,4,5,6"
+medium,"3,8",9,"3,8","3,8"

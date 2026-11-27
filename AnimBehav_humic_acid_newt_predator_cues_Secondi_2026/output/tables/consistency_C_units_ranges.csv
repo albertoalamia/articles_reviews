@@ -1,0 +1,4 @@
+variable,unit_in_paper,unit_in_dataset_dictionary,min,median,max,bound,bound_is
+D.tot,mm,cm,0,103.557,4889.07,NA,NA
+DF.mean,mm,cm,0.934569,18.11875,32.7406,39.05124837953327,"arena diagonal, cm (30 x 25 cm)"
+Mov.cum,s,s,2.04,1579.32,1799.96,1800,"sequence length, s"

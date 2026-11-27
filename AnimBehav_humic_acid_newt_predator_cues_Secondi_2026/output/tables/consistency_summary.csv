@@ -1,0 +1,18 @@
+block,check,result,detail
+A,Table 1 P values from the statistic and df,consistent,10 of 10 rows reproduce to the third decimal
+A,"Triple interaction statistic for total distance, text against Table 1",inconsistent,"text 75.113, Table 1 75.209; same df and P"
+B,Number of sequences: 53 x 20 as printed against 1166,inconsistent,"53 x 20 = 1060; 53 x 22 = 1166, the 1166 of the text and of the dataset"
+B,Discarded sequences: 39 (3.3 %) against missing values in the dataset,inconsistent,"missing: distance 38, distance to feeder 36, time moving 110 (9.4 % of 1166)"
+B,"Time moving is missing, not zero, in every sequence with zero distance",confirmed in the dataset,72 sequences with distance 0; time moving missing in 72 of them; smallest non-zero distance 1.50
+B,Untracked sequences by fish treatment,descriptive,Fish: 32 of 572; No fish: 6 of 594
+B,Sequences dropped from the time-moving analysis by fish treatment,descriptive,Fish: 77 of 572; No fish: 33 of 594
+C,Unit of the two distances: paper (mm) against dataset dictionary (cm),inconsistent,"distance to feeder: median 18.1, max 32.7; the arena diagonal is 39.1 cm, so the values are on the cm scale of the arena"
+C,Time spent moving against distance travelled,descriptive,"median time moving 1579 s of 1800; 72 sequences travel less than 10 distance units, 40 of them with more than 600 s 'moving'"
+D,Days between capture and test: 4.89 +/- 1.83 against the dataset,inconsistent,"dataset, per newt: 5.19 +/- 1.80 (range 3-8)"
+D,Test-day labels against test dates,inconsistent,01 giu Day2 (8); 03 giu Day4 (8); 04 giu Day5 (4); 05 giu Day1 (8); 06 giu Day3 (8); 12 giu Day6 (8); 13 giu Day7 (5); 14 giu Day8 (4)
+E,Newts per treatment cell,descriptive,8 to 9 newts in each of the 6 colour x fish cells; the full model has 132 cell-by-slot means (132 fixed-effect parameters) for 53 newts
+F,Pairwise comparisons by time slot,descriptive,"198 slot-wise comparisons per response (66 + 132), 396 for the two responses; 34 reported as significant at P < 0.05; 10 expected at that level per response if no difference existed and tests were unadjusted across slots"
+G,Discussion: reduced over 6 h in dark water and 3 h in clear water,consistent with the count of significant slots,clear: 3 significant slots; dark: 6 significant slots; medium: 2 significant slots
+I,Table S3 (captioned time spent moving) against Table S2 (distance travelled),inconsistent,"195 of 198 estimates agree within 0.02 (162 within 0.005), correlation 0.999, largest difference 0.21; two different responses on two different scales would not agree"
+I,"Fish vs no fish, slots at P < 0.05: Results text against Tables S2 and S3",S2 matches the text for distance; S3 does not match the text for time moving,"clear: text distance 5,7,9, S2 5,7,9; text time moving 6, S3 7,9 | dark: text distance 1,2,3,4,5,6, S2 1,2,3,4,5,6; text time moving 2,3,4,5,7, S3 1,2,3,4,5,6 | medium: text distance 3,8, S2 3,8; text time moving 9, S3 3,8"
+I,Fish vs no fish comparisons: are the printed P values adjusted?,not adjusted,"Table S2: the 66 printed P values equal the unadjusted normal P of the printed z (largest difference 0.004, rounding of z); 11 below 0.05 as printed; 2 after a Holm adjustment over the 66 slot-wise tests, from the rounded z (dark 1700, dark 1900)"

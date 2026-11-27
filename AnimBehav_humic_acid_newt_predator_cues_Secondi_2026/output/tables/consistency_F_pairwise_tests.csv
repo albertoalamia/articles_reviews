@@ -1,0 +1,5 @@
+family,tests,expected_false_positives_at_0.05
+"fish vs no fish, within colour and slot",66,3.3000000000000003
+"colour pairs, within fish treatment and slot",132,6.6000000000000005
+"both families, one response",198,9.9
+"both families, two responses",396,19.8

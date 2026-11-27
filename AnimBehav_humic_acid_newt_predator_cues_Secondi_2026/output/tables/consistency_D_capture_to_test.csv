@@ -1,0 +1,4 @@
+source,mean,sd,min,max
+paper,4.89,1.83,3,8
+"dataset, one value per newt",5.188679245283019,1.7980395710284118,3,8
+"dataset, one value per sequence",5.188679245283019,1.781760369344401,NA,NA

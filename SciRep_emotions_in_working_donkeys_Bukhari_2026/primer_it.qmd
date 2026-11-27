@@ -1,0 +1,224 @@
+---
+title: "Si può leggere l'umore di un asino da come sbatte le palpebre? Una guida in parole semplici"
+description: "Che cosa ha misurato uno studio del 2026 sulle emozioni degli asini, che cosa abbiamo controllato, e che cosa i numeri mostrano e non mostrano. Accompagna la revisione tecnica."
+date: 2026-11-25
+author: Alberto Alamia
+categories: [ethology, primer, italiano]
+lang: it
+draft: true
+format:
+  html: default
+  pdf:
+    pdf-engine: xelatex
+    documentclass: article
+    papersize: a4
+    geometry: margin=22mm
+    fontsize: 10pt
+    mainfont: texgyrepagella
+    mainfontoptions:
+      - Extension=.otf
+      - UprightFont=*-regular
+      - BoldFont=*-bold
+      - ItalicFont=*-italic
+      - BoldItalicFont=*-bolditalic
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    colorlinks: true
+    echo: false
+comments: false
+execute:
+  echo: false
+---
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+library(dplyr)
+library(readr)
+art <- here::here("SciRep_emotions_in_working_donkeys_Bukhari_2026")
+rd  <- function(p) read_csv(file.path(art, p), show_col_types = FALSE, progress = FALSE)
+f   <- function(x, d = 1) formatC(round(x, d), format = "f", digits = d, decimal.mark = ",")   # Italian decimal comma
+it  <- function(s) gsub(".", ",", gsub(", ", "; ", s, fixed = TRUE), fixed = TRUE)                  # "1.2 [0.5, 2.0]" -> "1,2 [0,5; 2,0]"
+t2c <- rd("data/raw/table2_conditions.csv")
+t2d <- rd("data/raw/table2_changes.csv")
+cc  <- rd("output/tables/consistency_contrasts.csv")
+sbs <- rd("output/tables/stage4_side_by_side.csv")
+e5  <- rd("output/tables/stage4_e5_auc.csv")
+T2  <- function(o, cnd) t2c$mean[t2c$outcome == o & t2c$condition == cnd]
+D2  <- function(o, t) t2d$delta_mean[t2d$outcome == o & t2d$treatment == t]
+S   <- function(o, term, scale) it(sbs$stage4)[sbs$outcome == o & sbs$term == term & sbs$scale == scale & sbs$rho_dd == 0][1]
+A   <- function(contrast, quantity, w = "estimate") e5[[w]][e5$model == "sbr_nb2" & e5$rho_dd == 0 & e5$contrast == contrast & e5$quantity == quantity][1]
+```
+
+::: {.callout-note appearance="simple"}
+Questa pagina spiega, senza statistica, che cosa ha trovato la [revisione tecnica](review.qmd)
+dell'articolo di Bukhari e colleghi (Scientific Reports, 2026). Il riferimento è la revisione;
+questa pagina ne è una guida. Gli autori sono stati contattati e la loro risposta sarà pubblicata
+con la revisione. [English version](primer.qmd).
+:::
+
+## Che cosa ha fatto lo studio
+
+Trentaquattro asini da lavoro, in Pakistan, sono stati filmati e misurati per tre minuti in tre
+situazioni: fermi e tranquilli come al solito (il controllo), mentre mangiavano erba medica fresca
+da un secchio (pensata come esperienza piacevole) e mentre sentivano una tosatrice accesa tenuta
+vicino a un orecchio (pensata come esperienza spiacevole). Ogni volta sono state misurate tre cose:
+quante volte l'asino sbatteva le palpebre, la temperatura dell'angolo interno dell'occhio, e una
+misura del ritmo cardiaco chiamata RMSSD, che tende a essere più alta quando un animale è rilassato.
+
+Gli autori riferiscono che gli ammiccamenti sono aumentati con l'erba medica e diminuiti con la
+tosatrice, che la temperatura dell'occhio è aumentata in entrambe le situazioni, e che anche
+l'RMSSD è aumentato in entrambe. Concludono che le tre misure "may act as indicators of emotions in
+donkeys", cioè possono fare da indicatori delle emozioni negli asini, e suggeriscono che la
+frequenza degli ammiccamenti possa essere un semplice test sul campo di come si sente un asino.
+
+## Che cosa abbiamo fatto
+
+Abbiamo letto l'articolo seguendo una lista di controllo fissa, ricalcolato ogni numero che si può
+ricalcolare dalle tabelle, recuperato i singoli punti che l'articolo disegna in due delle sue
+figure, e ricostruito insiemi di dati completi coerenti con tutto ciò che l'articolo riporta. Su
+questi abbiamo rifatto l'analisi degli autori e poi una meglio specificata, due volte, con due
+approcci statistici diversi, per vedere che cosa il disegno dello studio può davvero dirci. Tutto
+questo è codice in un archivio pubblico, e agli autori sono stati chiesti i dati originali per far
+girare lo stesso codice su quelli.
+
+## Che cosa abbiamo trovato, area per area
+
+La lista di controllo guarda sei aree. La tabella conta i problemi registrati in ciascuna; la
+revisione tecnica li elenca tutti con le prove.
+
+```{r}
+#| label: tbl-quality-plain
+#| tbl-cap: "Problemi trovati, per area. Un problema è 'risolto dai numeri dell'articolo' quando per vederlo non servono ipotesi né altri dati; gli altri dipendono da un'ipotesi dichiarata o dai dati originali. 'Serio' significa che tocca una conclusione dell'articolo."
+source(here::here("lib/quality_table.R"))
+plain_area <- c("Design" = "Come è stato impostato lo studio", "Measurement" = "Che cosa è stato misurato, e come",
+                "Model adequacy" = "Come sono stati analizzati i dati",
+                "Internal consistency" = "Se i numeri sono coerenti tra loro",
+                "Reporting" = "Come è stato riferito", "Inference" = "Che cosa si è concluso")
+plain_rating <- c("conclusions at risk" = "mette a rischio le conclusioni", "major concerns" = "seri",
+                  "minor concerns" = "minori", "no concern found" = "nessuno")
+quality_table("P001") |>
+  transmute(Area = unname(plain_area[Domain]),
+            `Problemi trovati` = Critical + Major + Minor,
+            `Di cui seri` = Critical + Major,
+            `Risolti dai numeri dell'articolo` = Confirmed,
+            `La nostra lettura` = unname(plain_rating[Rating])) |>
+  knitr::kable(format = "pipe", align = "lrrrl")
+```
+
+## Cinque cose che un lettore dovrebbe sapere
+
+**1. I "cambiamenti" riportati nell'articolo hanno perso il segno.** Gli autori definiscono ogni
+cambiamento come il valore di controllo meno il valore del trattamento. Con questa definizione,
+quando una misura *sale* con un trattamento il cambiamento è negativo. Cinque dei sei cambiamenti
+dell'articolo dovrebbero essere negativi; tutti e sei sono stampati come numeri positivi.
+Risalendo dalle figure, i cambiamenti stampati sono le ampiezze dei cambiamenti di ciascun asino,
+senza la direzione. Conta, perché la seconda analisi dell'articolo, che mette in relazione la
+misura cardiaca con gli ammiccamenti e con la temperatura dell'occhio, è stata fatta su questi
+numeri privi di direzione, e il testo parla poi della "direction of change" che diventa "more
+obvious".
+
+**2. Due dei valori p non possono venire dai dati così come sono riportati.** Un valore p è un modo
+di dire quanto sarebbe sorprendente un risultato se non stesse succedendo nulla. Per gli
+ammiccamenti con l'erba medica l'articolo riporta p = `{r} f(cc$p_reported[cc$outcome == "SBR" & cc$treatment == "positive"], 3)`. Dalle medie e dalle
+dispersioni dello stesso articolo, l'effetto è così grande (ogni asino ha ammiccato di più, di circa
+`{r} f(D2("SBR", "positive"), 0)` ammiccamenti al minuto su una media di `{r} f(T2("SBR", "control"), 0)`)
+che il valore p dovrebbe essere più piccolo di molti ordini di grandezza. Lo stesso vale per la
+misura cardiaca con l'erba medica. Qualunque cosa abbia prodotto quei due numeri, non è stata
+l'analisi descritta nell'articolo applicata ai dati che l'articolo riassume. È un'affermazione sui
+numeri, non sulle intenzioni di qualcuno; un errore di trascrizione o un passaggio di analisi non
+descritto darebbero entrambi questo risultato.
+
+**3. La discussione dice che un risultato è andato nel verso opposto a quello dei risultati.** La
+Discussione afferma che la misura cardiaca è *scesa* con la tosatrice, "consistent with previous
+studies in horses". La Tabella 2 dello stesso articolo mostra che è *salita*, da
+`{r} f(T2("RMSSD", "control"), 0)` a `{r} f(T2("RMSSD", "negative"), 0)` millisecondi, e la sua figura segna
+quell'aumento come altamente significativo. È la frase su cui poggia l'idea che il ritmo cardiaco
+distingua il piacevole dallo spiacevole.
+
+**4. Il confronto di cui le conclusioni hanno bisogno non è mai stato fatto.** Per dire che una
+misura distingue un'esperienza piacevole da una spiacevole, bisogna confrontare le due esperienze
+tra loro. L'articolo confronta ciascuna soltanto con lo stare fermi e tranquilli. Per la temperatura
+dell'occhio e per la misura cardiaca, entrambe le esperienze hanno spinto la misura nello stesso
+verso; cambia di quanto. Un termometro che sale sia quando l'asino è contento sia quando è
+spaventato non può dire quale dei due.
+
+**5. Niente mostra che gli asini abbiano provato ciò che dicono le etichette.** Si assume che l'erba
+medica sia piacevole e la tosatrice spiacevole, ed è ragionevole, ma nulla di indipendente è stato
+registrato per verificarlo: nessun comportamento oltre agli ammiccamenti, nessuna frequenza
+cardiaca, nessun segno di avvicinamento o di evitamento. E la situazione "piacevole" è mangiare.
+Masticare, con la testa abbassata in un secchio, cambia il respiro, il ritmo cardiaco e ciò che una
+telecamera puntata sull'occhio riesce a vedere, qualunque cosa l'asino ne pensi. Lo studio non può
+separare "mangia" da "è contento".
+
+## Che cosa mostra la nostra rianalisi
+
+Con un modello adatto al tipo di dati (conteggi per gli ammiccamenti, una quantità positiva e
+asimmetrica per la misura cardiaca, i tre valori di ogni asino analizzati insieme), stimato in due
+modi con lo stesso risultato:
+
+- **Gli ammiccamenti separano davvero le tre situazioni**, e in versi opposti: circa
+  `{r} S("SBR", "positive - control", "difference (blinks/min)")` ammiccamenti al minuto in più con
+  l'erba medica e `{r} S("SBR", "negative - control", "difference (blinks/min)")` in meno con la
+  tosatrice (i numeri tra parentesi quadre sono l'intervallo in cui siamo abbastanza sicuri che si
+  trovi il valore vero). È l'unica affermazione dell'articolo che i dati sostengono con chiarezza.
+- **La temperatura dell'occhio e la misura cardiaca sono salite in entrambe le situazioni.** I due
+  trattamenti differiscono tra loro nella quantità (temperatura dell'occhio
+  `{r} S("ET", "positive - negative", "difference (degC)")` °C, misura cardiaca
+  `{r} S("RMSSD", "positive - negative", "difference (ms, marginal)")` millisecondi, erba medica meno
+  tosatrice), ma una differenza in quanto si sposta una lancetta nello stesso verso non è una
+  direzione.
+- **Il legame tra ammiccamenti e ritmo cardiaco ha segni opposti nelle due situazioni.** Con l'erba
+  medica, gli asini che ammiccavano di più avevano anche una misura cardiaca più alta; con la
+  tosatrice, erano quelli che ammiccavano di meno. L'unica pendenza combinata dell'articolo fa la
+  media di queste due relazioni opposte.
+- **Come test sul campo per un singolo asino**, un solo conteggio degli ammiccamenti distingue
+  l'erba medica dalla tosatrice quasi perfettamente (la probabilità che una lettura "erba medica"
+  presa a caso superi una lettura "tosatrice" presa a caso è
+  `{r} f(A("positive vs negative", "AUC, different donkeys"), 2)`, dove 0,5 sarebbe il lancio di una
+  moneta), e l'erba medica dalla calma bene (`{r} f(A("positive vs control", "AUC, different donkeys"), 2)`).
+  Distingue la tosatrice dalla calma solo moderatamente
+  (`{r} f(A("control vs negative", "AUC, different donkeys"), 2)`): alla soglia migliore, di
+  `{r} f(A("control vs negative", "best threshold (reading >= t called A)"), 0)` ammiccamenti al minuto,
+  circa una lettura su quattro è classificata male, in un senso o nell'altro. La parte
+  dell'affermazione più utile in pratica, riconoscere un asino stressato da come ammicca, è quella
+  debole.
+
+Tutto in questa sezione poggia su dati ricostruiti dalle figure e dalle tabelle dell'articolo, non
+sui dati originali, e la revisione lo dice a ogni passo. Se gli autori condividono i dati, lo stesso
+codice gira su quelli e questa pagina viene aggiornata.
+
+### I numeri a confronto
+
+Gli stessi risultati in tabella. I numeri dell'articolo sono come stampati; i nostri sono la stima
+centrale con, tra parentesi quadre, l'intervallo in cui siamo abbastanza sicuri che si trovi il
+valore vero (la revisione tecnica ha la versione completa, con la definizione di ogni quantità).
+
+| Che cosa si confronta | Il numero dell'articolo | Il nostro numero | In parole semplici |
+|:----------|:--------|:--------|:--------------|
+| Ammiccamenti, erba medica contro quiete | `{r} f(D2("SBR", "positive"), 1)` al minuto (stampato senza direzione) | `{r} S("SBR", "positive - control", "difference (blinks/min)")` al minuto | Un asino che mangia erba medica ammicca circa il doppio (`{r} S("SBR", "positive / control", "ratio")` volte) |
+| Ammiccamenti, tosatrice contro quiete | `{r} f(D2("SBR", "negative"), 1)` al minuto (stampato come numero positivo) | `{r} S("SBR", "negative - control", "difference (blinks/min)")` al minuto | Circa un terzo di ammiccamenti in meno |
+| Ammiccamenti, erba medica contro tosatrice | non confrontati | `{r} S("SBR", "positive - negative", "difference (blinks/min)")` al minuto | Tre volte più ammiccamenti con l'erba medica che con la tosatrice; l'unico risultato chiaro in versi opposti |
+| Temperatura dell'occhio, erba medica contro quiete | `{r} f(D2("ET", "positive"), 2)` °C | `{r} S("ET", "positive - control", "difference (degC)")` °C | L'occhio si scalda |
+| Temperatura dell'occhio, tosatrice contro quiete | `{r} f(D2("ET", "negative"), 2)` °C | `{r} S("ET", "negative - control", "difference (degC)")` °C | L'occhio si scalda anche qui, un po' di più |
+| Temperatura dell'occhio, erba medica contro tosatrice | non confrontate; descritte come differenza di emozione | `{r} S("ET", "positive - negative", "difference (degC)")` °C | Una differenza di quantità, non di verso |
+| Misura cardiaca, erba medica contro quiete | `{r} f(D2("RMSSD", "positive"), 1)` ms | `{r} S("RMSSD", "positive - control", "difference (ms, marginal)")` ms | Sale |
+| Misura cardiaca, tosatrice contro quiete | `{r} f(D2("RMSSD", "negative"), 1)` ms (la discussione la chiama una diminuzione) | `{r} S("RMSSD", "negative - control", "difference (ms, marginal)")` ms | Sale anche qui, non scende |
+| Misura cardiaca, erba medica contro tosatrice | non confrontate | `{r} S("RMSSD", "positive - negative", "difference (ms, marginal)")` ms | Entrambe in aumento; di più con l'erba medica |
+| Ammiccamenti e misura cardiaca insieme | una sola pendenza per entrambe le situazioni | erba medica `{r} S("E4 (x = dSBR)", "b (slope), positive", "response")`, tosatrice `{r} S("E4 (x = dSBR)", "b (slope), negative", "response")` ms per ammiccamento | Il legame va in un verso con l'erba medica e nel verso opposto con la tosatrice; farne la media li nasconde entrambi |
+| Un conteggio di ammiccamenti come test sul campo | proposto, non verificato | erba medica contro tosatrice `{r} f(A("positive vs negative", "AUC, different donkeys"), 2)`, erba medica contro quiete `{r} f(A("positive vs control", "AUC, different donkeys"), 2)`, quiete contro tosatrice `{r} f(A("control vs negative", "AUC, different donkeys"), 2)` | Probabilità che una lettura di uno stato superi una lettura dell'altro (0,5 è il lancio di una moneta): quasi certa per erba medica contro tosatrice, tre volte su quattro per quiete contro tosatrice |
+
+## Che cosa significa, e che cosa no
+
+Non significa che gli asini non provassero nulla, né che la frequenza degli ammiccamenti sia
+inutile. Significa che questo articolo, così come è pubblicato, non sostiene le sue affermazioni
+sulla temperatura dell'occhio e sul ritmo cardiaco come indicatori di emozione piacevole o
+spiacevole, e che i suoi numeri non sono coerenti tra loro, in modi che gli autori dovrebbero poter
+chiarire con i loro dati. Il risultato di gruppo sugli ammiccamenti regge, sia sui numeri riportati
+sia nella nostra rianalisi.
+
+Gli autori hanno ricevuto una richiesta dei dati e l'avviso di questo commento prima che fosse
+scritto, ricevono il testo completo prima della pubblicazione, e la loro risposta comparirà accanto
+ad esso.

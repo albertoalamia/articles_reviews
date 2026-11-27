@@ -1,0 +1,36 @@
+response,comparison,within,slot,source,note
+distance,fish vs no fish,clear,1900,text and Fig 2a,
+distance,fish vs no fish,clear,2100,text and Fig 2a,
+distance,fish vs no fish,clear,2300,text and Fig 2a,
+distance,fish vs no fish,medium,1700,text and Fig 2a,
+distance,fish vs no fish,medium,2200,text and Fig 2a,
+distance,fish vs no fish,dark,1500,text and Fig 2a,"text: ""between 1500 and 2000 hours""; six asterisks in the panel"
+distance,fish vs no fish,dark,1600,text and Fig 2a,
+distance,fish vs no fish,dark,1700,text and Fig 2a,
+distance,fish vs no fish,dark,1800,text and Fig 2a,
+distance,fish vs no fish,dark,1900,text and Fig 2a,
+distance,fish vs no fish,dark,2000,text and Fig 2a,
+distance,dark vs clear and medium,fish,1500,text and Fig 2b,
+distance,dark vs clear and medium,fish,1700,text and Fig 2b,
+distance,dark vs clear and medium,fish,1800,text and Fig 2b,
+distance,dark vs medium,fish,1900,text and Fig 2b,
+distance,dark vs clear,fish,0500,text and Fig 2b,
+distance,dark vs medium,no fish,2200,text and Fig 2b,asterisk position in the panel read as 2200-2300
+distance,dark vs medium,no fish,0300,text and Fig 2b,
+distance,dark vs clear,no fish,0300,text,
+distance,dark vs medium,no fish,0800,text and Fig 2b,
+time moving,fish vs no fish,clear,2000,text,
+time moving,fish vs no fish,medium,2300,text,
+time moving,fish vs no fish,dark,1600,text,"text: ""from 1600 to 1900 hours and 2100 hours"""
+time moving,fish vs no fish,dark,1700,text,
+time moving,fish vs no fish,dark,1800,text,
+time moving,fish vs no fish,dark,1900,text,
+time moving,fish vs no fish,dark,2100,text,
+time moving,dark vs clear,fish,1800,text,
+time moving,dark vs clear,fish,0500,text,
+time moving,dark vs clear,fish,0600,text,
+time moving,dark vs medium,fish,1900,text,
+time moving,dark vs medium,fish,2300,text,"""the only instance where activity was reduced in the lighter medium"""
+time moving,dark vs medium,fish,0500,text,
+time moving,dark vs medium,fish,0600,text,
+time moving,dark vs medium,no fish,NA,text,"""only ... one significant difference between the dark and the medium treatment""; slot not given"

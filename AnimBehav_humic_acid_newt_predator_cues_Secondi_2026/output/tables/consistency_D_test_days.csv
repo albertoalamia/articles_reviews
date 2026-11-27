@@ -1,0 +1,9 @@
+Date_Test,Trial_Day,newts,rank_by_date,label_number,label_follows_date,gap_days_from_previous
+2024-06-01,Day2,8,1,2,FALSE,NA
+2024-06-03,Day4,8,2,4,FALSE,2
+2024-06-04,Day5,4,3,5,FALSE,1
+2024-06-05,Day1,8,4,1,FALSE,1
+2024-06-06,Day3,8,5,3,FALSE,1
+2024-06-12,Day6,8,6,6,TRUE,6
+2024-06-13,Day7,5,7,7,TRUE,1
+2024-06-14,Day8,4,8,8,TRUE,1

@@ -39,6 +39,12 @@ result
 client_secret*.json
 token.json
 
+# Copyrighted papers (closed access): PDF, supplements and extracted full text stay local.
+# Open-access papers (CC licences) are committed; list here each folder whose paper is not.
+/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/paper/*
+!/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/paper/.gitkeep
+!/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/paper/README.md
+
 # Raw .eml copies of received mail (optional, tools/fetch_email.py --save-eml): headers and addresses stay local
 **/correspondence/eml/
 __pycache__/

@@ -1,0 +1,5 @@
+table,family,tests,max_abs_diff_printed_vs_unadjusted,significant_printed,significant_unadjusted,significant_holm_over_slots
+S2,colour pairs,132,0.28091266440788937,12,16,3
+S2,fish vs no fish,66,0.003956627433803983,11,11,2
+S3,colour pairs,132,0.2807452952462635,12,17,3
+S3,fish vs no fish,66,6.781088423277737e-4,10,10,2

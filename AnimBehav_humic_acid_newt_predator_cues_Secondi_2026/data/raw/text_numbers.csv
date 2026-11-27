@@ -1,0 +1,44 @@
+quantity,value,unit,section,line,note
+n_newts,53,individuals,Methods; Results,128; 230,"""53 male smooth newts in five wetlands"""
+n_sites,5,wetlands,Methods,128,
+capture_first,2024-05-28,date,Methods,129,"""between 28 May 2024 and 11 June 2024"""
+capture_last,2024-06-11,date,Methods,130,
+site_colour_min,107,mg Pt/litre,Methods,131,range of the capture sites
+site_colour_max,170,mg Pt/litre,Methods,131,
+housing_per_tank,4,individuals,Methods,135,same pond per tank
+capture_to_test_mean,4.89,days,Methods,144,"""4.89 ± 1.83 days (range 3–8 days)"""
+capture_to_test_sd,1.83,days,Methods,144,
+capture_to_test_min,3,days,Methods,144,
+capture_to_test_max,8,days,Methods,144,
+colour_clear,25,mg Pt/litre,Methods,161,
+colour_medium,165,mg Pt/litre,Methods,161,
+colour_dark,275,mg Pt/litre,Methods,161,
+ph_min,7.86,pH,Methods,177,
+ph_max,8.08,pH,Methods,177,
+fish_cue_volume,100,ml,Methods,181,from a 70-litre tank housing one perch for 2-3 days
+arena_length,30,cm,Methods,204,"""30 × 25 × 40 cm, length × width × depth"""
+arena_width,25,cm,Methods,204,
+arena_water_depth,15,cm,Methods,204,
+food_deprivation,48,hours,Methods,205,
+acclimation_before_test,75,minutes,Methods,212,placed 75 min before testing; cue water poured 15 min after placement; 30 min recovery
+max_per_session,8,individuals,Methods,159,
+first_trapping_newts,36,individuals,Methods,162,"""12 newts from 3 sites"""; eight tested on four consecutive days and four on the fifth
+test_start,15:30,time,Methods,167,
+sequence_length,30,minutes,Methods,167,
+sequence_interval,60,minutes,Methods,168,
+recording_span,22,hours,Methods,168,last sequence ends at 13:00
+night_start,23:30,time,Methods,216,
+night_end,04:30,time,Methods,216,
+light_day_table,9.1,lx,Methods,220,
+light_night_table,0.017,lx,Methods,220,
+frame_rate,25,frames/s,Methods,172,
+n_sequences_total,1166,sequences,Results,230,"""1166 video sequences (53 individuals × 20 sequences)"""
+n_sequences_per_newt_text,20,sequences,Results,230,
+n_sequences_discarded,39,sequences,Results,231,
+pct_sequences_discarded,3.3,percent,Results,231,
+r2_marginal_distance,0.200,R2,Results,237,
+r2_conditional_distance,0.403,R2,Results,237,
+r2_marginal_time_moving,0.459,R2,Results,p5,
+r2_conditional_time_moving,0.852,R2,Results,p5,
+hours_reduced_dark,6,hours,Discussion,p6,"""distance travelled was reduced over 6 h in dark water and over 3 h in clear water"""
+hours_reduced_clear,3,hours,Discussion,p6,

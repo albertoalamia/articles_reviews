@@ -1,0 +1,11 @@
+source,response,term,lrt,df,p_reported,bold,p_recomputed,p_rounded,consistent
+Table 1,Total distance,Colour:Fish:Trial,75.209,42,0.001,TRUE,0.001242223251698021,0.001,TRUE
+Table 1,Distance to the feeder,Colour,2.582,2,0.275,FALSE,0.27499564989618713,0.275,TRUE
+Table 1,Distance to the feeder,Fish,0.585,1,0.444,FALSE,0.44435912712385317,0.444,TRUE
+Table 1,Distance to the feeder,Trial,27.505,21,0.155,FALSE,0.15475629769425395,0.155,TRUE
+Table 1,Distance to the feeder,Colour:Trial,57.582,42,0.055,FALSE,0.05513176589485712,0.055,TRUE
+Table 1,Distance to the feeder,Fish:Trial,23.767,21,0.304,FALSE,0.3044844954324585,0.304,TRUE
+Table 1,Distance to the feeder,Colour:Fish,1.953,2,0.377,FALSE,0.37662698916211873,0.377,TRUE
+Table 1,Distance to the feeder,Colour:Fish:Trial,45.379,42,0.333,FALSE,0.3330237180617664,0.333,TRUE
+Table 1,Time spent moving,Colour:Fish:Trial,62.697,42,0.021,TRUE,0.020802913181631955,0.021,TRUE
+Results text,Total distance,Colour:Fish:Trial,75.113,42,0.001,NA,0.0012719654083597934,0.001,TRUE

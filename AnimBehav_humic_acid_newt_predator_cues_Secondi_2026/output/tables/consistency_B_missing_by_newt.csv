@@ -1,0 +1,27 @@
+NewtID,colour,fish,not_tracked,zero_distance
+s11,Clear,Fish,11,2
+n6,Dark,No fish,0,9
+n16,Dark,Fish,7,1
+r11,Dark,Fish,3,5
+n17,Medium,No fish,5,2
+r15,Medium,Fish,0,7
+r17,Dark,Fish,3,3
+s3,Medium,Fish,5,0
+n14,Clear,Fish,0,4
+n15,Dark,No fish,1,3
+n3,Medium,Fish,1,3
+n5,Dark,Fish,2,2
+r13,Clear,Fish,0,4
+r18,Dark,No fish,0,4
+s5,Dark,Fish,0,4
+n8,Dark,No fish,0,3
+r5,Clear,Fish,0,3
+n1,Clear,Fish,0,2
+n7,Dark,Fish,0,2
+r1,Dark,Fish,0,2
+r16,Medium,No fish,0,2
+n10,Clear,No fish,0,1
+r10,Medium,No fish,0,1
+r2,Dark,No fish,0,1
+s8,Medium,No fish,0,1
+s9,Dark,Fish,0,1

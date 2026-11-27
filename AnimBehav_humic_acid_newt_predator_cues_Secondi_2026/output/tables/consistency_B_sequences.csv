@@ -1,0 +1,15 @@
+quantity,value
+newts,53
+slots per newt (dataset),22
+rows (dataset),1166
+sequences as reported,1166
+sequences per newt as reported,20
+newts x reported sequences per newt,1060
+discarded as reported,39
+percent discarded as reported,3.3
+distance missing (dataset),38
+distance to feeder missing (dataset),36
+time moving missing (dataset),110
+all three missing (dataset),36
+distance equal to zero (dataset),72
+time moving missing where distance is zero,72

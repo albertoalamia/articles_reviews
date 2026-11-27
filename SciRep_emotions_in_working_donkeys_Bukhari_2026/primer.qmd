@@ -52,6 +52,7 @@ A   <- function(contrast, quantity, w = "estimate") e5[[w]][e5$model == "sbr_nb2
 This page explains, without statistics, what the [technical review](review.qmd) of Bukhari and
 colleagues (Scientific Reports, 2026) found. The review is the reference; this page is a guide to it.
 The authors have been contacted and their reply will be published with the review.
+[Versione italiana](primer_it.qmd).
 :::
 
 ## What the study did

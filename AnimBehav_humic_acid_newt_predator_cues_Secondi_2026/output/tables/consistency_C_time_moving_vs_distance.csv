@@ -1,0 +1,8 @@
+quantity,value
+sequences with both variables,1056
+"Spearman correlation, distance and time moving",0.603422298450895
+share of sequences with time moving above 90 % of the sequence,0.4734848484848485
+"median time moving, s",1579.32
+sequences with distance below 10 units,72
+of which time moving above 600 s,40
+"median time moving in those, s",795.26

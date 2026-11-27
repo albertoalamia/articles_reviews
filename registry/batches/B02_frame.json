@@ -1,0 +1,15 @@
+{
+  "batch": "B02",
+  "track": "systematic",
+  "field": "ethology",
+  "issn": "0003-3472",
+  "from": "2026-10-01",
+  "to": "2026-10-31",
+  "subfields": [],
+  "filter": "primary_location.source.issn:0003-3472,from_publication_date:2026-10-01,to_publication_date:2026-10-31,type:article",
+  "api": "https://api.openalex.org/works",
+  "retrieved": "2026-11-25T17:20+01:00",
+  "count_reported": 11,
+  "rows_saved": 11,
+  "rows_without_doi_dropped": 0
+}
