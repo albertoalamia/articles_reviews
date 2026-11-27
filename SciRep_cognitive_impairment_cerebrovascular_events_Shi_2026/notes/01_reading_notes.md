@@ -156,7 +156,7 @@ line numbers refer to `paper/Shi_2026_fulltext.txt`. Quotes are verbatim.
   on reasonable request". No code statement. No reporting guideline (STROBE) mentioned. Competing
   interests none. Consent: "all participants" (l. 112–113) and "All participants or their legal
   proxies" (l. 380).
-- Corresponding author Xinsheng Han, hansong2022@126.com, Kaifeng Central Hospital (ll. 487–491).
+- Corresponding author Xinsheng Han, (address printed in the article), Kaifeng Central Hospital (ll. 487–491).
   Analysis by Z.S. with X.T. and A.W. (ll. 360–362).
 
 ## References noticed (titles as printed)

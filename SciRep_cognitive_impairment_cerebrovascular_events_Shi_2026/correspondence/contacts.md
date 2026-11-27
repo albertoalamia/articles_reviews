@@ -3,9 +3,12 @@
 Source: "Authors and Affiliations" of the Article in Press (`paper/Shi_2026_fulltext.txt`,
 lines 482–501). One corresponding author is listed, with a personal-domain address.
 
+Addresses are kept out of the repository (it is public): they are in `addresses.local` in this
+folder, gitignored; letters refer to them by key (`To: {key}`), and filed replies show `[address]`.
+
 | Role | Name | Email | Affiliation |
 |------|------|-------|-------------|
-| Corresponding, last author | Xinsheng Han | hansong2022@126.com | Dept. of Neurology, Kaifeng Central Hospital; Henan Provincial Engineering Research Center for Precision Medicine in Neuromuscular Disorders |
+| Corresponding, last author | Xinsheng Han | key `han` in `addresses.local` | Dept. of Neurology, Kaifeng Central Hospital; Henan Provincial Engineering Research Center for Precision Medicine in Neuromuscular Disorders |
 | First author (analysis, draft) | Zhaobo Shi | not given | Kaifeng Central Hospital; Henan Provincial Engineering Research Center |
 | Co-author (statistics) | Anxin Wang | not given | National Clinical Research Center for Neurological Diseases, Beijing Tiantan Hospital; Beijing Neurosurgical Institute |
 | Co-author (statistics) | Xue Tian | not given | as Wang |

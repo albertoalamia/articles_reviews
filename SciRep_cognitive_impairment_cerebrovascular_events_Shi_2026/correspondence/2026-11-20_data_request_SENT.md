@@ -1,6 +1,6 @@
 # Data request — DRAFT (not sent)
 
-To: hansong2022@126.com
+To: {han}
 Subject: Data request — Shi et al. 2026, Sci Rep, "Baseline cognitive impairment predicts cerebrovascular events in stroke-free Chinese adults"
 
 ---

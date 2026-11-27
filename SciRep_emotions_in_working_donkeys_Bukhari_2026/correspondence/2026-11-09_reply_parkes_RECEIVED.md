@@ -1,13 +1,13 @@
 # Reply from PARKES, Rebecca S V — RECEIVED
 
-From: "PARKES, Rebecca S V" <rebecca.sv.parkes@hkjc.org.hk>
-To: "alberto.alamia@telepsichiatria.org" <alberto.alamia@telepsichiatria.org>, "habukhari2-c@my.cityu.edu.hk" <habukhari2-c@my.cityu.edu.hk>
-Cc: "alan.mcelligott@cityu.edu.hk" <alan.mcelligott@cityu.edu.hk>, "pmortens@cityu.edu.hk" <pmortens@cityu.edu.hk>
+From: "PARKES, Rebecca S V" <[address]>
+To: "[address]" <[address]>, "[address]" <[address]>
+Cc: "[address]" <[address]>, "[address]" <[address]>
 Date: 2026-11-09T08:15+01:00  (header: Mon, 9 Nov 2026 07:15:26 +0000)
 Subject: RE: [EXTN] Data request — Bukhari et al. 2026, Sci Rep, "Heart rate variability, eye temperature, and spontaneous blink rates as measures of emotions in working donkeys"
 Gmail-id: 1a1bf29873a8a6ab
 Thread-id: 1a1748c4d68d2a1a
-In-reply-to: <CAHbAqCS-621aUFwaoRQpKO-WOUd5AgOD8MjEYe0_-vGijs_C=Q@mail.gmail.com>
+In-reply-to: <CAHbAqCS-621aUFwaoRQpKO-WOUd5AgOD8MjEYe0_-vGijs_C=[address]>
 Attachments: none
 
 ---
@@ -36,10 +36,10 @@ If you receive this email outside of your normal working hours, please do not fe
 
 
 -----Original Message-----
-From: alberto.alamia@telepsichiatria.org <alberto.alamia@telepsichiatria.org>
+From: [address] <[address]>
 Sent: Monday, 26 October, 2026 03:32
-To: habukhari2-c@my.cityu.edu.hk; PARKES, Rebecca S V <rebecca.sv.parkes@hkjc.org.hk>
-Cc: alan.mcelligott@cityu.edu.hk; pmortens@cityu.edu.hk
+To: [address]; PARKES, Rebecca S V <[address]>
+Cc: [address]; [address]
 Subject: [EXTN] Data request — Bukhari et al. 2026, Sci Rep, "Heart rate variability, eye temperature, and spontaneous blink rates as measures of emotions in working donkeys"
 
 CAUTION! EXTERNAL EMAIL: DO NOT click links or open attachments unless you trust the email source. Click ‘Report Suspicious Email’ if in doubt.
@@ -78,7 +78,7 @@ With kind regards,
 Alberto Alamia, MD
 Psychiatrist, biostatistician
 telepsichiatria.org
-alberto.alamia@telepsichiatria.org
+[address]
 The Hong Kong Jockey Club
 RIDING HIGH TOGETHER FOR A BETTER FUTURE
 www.hkjc.com <http://www.hkjc.com>
@@ -94,4 +94,4 @@ please notify the sender and delete the message immediately.
 
 ---
 
-Retrieved: 2026-11-09T19:37+01:00 by tools/fetch_email.py, verbatim, not edited.
+Retrieved: 2026-11-09T19:37+01:00 by tools/fetch_email.py, verbatim, not edited; email addresses replaced by [address] on 2026-11-28.

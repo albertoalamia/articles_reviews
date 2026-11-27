@@ -1,7 +1,7 @@
 # Full text of the commentary, for the authors' reply — DRAFT (not sent)
 
-To: rebecca.sv.parkes@hkjc.org.hk, habukhari2-c@my.cityu.edu.hk
-Cc: alan.mcelligott@cityu.edu.hk, pmortens@cityu.edu.hk
+To: {parkes}, {bukhari}
+Cc: {mcelligott}, {steagall}
 Subject: Re: Data request — Bukhari et al. 2026, Sci Rep — full text of the commentary, for your reply
 
 ---

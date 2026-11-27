@@ -1,7 +1,7 @@
 # Data request — DRAFT (not sent)
 
-To: habukhari2-c@my.cityu.edu.hk, rebecca.sv.parkes@hkjc.org.hk
-Cc: alan.mcelligott@cityu.edu.hk, pmortens@cityu.edu.hk  (optional)
+To: {bukhari}, {parkes}
+Cc: {mcelligott}, {steagall}  (optional)
 Subject: Data request — Bukhari et al. 2026, Sci Rep, "Heart rate variability, eye temperature, and spontaneous blink rates as measures of emotions in working donkeys"
 
 ---

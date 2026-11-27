@@ -3,12 +3,15 @@
 Source: title page of the accepted manuscript (`paper/Bukhari_2026_fulltext.txt`, lines 60–85).
 Two corresponding authors are marked with an asterisk.
 
+Addresses are kept out of the repository (it is public): they are in `addresses.local` in this
+folder, gitignored; letters refer to them by key (`To: {key}`), and filed replies show `[address]`.
+
 | Role | Name | Email | Affiliation |
 |------|------|-------|-------------|
-| Corresponding, first author | Syed S. U. H. Bukhari | habukhari2-c@my.cityu.edu.hk | Dept. of Veterinary Clinical Sciences; Centre for Animal Health and Welfare, City University of Hong Kong |
-| Corresponding, last author | Rebecca S. V. Parkes | rebecca.sv.parkes@hkjc.org.hk | City University of Hong Kong; Hong Kong Jockey Club |
-| Co-author | Alan G. McElligott | alan.mcelligott@cityu.edu.hk | Dept. of Infectious Diseases and Public Health, City University of Hong Kong |
-| Co-author | Paulo V. Steagall | pmortens@cityu.edu.hk | Dept. of Veterinary Clinical Sciences, City University of Hong Kong |
+| Corresponding, first author | Syed S. U. H. Bukhari | key `bukhari` in `addresses.local` | Dept. of Veterinary Clinical Sciences; Centre for Animal Health and Welfare, City University of Hong Kong |
+| Corresponding, last author | Rebecca S. V. Parkes | key `parkes` in `addresses.local` | City University of Hong Kong; Hong Kong Jockey Club |
+| Co-author | Alan G. McElligott | key `mcelligott` in `addresses.local` | Dept. of Infectious Diseases and Public Health, City University of Hong Kong |
+| Co-author | Paulo V. Steagall | key `steagall` in `addresses.local` | Dept. of Veterinary Clinical Sciences, City University of Hong Kong |
 
 Notes
 - Bukhari's address is a CityU student account (`my.` subdomain, `-c` suffix) and may lapse; Parkes's

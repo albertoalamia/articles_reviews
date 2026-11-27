@@ -1,12 +1,12 @@
 # Reply from Prof. Alan McElligott — RECEIVED
 
-From: "Prof. Alan McElligott" <alan.mcelligott@cityu.edu.hk>
-To: "alberto.alamia@telepsichiatria.org" <alberto.alamia@telepsichiatria.org>
+From: "Prof. Alan McElligott" <[address]>
+To: "[address]" <[address]>
 Date: 2026-10-26T02:51+01:00  (header: Mon, 26 Oct 2026 01:51:27 +0000)
 Subject: Re: Data request — Bukhari et al. 2026, Sci Rep, "Heart rate variability, eye temperature, and spontaneous blink rates as measures of emotions in working donkeys"
 Gmail-id: 1a175e7d9dedd88a
 Thread-id: 1a1748c4d68d2a1a
-In-reply-to: <CAHbAqCS-621aUFwaoRQpKO-WOUd5AgOD8MjEYe0_-vGijs_C=Q@mail.gmail.com>
+In-reply-to: <CAHbAqCS-621aUFwaoRQpKO-WOUd5AgOD8MjEYe0_-vGijs_C=[address]>
 Attachments: none
 
 ---
@@ -30,7 +30,7 @@ To Yuen Building, 31 To Yuen Street
 City University of Hong Kong
 Kowloon, Hong Kong SAR
 Tel +852 3442 6937
-alan.mcelligott@cityu.edu.hk
+[address]
 Bluesky:  amcell.bsky.social
 https://www.cityu.edu.hk/ph/staff/dr-alan-mcelligott
 Feral water buffalo research: <https://www.hkbuffaloresearch.org/> https://www.hkbuffaloresearch.org/
@@ -38,10 +38,10 @@ Feral cattle research: https://hkcattleresearch.org/
 
 "The digital world can be exhausting. I sent this email at a time that works for me, but please only respond at a time that works for you."
 ________________________________
-From: alberto.alamia@telepsichiatria.org <alberto.alamia@telepsichiatria.org>
+From: [address] <[address]>
 Sent: 26 October 2026 3:31 AM
-To: BUKHARI Syed Saad Ul Hassan <habukhari2-c@my.cityu.edu.hk>; PARKES, Rebecca S V <rebecca.sv.parkes@hkjc.org.hk>
-Cc: Prof. Alan McElligott <alan.mcelligott@cityu.edu.hk>; Paulo Mortensen Steagall <pmortens@cityu.edu.hk>
+To: BUKHARI Syed Saad Ul Hassan <[address]>; PARKES, Rebecca S V <[address]>
+Cc: Prof. Alan McElligott <[address]>; Paulo Mortensen Steagall <[address]>
 Subject: Data request — Bukhari et al. 2026, Sci Rep, "Heart rate variability, eye temperature, and spontaneous blink rates as measures of emotions in working donkeys"
 
 Dear Dr Bukhari, Dear Dr Parkes,
@@ -130,7 +130,7 @@ With kind regards,
 Alberto Alamia, MD
 Psychiatrist, biostatistician
 telepsichiatria.org
-alberto.alamia@telepsichiatria.org
+[address]
 
 
 
@@ -138,4 +138,4 @@ Disclaimer: This email (including any attachments) is for the use of the intende
 
 ---
 
-Retrieved: 2026-10-31T22:50+01:00 by tools/fetch_email.py, verbatim, not edited.
+Retrieved: 2026-10-31T22:50+01:00 by tools/fetch_email.py, verbatim, not edited; email addresses replaced by [address] on 2026-11-28.

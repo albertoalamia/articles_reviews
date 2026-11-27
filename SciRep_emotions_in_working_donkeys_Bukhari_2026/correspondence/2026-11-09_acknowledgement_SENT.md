@@ -1,7 +1,7 @@
 # Acknowledgement of Parkes's reply — SENT
 
-To: rebecca.sv.parkes@hkjc.org.hk, habukhari2-c@my.cityu.edu.hk
-Cc: alan.mcelligott@cityu.edu.hk, pmortens@cityu.edu.hk
+To: {parkes}, {bukhari}
+Cc: {mcelligott}, {steagall}
 Subject: Re: Data request — Bukhari et al. 2026, Sci Rep, "Heart rate variability, eye temperature, and spontaneous blink rates as measures of emotions in working donkeys"
 
 ---
