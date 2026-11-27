@@ -19,6 +19,19 @@ Draft format (what correspondence/*.md already look like):
 
 Header lines are matched case-insensitively. The "(optional)" word in a Cc line is dropped.
 
+Addresses stay out of the repository (it is public). In To/Cc/Bcc write a key in braces,
+
+    To: {secondi}
+    Cc: {blanchet}, {loehr}
+
+and keep the addresses in `addresses.local`, next to the draft (gitignored), one per line:
+
+    secondi = name@example.org        # text after a '#' is a comment
+
+The keys are replaced when the message is built; the file on disk keeps the keys, also after
+it is renamed to *_SENT.md. A literal address in a header still works. An unknown key stops
+the script before anything is sent.
+
 The body is reflowed before sending: lines that were hard-wrapped by the editor (a line of 60+
 characters followed by more text) are joined into one paragraph line, so the recipient's client
 wraps them. Blank-line paragraph breaks, list items, quotes, URLs on their own line, fenced
@@ -49,6 +62,34 @@ SCOPES = ["https://www.googleapis.com/auth/gmail.compose"]
 HEADER_KEYS = ("to", "cc", "bcc", "subject")
 
 
+ADDRESS_BOOK = "addresses.local"
+
+
+def load_addresses(draft: Path) -> dict:
+    """Read `addresses.local` beside the draft: lines `key = address`, '#' starts a comment."""
+    book = {}
+    f = draft.parent / ADDRESS_BOOK
+    if f.is_file():
+        for line in f.read_text(encoding="utf-8").splitlines():
+            line = line.split("#", 1)[0].strip()
+            if "=" in line:
+                key, val = line.split("=", 1)
+                if key.strip() and val.strip():
+                    book[key.strip().lower()] = val.strip()
+    return book
+
+
+def resolve_addresses(value: str, book: dict, path: Path) -> str:
+    """Replace every {key} in a To/Cc/Bcc value with its address; stop on an unknown key."""
+    def rep(m):
+        key = m.group(1).strip().lower()
+        if key not in book:
+            sys.exit(f"{path}: address key '{{{m.group(1)}}}' not found in "
+                     f"{path.parent / ADDRESS_BOOK} (lines of the form: key = address)")
+        return book[key]
+    return re.sub(r"\{([^{}]+)\}", rep, value)
+
+
 def parse_draft(path: Path):
     text = path.read_text(encoding="utf-8")
     parts = re.split(r"^\s*---\s*$", text, flags=re.M)
@@ -67,6 +108,12 @@ def parse_draft(path: Path):
         sys.exit(f"{path}: missing header line(s): {', '.join(missing)}")
     if not body.strip():
         sys.exit(f"{path}: empty body")
+    book = load_addresses(path)
+    for key in ("to", "cc", "bcc"):
+        if headers.get(key):
+            headers[key] = resolve_addresses(headers[key], book, path)
+            if "@" not in headers[key]:
+                sys.exit(f"{path}: no address in the {key.capitalize()} line after resolving keys")
     return headers, body
 
 

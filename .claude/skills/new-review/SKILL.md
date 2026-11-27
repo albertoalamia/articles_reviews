@@ -69,7 +69,11 @@ severity, evidence, location, note; quote the paper in `note`, notes with commas
 
 ## 5. Contacts and the data request
 
-1. `<dir>/correspondence/contacts.md`: a table of authors (role, name, email, affiliation) from
+1. Addresses never go into committed files (the repo is public). Write them in
+   `<dir>/correspondence/addresses.local` (gitignored; lines `key = address`) and refer to them
+   by key: `To: {key}` in drafts, "key `x` in `addresses.local`" in the contacts table.
+   The fetch script replaces addresses in filed replies with `[address]`.
+   `<dir>/correspondence/contacts.md`: a table of authors (role, name, address key, affiliation) from
    the paper's author block, with the line of the full text it came from; the data availability
    statement verbatim; a "Log" table (Date, Direction, To/From, Channel, Summary, File) as the
    **last table in the file** (`tools/fetch_email.py` appends to it).

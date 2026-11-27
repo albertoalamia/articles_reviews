@@ -1,6 +1,6 @@
 # Notice of commentary and questions — DRAFT (not sent)
 
-To: jean.secondi@univ-angers.fr
+To: {secondi}
 Subject: Secondi et al. 2026, Animal Behaviour, humic acid and newt response to predator cues: questions on the data and notice of a methodological commentary
 
 ---
@@ -86,8 +86,11 @@ telepsichiatria.org
 ---
 
 ## Notes for sending
+- Addresses are not written in this file (public repository): `{secondi}` is resolved by
+  the send script from `correspondence/addresses.local`, which is gitignored.
 - Only Secondi's address is printed in the article. The co-authors' addresses (Helsinki, Turku)
-  can be added in Cc if Alberto wants them informed directly; they are on the institutional pages.
+  can be added in Cc if Alberto wants them informed directly (they are on the institutional
+  pages): add a line per person to `addresses.local` and a `Cc: {key}, {key}` line here.
 - The signature has no email line: add it by hand if wanted (the Shi letter had one).
 - Alberto has not read the paper yet: read `notes/03_concerns.md` and this letter before sending,
   and run `R/02_consistency_checks.R` first so that the seven numbered points rest on his own run

@@ -2,10 +2,12 @@
 
 Source: author block and footnote of the article (`paper/Secondi_2026_fulltext.txt`, lines
 16–30 and 78–79). One corresponding author is listed, with an institutional address.
+Addresses are kept out of the repository (it is public): they are in `addresses.local` in this
+folder, gitignored, and drafts refer to them by key (`To: {secondi}`).
 
 | Role | Name | Email | Affiliation |
 |------|------|-------|-------------|
-| Corresponding, first author (formal analysis, draft) | Jean Secondi | jean.secondi@univ-angers.fr | Université d'Angers; Université Claude Bernard Lyon 1, LEHNA UMR 5023, CNRS, ENTPE, Villeurbanne |
+| Corresponding, first author (formal analysis, draft) | Jean Secondi | key `secondi` in `addresses.local` | Université d'Angers; Université Claude Bernard Lyon 1, LEHNA UMR 5023, CNRS, ENTPE, Villeurbanne |
 | Co-author (methodology, investigation, data curation) | Clarisse C. Blanchet | not given | Lammi Biological Station and Dept. of Forest Sciences, University of Helsinki |
 | Co-author (investigation, data curation) | O. Xu | not given | Lammi Biological Station, University of Helsinki |
 | Co-author (software, resources) | John Loehr | not given | Lammi Biological Station, University of Helsinki |

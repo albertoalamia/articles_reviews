@@ -30,6 +30,11 @@ What it writes, for every message not already filed (dedup by Gmail id):
 
 Messages sent from SENDER are skipped unless --include-own is given.
 
+The repository is public, so email addresses are not written to the committed files: in the
+header block, in the body (signatures, quoted headers) and in the logs every address is
+replaced by "[address]"; names are kept. --keep-addresses writes them as received. The raw
+message with its addresses can be kept locally with --save-eml (gitignored).
+
 Credentials: the same OAuth client secret and token as tools/send_email.py, in
 $GMAIL_CREDENTIALS_DIR (default ~/.config/gmail_sender/). Reading needs the gmail.readonly
 scope, which the compose-only token does not have: the first run opens the browser once for
@@ -159,6 +164,14 @@ def sender_slug(from_header: str) -> str:
     return slug(addr.split("@")[0])
 
 
+EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(?:\.[A-Za-z0-9\-]+)+")
+
+
+def redact(s: str) -> str:
+    """Replace every email address (and message id of the same shape) with a placeholder."""
+    return EMAIL_RE.sub("[address]", s)
+
+
 def already_filed(corr_dir: Path, gmail_id: str) -> bool:
     for f in corr_dir.glob("*.md"):
         if f"Gmail-id: {gmail_id}" in f.read_text(encoding="utf-8", errors="replace"):
@@ -175,7 +188,8 @@ def unique_path(p: Path) -> Path:
     return q
 
 
-def file_message(service, msg, article: Path, dry_run: bool, save_eml: bool, no_log: bool):
+def file_message(service, msg, article: Path, dry_run: bool, save_eml: bool, no_log: bool,
+                 keep_addresses: bool = False):
     corr_dir = article / "correspondence"
     att_dir = article / "data" / "raw" / "authors"
     gmail_id, thread_id = msg["id"], msg["threadId"]
@@ -218,8 +232,14 @@ def file_message(service, msg, article: Path, dry_run: bool, save_eml: bool, no_
         lines.append("Attachments: none")
     lines += ["", "---", "", body.rstrip("\n"), "", "---", "",
               f"Retrieved: {dt.datetime.now().astimezone().isoformat(timespec='minutes')} "
-              f"by tools/fetch_email.py, verbatim, not edited."]
+              f"by tools/fetch_email.py, verbatim, not edited"
+              + ("." if keep_addresses else "; email addresses replaced by [address].")]
     md_text = "\n".join(lines) + "\n"
+    who = name or addr
+    if not keep_addresses:
+        md_text = redact(md_text)
+        who = name or "[address]"
+        addr = name or "[address]"          # RECEIVED_LOG.md: the sender's name, not the address
 
     print(f"\n=== {day}  {frm}\n    subject: {subj}\n    -> {md_path.relative_to(article.parent)}")
     for t, orig, b in stored:
@@ -258,7 +278,7 @@ def file_message(service, msg, article: Path, dry_run: bool, save_eml: bool, no_
         if contacts.exists():
             summary = re.sub(r"\s+", " ", subj)[:80]
             att_note = f"; {len(stored)} attachment(s) in data/raw/authors/" if stored else ""
-            row = (f"| {day} | received | {name or addr} | email | "
+            row = (f"| {day} | received | {who} | email | "
                    f"{summary}{att_note} | {md_path.name} |\n")
             text = contacts.read_text(encoding="utf-8")
             contacts.write_text(text.rstrip("\n") + "\n" + row, encoding="utf-8")
@@ -282,6 +302,7 @@ def main():
     ap.add_argument("--include-own", action="store_true", help=f"also file messages sent from {SENDER}")
     ap.add_argument("--save-eml", action="store_true", help="also keep the raw .eml under correspondence/eml/ (gitignored)")
     ap.add_argument("--no-log", action="store_true", help="do not append a row to correspondence/contacts.md")
+    ap.add_argument("--keep-addresses", action="store_true", help="write email addresses as received (default: replaced by [address])")
     ap.add_argument("--dry-run", action="store_true", help="list what would be filed and exit")
     ap.add_argument("--max", type=int, default=50, help="max messages for --query (default 50)")
     args = ap.parse_args()
@@ -315,7 +336,7 @@ def main():
         if already_filed(article / "correspondence", mid):
             skipped_dup += 1
             continue
-        file_message(service, msg, article, args.dry_run, args.save_eml, args.no_log)
+        file_message(service, msg, article, args.dry_run, args.save_eml, args.no_log, args.keep_addresses)
         filed += 1
 
     print(f"\n{len(ids)} message(s) in scope: {filed} filed, {skipped_own} own skipped, {skipped_dup} already filed.")

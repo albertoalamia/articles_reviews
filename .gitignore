@@ -45,6 +45,9 @@ token.json
 !/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/paper/.gitkeep
 !/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/paper/README.md
 
+# Authors' email addresses: one local file per article, read by the send script
+**/correspondence/addresses.local
+
 # Raw .eml copies of received mail (optional, tools/fetch_email.py --save-eml): headers and addresses stay local
 **/correspondence/eml/
 __pycache__/
