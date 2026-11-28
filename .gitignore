@@ -44,6 +44,9 @@ token.json
 /AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/paper/*
 !/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/paper/.gitkeep
 !/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/paper/README.md
+/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/notes/01_reading_notes.md
+# complete copies of supplementary Tables S2-S3 (protocol/copyright.md §3): the parser R/00_parse_supplement.R is committed
+/AnimBehav_humic_acid_newt_predator_cues_Secondi_2026/data/raw/tableS2_S3_contrasts.csv
 
 # Authors' email addresses: one local file per article, read by the send script
 **/correspondence/addresses.local
