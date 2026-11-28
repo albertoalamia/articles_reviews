@@ -42,8 +42,9 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 
 <!-- Update at the end of every session. Newest entry first. -->
 
-### YYYY-MM-DD
+### YYYY-MM-DD — <unit of work, as in the opening line>
 - Done:
 - Decided (and why):
 - Open questions:
-- Next step:
+- Next step: <files, the command Alberto runs, the check that defines done>
+- Open the next conversation with: `P00x stage N: ...`

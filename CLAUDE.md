@@ -21,14 +21,15 @@ suggested by colleagues, to comment).
 
 ```
 CLAUDE.md, README.md          this file; index of reviews + Alberto's setup checklist
+CONVERSATIONS.md              how work is cut into conversations: units, opening lines, closing checklist
 shell.nix, .envrc             pinned nix environment (R, Quarto, CmdStan, TeX). Always work inside it.
 _quarto.yml, index.qmd, about.qmd, protocol.qmd, theme.scss, CNAME   the website
-protocol/                     checklist.md (versioned), taxonomy.csv (issue codes), selection.md
+protocol/                     checklist.md (versioned), taxonomy.csv (issue codes), selection.md, proposals.md (parked changes)
 registry/                     papers.csv (one row per paper), issues.csv (one row per issue)
 lib/consistency.R, lib/quality_table.R, lib/model_dag.R   shared R functions: recomputation checks; quality and programme tables from the registry; DAGs of the Bayesian models; tests in lib/tests/
 _template/                    skeleton copied for each new article
 tools/                        send_email.py, fetch_email.py (Gmail, credentials outside the repo), sample_frame.py (systematic batches), digitise_scatter.py, stan_to_dag.R (model-graph skeleton from a Stan file)
-.claude/skills/               procedures Claude follows on request: dagify (H4e model graphs), render-check (after quarto render, before a commit), new-review (stage 1 scaffolding, data request)
+.claude/skills/               procedures Claude follows: session-start, session-end (every conversation), dagify (H4e model graphs), render-check (after quarto render, before a commit), new-review (stage 1 scaffolding, data request)
 <Journal>_<shorttitle>_<FirstAuthor>_<Year>/   one folder per paper (see _template/CLAUDE.md)
 .github/workflows/publish.yml renders the site from _freeze/ and deploys to GitHub Pages
 ```
@@ -70,7 +71,26 @@ model so that their results can be compared in a single table.
    right-of-reply rule below is satisfied. Freeze, render, check, then set `draft: false` and push.
 
 End every session by updating the article `CLAUDE.md` STATUS (done / decided and why / open
-questions / next step) and `registry/papers.csv` status.
+questions / next step / open the next conversation with) and `registry/papers.csv` status.
+
+## Conversations
+
+`CONVERSATIONS.md` is the rule book; the skills `session-start` and `session-end` are its
+checklists. In short: one conversation is one unit of work on one subject (a stage or a step of
+one paper, one correspondence event, or one repository change) and ends in one commit; the first
+message names the unit (`P00x stage N: ...`, `P00x correspondence: ...`, `repo: ...`); a need
+that belongs to another unit is parked in `protocol/proposals.md` or the STATUS, never handled in
+passing; the STATUS "Next step" is the handover, and numbers come from files, never from the chat.
+
+## Statistical references
+
+When a modelling choice needs a reference, these come first, with section numbers:
+Levy & Mislevy, *Bayesian Psychometric Modeling* (CRC, 2016): Bayesian inference, model graphs
+(the convention of `lib/model_dag.R`), measurement models, model checking. Fitzmaurice, Laird &
+Ware, *Applied Longitudinal Analysis*, 2nd ed. (Wiley, 2011): longitudinal and spline models,
+covariance patterns, GLMMs. Also at hand: Gelman et al., *Bayesian Data Analysis*, 3rd ed.; the
+Stan Reference Manual 2.36. Alberto owns the books; his copies are outside the repository, and
+only short passages are ever quoted.
 
 ## Rules
 

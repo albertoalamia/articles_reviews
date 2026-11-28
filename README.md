@@ -36,6 +36,8 @@ Steps only you can do, in order. Everything else is in the repo.
 
 ## Local work
 
+One conversation per unit of work, named in its first message: see `CONVERSATIONS.md`.
+
 ```bash
 nix-shell            # or: direnv allow
 quarto preview
