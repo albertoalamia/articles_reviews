@@ -5,6 +5,8 @@
 # the authors' models is stage 2.
 # Inputs : data/raw/table1_lrt.csv, data/raw/text_numbers.csv, data/raw/pairwise_significant.csv
 #          (transcribed from the PDF, see data/raw/EXTRACTION_LOG.md);
+#          data/raw/tableS2_S3_contrasts.csv (block I; local, not in the repository: a complete
+#          copy of two supplementary tables, written by R/00_parse_supplement.R from the supplement);
 #          data/raw/authors/2026-11-25_zenodo_18200380_dataset.xlsx (unchanged, see RECEIVED_LOG.md)
 # Outputs: output/tables/consistency_*.csv (one file per block) and
 #          output/tables/consistency_summary.csv (one row per check, read by review.qmd)
@@ -186,8 +188,12 @@ H_first <- d |> mutate(block = cut(Trial, c(0, 6, 22), labels = c("slots 1-6 (15
 out(H_first, "consistency_H_first_six_slots.csv")
 
 # ---- I. Supplementary Tables S2 and S3 (contrasts by slot) --------------------------------------
-# S2 is captioned as distance travelled, S3 as proportion of time spent moving. Transcribed from
-# the supplement (data/raw/tableS2_S3_contrasts.csv, see EXTRACTION_LOG.md); z and P as printed.
+# S2 is captioned as distance travelled, S3 as proportion of time spent moving. Parsed from the
+# supplement by R/00_parse_supplement.R (data/raw/tableS2_S3_contrasts.csv, local; see
+# EXTRACTION_LOG.md); z and P as printed. The outputs of this block are summaries and the rows
+# the concerns cite, never the two tables whole (protocol/copyright.md §3).
+if (!file.exists(file.path(art, "data/raw/tableS2_S3_contrasts.csv")))
+  stop("data/raw/tableS2_S3_contrasts.csv is missing: run R/00_parse_supplement.R first (it needs the supplement in paper/)")
 ct <- rd("data/raw/tableS2_S3_contrasts.csv") |> mutate(family = ifelse(contrast == "fish - no fish", "fish vs no fish", "colour pairs"))
 stopifnot(nrow(ct) == 2 * F_tests$tests[3], all(count(ct, table, family)$n == rep(c(F_tests$tests[2], F_tests$tests[1]), 2)))
 I_pair <- ct |> select(table, family, contrast, within, hour, slot, estimate, se, p_value) |>
@@ -195,7 +201,8 @@ I_pair <- ct |> select(table, family, contrast, within, hour, slot, estimate, se
   mutate(abs_diff_estimate = abs(estimate_S2 - estimate_S3))
 I_same <- tibble(rows = nrow(I_pair), within_0.005 = sum(I_pair$abs_diff_estimate <= 0.0051), within_0.02 = sum(I_pair$abs_diff_estimate <= 0.02),
                  max_abs_diff = max(I_pair$abs_diff_estimate), correlation = cor(I_pair$estimate_S2, I_pair$estimate_S3))
-out(I_pair |> arrange(desc(abs_diff_estimate)), "consistency_I_S2_against_S3.csv")
+out(I_same, "consistency_I_S2_against_S3_summary.csv")
+out(I_pair |> filter(abs_diff_estimate > 0.02) |> arrange(desc(abs_diff_estimate)), "consistency_I_S2_against_S3_differing.csv")
 add("I", "Table S3 (captioned time spent moving) against Table S2 (distance travelled)", "inconsistent",
     sprintf("%d of %d estimates agree within 0.02 (%d within 0.005), correlation %.3f, largest difference %.2f; two different responses on two different scales would not agree",
             I_same$within_0.02, I_same$rows, I_same$within_0.005, I_same$correlation, I_same$max_abs_diff))
@@ -220,6 +227,11 @@ I_adj <- ct |> mutate(p_unadjusted = 2 * pnorm(-abs(z_ratio))) |> group_by(table
             significant_printed = sum(p_value < 0.05), significant_unadjusted = sum(p_unadjusted < 0.05),
             significant_holm_over_slots = sum(p.adjust(p_unadjusted, "holm") < 0.05), .groups = "drop")
 out(I_adj, "consistency_I_adjustment.csv")
+# the fish against no fish contrasts printed below 0.05 in either table, with their Holm-adjusted P
+I_sig <- ct |> filter(family == "fish vs no fish") |> group_by(table) |>
+  mutate(p_unadjusted = 2 * pnorm(-abs(z_ratio)), p_holm_over_slots = p.adjust(p_unadjusted, "holm")) |> ungroup() |>
+  filter(p_value < 0.05) |> select(table, within, hour, slot, estimate, se, z_ratio, p_value, p_holm_over_slots) |> arrange(table, within, slot)
+out(I_sig, "consistency_I_significant_contrasts.csv")
 i2 <- I_adj |> filter(table == "S2", family == "fish vs no fish")
 holm_which <- ct |> filter(table == "S2", family == "fish vs no fish") |> mutate(p = p.adjust(2 * pnorm(-abs(z_ratio)), "holm")) |> filter(p < 0.05)
 add("I", "Fish vs no fish comparisons: are the printed P values adjusted?", "not adjusted",

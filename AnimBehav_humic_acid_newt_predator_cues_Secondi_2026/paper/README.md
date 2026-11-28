@@ -14,5 +14,9 @@ of every file, the version (article in press or version of record) and the acces
 
 **Copyright.** Animal Behaviour is a subscription journal and this article is not open access.
 The PDF, the supplements and the extracted full text are for private study and stay on this
-machine: `.gitignore` excludes everything in this folder except this file and `.gitkeep`. The
-repository is public. Notes and the review quote only the sentences they discuss.
+machine: `.gitignore` excludes everything in this folder except this file and `.gitkeep`, and
+also `notes/01_reading_notes.md` and `data/raw/tableS2_S3_contrasts.csv` (the complete copy of
+Tables S2–S3 that `R/00_parse_supplement.R` writes). The repository is public. Notes and the
+review quote only the sentences they discuss, and
+`python3 tools/quote_audit.py AnimBehav_humic_acid_newt_predator_cues_Secondi_2026` passes
+before every commit (`protocol/copyright.md`, class B; the dataset on Zenodo is class C, CC BY 4.0).

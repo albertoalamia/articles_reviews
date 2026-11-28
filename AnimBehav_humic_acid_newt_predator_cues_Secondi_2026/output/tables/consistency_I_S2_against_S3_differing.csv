@@ -1,0 +1,4 @@
+family,contrast,within,hour,slot,estimate_S2,estimate_S3,se_S2,se_S3,p_value_S2,p_value_S3,abs_diff_estimate
+colour pairs,clear - dark,fish,19,5,0.655,0.865,0.398,0.408,0.227,0.085,0.20999999999999996
+colour pairs,clear - medium,fish,19,5,-0.614,-0.405,0.421,0.43,0.312,0.614,0.20899999999999996
+fish vs no fish,fish - no fish,clear,19,5,-0.89,-0.686,0.4,0.406,0.024,0.091,0.20399999999999996

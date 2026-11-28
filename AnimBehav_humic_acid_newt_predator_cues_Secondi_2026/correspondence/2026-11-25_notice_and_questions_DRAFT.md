@@ -22,10 +22,11 @@ I am writing for three reasons.
 
 The first is to tell you openly that I intend to publish a methodological commentary on the
 article. I plan to refit the models you describe on your data and to fit alongside them models
-that treat the 22 recordings of each animal as a time course (serial correlation, time as a smooth
-function, test day), in both a frequentist and a Bayesian framework, and to express the effect of
-the cue as estimates with intervals by water colour and period of the run. You would receive the
-full text before anything is made public, and your response would be published together with it.
+that treat the 22 recordings of each animal as an ordered time course (a daily activity curve, a
+response to the cue that starts at exposure and may fade, serial correlation within animal), in
+both a frequentist and a Bayesian framework, and to express the effect of the cue, its size and
+its duration, as estimates with intervals for each water colour. You would receive the full text
+before anything is made public, and your response would be published together with it.
 
 The second is that I could not reconcile a few elements of the article with the dataset and the
 supplement, and I would rather ask than guess. A misunderstanding on my side is entirely possible.
@@ -92,9 +93,11 @@ telepsichiatria.org
   can be added in Cc if Alberto wants them informed directly (they are on the institutional
   pages): add a line per person to `addresses.local` and a `Cc: {key}, {key}` line here.
 - The signature has no email line: add it by hand if wanted (the Shi letter had one).
-- Alberto has not read the paper yet: read `notes/03_concerns.md` and this letter before sending,
-  and run `R/02_consistency_checks.R` first so that the seven numbered points rest on his own run
-  (points 2 and 3 are block I, added on 2026-11-27 after the supplement arrived).
+- Alberto read the paper and ran `R/02_consistency_checks.R` (blocks A–I) on 2026-11-27; the
+  seven numbered points were checked against `output/tables/consistency_*.csv` of that run on
+  2026-11-28 (points 2 and 3 are block I).
+- Revised 2026-11-28: the paragraph on the planned models follows the STATUS of 2026-11-27
+  (night): a daily curve, a cue response that fades, serial correlation; no model is named.
 - Revised 2026-11-27: the request for the R script was dropped (it is in the supplement);
   points 1 to 3 now refer to the script and to Tables S2–S3.
 - Three-week window from the sending date; publication proceeds after it as the letter states.

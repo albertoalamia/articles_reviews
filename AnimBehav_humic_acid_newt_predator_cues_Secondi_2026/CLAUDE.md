@@ -13,6 +13,10 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
   by Alberto through the University of Milano-Bicocca library on 2026-11-25. **The PDF, supplements and the extracted full text are
   copyrighted and are not committed** (`.gitignore` covers `paper/` of this folder; see
   `paper/README.md`). Quote only what a review needs.
+- Access and licence (`protocol/copyright.md`): class B (subscription; © 2026 ASAB, published by
+  Elsevier, rights reservation printed; University of Milano-Bicocca library, 2026-11-25 and
+  2026-11-27) | data: class C (CC BY 4.0, Zenodo 10.5281/zenodo.18200379). Local only: `paper/*`,
+  `notes/01_reading_notes.md`, `data/raw/tableS2_S3_contrasts.csv`. Audit before every commit.
 - Track: `systematic` — source: batch B02 (selection v0.3; Animal Behaviour drawn with
   `tools/journal_draw.py`, seed 20261125; October 2026; whole journal, no subfield filter; frame of
   11, rank 1, eligible on the title, no abstract indexed).
@@ -47,7 +51,8 @@ No estimate of any effect in the article; slot-wise contrasts with SE in supplem
 ## Files
 
 - `paper/` — PDF(s), supplementary material, authors' code if any. Read-only.
-- `notes/01_reading_notes.md` — section-by-section notes with page references.
+- `notes/01_reading_notes.md` — section-by-section notes with page references. Local, gitignored
+  (verbatim passages of a class B paper).
 - `notes/02_methods_inventory.md` — protocol checklist A–H filled in.
 - `notes/03_concerns.md` — one entry per concern, tagged confirmed / inferred / needs-data,
   mirrored as rows in `registry/issues.csv`.
@@ -61,6 +66,7 @@ No estimate of any effect in the article; slot-wise contrasts with SE in supplem
 - `stan/` — `.stan` models, one per file, named by structure (`nb_crossover_order.stan`).
 - `run_<model>.sh` — compiles with CmdStan and samples; draws go to `$FITS_DIR/<this dir>/`.
 - `R/0x_*.R` — numbered scripts: prepare, consistency checks, post-process, figures.
+  `R/00_parse_supplement.R` writes the local `data/raw/tableS2_S3_contrasts.csv` that block I reads.
 - `output/figures`, `output/tables` — small artefacts only.
 - `correspondence/` — what was sent to the authors and what came back, dated.
 - `review.qmd` — the public review. `draft: true` until authors have been contacted.
@@ -68,6 +74,33 @@ No estimate of any effect in the article; slot-wise contrasts with SE in supplem
 ## STATUS
 
 <!-- Update at the end of every session. Newest entry first. -->
+
+### 2026-11-28 — Copyright compliance (`protocol/copyright.md` v1.0, class B)
+- Done: `notes/01_reading_notes.md` and `data/raw/tableS2_S3_contrasts.csv` (the complete copy
+  of Tables S2–S3) are local and gitignored; `R/00_parse_supplement.R` (committed) writes the
+  second from the local supplement. Block I of `R/02_consistency_checks.R` no longer writes the
+  two tables side by side: it writes `consistency_I_S2_against_S3_summary.csv` (198 pairs, 195
+  within 0.02, 162 within 0.005), `..._differing.csv` (the 3 pairs that differ by more than
+  0.02) and `consistency_I_significant_contrasts.csv` (the 21 fish against no fish contrasts
+  printed below 0.05, with Holm-adjusted P). Outputs on disk are from a run of 2026-11-28 12:18;
+  `consistency_summary.csv` came out identical to the committed one. "Access and licence" line,
+  `paper/README.md`, extraction log and the draft letter (paragraph on the planned models,
+  after the STATUS of 2026-11-27 night) updated. `python3 tools/quote_audit.py` on this folder:
+  **288 verbatim words** in the committed files (limit 400; 1,111 before), checked by Claude
+  on 2026-11-28.
+- Decided (and why): the first half of this work (the `.gitignore` lines, the parser, the
+  removal of the three files from the repository) went out in commit `daba5a5`, titled as a
+  `repo:` commit, because it was already staged when that commit was made; the history is left
+  as it is and this commit completes it. From 2026-11-28 the assistant reads this paper on the
+  basis written in `protocol/copyright_v1.1_DRAFT.md` §2 (Alberto's decision; draft, v1.0 in force).
+- Open questions: the pushed history before `daba5a5` still holds the reading notes (823
+  verbatim words) and the whole Tables S2–S3: rewrite it or not (Alberto; `protocol/proposals.md`
+  row 3). Table S1 and Figure S2 (EMF pictures) still not read by Claude. The letter is not sent.
+- Next step: Alberto reads `correspondence/2026-11-25_notice_and_questions_DRAFT.md` and sends
+  it with the send script in `tools/` (the three-week clock starts that day; registry
+  `authors_contacted` and status then change). Done when the sent copy is filed in
+  `correspondence/` and `contacts.md` has the log line.
+- Open the next conversation with: `P003 correspondence: send the notice and questions`
 
 ### 2026-11-27 (night) — Alberto has read the paper
 - Decided (Alberto): the model-reporting concern is raised to major and rewritten ("The fitted

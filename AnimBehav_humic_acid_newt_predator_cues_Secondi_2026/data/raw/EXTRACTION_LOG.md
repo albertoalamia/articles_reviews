@@ -25,7 +25,7 @@ Values are transcribed exactly as printed, including inconsistencies.
 | `table1_lrt.csv` | Table 1, all nine rows (likelihood ratio statistic, df, P, bold), plus the statistic for total distance as given in the Results text (75.113 against 75.209 in the table) | 4, 5 | page image and text |
 | `text_numbers.csv` | sample, dates, treatments, arena, recording schedule, sequences and discards, R² values, the hours of reduced activity quoted in the Discussion | 2–6 | text |
 | `pairwise_significant.csv` | every pairwise difference the Results report as significant (Tukey, P < 0.05), by response, comparison and time slot, with whether it is in the text, in Figure 2, or both | 4, 5 | text and page image |
-| `tableS2_S3_contrasts.csv` | Supplementary Tables S2 and S3: all 198 + 198 slot-wise contrasts (estimate, SE, z ratio, P as printed), with the table, the contrast, the stratum, the hour as printed and the slot number 1–22 added | supplement | row counts (66 + 132 per table), hour sequence 15…12 in every stratum |
+| `tableS2_S3_contrasts.csv` (**local, not committed** since 2026-11-28) | Supplementary Tables S2 and S3: all 198 + 198 slot-wise contrasts (estimate, SE, z ratio, P as printed), with the table, the contrast, the stratum, the hour as printed and the slot number 1–22 added; written by `R/00_parse_supplement.R` (committed) from the local supplement | supplement | row counts (66 + 132 per table), hour sequence 15…12 in every stratum, asserted by the parser |
 | `authors/2026-11-25_zenodo_18200380_dataset.xlsx` | the authors' public dataset (see `authors/RECEIVED_LOG.md`) | — | md5 published by Zenodo |
 
 Figure rasters (native, `pdfimages -png`), kept in `paper/figures/`, not committed:
@@ -77,8 +77,13 @@ d7c8422fbb346e1a567544de3ec83f27136d54a09718e1d62d9ea17165d9a281  VideotrackingD
 - `Electronic Supplementary material.docx`: Figure S1 (raw distances by slot, colour and cue;
   looked at), Figure S2 and Table S1 (embedded as EMF pictures; **not read by Claude**, to be
   looked at in the document by Alberto), Tables S2 and S3 (text tables).
-- Tables S2 and S3 were converted with `quarto pandoc <docx> -t plain --wrap=none` and parsed by
-  a script (non-breaking spaces normalised); nothing typed by hand. Each table has two halves
+- Tables S2 and S3 are converted with `quarto pandoc <docx> -t plain --wrap=none` and parsed by
+  `R/00_parse_supplement.R` (non-breaking spaces normalised); nothing typed by hand. A complete
+  copy of two tables of a subscription article is not a transcription of facts
+  (`protocol/copyright.md` §3): since 2026-11-28 the parsed file is gitignored and the
+  repository holds the parser, the summaries of block I and the rows the concerns cite
+  (`output/tables/consistency_I_*.csv`). The parser reproduces the file committed on 2026-11-27
+  value for value (that file had CRLF line ends, the parser writes LF). Each table has two halves
   side by side: fish against no fish by colour and hour (66 rows) and colour pairs by cue
   treatment and hour (132 rows). The level prefixes of S2 ("1.Clear") were dropped. The captions
   announce "LCI and UCI ... for the 95 % interval confidence"; neither table has those columns.
