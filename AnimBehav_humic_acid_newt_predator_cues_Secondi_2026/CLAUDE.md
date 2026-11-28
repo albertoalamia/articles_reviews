@@ -83,7 +83,9 @@ No estimate of any effect in the article; slot-wise contrasts with SE in supplem
   within 0.02, 162 within 0.005), `..._differing.csv` (the 3 pairs that differ by more than
   0.02) and `consistency_I_significant_contrasts.csv` (the 21 fish against no fish contrasts
   printed below 0.05, with Holm-adjusted P). Outputs on disk are from a run of 2026-11-28 12:18;
-  `consistency_summary.csv` came out identical to the committed one. "Access and licence" line,
+  `consistency_summary.csv` came out identical to the committed one. Alberto re-ran the script
+  on 2026-11-28 after the commit: every table in `output/tables/` reproduced exactly (empty
+  `git status`), so blocks A–I rest on his run. "Access and licence" line,
   `paper/README.md`, extraction log and the draft letter (paragraph on the planned models,
   after the STATUS of 2026-11-27 night) updated. `python3 tools/quote_audit.py` on this folder:
   **288 verbatim words** in the committed files (limit 400; 1,111 before), checked by Claude
