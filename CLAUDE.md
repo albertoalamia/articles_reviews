@@ -24,11 +24,11 @@ CLAUDE.md, README.md          this file; index of reviews + Alberto's setup chec
 CONVERSATIONS.md              how work is cut into conversations: units, opening lines, closing checklist
 shell.nix, .envrc             pinned nix environment (R, Quarto, CmdStan, TeX). Always work inside it.
 _quarto.yml, index.qmd, about.qmd, protocol.qmd, theme.scss, CNAME   the website
-protocol/                     checklist.md (versioned), taxonomy.csv (issue codes), selection.md, proposals.md (parked changes)
+protocol/                     checklist.md (versioned), taxonomy.csv (issue codes), selection.md, copyright.md (what may be copied, quoted, committed), proposals.md (parked changes)
 registry/                     papers.csv (one row per paper), issues.csv (one row per issue)
 lib/consistency.R, lib/quality_table.R, lib/model_dag.R   shared R functions: recomputation checks; quality and programme tables from the registry; DAGs of the Bayesian models; tests in lib/tests/
 _template/                    skeleton copied for each new article
-tools/                        send_email.py, fetch_email.py (Gmail, credentials outside the repo), sample_frame.py (systematic batches), digitise_scatter.py, stan_to_dag.R (model-graph skeleton from a Stan file)
+tools/                        send_email.py, fetch_email.py (Gmail, credentials outside the repo), sample_frame.py (systematic batches), digitise_scatter.py, stan_to_dag.R (model-graph skeleton from a Stan file), quote_audit.py (verbatim words of a paper in the committed files)
 .claude/skills/               procedures Claude follows: session-start, session-end (every conversation), dagify (H4e model graphs), render-check (after quarto render, before a commit), new-review (stage 1 scaffolding, data request)
 <Journal>_<shorttitle>_<FirstAuthor>_<Year>/   one folder per paper (see _template/CLAUDE.md)
 .github/workflows/publish.yml renders the site from _freeze/ and deploys to GitHub Pages
@@ -107,6 +107,12 @@ only short passages are ever quoted.
   within three weeks of the request, publication proceeds without a second notice, as the request
   itself states. Record every message, sent and received, in `correspondence/` (send with
   `tools/send_email.py`, fetch with `tools/fetch_email.py`).
+- **Copyright and access.** `protocol/copyright.md`: a paper is classed at the scaffold (open
+  licence, subscription, data licence); a subscription paper's PDF, full text, supplements and
+  rasters stay local and are never shared; quotations are for criticism only, attributed, and a
+  subscription paper's verbatim text in the committed files stays under 400 words
+  (`tools/quote_audit.py` before every commit); numbers are transcribed as facts, tables are not
+  copied whole; the programme stays non-commercial.
 - **Separate judgment.** Claude drafts, recomputes, and proposes; Alberto decides what goes in
   the final review. Flag anything Claude is unsure of rather than smoothing it over.
 - **Reproducibility.** Every number in a review comes from code in the article folder, run in

@@ -29,7 +29,8 @@ Run through every item; say which ones did not apply.
 5. **Working tree.** `git status --short` reviewed line by line: everything that belongs to the
    unit is listed for the commit; nothing that must stay out is there (addresses, closed-access
    PDFs and full texts, `.tex`/`.log`, `_site/`, scratch scripts). Untracked `_freeze/` files from
-   a render are committed with it.
+   a render are committed with it. For a class B paper (`protocol/copyright.md`),
+   `python3 tools/quote_audit.py <dir>` passes (under 400 verbatim words) before the commit.
 6. **Commit command**, from the repo root, explicit paths, `-A` where deletions occur, title line
    plus bullets if useful, then the trailers:
    ```

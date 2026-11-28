@@ -7,6 +7,7 @@ Article-specific context for Claude Code. Repo-wide rules are in the root `CLAUD
 - Citation: 
 - DOI: 
 - Version reviewed (preprint / accepted manuscript / version of record): 
+- Access and licence (`protocol/copyright.md`): class A (licence) | B (subscription; access route) | data: class C (licence, record)
 - Track: `systematic` | `selected` — source: 
 - Field: psychiatry | ethology | other
 - Registry id: P0xx — protocol version: 0.4

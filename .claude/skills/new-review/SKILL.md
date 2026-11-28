@@ -51,17 +51,30 @@ paper, runs scripts, sends mail, commits.
 
 ## 3. The paper itself (Alberto files, Claude reads)
 
+- **Classify first** (`protocol/copyright.md` §1): from the copyright line of the PDF, class A
+  (open licence: CC BY, CC BY-NC-ND, ...) or class B (subscription, all rights reserved, usually
+  with "including those for text and data mining, AI training, and similar technologies"); the
+  authors' data are class C with their own licence. Write the "Access and licence" line of
+  `<dir>/CLAUDE.md` and fill `<dir>/paper/README.md` (template copied with the folder). For
+  class B, add to the root `.gitignore` the block
+  `/<dir>/paper/*`, `!/<dir>/paper/.gitkeep`, `!/<dir>/paper/README.md`, `/<dir>/notes/01_reading_notes.md`
+  **before** anything is saved there, and log the access route (library and date, purchase, the
+  authors) in `data/raw/EXTRACTION_LOG.md`.
 - Alberto saves the PDF and supplements into `<dir>/paper/` (read-only). Claude extracts
   `paper/<First>_<Year>_fulltext.txt` with `pdftotext -layout` and records sha256 of each file
   in `data/raw/EXTRACTION_LOG.md` together with the version (preprint, accepted manuscript,
-  version of record) and the access date.
+  version of record) and the access date. Class B files are never sent to anyone and never
+  leave the folder.
 - Figures that carry numbers: native rasters into `data/raw/figures/` with hashes;
   `tools/digitise_scatter.py` for points.
 
 ## 4. Stage 1 proper (separate conversation if long)
 
-`notes/01_reading_notes.md` (section by section, verbatim quotes with page), `notes/02_methods_inventory.md`
-(checklist A–H), every reported number into `data/raw/*.csv` with the extraction log,
+`notes/01_reading_notes.md` (section by section, verbatim quotes with page; for a class B paper
+this file is local, gitignored, and the concerns file carries the quotations the criticism needs),
+`notes/02_methods_inventory.md` (checklist A–H), every reported number into `data/raw/*.csv` with
+the extraction log (facts, transcribed; a complete table of a class B supplement is parsed by a
+committed script and the output stays local, `copyright.md` §3),
 `R/02_consistency_checks.R` (Alberto runs; outputs to `output/tables/`), `notes/03_concerns.md`
 (one entry per concern, tag `confirmed` / `inferred` / `needs-data`, severity minor / major /
 critical) mirrored in `registry/issues.csv` (paper_id, issue_code from `protocol/taxonomy.csv`,
@@ -114,5 +127,6 @@ write those commands for Alberto, do not run them.
 
 ## 6. End of the session
 
-STATUS entry in `<dir>/CLAUDE.md` (done / decided and why / open questions / next step), registry
-status, and the commit command (see `render-check` for its form).
+STATUS entry in `<dir>/CLAUDE.md` (done / decided and why / open questions / next step / open the
+next conversation with), registry status, for a class B paper `python3 tools/quote_audit.py <dir>`
+passing, and the commit command (skill `session-end`).
